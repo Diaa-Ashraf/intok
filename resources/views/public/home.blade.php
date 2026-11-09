@@ -737,172 +737,185 @@
             </div>
 
             @php
+                $parsePoints = static function ($val, array $defaultPoints) use ($locale): array {
+                    if (is_array($val)) {
+                        if (isset($val[$locale]) && is_string($val[$locale])) $val = $val[$locale];
+                        elseif (isset($val['ar']) && is_string($val['ar'])) $val = $val['ar'];
+                        else return $val;
+                    }
+                    if (is_string($val) && trim($val) !== '') {
+                        $lines = array_filter(array_map('trim', explode("\n", str_replace("\r", "", $val))));
+                        if (!empty($lines)) return array_values($lines);
+                    }
+                    return $defaultPoints;
+                };
+
                 $whyPillars = [
                     [
                         'id' => 'dsu',
                         'icon' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg>',
-                        'nav_title' => 'منحة DSU والسكن',
-                        'nav_sub' => '8,000€ + سكن مجاني',
-                        'badge' => 'منحة إقليمية حكومية',
+                        'nav_title' => data_get($siteSettings ?? [], 'why_bento_dsu_nav_title.'.$locale, 'منحة DSU والسكن'),
+                        'nav_sub' => data_get($siteSettings ?? [], 'why_bento_dsu_nav_sub.'.$locale, '8,000€ + سكن مجاني'),
+                        'badge' => data_get($siteSettings ?? [], 'why_bento_dsu_badge.'.$locale, 'منحة إقليمية حكومية'),
                         'badge_color' => 'bg-red-50 text-[#fe0002] border-red-200',
                         'title' => data_get($siteSettings ?? [], 'why_bento_dsu_title.'.$locale, 'أعلى نسبة قبول لمنح DSU الحكومية الإيطالية'),
                         'desc' => data_get($siteSettings ?? [], 'why_bento_dsu_desc.'.$locale, 'نضمن لك حساب مؤشر ISEE بدقة هندسية وقانونية لضمان استيفاء شروط المنحة الإقليمية وسكن جامعي معفى تماماً، مع فتح الباب لحملة الدبلومات الفنية (صنايع / تجارة / زراعة) والثانوية العامة والجامعيين.'),
-                        'stat_val' => '8,000€',
-                        'stat_unit' => 'سنوياً',
-                        'stat_label' => 'بدل نقدي مباشر لحساب الطالب',
-                        'stat_sub' => 'إعفاء 100% من المصروفات + سكن مجاني',
-                        'points' => [
+                        'stat_val' => data_get($siteSettings ?? [], 'why_bento_dsu_stat_val', '8,000€'),
+                        'stat_unit' => data_get($siteSettings ?? [], 'why_bento_dsu_stat_unit.'.$locale, 'سنوياً'),
+                        'stat_label' => data_get($siteSettings ?? [], 'why_bento_dsu_stat_label.'.$locale, 'بدل نقدي مباشر لحساب الطالب'),
+                        'stat_sub' => data_get($siteSettings ?? [], 'why_bento_dsu_stat_sub.'.$locale, 'إعفاء 100% من المصروفات + سكن مجاني'),
+                        'points' => $parsePoints(data_get($siteSettings ?? [], 'why_bento_dsu_points'), [
                             'حساب دقيق لمؤشر ISEE Parificato وفق المعايير الرسمية للمنحة الإقليمية',
                             'إعفاء كامل 100% من الرسوم والمصروفات الدراسية الجامعية في إيطاليا',
                             'تأمين سكن جامعي مجاني ومجهز طوال فترة سنوات دراستك',
                             'وجبات غذائية مدعومة بمطاعم الجامعات الإيطالية يومياً',
                             'حق العمل القانوني للطلاب 20 ساعة أسبوعياً باليورو'
-                        ],
+                        ]),
                         'vs_traditional' => [
-                            'traditional' => 'إهمال المنحة وتوريط الطالب بمصروفات دراسية باهظة بدون سكن أو دعم نقدي',
-                            'intok' => 'ملف منحة متكامل بدقة 100% يضمن لك أعلى فرصة للحصول على الـ 8,000 يورو والسكن'
+                            'traditional' => data_get($siteSettings ?? [], 'why_bento_dsu_vs_traditional.'.$locale, 'إهمال المنحة وتوريط الطالب بمصروفات دراسية باهظة بدون سكن أو دعم نقدي'),
+                            'intok' => data_get($siteSettings ?? [], 'why_bento_dsu_vs_intok.'.$locale, 'ملف منحة متكامل بدقة 100% يضمن لك أعلى فرصة للحصول على الـ 8,000 يورو والسكن')
                         ],
-                        'cta_text' => 'افحص فرصة حصولك على منحة DSU',
+                        'cta_text' => data_get($siteSettings ?? [], 'why_bento_dsu_cta_text.'.$locale, 'افحص فرصة حصولك على منحة DSU'),
                         'cta_url' => route('consultation.create', ['locale' => $locale]),
                         'wa_msg' => 'مرحباً، أود الاستفسار عن تفاصيل منحة DSU الإيطالية وشروط القبول والسكن المجاني'
                     ],
                     [
                         'id' => 'callcenter',
                         'icon' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z"/></svg>',
-                        'nav_title' => 'الكول سنتر والتوظيف',
-                        'nav_sub' => 'رواتب 15k - 30k+ ج.م',
-                        'badge' => 'تأهيل وظيفي فوري',
+                        'nav_title' => data_get($siteSettings ?? [], 'why_bento_callcenter_nav_title.'.$locale, 'الكول سنتر والتوظيف'),
+                        'nav_sub' => data_get($siteSettings ?? [], 'why_bento_callcenter_nav_sub.'.$locale, 'رواتب 15k - 30k+ ج.م'),
+                        'badge' => data_get($siteSettings ?? [], 'why_bento_callcenter_badge.'.$locale, 'تأهيل وظيفي فوري'),
                         'badge_color' => 'bg-emerald-50 text-emerald-700 border-emerald-200',
                         'title' => data_get($siteSettings ?? [], 'why_bento_callcenter_title.'.$locale, 'تأهيل وظيفي فوري لكبرى شركات الكول سنتر'),
                         'desc' => data_get($siteSettings ?? [], 'why_bento_callcenter_desc.'.$locale, 'تدريب تطبيقي على الشاشات الذكية ومحاكاة لمقابلات شركات متعددة الجنسيات (Vodafone UK, Concentrix, Teleperformance) يؤهلك للعمل المباشر.'),
-                        'stat_val' => '15k - 30k+',
-                        'stat_unit' => 'ج.م / شهرياً',
-                        'stat_label' => 'متوسط الراتب لحديثي التخرج والخريجين',
-                        'stat_sub' => 'فرص عمل فوري بكبرى الشركات الدولية',
-                        'points' => [
+                        'stat_val' => data_get($siteSettings ?? [], 'why_bento_callcenter_stat_val', '15k - 30k+'),
+                        'stat_unit' => data_get($siteSettings ?? [], 'why_bento_callcenter_stat_unit.'.$locale, 'ج.م / شهرياً'),
+                        'stat_label' => data_get($siteSettings ?? [], 'why_bento_callcenter_stat_label.'.$locale, 'متوسط الراتب لحديثي التخرج والخريجين'),
+                        'stat_sub' => data_get($siteSettings ?? [], 'why_bento_callcenter_stat_sub.'.$locale, 'فرص عمل فوري بكبرى الشركات الدولية'),
+                        'points' => $parsePoints(data_get($siteSettings ?? [], 'why_bento_callcenter_points'), [
                             'تدريب عملي ومحاكاة لمكالمات وأنظمة خدمة العملاء والدعم الفني الحقيقية',
                             'محاكاة لأسئلة واختبارات الـ HR والـ Operations في الشركات متعددة الجنسيات',
                             'إتقان اللهجة ونبرة الصوت المناسبة لمختلف أسواق العمل الدولية',
                             'ورش مكثفة لاجتياز المقابلات الشخصية بنجاح من المقابلة الأولى',
                             'ترشيح مباشر وتوصية للتوظيف لدى شبكة شركائنا بعد التخرج'
-                        ],
+                        ]),
                         'vs_traditional' => [
-                            'traditional' => 'كورسات نظرية عامة بدون شاشات تفاعلية أو محاكاة حقيقية وبلا أي فرص توظيف',
-                            'intok' => 'محاكاة واقعية 100% تؤهلك لاجتياز مقابلات الشركات العالمية فور التخرج'
+                            'traditional' => data_get($siteSettings ?? [], 'why_bento_callcenter_vs_traditional.'.$locale, 'كورسات نظرية عامة بدون شاشات تفاعلية أو محاكاة حقيقية وبلا أي فرص توظيف'),
+                            'intok' => data_get($siteSettings ?? [], 'why_bento_callcenter_vs_intok.'.$locale, 'محاكاة واقعية 100% تؤهلك لاجتياز مقابلات الشركات العالمية فور التخرج')
                         ],
-                        'cta_text' => 'سجل في تدريب الكول سنتر المباشر',
+                        'cta_text' => data_get($siteSettings ?? [], 'why_bento_callcenter_cta_text.'.$locale, 'سجل في تدريب الكول سنتر المباشر'),
                         'cta_url' => route('consultation.create', ['locale' => $locale]),
                         'wa_msg' => 'مرحباً، أود الاستفسار عن كورس تدريب الكول سنتر وفرص التوظيف المتاحة'
                     ],
                     [
-                        'id' => 'translation',
+                        'id' => 'trans',
                         'icon' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>',
-                        'nav_title' => 'الترجمة المعتمدة',
-                        'nav_sub' => 'معتمدة قنصلياً 100%',
-                        'badge' => 'توثيق رسمي للسفارات',
+                        'nav_title' => data_get($siteSettings ?? [], 'why_bento_trans_nav_title.'.$locale, 'الترجمة المعتمدة'),
+                        'nav_sub' => data_get($siteSettings ?? [], 'why_bento_trans_nav_sub.'.$locale, 'معتمدة قنصلياً 100%'),
+                        'badge' => data_get($siteSettings ?? [], 'why_bento_trans_badge.'.$locale, 'توثيق رسمي للسفارات'),
                         'badge_color' => 'bg-amber-50 text-amber-800 border-amber-200',
                         'title' => data_get($siteSettings ?? [], 'why_bento_trans_title.'.$locale, 'ترجمة معتمدة رسمياً وموثقة لجميع السفارات'),
                         'desc' => data_get($siteSettings ?? [], 'why_bento_trans_desc.'.$locale, 'ترجمة رسمية معترف بها أمام القنصلية الإيطالية وكافة السفارات الأوروبية، لشهادات التخرج، إعلانات القيمة، وعقود العمل دون مخاطرة بالرفض.'),
-                        'stat_val' => '24 - 48h',
-                        'stat_unit' => 'تسليم مستعجل',
-                        'stat_label' => 'سرعة إنجاز وتوثيق الملفات الرسمية',
-                        'stat_sub' => 'دقة قانونية متناهية بدون أخطاء ترفض ملفك',
-                        'points' => [
+                        'stat_val' => data_get($siteSettings ?? [], 'why_bento_trans_stat_val', '24 - 48h'),
+                        'stat_unit' => data_get($siteSettings ?? [], 'why_bento_trans_stat_unit.'.$locale, 'تسليم مستعجل'),
+                        'stat_label' => data_get($siteSettings ?? [], 'why_bento_trans_stat_label.'.$locale, 'سرعة إنجاز وتوثيق الملفات الرسمية'),
+                        'stat_sub' => data_get($siteSettings ?? [], 'why_bento_trans_stat_sub.'.$locale, 'دقة قانونية متناهية بدون أخطاء ترفض ملفك'),
+                        'points' => $parsePoints(data_get($siteSettings ?? [], 'why_bento_trans_points'), [
                             'ترجمة معتمدة ومقبولة لدى القنصلية الإيطالية بالقاهرة والإسكندرية',
                             'ترجمة إعلان القيمة (Dichiarazione di Valore) وبيانات الدرجات والمقررات',
                             'إنهاء تصديقات الخارجية المصرية ونقابة المترجمين والغرفة التجارية',
                             'تدقيق لغوي وقانوني مزدوج لضمان خلو الأوراق من أي ثغرات قنصلية',
                             'توصيل فوري لجميع محافظات مصر مع إمكانية المعاينة الرقمية'
-                        ],
+                        ]),
                         'vs_traditional' => [
-                            'traditional' => 'ترجمات غير معتمدة أو مليئة بالأخطاء تؤدي لرفض التأشيرة وإضاعة المواعيد',
-                            'intok' => 'اعتماد قنصلي رسمي 100% يضمن قبول أوراقك في السفارة من المرة الأولى'
+                            'traditional' => data_get($siteSettings ?? [], 'why_bento_trans_vs_traditional.'.$locale, 'ترجمات غير معتمدة أو مليئة بالأخطاء تؤدي لرفض التأشيرة وإضاعة المواعيد'),
+                            'intok' => data_get($siteSettings ?? [], 'why_bento_trans_vs_intok.'.$locale, 'اعتماد قنصلي رسمي 100% يضمن قبول أوراقك في السفارة من المرة الأولى')
                         ],
-                        'cta_text' => 'اطلب ترجمتك المعتمدة فوراً',
+                        'cta_text' => data_get($siteSettings ?? [], 'why_bento_trans_cta_text.'.$locale, 'اطلب ترجمتك المعتمدة فوراً'),
                         'cta_url' => route('contact', ['locale' => $locale]),
                         'wa_msg' => 'مرحباً، أود الاستفسار عن خدمة الترجمة المعتمدة للأوراق الرسمية وتصديقات السفارة'
                     ],
                     [
                         'id' => 'reception',
                         'icon' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>',
-                        'nav_title' => 'الاستقبال بإيطاليا',
-                        'nav_sub' => 'ميلانو وروما وتسكين مباشر',
-                        'badge' => 'مرافقة ميدانية بأوروبا',
+                        'nav_title' => data_get($siteSettings ?? [], 'why_bento_reception_nav_title.'.$locale, 'الاستقبال بإيطاليا'),
+                        'nav_sub' => data_get($siteSettings ?? [], 'why_bento_reception_nav_sub.'.$locale, 'ميلانو وروما وتسكين مباشر'),
+                        'badge' => data_get($siteSettings ?? [], 'why_bento_reception_badge.'.$locale, 'مرافقة ميدانية بأوروبا'),
                         'badge_color' => 'bg-red-50 text-[#fe0002] border-red-200',
                         'title' => data_get($siteSettings ?? [], 'why_bento_reception_title.'.$locale, 'استقبال في المطار وتسليم السكن بإيطاليا'),
                         'desc' => data_get($siteSettings ?? [], 'why_bento_reception_desc.'.$locale, 'رحلتك معنا لا تنتهي عند باب المطار؛ بل يستقبلك فريقنا الميداني في ميلانو وروما لتسليم السكن، واستخراج الإقامة والحساب البنكي.'),
-                        'stat_val' => '100%',
-                        'stat_unit' => 'أمان ورعاية',
-                        'stat_label' => 'مرافقة ميدانية من لحظة الهبوط بالمطار',
-                        'stat_sub' => 'فريق ميداني رسمي يتحدث العربية والإيطالية',
-                        'points' => [
+                        'stat_val' => data_get($siteSettings ?? [], 'why_bento_reception_stat_val', '100%'),
+                        'stat_unit' => data_get($siteSettings ?? [], 'why_bento_reception_stat_unit.'.$locale, 'أمان ورعاية'),
+                        'stat_label' => data_get($siteSettings ?? [], 'why_bento_reception_stat_label.'.$locale, 'مرافقة ميدانية من لحظة الهبوط بالمطار'),
+                        'stat_sub' => data_get($siteSettings ?? [], 'why_bento_reception_stat_sub.'.$locale, 'فريق ميداني رسمي يتحدث العربية والإيطالية'),
+                        'points' => $parsePoints(data_get($siteSettings ?? [], 'why_bento_reception_points'), [
                             'استقبالك بالاسم في صالة الوصول بمطارات ميلانو (Malpensa) وروما (Fiumicino)',
                             'توصيلك مباشرة إلى مقر إقامتك وتسليمك مفاتيح السكن الجامعي أو الخاص',
                             'مرافقة لتقديم أوراق تصريح الإقامة (Permesso di Soggiorno) بالبريد والشرطة',
                             'استخراج الرقم الضريبي الإيطالي (Codice Fiscale) وشراء شريحة اتصال إيطالية',
                             'مساعدتك في فتح حساب بنكي إيطالي وتوجيهك لفرص العمل والأنشطة الطلابية'
-                        ],
+                        ]),
                         'vs_traditional' => [
-                            'traditional' => 'ينتهي دور المكتب بمجرد السفر ويُترك الطالب وحيداً وتائهاً في المطار والغربة',
-                            'intok' => 'فريقنا الميداني في إيطاليا يستقبلك ويلازمك حتى تستقر في سكنك وتنهي أوراقك'
+                            'traditional' => data_get($siteSettings ?? [], 'why_bento_reception_vs_traditional.'.$locale, 'ينتهي دور المكتب بمجرد السفر ويُترك الطالب وحيداً وتائهاً في المطار والغربة'),
+                            'intok' => data_get($siteSettings ?? [], 'why_bento_reception_vs_intok.'.$locale, 'فريقنا الميداني في إيطاليا يستقبلك ويلازمك حتى تستقر في سكنك وتنهي أوراقك')
                         ],
-                        'cta_text' => 'احجز باقة الاستقبال والمرافقة بإيطاليا',
+                        'cta_text' => data_get($siteSettings ?? [], 'why_bento_reception_cta_text.'.$locale, 'احجز باقة الاستقبال والمرافقة بإيطاليا'),
                         'cta_url' => route('consultation.create', ['locale' => $locale]),
                         'wa_msg' => 'مرحباً، أود الاستفسار عن خدمات الاستقبال في المطار والتسكين في إيطاليا'
                     ],
                     [
                         'id' => 'languages',
                         'icon' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>',
-                        'nav_title' => 'إتقان اللغات وCILS',
-                        'nav_sub' => 'من الصفر حتى الطلاقة التامة',
-                        'badge' => 'شهادات دولية معتمدة',
+                        'nav_title' => data_get($siteSettings ?? [], 'why_bento_languages_nav_title.'.$locale, 'إتقان اللغات وCILS'),
+                        'nav_sub' => data_get($siteSettings ?? [], 'why_bento_languages_nav_sub.'.$locale, 'من الصفر حتى الطلاقة التامة'),
+                        'badge' => data_get($siteSettings ?? [], 'why_bento_languages_badge.'.$locale, 'شهادات دولية معتمدة'),
                         'badge_color' => 'bg-purple-50 text-purple-700 border-purple-200',
                         'title' => data_get($siteSettings ?? [], 'why_bento_languages_title.'.$locale, 'إتقان اللغات من الصفر واجتياز CILS & IELTS'),
                         'desc' => data_get($siteSettings ?? [], 'why_bento_languages_desc.'.$locale, 'دورات مكثفة في الإيطالية والإنجليزية والألمانية تركز 80% على المحادثة والطلاقة الواقعية، وتؤهلك لاجتياز امتحانات السفارات والجامعات.'),
-                        'stat_val' => '80%',
-                        'stat_unit' => 'محادثة وتطبيق',
-                        'stat_label' => 'نسبة التركيز على التحدث والطلاقة العملية',
-                        'stat_sub' => 'كسر حاجز الخوف والحديث بطلاقة خلال أسابيع',
-                        'points' => [
+                        'stat_val' => data_get($siteSettings ?? [], 'why_bento_languages_stat_val', '80%'),
+                        'stat_unit' => data_get($siteSettings ?? [], 'why_bento_languages_stat_unit.'.$locale, 'محادثة وتطبيق'),
+                        'stat_label' => data_get($siteSettings ?? [], 'why_bento_languages_stat_label.'.$locale, 'نسبة التركيز على التحدث والطلاقة العملية'),
+                        'stat_sub' => data_get($siteSettings ?? [], 'why_bento_languages_stat_sub.'.$locale, 'كسر حاجز الخوف والحديث بطلاقة خلال أسابيع'),
+                        'points' => $parsePoints(data_get($siteSettings ?? [], 'why_bento_languages_points'), [
                             'مناهج أوروبية معتمدة ومطابقة للإطار المرجعي الأوروبي للغات (CEFR)',
                             'تدريب مكثف على نماذج اختبارات اللغة الإيطالية الرسمية (CILS, CELI, PLIDA)',
                             'دورات متخصصة لاجتياز اختبارات الآيلتس (IELTS) والتوفل (TOEFL) الدولية',
                             'محاضرون خبراء معتمدون وناطقون أصليون يتابعون مستواك يومياً',
                             'شهادات تخرج معتمدة توثق مستواك اللغوي وتؤهلك للجامعات وسوق العمل'
-                        ],
+                        ]),
                         'vs_traditional' => [
-                            'traditional' => 'طرق تدريس قديمة تعتمد على الحفظ الصم دون إتاحة الفرصة لممارسة المحادثة',
-                            'intok' => 'منهج تفاعلي يركز 80% على المحادثة المباشرة ويكسر حاجز الرهبة تماماً'
+                            'traditional' => data_get($siteSettings ?? [], 'why_bento_languages_vs_traditional.'.$locale, 'طرق تدريس قديمة تعتمد على الحفظ الصم دون إتاحة الفرصة لممارسة المحادثة'),
+                            'intok' => data_get($siteSettings ?? [], 'why_bento_languages_vs_intok.'.$locale, 'منهج تفاعلي يركز 80% على المحادثة المباشرة ويكسر حاجز الرهبة تماماً')
                         ],
-                        'cta_text' => 'ابدأ كورس اللغة وتحديد المستوى',
+                        'cta_text' => data_get($siteSettings ?? [], 'why_bento_languages_cta_text.'.$locale, 'ابدأ كورس اللغة وتحديد المستوى'),
                         'cta_url' => route('consultation.create', ['locale' => $locale]),
                         'wa_msg' => 'مرحباً، أود الاستفسار عن دورات اللغات (إيطالي / إنجليزي / ألماني) وتأهيل CILS'
                     ],
                     [
                         'id' => 'mentorship',
                         'icon' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>',
-                        'nav_title' => 'الإرشاد والمتابعة 24/7',
-                        'nav_sub' => 'مستشار أكاديمي شخصي مخصص',
-                        'badge' => 'متابعة مستمرة ودقيقة',
+                        'nav_title' => data_get($siteSettings ?? [], 'why_bento_mentorship_nav_title.'.$locale, 'الإرشاد والمتابعة 24/7'),
+                        'nav_sub' => data_get($siteSettings ?? [], 'why_bento_mentorship_nav_sub.'.$locale, 'مستشار أكاديمي شخصي مخصص'),
+                        'badge' => data_get($siteSettings ?? [], 'why_bento_mentorship_badge.'.$locale, 'متابعة مستمرة ودقيقة'),
                         'badge_color' => 'bg-blue-50 text-blue-700 border-blue-200',
                         'title' => data_get($siteSettings ?? [], 'why_bento_mentorship_title.'.$locale, 'إرشاد شخصي 1-on-1 ومتابعة مستمرة'),
                         'desc' => data_get($siteSettings ?? [], 'why_bento_mentorship_desc.'.$locale, 'مستشار أكاديمي مخصص يدرس ملفك ويضع خطتك المناسبة، مع نظام تنبيهات لمواعيد المنح والتقديمات لضمان عدم فوات أي موعد رسمي.'),
-                        'stat_val' => '24/7',
-                        'stat_unit' => 'دعم متواصل',
-                        'stat_label' => 'مستشارك الأكاديمي بجانبك طوال رحلتك',
-                        'stat_sub' => 'متابعة دقيقة لكل خطوة وموعد تقديم رسمي',
-                        'points' => [
+                        'stat_val' => data_get($siteSettings ?? [], 'why_bento_mentorship_stat_val', '24/7'),
+                        'stat_unit' => data_get($siteSettings ?? [], 'why_bento_mentorship_stat_unit.'.$locale, 'دعم متواصل'),
+                        'stat_label' => data_get($siteSettings ?? [], 'why_bento_mentorship_stat_label.'.$locale, 'مستشارك الأكاديمي بجانبك طوال رحلتك'),
+                        'stat_sub' => data_get($siteSettings ?? [], 'why_bento_mentorship_stat_sub.'.$locale, 'متابعة دقيقة لكل خطوة وموعد تقديم رسمي'),
+                        'points' => $parsePoints(data_get($siteSettings ?? [], 'why_bento_mentorship_points'), [
                             'جلسة استشارة فردية 1-on-1 لتحليل مؤهلك (دبلوم فني، ثانوية، بكالوريوس) واختيار أفضل طريق',
                             'خطة زمنية مدروسة تضمن استيفاء كافة الأوراق والمواعيد قبل إغلاق باب التقديم',
                             'مراجعة وتدقيق شامل لملفك الدراسي لمنع أي خطأ قد يؤدي للرفض',
                             'تذكير دوري بمواعيد المقابلات والمنح والتصديقات خطوة بخطوة',
                             'دعم متواصل عبر الواتساب والمكالمات والاجتماعات الافتراضية طوال فترة التقديم'
-                        ],
+                        ]),
                         'vs_traditional' => [
-                            'traditional' => 'إهمال استفسارات الطلاب والتأخر في الرد وضياع المواعيد الرسمية للمنح',
-                            'intok' => 'مستشار أكاديمي ملازم لك يومياً ومتابعة دقيقة تضمن عدم تفويت أي فرصة'
+                            'traditional' => data_get($siteSettings ?? [], 'why_bento_mentorship_vs_traditional.'.$locale, 'إهمال استفسارات الطلاب والتأخر في الرد وضياع المواعيد الرسمية للمنح'),
+                            'intok' => data_get($siteSettings ?? [], 'why_bento_mentorship_vs_intok.'.$locale, 'مستشار أكاديمي ملازم لك يومياً ومتابعة دقيقة تضمن عدم تفويت أي فرصة')
                         ],
-                        'cta_text' => 'احجز استشارتك الأكاديمية الآن',
+                        'cta_text' => data_get($siteSettings ?? [], 'why_bento_mentorship_cta_text.'.$locale, 'احجز استشارتك الأكاديمية الآن'),
                         'cta_url' => route('consultation.create', ['locale' => $locale]),
                         'wa_msg' => 'مرحباً، أود حجز جلسة استشارة أكاديمية شخصية 1-on-1 لتحديد مساري الأنسب'
                     ]
@@ -1038,7 +1051,7 @@
                                     <span class="text-xs font-black text-amber-400 flex items-center gap-1.5">
                                         <span>مقارنة صريحة بالواقع</span>
                                     </span>
-                                    <span class="text-[10px] font-bold text-slate-400">لماذا إنتوك أفضل؟</span>
+                                    <span class="text-[10px] font-bold text-slate-400">{{ data_get($siteSettings ?? [], 'why_comparison_title.'.$locale, 'لماذا إنتوك أفضل؟') }}</span>
                                 </div>
 
                                 <!-- The Traditional Downside -->

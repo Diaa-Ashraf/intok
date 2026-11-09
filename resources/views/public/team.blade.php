@@ -7,10 +7,10 @@
     <section class="relative isolate overflow-hidden bg-intok-hero py-16 text-slate-900 border-b border-slate-100">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-start">
             <span class="inline-block rounded-full border border-red-200 bg-white/90 px-3.5 py-1 text-xs font-black text-red-600 shadow-xs">
-                خبراء التعليم الدولي
+                {{ data_get($siteSettings ?? [], 'team_badge.'.$locale, 'خبراء التعليم الدولي') }}
             </span>
-            <h1 class="mt-4 text-3xl font-black text-[#c27803] sm:text-5xl">{{ __('site.nav_team') }}</h1>
-            <p class="mt-4 max-w-2xl leading-relaxed text-slate-600 font-medium">{{ __('site.hero_text') }}</p>
+            <h1 class="mt-4 text-3xl font-black text-[#c27803] sm:text-5xl">{{ data_get($siteSettings ?? [], 'team_page_title.'.$locale, __('site.nav_team')) }}</h1>
+            <p class="mt-4 max-w-2xl leading-relaxed text-slate-600 font-medium">{{ data_get($siteSettings ?? [], 'team_intro.'.$locale, __('site.hero_text')) }}</p>
         </div>
     </section>
 

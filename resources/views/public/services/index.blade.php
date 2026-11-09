@@ -525,13 +525,13 @@
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12 reveal-up">
                 <span class="inline-flex items-center gap-2 rounded-full bg-red-50 border border-red-200 px-4 py-1.5 text-xs font-black text-[#fe0002] shadow-xs">
-                    <span>معايير الجودة والاعتماد الأكاديمي</span>
+                    <span>{{ data_get($siteSettings ?? [], 'services_why_badge.'.$locale, 'معايير الجودة والاعتماد الأكاديمي') }}</span>
                 </span>
                 <h2 class="mt-4 text-3xl font-black text-[#c27803] sm:text-4xl">
-                    لماذا يثق الآلاف في برامج INTOK ACADEMY؟
+                    {{ data_get($siteSettings ?? [], 'services_why_title.'.$locale, 'لماذا يثق الآلاف في برامج INTOK ACADEMY؟') }}
                 </h2>
                 <p class="mt-3 text-sm sm:text-base text-slate-600 font-medium">
-                    نجمع بين التدريب العملي المباشر، والاعتماد القنصلي الرسمي، والشراكات الدولية المؤهلة للتوظيف والدراسة.
+                    {{ data_get($siteSettings ?? [], 'services_why_subtitle.'.$locale, 'نجمع بين التدريب العملي المباشر، والاعتماد القنصلي الرسمي، والشراكات الدولية المؤهلة للتوظيف والدراسة.') }}
                 </p>
             </div>
 
@@ -541,9 +541,9 @@
                         <div class="size-11 rounded-2xl bg-red-50 border border-red-200 text-[#fe0002] grid place-items-center mb-4">
                             <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                         </div>
-                        <h3 class="text-base font-black text-slate-900 mb-1.5">شاشات ذكية ومحاكاة واقعية</h3>
+                        <h3 class="text-base font-black text-slate-900 mb-1.5">{{ data_get($siteSettings ?? [], 'services_pillar1_title.'.$locale, 'شاشات ذكية ومحاكاة واقعية') }}</h3>
                         <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                            تدريب تطبيقي على أنظمة كبرى شركات الكول سنتر العالمية وقاعات ذكية تحاكي بيئة العمل الفعلية.
+                            {{ data_get($siteSettings ?? [], 'services_pillar1_desc.'.$locale, 'تدريب تطبيقي على أنظمة كبرى شركات الكول سنتر العالمية وقاعات ذكية تحاكي بيئة العمل الفعلية.') }}
                         </p>
                     </div>
                 </div>
@@ -553,9 +553,9 @@
                         <div class="size-11 rounded-2xl bg-amber-50 border border-amber-200 text-[#c27803] grid place-items-center mb-4">
                             <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
                         </div>
-                        <h3 class="text-base font-black text-slate-900 mb-1.5">اعتماد وتوثيق قنصلي 100%</h3>
+                        <h3 class="text-base font-black text-slate-900 mb-1.5">{{ data_get($siteSettings ?? [], 'services_pillar2_title.'.$locale, 'اعتماد وتوثيق قنصلي 100%') }}</h3>
                         <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                            شهادات تدريب موثقة وترجمات معتمدة رسمياً أمام السفارة الإيطالية وكافة السفارات والجهات الحكومية.
+                            {{ data_get($siteSettings ?? [], 'services_pillar2_desc.'.$locale, 'شهادات تدريب موثقة وترجمات معتمدة رسمياً أمام السفارة الإيطالية وكافة السفارات والجهات الحكومية.') }}
                         </p>
                     </div>
                 </div>
@@ -565,9 +565,9 @@
                         <div class="size-11 rounded-2xl bg-blue-50 border border-blue-200 text-blue-600 grid place-items-center mb-4">
                             <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                         </div>
-                        <h3 class="text-base font-black text-slate-900 mb-1.5">تأهيل وظيفي وترشيح مباشر</h3>
+                        <h3 class="text-base font-black text-slate-900 mb-1.5">{{ data_get($siteSettings ?? [], 'services_pillar3_title.'.$locale, 'تأهيل وظيفي وترشيح مباشر') }}</h3>
                         <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                            توصيات مباشرة وتأهيل لاجتياز مقابلات الـ HR والـ Operations برواتب تصل 30,000+ ج.م.
+                            {{ data_get($siteSettings ?? [], 'services_pillar3_desc.'.$locale, 'توصيات مباشرة وتأهيل لاجتياز مقابلات الـ HR والـ Operations برواتب تصل 30,000+ ج.م.') }}
                         </p>
                     </div>
                 </div>
@@ -577,9 +577,9 @@
                         <div class="size-11 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-600 grid place-items-center mb-4">
                             <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                         </div>
-                        <h3 class="text-base font-black text-slate-900 mb-1.5">إشراف على منحة DSU الإيطالية</h3>
+                        <h3 class="text-base font-black text-slate-900 mb-1.5">{{ data_get($siteSettings ?? [], 'services_pillar4_title.'.$locale, 'إشراف على منحة DSU الإيطالية') }}</h3>
                         <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                            حساب دقيق لـ ISEE يضمن إعفاء 100% من المصروفات وسكن مجاني وبدل 8,000 يورو للدبلومات والثانوية.
+                            {{ data_get($siteSettings ?? [], 'services_pillar4_desc.'.$locale, 'حساب دقيق لـ ISEE يضمن إعفاء 100% من المصروفات وسكن مجاني وبدل 8,000 يورو للدبلومات والثانوية.') }}
                         </p>
                     </div>
                 </div>
@@ -593,13 +593,13 @@
     <section class="relative bg-gradient-to-r from-[#fe0002] to-red-700 py-14 text-white text-center overflow-hidden">
         <div class="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <span class="inline-block rounded-full bg-white/20 border border-white/30 px-4 py-1 text-xs font-black text-amber-200 mb-3">
-                خطوتك الأولى نحو مستقبلك الدولي
+                {{ data_get($siteSettings ?? [], 'services_cta_badge.'.$locale, 'خطوتك الأولى نحو مستقبلك الدولي') }}
             </span>
             <h2 class="text-2xl sm:text-4xl font-black text-white leading-tight">
-                هل تحتاج لمساعدة في اختيار المسار التدريبي الأنسب لك؟
+                {{ data_get($siteSettings ?? [], 'services_cta_title.'.$locale, 'هل تحتاج لمساعدة في اختيار المسار التدريبي الأنسب لك؟') }}
             </h2>
             <p class="mt-3 text-xs sm:text-sm text-red-100 font-medium max-w-xl mx-auto leading-relaxed">
-                احجز جلسة استشارة مجانية مع مستشارك الأكاديمي لمراجعة مؤهلك وهدفك وتحديد خطتك التدريبية والمهنية.
+                {{ data_get($siteSettings ?? [], 'services_cta_subtitle.'.$locale, 'احجز جلسة استشارة مجانية مع مستشارك الأكاديمي لمراجعة مؤهلك وهدفك وتحديد خطتك التدريبية والمهنية.') }}
             </p>
             <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
                 <a href="{{ route('consultation.create', ['locale' => $locale]) }}" class="rounded-full bg-white px-7 py-3.5 text-xs sm:text-sm font-black text-[#fe0002] shadow-lg hover:bg-amber-100 transition transform hover:scale-105">

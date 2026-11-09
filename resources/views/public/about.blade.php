@@ -24,7 +24,7 @@
                         <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#fe0002] opacity-75"></span>
                         <span class="relative inline-flex size-2 rounded-full bg-[#fe0002]"></span>
                     </span>
-                    <span>INTOK ACADEMY • {{ $pageTitle }}</span>
+                    <span>{{ data_get($siteSettings ?? [], 'about_hero_badge.'.$locale, 'INTOK ACADEMY • '.$pageTitle) }}</span>
                 </span>
 
                 <h1 class="mt-5 text-3xl font-black leading-tight text-[#c27803] sm:text-5xl lg:text-6xl tracking-tight">
@@ -32,7 +32,7 @@
                 </h1>
 
                 <p class="mt-4 text-base sm:text-lg leading-relaxed text-slate-600 font-medium">
-                    قصة التمكين والريادة الأكاديمية: نفتح أبواب الجامعات الإيطالية وسوق العمل الدولي للشباب العربي وحملة الدبلومات والثانوية العامة.
+                    {{ data_get($siteSettings ?? [], 'about_hero_subtitle.'.$locale, 'قصة التمكين والريادة الأكاديمية: نفتح أبواب الجامعات الإيطالية وسوق العمل الدولي للشباب العربي وحملة الدبلومات والثانوية العامة.') }}
                 </p>
             </div>
         </div>
@@ -57,10 +57,10 @@
                                 </span>
                                 <div>
                                     <h2 class="text-base font-black text-slate-900 leading-snug">
-                                        رسالتنا وهويتنا المؤسسية
+                                        {{ data_get($siteSettings ?? [], 'about_mission_title.'.$locale, 'رسالتنا وهويتنا المؤسسية') }}
                                     </h2>
                                     <span class="text-xs font-bold text-slate-500">
-                                        معايير الجودة والاعتماد الرسمي
+                                        {{ data_get($siteSettings ?? [], 'about_mission_subtitle.'.$locale, 'معايير الجودة والاعتماد الرسمي') }}
                                     </span>
                                 </div>
                             </div>
@@ -142,7 +142,7 @@
                                 <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
                             </span>
                             <p class="text-xs font-bold text-red-950 leading-relaxed">
-                                مرافقة شخصية 360 درجة من أول جلسة استشارة وفحص أوراقك، حتى استلام تأشيرتك ومفاتيح سكنك بإيطاليا.
+                                {{ data_get($siteSettings ?? [], 'about_guarantee_text.'.$locale, 'مرافقة شخصية 360 درجة من أول جلسة استشارة وفحص أوراقك، حتى استلام تأشيرتك ومفاتيح سكنك بإيطاليا.') }}
                             </p>
                         </div>
 
@@ -202,13 +202,13 @@
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12 reveal-up">
                 <span class="inline-flex items-center gap-2 rounded-full bg-red-50 border border-red-200 px-4 py-1.5 text-xs font-black text-[#fe0002] shadow-xs">
-                    <span>معايير الثقة والريادة</span>
+                    <span>{{ data_get($siteSettings ?? [], 'why_badge.'.$locale, 'معايير الثقة والريادة') }}</span>
                 </span>
                 <h2 class="mt-4 text-3xl font-black text-[#c27803] sm:text-4xl">
-                    لماذا يختار آلاف الطلاب أكاديمية إنتوك؟
+                    {{ data_get($siteSettings ?? [], 'why_title.'.$locale, 'لماذا يختار آلاف الطلاب أكاديمية إنتوك؟') }}
                 </h2>
                 <p class="mt-3 text-sm sm:text-base text-slate-600 font-medium">
-                    منظومة متكاملة لا تكتفي بتقديم الدورات، بل تصنع مستقبلك الأكاديمي والمهني بمعايير أوروبية موثقة.
+                    {{ data_get($siteSettings ?? [], 'why_subtitle.'.$locale, 'منظومة متكاملة لا تكتفي بتقديم الدورات، بل تصنع مستقبلك الأكاديمي والمهني بمعايير أوروبية موثقة.') }}
                 </p>
             </div>
 
@@ -218,9 +218,9 @@
                         <span class="grid size-12 place-items-center rounded-2xl bg-amber-50 border border-amber-200 text-[#c27803] mb-4">
                             <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg>
                         </span>
-                        <h3 class="text-base font-black text-[#c27803] mb-2">منحة DSU والسكن المجاني</h3>
+                        <h3 class="text-base font-black text-[#c27803] mb-2">{{ data_get($siteSettings ?? [], 'why_bento_dsu_title.'.$locale, 'منحة DSU والسكن المجاني') }}</h3>
                         <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                            حساب دقيق لـ ISEE يضمن إعفاء 100% من المصروفات وسكن مجاني وبدل نقدي 8,000 يورو للدبلومات والثانوية.
+                            {{ data_get($siteSettings ?? [], 'why_bento_dsu_desc.'.$locale, 'حساب دقيق لـ ISEE يضمن إعفاء 100% من المصروفات وسكن مجاني وبدل نقدي 8,000 يورو للدبلومات والثانوية.') }}
                         </p>
                     </div>
                 </div>
@@ -230,9 +230,9 @@
                         <span class="grid size-12 place-items-center rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-700 mb-4">
                             <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z"/></svg>
                         </span>
-                        <h3 class="text-base font-black text-[#c27803] mb-2">تأهيل الكول سنتر وسوق العمل</h3>
+                        <h3 class="text-base font-black text-[#c27803] mb-2">{{ data_get($siteSettings ?? [], 'why_bento_callcenter_title.'.$locale, 'تأهيل الكول سنتر وسوق العمل') }}</h3>
                         <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                            تدريب عملي على الشاشات التفاعلية ومحاكاة لمقابلات الشركات العالمية برواتب تصل إلى 30,000+ ج.م.
+                            {{ data_get($siteSettings ?? [], 'why_bento_callcenter_desc.'.$locale, 'تدريب عملي على الشاشات التفاعلية ومحاكاة لمقابلات الشركات العالمية برواتب تصل إلى 30,000+ ج.م.') }}
                         </p>
                     </div>
                 </div>
@@ -242,9 +242,9 @@
                         <span class="grid size-12 place-items-center rounded-2xl bg-amber-50 border border-amber-200 text-amber-800 mb-4">
                             <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                         </span>
-                        <h3 class="text-base font-black text-[#c27803] mb-2">ترجمة معتمدة رسمياً للسفارات</h3>
+                        <h3 class="text-base font-black text-[#c27803] mb-2">{{ data_get($siteSettings ?? [], 'why_bento_trans_title.'.$locale, 'ترجمة معتمدة رسمياً للسفارات') }}</h3>
                         <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                            ترجمات وتصديقات معترف بها لدى القنصلية الإيطالية وكافة السفارات الأوروبية لضمان قبول ملفك.
+                            {{ data_get($siteSettings ?? [], 'why_bento_trans_desc.'.$locale, 'ترجمات وتصديقات معترف بها لدى القنصلية الإيطالية وكافة السفارات الأوروبية لضمان قبول ملفك.') }}
                         </p>
                     </div>
                 </div>
@@ -254,9 +254,9 @@
                         <span class="grid size-12 place-items-center rounded-2xl bg-red-50 border border-red-200 text-[#fe0002] mb-4">
                             <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
                         </span>
-                        <h3 class="text-base font-black text-[#c27803] mb-2">استقبال وتسكين بإيطاليا</h3>
+                        <h3 class="text-base font-black text-[#c27803] mb-2">{{ data_get($siteSettings ?? [], 'why_bento_reception_title.'.$locale, 'استقبال وتسكين بإيطاليا') }}</h3>
                         <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                            فريق ميداني يستقبلك في مطارات ميلانو وروما ويسلمك السكن ويساعدك في استخراج الإقامة والحساب البنكي.
+                            {{ data_get($siteSettings ?? [], 'why_bento_reception_desc.'.$locale, 'فريق ميداني يستقبلك في مطارات ميلانو وروما ويسلمك السكن ويساعدك في استخراج الإقامة والحساب البنكي.') }}
                         </p>
                     </div>
                 </div>
@@ -271,10 +271,10 @@
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-10 reveal-up">
                 <span class="inline-flex items-center gap-2 rounded-full bg-amber-50 border border-amber-200 px-4 py-1.5 text-xs font-black text-amber-900 shadow-xs">
-                    <span>لقطات حية من قاعاتنا</span>
+                    <span>{{ data_get($siteSettings ?? [], 'about_gallery_badge.'.$locale, 'لقطات حية من قاعاتنا') }}</span>
                 </span>
                 <h2 class="mt-4 text-3xl font-black text-[#c27803] sm:text-4xl">
-                    شاهد واقع التعليم والتدريب في INTOK
+                    {{ data_get($siteSettings ?? [], 'about_gallery_title.'.$locale, 'شاهد واقع التعليم والتدريب في INTOK') }}
                 </h2>
             </div>
 
@@ -312,13 +312,13 @@
     <section class="relative bg-gradient-to-r from-[#fe0002] to-red-700 py-14 text-white text-center overflow-hidden">
         <div class="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <span class="inline-block rounded-full bg-white/20 border border-white/30 px-4 py-1 text-xs font-black text-amber-200 mb-3">
-                خطوتك الأولى تبدأ الآن
+                {{ data_get($siteSettings ?? [], 'about_cta_badge.'.$locale, 'خطوتك الأولى تبدأ الآن') }}
             </span>
             <h2 class="text-2xl sm:text-4xl font-black text-white leading-tight">
-                جاهز لبدء رحلتك نحو إيطاليا والوظائف الدولية؟
+                {{ data_get($siteSettings ?? [], 'about_cta_title.'.$locale, 'جاهز لبدء رحلتك نحو إيطاليا والوظائف الدولية؟') }}
             </h2>
             <p class="mt-3 text-xs sm:text-sm text-red-100 font-medium max-w-xl mx-auto leading-relaxed">
-                سواء كنت حاملاً لدبلوم فني أو ثانوية عامة أو خريجاً، مستشارك الأكاديمي في INTOK جاهز لدراسة ملفك وتحديد خطتك مجاناً.
+                {{ data_get($siteSettings ?? [], 'about_cta_subtitle.'.$locale, 'سواء كنت حاملاً لدبلوم فني أو ثانوية عامة أو خريجاً، مستشارك الأكاديمي في INTOK جاهز لدراسة ملفك وتحديد خطتك مجاناً.') }}
             </p>
             <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
                 <a href="{{ route('consultation.create', ['locale' => $locale]) }}" class="rounded-full bg-white px-7 py-3.5 text-xs sm:text-sm font-black text-[#fe0002] shadow-lg hover:bg-amber-100 transition transform hover:scale-105">

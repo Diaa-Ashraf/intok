@@ -39,6 +39,7 @@
         <button type="button" class="settings-tab-btn px-4 py-2 text-xs font-bold rounded-xl transition" data-target="tab-slider">سلايدر التدريب الحي</button>
         <button type="button" class="settings-tab-btn px-4 py-2 text-xs font-bold rounded-xl transition" data-target="tab-finder">فاحص المسار والمنحة</button>
         <button type="button" class="settings-tab-btn px-4 py-2 text-xs font-bold rounded-xl transition" data-target="tab-why">لماذا تختار إنتوك؟</button>
+        <button type="button" class="settings-tab-btn px-4 py-2 text-xs font-bold rounded-xl transition" data-target="tab-pages">نصوص الصفحات الداخلية</button>
         <button type="button" class="settings-tab-btn px-4 py-2 text-xs font-bold rounded-xl transition" data-target="tab-roadmap">خارطة الطريق (4 خطوات)</button>
         <button type="button" class="settings-tab-btn px-4 py-2 text-xs font-bold rounded-xl transition" data-target="tab-cta">بانر الحجز والـ CTA</button>
     </div>
@@ -289,9 +290,12 @@
         <!-- TAB 6: WHY CHOOSE US (BENTO) -->
         <div class="settings-panel hidden" id="tab-why">
             <section class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7 space-y-6">
-                <div class="border-b border-slate-100 pb-3">
-                    <h2 class="text-lg font-bold text-slate-900">قسم لماذا تختار أكاديمية إنتوك؟ (Bento Grid)</h2>
-                    <p class="text-xs text-slate-500">نصوص وعناوين وشروحات كروت البينتو الستة.</p>
+                <div class="border-b border-slate-100 pb-3 flex flex-wrap items-center justify-between gap-3">
+                    <div>
+                        <h2 class="text-lg font-bold text-slate-900">قسم لماذا تختار أكاديمية إنتوك؟ (Bento Grid)</h2>
+                        <p class="text-xs text-slate-500">تحكم كامل وديناميكي في كل كلمة، إحصائية، ميزة، مقارنة، وزر داخل كروت المنظومة الستة.</p>
+                    </div>
+                    <span class="rounded-full bg-red-50 border border-red-200 px-3 py-1 text-xs font-bold text-red-700">6 كروت تفاعلية</span>
                 </div>
 
                 <!-- Section Header -->
@@ -302,76 +306,444 @@
                     <label class="block text-xs font-bold text-slate-700">عنوان القسم الرئيسي
                         <input name="why_title[ar]" value="{{ old('why_title.ar', data_get($settings, 'why_title.ar', 'لماذا تختار أكاديمية إنتوك؟')) }}" class="admin-input mt-1">
                     </label>
+                    <label class="block text-xs font-bold text-slate-700">عنوان المقارنة في الكارت
+                        <input name="why_comparison_title[ar]" value="{{ old('why_comparison_title.ar', data_get($settings, 'why_comparison_title.ar', 'لماذا إنتوك أفضل؟')) }}" class="admin-input mt-1">
+                    </label>
                     <label class="block text-xs font-bold text-slate-700 sm:col-span-3">وصف القسم
-                        <textarea name="why_subtitle[ar]" rows="2" class="admin-input mt-1">{{ old('why_subtitle.ar', data_get($settings, 'why_subtitle.ar', '')) }}</textarea>
+                        <textarea name="why_subtitle[ar]" rows="2" class="admin-input mt-1">{{ old('why_subtitle.ar', data_get($settings, 'why_subtitle.ar', 'منظومة متكاملة لا تكتفي بتقديم الكورسات أو الترجمة، بل تصنع معك مستقبلاً حقيقياً بالدراسة في إيطاليا والعمل في كبرى الشركات العالمية بأعلى عائد.')) }}</textarea>
                     </label>
                 </div>
 
-                <div class="border-t border-slate-100 pt-6 space-y-6">
-                    <!-- Bento 1: DSU -->
-                    <div class="rounded-xl bg-slate-50 p-4 border border-slate-100 space-y-3">
-                        <h4 class="font-bold text-sm text-red-700">1. كارت منحة DSU الشاملة (Hero Bento)</h4>
-                        <label class="block text-xs font-bold text-slate-700">العنوان
-                            <input name="why_bento_dsu_title[ar]" value="{{ old('why_bento_dsu_title.ar', data_get($settings, 'why_bento_dsu_title.ar', 'أعلى نسبة قبول لمنح DSU الحكومية الإيطالية')) }}" class="admin-input mt-1">
+                <div class="border-t border-slate-100 pt-6 space-y-8">
+                    @php
+                        $bentoCardsConfig = [
+                            [
+                                'id' => 'dsu',
+                                'num' => '1',
+                                'name' => 'منحة DSU الشاملة والسكن المجاني',
+                                'color' => 'text-red-700 border-red-200 bg-red-50/50',
+                                'defaults' => [
+                                    'nav_title' => 'منحة DSU والسكن',
+                                    'nav_sub' => '8,000€ + سكن مجاني',
+                                    'badge' => 'منحة إقليمية حكومية',
+                                    'title' => 'أعلى نسبة قبول لمنح DSU الحكومية الإيطالية',
+                                    'desc' => 'نضمن لك حساب مؤشر ISEE بدقة هندسية وقانونية لضمان استيفاء شروط المنحة الإقليمية وسكن جامعي معفى تماماً، مع فتح الباب لحملة الدبلومات الفنية (صنايع / تجارة / زراعة) والثانوية العامة والجامعيين.',
+                                    'stat_val' => '8,000€',
+                                    'stat_unit' => 'سنوياً',
+                                    'stat_label' => 'بدل نقدي مباشر لحساب الطالب',
+                                    'stat_sub' => 'إعفاء 100% من المصروفات + سكن مجاني',
+                                    'points' => "حساب دقيق لمؤشر ISEE Parificato وفق المعايير الرسمية للمنحة الإقليمية\nإعفاء كامل 100% من الرسوم والمصروفات الدراسية الجامعية في إيطاليا\nتأمين سكن جامعي مجاني ومجهز طوال فترة سنوات دراستك\nوجبات غذائية مدعومة بمطاعم الجامعات الإيطالية يومياً\nحق العمل القانوني للطلاب 20 ساعة أسبوعياً باليورو",
+                                    'vs_traditional' => 'إهمال المنحة وتوريط الطالب بمصروفات دراسية باهظة بدون سكن أو دعم نقدي',
+                                    'vs_intok' => 'ملف منحة متكامل بدقة 100% يضمن لك أعلى فرصة للحصول على الـ 8,000 يورو والسكن',
+                                    'cta_text' => 'افحص فرصة حصولك على منحة DSU',
+                                ]
+                            ],
+                            [
+                                'id' => 'callcenter',
+                                'num' => '2',
+                                'name' => 'تأهيل الكول سنتر والتوظيف الدولي',
+                                'color' => 'text-emerald-700 border-emerald-200 bg-emerald-50/50',
+                                'defaults' => [
+                                    'nav_title' => 'الكول سنتر والتوظيف',
+                                    'nav_sub' => 'رواتب 15k - 30k+ ج.م',
+                                    'badge' => 'تأهيل وظيفي فوري',
+                                    'title' => 'تأهيل وظيفي فوري لكبرى شركات الكول سنتر',
+                                    'desc' => 'تدريب تطبيقي على الشاشات الذكية ومحاكاة لمقابلات شركات متعددة الجنسيات (Vodafone UK, Concentrix, Teleperformance) يؤهلك للعمل المباشر.',
+                                    'stat_val' => '15k - 30k+',
+                                    'stat_unit' => 'ج.م / شهرياً',
+                                    'stat_label' => 'متوسط الراتب لحديثي التخرج والخريجين',
+                                    'stat_sub' => 'فرص عمل فوري بكبرى الشركات الدولية',
+                                    'points' => "تدريب عملي ومحاكاة لمكالمات وأنظمة خدمة العملاء والدعم الفني الحقيقية\nمحاكاة لأسئلة واختبارات الـ HR والـ Operations في الشركات متعددة الجنسيات\nإتقان اللهجة ونبرة الصوت المناسبة لمختلف أسواق العمل الدولية\nورش مكثفة لاجتياز المقابلات الشخصية بنجاح من المقابلة الأولى\nترشيح مباشر وتوصية للتوظيف لدى شبكة شركائنا بعد التخرج",
+                                    'vs_traditional' => 'كورسات نظرية عامة بدون شاشات تفاعلية أو محاكاة حقيقية وبلا أي فرص توظيف',
+                                    'vs_intok' => 'محاكاة واقعية 100% تؤهلك لاجتياز مقابلات الشركات العالمية فور التخرج',
+                                    'cta_text' => 'سجل في تدريب الكول سنتر المباشر',
+                                ]
+                            ],
+                            [
+                                'id' => 'trans',
+                                'num' => '3',
+                                'name' => 'الترجمة المعتمدة قنصلياً ورسمياً',
+                                'color' => 'text-amber-800 border-amber-200 bg-amber-50/50',
+                                'defaults' => [
+                                    'nav_title' => 'الترجمة المعتمدة',
+                                    'nav_sub' => 'معتمدة قنصلياً 100%',
+                                    'badge' => 'توثيق رسمي للسفارات',
+                                    'title' => 'ترجمة معتمدة رسمياً وموثقة لجميع السفارات',
+                                    'desc' => 'ترجمة رسمية معترف بها أمام القنصلية الإيطالية وكافة السفارات الأوروبية، لشهادات التخرج، إعلانات القيمة، وعقود العمل دون مخاطرة بالرفض.',
+                                    'stat_val' => '24 - 48h',
+                                    'stat_unit' => 'تسليم مستعجل',
+                                    'stat_label' => 'سرعة إنجاز وتوثيق الملفات الرسمية',
+                                    'stat_sub' => 'دقة قانونية متناهية بدون أخطاء ترفض ملفك',
+                                    'points' => "ترجمة معتمدة ومقبولة لدى القنصلية الإيطالية بالقاهرة والإسكندرية\nترجمة إعلان القيمة (Dichiarazione di Valore) وبيانات الدرجات والمقررات\nإنهاء تصديقات الخارجية المصرية ونقابة المترجمين والغرفة التجارية\nتدقيق لغوي وقانوني مزدوج لضمان خلو الأوراق من أي ثغرات قنصلية\nتوصيل فوري لجميع محافظات مصر مع إمكانية المعاينة الرقمية",
+                                    'vs_traditional' => 'ترجمات غير معتمدة أو مليئة بالأخطاء تؤدي لرفض التأشيرة وإضاعة المواعيد',
+                                    'vs_intok' => 'اعتماد قنصلي رسمي 100% يضمن قبول أوراقك في السفارة من المرة الأولى',
+                                    'cta_text' => 'اطلب ترجمتك المعتمدة فوراً',
+                                ]
+                            ],
+                            [
+                                'id' => 'reception',
+                                'num' => '4',
+                                'name' => 'الاستقبال والمرافقة في إيطاليا',
+                                'color' => 'text-red-700 border-red-200 bg-red-50/50',
+                                'defaults' => [
+                                    'nav_title' => 'الاستقبال بإيطاليا',
+                                    'nav_sub' => 'ميلانو وروما وتسكين مباشر',
+                                    'badge' => 'مرافقة ميدانية بأوروبا',
+                                    'title' => 'استقبال في المطار وتسليم السكن بإيطاليا',
+                                    'desc' => 'رحلتك معنا لا تنتهي عند باب المطار؛ بل يستقبلك فريقنا الميداني في ميلانو وروما لتسليم السكن، واستخراج الإقامة والحساب البنكي.',
+                                    'stat_val' => '100%',
+                                    'stat_unit' => 'أمان ورعاية',
+                                    'stat_label' => 'مرافقة ميدانية من لحظة الهبوط بالمطار',
+                                    'stat_sub' => 'فريق ميداني رسمي يتحدث العربية والإيطالية',
+                                    'points' => "استقبالك بالاسم في صالة الوصول بمطارات ميلانو (Malpensa) وروما (Fiumicino)\nتوصيلك مباشرة إلى مقر إقامتك وتسليمك مفاتيح السكن الجامعي أو الخاص\nمرافقة لتقديم أوراق تصريح الإقامة (Permesso di Soggiorno) بالبريد والشرطة\nاستخراج الرقم الضريبي الإيطالي (Codice Fiscale) وشراء شريحة اتصال إيطالية\nمساعدتك في فتح حساب بنكي إيطالي وتوجيهك لفرص العمل والأنشطة الطلابية",
+                                    'vs_traditional' => 'ينتهي دور المكتب بمجرد السفر ويُترك الطالب وحيداً وتائهاً في المطار والغربة',
+                                    'vs_intok' => 'فريقنا الميداني في إيطاليا يستقبلك ويلازمك حتى تستقر في سكنك وتنهي أوراقك',
+                                    'cta_text' => 'احجز باقة الاستقبال والمرافقة بإيطاليا',
+                                ]
+                            ],
+                            [
+                                'id' => 'languages',
+                                'num' => '5',
+                                'name' => 'إتقان اللغات واختبارات CILS & IELTS',
+                                'color' => 'text-purple-700 border-purple-200 bg-purple-50/50',
+                                'defaults' => [
+                                    'nav_title' => 'إتقان اللغات وCILS',
+                                    'nav_sub' => 'من الصفر حتى الطلاقة التامة',
+                                    'badge' => 'شهادات دولية معتمدة',
+                                    'title' => 'إتقان اللغات من الصفر واجتياز CILS & IELTS',
+                                    'desc' => 'دورات مكثفة في الإيطالية والإنجليزية والألمانية تركز 80% على المحادثة والطلاقة الواقعية، وتؤهلك لاجتياز امتحانات السفارات والجامعات.',
+                                    'stat_val' => '80%',
+                                    'stat_unit' => 'محادثة وتطبيق',
+                                    'stat_label' => 'نسبة التركيز على التحدث والطلاقة العملية',
+                                    'stat_sub' => 'كسر حاجز الخوف والحديث بطلاقة خلال أسابيع',
+                                    'points' => "مناهج أوروبية معتمدة ومطابقة للإطار المرجعي الأوروبي للغات (CEFR)\nتدريب مكثف على نماذج اختبارات اللغة الإيطالية الرسمية (CILS, CELI, PLIDA)\nدورات متخصصة لاجتياز اختبارات الآيلتس (IELTS) والتوفل (TOEFL) الدولية\nمحاضرون خبراء معتمدون وناطقون أصليون يتابعون مستواك يومياً\nشهادات تخرج معتمدة توثق مستواك اللغوي وتؤهلك للجامعات وسوق العمل",
+                                    'vs_traditional' => 'طرق تدريس قديمة تعتمد على الحفظ الصم دون إتاحة الفرصة لممارسة المحادثة',
+                                    'vs_intok' => 'منهج تفاعلي يركز 80% على المحادثة المباشرة ويكسر حاجز الرهبة تماماً',
+                                    'cta_text' => 'ابدأ كورس اللغة وتحديد المستوى',
+                                ]
+                            ],
+                            [
+                                'id' => 'mentorship',
+                                'num' => '6',
+                                'name' => 'الإرشاد الشخصي 1-on-1 والمتابعة المستمرة',
+                                'color' => 'text-blue-700 border-blue-200 bg-blue-50/50',
+                                'defaults' => [
+                                    'nav_title' => 'الإرشاد والمتابعة 24/7',
+                                    'nav_sub' => 'مستشار أكاديمي شخصي مخصص',
+                                    'badge' => 'متابعة مستمرة ودقيقة',
+                                    'title' => 'إرشاد شخصي 1-on-1 ومتابعة مستمرة',
+                                    'desc' => 'مستشار أكاديمي مخصص يدرس ملفك ويضع خطتك المناسبة، مع نظام تنبيهات لمواعيد المنح والتقديمات لضمان عدم فوات أي موعد رسمي.',
+                                    'stat_val' => '24/7',
+                                    'stat_unit' => 'دعم متواصل',
+                                    'stat_label' => 'مستشارك الأكاديمي بجانبك طوال رحلتك',
+                                    'stat_sub' => 'متابعة دقيقة لكل خطوة وموعد تقديم رسمي',
+                                    'points' => "جلسة استشارة فردية 1-on-1 لتحليل مؤهلك (دبلوم فني، ثانوية، بكالوريوس) واختيار أفضل طريق\nخطة زمنية مدروسة تضمن استيفاء كافة الأوراق والمواعيد قبل إغلاق باب التقديم\nمراجعة وتدقيق شامل لملفك الدراسي لمنع أي خطأ قد يؤدي للرفض\nتذكير دوري بمواعيد المقابلات والمنح والتصديقات خطوة بخطوة\nدعم متواصل عبر الواتساب والمكالمات والاجتماعات الافتراضية طوال فترة التقديم",
+                                    'vs_traditional' => 'إهمال استفسارات الطلاب والتأخر في الرد وضياع المواعيد الرسمية للمنح',
+                                    'vs_intok' => 'مستشار أكاديمي ملازم لك يومياً ومتابعة دقيقة تضمن عدم تفويت أي فرصة',
+                                    'cta_text' => 'احجز استشارتك الأكاديمية الآن',
+                                ]
+                            ],
+                        ];
+                    @endphp
+
+                    @foreach($bentoCardsConfig as $card)
+                        @php
+                            $cId = $card['id'];
+                            $def = $card['defaults'];
+                            $pointsVal = old('why_bento_'.$cId.'_points.ar', data_get($settings, 'why_bento_'.$cId.'_points.ar', $def['points']));
+                            if (is_array($pointsVal)) {
+                                $pointsVal = implode("\n", $pointsVal);
+                            }
+                        @endphp
+                        <div class="rounded-2xl border p-5 sm:p-6 {{ $card['color'] }} space-y-4">
+                            <div class="flex items-center justify-between border-b border-slate-200/60 pb-3">
+                                <h3 class="font-black text-sm sm:text-base flex items-center gap-2">
+                                    <span class="size-6 rounded-lg bg-white border grid place-items-center text-xs font-mono">{{ $card['num'] }}</span>
+                                    <span>{{ $card['name'] }}</span>
+                                </h3>
+                                <span class="text-xs font-mono font-bold text-slate-500">كارت #{{ $cId }}</span>
+                            </div>
+
+                            <div class="grid gap-4 sm:grid-cols-3">
+                                <label class="block text-xs font-bold text-slate-700">عنوان التاب (في الشريط)
+                                    <input name="why_bento_{{ $cId }}_nav_title[ar]" value="{{ old('why_bento_'.$cId.'_nav_title.ar', data_get($settings, 'why_bento_'.$cId.'_nav_title.ar', $def['nav_title'])) }}" class="admin-input mt-1">
+                                </label>
+                                <label class="block text-xs font-bold text-slate-700">النص التوضيحي للتاب
+                                    <input name="why_bento_{{ $cId }}_nav_sub[ar]" value="{{ old('why_bento_'.$cId.'_nav_sub.ar', data_get($settings, 'why_bento_'.$cId.'_nav_sub.ar', $def['nav_sub'])) }}" class="admin-input mt-1">
+                                </label>
+                                <label class="block text-xs font-bold text-slate-700">شارة الكارت (Badge)
+                                    <input name="why_bento_{{ $cId }}_badge[ar]" value="{{ old('why_bento_'.$cId.'_badge.ar', data_get($settings, 'why_bento_'.$cId.'_badge.ar', $def['badge'])) }}" class="admin-input mt-1">
+                                </label>
+                            </div>
+
+                            <div class="grid gap-4 sm:grid-cols-1">
+                                <label class="block text-xs font-bold text-slate-700">العنوان الرئيسي للكارت
+                                    <input name="why_bento_{{ $cId }}_title[ar]" value="{{ old('why_bento_'.$cId.'_title.ar', data_get($settings, 'why_bento_'.$cId.'_title.ar', $def['title'])) }}" class="admin-input mt-1">
+                                </label>
+                                <label class="block text-xs font-bold text-slate-700">الوصف والشرح المفصل
+                                    <textarea name="why_bento_{{ $cId }}_desc[ar]" rows="2" class="admin-input mt-1">{{ old('why_bento_'.$cId.'_desc.ar', data_get($settings, 'why_bento_'.$cId.'_desc.ar', $def['desc'])) }}</textarea>
+                                </label>
+                            </div>
+
+                            <!-- Stats Section -->
+                            <div class="rounded-xl bg-white p-4 border border-slate-200/80 space-y-3">
+                                <h4 class="text-xs font-black text-slate-800">بيانات الكارت الإحصائية (HUD Stats)</h4>
+                                <div class="grid gap-3 sm:grid-cols-4">
+                                    <label class="block text-[11px] font-bold text-slate-700">القيمة الإحصائية (الرقم)
+                                        <input name="why_bento_{{ $cId }}_stat_val" value="{{ old('why_bento_'.$cId.'_stat_val', data_get($settings, 'why_bento_'.$cId.'_stat_val', $def['stat_val'])) }}" class="admin-input mt-1">
+                                    </label>
+                                    <label class="block text-[11px] font-bold text-slate-700">الوحدة الإحصائية
+                                        <input name="why_bento_{{ $cId }}_stat_unit[ar]" value="{{ old('why_bento_'.$cId.'_stat_unit.ar', data_get($settings, 'why_bento_'.$cId.'_stat_unit.ar', $def['stat_unit'])) }}" class="admin-input mt-1">
+                                    </label>
+                                    <label class="block text-[11px] font-bold text-slate-700">عنوان الإحصائية
+                                        <input name="why_bento_{{ $cId }}_stat_label[ar]" value="{{ old('why_bento_'.$cId.'_stat_label.ar', data_get($settings, 'why_bento_'.$cId.'_stat_label.ar', $def['stat_label'])) }}" class="admin-input mt-1">
+                                    </label>
+                                    <label class="block text-[11px] font-bold text-slate-700">الوصف الإضافي
+                                        <input name="why_bento_{{ $cId }}_stat_sub[ar]" value="{{ old('why_bento_'.$cId.'_stat_sub.ar', data_get($settings, 'why_bento_'.$cId.'_stat_sub.ar', $def['stat_sub'])) }}" class="admin-input mt-1">
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Bullet Points (5 Points) -->
+                            <div class="rounded-xl bg-white p-4 border border-slate-200/80 space-y-2">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-xs font-black text-slate-800">نقاط المميزات التفصيلية (كل سطر = نقطة مميزة تظهر بعلامة صح)</h4>
+                                    <span class="text-[11px] font-bold text-slate-400">سطر جديد لكل ميزة</span>
+                                </div>
+                                <textarea name="why_bento_{{ $cId }}_points[ar]" rows="4" class="admin-input font-medium text-xs leading-relaxed" placeholder="اكتب كل ميزة في سطر منفصل...">{{ $pointsVal }}</textarea>
+                            </div>
+
+                            <!-- Comparison & CTA Button -->
+                            <div class="rounded-xl bg-white p-4 border border-slate-200/80 space-y-3">
+                                <h4 class="text-xs font-black text-slate-800">مقارنة الواقع وزر الإجراء</h4>
+                                <div class="grid gap-3 sm:grid-cols-3">
+                                    <label class="block text-[11px] font-bold text-slate-700">الطرق والمكاتب التقليدية (الجانب السلبي)
+                                        <textarea name="why_bento_{{ $cId }}_vs_traditional[ar]" rows="2" class="admin-input mt-1">{{ old('why_bento_'.$cId.'_vs_traditional.ar', data_get($settings, 'why_bento_'.$cId.'_vs_traditional.ar', $def['vs_traditional'])) }}</textarea>
+                                    </label>
+                                    <label class="block text-[11px] font-bold text-slate-700">معيار وضمان INTOK Academy (الجانب الإيجابي)
+                                        <textarea name="why_bento_{{ $cId }}_vs_intok[ar]" rows="2" class="admin-input mt-1">{{ old('why_bento_'.$cId.'_vs_intok.ar', data_get($settings, 'why_bento_'.$cId.'_vs_intok.ar', $def['vs_intok'])) }}</textarea>
+                                    </label>
+                                    <label class="block text-[11px] font-bold text-slate-700">نص زر الإجراء (CTA)
+                                        <input name="why_bento_{{ $cId }}_cta_text[ar]" value="{{ old('why_bento_'.$cId.'_cta_text.ar', data_get($settings, 'why_bento_'.$cId.'_cta_text.ar', $def['cta_text'])) }}" class="admin-input mt-1">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </section>
+        </div>
+
+        <!-- TAB: INTERNAL PAGES CONTENT (ABOUT, SERVICES, ADVISORY, ETC.) -->
+        <div class="settings-panel hidden" id="tab-pages">
+            <section class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7 space-y-8">
+                <div class="border-b border-slate-100 pb-3 flex flex-wrap items-center justify-between gap-3">
+                    <div>
+                        <h2 class="text-lg font-bold text-slate-900">نصوص وعناوين الصفحات الداخلية بالكامل</h2>
+                        <p class="text-xs text-slate-500">تحكم كامل في نصوص شارات وعناوين وشروحات وبنرات صفحات: من نحن، الخدمات، الاستشارات، التسجيل، تواصل معنا، فريقنا، وقصص النجاح.</p>
+                    </div>
+                    <span class="rounded-full bg-emerald-50 border border-emerald-200 px-3 py-1 text-xs font-bold text-emerald-700">تحكم 100% ديناميكي</span>
+                </div>
+
+                <!-- 1. صفحة من نحن (About Page) -->
+                <div class="rounded-2xl border border-amber-200 bg-amber-50/30 p-5 space-y-4">
+                    <div class="flex items-center gap-2 border-b border-amber-200/80 pb-2">
+                        <span class="size-2 rounded-full bg-amber-500"></span>
+                        <h3 class="font-black text-sm text-[#c27803]">1. صفحة من نحن (About Us)</h3>
+                    </div>
+
+                    <div class="grid gap-4 sm:grid-cols-2">
+                        <label class="block text-xs font-bold text-slate-700">شارة قسم الهيرو
+                            <input name="about_hero_badge[ar]" value="{{ old('about_hero_badge.ar', data_get($settings, 'about_hero_badge.ar', 'INTOK ACADEMY • من نحن')) }}" class="admin-input mt-1">
                         </label>
-                        <label class="block text-xs font-bold text-slate-700">الشرح والوصف
-                            <textarea name="why_bento_dsu_desc[ar]" rows="2" class="admin-input mt-1">{{ old('why_bento_dsu_desc.ar', data_get($settings, 'why_bento_dsu_desc.ar', '')) }}</textarea>
+                        <label class="block text-xs font-bold text-slate-700">الوصف التعريفي بالهيرو
+                            <input name="about_hero_subtitle[ar]" value="{{ old('about_hero_subtitle.ar', data_get($settings, 'about_hero_subtitle.ar', 'قصة التمكين والريادة الأكاديمية: نفتح أبواب الجامعات الإيطالية وسوق العمل الدولي للشباب العربي وحملة الدبلومات والثانوية العامة.')) }}" class="admin-input mt-1">
                         </label>
                     </div>
 
-                    <!-- Bento 2: Call Center -->
-                    <div class="rounded-xl bg-slate-50 p-4 border border-slate-100 space-y-3">
-                        <h4 class="font-bold text-sm text-emerald-700">2. كارت تأهيل الكول سنتر وسوق العمل</h4>
-                        <label class="block text-xs font-bold text-slate-700">العنوان
-                            <input name="why_bento_callcenter_title[ar]" value="{{ old('why_bento_callcenter_title.ar', data_get($settings, 'why_bento_callcenter_title.ar', 'تأهيل وظيفي فوري لكبرى شركات الكول سنتر')) }}" class="admin-input mt-1">
+                    <div class="grid gap-4 sm:grid-cols-2">
+                        <label class="block text-xs font-bold text-slate-700">عنوان صندوق الرسالة والهوية
+                            <input name="about_mission_title[ar]" value="{{ old('about_mission_title.ar', data_get($settings, 'about_mission_title.ar', 'رسالتنا وهويتنا المؤسسية')) }}" class="admin-input mt-1">
                         </label>
-                        <label class="block text-xs font-bold text-slate-700">الشرح والوصف
-                            <textarea name="why_bento_callcenter_desc[ar]" rows="2" class="admin-input mt-1">{{ old('why_bento_callcenter_desc.ar', data_get($settings, 'why_bento_callcenter_desc.ar', '')) }}</textarea>
+                        <label class="block text-xs font-bold text-slate-700">الوصف الفرعي لصندوق الرسالة
+                            <input name="about_mission_subtitle[ar]" value="{{ old('about_mission_subtitle.ar', data_get($settings, 'about_mission_subtitle.ar', 'معايير الجودة والاعتماد الرسمي')) }}" class="admin-input mt-1">
                         </label>
                     </div>
 
-                    <!-- Bento 3: Translation -->
-                    <div class="rounded-xl bg-slate-50 p-4 border border-slate-100 space-y-3">
-                        <h4 class="font-bold text-sm text-amber-700">3. كارت الترجمة المعتمدة للسفارات</h4>
-                        <label class="block text-xs font-bold text-slate-700">العنوان
-                            <input name="why_bento_trans_title[ar]" value="{{ old('why_bento_trans_title.ar', data_get($settings, 'why_bento_trans_title.ar', 'ترجمة معتمدة رسمياً وموثقة لجميع السفارات')) }}" class="admin-input mt-1">
+                    <label class="block text-xs font-bold text-slate-700">نص رسالة الضمان 360 درجة (في الكارت الجانبي)
+                        <textarea name="about_guarantee_text[ar]" rows="2" class="admin-input mt-1">{{ old('about_guarantee_text.ar', data_get($settings, 'about_guarantee_text.ar', 'مرافقة شخصية 360 درجة من أول جلسة استشارة وفحص أوراقك، حتى استلام تأشيرتك ومفاتيح سكنك بإيطاليا.')) }}</textarea>
+                    </label>
+
+                    <div class="grid gap-4 sm:grid-cols-2">
+                        <label class="block text-xs font-bold text-slate-700">شارة قسم لقطات القاعات
+                            <input name="about_gallery_badge[ar]" value="{{ old('about_gallery_badge.ar', data_get($settings, 'about_gallery_badge.ar', 'لقطات حية من قاعاتنا')) }}" class="admin-input mt-1">
                         </label>
-                        <label class="block text-xs font-bold text-slate-700">الشرح والوصف
-                            <textarea name="why_bento_trans_desc[ar]" rows="2" class="admin-input mt-1">{{ old('why_bento_trans_desc.ar', data_get($settings, 'why_bento_trans_desc.ar', '')) }}</textarea>
+                        <label class="block text-xs font-bold text-slate-700">عنوان قسم لقطات القاعات
+                            <input name="about_gallery_title[ar]" value="{{ old('about_gallery_title.ar', data_get($settings, 'about_gallery_title.ar', 'شاهد واقع التعليم والتدريب في INTOK')) }}" class="admin-input mt-1">
                         </label>
                     </div>
 
-                    <!-- Bento 4: Reception -->
-                    <div class="rounded-xl bg-slate-50 p-4 border border-slate-100 space-y-3">
-                        <h4 class="font-bold text-sm text-red-700">4. كارت الاستقبال والمرافقة في إيطاليا</h4>
-                        <label class="block text-xs font-bold text-slate-700">العنوان
-                            <input name="why_bento_reception_title[ar]" value="{{ old('why_bento_reception_title.ar', data_get($settings, 'why_bento_reception_title.ar', 'استقبال في المطار وتسليم السكن بإيطاليا')) }}" class="admin-input mt-1">
+                    <div class="grid gap-4 sm:grid-cols-3">
+                        <label class="block text-xs font-bold text-slate-700">شارة البانر السفلي (CTA)
+                            <input name="about_cta_badge[ar]" value="{{ old('about_cta_badge.ar', data_get($settings, 'about_cta_badge.ar', 'خطوتك الأولى تبدأ الآن')) }}" class="admin-input mt-1">
                         </label>
-                        <label class="block text-xs font-bold text-slate-700">الشرح والوصف
-                            <textarea name="why_bento_reception_desc[ar]" rows="2" class="admin-input mt-1">{{ old('why_bento_reception_desc.ar', data_get($settings, 'why_bento_reception_desc.ar', '')) }}</textarea>
+                        <label class="block text-xs font-bold text-slate-700">عنوان البانر السفلي
+                            <input name="about_cta_title[ar]" value="{{ old('about_cta_title.ar', data_get($settings, 'about_cta_title.ar', 'جاهز لبدء رحلتك نحو إيطاليا والوظائف الدولية؟')) }}" class="admin-input mt-1">
+                        </label>
+                        <label class="block text-xs font-bold text-slate-700">وصف البانر السفلي
+                            <input name="about_cta_subtitle[ar]" value="{{ old('about_cta_subtitle.ar', data_get($settings, 'about_cta_subtitle.ar', 'سواء كنت حاملاً لدبلوم فني أو ثانوية عامة أو خريجاً، مستشارك الأكاديمي في INTOK جاهز لدراسة ملفك وتحديد خطتك مجاناً.')) }}" class="admin-input mt-1">
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 2. صفحة الخدمات والتدريب (Services Page) -->
+                <div class="rounded-2xl border border-red-200 bg-red-50/30 p-5 space-y-4">
+                    <div class="flex items-center gap-2 border-b border-red-200/80 pb-2">
+                        <span class="size-2 rounded-full bg-red-600"></span>
+                        <h3 class="font-black text-sm text-[#fe0002]">2. صفحة الخدمات والتدريب (Services Page)</h3>
+                    </div>
+
+                    <div class="grid gap-4 sm:grid-cols-3">
+                        <label class="block text-xs font-bold text-slate-700">شارة قسم الجودة والاعتماد
+                            <input name="services_why_badge[ar]" value="{{ old('services_why_badge.ar', data_get($settings, 'services_why_badge.ar', 'معايير الجودة والاعتماد الأكاديمي')) }}" class="admin-input mt-1">
+                        </label>
+                        <label class="block text-xs font-bold text-slate-700">عنوان قسم لماذا يثق الآلاف
+                            <input name="services_why_title[ar]" value="{{ old('services_why_title.ar', data_get($settings, 'services_why_title.ar', 'لماذا يثق الآلاف في برامج INTOK ACADEMY؟')) }}" class="admin-input mt-1">
+                        </label>
+                        <label class="block text-xs font-bold text-slate-700">وصف قسم لماذا يثق الآلاف
+                            <input name="services_why_subtitle[ar]" value="{{ old('services_why_subtitle.ar', data_get($settings, 'services_why_subtitle.ar', 'نجمع بين التدريب العملي المباشر، والاعتماد القنصلي الرسمي، والشراكات الدولية المؤهلة للتوظيف والدراسة.')) }}" class="admin-input mt-1">
                         </label>
                     </div>
 
-                    <!-- Bento 5: Languages -->
-                    <div class="rounded-xl bg-slate-50 p-4 border border-slate-100 space-y-3">
-                        <h4 class="font-bold text-sm text-purple-700">5. كارت إتقان اللغات واختبارات CILS & IELTS</h4>
-                        <label class="block text-xs font-bold text-slate-700">العنوان
-                            <input name="why_bento_languages_title[ar]" value="{{ old('why_bento_languages_title.ar', data_get($settings, 'why_bento_languages_title.ar', 'إتقان اللغات من الصفر واجتياز CILS & IELTS')) }}" class="admin-input mt-1">
-                        </label>
-                        <label class="block text-xs font-bold text-slate-700">الشرح والوصف
-                            <textarea name="why_bento_languages_desc[ar]" rows="2" class="admin-input mt-1">{{ old('why_bento_languages_desc.ar', data_get($settings, 'why_bento_languages_desc.ar', '')) }}</textarea>
-                        </label>
+                    <div class="grid gap-4 sm:grid-cols-2 pt-2">
+                        <!-- Pillar 1 -->
+                        <div class="rounded-xl bg-white p-3.5 border border-slate-200 space-y-2">
+                            <label class="block text-[11px] font-bold text-slate-700">ركيزة 1: العنوان
+                                <input name="services_pillar1_title[ar]" value="{{ old('services_pillar1_title.ar', data_get($settings, 'services_pillar1_title.ar', 'شاشات ذكية ومحاكاة واقعية')) }}" class="admin-input mt-1">
+                            </label>
+                            <label class="block text-[11px] font-bold text-slate-700">ركيزة 1: الشرح
+                                <textarea name="services_pillar1_desc[ar]" rows="2" class="admin-input mt-1">{{ old('services_pillar1_desc.ar', data_get($settings, 'services_pillar1_desc.ar', 'تدريب تطبيقي على أنظمة كبرى شركات الكول سنتر العالمية وقاعات ذكية تحاكي بيئة العمل الفعلية.')) }}</textarea>
+                            </label>
+                        </div>
+
+                        <!-- Pillar 2 -->
+                        <div class="rounded-xl bg-white p-3.5 border border-slate-200 space-y-2">
+                            <label class="block text-[11px] font-bold text-slate-700">ركيزة 2: العنوان
+                                <input name="services_pillar2_title[ar]" value="{{ old('services_pillar2_title.ar', data_get($settings, 'services_pillar2_title.ar', 'اعتماد وتوثيق قنصلي 100%')) }}" class="admin-input mt-1">
+                            </label>
+                            <label class="block text-[11px] font-bold text-slate-700">ركيزة 2: الشرح
+                                <textarea name="services_pillar2_desc[ar]" rows="2" class="admin-input mt-1">{{ old('services_pillar2_desc.ar', data_get($settings, 'services_pillar2_desc.ar', 'شهادات تدريب موثقة وترجمات معتمدة رسمياً أمام السفارة الإيطالية وكافة السفارات والجهات الحكومية.')) }}</textarea>
+                            </label>
+                        </div>
+
+                        <!-- Pillar 3 -->
+                        <div class="rounded-xl bg-white p-3.5 border border-slate-200 space-y-2">
+                            <label class="block text-[11px] font-bold text-slate-700">ركيزة 3: العنوان
+                                <input name="services_pillar3_title[ar]" value="{{ old('services_pillar3_title.ar', data_get($settings, 'services_pillar3_title.ar', 'تأهيل وظيفي وترشيح مباشر')) }}" class="admin-input mt-1">
+                            </label>
+                            <label class="block text-[11px] font-bold text-slate-700">ركيزة 3: الشرح
+                                <textarea name="services_pillar3_desc[ar]" rows="2" class="admin-input mt-1">{{ old('services_pillar3_desc.ar', data_get($settings, 'services_pillar3_desc.ar', 'توصيات مباشرة وتأهيل لاجتياز مقابلات الـ HR والـ Operations برواتب تصل 30,000+ ج.م.')) }}</textarea>
+                            </label>
+                        </div>
+
+                        <!-- Pillar 4 -->
+                        <div class="rounded-xl bg-white p-3.5 border border-slate-200 space-y-2">
+                            <label class="block text-[11px] font-bold text-slate-700">ركيزة 4: العنوان
+                                <input name="services_pillar4_title[ar]" value="{{ old('services_pillar4_title.ar', data_get($settings, 'services_pillar4_title.ar', 'إشراف على منحة DSU الإيطالية')) }}" class="admin-input mt-1">
+                            </label>
+                            <label class="block text-[11px] font-bold text-slate-700">ركيزة 4: الشرح
+                                <textarea name="services_pillar4_desc[ar]" rows="2" class="admin-input mt-1">{{ old('services_pillar4_desc.ar', data_get($settings, 'services_pillar4_desc.ar', 'حساب دقيق لـ ISEE يضمن إعفاء 100% من المصروفات وسكن مجاني وبدل 8,000 يورو للدبلومات والثانوية.')) }}</textarea>
+                            </label>
+                        </div>
                     </div>
 
-                    <!-- Bento 6: Mentorship -->
-                    <div class="rounded-xl bg-slate-50 p-4 border border-slate-100 space-y-3">
-                        <h4 class="font-bold text-sm text-blue-700">6. كارت الإرشاد الشخصي 1-on-1</h4>
-                        <label class="block text-xs font-bold text-slate-700">العنوان
-                            <input name="why_bento_mentorship_title[ar]" value="{{ old('why_bento_mentorship_title.ar', data_get($settings, 'why_bento_mentorship_title.ar', 'إرشاد شخصي 1-on-1 ومتابعة ذكية مستمرة')) }}" class="admin-input mt-1">
+                    <div class="grid gap-4 sm:grid-cols-3 pt-2">
+                        <label class="block text-xs font-bold text-slate-700">شارة بانر الخدمات السفلي
+                            <input name="services_cta_badge[ar]" value="{{ old('services_cta_badge.ar', data_get($settings, 'services_cta_badge.ar', 'خطوتك الأولى نحو مستقبلك الدولي')) }}" class="admin-input mt-1">
                         </label>
-                        <label class="block text-xs font-bold text-slate-700">الشرح والوصف
-                            <textarea name="why_bento_mentorship_desc[ar]" rows="2" class="admin-input mt-1">{{ old('why_bento_mentorship_desc.ar', data_get($settings, 'why_bento_mentorship_desc.ar', '')) }}</textarea>
+                        <label class="block text-xs font-bold text-slate-700">عنوان بانر الخدمات السفلي
+                            <input name="services_cta_title[ar]" value="{{ old('services_cta_title.ar', data_get($settings, 'services_cta_title.ar', 'هل تحتاج لمساعدة في اختيار المسار التدريبي الأنسب لك؟')) }}" class="admin-input mt-1">
                         </label>
+                        <label class="block text-xs font-bold text-slate-700">وصف بانر الخدمات السفلي
+                            <input name="services_cta_subtitle[ar]" value="{{ old('services_cta_subtitle.ar', data_get($settings, 'services_cta_subtitle.ar', 'تحدث مع مستشارنا الأكاديمي مباشرة ليحلل مؤهلك الدراسي ويرشح لك أنسب برنامج.')) }}" class="admin-input mt-1">
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 3. عناوين باقي الصفحات (Consultation, Registration, Contact, Team, Testimonials) -->
+                <div class="rounded-2xl border border-slate-200 bg-slate-50/50 p-5 space-y-5">
+                    <h3 class="font-black text-sm text-slate-900 border-b border-slate-200/80 pb-2">3. شارات وعناوين الصفحات الأخرى</h3>
+                    
+                    <div class="grid gap-4 sm:grid-cols-3">
+                        <!-- Consultation -->
+                        <div class="rounded-xl bg-white p-3.5 border border-slate-200 space-y-2">
+                            <span class="text-xs font-black text-red-700 block">صفحة حجز الاستشارة</span>
+                            <label class="block text-[11px] font-bold text-slate-700">الشارة
+                                <input name="consultation_badge[ar]" value="{{ old('consultation_badge.ar', data_get($settings, 'consultation_badge.ar', 'جلسة إرشادية 1-on-1')) }}" class="admin-input mt-1">
+                            </label>
+                            <label class="block text-[11px] font-bold text-slate-700">العنوان
+                                <input name="consultation_title[ar]" value="{{ old('consultation_title.ar', data_get($settings, 'consultation_title.ar', 'حجز استشارة أكاديمية')) }}" class="admin-input mt-1">
+                            </label>
+                            <label class="block text-[11px] font-bold text-slate-700">الوصف التمهيدي
+                                <input name="consultation_intro[ar]" value="{{ old('consultation_intro.ar', data_get($settings, 'consultation_intro.ar', 'حدد موعدك مع مستشارك الأكاديمي لفحص أوراقك ومؤهلك وتحديد فرص قبولك بالمنح والجامعات الإيطالية.')) }}" class="admin-input mt-1">
+                            </label>
+                        </div>
+
+                        <!-- Registration -->
+                        <div class="rounded-xl bg-white p-3.5 border border-slate-200 space-y-2">
+                            <span class="text-xs font-black text-emerald-700 block">صفحة تسجيل العميل / الطالب</span>
+                            <label class="block text-[11px] font-bold text-slate-700">الشارة
+                                <input name="registration_badge[ar]" value="{{ old('registration_badge.ar', data_get($settings, 'registration_badge.ar', 'ملف الطالب الأكاديمي')) }}" class="admin-input mt-1">
+                            </label>
+                            <label class="block text-[11px] font-bold text-slate-700">العنوان
+                                <input name="registration_title[ar]" value="{{ old('registration_title.ar', data_get($settings, 'registration_title.ar', 'تسجيل عميل جديد')) }}" class="admin-input mt-1">
+                            </label>
+                            <label class="block text-[11px] font-bold text-slate-700">الوصف التمهيدي
+                                <input name="registration_intro[ar]" value="{{ old('registration_intro.ar', data_get($settings, 'registration_intro.ar', 'سجل بياناتك ومؤهلك لفتح ملفك الأكاديمي والبدء في إجراءات القبول والتدريب.')) }}" class="admin-input mt-1">
+                            </label>
+                        </div>
+
+                        <!-- Contact -->
+                        <div class="rounded-xl bg-white p-3.5 border border-slate-200 space-y-2">
+                            <span class="text-xs font-black text-blue-700 block">صفحة تواصل معنا</span>
+                            <label class="block text-[11px] font-bold text-slate-700">الشارة
+                                <input name="contact_badge[ar]" value="{{ old('contact_badge.ar', data_get($settings, 'contact_badge.ar', 'قنوات التواصل المباشر')) }}" class="admin-input mt-1">
+                            </label>
+                            <label class="block text-[11px] font-bold text-slate-700">العنوان
+                                <input name="contact_page_title[ar]" value="{{ old('contact_page_title.ar', data_get($settings, 'contact_page_title.ar', 'تواصل معنا')) }}" class="admin-input mt-1">
+                            </label>
+                            <label class="block text-[11px] font-bold text-slate-700">الوصف التمهيدي
+                                <input name="contact_intro[ar]" value="{{ old('contact_intro.ar', data_get($settings, 'contact_intro.ar', 'فريق خدمة العملاء والمستشارين متاح للرد على كافة أسئلتكم ومساعدتكم في كل خطوة.')) }}" class="admin-input mt-1">
+                            </label>
+                        </div>
+
+                        <!-- Team -->
+                        <div class="rounded-xl bg-white p-3.5 border border-slate-200 space-y-2">
+                            <span class="text-xs font-black text-amber-700 block">صفحة فريق العمل</span>
+                            <label class="block text-[11px] font-bold text-slate-700">الشارة
+                                <input name="team_badge[ar]" value="{{ old('team_badge.ar', data_get($settings, 'team_badge.ar', 'خبراء التعليم الدولي')) }}" class="admin-input mt-1">
+                            </label>
+                            <label class="block text-[11px] font-bold text-slate-700">العنوان
+                                <input name="team_page_title[ar]" value="{{ old('team_page_title.ar', data_get($settings, 'team_page_title.ar', 'فريقنا')) }}" class="admin-input mt-1">
+                            </label>
+                            <label class="block text-[11px] font-bold text-slate-700">الوصف التمهيدي
+                                <input name="team_intro[ar]" value="{{ old('team_intro.ar', data_get($settings, 'team_intro.ar', 'نخبة من المحاضرين المعتمدين والمستشارين الأكاديميين ذوي الخبرة الأوروبية.')) }}" class="admin-input mt-1">
+                            </label>
+                        </div>
+
+                        <!-- Testimonials -->
+                        <div class="rounded-xl bg-white p-3.5 border border-slate-200 space-y-2">
+                            <span class="text-xs font-black text-purple-700 block">صفحة قصص النجاح</span>
+                            <label class="block text-[11px] font-bold text-slate-700">الشارة
+                                <input name="testimonials_badge[ar]" value="{{ old('testimonials_badge.ar', data_get($settings, 'testimonials_badge.ar', 'قصص واقعية وتجارب ملهمة')) }}" class="admin-input mt-1">
+                            </label>
+                            <label class="block text-[11px] font-bold text-slate-700">العنوان
+                                <input name="testimonials_page_title[ar]" value="{{ old('testimonials_page_title.ar', data_get($settings, 'testimonials_page_title.ar', 'قصص نجاح طلابنا')) }}" class="admin-input mt-1">
+                            </label>
+                            <label class="block text-[11px] font-bold text-slate-700">الوصف التمهيدي
+                                <input name="testimonials_intro[ar]" value="{{ old('testimonials_intro.ar', data_get($settings, 'testimonials_intro.ar', 'تجارب حقيقية لشباب وصلوا إلى الجامعات الإيطالية وكبرى شركات التوظيف بدعم من INTOK.')) }}" class="admin-input mt-1">
+                            </label>
+                        </div>
                     </div>
                 </div>
             </section>

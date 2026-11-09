@@ -6,10 +6,10 @@
     <section class="relative isolate overflow-hidden bg-intok-hero py-16 text-slate-900 border-b border-slate-100">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-start">
             <span class="inline-block rounded-full border border-red-200 bg-white/90 px-3.5 py-1 text-xs font-black text-red-600 shadow-xs">
-                قصص واقعية وتجارب ملهمة
+                {{ data_get($siteSettings ?? [], 'testimonials_badge.'.$locale, 'قصص واقعية وتجارب ملهمة') }}
             </span>
-            <h1 class="mt-4 text-3xl font-black text-[#c27803] sm:text-5xl">{{ __('site.testimonials_title') }}</h1>
-            <p class="mt-4 max-w-2xl leading-relaxed text-slate-600 font-medium">{{ __('site.testimonials_intro') }}</p>
+            <h1 class="mt-4 text-3xl font-black text-[#c27803] sm:text-5xl">{{ data_get($siteSettings ?? [], 'testimonials_page_title.'.$locale, __('site.testimonials_title')) }}</h1>
+            <p class="mt-4 max-w-2xl leading-relaxed text-slate-600 font-medium">{{ data_get($siteSettings ?? [], 'testimonials_intro.'.$locale, __('site.testimonials_intro')) }}</p>
         </div>
     </section>
 
