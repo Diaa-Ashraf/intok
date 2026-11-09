@@ -1,0 +1,45 @@
+import { createInertiaApp } from '@inertiajs/react';
+import { createRoot } from 'react-dom/client';
+import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
+import Echo from 'laravel-echo';
+import Pusher from 'pusher-js';
+
+const reverbKey = import.meta.env.VITE_REVERB_APP_KEY;
+const isReverbEnabled = import.meta.env.VITE_REVERB_ENABLED === 'true';
+
+if (reverbKey && isReverbEnabled) {
+    try {
+        window.Pusher = Pusher;
+        window.Echo = new Echo({
+            broadcaster: 'reverb',
+            key: reverbKey,
+            wsHost: import.meta.env.VITE_REVERB_HOST ?? window.location.hostname,
+            wsPort: Number(import.meta.env.VITE_REVERB_PORT ?? 8080),
+            wssPort: Number(import.meta.env.VITE_REVERB_PORT ?? 443),
+            forceTLS: (import.meta.env.VITE_REVERB_SCHEME ?? 'https') === 'https',
+            enabledTransports: ['ws', 'wss'],
+            enableStats: false,
+        });
+
+        window.Echo.connector?.pusher?.connection?.bind('unavailable', () => {
+            window.Echo?.disconnect();
+        });
+        window.Echo.connector?.pusher?.connection?.bind('failed', () => {
+            window.Echo?.disconnect();
+        });
+    } catch {
+        window.Echo = null;
+    }
+} else {
+    window.Echo = null;
+}
+
+createInertiaApp({
+    title: (title) => `${title} | ${import.meta.env.VITE_APP_NAME ?? 'INTOK Academy'}`,
+    resolve: (name) =>
+        resolvePageComponent(`./Pages/${name}.jsx`, import.meta.glob('./Pages/**/*.jsx')),
+    setup({ el, App, props }) {
+        createRoot(el).render(<App {...props} />);
+    },
+    progress: { color: '#dc2626' },
+});
