@@ -21,6 +21,9 @@ if (reverbKey && isReverbEnabled) {
             enableStats: false,
         });
 
+        window.Echo.connector?.pusher?.connection?.bind('error', () => {
+            window.Echo?.disconnect();
+        });
         window.Echo.connector?.pusher?.connection?.bind('unavailable', () => {
             window.Echo?.disconnect();
         });

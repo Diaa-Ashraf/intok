@@ -12,6 +12,71 @@
         '"ترجمة معتمدة رسمياً وموثقة للسفارة الإيطالية بأعلى معايير الدقة الدبلوماسية."'
     ];
     $robotQuotesList = data_get($siteSettings ?? [], 'robot_quotes') ?: $defaultRobotQuotes;
+
+    $heroScenes = [
+        [
+            'tab' => data_get($siteSettings ?? [], 'hero_scene_1_tab.'.$locale, 'ميلانو'),
+            'image' => data_get($siteSettings ?? [], 'hero_scene_1_img') ? asset('storage/'.data_get($siteSettings, 'hero_scene_1_img')) : asset('assets/images/schools/san-giorgio.jpg'),
+            'badge' => data_get($siteSettings ?? [], 'hero_scene_1_badge.'.$locale, 'عاصمة الدراسة والصناعة • ميلانو'),
+            'title' => data_get($siteSettings ?? [], 'hero_scene_1_title.'.$locale, 'جامعات ومدارس ميلانو الحكومية'),
+            'desc' => data_get($siteSettings ?? [], 'hero_scene_1_desc.'.$locale, 'استكمال دراستك في أعرق الصروح التعليمية مع منحة DSU الشاملة (8,000 يورو + سكن مجاني) وتأشيرة دراسية رسمية.'),
+            'stat' => data_get($siteSettings ?? [], 'hero_scene_1_stat.'.$locale, '8,000€ بدل سنوي + سكن مجاني'),
+        ],
+        [
+            'tab' => data_get($siteSettings ?? [], 'hero_scene_2_tab.'.$locale, 'روما'),
+            'image' => data_get($siteSettings ?? [], 'hero_scene_2_img') ? asset('storage/'.data_get($siteSettings, 'hero_scene_2_img')) : asset('assets/images/schools/galileo-galilei.jpg'),
+            'badge' => data_get($siteSettings ?? [], 'hero_scene_2_badge.'.$locale, 'التاريخ والأكاديمية • روما'),
+            'title' => data_get($siteSettings ?? [], 'hero_scene_2_title.'.$locale, 'دراسة البكالوريوس والماجستير بروما'),
+            'desc' => data_get($siteSettings ?? [], 'hero_scene_2_desc.'.$locale, 'الالتحاق بأعرق الجامعات والمدارس الإيطالية مع تصريح عمل قانوني باليورو وتأشيرة شنغن رسمية.'),
+            'stat' => data_get($siteSettings ?? [], 'hero_scene_2_stat.'.$locale, '99.4% نسبة نجاح وقبول الملفات'),
+        ],
+        [
+            'tab' => data_get($siteSettings ?? [], 'hero_scene_3_tab.'.$locale, 'قاعات إنتوك'),
+            'image' => data_get($siteSettings ?? [], 'hero_scene_3_img') ? asset('storage/'.data_get($siteSettings, 'hero_scene_3_img')) : asset('assets/images/academy/italian-classroom-lecture.jpg'),
+            'badge' => data_get($siteSettings ?? [], 'hero_scene_3_badge.'.$locale, 'قاعات إنتوك الذكية • تدريب حي'),
+            'title' => data_get($siteSettings ?? [], 'hero_scene_3_title.'.$locale, 'تعليم الإيطالية واللغات المعتمدة'),
+            'desc' => data_get($siteSettings ?? [], 'hero_scene_3_desc.'.$locale, 'محاضرات تفاعلية على السبورات الذكية لتأسيس النطق وتأهيلك لاجتياز اختبارات CILS و CELI ومقابلات السفارة.'),
+            'stat' => data_get($siteSettings ?? [], 'hero_scene_3_stat.'.$locale, 'CILS / CELI معتمد رسمياً'),
+        ],
+        [
+            'tab' => data_get($siteSettings ?? [], 'hero_scene_4_tab.'.$locale, 'الكول سنتر'),
+            'image' => data_get($siteSettings ?? [], 'hero_scene_4_img') ? asset('storage/'.data_get($siteSettings, 'hero_scene_4_img')) : asset('assets/images/academy/live-speaker-training.jpg'),
+            'badge' => data_get($siteSettings ?? [], 'hero_scene_4_badge.'.$locale, 'كول سنتر وسوق العمل الدولي'),
+            'title' => data_get($siteSettings ?? [], 'hero_scene_4_title.'.$locale, 'محاكاة المقابلات والطلاقة باللغات'),
+            'desc' => data_get($siteSettings ?? [], 'hero_scene_4_desc.'.$locale, 'تدريب تطبيقي مكثف يجعلك واثقاً من مهاراتك الصوتية والتواصلية لاقتناص وظائف كبرى الشركات العالمية فوراً.'),
+            'stat' => data_get($siteSettings ?? [], 'hero_scene_4_stat.'.$locale, 'رواتب 15k - 30k+ ج.م'),
+        ],
+    ];
+
+    $liveSlides = [
+        [
+            'image' => data_get($siteSettings ?? [], 'live_slide_1_img') ? asset('storage/'.data_get($siteSettings, 'live_slide_1_img')) : asset('assets/images/academy/live-speaker-training.jpg'),
+            'badge' => data_get($siteSettings ?? [], 'live_slide_1_badge.'.$locale, 'تدريب الكول سنتر والمحادثة المباشرة'),
+            'title' => data_get($siteSettings ?? [], 'live_slide_1_title.'.$locale, 'How to Be a Confident Speaker - محاكاة المقابلات والطلاقة'),
+            'desc' => data_get($siteSettings ?? [], 'live_slide_1_desc.'.$locale, 'تدريب تفاعلي على الشاشات الذكية لتطوير مهارات التواصل وخدمة العملاء واجتياز المقابلات الدولية بثقة.'),
+        ],
+        [
+            'image' => data_get($siteSettings ?? [], 'live_slide_2_img') ? asset('storage/'.data_get($siteSettings, 'live_slide_2_img')) : asset('assets/images/academy/italian-classroom-lecture.jpg'),
+            'badge' => data_get($siteSettings ?? [], 'live_slide_2_badge.'.$locale, 'محاضرات اللغة الإيطالية والقبول الجامعي'),
+            'title' => data_get($siteSettings ?? [], 'live_slide_2_title.'.$locale, 'شرح تفاعلي لقواعد ومحادثة اللغة الإيطالية (Grammatica Italiana)'),
+            'desc' => data_get($siteSettings ?? [], 'live_slide_2_desc.'.$locale, 'تأسيس المتدربين من الصفر وحتى الطلاقة والتأهيل لاختبارات السفارة والالتحاق بالجامعات الإيطالية مع نخبة من الأساتذة.'),
+        ],
+        [
+            'image' => data_get($siteSettings ?? [], 'live_slide_3_img') ? asset('storage/'.data_get($siteSettings, 'live_slide_3_img')) : asset('assets/images/schools/galileo-galilei.jpg'),
+            'badge' => data_get($siteSettings ?? [], 'live_slide_3_badge.'.$locale, 'بوابتك نحو إيطاليا وأوروبا'),
+            'title' => data_get($siteSettings ?? [], 'live_slide_3_title.'.$locale, 'من قاعات INTOK إلى أعرق الصروح التعليمية في روما وميلانو'),
+            'desc' => data_get($siteSettings ?? [], 'live_slide_3_desc.'.$locale, 'رحلة متكاملة تؤهلك للحصول على منحة DSU الشاملة (8,000 يورو سنوياً + سكن مجاني) والإقامة القانونية والعمل باليورو.'),
+        ],
+    ];
+
+    if (data_get($siteSettings ?? [], 'live_slide_4_img') || data_get($siteSettings ?? [], 'live_slide_4_title.'.$locale)) {
+        $liveSlides[] = [
+            'image' => data_get($siteSettings ?? [], 'live_slide_4_img') ? asset('storage/'.data_get($siteSettings, 'live_slide_4_img')) : asset('assets/images/schools/bologna-university.jpg'),
+            'badge' => data_get($siteSettings ?? [], 'live_slide_4_badge.'.$locale, 'معايير التميز الأكاديمي'),
+            'title' => data_get($siteSettings ?? [], 'live_slide_4_title.'.$locale, 'الاعتماد الدولي والمنح الدراسية الموثقة'),
+            'desc' => data_get($siteSettings ?? [], 'live_slide_4_desc.'.$locale, 'تأهيل متكامل للطلبة لمرحلة البكالوريوس والماجستير.'),
+        ];
+    }
 @endphp
 
 @section('content')
@@ -118,8 +183,8 @@
                                 
                                 <!-- Background Image with Smooth Fade & Zoom -->
                                 <img id="hero-stage-img"
-                                    src="{{ asset('assets/images/schools/san-giorgio.jpg') }}"
-                                    alt="الدراسة في إيطاليا مع INTOK ACADEMY"
+                                    src="{{ $heroScenes[0]['image'] }}"
+                                    alt="{{ $heroScenes[0]['title'] }}"
                                     class="size-full object-cover transition-all duration-700 ease-out group-hover:scale-105">
 
                                 <!-- Film Vignette & Shadow Overlay -->
@@ -129,7 +194,7 @@
                                 <div class="absolute top-3.5 inset-x-3.5 z-20 flex items-center justify-between gap-2">
                                     <span id="hero-stage-badge" class="inline-flex items-center gap-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 px-3 py-1 text-[11px] font-black text-amber-300 shadow-md">
                                         <span class="size-2 rounded-full bg-emerald-400 animate-ping"></span>
-                                        <span id="hero-stage-badge-text">عاصمة الدراسة والصناعة • ميلانو</span>
+                                        <span id="hero-stage-badge-text">{{ $heroScenes[0]['badge'] }}</span>
                                     </span>
                                     
                                     <span class="rounded-full bg-emerald-500/90 backdrop-blur-xs px-2.5 py-0.5 text-[10px] font-black text-white shadow-xs">
@@ -140,16 +205,16 @@
                                 <!-- Center/Bottom Captions on Image -->
                                 <div class="absolute bottom-3 inset-x-3.5 z-20 text-start text-white">
                                     <h3 id="hero-stage-title" class="text-lg sm:text-xl font-black text-white leading-tight drop-shadow-md transition-opacity duration-300">
-                                        جامعات ومدارس ميلانو الحكومية
+                                        {{ $heroScenes[0]['title'] }}
                                     </h3>
                                     <p id="hero-stage-desc" class="mt-1 text-xs text-slate-200 font-medium line-clamp-2 leading-relaxed transition-opacity duration-300">
-                                        استكمال دراستك في أعرق الصروح التعليمية مع منحة DSU الشاملة (8,000 يورو + سكن مجاني) وتأشيرة دراسية رسمية.
+                                        {{ $heroScenes[0]['desc'] }}
                                     </p>
 
                                     <!-- Bottom Fast CTA inside card -->
                                     <div class="mt-3.5 flex items-center justify-between gap-2 pt-2.5 border-t border-white/15">
                                         <div class="flex items-center gap-1.5 text-[11px] font-bold text-amber-300">
-                                            <span id="hero-stage-stat">8,000€ بدل سنوي + سكن مجاني</span>
+                                            <span id="hero-stage-stat">{{ $heroScenes[0]['stat'] }}</span>
                                         </div>
                                         <a href="{{ route('consultation.create', ['locale' => app()->getLocale()]) }}" class="rounded-full bg-[#fe0002] px-3.5 py-1.5 text-[11px] font-black text-white hover:bg-red-700 transition shadow-md flex items-center gap-1">
                                             <span>فحص قبولك</span>
@@ -166,18 +231,11 @@
 
                             <!-- Interactive Destination / Track Selector Ribbon (4 Pills) -->
                             <div class="grid grid-cols-4 gap-1 p-1.5 bg-slate-900/95 rounded-2xl mt-1.5 border border-white/10" id="hero-stage-selector">
-                                <button type="button" class="hero-stage-tab active-hero-tab" data-scene="0">
-                                    <span class="block text-xs font-black truncate py-1">ميلانو</span>
-                                </button>
-                                <button type="button" class="hero-stage-tab" data-scene="1">
-                                    <span class="block text-xs font-black truncate py-1">روما</span>
-                                </button>
-                                <button type="button" class="hero-stage-tab" data-scene="2">
-                                    <span class="block text-xs font-black truncate py-1">قاعات إنتوك</span>
-                                </button>
-                                <button type="button" class="hero-stage-tab" data-scene="3">
-                                    <span class="block text-xs font-black truncate py-1">الكول سنتر</span>
-                                </button>
+                                @foreach($heroScenes as $sIdx => $scene)
+                                    <button type="button" class="hero-stage-tab {{ $sIdx === 0 ? 'active-hero-tab' : '' }}" data-scene="{{ $sIdx }}">
+                                        <span class="block text-xs font-black truncate py-1">{{ $scene['tab'] }}</span>
+                                    </button>
+                                @endforeach
                             </div>
 
                         </div>
@@ -187,22 +245,22 @@
                         <!-- Top-End Floating Badge: DSU Scholarship -->
                         <div class="pointer-events-none absolute -top-5 -end-3 sm:-end-5 z-30 flex items-center gap-2.5 rounded-2xl border-2 border-emerald-400/80 bg-white/95 px-3 py-1.5 sm:px-3.5 sm:py-2 text-slate-900 shadow-xl backdrop-blur-md animate-float-drift-1">
                             <span class="grid size-8 sm:size-9 shrink-0 place-items-center rounded-xl bg-emerald-100 text-emerald-700 text-xs font-black">
-                                DSU
+                                {{ data_get($siteSettings ?? [], 'hero_float_1_tag', 'DSU') }}
                             </span>
                             <div class="text-start">
-                                <span class="text-[11px] font-black text-emerald-800 block leading-tight">منحة DSU الحكومية</span>
-                                <span class="text-[9px] sm:text-[10px] font-bold text-slate-600 block">8,000€ + سكن معفى 100%</span>
+                                <span class="text-[11px] font-black text-emerald-800 block leading-tight">{{ data_get($siteSettings ?? [], 'hero_float_1_title.'.$locale, 'منحة DSU الحكومية') }}</span>
+                                <span class="text-[9px] sm:text-[10px] font-bold text-slate-600 block">{{ data_get($siteSettings ?? [], 'hero_float_1_sub.'.$locale, '8,000€ + سكن معفى 100%') }}</span>
                             </div>
                         </div>
 
                         <!-- Bottom-Start Floating Badge: Official Italian Visa -->
                         <div class="pointer-events-none absolute -bottom-5 -start-3 sm:-start-5 z-30 flex items-center gap-2.5 rounded-2xl border-2 border-red-300 bg-white/95 px-3 py-1.5 sm:px-3.5 sm:py-2 text-slate-900 shadow-xl backdrop-blur-md animate-float-drift-2">
                             <span class="grid size-8 sm:size-9 shrink-0 place-items-center rounded-xl bg-red-100 text-[#fe0002] text-xs font-black">
-                                VISA
+                                {{ data_get($siteSettings ?? [], 'hero_float_2_tag', 'VISA') }}
                             </span>
                             <div class="text-start">
-                                <span class="text-[11px] font-black text-[#fe0002] block leading-tight">تأشيرة رسمية معتمدة</span>
-                                <span class="text-[9px] sm:text-[10px] font-bold text-slate-600 block">نسبة نجاح الملفات 99.4%</span>
+                                <span class="text-[11px] font-black text-[#fe0002] block leading-tight">{{ data_get($siteSettings ?? [], 'hero_float_2_title.'.$locale, 'تأشيرة رسمية معتمدة') }}</span>
+                                <span class="text-[9px] sm:text-[10px] font-bold text-slate-600 block">{{ data_get($siteSettings ?? [], 'hero_float_2_sub.'.$locale, 'نسبة نجاح الملفات 99.4%') }}</span>
                             </div>
                         </div>
 
@@ -630,20 +688,20 @@
                     <div class="absolute bottom-0 inset-x-0 p-6 sm:p-10 z-30 flex flex-col sm:flex-row sm:items-end justify-between gap-6">
                         <div class="max-w-2xl text-start" id="shatter-caption-box">
                             <span id="shatter-slide-badge" class="inline-block rounded-full bg-[#fe0002] px-3.5 py-1 text-xs font-black text-white shadow-md">
-                                تدريب الكول سنتر والمحادثة المباشرة
+                                {{ $liveSlides[0]['badge'] }}
                             </span>
                             <h3 id="shatter-slide-title" class="mt-3 text-xl sm:text-3xl font-black text-white tracking-tight drop-shadow-md transition-opacity duration-300">
-                                How to Be a Confident Speaker - محاكاة المقابلات الدولية والطلاقة
+                                {{ $liveSlides[0]['title'] }}
                             </h3>
                             <p id="shatter-slide-desc" class="mt-2 text-xs sm:text-sm text-slate-200 line-clamp-2 font-medium leading-relaxed drop-shadow transition-opacity duration-300">
-                                تدريب تفاعلي على الشاشات الذكية لتأهيل المتدربين لخدمة العملاء واجتياز مقابلات شركات الكول سنتر متعددة الجنسيات بثقة.
+                                {{ $liveSlides[0]['desc'] }}
                             </p>
                         </div>
 
                         <!-- Right: Quick Action & Counter -->
                         <div class="flex items-center gap-4 shrink-0">
                             <span id="shatter-counter" class="text-sm font-black text-white font-mono tracking-widest bg-black/40 px-3 py-1.5 rounded-xl border border-white/20">
-                                01 / 03
+                                01 / {{ sprintf('%02d', count($liveSlides)) }}
                             </span>
                             <a href="{{ route('consultation.create', ['locale' => app()->getLocale()]) }}" class="rounded-full bg-white px-5 py-2.5 text-xs font-black text-[#fe0002] shadow-lg transition hover:bg-amber-100 hover:scale-105">
                                 انضم للدفعة القادمة
@@ -1590,36 +1648,7 @@
             }
 
             // 2. CINEMATIC HERO ACADEMIC STAGE ENGINE
-            const heroStageData = [
-                {
-                    image: "{{ asset('assets/images/schools/san-giorgio.jpg') }}",
-                    badge: "عاصمة الدراسة والصناعة • ميلانو",
-                    title: "جامعات ومدارس ميلانو الحكومية",
-                    desc: "استكمال دراستك في أعرق الصروح التعليمية مع منحة DSU الشاملة (8,000 يورو + سكن مجاني) وتأشيرة دراسية رسمية.",
-                    stat: "8,000€ بدل سنوي + سكن مجاني"
-                },
-                {
-                    image: "{{ asset('assets/images/schools/galileo-galilei.jpg') }}",
-                    badge: "التاريخ والأكاديمية • روما",
-                    title: "دراسة البكالوريوس والماجستير بروما",
-                    desc: "الالتحاق بأعرق الجامعات والمدارس الإيطالية مع تصريح عمل قانوني باليورو وتأشيرة شنغن رسمية.",
-                    stat: "99.4% نسبة نجاح وقبول الملفات"
-                },
-                {
-                    image: "{{ asset('assets/images/academy/italian-classroom-lecture.jpg') }}",
-                    badge: "قاعات إنتوك الذكية • تدريب حي",
-                    title: "تعليم الإيطالية واللغات المعتمدة",
-                    desc: "محاضرات تفاعلية على السبورات الذكية لتأسيس النطق وتأهيلك لاجتياز اختبارات CILS و CELI ومقابلات السفارة.",
-                    stat: "CILS / CELI معتمد رسمياً"
-                },
-                {
-                    image: "{{ asset('assets/images/academy/live-speaker-training.jpg') }}",
-                    badge: "كول سنتر وسوق العمل الدولي",
-                    title: "محاكاة المقابلات والطلاقة باللغات",
-                    desc: "تدريب تطبيقي مكثف يجعلك واثقاً من مهاراتك الصوتية والتواصلية لاقتناص وظائف كبرى الشركات العالمية فوراً.",
-                    stat: "رواتب 15k - 30k+ ج.م"
-                }
-            ];
+            const heroStageData = {!! json_encode($heroScenes, JSON_UNESCAPED_UNICODE) !!};
 
             let heroSceneIdx = 0;
             let heroCycleTimer = null;
@@ -1712,26 +1741,7 @@
             startHeroCycle();
 
             // 3. SHATTER / SLICE DISINTEGRATION SLIDER ENGINE
-            const slidesData = [
-                {
-                    image: "{{ asset('assets/images/academy/live-speaker-training.jpg') }}",
-                    badge: "تدريب الكول سنتر والمحادثة المباشرة",
-                    title: "How to Be a Confident Speaker - محاكاة المقابلات والطلاقة",
-                    desc: "تدريب تفاعلي على الشاشات الذكية لتطوير مهارات التواصل وخدمة العملاء واجتياز المقابلات الدولية بثقة."
-                },
-                {
-                    image: "{{ asset('assets/images/academy/italian-classroom-lecture.jpg') }}",
-                    badge: "محاضرات اللغة الإيطالية والقبول الجامعي",
-                    title: "شرح تفاعلي لقواعد ومحادثة اللغة الإيطالية (Grammatica Italiana)",
-                    desc: "تأسيس المتدربين من الصفر وحتى الطلاقة والتأهيل لاختبارات السفارة والالتحاق بالجامعات الإيطالية مع نخبة من الأساتذة."
-                },
-                {
-                    image: "{{ asset('assets/images/schools/galileo-galilei.jpg') }}",
-                    badge: "بوابتك نحو إيطاليا وأوروبا",
-                    title: "من قاعات INTOK إلى أعرق الصروح التعليمية في روما وميلانو",
-                    desc: "رحلة متكاملة تؤهلك للحصول على منحة DSU الشاملة (8,000 يورو سنوياً + سكن مجاني) والإقامة القانونية والعمل باليورو."
-                }
-            ];
+            const slidesData = {!! json_encode($liveSlides, JSON_UNESCAPED_UNICODE) !!};
 
             let currentSlideIndex = 0;
             let isShattering = false;

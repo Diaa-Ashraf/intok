@@ -200,6 +200,142 @@
                         @endfor
                     </div>
                 </div>
+
+                <div class="border-t border-slate-100 pt-6">
+                    <div class="border-b border-slate-100 pb-3 mb-4">
+                        <h3 class="text-base font-bold text-slate-900">برواز المشاهد التفاعلية للهيرو (Hero Cinematic 3D Frame)</h3>
+                        <p class="text-xs text-slate-500">تحكم بصور وعناوين وتبويبات الإطار التفاعلي ثلاثي الأبعاد في الواجهة الرئيسية (4 مشاهد).</p>
+                    </div>
+
+                    @php
+                        $defaultHeroScenes = [
+                            1 => [
+                                'tab' => 'ميلانو',
+                                'badge' => 'عاصمة الدراسة والصناعة • ميلانو',
+                                'title' => 'جامعات ومدارس ميلانو الحكومية',
+                                'desc' => 'استكمال دراستك في أعرق الصروح التعليمية مع منحة DSU الشاملة (8,000 يورو + سكن مجاني) وتأشيرة دراسية رسمية.',
+                                'stat' => '8,000€ بدل سنوي + سكن مجاني',
+                                'default_img' => 'assets/images/schools/san-giorgio.jpg',
+                            ],
+                            2 => [
+                                'tab' => 'روما',
+                                'badge' => 'التاريخ والأكاديمية • روما',
+                                'title' => 'دراسة البكالوريوس والماجستير بروما',
+                                'desc' => 'الالتحاق بأعرق الجامعات والمدارس الإيطالية مع تصريح عمل قانوني باليورو وتأشيرة شنغن رسمية.',
+                                'stat' => '99.4% نسبة نجاح وقبول الملفات',
+                                'default_img' => 'assets/images/schools/galileo-galilei.jpg',
+                            ],
+                            3 => [
+                                'tab' => 'قاعات إنتوك',
+                                'badge' => 'قاعات إنتوك الذكية • تدريب حي',
+                                'title' => 'تعليم الإيطالية واللغات المعتمدة',
+                                'desc' => 'محاضرات تفاعلية على السبورات الذكية لتأسيس النطق وتأهيلك لاجتياز اختبارات CILS و CELI ومقابلات السفارة.',
+                                'stat' => 'CILS / CELI معتمد رسمياً',
+                                'default_img' => 'assets/images/academy/italian-classroom-lecture.jpg',
+                            ],
+                            4 => [
+                                'tab' => 'الكول سنتر',
+                                'badge' => 'كول سنتر وسوق العمل الدولي',
+                                'title' => 'محاكاة المقابلات والطلاقة باللغات',
+                                'desc' => 'تدريب تطبيقي مكثف يجعلك واثقاً من مهاراتك الصوتية والتواصلية لاقتناص وظائف كبرى الشركات العالمية فوراً.',
+                                'stat' => 'رواتب 15k - 30k+ ج.م',
+                                'default_img' => 'assets/images/academy/live-speaker-training.jpg',
+                            ],
+                        ];
+                    @endphp
+
+                    <div class="space-y-6">
+                        @foreach($defaultHeroScenes as $idx => $scene)
+                            <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-4 space-y-4">
+                                <div class="flex items-center justify-between border-b border-slate-200/80 pb-2">
+                                    <span class="font-bold text-sm text-slate-800">المشهد {{ $idx }}: {{ $scene['tab'] }}</span>
+                                    <span class="text-xs bg-red-100 text-red-700 px-2 py-0.5 rounded-full font-semibold">Scene {{ $idx }}</span>
+                                </div>
+
+                                <div class="grid gap-4 sm:grid-cols-12 items-start">
+                                    <div class="sm:col-span-4">
+                                        <label class="block text-xs font-bold text-slate-700">صورة المشهد {{ $idx }}
+                                            <input type="file" name="hero_scene_{{ $idx }}_img" accept="image/jpeg,image/png,image/webp" class="admin-input mt-1">
+                                        </label>
+                                        <div class="mt-2">
+                                            @if(data_get($settings, 'hero_scene_'.$idx.'_img'))
+                                                <div class="relative">
+                                                    <img src="{{ asset('storage/'.data_get($settings, 'hero_scene_'.$idx.'_img')) }}" class="h-28 w-full object-cover rounded-lg border border-slate-200 shadow-xs" alt="صورة المشهد {{ $idx }}">
+                                                    <span class="absolute bottom-1 start-1 bg-black/60 text-white text-[10px] px-1.5 py-0.5 rounded">الصورة الحالية المرفوعة</span>
+                                                </div>
+                                            @else
+                                                <div class="relative">
+                                                    <img src="{{ asset($scene['default_img']) }}" class="h-28 w-full object-cover rounded-lg border border-slate-200 opacity-80" alt="صورة المشهد الافتراضية">
+                                                    <span class="absolute bottom-1 start-1 bg-slate-800/70 text-white text-[10px] px-1.5 py-0.5 rounded">الصورة الافتراضية</span>
+                                                </div>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="sm:col-span-8 grid gap-3 sm:grid-cols-2">
+                                        <div>
+                                            <label class="block text-xs font-bold text-slate-700">اسم التبويب (Tab Name)
+                                                <input name="hero_scene_{{ $idx }}_tab[ar]" value="{{ old('hero_scene_'.$idx.'_tab.ar', data_get($settings, 'hero_scene_'.$idx.'_tab.ar', $scene['tab'])) }}" class="admin-input mt-1">
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="block text-xs font-bold text-slate-700">الشارة العلوية (Badge)
+                                                <input name="hero_scene_{{ $idx }}_badge[ar]" value="{{ old('hero_scene_'.$idx.'_badge.ar', data_get($settings, 'hero_scene_'.$idx.'_badge.ar', $scene['badge'])) }}" class="admin-input mt-1">
+                                            </label>
+                                        </div>
+                                        <div class="sm:col-span-2">
+                                            <label class="block text-xs font-bold text-slate-700">عنوان المشهد الرئيسي
+                                                <input name="hero_scene_{{ $idx }}_title[ar]" value="{{ old('hero_scene_'.$idx.'_title.ar', data_get($settings, 'hero_scene_'.$idx.'_title.ar', $scene['title'])) }}" class="admin-input mt-1">
+                                            </label>
+                                        </div>
+                                        <div class="sm:col-span-2">
+                                            <label class="block text-xs font-bold text-slate-700">نص الإحصائية / الزر الأسفل
+                                                <input name="hero_scene_{{ $idx }}_stat[ar]" value="{{ old('hero_scene_'.$idx.'_stat.ar', data_get($settings, 'hero_scene_'.$idx.'_stat.ar', $scene['stat'])) }}" class="admin-input mt-1">
+                                            </label>
+                                        </div>
+                                        <div class="sm:col-span-2">
+                                            <label class="block text-xs font-bold text-slate-700">وصف المشهد
+                                                <textarea name="hero_scene_{{ $idx }}_desc[ar]" rows="2" class="admin-input mt-1">{{ old('hero_scene_'.$idx.'_desc.ar', data_get($settings, 'hero_scene_'.$idx.'_desc.ar', $scene['desc'])) }}</textarea>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+
+                <div class="border-t border-slate-100 pt-6">
+                    <h3 class="text-base font-bold text-slate-900 mb-1">البادجات العائمة ثلاثية الأبعاد (Floating 3D Badges)</h3>
+                    <p class="text-xs text-slate-500 mb-4">البادجات التي تطفو حول البرواز التفاعلي في الهيرو.</p>
+                    <div class="grid gap-4 sm:grid-cols-2">
+                        <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-4 space-y-3">
+                            <span class="font-bold text-xs text-slate-800 block border-b pb-1">البادج العلوي الأيمن (منحة DSU)</span>
+                            <label class="block text-xs font-bold text-slate-700">الوسم (Tag)
+                                <input name="hero_float_1_tag" value="{{ old('hero_float_1_tag', data_get($settings, 'hero_float_1_tag', 'DSU')) }}" class="admin-input mt-1">
+                            </label>
+                            <label class="block text-xs font-bold text-slate-700">العنوان
+                                <input name="hero_float_1_title[ar]" value="{{ old('hero_float_1_title.ar', data_get($settings, 'hero_float_1_title.ar', 'منحة DSU الحكومية')) }}" class="admin-input mt-1">
+                            </label>
+                            <label class="block text-xs font-bold text-slate-700">النص التوضيحي
+                                <input name="hero_float_1_sub[ar]" value="{{ old('hero_float_1_sub.ar', data_get($settings, 'hero_float_1_sub.ar', '8,000€ + سكن معفى 100%')) }}" class="admin-input mt-1">
+                            </label>
+                        </div>
+
+                        <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-4 space-y-3">
+                            <span class="font-bold text-xs text-slate-800 block border-b pb-1">البادج السفلي الأيسر (تأشيرة رسمية)</span>
+                            <label class="block text-xs font-bold text-slate-700">الوسم (Tag)
+                                <input name="hero_float_2_tag" value="{{ old('hero_float_2_tag', data_get($settings, 'hero_float_2_tag', 'VISA')) }}" class="admin-input mt-1">
+                            </label>
+                            <label class="block text-xs font-bold text-slate-700">العنوان
+                                <input name="hero_float_2_title[ar]" value="{{ old('hero_float_2_title.ar', data_get($settings, 'hero_float_2_title.ar', 'تأشيرة رسمية معتمدة')) }}" class="admin-input mt-1">
+                            </label>
+                            <label class="block text-xs font-bold text-slate-700">النص التوضيحي
+                                <input name="hero_float_2_sub[ar]" value="{{ old('hero_float_2_sub.ar', data_get($settings, 'hero_float_2_sub.ar', 'نسبة نجاح الملفات 99.4%')) }}" class="admin-input mt-1">
+                            </label>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
 
@@ -253,6 +389,92 @@
                             </label>
                         </div>
                     @endforeach
+                </div>
+
+                <div class="border-t border-slate-100 pt-6">
+                    <div class="border-b border-slate-100 pb-3 mb-4">
+                        <h3 class="text-base font-bold text-slate-900">شرائح تدريب وقاعات الأكاديمية (Live Training Slides)</h3>
+                        <p class="text-xs text-slate-500">تحكم بصور وعناوين وشارات وتفاصيل شرائح السلايدر التفاعلي ذو تأثير التفتيت والتلاشي السينمائي.</p>
+                    </div>
+
+                    @php
+                        $defaultLiveSlides = [
+                            1 => [
+                                'badge' => 'تدريب الكول سنتر والمحادثة المباشرة',
+                                'title' => 'How to Be a Confident Speaker - محاكاة المقابلات والطلاقة',
+                                'desc' => 'تدريب تفاعلي على الشاشات الذكية لتطوير مهارات التواصل وخدمة العملاء واجتياز المقابلات الدولية بثقة.',
+                                'default_img' => 'assets/images/academy/live-speaker-training.jpg',
+                            ],
+                            2 => [
+                                'badge' => 'محاضرات اللغة الإيطالية والقبول الجامعي',
+                                'title' => 'شرح تفاعلي لقواعد ومحادثة اللغة الإيطالية (Grammatica Italiana)',
+                                'desc' => 'تأسيس المتدربين من الصفر وحتى الطلاقة والتأهيل لاختبارات السفارة والالتحاق بالجامعات الإيطالية مع نخبة من الأساتذة.',
+                                'default_img' => 'assets/images/academy/italian-classroom-lecture.jpg',
+                            ],
+                            3 => [
+                                'badge' => 'بوابتك نحو إيطاليا وأوروبا',
+                                'title' => 'من قاعات INTOK إلى أعرق الصروح التعليمية في روما وميلانو',
+                                'desc' => 'رحلة متكاملة تؤهلك للحصول على منحة DSU الشاملة (8,000 يورو سنوياً + سكن مجاني) والإقامة القانونية والعمل باليورو.',
+                                'default_img' => 'assets/images/schools/galileo-galilei.jpg',
+                            ],
+                            4 => [
+                                'badge' => 'معايير التميز الأكاديمي',
+                                'title' => 'الاعتماد الدولي والمنح الدراسية الموثقة',
+                                'desc' => 'تأهيل متكامل للطلبة لمرحلة البكالوريوس والماجستير وتصديق الشهادات لدى القنصلية الإيطالية.',
+                                'default_img' => 'assets/images/schools/bologna-university.jpg',
+                            ],
+                        ];
+                    @endphp
+
+                    <div class="space-y-6">
+                        @foreach($defaultLiveSlides as $idx => $slide)
+                            <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-4 space-y-4">
+                                <div class="flex items-center justify-between border-b border-slate-200/80 pb-2">
+                                    <span class="font-bold text-sm text-slate-800">الشريحة {{ $idx }} (Slide {{ $idx }})</span>
+                                    <span class="text-xs bg-slate-200 text-slate-700 px-2 py-0.5 rounded-full font-semibold">تأثير تفتيت تفاعلي</span>
+                                </div>
+
+                                <div class="grid gap-4 sm:grid-cols-12 items-start">
+                                    <div class="sm:col-span-4">
+                                        <label class="block text-xs font-bold text-slate-700">صورة الشريحة {{ $idx }}
+                                            <input type="file" name="live_slide_{{ $idx }}_img" accept="image/jpeg,image/png,image/webp" class="admin-input mt-1">
+                                        </label>
+                                        <div class="mt-2">
+                                            @if(data_get($settings, 'live_slide_'.$idx.'_img'))
+                                                <div class="relative">
+                                                    <img src="{{ asset('storage/'.data_get($settings, 'live_slide_'.$idx.'_img')) }}" class="h-28 w-full object-cover rounded-lg border border-slate-200 shadow-xs" alt="صورة الشريحة {{ $idx }}">
+                                                    <span class="absolute bottom-1 start-1 bg-black/60 text-white text-[10px] px-1.5 py-0.5 rounded">الصورة الحالية المرفوعة</span>
+                                                </div>
+                                            @else
+                                                <div class="relative">
+                                                    <img src="{{ asset($slide['default_img']) }}" class="h-28 w-full object-cover rounded-lg border border-slate-200 opacity-80" alt="الصورة الافتراضية">
+                                                    <span class="absolute bottom-1 start-1 bg-slate-800/70 text-white text-[10px] px-1.5 py-0.5 rounded">الصورة الافتراضية</span>
+                                                </div>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="sm:col-span-8 grid gap-3">
+                                        <div>
+                                            <label class="block text-xs font-bold text-slate-700">شارة الشريحة (Badge)
+                                                <input name="live_slide_{{ $idx }}_badge[ar]" value="{{ old('live_slide_'.$idx.'_badge.ar', data_get($settings, 'live_slide_'.$idx.'_badge.ar', $slide['badge'])) }}" class="admin-input mt-1">
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="block text-xs font-bold text-slate-700">عنوان الشريحة الرئيسي
+                                                <input name="live_slide_{{ $idx }}_title[ar]" value="{{ old('live_slide_'.$idx.'_title.ar', data_get($settings, 'live_slide_'.$idx.'_title.ar', $slide['title'])) }}" class="admin-input mt-1">
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="block text-xs font-bold text-slate-700">تفاصيل ووصف الشريحة
+                                                <textarea name="live_slide_{{ $idx }}_desc[ar]" rows="2" class="admin-input mt-1">{{ old('live_slide_'.$idx.'_desc.ar', data_get($settings, 'live_slide_'.$idx.'_desc.ar', $slide['desc'])) }}</textarea>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             </section>
         </div>

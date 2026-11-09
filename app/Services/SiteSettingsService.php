@@ -23,7 +23,20 @@ class SiteSettingsService
     {
         $current = $this->all();
         $newFiles = [];
-        foreach (['logo' => ['logo_path', 'site', 900, 400], 'favicon' => ['favicon_path', 'site', 256, 256]] as $field => [$key, $directory, $width, $height]) {
+        $fileFields = [
+            'logo' => ['logo_path', 'site', 900, 400],
+            'favicon' => ['favicon_path', 'site', 256, 256],
+            'hero_scene_1_img' => ['hero_scene_1_img', 'site/hero', 1600, 1200],
+            'hero_scene_2_img' => ['hero_scene_2_img', 'site/hero', 1600, 1200],
+            'hero_scene_3_img' => ['hero_scene_3_img', 'site/hero', 1600, 1200],
+            'hero_scene_4_img' => ['hero_scene_4_img', 'site/hero', 1600, 1200],
+            'live_slide_1_img' => ['live_slide_1_img', 'site/slider', 1920, 1080],
+            'live_slide_2_img' => ['live_slide_2_img', 'site/slider', 1920, 1080],
+            'live_slide_3_img' => ['live_slide_3_img', 'site/slider', 1920, 1080],
+            'live_slide_4_img' => ['live_slide_4_img', 'site/slider', 1920, 1080],
+        ];
+
+        foreach ($fileFields as $field => [$key, $directory, $width, $height]) {
             $upload = $settings[$field] ?? null;
             unset($settings[$field]);
             if ($upload instanceof UploadedFile) {
