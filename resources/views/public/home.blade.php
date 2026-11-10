@@ -544,7 +544,7 @@
                                 </span>
                             </div>
                             <span class="inline-flex items-center gap-1.5 text-xs font-black text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
-                                <svg class="size-3.5 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                                <svg class="size-3.5 text-emerald-600 shrink-0" width="14" height="14" style="width: 14px; height: 14px; min-width: 14px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
                                 <span>معتمد رسمياً في INTOK</span>
                             </span>
                         </div>
@@ -1989,7 +1989,7 @@
                     trackData.points.forEach(pt => {
                         const box = document.createElement('div');
                         box.className = 'flex items-start gap-3 p-2.5 rounded-xl bg-slate-50/70 border border-slate-100 hover:bg-slate-50 transition min-w-0';
-                        box.innerHTML = `<div class="size-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5"><svg class="size-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></div><span class="text-xs sm:text-sm font-semibold text-slate-800 leading-snug break-words flex-1">${pt}</span>`;
+                        box.innerHTML = `<div class="size-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5" style="width: 20px; height: 20px; min-width: 20px;"><svg class="size-3" width="12" height="12" style="width: 12px; height: 12px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></div><span class="text-xs sm:text-sm font-semibold text-slate-800 leading-snug break-words flex-1">${pt}</span>`;
                         stagePointsContainer.appendChild(box);
                     });
                 }
