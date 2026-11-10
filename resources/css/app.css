@@ -559,11 +559,15 @@
     transform: translate(0, 0) scale(1) !important;
 }
 
-/* Prevent horizontal overflow from animations on small screens */
-@media (max-width: 768px) {
-    .reveal-left:not(.revealed),
-    .reveal-right:not(.revealed) {
-        transform: translateY(35px) !important;
+/* Instantly reveal all content on mobile and tablets to eliminate any blank loading delays */
+@media (max-width: 1024px) {
+    .reveal-up,
+    .reveal-left,
+    .reveal-right,
+    .reveal-scale {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
     }
 }
 

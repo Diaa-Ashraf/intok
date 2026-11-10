@@ -10,6 +10,9 @@ class TeamPageController extends Controller
 {
     public function index(TeamDirectoryService $team): View
     {
-        return view('public.team', ['team' => $team->activeMembers(100)]);
+        return view('public.team', [
+            'team' => $team->activeMembers(100),
+            'locale' => app()->getLocale(),
+        ]);
     }
 }

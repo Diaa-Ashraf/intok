@@ -104,7 +104,7 @@
             <div class="grid items-center gap-12 lg:grid-cols-12 lg:gap-8">
                 
                 <!-- Left Column: Inspiring & Powerful Brand Messaging -->
-                <div class="lg:col-span-7 text-start reveal-left">
+                <div class="lg:col-span-7 text-start">
                     
                     <!-- Top Dynamic Badge -->
                     <div class="inline-flex items-center gap-2.5 rounded-full border border-red-200 bg-white/90 px-4 py-2 text-xs font-black text-red-600 backdrop-blur-md shadow-xs">
@@ -166,7 +166,7 @@
                 </div>
 
                 <!-- Right Column: Cinematic Italian Academic Gateway Stage (Luxury 3D Showcase) -->
-                <div class="lg:col-span-5 relative flex flex-col items-center justify-center pt-8 lg:pt-0 reveal-right" id="hero-stage-column">
+                <div class="lg:col-span-5 relative flex flex-col items-center justify-center pt-8 lg:pt-0" id="hero-stage-column">
                     
                     <!-- Ambient Glow Behind Stage -->
                     <div class="pointer-events-none absolute -top-8 -end-8 size-72 rounded-full bg-gradient-to-br from-[#fe0002]/20 to-[#c27803]/20 blur-3xl"></div>
@@ -1544,9 +1544,9 @@
          ========================================================== -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // 1. ACTIVE 60FPS CONSTELLATION CANVAS
+            // 1. ACTIVE 60FPS CONSTELLATION CANVAS (Desktop Only for Maximum Performance)
             const canvas = document.getElementById('hero-interactive-canvas');
-            if (canvas) {
+            if (canvas && window.innerWidth >= 1024) {
                 const ctx = canvas.getContext('2d');
                 let width = canvas.width = canvas.parentElement.offsetWidth;
                 let height = canvas.height = canvas.parentElement.offsetHeight;

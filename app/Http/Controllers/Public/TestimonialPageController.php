@@ -10,6 +10,9 @@ class TestimonialPageController extends Controller
 {
     public function index(TestimonialService $testimonials): View
     {
-        return view('public.testimonials', ['testimonials' => $testimonials->allPublished()]);
+        return view('public.testimonials', [
+            'testimonials' => $testimonials->allPublished(),
+            'locale' => app()->getLocale(),
+        ]);
     }
 }

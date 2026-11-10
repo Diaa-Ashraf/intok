@@ -15,12 +15,18 @@ class ClientLeadController extends Controller
 {
     public function registrationForm(ServiceCatalogService $services): View
     {
-        return view('public.register', ['services' => $services->activeForLocale(app()->getLocale())]);
+        return view('public.register', [
+            'services' => $services->activeForLocale(app()->getLocale()),
+            'locale' => app()->getLocale(),
+        ]);
     }
 
     public function consultationForm(ServiceCatalogService $services): View
     {
-        return view('public.consultation', ['services' => $services->activeForLocale(app()->getLocale())]);
+        return view('public.consultation', [
+            'services' => $services->activeForLocale(app()->getLocale()),
+            'locale' => app()->getLocale(),
+        ]);
     }
 
     public function register(StoreClientRegistrationRequest $request, ClientLeadIntakeService $leads): RedirectResponse

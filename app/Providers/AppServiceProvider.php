@@ -23,6 +23,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         View::composer('public.*', function ($view): void {
+            $view->with('locale', app()->getLocale());
             $view->with('siteSettings', app(SiteSettingsService::class)->all());
             $view->with('legalPages', app(SitePageManagementService::class)->legalPages());
         });

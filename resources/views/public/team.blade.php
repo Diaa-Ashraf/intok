@@ -1,5 +1,9 @@
 @extends('public.layouts.app')
 
+@php
+    $locale = $locale ?? app()->getLocale();
+@endphp
+
 @section('title', __('site.nav_team'))
 @section('meta_description', __('site.hero_text'))
 

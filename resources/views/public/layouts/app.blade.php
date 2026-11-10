@@ -61,11 +61,11 @@
         <!-- Active 60fps Ambient Particle Canvas -->
         <canvas id="global-ambient-canvas" class="absolute inset-0 h-full w-full opacity-40"></canvas>
         
-        <!-- Ambient Aurora Energy Glows (Dual Brand Colors: Red & Mustard) -->
-        <div class="animate-aurora-1 absolute -top-40 start-1/4 size-[40rem] rounded-full bg-gradient-to-br from-red-500/12 to-amber-500/12 blur-[130px]"></div>
-        <div class="animate-aurora-2 absolute top-1/2 -end-32 size-[36rem] rounded-full bg-gradient-to-tr from-[#c27803]/10 to-rose-500/10 blur-[120px]"></div>
-        <div class="animate-aurora-3 absolute -bottom-32 start-10 size-[36rem] rounded-full bg-gradient-to-tl from-amber-400/10 to-red-500/8 blur-[110px]"></div>
-        <div class="animate-aurora-1 absolute top-1/4 start-1/2 size-[28rem] rounded-full bg-amber-500/8 blur-[100px]"></div>
+        <!-- Ambient Aurora Energy Glows (Dual Brand Colors: Red & Mustard - Hidden on mobile for peak performance) -->
+        <div class="hidden md:block animate-aurora-1 absolute -top-40 start-1/4 size-[40rem] rounded-full bg-gradient-to-br from-red-500/12 to-amber-500/12 blur-[130px]"></div>
+        <div class="hidden md:block animate-aurora-2 absolute top-1/2 -end-32 size-[36rem] rounded-full bg-gradient-to-tr from-[#c27803]/10 to-rose-500/10 blur-[120px]"></div>
+        <div class="hidden md:block animate-aurora-3 absolute -bottom-32 start-10 size-[36rem] rounded-full bg-gradient-to-tl from-amber-400/10 to-red-500/8 blur-[110px]"></div>
+        <div class="hidden md:block animate-aurora-1 absolute top-1/4 start-1/2 size-[28rem] rounded-full bg-amber-500/8 blur-[100px]"></div>
 
         <!-- Dynamic Live Meteors Streaking Through the Sky -->
         <div class="meteor-streak-item" style="top: 8%; right: 12%; animation-delay: 0.5s;"></div>
@@ -331,9 +331,9 @@
                 revealElements.forEach(el => el.classList.add('revealed'));
             }
 
-            // 2. GLOBAL AMBIENT 60FPS BACKGROUND PARTICLES
+            // 2. GLOBAL AMBIENT 60FPS BACKGROUND PARTICLES (Desktop Only for Peak Speed)
             const gCanvas = document.getElementById('global-ambient-canvas');
-            if (gCanvas) {
+            if (gCanvas && window.innerWidth >= 1024) {
                 const gCtx = gCanvas.getContext('2d');
                 let gWidth = gCanvas.width = window.innerWidth;
                 let gHeight = gCanvas.height = window.innerHeight;

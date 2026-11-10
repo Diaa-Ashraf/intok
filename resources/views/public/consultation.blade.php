@@ -1,5 +1,9 @@
 @extends('public.layouts.app')
 
+@php
+    $locale = $locale ?? app()->getLocale();
+@endphp
+
 @section('title', __('site.booking_title'))
 
 @section('content')
