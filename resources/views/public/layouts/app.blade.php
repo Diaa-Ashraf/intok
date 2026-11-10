@@ -155,7 +155,7 @@
                 </div>
                 <div>
                     <span class="text-lg font-black tracking-tight block">IN TOK ACADEMY</span>
-                    <p class="text-[10px] text-red-100 font-bold">بوابتك للدراسة والعمل الدولي</p>
+                    <p class="text-[10px] text-red-100 font-bold">{{ __('site.drawer_tagline') }}</p>
                 </div>
             </div>
             <button type="button" id="mobile-menu-close-btn" aria-label="إغلاق القائمة" class="size-9 rounded-xl bg-white/20 hover:bg-white/30 text-white grid place-items-center cursor-pointer transition">
@@ -165,7 +165,7 @@
 
         <!-- Navigation Links in Drawer -->
         <div class="p-4 sm:p-5 space-y-1.5 flex-1">
-            <span class="text-[10px] font-black text-slate-400 uppercase tracking-wider px-2 block mb-2">أقسام الموقع:</span>
+            <span class="text-[10px] font-black text-slate-400 uppercase tracking-wider px-2 block mb-2">{{ __('site.drawer_sections') }}</span>
             @foreach($activeNavLinks as $link)
                 <a href="{{ route($link['route'], ['locale' => app()->getLocale()]) }}" class="flex items-center justify-between p-3.5 rounded-2xl text-xs sm:text-sm font-black transition {{ Route::currentRouteName() === $link['route'] ? 'bg-red-50 text-[#fe0002] border border-red-200 shadow-xs' : 'text-slate-800 hover:bg-slate-50' }}">
                     <span class="flex items-center gap-2.5">
@@ -184,7 +184,7 @@
             </a>
 
             <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', data_get($siteSettings ?? [], 'whatsapp_number', '201008238323')) }}?text={{ urlencode('مرحباً، أود استشارة أكاديمية من خلال موقع INTOK ACADEMY') }}" target="_blank" class="w-full inline-flex items-center justify-center gap-2 rounded-full border-2 border-emerald-500 bg-emerald-50 py-3 text-xs font-black text-emerald-700 hover:bg-emerald-600 hover:text-white transition shadow-xs">
-                <span>تواصل فوري واتساب (24/7)</span>
+                <span>{{ __('site.whatsapp_instant_contact') }}</span>
             </a>
 
             <a href="tel:{{ data_get($siteSettings ?? [], 'contact_phone', '+201008238323') }}" class="w-full inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white py-2.5 text-xs font-bold text-slate-700 shadow-2xs hover:bg-slate-100 transition">
@@ -242,7 +242,7 @@
 
                 <!-- Fast Links -->
                 <div>
-                    <h4 class="text-sm font-black uppercase tracking-wider text-white">روابط سريعة</h4>
+                    <h4 class="text-sm font-black uppercase tracking-wider text-white">{{ __('site.quick_links') }}</h4>
                     <ul class="mt-4 space-y-2.5 text-xs text-slate-400">
                         @foreach($activeNavLinks as $footerLink)
                             <li><a href="{{ route($footerLink['route'], ['locale' => app()->getLocale()]) }}" class="hover:text-amber-400 transition">{{ $footerLink['label'] }}</a></li>
@@ -252,34 +252,34 @@
 
                 <!-- Academic Services -->
                 <div>
-                    <h4 class="text-sm font-black uppercase tracking-wider text-white">الخدمات والبرامج</h4>
+                    <h4 class="text-sm font-black uppercase tracking-wider text-white">{{ __('site.services_and_programs') }}</h4>
                     <ul class="mt-4 space-y-2.5 text-xs text-slate-400">
-                        <li><a href="{{ route('consultation.create', ['locale' => app()->getLocale()]) }}" class="hover:text-amber-400 transition">تقييم الملف والاستشارة الأكاديمية</a></li>
-                        <li><a href="{{ route('registration.create', ['locale' => app()->getLocale()]) }}" class="hover:text-amber-400 transition">التقديم لمنح إيطاليا DSU الشاملة</a></li>
-                        <li><a href="{{ route('services.index', ['locale' => app()->getLocale()]) }}" class="hover:text-amber-400 transition">ترجمة وتصديق المستندات الرسمية</a></li>
-                        <li><a href="{{ route('services.index', ['locale' => app()->getLocale()]) }}" class="hover:text-amber-400 transition">تدريب الكول سنتر واللغات الاحترافية</a></li>
+                        <li><a href="{{ route('consultation.create', ['locale' => app()->getLocale()]) }}" class="hover:text-amber-400 transition">{{ __('site.footer_service_eval') }}</a></li>
+                        <li><a href="{{ route('registration.create', ['locale' => app()->getLocale()]) }}" class="hover:text-amber-400 transition">{{ __('site.footer_service_dsu') }}</a></li>
+                        <li><a href="{{ route('services.index', ['locale' => app()->getLocale()]) }}" class="hover:text-amber-400 transition">{{ __('site.footer_service_translation') }}</a></li>
+                        <li><a href="{{ route('services.index', ['locale' => app()->getLocale()]) }}" class="hover:text-amber-400 transition">{{ __('site.footer_service_callcenter') }}</a></li>
                     </ul>
                 </div>
 
                 <!-- Direct Contact -->
                 <div>
-                    <h4 class="text-sm font-black uppercase tracking-wider text-white">تواصل مباشر</h4>
+                    <h4 class="text-sm font-black uppercase tracking-wider text-white">{{ __('site.direct_contact') }}</h4>
                     <div class="mt-4 space-y-3 text-xs text-slate-300">
                         <div class="flex items-center gap-2">
-                            <span class="text-red-400 font-bold">هاتف:</span>
+                            <span class="text-red-400 font-bold">{{ __('site.phone_label') }}</span>
                             <a href="tel:{{ data_get($siteSettings ?? [], 'contact_phone', '+201008238323') }}" class="font-bold hover:text-white" dir="ltr">{{ data_get($siteSettings ?? [], 'contact_phone', '+201008238323') }}</a>
                         </div>
                         <div class="flex items-center gap-2">
-                            <span class="text-emerald-400 font-bold">واتساب:</span>
-                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', data_get($siteSettings ?? [], 'whatsapp_number', '201008238323')) }}" class="hover:text-emerald-300 font-bold" target="_blank">واتساب مباشر (خدمة 24/7)</a>
+                            <span class="text-emerald-400 font-bold">{{ __('site.whatsapp_label') }}</span>
+                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', data_get($siteSettings ?? [], 'whatsapp_number', '201008238323')) }}" class="hover:text-emerald-300 font-bold" target="_blank">{{ __('site.whatsapp_24_7') }}</a>
                         </div>
                         <div class="flex items-center gap-2">
-                            <span class="text-amber-400 font-bold">الأكاديمية:</span>
+                            <span class="text-amber-400 font-bold">{{ __('site.academy_label') }}</span>
                             <span class="font-bold tracking-wider">INTOKACADEMY</span>
                         </div>
                         <div class="pt-2">
                             <a href="{{ route('consultation.create', ['locale' => app()->getLocale()]) }}" class="btn-intok-primary flex w-full justify-center items-center gap-2 py-3 text-xs font-black shadow-lg">
-                                <span>احجز استشارتك الأكاديمية الآن</span>
+                                <span>{{ __('site.book_consultation_now') }}</span>
                             </a>
                         </div>
                     </div>

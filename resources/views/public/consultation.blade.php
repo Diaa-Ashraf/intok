@@ -58,7 +58,7 @@
 
             <div>
                 <label for="notes" class="mb-2 block text-xs font-black uppercase tracking-wider text-slate-700">{{ __('site.notes') }}</label>
-                <textarea id="notes" name="notes" rows="4" maxlength="2000" placeholder="اذكر لنا تخصصك المطلوب، درجاتك الحالية، أو أي استفسار ترغب بمناقشته..." class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 focus:bg-white focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/20 transition">{{ old('notes') }}</textarea>
+                <textarea id="notes" name="notes" rows="4" maxlength="2000" placeholder="{{ __('site.notes_placeholder') }}" class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 focus:bg-white focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/20 transition">{{ old('notes') }}</textarea>
                 @error('notes')<p class="mt-1 text-xs text-red-600 font-bold">{{ $message }}</p>@enderror
             </div>
 

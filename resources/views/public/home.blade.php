@@ -367,10 +367,10 @@
                 <div class="w-full min-w-0 max-w-full lg:col-span-5 xl:col-span-4 space-y-2 reveal-left" id="track-rail-container">
                     <div class="mb-2 px-1 flex items-center justify-between text-xs font-black text-slate-500 uppercase tracking-wider">
                         <span class="flex items-center gap-1.5">
-                            <span>المسارات المعتمدة:</span>
-                            <span class="text-[10px] text-slate-400 font-normal lg:hidden">(اسحب لاختيار المسار ↔)</span>
+                            <span>{{ __('site.tracks_approved') }}</span>
+                            <span class="text-[10px] text-slate-400 font-normal lg:hidden">{{ __('site.tracks_swipe_hint') }}</span>
                         </span>
-                        <span class="text-red-600 font-mono text-xs font-black">{{ count($trackItems) }} مسارات</span>
+                        <span class="text-red-600 font-mono text-xs font-black">{{ __('site.tracks_count', ['count' => count($trackItems)]) }}</span>
                     </div>
 
                     <!-- On mobile/tablet: Horizontal touch-swipeable track strip. On desktop (lg+): Vertical scroll list -->
@@ -428,7 +428,7 @@
                             </div>
                             <span class="inline-flex items-center gap-1.5 text-xs font-black text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
                                 <svg class="size-3.5 text-emerald-600 shrink-0" width="14" height="14" style="width: 14px; height: 14px; min-width: 14px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-                                <span>معتمد رسمياً في INTOK</span>
+                                <span>{{ __('site.track_intok_accredited') }}</span>
                             </span>
                         </div>
 
@@ -457,7 +457,7 @@
                         <div class="mb-6 w-full min-w-0">
                             <h4 class="text-xs sm:text-sm font-black text-slate-900 uppercase tracking-wider mb-3 flex items-center gap-2">
                                 <span class="size-2 rounded-full bg-red-600"></span>
-                                <span>أبرز مخرجات ومميزات هذا المسار:</span>
+                                <span>{{ __('site.track_outcomes_title') }}</span>
                             </h4>
                             <div id="stage-points-container" class="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full min-w-0">
                                 @foreach($initialTrack['points'] as $pt)
@@ -476,21 +476,21 @@
                             <div class="flex items-center gap-2.5 min-w-0">
                                 <span class="grid size-8 shrink-0 place-items-center rounded-xl bg-white border border-slate-200 text-red-600 shadow-2xs font-bold text-xs">⏱</span>
                                 <div class="min-w-0">
-                                    <span class="block text-[10px] text-slate-500 font-bold">المدة والجدول</span>
+                                    <span class="block text-[10px] text-slate-500 font-bold">{{ __('site.track_duration_label') }}</span>
                                     <span id="stage-duration" class="font-black text-slate-900 block truncate">{{ $initialTrack['duration'] }}</span>
                                 </div>
                             </div>
                             <div class="flex items-center gap-2.5 min-w-0 border-t sm:border-t-0 sm:border-r sm:pr-3 border-slate-200/80 pt-2 sm:pt-0">
                                 <span class="grid size-8 shrink-0 place-items-center rounded-xl bg-white border border-slate-200 text-amber-600 shadow-2xs font-bold text-xs">🏛</span>
                                 <div class="min-w-0">
-                                    <span class="block text-[10px] text-slate-500 font-bold">نظام الحضور</span>
+                                    <span class="block text-[10px] text-slate-500 font-bold">{{ __('site.track_mode_label') }}</span>
                                     <span id="stage-mode" class="font-black text-slate-900 block truncate">{{ $initialTrack['mode'] }}</span>
                                 </div>
                             </div>
                             <div class="flex items-center gap-2.5 min-w-0 border-t sm:border-t-0 sm:border-r sm:pr-3 border-slate-200/80 pt-2 sm:pt-0">
                                 <span class="grid size-8 shrink-0 place-items-center rounded-xl bg-white border border-slate-200 text-blue-600 shadow-2xs font-bold text-xs">🎯</span>
                                 <div class="min-w-0">
-                                    <span class="block text-[10px] text-slate-500 font-bold">الفئة المستهدفة</span>
+                                    <span class="block text-[10px] text-slate-500 font-bold">{{ __('site.track_target_label') }}</span>
                                     <span id="stage-target" class="font-black text-slate-900 block truncate" title="{{ $initialTrack['target'] }}">{{ $initialTrack['target'] }}</span>
                                 </div>
                             </div>
@@ -500,20 +500,20 @@
                         <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-2 w-full min-w-0">
                             <div class="flex flex-col sm:flex-row items-center gap-2.5 sm:gap-3 flex-1">
                                 <a id="stage-cta-btn" href="{{ route('consultation.create', ['locale' => app()->getLocale()]) }}" class="btn-intok-primary w-full sm:w-auto px-6 py-3.5 text-center text-xs sm:text-sm font-black shadow-md flex items-center justify-center gap-2">
-                                    <span>احجز مقعدك في هذا المسار</span>
+                                    <span>{{ __('site.track_book_seat') }}</span>
                                     <span>←</span>
                                 </a>
                                 <a id="stage-details-btn" href="{{ $initialTrack ? route('services.show', ['locale' => app()->getLocale(), 'slug' => $initialTrack['slug']]) : '#' }}" class="w-full sm:w-auto px-5 py-3.5 rounded-full border border-slate-300 bg-white text-slate-700 hover:border-red-300 hover:bg-red-50 hover:text-red-700 font-bold text-xs sm:text-sm transition flex items-center justify-center gap-1.5 shadow-2xs">
-                                    <span>تفاصيل كاملة</span>
+                                    <span>{{ __('site.track_full_details') }}</span>
                                     <span>&larr;</span>
                                 </a>
                                 <a id="stage-whatsapp-btn" href="https://wa.me/201008238323?text={{ urlencode('مرحباً، أود الاستفسار والتسجيل في برنامج: ' . ($initialTrack['title'] ?? '')) }}" target="_blank" class="w-full sm:w-auto px-5 py-3.5 rounded-full border-2 border-emerald-500 bg-emerald-50 text-emerald-700 hover:bg-emerald-600 hover:text-white font-black text-xs sm:text-sm transition shadow-xs flex items-center justify-center gap-2">
                                     <svg class="size-4 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                                    <span>واتساب مباشر (24/7)</span>
+                                    <span>{{ __('site.track_whatsapp_direct') }}</span>
                                 </a>
                             </div>
                             <a href="{{ route('services.index', ['locale' => app()->getLocale()]) }}" class="text-xs font-bold text-slate-500 hover:text-red-600 transition flex items-center justify-center gap-1 shrink-0 py-2">
-                                <span>جميع الخدمات والمسارات</span>
+                                <span>{{ __('site.all_services_and_tracks') }}</span>
                                 <span>&larr;</span>
                             </a>
                         </div>
@@ -521,11 +521,11 @@
                         <!-- Mobile Quick Switcher Bar (Visible on < lg) -->
                         <div class="lg:hidden flex items-center justify-between pt-3 mt-4 border-t border-slate-100 text-xs font-bold text-slate-500 w-full min-w-0">
                             <button type="button" id="stage-prev-btn" class="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-full border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 transition active:scale-95 text-xs font-black">
-                                <span>← المسار السابق</span>
+                                <span>{{ __('site.track_prev') }}</span>
                             </button>
                             <span id="stage-track-counter" class="text-xs font-mono text-slate-500 font-bold">1 / {{ count($trackItems) }}</span>
                             <button type="button" id="stage-next-btn" class="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-full border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 transition active:scale-95 text-xs font-black">
-                                <span>المسار التالي →</span>
+                                <span>{{ __('site.track_next') }}</span>
                             </button>
                         </div>
                     </div>
@@ -591,7 +591,7 @@
                                 01 / {{ sprintf('%02d', count($liveSlides)) }}
                             </span>
                             <a href="{{ route('consultation.create', ['locale' => app()->getLocale()]) }}" class="rounded-full bg-white px-5 py-2.5 text-xs font-black text-[#fe0002] shadow-lg transition hover:bg-amber-100 hover:scale-105">
-                                انضم للدفعة القادمة
+                                {{ __('site.join_next_batch') }}
                             </a>
                         </div>
                     </div>
@@ -602,10 +602,10 @@
                     </div>
 
                     <!-- Left / Right Nav Arrows -->
-                    <button type="button" id="shatter-prev-btn" aria-label="الصورة السابقة" class="absolute start-4 top-1/2 -translate-y-1/2 z-40 size-11 rounded-full bg-black/40 border border-white/20 text-white flex items-center justify-center text-xl font-bold backdrop-blur-md transition hover:bg-[#fe0002] hover:scale-110 shadow-lg cursor-pointer">
+                    <button type="button" id="shatter-prev-btn" aria-label="{{ __('site.image_prev') }}" class="absolute start-4 top-1/2 -translate-y-1/2 z-40 size-11 rounded-full bg-black/40 border border-white/20 text-white flex items-center justify-center text-xl font-bold backdrop-blur-md transition hover:bg-[#fe0002] hover:scale-110 shadow-lg cursor-pointer">
                         ‹
                     </button>
-                    <button type="button" id="shatter-next-btn" aria-label="الصورة التالية" class="absolute end-4 top-1/2 -translate-y-1/2 z-40 size-11 rounded-full bg-black/40 border border-white/20 text-white flex items-center justify-center text-xl font-bold backdrop-blur-md transition hover:bg-[#fe0002] hover:scale-110 shadow-lg cursor-pointer">
+                    <button type="button" id="shatter-next-btn" aria-label="{{ __('site.image_next') }}" class="absolute end-4 top-1/2 -translate-y-1/2 z-40 size-11 rounded-full bg-black/40 border border-white/20 text-white flex items-center justify-center text-xl font-bold backdrop-blur-md transition hover:bg-[#fe0002] hover:scale-110 shadow-lg cursor-pointer">
                         ›
                     </button>
                 </div>
@@ -671,13 +671,25 @@
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 reveal-up">
                 <span class="inline-flex items-center gap-2 rounded-full bg-red-50 border border-red-200 px-4 py-1.5 text-xs font-black text-[#fe0002] shadow-xs">
-                    <span>{{ data_get($siteSettings ?? [], 'why_badge.'.$locale, 'معايير الثقة والريادة الدولية') }}</span>
+                    <span>{{ data_get($siteSettings ?? [], 'why_badge.'.$locale, match($locale) {
+                        'it' => 'Standard di eccellenza e leadership internazionale',
+                        'en' => 'Standards of Trust & International Leadership',
+                        default => 'معايير الثقة والريادة الدولية',
+                    }) }}</span>
                 </span>
                 <h2 class="mt-4 text-3xl font-black text-[#c27803] sm:text-5xl">
-                    {{ data_get($siteSettings ?? [], 'why_title.'.$locale, 'لماذا تختار أكاديمية إنتوك؟') }}
+                    {{ data_get($siteSettings ?? [], 'why_title.'.$locale, match($locale) {
+                        'it' => 'Perché scegliere INTOK Academy?',
+                        'en' => 'Why Choose INTOK Academy?',
+                        default => 'لماذا تختار أكاديمية إنتوك؟',
+                    }) }}
                 </h2>
                 <p class="mt-4 text-base text-slate-600 font-medium leading-relaxed">
-                    {{ data_get($siteSettings ?? [], 'why_subtitle.'.$locale, 'منظومة متكاملة لا تكتفي بتقديم الكورسات أو الترجمة، بل تصنع معك مستقبلاً حقيقياً بالدراسة في إيطاليا والعمل في كبرى الشركات العالمية بأعلى عائد.') }}
+                    {{ data_get($siteSettings ?? [], 'why_subtitle.'.$locale, match($locale) {
+                        'it' => 'Un ecosistema integrato che va oltre i semplici corsi: costruiamo il tuo futuro accademico in Italia e l\'inserimento nelle grandi aziende internazionali.',
+                        'en' => 'An integrated ecosystem offering more than just courses—we build your future studying in Italy and working with global companies.',
+                        default => 'منظومة متكاملة لا تكتفي بتقديم الكورسات أو الترجمة، بل تصنع معك مستقبلاً حقيقياً بالدراسة في إيطاليا والعمل في كبرى الشركات العالمية بأعلى عائد.',
+                    }) }}
                 </p>
             </div>
 
@@ -695,176 +707,503 @@
                     return $defaultPoints;
                 };
 
-                $whyPillars = [
-                    [
-                        'id' => 'dsu',
-                        'icon' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg>',
-                        'nav_title' => data_get($siteSettings ?? [], 'why_bento_dsu_nav_title.'.$locale, 'منحة DSU والسكن'),
-                        'nav_sub' => data_get($siteSettings ?? [], 'why_bento_dsu_nav_sub.'.$locale, '8,000€ + سكن مجاني'),
-                        'badge' => data_get($siteSettings ?? [], 'why_bento_dsu_badge.'.$locale, 'منحة إقليمية حكومية'),
-                        'badge_color' => 'bg-red-50 text-[#fe0002] border-red-200',
-                        'title' => data_get($siteSettings ?? [], 'why_bento_dsu_title.'.$locale, 'أعلى نسبة قبول لمنح DSU الحكومية الإيطالية'),
-                        'desc' => data_get($siteSettings ?? [], 'why_bento_dsu_desc.'.$locale, 'نضمن لك حساب مؤشر ISEE بدقة هندسية وقانونية لضمان استيفاء شروط المنحة الإقليمية وسكن جامعي معفى تماماً، مع فتح الباب لحملة الدبلومات الفنية (صنايع / تجارة / زراعة) والثانوية العامة والجامعيين.'),
-                        'stat_val' => data_get($siteSettings ?? [], 'why_bento_dsu_stat_val', '8,000€'),
-                        'stat_unit' => data_get($siteSettings ?? [], 'why_bento_dsu_stat_unit.'.$locale, 'سنوياً'),
-                        'stat_label' => data_get($siteSettings ?? [], 'why_bento_dsu_stat_label.'.$locale, 'بدل نقدي مباشر لحساب الطالب'),
-                        'stat_sub' => data_get($siteSettings ?? [], 'why_bento_dsu_stat_sub.'.$locale, 'إعفاء 100% من المصروفات + سكن مجاني'),
-                        'points' => $parsePoints(data_get($siteSettings ?? [], 'why_bento_dsu_points'), [
-                            'حساب دقيق لمؤشر ISEE Parificato وفق المعايير الرسمية للمنحة الإقليمية',
-                            'إعفاء كامل 100% من الرسوم والمصروفات الدراسية الجامعية في إيطاليا',
-                            'تأمين سكن جامعي مجاني ومجهز طوال فترة سنوات دراستك',
-                            'وجبات غذائية مدعومة بمطاعم الجامعات الإيطالية يومياً',
-                            'حق العمل القانوني للطلاب 20 ساعة أسبوعياً باليورو'
-                        ]),
-                        'vs_traditional' => [
-                            'traditional' => data_get($siteSettings ?? [], 'why_bento_dsu_vs_traditional.'.$locale, 'إهمال المنحة وتوريط الطالب بمصروفات دراسية باهظة بدون سكن أو دعم نقدي'),
-                            'intok' => data_get($siteSettings ?? [], 'why_bento_dsu_vs_intok.'.$locale, 'ملف منحة متكامل بدقة 100% يضمن لك أعلى فرصة للحصول على الـ 8,000 يورو والسكن')
+                                $bentoFallbacks = [
+                    'ar' => [
+                        'dsu' => [
+                            'nav_title' => 'منحة DSU والسكن',
+                            'nav_sub' => '8,000€ + سكن مجاني',
+                            'badge' => 'منحة إقليمية حكومية',
+                            'badge_color' => 'bg-red-50 text-[#fe0002] border-red-200',
+                            'title' => 'أعلى نسبة قبول لمنح DSU الحكومية الإيطالية',
+                            'desc' => 'نضمن لك حساب مؤشر ISEE بدقة هندسية وقانونية لضمان استيفاء شروط المنحة الإقليمية وسكن جامعي معفى تماماً، مع فتح الباب لحملة الدبلومات الفنية (صنايع / تجارة / زراعة) والثانوية العامة والجامعيين.',
+                            'stat_val' => '8,000€',
+                            'stat_unit' => 'سنوياً',
+                            'stat_label' => 'بدل نقدي مباشر لحساب الطالب',
+                            'stat_sub' => 'إعفاء 100% من المصروفات + سكن مجاني',
+                            'points' => [
+                                'حساب دقيق لمؤشر ISEE Parificato وفق المعايير الرسمية للمنحة الإقليمية',
+                                'إعفاء كامل 100% من الرسوم والمصروفات الدراسية الجامعية في إيطاليا',
+                                'تأمين سكن جامعي مجاني ومجهز طوال فترة سنوات دراستك',
+                                'وجبات غذائية مدعومة بمطاعم الجامعات الإيطالية يومياً',
+                                'حق العمل القانوني للطلاب 20 ساعة أسبوعياً باليورو'
+                            ],
+                            'vs_traditional' => [
+                                'traditional' => 'إهمال المنحة وتوريط الطالب بمصروفات دراسية باهظة بدون سكن أو دعم نقدي',
+                                'intok' => 'ملف منحة متكامل بدقة 100% يضمن لك أعلى فرصة للحصول على الـ 8,000 يورو والسكن'
+                            ],
+                            'cta_text' => 'افحص فرصة حصولك على منحة DSU',
+                            'wa_msg' => 'مرحباً، أود الاستفسار عن تفاصيل منحة DSU الإيطالية وشروط القبول والسكن المجاني'
                         ],
-                        'cta_text' => data_get($siteSettings ?? [], 'why_bento_dsu_cta_text.'.$locale, 'افحص فرصة حصولك على منحة DSU'),
-                        'cta_url' => route('consultation.create', ['locale' => $locale]),
-                        'wa_msg' => 'مرحباً، أود الاستفسار عن تفاصيل منحة DSU الإيطالية وشروط القبول والسكن المجاني'
+                        'callcenter' => [
+                            'nav_title' => 'الكول سنتر والتوظيف',
+                            'nav_sub' => 'رواتب 15k - 30k+ ج.م',
+                            'badge' => 'تأهيل وظيفي فوري',
+                            'badge_color' => 'bg-emerald-50 text-emerald-700 border-emerald-200',
+                            'title' => 'تأهيل وظيفي فوري لكبرى شركات الكول سنتر',
+                            'desc' => 'تدريب تطبيقي على الشاشات الذكية ومحاكاة لمقابلات شركات متعددة الجنسيات (Vodafone UK, Concentrix, Teleperformance) يؤهلك للعمل المباشر.',
+                            'stat_val' => '15k - 30k+',
+                            'stat_unit' => 'ج.م / شهرياً',
+                            'stat_label' => 'متوسط الراتب لحديثي التخرج والخريجين',
+                            'stat_sub' => 'فرص عمل فوري بكبرى الشركات الدولية',
+                            'points' => [
+                                'تدريب عملي ومحاكاة لمكالمات وأنظمة خدمة العملاء والدعم الفني الحقيقية',
+                                'محاكاة لأسئلة واختبارات الـ HR والـ Operations في الشركات متعددة الجنسيات',
+                                'إتقان اللهجة ونبرة الصوت المناسبة لمختلف أسواق العمل الدولية',
+                                'ورش مكثفة لاجتياز المقابلات الشخصية بنجاح من المقابلة الأولى',
+                                'ترشيح مباشر وتوصية للتوظيف لدى شبكة شركائنا بعد التخرج'
+                            ],
+                            'vs_traditional' => [
+                                'traditional' => 'كورسات نظرية عامة بدون شاشات تفاعلية أو محاكاة حقيقية وبلا أي فرص توظيف',
+                                'intok' => 'محاكاة واقعية 100% تؤهلك لاجتياز مقابلات الشركات العالمية فور التخرج'
+                            ],
+                            'cta_text' => 'سجل في تدريب الكول سنتر المباشر',
+                            'wa_msg' => 'مرحباً، أود الاستفسار عن كورس تدريب الكول سنتر وفرص التوظيف المتاحة'
+                        ],
+                        'trans' => [
+                            'nav_title' => 'الترجمة المعتمدة',
+                            'nav_sub' => 'معتمدة قنصلياً 100%',
+                            'badge' => 'توثيق رسمي للسفارات',
+                            'badge_color' => 'bg-amber-50 text-amber-800 border-amber-200',
+                            'title' => 'ترجمة معتمدة رسمياً وموثقة لجميع السفارات',
+                            'desc' => 'ترجمة رسمية معترف بها أمام القنصلية الإيطالية وكافة السفارات الأوروبية، لشهادات التخرج، إعلانات القيمة، وعقود العمل دون مخاطرة بالرفض.',
+                            'stat_val' => '24 - 48h',
+                            'stat_unit' => 'تسليم مستعجل',
+                            'stat_label' => 'سرعة إنجاز وتوثيق الملفات الرسمية',
+                            'stat_sub' => 'دقة قانونية متناهية بدون أخطاء ترفض ملفك',
+                            'points' => [
+                                'ترجمة معتمدة ومقبولة لدى القنصلية الإيطالية بالقاهرة والإسكندرية',
+                                'ترجمة إعلان القيمة (Dichiarazione di Valore) وبيانات الدرجات والمقررات',
+                                'إنهاء تصديقات الخارجية المصرية ونقابة المترجمين والغرفة التجارية',
+                                'تدقيق لغوي وقانوني مزدوج لضمان خلو الأوراق من أي ثغرات قنصلية',
+                                'توصيل فوري لجميع محافظات مصر مع إمكانية المعاينة الرقمية'
+                            ],
+                            'vs_traditional' => [
+                                'traditional' => 'ترجمات غير معتمدة أو مليئة بالأخطاء تؤدي لرفض التأشيرة وإضاعة المواعيد',
+                                'intok' => 'اعتماد قنصلي رسمي 100% يضمن قبول أوراقك في السفارة من المرة الأولى'
+                            ],
+                            'cta_text' => 'اطلب ترجمتك المعتمدة فوراً',
+                            'wa_msg' => 'مرحباً، أود الاستفسار عن خدمة الترجمة المعتمدة للأوراق الرسمية وتصديقات السفارة'
+                        ],
+                        'reception' => [
+                            'nav_title' => 'الاستقبال بإيطاليا',
+                            'nav_sub' => 'ميلانو وروما وتسكين مباشر',
+                            'badge' => 'مرافقة ميدانية بأوروبا',
+                            'badge_color' => 'bg-red-50 text-[#fe0002] border-red-200',
+                            'title' => 'استقبال في المطار وتسليم السكن بإيطاليا',
+                            'desc' => 'رحلتك معنا لا تنتهي عند باب المطار؛ بل يستقبلك فريقنا الميداني في ميلانو وروما لتسليم السكن، واستخراج الإقامة والحساب البنكي.',
+                            'stat_val' => '100%',
+                            'stat_unit' => 'أمان ورعاية',
+                            'stat_label' => 'مرافقة ميدانية من لحظة الهبوط بالمطار',
+                            'stat_sub' => 'فريق ميداني رسمي يتحدث العربية والإيطالية',
+                            'points' => [
+                                'استقبالك بالاسم في صالة الوصول بمطارات ميلانو (Malpensa) وروما (Fiumicino)',
+                                'توصيلك مباشرة إلى مقر إقامتك وتسليمك مفاتيح السكن الجامعي أو الخاص',
+                                'مرافقة لتقديم أوراق تصريح الإقامة (Permesso di Soggiorno) بالبريد والشرطة',
+                                'استخراج الرقم الضريبي الإيطالي (Codice Fiscale) وشراء شريحة اتصال إيطالية',
+                                'مساعدتك في فتح حساب بنكي إيطالي وتوجيهك لفرص العمل والأنشطة الطلابية'
+                            ],
+                            'vs_traditional' => [
+                                'traditional' => 'ينتهي دور المكتب بمجرد السفر ويُترك الطالب وحيداً وتائهاً في المطار والغربة',
+                                'intok' => 'فريقنا الميداني في إيطاليا يستقبلك ويلازمك حتى تستقر في سكنك وتنهي أوراقك'
+                            ],
+                            'cta_text' => 'احجز باقة الاستقبال والمرافقة بإيطاليا',
+                            'wa_msg' => 'مرحباً، أود الاستفسار عن خدمات الاستقبال في المطار والتسكين في إيطاليا'
+                        ],
+                        'languages' => [
+                            'nav_title' => 'إتقان اللغات وCILS',
+                            'nav_sub' => 'من الصفر حتى الطلاقة التامة',
+                            'badge' => 'شهادات دولية معتمدة',
+                            'badge_color' => 'bg-purple-50 text-purple-700 border-purple-200',
+                            'title' => 'إتقان اللغات من الصفر واجتياز CILS & IELTS',
+                            'desc' => 'دورات مكثفة في الإيطالية والإنجليزية والألمانية تركز 80% على المحادثة والطلاقة الواقعية، وتؤهلك لاجتياز امتحانات السفارات والجامعات.',
+                            'stat_val' => '80%',
+                            'stat_unit' => 'محادثة وتطبيق',
+                            'stat_label' => 'نسبة التركيز على التحدث والطلاقة العملية',
+                            'stat_sub' => 'كسر حاجز الخوف والحديث بطلاقة خلال أسابيع',
+                            'points' => [
+                                'مناهج أوروبية معتمدة ومطابقة للإطار المرجعي الأوروبي للغات (CEFR)',
+                                'تدريب مكثف على نماذج اختبارات اللغة الإيطالية الرسمية (CILS, CELI, PLIDA)',
+                                'دورات متخصصة لاجتياز اختبارات الآيلتس (IELTS) والتوفل (TOEFL) الدولية',
+                                'محاضرون خبراء معتمدون وناطقون أصليون يتابعون مستواك يومياً',
+                                'شهادات تخرج معتمدة توثق مستواك اللغوي وتؤهلك للجامعات وسوق العمل'
+                            ],
+                            'vs_traditional' => [
+                                'traditional' => 'طرق تدريس قديمة تعتمد على الحفظ الصم دون إتاحة الفرصة لممارسة المحادثة',
+                                'intok' => 'منهج تفاعلي يركز 80% على المحادثة المباشرة ويكسر حاجز الرهبة تماماً'
+                            ],
+                            'cta_text' => 'ابدأ كورس اللغة وتحديد المستوى',
+                            'wa_msg' => 'مرحباً، أود الاستفسار عن دورات اللغات (إيطالي / إنجليزي / ألماني) وتأهيل CILS'
+                        ],
+                        'mentorship' => [
+                            'nav_title' => 'الإرشاد والمتابعة 24/7',
+                            'nav_sub' => 'مستشار أكاديمي شخصي مخصص',
+                            'badge' => 'متابعة مستمرة ودقيقة',
+                            'badge_color' => 'bg-blue-50 text-blue-700 border-blue-200',
+                            'title' => 'إرشاد شخصي 1-on-1 ومتابعة مستمرة',
+                            'desc' => 'مستشار أكاديمي مخصص يدرس ملفك ويضع خطتك المناسبة، مع نظام تنبيهات لمواعيد المنح والتقديمات لضمان عدم فوات أي موعد رسمي.',
+                            'stat_val' => '24/7',
+                            'stat_unit' => 'دعم متواصل',
+                            'stat_label' => 'مستشارك الأكاديمي بجانبك طوال رحلتك',
+                            'stat_sub' => 'متابعة دقيقة لكل خطوة وموعد تقديم رسمي',
+                            'points' => [
+                                'جلسة استشارة فردية 1-on-1 لتحليل مؤهلك (دبلوم فني، ثانوية، بكالوريوس) واختيار أفضل طريق',
+                                'خطة زمنية مدروسة تضمن استيفاء كافة الأوراق والمواعيد قبل إغلاق باب التقديم',
+                                'مراجعة وتدقيق شامل لملفك الدراسي لمنع أي خطأ قد يؤدي للرفض',
+                                'تذكير دوري بمواعيد المقابلات والمنح والتصديقات خطوة بخطوة',
+                                'دعم متواصل عبر الواتساب والمكالمات والاجتماعات الافتراضية طوال فترة التقديم'
+                            ],
+                            'vs_traditional' => [
+                                'traditional' => 'إهمال استفسارات الطلاب والتأخر في الرد وضياع المواعيد الرسمية للمنح',
+                                'intok' => 'مستشار أكاديمي ملازم لك يومياً ومتابعة دقيقة تضمن عدم تفويت أي فرصة'
+                            ],
+                            'cta_text' => 'احجز استشارتك الأكاديمية الآن',
+                            'wa_msg' => 'مرحباً، أود حجز جلسة استشارة أكاديمية شخصية 1-on-1 لتحديد مساري الأنسب'
+                        ]
                     ],
-                    [
-                        'id' => 'callcenter',
-                        'icon' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z"/></svg>',
-                        'nav_title' => data_get($siteSettings ?? [], 'why_bento_callcenter_nav_title.'.$locale, 'الكول سنتر والتوظيف'),
-                        'nav_sub' => data_get($siteSettings ?? [], 'why_bento_callcenter_nav_sub.'.$locale, 'رواتب 15k - 30k+ ج.م'),
-                        'badge' => data_get($siteSettings ?? [], 'why_bento_callcenter_badge.'.$locale, 'تأهيل وظيفي فوري'),
-                        'badge_color' => 'bg-emerald-50 text-emerald-700 border-emerald-200',
-                        'title' => data_get($siteSettings ?? [], 'why_bento_callcenter_title.'.$locale, 'تأهيل وظيفي فوري لكبرى شركات الكول سنتر'),
-                        'desc' => data_get($siteSettings ?? [], 'why_bento_callcenter_desc.'.$locale, 'تدريب تطبيقي على الشاشات الذكية ومحاكاة لمقابلات شركات متعددة الجنسيات (Vodafone UK, Concentrix, Teleperformance) يؤهلك للعمل المباشر.'),
-                        'stat_val' => data_get($siteSettings ?? [], 'why_bento_callcenter_stat_val', '15k - 30k+'),
-                        'stat_unit' => data_get($siteSettings ?? [], 'why_bento_callcenter_stat_unit.'.$locale, 'ج.م / شهرياً'),
-                        'stat_label' => data_get($siteSettings ?? [], 'why_bento_callcenter_stat_label.'.$locale, 'متوسط الراتب لحديثي التخرج والخريجين'),
-                        'stat_sub' => data_get($siteSettings ?? [], 'why_bento_callcenter_stat_sub.'.$locale, 'فرص عمل فوري بكبرى الشركات الدولية'),
-                        'points' => $parsePoints(data_get($siteSettings ?? [], 'why_bento_callcenter_points'), [
-                            'تدريب عملي ومحاكاة لمكالمات وأنظمة خدمة العملاء والدعم الفني الحقيقية',
-                            'محاكاة لأسئلة واختبارات الـ HR والـ Operations في الشركات متعددة الجنسيات',
-                            'إتقان اللهجة ونبرة الصوت المناسبة لمختلف أسواق العمل الدولية',
-                            'ورش مكثفة لاجتياز المقابلات الشخصية بنجاح من المقابلة الأولى',
-                            'ترشيح مباشر وتوصية للتوظيف لدى شبكة شركائنا بعد التخرج'
-                        ]),
-                        'vs_traditional' => [
-                            'traditional' => data_get($siteSettings ?? [], 'why_bento_callcenter_vs_traditional.'.$locale, 'كورسات نظرية عامة بدون شاشات تفاعلية أو محاكاة حقيقية وبلا أي فرص توظيف'),
-                            'intok' => data_get($siteSettings ?? [], 'why_bento_callcenter_vs_intok.'.$locale, 'محاكاة واقعية 100% تؤهلك لاجتياز مقابلات الشركات العالمية فور التخرج')
+                    'it' => [
+                        'dsu' => [
+                            'nav_title' => 'Borse DSU e Alloggio',
+                            'nav_sub' => '8.000€ + Alloggio gratuito',
+                            'badge' => 'Borsa regionale governativa',
+                            'badge_color' => 'bg-red-50 text-[#fe0002] border-red-200',
+                            'title' => 'Massima percentuale di ammissione alle borse DSU in Italia',
+                            'desc' => 'Calcoliamo l\'ISEE Parificato con precisione legale e accademica per garantire l\'accesso alla borsa regionale e all\'alloggio gratuito per diplomati e maturandi.',
+                            'stat_val' => '8.000€',
+                            'stat_unit' => '/ anno',
+                            'stat_label' => 'Contributo diretto allo studente',
+                            'stat_sub' => 'Esenzione 100% tasse + alloggio gratuito',
+                            'points' => [
+                                'Calcolo preciso dell\'ISEE Parificato secondo i criteri ufficiali delle borse regionali',
+                                'Esenzione totale (100%) dalle tasse universitarie in tutta Italia',
+                                'Alloggio universitario gratuito e attrezzato per l\'intera durata degli studi',
+                                'Pasti giornalieri convenzionati presso le mense universitarie italiane',
+                                'Diritto al lavoro legale fino a 20 ore settimanali retribuite in Euro'
+                            ],
+                            'vs_traditional' => [
+                                'traditional' => 'Spese universitarie esorbitanti senza alloggio né borse di studio',
+                                'intok' => 'Pratica di borsa completa al 100% per massimizzare la borsa da 8.000€ e l\'alloggio'
+                            ],
+                            'cta_text' => 'Verifica la tua idoneità alla borsa DSU',
+                            'wa_msg' => 'Ciao, vorrei maggiori informazioni sulla borsa DSU in Italia e sui requisiti di ammissione'
                         ],
-                        'cta_text' => data_get($siteSettings ?? [], 'why_bento_callcenter_cta_text.'.$locale, 'سجل في تدريب الكول سنتر المباشر'),
-                        'cta_url' => route('consultation.create', ['locale' => $locale]),
-                        'wa_msg' => 'مرحباً، أود الاستفسار عن كورس تدريب الكول سنتر وفرص التوظيف المتاحة'
+                        'callcenter' => [
+                            'nav_title' => 'Call Center e Lavoro',
+                            'nav_sub' => 'Stipendi 15k - 30k+ EGP',
+                            'badge' => 'Inserimento lavorativo rapido',
+                            'badge_color' => 'bg-emerald-50 text-emerald-700 border-emerald-200',
+                            'title' => 'Qualificazione immediata per le multinazionali di Call Center',
+                            'desc' => 'Formazione pratica con simulatori avanzati e colloqui guidati per le principali multinazionali (Vodafone UK, Concentrix, Teleperformance).',
+                            'stat_val' => '15k - 30k+',
+                            'stat_unit' => 'EGP / mese',
+                            'stat_label' => 'Stipendio medio per neolaureati e diplomati',
+                            'stat_sub' => 'Assunzioni immediate presso partner internazionali',
+                            'points' => [
+                                'Simulazione pratica di chiamate, ticket e sistemi reali di Customer Care e Helpdesk',
+                                'Preparazione mirata ai colloqui HR e Operations delle grandi multinazionali',
+                                'Perfezionamento della pronuncia, dizione e tono professionale per mercati esteri',
+                                'Workshop intensivi per superare le selezioni al primo tentativo',
+                                'Segnalazione e raccomandazione diretta ai recruiter della nostra rete partner'
+                            ],
+                            'vs_traditional' => [
+                                'traditional' => 'Corsi puramente teorici senza schermi interattivi né sbocchi lavorativi reali',
+                                'intok' => 'Simulazione reale al 100% che ti prepara a superare i colloqui delle multinazionali'
+                            ],
+                            'cta_text' => 'Iscriviti al corso Call Center professionale',
+                            'wa_msg' => 'Ciao, vorrei informazioni sul corso di formazione Call Center e sulle opportunità lavorative'
+                        ],
+                        'trans' => [
+                            'nav_title' => 'Traduzioni Giurate',
+                            'nav_sub' => '100% legalizzate e riconosciute',
+                            'badge' => 'Legalizzazione consolare ufficiale',
+                            'badge_color' => 'bg-amber-50 text-amber-800 border-amber-200',
+                            'title' => 'Traduzioni giurate e asseverate per ambasciate e consolati',
+                            'desc' => 'Traduzioni ufficiali per il Consolato d\'Italia e tutte le ambasciate europee: certificati di studio, Dichiarazioni di Valore e contratti senza rischio di rifiuto.',
+                            'stat_val' => '24 - 48h',
+                            'stat_unit' => 'Consegna rapida',
+                            'stat_label' => 'Velocità di completamento e legalizzazione pratiche',
+                            'stat_sub' => 'Precisione giuridica impeccabile per evitare qualsiasi rifiuto consolare',
+                            'points' => [
+                                'Traduzione asseverata conforme alle linee guida del Consolato d\'Italia al Cairo e ad Alessandria',
+                                'Traduzione di Dichiarazione di Valore (DoV), piani di studio e pagelle scolastiche',
+                                'Legalizzazioni presso il Ministero degli Affari Esteri e le autorità competenti',
+                                'Doppia revisione linguistica e giuridica per eliminare ogni vizio formale',
+                                'Spedizione in tutto l\'Egitto e anteprima digitale prima della stampa'
+                            ],
+                            'vs_traditional' => [
+                                'traditional' => 'Traduzioni imprecise o non accreditate che causano il rifiuto del visto',
+                                'intok' => 'Conformità consolare al 100% con garanzia di accettazione al primo tentativo'
+                            ],
+                            'cta_text' => 'Richiedi la tua traduzione giurata',
+                            'wa_msg' => 'Ciao, vorrei richiedere informazioni sul servizio di traduzione giurata per documenti ufficiali'
+                        ],
+                        'reception' => [
+                            'nav_title' => 'Accoglienza in Italia',
+                            'nav_sub' => 'Milano, Roma e sistemazione',
+                            'badge' => 'Supporto sul campo in Europa',
+                            'badge_color' => 'bg-red-50 text-[#fe0002] border-red-200',
+                            'title' => 'Accoglienza in aeroporto e consegna alloggio in Italia',
+                            'desc' => 'Il nostro supporto continua in Europa: ti accogliamo all\'aeroporto di Milano o Roma per consegnarti le chiavi, richiedere il permesso di soggiorno e aprire il conto bancario.',
+                            'stat_val' => '100%',
+                            'stat_unit' => 'Sicurezza e cura',
+                            'stat_label' => 'Affiancamento continuo dal momento dello sbarco',
+                            'stat_sub' => 'Team bilingue arabo e italiano presente sul territorio',
+                            'points' => [
+                                'Accoglienza personalizzata agli arrivi negli aeroporti di Milano (Malpensa) e Roma (Fiumicino)',
+                                'Trasferimento diretto alla residenza universitaria o alloggio privato con consegna chiavi',
+                                'Assistenza completa per la domanda di Permesso di Soggiorno presso Poste e Questura',
+                                'Rilascio del Codice Fiscale italiano e attivazione SIM telefonica locale',
+                                'Apertura del conto corrente bancario e orientamento alle opportunità per studenti'
+                            ],
+                            'vs_traditional' => [
+                                'traditional' => 'L\'assistenza termina con il volo, lasciando lo studente da solo in aeroporto',
+                                'intok' => 'Il nostro team sul campo ti segue dal primo minuto fino alla completa sistemazione'
+                            ],
+                            'cta_text' => 'Prenota il pacchetto accoglienza in Italia',
+                            'wa_msg' => 'Ciao, vorrei informazioni sui servizi di accoglienza aeroportuale e alloggio in Italia'
+                        ],
+                        'languages' => [
+                            'nav_title' => 'Lingue e Certificazioni CILS',
+                            'nav_sub' => 'Da zero alla padronanza fluente',
+                            'badge' => 'Certificazioni internazionali',
+                            'badge_color' => 'bg-purple-50 text-purple-700 border-purple-200',
+                            'title' => 'Padronanza delle lingue da zero e superamento esami CILS e IELTS',
+                            'desc' => 'Corsi intensivi di italiano, inglese e tedesco focalizzati all\'80% sulla conversazione pratica per superare le prove consolari e universitarie.',
+                            'stat_val' => '80%',
+                            'stat_unit' => 'Conversazione pratica',
+                            'stat_label' => 'Focus su produzione orale e scioltezza comunicativa',
+                            'stat_sub' => 'Superamento del blocco psicologico e fluidità in poche settimane',
+                            'points' => [
+                                'Programmi didattici europei conformi al Quadro Comune Europeo di Riferimento (QCER)',
+                                'Simulazione intensiva delle prove ufficiali di lingua italiana (CILS, CELI, PLIDA)',
+                                'Moduli specialistici per la preparazione agli esami internazionali IELTS e TOEFL',
+                                'Docenti certificati e madrelingua con feedback e monitoraggio continuo',
+                                'Attestati riconosciuti che valorizzano il tuo CV per università e aziende'
+                            ],
+                            'vs_traditional' => [
+                                'traditional' => 'Metodi obsoleti incentrati solo sulla grammatica senza pratica reale di conversazione',
+                                'intok' => 'Metodo interattivo all\'80% in conversazione per parlare con sicurezza fin da subito'
+                            ],
+                            'cta_text' => 'Inizia il corso di lingua e fai il test di livello',
+                            'wa_msg' => 'Ciao, vorrei informazioni sui corsi di lingua (italiano / inglese / tedesco) e certificazioni CILS'
+                        ],
+                        'mentorship' => [
+                            'nav_title' => 'Tutoraggio e Assistenza 24/7',
+                            'nav_sub' => 'Consulente accademico dedicato',
+                            'badge' => 'Monitoraggio continuo e accurato',
+                            'badge_color' => 'bg-blue-50 text-blue-700 border-blue-200',
+                            'title' => 'Tutoraggio 1 a 1 e supporto continuo',
+                            'desc' => 'Un consulente accademico dedicato esamina il tuo fascicolo, pianifica ogni scadenza e ti segue passo dopo passo fino all\'arrivo in Italia.',
+                            'stat_val' => '24/7',
+                            'stat_unit' => 'Supporto continuo',
+                            'stat_label' => 'Il tuo consulente accademico sempre al tuo fianco',
+                            'stat_sub' => 'Monitoraggio rigoroso di ogni scadenza e bando ufficiale',
+                            'points' => [
+                                'Consulenza individuale 1 a 1 per analizzare il tuo titolo di studio e scegliere il miglior percorso',
+                                'Piano d\'azione dettagliato per presentare la documentazione prima delle scadenze',
+                                'Controllo meticoloso dell\'intera pratica per prevenire ogni possibile motivo di rigetto',
+                                'Notifiche puntuali su colloqui, bandi di borsa e legalizzazioni consolari',
+                                'Assistenza costante via WhatsApp, telefono e videochiamata per tutta la durata del percorso'
+                            ],
+                            'vs_traditional' => [
+                                'traditional' => 'Risposte tardive, scarsa assistenza e rischio concreto di perdere i bandi ufficiali',
+                                'intok' => 'Affiancamento continuo e tempestivo con monitoraggio costante di ogni fase'
+                            ],
+                            'cta_text' => 'Prenota la tua sessione di orientamento gratuita',
+                            'wa_msg' => 'Ciao, vorrei prenotare una sessione di orientamento individuale 1 a 1 per i miei studi in Italia'
+                        ]
                     ],
-                    [
-                        'id' => 'trans',
-                        'icon' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>',
-                        'nav_title' => data_get($siteSettings ?? [], 'why_bento_trans_nav_title.'.$locale, 'الترجمة المعتمدة'),
-                        'nav_sub' => data_get($siteSettings ?? [], 'why_bento_trans_nav_sub.'.$locale, 'معتمدة قنصلياً 100%'),
-                        'badge' => data_get($siteSettings ?? [], 'why_bento_trans_badge.'.$locale, 'توثيق رسمي للسفارات'),
-                        'badge_color' => 'bg-amber-50 text-amber-800 border-amber-200',
-                        'title' => data_get($siteSettings ?? [], 'why_bento_trans_title.'.$locale, 'ترجمة معتمدة رسمياً وموثقة لجميع السفارات'),
-                        'desc' => data_get($siteSettings ?? [], 'why_bento_trans_desc.'.$locale, 'ترجمة رسمية معترف بها أمام القنصلية الإيطالية وكافة السفارات الأوروبية، لشهادات التخرج، إعلانات القيمة، وعقود العمل دون مخاطرة بالرفض.'),
-                        'stat_val' => data_get($siteSettings ?? [], 'why_bento_trans_stat_val', '24 - 48h'),
-                        'stat_unit' => data_get($siteSettings ?? [], 'why_bento_trans_stat_unit.'.$locale, 'تسليم مستعجل'),
-                        'stat_label' => data_get($siteSettings ?? [], 'why_bento_trans_stat_label.'.$locale, 'سرعة إنجاز وتوثيق الملفات الرسمية'),
-                        'stat_sub' => data_get($siteSettings ?? [], 'why_bento_trans_stat_sub.'.$locale, 'دقة قانونية متناهية بدون أخطاء ترفض ملفك'),
-                        'points' => $parsePoints(data_get($siteSettings ?? [], 'why_bento_trans_points'), [
-                            'ترجمة معتمدة ومقبولة لدى القنصلية الإيطالية بالقاهرة والإسكندرية',
-                            'ترجمة إعلان القيمة (Dichiarazione di Valore) وبيانات الدرجات والمقررات',
-                            'إنهاء تصديقات الخارجية المصرية ونقابة المترجمين والغرفة التجارية',
-                            'تدقيق لغوي وقانوني مزدوج لضمان خلو الأوراق من أي ثغرات قنصلية',
-                            'توصيل فوري لجميع محافظات مصر مع إمكانية المعاينة الرقمية'
-                        ]),
-                        'vs_traditional' => [
-                            'traditional' => data_get($siteSettings ?? [], 'why_bento_trans_vs_traditional.'.$locale, 'ترجمات غير معتمدة أو مليئة بالأخطاء تؤدي لرفض التأشيرة وإضاعة المواعيد'),
-                            'intok' => data_get($siteSettings ?? [], 'why_bento_trans_vs_intok.'.$locale, 'اعتماد قنصلي رسمي 100% يضمن قبول أوراقك في السفارة من المرة الأولى')
+                    'en' => [
+                        'dsu' => [
+                            'nav_title' => 'DSU Scholarship & Housing',
+                            'nav_sub' => '8,000€ + Free Housing',
+                            'badge' => 'Regional Government Scholarship',
+                            'badge_color' => 'bg-red-50 text-[#fe0002] border-red-200',
+                            'title' => 'Highest Acceptance Rate for Italian Regional DSU Scholarships',
+                            'desc' => 'We calculate the ISEE Parificato with legal and academic precision to secure full regional scholarships and tuition-free university housing for technical diploma and high school graduates.',
+                            'stat_val' => '8,000€',
+                            'stat_unit' => '/ Year',
+                            'stat_label' => 'Direct cash stipend to student bank account',
+                            'stat_sub' => '100% Tuition Waiver + Free Housing',
+                            'points' => [
+                                'Accurate calculation of ISEE Parificato according to official Italian regional criteria',
+                                '100% complete exemption from Italian public university tuition fees',
+                                'Fully furnished free student housing for the entire study period',
+                                'Subsidized daily meals at university dining halls across Italy',
+                                'Legal work permit of 20 hours per week earning in Euros'
+                            ],
+                            'vs_traditional' => [
+                                'traditional' => 'Ignoring scholarship opportunities and leaving students with high tuition and no housing',
+                                'intok' => '100% complete scholarship file maximizing your chance for the 8,000€ stipend and free housing'
+                            ],
+                            'cta_text' => 'Check Your Eligibility for DSU Scholarship',
+                            'wa_msg' => 'Hello, I would like to inquire about Italian DSU scholarship requirements and free housing'
                         ],
-                        'cta_text' => data_get($siteSettings ?? [], 'why_bento_trans_cta_text.'.$locale, 'اطلب ترجمتك المعتمدة فوراً'),
-                        'cta_url' => route('contact', ['locale' => $locale]),
-                        'wa_msg' => 'مرحباً، أود الاستفسار عن خدمة الترجمة المعتمدة للأوراق الرسمية وتصديقات السفارة'
-                    ],
-                    [
-                        'id' => 'reception',
-                        'icon' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>',
-                        'nav_title' => data_get($siteSettings ?? [], 'why_bento_reception_nav_title.'.$locale, 'الاستقبال بإيطاليا'),
-                        'nav_sub' => data_get($siteSettings ?? [], 'why_bento_reception_nav_sub.'.$locale, 'ميلانو وروما وتسكين مباشر'),
-                        'badge' => data_get($siteSettings ?? [], 'why_bento_reception_badge.'.$locale, 'مرافقة ميدانية بأوروبا'),
-                        'badge_color' => 'bg-red-50 text-[#fe0002] border-red-200',
-                        'title' => data_get($siteSettings ?? [], 'why_bento_reception_title.'.$locale, 'استقبال في المطار وتسليم السكن بإيطاليا'),
-                        'desc' => data_get($siteSettings ?? [], 'why_bento_reception_desc.'.$locale, 'رحلتك معنا لا تنتهي عند باب المطار؛ بل يستقبلك فريقنا الميداني في ميلانو وروما لتسليم السكن، واستخراج الإقامة والحساب البنكي.'),
-                        'stat_val' => data_get($siteSettings ?? [], 'why_bento_reception_stat_val', '100%'),
-                        'stat_unit' => data_get($siteSettings ?? [], 'why_bento_reception_stat_unit.'.$locale, 'أمان ورعاية'),
-                        'stat_label' => data_get($siteSettings ?? [], 'why_bento_reception_stat_label.'.$locale, 'مرافقة ميدانية من لحظة الهبوط بالمطار'),
-                        'stat_sub' => data_get($siteSettings ?? [], 'why_bento_reception_stat_sub.'.$locale, 'فريق ميداني رسمي يتحدث العربية والإيطالية'),
-                        'points' => $parsePoints(data_get($siteSettings ?? [], 'why_bento_reception_points'), [
-                            'استقبالك بالاسم في صالة الوصول بمطارات ميلانو (Malpensa) وروما (Fiumicino)',
-                            'توصيلك مباشرة إلى مقر إقامتك وتسليمك مفاتيح السكن الجامعي أو الخاص',
-                            'مرافقة لتقديم أوراق تصريح الإقامة (Permesso di Soggiorno) بالبريد والشرطة',
-                            'استخراج الرقم الضريبي الإيطالي (Codice Fiscale) وشراء شريحة اتصال إيطالية',
-                            'مساعدتك في فتح حساب بنكي إيطالي وتوجيهك لفرص العمل والأنشطة الطلابية'
-                        ]),
-                        'vs_traditional' => [
-                            'traditional' => data_get($siteSettings ?? [], 'why_bento_reception_vs_traditional.'.$locale, 'ينتهي دور المكتب بمجرد السفر ويُترك الطالب وحيداً وتائهاً في المطار والغربة'),
-                            'intok' => data_get($siteSettings ?? [], 'why_bento_reception_vs_intok.'.$locale, 'فريقنا الميداني في إيطاليا يستقبلك ويلازمك حتى تستقر في سكنك وتنهي أوراقك')
+                        'callcenter' => [
+                            'nav_title' => 'Call Center & Placement',
+                            'nav_sub' => '15k - 30k+ EGP Salaries',
+                            'badge' => 'Immediate Job Qualification',
+                            'badge_color' => 'bg-emerald-50 text-emerald-700 border-emerald-200',
+                            'title' => 'Direct Career Placement with Top Multinational Call Centers',
+                            'desc' => 'Hands-on training with smart screens and real interview simulations for multinational leaders (Vodafone UK, Concentrix, Teleperformance).',
+                            'stat_val' => '15k - 30k+',
+                            'stat_unit' => 'EGP / Month',
+                            'stat_label' => 'Average starting salary for fresh graduates',
+                            'stat_sub' => 'Immediate hiring opportunities with global firms',
+                            'points' => [
+                                'Hands-on practice and live simulations of Customer Care and Technical Support systems',
+                                'Preparation for HR and Operations interview rounds at multinational companies',
+                                'Mastering native accent, tone, and professional language for foreign markets',
+                                'Intensive workshops to pass job interviews successfully on the first attempt',
+                                'Direct recommendations and referrals to hiring partners upon graduation'
+                            ],
+                            'vs_traditional' => [
+                                'traditional' => 'Generic theoretical courses with no interactive screens or real job opportunities',
+                                'intok' => '100% realistic simulations qualifying you to pass multinational interviews upon graduation'
+                            ],
+                            'cta_text' => 'Enroll in Professional Call Center Training',
+                            'wa_msg' => 'Hello, I would like to inquire about the Call Center training course and job opportunities'
                         ],
-                        'cta_text' => data_get($siteSettings ?? [], 'why_bento_reception_cta_text.'.$locale, 'احجز باقة الاستقبال والمرافقة بإيطاليا'),
-                        'cta_url' => route('consultation.create', ['locale' => $locale]),
-                        'wa_msg' => 'مرحباً، أود الاستفسار عن خدمات الاستقبال في المطار والتسكين في إيطاليا'
-                    ],
-                    [
-                        'id' => 'languages',
-                        'icon' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>',
-                        'nav_title' => data_get($siteSettings ?? [], 'why_bento_languages_nav_title.'.$locale, 'إتقان اللغات وCILS'),
-                        'nav_sub' => data_get($siteSettings ?? [], 'why_bento_languages_nav_sub.'.$locale, 'من الصفر حتى الطلاقة التامة'),
-                        'badge' => data_get($siteSettings ?? [], 'why_bento_languages_badge.'.$locale, 'شهادات دولية معتمدة'),
-                        'badge_color' => 'bg-purple-50 text-purple-700 border-purple-200',
-                        'title' => data_get($siteSettings ?? [], 'why_bento_languages_title.'.$locale, 'إتقان اللغات من الصفر واجتياز CILS & IELTS'),
-                        'desc' => data_get($siteSettings ?? [], 'why_bento_languages_desc.'.$locale, 'دورات مكثفة في الإيطالية والإنجليزية والألمانية تركز 80% على المحادثة والطلاقة الواقعية، وتؤهلك لاجتياز امتحانات السفارات والجامعات.'),
-                        'stat_val' => data_get($siteSettings ?? [], 'why_bento_languages_stat_val', '80%'),
-                        'stat_unit' => data_get($siteSettings ?? [], 'why_bento_languages_stat_unit.'.$locale, 'محادثة وتطبيق'),
-                        'stat_label' => data_get($siteSettings ?? [], 'why_bento_languages_stat_label.'.$locale, 'نسبة التركيز على التحدث والطلاقة العملية'),
-                        'stat_sub' => data_get($siteSettings ?? [], 'why_bento_languages_stat_sub.'.$locale, 'كسر حاجز الخوف والحديث بطلاقة خلال أسابيع'),
-                        'points' => $parsePoints(data_get($siteSettings ?? [], 'why_bento_languages_points'), [
-                            'مناهج أوروبية معتمدة ومطابقة للإطار المرجعي الأوروبي للغات (CEFR)',
-                            'تدريب مكثف على نماذج اختبارات اللغة الإيطالية الرسمية (CILS, CELI, PLIDA)',
-                            'دورات متخصصة لاجتياز اختبارات الآيلتس (IELTS) والتوفل (TOEFL) الدولية',
-                            'محاضرون خبراء معتمدون وناطقون أصليون يتابعون مستواك يومياً',
-                            'شهادات تخرج معتمدة توثق مستواك اللغوي وتؤهلك للجامعات وسوق العمل'
-                        ]),
-                        'vs_traditional' => [
-                            'traditional' => data_get($siteSettings ?? [], 'why_bento_languages_vs_traditional.'.$locale, 'طرق تدريس قديمة تعتمد على الحفظ الصم دون إتاحة الفرصة لممارسة المحادثة'),
-                            'intok' => data_get($siteSettings ?? [], 'why_bento_languages_vs_intok.'.$locale, 'منهج تفاعلي يركز 80% على المحادثة المباشرة ويكسر حاجز الرهبة تماماً')
+                        'trans' => [
+                            'nav_title' => 'Certified Translation',
+                            'nav_sub' => '100% Embassy Accredited',
+                            'badge' => 'Official Consular Legalization',
+                            'badge_color' => 'bg-amber-50 text-amber-800 border-amber-200',
+                            'title' => 'Officially Certified Translation for All Embassies',
+                            'desc' => 'Official translation recognized by the Italian Embassy and all European missions for diplomas, Declarations of Value, and legal records without risk of rejection.',
+                            'stat_val' => '24 - 48h',
+                            'stat_unit' => 'Express Delivery',
+                            'stat_label' => 'Rapid turnaround and official document processing',
+                            'stat_sub' => 'Flawless legal precision preventing any consular rejection',
+                            'points' => [
+                                'Certified translation accepted by Italian Consulates in Cairo and Alexandria',
+                                'Translation of Declaration of Value (Dichiarazione di Valore) and transcripts',
+                                'Ministry of Foreign Affairs, Translators Syndicate, and Chamber endorsements',
+                                'Dual linguistic and legal audit to ensure documents are 100% compliant',
+                                'Fast delivery across Egypt with full digital preview prior to printing'
+                            ],
+                            'vs_traditional' => [
+                                'traditional' => 'Uncertified or error-laden translations causing visa rejection and lost appointments',
+                                'intok' => '100% official consular compliance guaranteeing immediate acceptance'
+                            ],
+                            'cta_text' => 'Order Certified Translation Now',
+                            'wa_msg' => 'Hello, I would like to inquire about certified translation services and embassy legalization'
                         ],
-                        'cta_text' => data_get($siteSettings ?? [], 'why_bento_languages_cta_text.'.$locale, 'ابدأ كورس اللغة وتحديد المستوى'),
-                        'cta_url' => route('consultation.create', ['locale' => $locale]),
-                        'wa_msg' => 'مرحباً، أود الاستفسار عن دورات اللغات (إيطالي / إنجليزي / ألماني) وتأهيل CILS'
-                    ],
-                    [
-                        'id' => 'mentorship',
-                        'icon' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>',
-                        'nav_title' => data_get($siteSettings ?? [], 'why_bento_mentorship_nav_title.'.$locale, 'الإرشاد والمتابعة 24/7'),
-                        'nav_sub' => data_get($siteSettings ?? [], 'why_bento_mentorship_nav_sub.'.$locale, 'مستشار أكاديمي شخصي مخصص'),
-                        'badge' => data_get($siteSettings ?? [], 'why_bento_mentorship_badge.'.$locale, 'متابعة مستمرة ودقيقة'),
-                        'badge_color' => 'bg-blue-50 text-blue-700 border-blue-200',
-                        'title' => data_get($siteSettings ?? [], 'why_bento_mentorship_title.'.$locale, 'إرشاد شخصي 1-on-1 ومتابعة مستمرة'),
-                        'desc' => data_get($siteSettings ?? [], 'why_bento_mentorship_desc.'.$locale, 'مستشار أكاديمي مخصص يدرس ملفك ويضع خطتك المناسبة، مع نظام تنبيهات لمواعيد المنح والتقديمات لضمان عدم فوات أي موعد رسمي.'),
-                        'stat_val' => data_get($siteSettings ?? [], 'why_bento_mentorship_stat_val', '24/7'),
-                        'stat_unit' => data_get($siteSettings ?? [], 'why_bento_mentorship_stat_unit.'.$locale, 'دعم متواصل'),
-                        'stat_label' => data_get($siteSettings ?? [], 'why_bento_mentorship_stat_label.'.$locale, 'مستشارك الأكاديمي بجانبك طوال رحلتك'),
-                        'stat_sub' => data_get($siteSettings ?? [], 'why_bento_mentorship_stat_sub.'.$locale, 'متابعة دقيقة لكل خطوة وموعد تقديم رسمي'),
-                        'points' => $parsePoints(data_get($siteSettings ?? [], 'why_bento_mentorship_points'), [
-                            'جلسة استشارة فردية 1-on-1 لتحليل مؤهلك (دبلوم فني، ثانوية، بكالوريوس) واختيار أفضل طريق',
-                            'خطة زمنية مدروسة تضمن استيفاء كافة الأوراق والمواعيد قبل إغلاق باب التقديم',
-                            'مراجعة وتدقيق شامل لملفك الدراسي لمنع أي خطأ قد يؤدي للرفض',
-                            'تذكير دوري بمواعيد المقابلات والمنح والتصديقات خطوة بخطوة',
-                            'دعم متواصل عبر الواتساب والمكالمات والاجتماعات الافتراضية طوال فترة التقديم'
-                        ]),
-                        'vs_traditional' => [
-                            'traditional' => data_get($siteSettings ?? [], 'why_bento_mentorship_vs_traditional.'.$locale, 'إهمال استفسارات الطلاب والتأخر في الرد وضياع المواعيد الرسمية للمنح'),
-                            'intok' => data_get($siteSettings ?? [], 'why_bento_mentorship_vs_intok.'.$locale, 'مستشار أكاديمي ملازم لك يومياً ومتابعة دقيقة تضمن عدم تفويت أي فرصة')
+                        'reception' => [
+                            'nav_title' => 'Reception in Italy',
+                            'nav_sub' => 'Milan, Rome & Direct Housing',
+                            'badge' => 'On-Ground European Escort',
+                            'badge_color' => 'bg-red-50 text-[#fe0002] border-red-200',
+                            'title' => 'Airport Welcome & Key Delivery in Italy',
+                            'desc' => 'Our commitment does not end at the airport departure gate; our on-ground team welcomes you in Milan and Rome to deliver housing, residency, and banking.',
+                            'stat_val' => '100%',
+                            'stat_unit' => 'Safety & Care',
+                            'stat_label' => 'Continuous on-ground support from touchdown',
+                            'stat_sub' => 'Bilingual Arabic & Italian local team on the ground',
+                            'points' => [
+                                'Personal greeting at arrivals in Milan (Malpensa) and Rome (Fiumicino) airports',
+                                'Direct transfer to student residence or private apartment with key delivery',
+                                'Full assistance filing for Residence Permit (Permesso di Soggiorno) at post and police',
+                                'Issuing Italian Tax Code (Codice Fiscale) and purchasing local SIM card',
+                                'Assistance opening Italian bank account and guidance on student jobs'
+                            ],
+                            'vs_traditional' => [
+                                'traditional' => 'Agency involvement ends after the flight, leaving students stranded at the airport',
+                                'intok' => 'Our local Italian team accompanies you from arrival until full settlement'
+                            ],
+                            'cta_text' => 'Book Reception & Escort Package in Italy',
+                            'wa_msg' => 'Hello, I would like to inquire about airport reception and housing services in Italy'
                         ],
-                        'cta_text' => data_get($siteSettings ?? [], 'why_bento_mentorship_cta_text.'.$locale, 'احجز استشارتك الأكاديمية الآن'),
-                        'cta_url' => route('consultation.create', ['locale' => $locale]),
-                        'wa_msg' => 'مرحباً، أود حجز جلسة استشارة أكاديمية شخصية 1-on-1 لتحديد مساري الأنسب'
+                        'languages' => [
+                            'nav_title' => 'Languages & CILS',
+                            'nav_sub' => 'From Zero to Full Fluency',
+                            'badge' => 'International Certificates',
+                            'badge_color' => 'bg-purple-50 text-purple-700 border-purple-200',
+                            'title' => 'Master Languages from Scratch and Pass CILS & IELTS',
+                            'desc' => 'Intensive Italian, English, and German courses focusing 80% on live conversation and practical fluency to pass embassy and university requirements.',
+                            'stat_val' => '80%',
+                            'stat_unit' => 'Live Conversation',
+                            'stat_label' => 'Dedicated focus on spoken fluency and real dialogue',
+                            'stat_sub' => 'Overcoming speaking hesitation and gaining fluency in weeks',
+                            'points' => [
+                                'European accredited curricula aligned with CEFR international standards',
+                                'Intensive training on official Italian language exams (CILS, CELI, PLIDA)',
+                                'Specialized preparation courses for IELTS and TOEFL international tests',
+                                'Certified expert instructors and native speakers tracking daily progress',
+                                'Accredited graduation certificates boosting university and career prospects'
+                            ],
+                            'vs_traditional' => [
+                                'traditional' => 'Outdated rote-learning methods with no real conversational practice',
+                                'intok' => 'Interactive 80% conversational methodology building complete confidence'
+                            ],
+                            'cta_text' => 'Start Language Course & Placement Test',
+                            'wa_msg' => 'Hello, I would like to inquire about language courses (Italian / English / German) and CILS'
+                        ],
+                        'mentorship' => [
+                            'nav_title' => '24/7 Academic Mentorship',
+                            'nav_sub' => 'Dedicated Personal Advisor',
+                            'badge' => 'Continuous Detailed Guidance',
+                            'badge_color' => 'bg-blue-50 text-blue-700 border-blue-200',
+                            'title' => '1-on-1 Personal Guidance & Ongoing Follow-up',
+                            'desc' => 'A dedicated academic advisor analyzes your profile, designs your pathway, and provides deadline alert tracking to guarantee zero missed opportunities.',
+                            'stat_val' => '24/7',
+                            'stat_unit' => 'Ongoing Support',
+                            'stat_label' => 'Your academic advisor by your side throughout the journey',
+                            'stat_sub' => 'Strict monitoring of every official deadline and intake step',
+                            'points' => [
+                                '1-on-1 consultation session to evaluate your diploma or degree and select the ideal track',
+                                'Tailored timeline ensuring all paperwork and deadlines are met before closing',
+                                'Comprehensive audit of your academic file to eliminate any risk of rejection',
+                                'Periodic reminders for interviews, scholarship calls, and consular stamps',
+                                'Continuous support via WhatsApp, calls, and virtual meetings throughout the application'
+                            ],
+                            'vs_traditional' => [
+                                'traditional' => 'Slow responses, neglected student queries, and missed official scholarship deadlines',
+                                'intok' => 'Dedicated daily academic advisor ensuring no opportunity is ever missed'
+                            ],
+                            'cta_text' => 'Book Your Academic Consultation Now',
+                            'wa_msg' => 'Hello, I would like to book a 1-on-1 academic consultation session to map my study path'
+                        ]
                     ]
                 ];
+
+                $currentFallbacks = $bentoFallbacks[$locale] ?? $bentoFallbacks['ar'];
+                $pillarIcons = [
+                    'dsu' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg>',
+                    'callcenter' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z"/></svg>',
+                    'trans' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>',
+                    'reception' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>',
+                    'languages' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>',
+                    'mentorship' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>',
+                ];
+
+                $pillarKeys = ['dsu', 'callcenter', 'trans', 'reception', 'languages', 'mentorship'];
+                $whyPillars = [];
+
+                foreach ($pillarKeys as $pKey) {
+                    $fb = $currentFallbacks[$pKey] ?? $bentoFallbacks['ar'][$pKey];
+                    $whyPillars[] = [
+                        'id' => $pKey,
+                        'icon' => $pillarIcons[$pKey] ?? '',
+                        'nav_title' => data_get($siteSettings ?? [], "why_bento_{$pKey}_nav_title.{$locale}", $fb['nav_title']),
+                        'nav_sub' => data_get($siteSettings ?? [], "why_bento_{$pKey}_nav_sub.{$locale}", $fb['nav_sub']),
+                        'badge' => data_get($siteSettings ?? [], "why_bento_{$pKey}_badge.{$locale}", $fb['badge']),
+                        'badge_color' => $fb['badge_color'] ?? 'bg-red-50 text-[#fe0002] border-red-200',
+                        'title' => data_get($siteSettings ?? [], "why_bento_{$pKey}_title.{$locale}", $fb['title']),
+                        'desc' => data_get($siteSettings ?? [], "why_bento_{$pKey}_desc.{$locale}", $fb['desc']),
+                        'stat_val' => data_get($siteSettings ?? [], "why_bento_{$pKey}_stat_val", $fb['stat_val']),
+                        'stat_unit' => data_get($siteSettings ?? [], "why_bento_{$pKey}_stat_unit.{$locale}", $fb['stat_unit']),
+                        'stat_label' => data_get($siteSettings ?? [], "why_bento_{$pKey}_stat_label.{$locale}", $fb['stat_label']),
+                        'stat_sub' => data_get($siteSettings ?? [], "why_bento_{$pKey}_stat_sub.{$locale}", $fb['stat_sub']),
+                        'points' => $parsePoints(data_get($siteSettings ?? [], "why_bento_{$pKey}_points"), $fb['points']),
+                        'vs_traditional' => [
+                            'traditional' => data_get($siteSettings ?? [], "why_bento_{$pKey}_vs_traditional.{$locale}", $fb['vs_traditional']['traditional']),
+                            'intok' => data_get($siteSettings ?? [], "why_bento_{$pKey}_vs_intok.{$locale}", $fb['vs_traditional']['intok'])
+                        ],
+                        'cta_text' => data_get($siteSettings ?? [], "why_bento_{$pKey}_cta_text.{$locale}", $fb['cta_text']),
+                        'cta_url' => $pKey === 'trans' ? route('contact', ['locale' => $locale]) : route('consultation.create', ['locale' => $locale]),
+                        'wa_msg' => $fb['wa_msg']
+                    ];
+                }
                 $initialPillar = $whyPillars[0];
             @endphp
 
@@ -922,7 +1261,7 @@
                                 </span>
 
                                 <span class="inline-flex items-center gap-1 rounded-full bg-slate-100 border border-slate-200 px-3 py-1 text-[11px] font-black text-slate-700">
-                                    <span>معيار تميز رسمي</span>
+                                    <span>{{ __('site.official_excellence_standard') }}</span>
                                 </span>
                             </div>
 
@@ -960,7 +1299,7 @@
                                 </a>
 
                                 <a id="why-stage-wa" href="https://wa.me/{{ preg_replace('/[^0-9]/', '', data_get($siteSettings ?? [], 'whatsapp_number', '201008238323')) }}?text={{ urlencode($initialPillar['wa_msg']) }}" target="_blank" class="inline-flex items-center gap-2 rounded-full border-2 border-emerald-500 bg-emerald-50 px-5 py-3 text-xs sm:text-sm font-black text-emerald-700 transition hover:bg-emerald-600 hover:text-white shadow-xs">
-                                    <span>استفسار فوري عبر واتساب</span>
+                                    <span>{{ __('site.instant_whatsapp_inquiry') }}</span>
                                 </a>
                             </div>
 
@@ -972,7 +1311,7 @@
                             <!-- Stat Card with Big Number -->
                             <div class="rounded-3xl bg-gradient-to-br from-red-50/60 via-amber-50/40 to-white border-2 border-red-200 p-6 text-center shadow-md relative overflow-hidden">
                                 <div class="relative z-10">
-                                    <span class="text-xs font-black text-slate-500 uppercase tracking-wider block mb-1">القيمة المحققة لك:</span>
+                                    <span class="text-xs font-black text-slate-500 uppercase tracking-wider block mb-1">{{ __('site.why_achieved_value') }}</span>
                                     <div class="flex items-baseline justify-center gap-2">
                                         <span id="why-stat-val" class="text-4xl sm:text-5xl font-black text-[#fe0002] tracking-tight font-mono">
                                             {{ $initialPillar['stat_val'] }}
@@ -994,7 +1333,7 @@
                             <div class="rounded-3xl bg-slate-900 text-white p-6 shadow-lg border border-slate-800 space-y-4">
                                 <div class="flex items-center justify-between pb-3 border-b border-slate-800">
                                     <span class="text-xs font-black text-amber-400 flex items-center gap-1.5">
-                                        <span>مقارنة صريحة بالواقع</span>
+                                        <span>{{ __('site.why_comparison_reality') }}</span>
                                     </span>
                                     <span class="text-[10px] font-bold text-slate-400">{{ data_get($siteSettings ?? [], 'why_comparison_title.'.$locale, 'لماذا إنتوك أفضل؟') }}</span>
                                 </div>
@@ -1005,7 +1344,7 @@
                                         <svg class="size-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
                                     </span>
                                     <div>
-                                        <span class="text-[11px] font-black text-red-400 block mb-0.5">الطرق والمكاتب التقليدية:</span>
+                                        <span class="text-[11px] font-black text-red-400 block mb-0.5">{{ __('site.why_traditional_offices') }}</span>
                                         <p id="why-vs-traditional" class="text-xs text-slate-300 leading-snug">
                                             {{ $initialPillar['vs_traditional']['traditional'] }}
                                         </p>
@@ -1018,7 +1357,7 @@
                                         <svg class="size-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
                                     </span>
                                     <div>
-                                        <span class="text-[11px] font-black text-emerald-400 block mb-0.5">معيار أكاديمية INTOK:</span>
+                                        <span class="text-[11px] font-black text-emerald-400 block mb-0.5">{{ __('site.why_intok_standard') }}</span>
                                         <p id="why-vs-intok" class="text-xs text-slate-200 font-semibold leading-snug">
                                             {{ $initialPillar['vs_traditional']['intok'] }}
                                         </p>
@@ -1027,8 +1366,8 @@
 
                                 <!-- Trust Footer -->
                                 <div class="pt-1 flex items-center justify-between text-[10px] font-bold text-slate-400">
-                                    <span>اعتماد رسمي موثق</span>
-                                    <span class="text-amber-400">نسبة رضا 99.4% (تقييم 5 من 5)</span>
+                                    <span>{{ __('site.official_certified_accreditation') }}</span>
+                                    <span class="text-amber-400">{{ __('site.satisfaction_rate') }}</span>
                                 </div>
                             </div>
 
@@ -1888,7 +2227,8 @@
                 }
 
                 if (stageWhatsappBtn) {
-                    const msg = encodeURIComponent(`مرحباً، أود الاستفسار والتسجيل في برنامج: ${trackData.title}`);
+                    const waPrefix = {!! json_encode($locale === 'it' ? 'Ciao, vorrei richiedere informazioni e iscrivermi a: ' : ($locale === 'en' ? 'Hello, I would like to inquire about and enroll in: ' : 'مرحباً، أود الاستفسار والتسجيل في برنامج: ')) !!};
+                    const msg = encodeURIComponent(trackData.whatsapp_message || `${waPrefix}${trackData.title}`);
                     stageWhatsappBtn.href = `https://wa.me/201008238323?text=${msg}`;
                 }
                 if (stageCtaBtn) {

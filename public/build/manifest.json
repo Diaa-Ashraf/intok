@@ -192,12 +192,12 @@
     "src": "node_modules/@tabler/icons-webfont/dist/fonts/tabler-icons.zodiac.woff2"
   },
   "resources/css/app.css": {
-    "file": "assets/app-CR52W9Vh.css",
+    "file": "assets/app-DxtrUNVy.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/js/Pages/Admin/Dashboard.jsx": {
-    "file": "assets/Dashboard-dPr1OqjJ.js",
+    "file": "assets/Dashboard-B7DFLmQO.js",
     "name": "Dashboard",
     "src": "resources/js/Pages/Admin/Dashboard.jsx",
     "isDynamicEntry": true,
@@ -259,7 +259,7 @@
     ]
   },
   "resources/js/Pages/Auth/ForgotPassword.jsx": {
-    "file": "assets/ForgotPassword-C124WS9o.js",
+    "file": "assets/ForgotPassword-Bnbzv4Ry.js",
     "name": "ForgotPassword",
     "src": "resources/js/Pages/Auth/ForgotPassword.jsx",
     "isDynamicEntry": true,
@@ -268,7 +268,7 @@
     ]
   },
   "resources/js/Pages/Auth/Login.jsx": {
-    "file": "assets/Login-DWu9MzfW.js",
+    "file": "assets/Login-DyaliMWH.js",
     "name": "Login",
     "src": "resources/js/Pages/Auth/Login.jsx",
     "isDynamicEntry": true,
@@ -277,7 +277,7 @@
     ]
   },
   "resources/js/Pages/Auth/ResetPassword.jsx": {
-    "file": "assets/ResetPassword-BH1nlV5J.js",
+    "file": "assets/ResetPassword-CuO1vQny.js",
     "name": "ResetPassword",
     "src": "resources/js/Pages/Auth/ResetPassword.jsx",
     "isDynamicEntry": true,
@@ -286,7 +286,7 @@
     ]
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-DpSX6qS2.js",
+    "file": "assets/app-C9pjdsml.js",
     "name": "app",
     "src": "resources/js/app.jsx",
     "isEntry": true,
