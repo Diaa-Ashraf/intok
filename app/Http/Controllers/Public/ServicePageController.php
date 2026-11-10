@@ -11,11 +11,8 @@ class ServicePageController extends Controller
 {
     public function index(Request $request, ServiceCatalogService $servicesCatalog): View
     {
-        $locale = (string) $request->route('locale');
-        $services = $servicesCatalog->paginateActive();
-        $services->getCollection()->each(function (\App\Models\Service $service): void {
-            $service->setAttribute('slug', ['ar' => $service->slug_ar, 'en' => $service->slug_en, 'it' => $service->slug_it]);
-        });
+        $locale = (string) ($request->route('locale') ?? app()->getLocale());
+        $services = $servicesCatalog->activeForLocale($locale);
 
         return view('public.services.index', compact('services', 'locale'));
     }

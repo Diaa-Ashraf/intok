@@ -81,6 +81,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
         Route::post('/services', [ServiceController::class, 'store'])->name('services.store');
         Route::get('/services/{service}/edit', [ServiceController::class, 'edit'])->name('services.edit');
         Route::put('/services/{service}', [ServiceController::class, 'update'])->name('services.update');
+        Route::patch('/services/{service}/toggle', [ServiceController::class, 'toggle'])->name('services.toggle');
         Route::delete('/services/{service}', [ServiceController::class, 'destroy'])->name('services.destroy');
         Route::resource('team', TeamMemberController::class)->parameters(['team' => 'teamMember'])->except(['show']);
     });

@@ -145,44 +145,8 @@ class DatabaseSeeder extends Seeder
             ],
         ];
 
-        // Delete old services and seed new official 7 services
-        Service::query()->delete();
-
-        foreach ($services as $service) {
-            $service['features'] = [
-                'ar' => ['شهادة معتمدة بعد إتمام البرنامج', 'تطبيق عملي وتدريب مباشر', 'متابعة مستمرة وإرشاد وظيفي'],
-                'en' => ['Certified certificate upon completion', 'Practical training and live workshops', 'Ongoing follow-up and career mentorship'],
-                'it' => ['Attestato riconosciuto al completamento', 'Esercitazioni pratiche', 'Supporto e orientamento professionale']
-            ];
-            $service['requirements'] = [
-                'ar' => ['الرغبة في التعلم والتطوير', 'التزام بحضور الورش العملية'],
-                'en' => ['Commitment to learn and develop', 'Attendance of practical workshops'],
-                'it' => ['Impegno e partecipazione attiva', 'Disponibilità per esercitazioni pratiche']
-            ];
-            $service['steps'] = [
-                'ar' => ['تحديد المستوى الأكاديمي والمهني', 'البدء في التدريب العملي المباشر', 'الحصول على التقييم والاعتماد الرسمي'],
-                'en' => ['Initial level assessment', 'Live hands-on training sessions', 'Final assessment and official certification'],
-                'it' => ['Valutazione del livello iniziale', 'Sessioni di formazione pratica', 'Valutazione finale e certificazione']
-            ];
-            $service['faqs'] = [
-                'ar' => [['question' => 'كيف يمكنني الانضمام والتسجيل؟', 'answer' => 'يمكنك ملء استمارة حجز الاستشارة أو التواصل مباشرة عبر الواتساب لاختيار الموعد المناسب لك.']],
-                'en' => [['question' => 'How can I register?', 'answer' => 'You can fill out the consultation booking form or message us directly on WhatsApp to select your preferred schedule.']],
-                'it' => [['question' => 'Come posso iscrivermi?', 'answer' => 'Compila il modulo di consulenza o contattaci direttamente su WhatsApp per fissare un appuntamento.']]
-            ];
-            $service['seo_title'] = [
-                'ar' => $service['title']['ar'].' | أكاديمية INTOK',
-                'en' => $service['title']['en'].' | INTOK Academy',
-                'it' => $service['title']['it'].' | INTOK Academy'
-            ];
-            $service['seo_description'] = $service['summary'];
-            
-            Service::query()->create($service + [
-                'slug_ar' => $service['slug']['ar'],
-                'slug_en' => $service['slug']['en'],
-                'slug_it' => $service['slug']['it'],
-                'is_active' => true,
-            ]);
-        }
+        // Ensure all official 8 core services exist with full metadata
+        app(\App\Services\ServiceCatalogService::class)->ensureCoreServicesExist();
 
         // Contact info and comprehensive dynamic site settings
         $settings = [

@@ -23,7 +23,11 @@ class ServiceController extends Controller
             $service->setAttribute('slug', ['ar' => $service->slug_ar, 'en' => $service->slug_en, 'it' => $service->slug_it]);
         });
 
-        return view('admin.services.index', ['services' => $services]);
+        $totalCount = Service::query()->count();
+        $activeCount = Service::query()->where('is_active', true)->count();
+        $inactiveCount = $totalCount - $activeCount;
+
+        return view('admin.services.index', compact('services', 'totalCount', 'activeCount', 'inactiveCount'));
     }
 
     public function create(): View
@@ -48,6 +52,13 @@ class ServiceController extends Controller
     {
         $this->services->update($service, $request->validated());
         return to_route('admin.services.index')->with('status', 'تم تحديث الخدمة بنجاح.');
+    }
+
+    public function toggle(Service $service): RedirectResponse
+    {
+        $newState = $this->services->toggleActive($service);
+        $message = $newState ? 'تم تفعيل الخدمة وظهورها على الموقع.' : 'تم إيقاف الخدمة وحجبها عن الموقع.';
+        return back()->with('status', $message);
     }
 
     public function destroy(Service $service): RedirectResponse

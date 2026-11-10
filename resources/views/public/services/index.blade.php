@@ -4,188 +4,74 @@
 @section('meta_description', __('site.hero_text'))
 
 @php
-    $locale = app()->getLocale();
+    $locale = $locale ?? app()->getLocale();
+    $allTracks = [];
 
-    $allTracks = [
-        [
-            'id' => 'call-center',
-            'category' => 'career',
-            'category_label' => 'تأهيل لسوق العمل والكول سنتر',
-            'badge' => 'الأكثر طلباً',
-            'badge_class' => 'bg-red-50 text-[#fe0002] border-red-200',
-            'icon' => '<svg class="size-5 sm:size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z"/></svg>',
-            'title' => 'تدريب الكول سنتر الاحترافي',
-            'level' => 'تأهيل وظيفي مباشر',
-            'duration' => 'مكثف (4 - 6 أسابيع)',
-            'mode' => 'قاعات مجهزة + أونلاين',
-            'target' => 'خريجو المؤهلات والباحثون عن دخل مميز بالعملات الأجنبية',
-            'points' => [
-                'محاكاة حقيقية لمقابلات كبرى الشركات متعددة الجنسيات (Vodafone UK, Concentrix, TP)',
-                'تدريب عملي تفاعلي على الشاشات الذكية والصوتيات وحل مشكلات العملاء باحترافية',
-                'تأهيل للعمل برواتب مجزية بالعملات الأجنبية (15k - 30k+ ج.م)',
-                'متابعة شخصية وتدريب صوتي حتى اجتياز المقابلة والتعاقد الرسمي',
-            ],
-            'full_desc' => 'برنامج تدريبي يؤهلك للعمل في الكول سنتر باحتراف، مع تطوير مهارات التواصل وخدمة العملاء واجتياز المقابلات بثقة. يشمل تدريباً عملياً مكثفاً على مهارات التحدث باللغات الأجنبية، إدارة المكالمات، وتجاوز أصعب مواقف خدمة العملاء بنجاح.',
-            'slug' => 'تدريب-الكول-سنتر-الاحترافي',
-            'wa_msg' => 'مرحباً، أود الاستفسار والتسجيل في برنامج تدريب الكول سنتر الاحترافي'
-        ],
-        [
-            'id' => 'dsu-italy',
-            'category' => 'italy',
-            'category_label' => 'الدراسة في إيطاليا والمنح',
-            'badge' => 'منحة 8,000€ + سكن مجاني',
-            'badge_class' => 'bg-amber-100 text-amber-900 border-amber-300',
-            'icon' => '<svg class="size-5 sm:size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg>',
-            'title' => 'الدراسة في إيطاليا & منح DSU الشاملة',
-            'level' => 'ثانوية عامة + دبلومات فنية (صنايع / تجارة / زراعة)',
-            'duration' => 'التقديم متاح الآن للموسم القادم',
-            'mode' => 'إشراف متكامل من الألف للياء',
-            'target' => 'حملة الدبلومات الفنية والثانوية وخريجو الجامعات',
-            'points' => [
-                'قبول جامعي ومدرسي معتمد في أعرق الجامعات والمدارس الحكومية الإيطالية',
-                'تجهيز كامل لملف منحة DSU الشاملة (8,000 يورو سنوي + سكن مجاني معفى)',
-                'إنهاء أوراق السفارة والترجمة المعتمدة وحجز مواعيد التأشيرة',
-                'استقبال شخصي في مطارات ميلانو وروما وتسليم السكن واستخراج الإقامة',
-            ],
-            'full_desc' => 'برنامج متكامل لتأهيل الطلاب وحملة الدبلومات الفنية (صنايع، تجارة، زراعة) والثانوية العامة والأزهرية لاستكمال دراستهم في إيطاليا، مع الحصول على منحة DSU الحكومية التي تمنحك 8,000 يورو سنوياً معفاة، وسكن جامعي مجاني، وتصريح عمل رسمي باليورو وفق القوانين الإيطالية.',
-            'slug' => 'italy-study-dsu',
-            'wa_msg' => 'مرحباً، أود فحص شروط القبول للدراسة في إيطاليا ومنحة DSU الحكومية'
-        ],
-        [
-            'id' => 'translation-mastery',
-            'category' => 'translation',
-            'category_label' => 'الترجمة والاعتماد',
-            'badge' => 'تأهيل للعمل الحر',
-            'badge_class' => 'bg-blue-50 text-blue-700 border-blue-200',
-            'icon' => '<svg class="size-5 sm:size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg>',
-            'title' => 'احتراف الترجمة التحريرية والفورية',
-            'level' => 'من المبتدئ إلى الاحتراف التجاري',
-            'duration' => 'ورش عمل تطبيقية مكثفة',
-            'mode' => 'مشاريع عملية حقيقية',
-            'target' => 'خريجو كليات اللغات والآداب والمترجمون المستقلون',
-            'points' => [
-                'تدريب تطبيقي على الترجمة التحريرية والفورية في المجالات القانونية والطبية والتقنية',
-                'إتقان أدوات الترجمة بمساعدة الحاسوب (CAT Tools) ومعايير الجودة العالمية',
-                'تأهيل مباشر لدخول منصات العمل الحر (Freelancing) ووكالات الترجمة الدولية',
-                'بناء بورتفوليو احترافي وسيرة ذاتية قوية تجذب العملاء الدوليين بالدولار واليورو',
-            ],
-            'full_desc' => 'برنامج تدريبي لتعلم الترجمة باحتراف، مع تطبيقات عملية على النصوص المختلفة وتأهيلك للعمل في المجال بثقة. يشمل التعامل مع الوثائق الرسمية والتقنية وبناء سيرة ذاتية وبورتفوليو قوي يجذب العملاء الدوليين.',
-            'slug' => 'احتراف-الترجمة',
-            'wa_msg' => 'مرحباً، أود الاستفسار والتسجيل في دبلومة احتراف الترجمة'
-        ],
-        [
-            'id' => 'certified-translation',
-            'category' => 'translation',
-            'category_label' => 'الترجمة والاعتماد',
-            'badge' => 'معتمدة رسمياً للسفارات',
-            'badge_class' => 'bg-amber-50 text-amber-800 border-amber-200',
-            'icon' => '<svg class="size-5 sm:size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>',
-            'title' => 'ترجمة معتمدة احترافية وتصديقات',
-            'level' => 'توثيق وتصديق قانوني',
-            'duration' => 'تسليم سريع (24 - 48 ساعة)',
-            'mode' => 'معتمدة ومختومة رسمياً',
-            'target' => 'المسافرون للعمل والدراسة والشركات',
-            'points' => [
-                'ترجمة معتمدة وموثقة لجميع المستندات الشخصية، شهادات التخرج، وإعلانات القيمة',
-                'معترف بها رسمياً لدى السفارة الإيطالية بالقاهرة والإسكندرية وكافة السفارات الأوروبية',
-                'إنهاء تصديقات الخارجية المصرية والغرفة التجارية والجهات المختصة',
-                'دقة لغوية وقانونية متناهية لتفادي رفض الملفات القنصلية نهائياً',
-            ],
-            'full_desc' => 'خدمة ترجمة معتمدة لجميع المستندات بدقة عالية وسرعة تنفيذ، مع توثيق رسمي معترف به للجهات الحكومية والسفارات. تشمل ترجمة الأوراق الدراسية وشهادات الميلاد وعقود العمل والملفات القانونية.',
-            'slug' => 'ترجمة-معتمدة-احترافية',
-            'wa_msg' => 'مرحباً، أود طلب خدمة ترجمة معتمدة وتصديق رسمي للأوراق'
-        ],
-        [
-            'id' => 'intl-exams',
-            'category' => 'languages',
-            'category_label' => 'اللغات والاختبارات',
-            'badge' => 'ضمان اجتياز الاختبار',
-            'badge_class' => 'bg-emerald-50 text-emerald-700 border-emerald-200',
-            'icon' => '<svg class="size-5 sm:size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>',
-            'title' => 'التأهيل للاختبارات الدولية (IELTS & CILS)',
-            'level' => 'إعداد معتمد رسمي',
-            'duration' => 'خطط مكثفة بحسب المستوى',
-            'mode' => 'مجموعات صغيرة + متابعة فردية',
-            'target' => 'المتقدمون للمنح والجامعات والسفر بالخارج',
-            'points' => [
-                'استراتيجيات متقدمة لاجتياز اختبارات IELTS & TOEFL واختبارات الإيطالي (CILS/CELI)',
-                'تدريب مكثف على مهارات التحدث، الاستماع، القراءة، والكتابة الأكاديمية',
-                'اختبارات تجريبية تحاكي الاختبار الحقيقي بنسبة 100% مع تقييم دقيق لنقاط القوة',
-                'تحقيق الدرجة المطلوبة في أقصر وقت مؤهل للجامعات الإيطالية والأوروبية',
-            ],
-            'full_desc' => 'برامج تدريبية متخصصة لإعدادك لاجتياز الاختبارات الدولية مثل IELTS وTOEFL، مع تدريب عملي على جميع المهارات ومراجعات مستمرة تضمن لك تحقيق الدرجة المطلوبة في وقت قياسي.',
-            'slug' => 'التأهيل-للاختبارات-الدولية',
-            'wa_msg' => 'مرحباً، أود الاستفسار عن كورس التأهيل لاختبارات CILS / IELTS'
-        ],
-        [
-            'id' => 'instructor-tot',
-            'category' => 'languages',
-            'category_label' => 'اللغات وتأهيل المحاضرين',
-            'badge' => 'برنامج مدرب معتمد (TOT)',
-            'badge_class' => 'bg-purple-50 text-purple-700 border-purple-200',
-            'icon' => '<svg class="size-5 sm:size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>',
-            'title' => 'إعداد وتأهيل محاضري اللغات الدوليين',
-            'level' => 'دبلومة مهنية متقدمة',
-            'duration' => 'تدريب تدريسي تطبيقي',
-            'mode' => 'محاكاة تدريس حي بقاعات ذكية',
-            'target' => 'المعلمون والمدربون وخريجو اللغات والتربية',
-            'points' => [
-                'أحدث استراتيجيات التدريس التفاعلي وتقنيات إدارة القاعات والمناهج الذكية',
-                'تطوير مهارات الإلقاء والشرح الإبداعي وبناء الأنشطة التعليمية الحديثة',
-                'تطبيقات تدريس حية ومباشرة تؤهلك للتعاقد مع كبرى الأكاديميات والمدارس الدولية',
-                'شهادة مدرب معتمد (TOT) تفتح لك فرص التعاقد في مصر والخليج وأوروبا',
-            ],
-            'full_desc' => 'برنامج متخصص لإعداد مدربي اللغات بمهارات التدريس والتواصل، مع تطبيق عملي يؤهلك للعمل بثقة. يركز على علم التدريس الحديث وإدارة سلوك المتعلمين واستخدام الأدوات الرقمية في الشرح.',
-            'slug' => 'إعداد-محاضري-اللغات',
-            'wa_msg' => 'مرحباً، أود الاستفسار عن دبلومة إعداد محاضري اللغات TOT'
-        ],
-        [
-            'id' => 'proofreading',
-            'category' => 'translation',
-            'category_label' => 'الترجمة والتدقيق',
-            'badge' => 'سلامة لغوية 100%',
-            'badge_class' => 'bg-teal-50 text-teal-700 border-teal-200',
-            'icon' => '<svg class="size-5 sm:size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>',
-            'title' => 'التدقيق اللغوي الاحترافي والمراجعة',
-            'level' => 'مراجعة أكاديمية دقيقة',
-            'duration' => 'مرن وسريع مع الحفاظ على الدقة',
-            'mode' => 'سرية تامة ومطابقة للمعايير',
-            'target' => 'الباحثون، الأكاديميون، والمؤلفون والشركات',
-            'points' => [
-                'فحص دقيق لكافة الأخطاء النحوية والإملائية والأسلوبية وضبط علامات الترقيم',
-                'تحسين الصياغة البلاغية مع الحفاظ على روح النص والمعنى الأصلي للكاتب',
-                'مراجعة شاملة لرسائل الماجستير والدكتوراة، السير الذاتية، والمحتوى التسويقي',
-                'تدقيق متعدد اللغات (عربي - إيطالي - إنجليزي) بمعايير الجامعات العالمية',
-            ],
-            'full_desc' => 'مراجعة لغوية دقيقة للنصوص مع تصحيح الأخطاء النحوية والإملائية وتحسين الصياغة لتظهر بشكل احترافي وواضح. تشمل التدقيق الإملائي والنحوي والأسلوبي للأبحاث العلمية والكتب والمقالات.',
-            'slug' => 'التدقيق-اللغوي-الاحترافي',
-            'wa_msg' => 'مرحباً، أود طلب خدمة التدقيق اللغوي والمراجعة الاحترافية'
-        ],
-        [
-            'id' => 'language-courses',
-            'category' => 'languages',
-            'category_label' => 'اللغات والاختبارات',
-            'badge' => 'من الصفر حتى الطلاقة',
-            'badge_class' => 'bg-rose-50 text-rose-700 border-rose-200',
-            'icon' => '<svg class="size-5 sm:size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>',
-            'title' => 'دورات اللغات الاحترافية (إيطالي - إنجليزي - ألماني)',
-            'level' => 'من الصفر A1 حتى الطلاقة B2/C1',
-            'duration' => 'مستويات تدريجية تفاعلية',
-            'mode' => 'تركيز 80% على المحادثة والاستماع',
-            'target' => 'المبتدئون وراغبو السفر والعمل بالخارج',
-            'points' => [
-                'منهجية حديثة تركز على الطلاقة والمحادثة الحية وكسر حاجز الخوف من النطق',
-                'محادثات واقعية مع مدربين متخصصين تحاكي الحياة اليومية والعملية في أوروبا',
-                'متابعة دورية وتقييم مستمر لتحقيق المستوى المطلوب للقبول الجامعي وسوق العمل',
-                'استخدام الشاشات الذكية والمواد السمعية والبصرية المتطورة لترسيخ اللغة',
-            ],
-            'full_desc' => 'تعلم اللغات الأجنبية بطريقة حديثة وسهلة، من الصفر للاحتراف مع متابعة مستمرة لتحقيق الطلاقة بسرعة. دورات عملية في الإيطالية والإنجليزية والألمانية تمنحك الثقة الكاملة في التحدث والتواصل.',
-            'slug' => 'دورات-اللغات-الاحترافية',
-            'wa_msg' => 'مرحباً، أود الاستفسار عن دورات اللغات وحجز اختبار تحديد المستوى'
-        ]
-    ];
+    foreach (($services ?? []) as $svc) {
+        $svcTitle = data_get($svc->title, $locale, data_get($svc->title, 'ar', ''));
+        $svcSlug = $svc->{'slug_'.$locale} ?? $svc->slug_ar ?? (string) $svc->id;
+        $svcSummary = data_get($svc->summary, $locale, data_get($svc->summary, 'ar', ''));
+        $svcDesc = data_get($svc->description, $locale, data_get($svc->description, 'ar', $svcSummary));
+        $svcBadge = data_get($svc->badge, $locale, data_get($svc->badge, 'ar', 'برنامج معتمد'));
+        $svcCat = data_get($svc->category_label, $locale, data_get($svc->category_label, 'ar', 'مسار تدريبي معتمد'));
+        $svcLevel = data_get($svc->level, $locale, data_get($svc->level, 'ar', 'جميع المؤهلات'));
+        $svcDuration = data_get($svc->duration, $locale, data_get($svc->duration, 'ar', 'مكثف ومباشر'));
+        $svcMode = data_get($svc->mode, $locale, data_get($svc->mode, 'ar', 'قاعات مجهزة + أونلاين'));
+        $svcTarget = data_get($svc->target_audience, $locale, data_get($svc->target_audience, 'ar', 'الطلاب والخريجون والباحثون عن التطوير'));
+        $svcSalary = data_get($svc->salary_range, $locale, data_get($svc->salary_range, 'ar', 'تأهيل وظيفي مباشر'));
+        $svcWaMsg = data_get($svc->whatsapp_message, $locale, data_get($svc->whatsapp_message, 'ar', 'مرحباً، أود الاستفسار والتسجيل في: '.$svcTitle));
+        $svcPoints = data_get($svc->features, $locale, data_get($svc->features, 'ar', []));
+        if (empty($svcPoints)) {
+            $svcPoints = ['شهادة معتمدة بعد إتمام البرنامج', 'تطبيق عملي وتدريب مباشر', 'متابعة مستمرة وإرشاد وظيفي'];
+        }
 
-    $initialTrack = $allTracks[0];
+        $iconSvg = match ($svc->icon) {
+            'academic-cap', 'italy' => '<svg class="size-5 sm:size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg>',
+            'language', 'translation' => '<svg class="size-5 sm:size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg>',
+            'documents', 'certificate' => '<svg class="size-5 sm:size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>',
+            'presentation' => '<svg class="size-5 sm:size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>',
+            'edit' => '<svg class="size-5 sm:size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>',
+            'book-open' => '<svg class="size-5 sm:size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>',
+            default => '<svg class="size-5 sm:size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z"/></svg>',
+        };
+
+        $badgeClass = match (true) {
+            str_contains((string)$svcBadge, 'منحة') || str_contains((string)$svcBadge, '8,000') => 'bg-amber-100 text-amber-900 border-amber-300',
+            str_contains((string)$svcBadge, 'عمل حر') => 'bg-blue-50 text-blue-700 border-blue-200',
+            str_contains((string)$svcBadge, 'سفار') || str_contains((string)$svcBadge, 'معتمدة') => 'bg-amber-50 text-amber-800 border-amber-200',
+            str_contains((string)$svcBadge, 'ضمان') || str_contains((string)$svcBadge, '100%') => 'bg-emerald-50 text-emerald-700 border-emerald-200',
+            str_contains((string)$svcBadge, 'TOT') => 'bg-purple-50 text-purple-700 border-purple-200',
+            default => 'bg-red-50 text-[#fe0002] border-red-200',
+        };
+
+        $categoryKey = match ($svc->icon) {
+            'academic-cap', 'italy' => 'italy',
+            'language', 'translation' => 'translation',
+            'documents', 'certificate' => 'translation',
+            default => 'career',
+        };
+
+        $allTracks[] = [
+            'id' => (string) $svc->id,
+            'category' => $categoryKey,
+            'category_label' => $svcCat,
+            'badge' => $svcBadge,
+            'badge_class' => $badgeClass,
+            'icon' => $iconSvg,
+            'title' => $svcTitle,
+            'level' => $svcLevel,
+            'duration' => $svcDuration,
+            'mode' => $svcMode,
+            'target' => $svcTarget,
+            'points' => $svcPoints,
+            'full_desc' => $svcDesc,
+            'slug' => $svcSlug,
+            'wa_msg' => $svcWaMsg,
+            'image_path' => $svc->image_path,
+        ];
+    }
+
+    $initialTrack = $allTracks[0] ?? null;
 @endphp
 
 @section('content')
