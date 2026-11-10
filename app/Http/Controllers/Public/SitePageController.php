@@ -12,7 +12,6 @@ class SitePageController extends Controller
     public function about(string $locale, SitePageManagementService $pages, TeamDirectoryService $team): View
     {
         $page = $pages->publishedAbout();
-        abort_if($page === null, 404);
         $teamMembers = $team->activeMembers(6);
         return view('public.about', compact('page', 'locale', 'teamMembers'));
     }

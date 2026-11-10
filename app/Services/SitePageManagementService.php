@@ -27,10 +27,48 @@ class SitePageManagementService
             ->where('is_published', true)->where('slug_'.$locale, $slug)->first();
     }
 
-    public function publishedAbout(): ?SitePage
+    public function publishedAbout(): SitePage
     {
-        return SitePage::query()->select(['id', 'slug_ar', 'slug_en', 'slug_it', 'title', 'content', 'seo_title', 'seo_description'])
+        $page = SitePage::query()->select(['id', 'slug_ar', 'slug_en', 'slug_it', 'title', 'content', 'seo_title', 'seo_description'])
             ->where('kind', 'about')->where('is_published', true)->first();
+
+        if ($page) {
+            return $page;
+        }
+
+        $anyAbout = SitePage::query()->where('kind', 'about')->first();
+        if ($anyAbout) {
+            $anyAbout->update(['is_published' => true]);
+            return $anyAbout;
+        }
+
+        return SitePage::query()->create([
+            'kind' => 'about',
+            'slug_ar' => 'about-us',
+            'slug_en' => 'about-us',
+            'slug_it' => 'chi-siamo',
+            'title' => [
+                'ar' => 'من نحن',
+                'en' => 'About Us',
+                'it' => 'Chi siamo',
+            ],
+            'content' => [
+                'ar' => "INTOK ACADEMY هي أكاديمية رائدة متخصصة في التدريب اللغوي الاحترافي، الترجمة المعتمدة، وتأهيل الطلاب والشباب للالتحاق بأعرق الجامعات والمدارس الإيطالية والأوروبية، والاستفادة من منح DSU الممولة بالكامل.\n\nرؤيتنا: تمكين شباب الوطن العربي من امتلاك المهارات اللغوية والمهنية المطلوبة عالمياً، وفتح أبواب الدراسة والعمل القانوني في إيطاليا وأوروبا.\n\nرسالتنا: مرافقة كل طالب ومتدرب خطوة بخطوة، من التدريب واللغة وتجهيز المستندات وحتى حصد المنحة واستلام التأشيرة والوصول لبلد الدراسة.\n\nقيمنا: الاحترافية، الشفافية، الدقة، ودعم الطالب حتى النجاح التام.",
+                'en' => "INTOK ACADEMY is a leading institution specializing in professional language training, certified translation, and qualifying students to join prestigious Italian and European universities with DSU scholarships.",
+                'it' => "INTOK ACADEMY è un'accademia leader nella formazione linguistica professionale, traduzioni giurate e orientamento universitario per l'Italia.",
+            ],
+            'seo_title' => [
+                'ar' => 'من نحن | INTOK ACADEMY',
+                'en' => 'About INTOK ACADEMY',
+                'it' => 'Chi siamo | INTOK ACADEMY',
+            ],
+            'seo_description' => [
+                'ar' => 'تعرف على أكاديمية INTOK للتدريب اللغوي، الترجمة، والدراسة في إيطاليا وأوروبا.',
+                'en' => 'Learn about INTOK ACADEMY for language training, translation, and study in Europe.',
+                'it' => 'Scopri INTOK ACADEMY per formazione linguistica e studi in Italia.',
+            ],
+            'is_published' => true,
+        ]);
     }
 
     /** @param array<string, mixed> $data */

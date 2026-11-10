@@ -1500,39 +1500,44 @@
     @endif
 
     <!-- ==========================================================
-         CALL TO ACTION BANNER (EXECUTIVE CONTRAST CARD)
+         CALL TO ACTION BANNER (SIGNATURE INTOK RED LUXURY CARD)
          ========================================================== -->
-    <section class="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <div class="relative overflow-hidden rounded-3xl border border-slate-800 bg-gradient-to-r from-slate-950 via-slate-900 to-stone-900 p-8 sm:p-14 shadow-2xl text-white reveal-scale">
+    <section class="relative mx-auto max-w-7xl px-4 py-16 sm:py-20 sm:px-6 lg:px-8">
+        <div class="relative overflow-hidden rounded-3xl border-2 border-red-400/40 bg-gradient-to-br from-[#fe0002] via-[#e60002] to-[#b30001] p-8 sm:p-14 shadow-2xl shadow-red-600/30 text-white reveal-scale">
+            <!-- Ambient Internal Glows -->
+            <div class="pointer-events-none absolute -top-20 -end-20 size-72 rounded-full bg-white/10 blur-3xl"></div>
+            <div class="pointer-events-none absolute -bottom-20 -start-20 size-72 rounded-full bg-amber-300/15 blur-3xl"></div>
+
             <div class="relative z-10 flex flex-col items-center justify-between gap-8 text-center md:flex-row md:text-start">
                 <div class="max-w-2xl">
-                    <span class="inline-flex items-center gap-2 rounded-full bg-red-500/20 border border-red-500/40 px-4 py-1 text-xs font-black text-red-300">
+                    <span class="inline-flex items-center gap-2 rounded-full bg-white/20 border border-white/40 px-4 py-1 text-xs font-black text-white backdrop-blur-md shadow-xs">
                         {{ data_get($siteSettings ?? [], 'cta_badge.'.$locale, 'ابدأ مستقبلك اليوم') }}
                     </span>
-                    <h2 class="mt-4 text-2xl font-black text-white sm:text-4xl">
+                    <h2 class="mt-4 text-2xl font-black text-white sm:text-4xl drop-shadow-sm leading-tight">
                         {{ data_get($siteSettings ?? [], 'cta_title.'.$locale, 'جاهز لبدء رحلتك نحو إيطاليا وأرقى الوظائف الدولية؟') }}
                     </h2>
-                    <p class="mt-3 text-sm leading-relaxed text-slate-300">
+                    <p class="mt-3 text-sm leading-relaxed text-red-50/95 font-medium">
                         {{ data_get($siteSettings ?? [], 'cta_subtitle.'.$locale, 'تواصل معنا الآن أو تابعنا عبر منصاتنا الرسمية على إنستغرام وتيك توك، ودع فريق INTOK Academy يرسم معك طريق النجاح.') }}
                     </p>
                     
                     <!-- Official Social Links -->
-                    <div class="mt-4 flex flex-wrap items-center gap-3 justify-center md:justify-start">
-                        <a href="https://www.instagram.com/intokacademy" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 rounded-full bg-white/10 border border-white/20 px-3.5 py-1 text-xs font-bold text-white hover:bg-[#fe0002] hover:text-white transition">
+                    <div class="mt-5 flex flex-wrap items-center gap-3 justify-center md:justify-start">
+                        <a href="https://www.instagram.com/intokacademy" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 rounded-full bg-black/20 border border-white/30 px-3.5 py-1 text-xs font-bold text-white hover:bg-white hover:text-[#fe0002] transition">
                             <span>Instagram: @intokacademy</span>
                         </a>
-                        <a href="https://tiktok.com/@intokacademy" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 rounded-full bg-white/10 border border-white/20 px-3.5 py-1 text-xs font-bold text-white hover:bg-[#fe0002] hover:text-white transition">
+                        <a href="https://tiktok.com/@intokacademy" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 rounded-full bg-black/20 border border-white/30 px-3.5 py-1 text-xs font-bold text-white hover:bg-white hover:text-[#fe0002] transition">
                             <span>TikTok: @intokacademy</span>
                         </a>
                     </div>
                 </div>
                 
                 <div class="shrink-0 flex flex-col sm:flex-row gap-3">
-                    <a href="{{ route('consultation.create', ['locale' => app()->getLocale()]) }}" class="btn-intok-primary px-8 py-4 text-center text-sm font-black shadow-xl">
-                        {{ data_get($siteSettings ?? [], 'cta_btn_primary.'.$locale, 'احجز استشارتك الآن') }}
+                    <a href="{{ route('consultation.create', ['locale' => app()->getLocale()]) }}" class="rounded-full bg-white px-8 py-4 text-center text-sm font-black text-[#fe0002] shadow-xl hover:bg-amber-50 hover:scale-105 transition transform flex items-center justify-center gap-2">
+                        <span>{{ data_get($siteSettings ?? [], 'cta_btn_primary.'.$locale, 'احجز استشارتك الآن') }}</span>
+                        <span>&larr;</span>
                     </a>
-                    <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', data_get($siteSettings ?? [], 'whatsapp_number', '201008238323')) }}" target="_blank" class="rounded-full border-2 border-white/40 bg-white/10 px-6 py-4 text-center text-sm font-black text-white backdrop-blur-md transition hover:bg-white hover:text-slate-900">
-                        {{ data_get($siteSettings ?? [], 'cta_btn_secondary.'.$locale, 'واتساب: 01008238323') }}
+                    <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', data_get($siteSettings ?? [], 'whatsapp_number', '201008238323')) }}" target="_blank" class="rounded-full border-2 border-white/70 bg-white/10 px-6 py-4 text-center text-sm font-black text-white backdrop-blur-md transition hover:bg-white hover:text-[#fe0002] flex items-center justify-center gap-2">
+                        <span>{{ data_get($siteSettings ?? [], 'cta_btn_secondary.'.$locale, 'واتساب مباشر') }}</span>
                     </a>
                 </div>
             </div>
