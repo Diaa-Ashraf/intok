@@ -188,7 +188,7 @@
                     <div class="space-y-2">
                         @php
                             $currentQuotes = data_get($settings, 'robot_quotes', [
-                                "\"مين قال إن الدبلوم آخر الطريق؟ شهادتك بداية لفرصة جديدة في إيطاليا!\"",
+                                "\"مين قال إن الدبلوم آخر الطريق؟ شهادتك بداية لفرصة جديدة بالدول الأوروبية!\"",
                                 "\"مجموعك القليل مش كارثة... لأن مستقبلك مش بيقف على رقم!\"",
                                 "\"منحة DSU تغطي مصروفاتك وسكن مجاني وبدل سنوي 8,000 يورو!\"",
                                 "\"تدريب الكول سنتر واللغات في INTOK يفتح لك أبواب كبرى الشركات الدولية!\"",
@@ -412,7 +412,7 @@
                                 'default_img' => 'assets/images/academy/italian-classroom-lecture.jpg',
                             ],
                             3 => [
-                                'badge' => 'بوابتك نحو إيطاليا وأوروبا',
+                                'badge' => 'بوابتك نحو الدول الأوروبية',
                                 'title' => 'من قاعات INTOK إلى أعرق الصروح التعليمية في روما وميلانو',
                                 'desc' => 'رحلة متكاملة تؤهلك للحصول على منحة DSU الشاملة (8,000 يورو سنوياً + سكن مجاني) والإقامة القانونية والعمل باليورو.',
                                 'default_img' => 'assets/images/schools/galileo-galilei.jpg',
@@ -532,7 +532,7 @@
                         <input name="why_comparison_title[ar]" value="{{ old('why_comparison_title.ar', data_get($settings, 'why_comparison_title.ar', 'لماذا إنتوك أفضل؟')) }}" class="admin-input mt-1">
                     </label>
                     <label class="block text-xs font-bold text-slate-700 sm:col-span-3">وصف القسم
-                        <textarea name="why_subtitle[ar]" rows="2" class="admin-input mt-1">{{ old('why_subtitle.ar', data_get($settings, 'why_subtitle.ar', 'منظومة متكاملة لا تكتفي بتقديم الكورسات أو الترجمة، بل تصنع معك مستقبلاً حقيقياً بالدراسة في إيطاليا والعمل في كبرى الشركات العالمية بأعلى عائد.')) }}</textarea>
+                        <textarea name="why_subtitle[ar]" rows="2" class="admin-input mt-1">{{ old('why_subtitle.ar', data_get($settings, 'why_subtitle.ar', 'منظومة متكاملة لا تكتفي بتقديم الكورسات أو الترجمة، بل تصنع معك مستقبلاً حقيقياً بالدراسة في الدول الأوروبية والعمل في كبرى الشركات العالمية بأعلى عائد.')) }}</textarea>
                     </label>
                 </div>
 
@@ -554,7 +554,7 @@
                                     'stat_unit' => 'سنوياً',
                                     'stat_label' => 'بدل نقدي مباشر لحساب الطالب',
                                     'stat_sub' => 'إعفاء 100% من المصروفات + سكن مجاني',
-                                    'points' => "حساب دقيق لمؤشر ISEE Parificato وفق المعايير الرسمية للمنحة الإقليمية\nإعفاء كامل 100% من الرسوم والمصروفات الدراسية الجامعية في إيطاليا\nتأمين سكن جامعي مجاني ومجهز طوال فترة سنوات دراستك\nوجبات غذائية مدعومة بمطاعم الجامعات الإيطالية يومياً\nحق العمل القانوني للطلاب 20 ساعة أسبوعياً باليورو",
+                                    'points' => "حساب دقيق لمؤشر ISEE Parificato وفق المعايير الرسمية للمنحة الإقليمية\nإعفاء كامل 100% من الرسوم والمصروفات الدراسية الجامعية في أوروبا\nتأمين سكن جامعي مجاني ومجهز طوال فترة سنوات دراستك\nوجبات غذائية مدعومة بمطاعم الجامعات الأوروبية يومياً\nحق العمل القانوني للطلاب 20 ساعة أسبوعياً باليورو",
                                     'vs_traditional' => 'إهمال المنحة وتوريط الطالب بمصروفات دراسية باهظة بدون سكن أو دعم نقدي',
                                     'vs_intok' => 'ملف منحة متكامل بدقة 100% يضمن لك أعلى فرصة للحصول على الـ 8,000 يورو والسكن',
                                     'cta_text' => 'افحص فرصة حصولك على منحة DSU',
@@ -605,13 +605,13 @@
                             [
                                 'id' => 'reception',
                                 'num' => '4',
-                                'name' => 'الاستقبال والمرافقة في إيطاليا',
+                                'name' => 'الاستقبال والمرافقة بالدول الأوروبية',
                                 'color' => 'text-red-700 border-red-200 bg-red-50/50',
                                 'defaults' => [
-                                    'nav_title' => 'الاستقبال بإيطاليا',
+                                    'nav_title' => 'الاستقبال بالدول الأوروبية',
                                     'nav_sub' => 'ميلانو وروما وتسكين مباشر',
                                     'badge' => 'مرافقة ميدانية بأوروبا',
-                                    'title' => 'استقبال في المطار وتسليم السكن بإيطاليا',
+                                    'title' => 'استقبال في المطار وتسليم السكن بالدول الأوروبية',
                                     'desc' => 'رحلتك معنا لا تنتهي عند باب المطار؛ بل يستقبلك فريقنا الميداني في ميلانو وروما لتسليم السكن، واستخراج الإقامة والحساب البنكي.',
                                     'stat_val' => '100%',
                                     'stat_unit' => 'أمان ورعاية',
@@ -619,8 +619,8 @@
                                     'stat_sub' => 'فريق ميداني رسمي يتحدث العربية والإيطالية',
                                     'points' => "استقبالك بالاسم في صالة الوصول بمطارات ميلانو (Malpensa) وروما (Fiumicino)\nتوصيلك مباشرة إلى مقر إقامتك وتسليمك مفاتيح السكن الجامعي أو الخاص\nمرافقة لتقديم أوراق تصريح الإقامة (Permesso di Soggiorno) بالبريد والشرطة\nاستخراج الرقم الضريبي الإيطالي (Codice Fiscale) وشراء شريحة اتصال إيطالية\nمساعدتك في فتح حساب بنكي إيطالي وتوجيهك لفرص العمل والأنشطة الطلابية",
                                     'vs_traditional' => 'ينتهي دور المكتب بمجرد السفر ويُترك الطالب وحيداً وتائهاً في المطار والغربة',
-                                    'vs_intok' => 'فريقنا الميداني في إيطاليا يستقبلك ويلازمك حتى تستقر في سكنك وتنهي أوراقك',
-                                    'cta_text' => 'احجز باقة الاستقبال والمرافقة بإيطاليا',
+                                    'vs_intok' => 'فريقنا الميداني في الدول الأوروبية يستقبلك ويلازمك حتى تستقر في سكنك وتنهي أوراقك',
+                                    'cta_text' => 'احجز باقة الاستقبال والمرافقة بأوروبا',
                                 ]
                             ],
                             [
@@ -793,7 +793,7 @@
                     </div>
 
                     <label class="block text-xs font-bold text-slate-700">نص رسالة الضمان 360 درجة (في الكارت الجانبي)
-                        <textarea name="about_guarantee_text[ar]" rows="2" class="admin-input mt-1">{{ old('about_guarantee_text.ar', data_get($settings, 'about_guarantee_text.ar', 'مرافقة شخصية 360 درجة من أول جلسة استشارة وفحص أوراقك، حتى استلام تأشيرتك ومفاتيح سكنك بإيطاليا.')) }}</textarea>
+                        <textarea name="about_guarantee_text[ar]" rows="2" class="admin-input mt-1">{{ old('about_guarantee_text.ar', data_get($settings, 'about_guarantee_text.ar', 'مرافقة شخصية 360 درجة من أول جلسة استشارة وفحص أوراقك، حتى استلام تأشيرتك ومفاتيح سكنك بالدولة الأوروبية.')) }}</textarea>
                     </label>
 
                     <div class="grid gap-4 sm:grid-cols-2">
@@ -810,7 +810,7 @@
                             <input name="about_cta_badge[ar]" value="{{ old('about_cta_badge.ar', data_get($settings, 'about_cta_badge.ar', 'خطوتك الأولى تبدأ الآن')) }}" class="admin-input mt-1">
                         </label>
                         <label class="block text-xs font-bold text-slate-700">عنوان البانر السفلي
-                            <input name="about_cta_title[ar]" value="{{ old('about_cta_title.ar', data_get($settings, 'about_cta_title.ar', 'جاهز لبدء رحلتك نحو إيطاليا والوظائف الدولية؟')) }}" class="admin-input mt-1">
+                            <input name="about_cta_title[ar]" value="{{ old('about_cta_title.ar', data_get($settings, 'about_cta_title.ar', 'جاهز لبدء رحلتك نحو الدول الأوروبية والوظائف الدولية؟')) }}" class="admin-input mt-1">
                         </label>
                         <label class="block text-xs font-bold text-slate-700">وصف البانر السفلي
                             <input name="about_cta_subtitle[ar]" value="{{ old('about_cta_subtitle.ar', data_get($settings, 'about_cta_subtitle.ar', 'سواء كنت حاملاً لدبلوم فني أو ثانوية عامة أو خريجاً، مستشارك الأكاديمي في INTOK جاهز لدراسة ملفك وتحديد خطتك مجاناً.')) }}" class="admin-input mt-1">
@@ -1029,7 +1029,7 @@
                     <div class="rounded-xl bg-slate-50 p-4 border border-slate-100 space-y-2">
                         <h4 class="font-bold text-xs text-red-600">المرحلة 04</h4>
                         <label class="block text-xs font-bold text-slate-700">العنوان
-                            <input name="roadmap_step4_title[ar]" value="{{ old('roadmap_step4_title.ar', data_get($settings, 'roadmap_step4_title.ar', 'التأشيرة والاستقبال بإيطاليا')) }}" class="admin-input mt-1">
+                            <input name="roadmap_step4_title[ar]" value="{{ old('roadmap_step4_title.ar', data_get($settings, 'roadmap_step4_title.ar', 'التأشيرة والاستقبال بالدول الأوروبية')) }}" class="admin-input mt-1">
                         </label>
                         <label class="block text-xs font-bold text-slate-700">الوصف
                             <textarea name="roadmap_step4_desc[ar]" rows="2" class="admin-input mt-1">{{ old('roadmap_step4_desc.ar', data_get($settings, 'roadmap_step4_desc.ar', '')) }}</textarea>
@@ -1055,7 +1055,7 @@
                                 <input name="cta_badge[{{ $locale }}]" value="{{ old('cta_badge.'.$locale, data_get($settings, 'cta_badge.'.$locale, 'ابدأ مستقبلك اليوم')) }}" class="admin-input mt-1">
                             </label>
                             <label class="block text-xs font-bold text-slate-700">العنوان الرئيسي
-                                <input name="cta_title[{{ $locale }}]" value="{{ old('cta_title.'.$locale, data_get($settings, 'cta_title.'.$locale, 'جاهز لبدء رحلتك نحو إيطاليا وأرقى الوظائف الدولية؟')) }}" class="admin-input mt-1">
+                                <input name="cta_title[{{ $locale }}]" value="{{ old('cta_title.'.$locale, data_get($settings, 'cta_title.'.$locale, 'جاهز لبدء رحلتك نحو الدول الأوروبية وأرقى الوظائف الدولية؟')) }}" class="admin-input mt-1">
                             </label>
                             <label class="block text-xs font-bold text-slate-700">الوصف
                                 <textarea name="cta_subtitle[{{ $locale }}]" rows="3" class="admin-input mt-1">{{ old('cta_subtitle.'.$locale, data_get($settings, 'cta_subtitle.'.$locale, '')) }}</textarea>

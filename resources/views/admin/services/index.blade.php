@@ -19,7 +19,7 @@
                 <span>إدارة الخدمات والمسارات التدريبية</span>
                 <span class="rounded-full bg-red-100 text-red-700 px-3 py-0.5 text-xs font-bold">{{ $totalCount }} خدمة</span>
             </h1>
-            <p class="mt-1 text-sm text-slate-500">تحكم كامل في كافة برامج ومسارات الأكاديمية (الكول سنتر، الدراسة بإيطاليا، الترجمة، اللغات، والتأهيل).</p>
+            <p class="mt-1 text-sm text-slate-500">تحكم كامل في كافة برامج ومسارات الأكاديمية (الكول سنتر، الدراسة بالدول الأوروبية، الترجمة، اللغات، والتأهيل).</p>
         </div>
         <div class="flex flex-wrap items-center gap-3">
             <a href="{{ route('services.index', ['locale' => app()->getLocale()]) }}" target="_blank" class="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm font-bold text-slate-700 shadow-xs hover:bg-slate-50 hover:border-slate-400 transition">

@@ -53,9 +53,9 @@ class SitePageManagementService
                 'it' => 'Chi siamo',
             ],
             'content' => [
-                'ar' => "INTOK ACADEMY هي أكاديمية رائدة متخصصة في التدريب اللغوي الاحترافي، الترجمة المعتمدة، وتأهيل الطلاب والشباب للالتحاق بأعرق الجامعات والمدارس الإيطالية والأوروبية، والاستفادة من منح DSU الممولة بالكامل.\n\nرؤيتنا: تمكين شباب الوطن العربي من امتلاك المهارات اللغوية والمهنية المطلوبة عالمياً، وفتح أبواب الدراسة والعمل القانوني في إيطاليا وأوروبا.\n\nرسالتنا: مرافقة كل طالب ومتدرب خطوة بخطوة، من التدريب واللغة وتجهيز المستندات وحتى حصد المنحة واستلام التأشيرة والوصول لبلد الدراسة.\n\nقيمنا: الاحترافية، الشفافية، الدقة، ودعم الطالب حتى النجاح التام.",
-                'en' => "INTOK ACADEMY is a leading institution specializing in professional language training, certified translation, and qualifying students to join prestigious Italian and European universities with DSU scholarships.",
-                'it' => "INTOK ACADEMY è un'accademia leader nella formazione linguistica professionale, traduzioni giurate e orientamento universitario per l'Italia.",
+                'ar' => "INTOK ACADEMY هي أكاديمية رائدة متخصصة في التدريب اللغوي الاحترافي، الترجمة المعتمدة، وتأهيل الطلاب والشباب للالتحاق بأعرق الجامعات والمدارس بالدول الأوروبية، والاستفادة من المنح الدراسية الشاملة الممولة.\n\nرؤيتنا: تمكين شباب الوطن العربي من امتلاك المهارات اللغوية والمهنية المطلوبة عالمياً، وفتح أبواب الدراسة والعمل القانوني في الدول الأوروبية.\n\nرسالتنا: مرافقة كل طالب ومتدرب خطوة بخطوة، من التدريب واللغة وتجهيز المستندات وحتى حصد المنحة واستلام التأشيرة والوصول لبلد الدراسة.\n\nقيمنا: الاحترافية، الشفافية، الدقة، ودعم الطالب حتى النجاح التام.",
+                'en' => "INTOK ACADEMY is a leading institution specializing in professional language training, certified translation, and qualifying students to join prestigious European universities with comprehensive scholarships.",
+                'it' => "INTOK ACADEMY è un'accademia leader nella formazione linguistica professionale, traduzioni giurate e orientamento universitario per i paesi europei.",
             ],
             'seo_title' => [
                 'ar' => 'من نحن | INTOK ACADEMY',
@@ -63,9 +63,9 @@ class SitePageManagementService
                 'it' => 'Chi siamo | INTOK ACADEMY',
             ],
             'seo_description' => [
-                'ar' => 'تعرف على أكاديمية INTOK للتدريب اللغوي، الترجمة، والدراسة في إيطاليا وأوروبا.',
+                'ar' => 'تعرف على أكاديمية INTOK للتدريب اللغوي، الترجمة، والدراسة بالدول الأوروبية.',
                 'en' => 'Learn about INTOK ACADEMY for language training, translation, and study in Europe.',
-                'it' => 'Scopri INTOK ACADEMY per formazione linguistica e studi in Italia.',
+                'it' => 'Scopri INTOK ACADEMY per formazione linguistica e studi nei paesi europei.',
             ],
             'is_published' => true,
         ]);

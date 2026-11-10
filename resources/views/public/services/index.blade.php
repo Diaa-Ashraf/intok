@@ -97,13 +97,13 @@
             </h1>
 
             <p class="mt-4 max-w-2xl mx-auto leading-relaxed text-slate-600 font-medium sm:text-lg">
-                منظومة تدريبية واحترافية متكاملة تشمل تدريب الكول سنتر وسوق العمل، الترجمة المعتمدة للسفارات، إتقان اللغات، ومسار استكمال الدراسة في إيطاليا مع منح DSU الشاملة.
+                منظومة تدريبية واحترافية متكاملة تشمل تدريب الكول سنتر وسوق العمل، الترجمة المعتمدة للسفارات، إتقان اللغات، ومسار استكمال الدراسة في الدول الأوروبية مع المنح الشاملة.
             </p>
 
             <!-- Search & Filter Ribbon -->
             <div class="mt-8 max-w-3xl mx-auto">
                 <div class="relative">
-                    <input type="text" id="services-search-input" placeholder="ابحث بالاسم، مثل: كول سنتر، إيطاليا، منحة DSU، ترجمة، آيلتس..." class="w-full rounded-2xl border-2 border-slate-200 bg-white py-3.5 pe-4 ps-12 text-xs sm:text-sm font-bold text-slate-800 shadow-sm focus:border-[#fe0002] focus:outline-none focus:ring-4 focus:ring-red-500/10 transition">
+                    <input type="text" id="services-search-input" placeholder="ابحث بالاسم، مثل: كول سنتر، الدراسة في أوروبا، منح دراسية، ترجمة، آيلتس..." class="w-full rounded-2xl border-2 border-slate-200 bg-white py-3.5 pe-4 ps-12 text-xs sm:text-sm font-bold text-slate-800 shadow-sm focus:border-[#fe0002] focus:outline-none focus:ring-4 focus:ring-red-500/10 transition">
                     <span class="absolute start-4 top-1/2 -translate-y-1/2 text-slate-400">
                         <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                     </span>
@@ -118,7 +118,7 @@
                         <span>الكول سنتر وسوق العمل</span>
                     </button>
                     <button type="button" class="service-filter-tab" data-filter="italy">
-                        <span>الدراسة في إيطاليا والمنح</span>
+                        <span>الدراسة في الدول الأوروبية والمنح</span>
                     </button>
                     <button type="button" class="service-filter-tab" data-filter="translation">
                         <span>الترجمة والاعتماد الرسمي</span>

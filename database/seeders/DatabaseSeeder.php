@@ -155,9 +155,9 @@ class DatabaseSeeder extends Seeder
             'contact_email' => 'info@intokacademy.com',
             'site_name' => ['ar' => 'INTOK Academy', 'en' => 'INTOK Academy', 'it' => 'INTOK Academy'],
             'tagline' => [
-                'ar' => 'Connecting You to the World | بوابتك نحو إتقان اللغات والدراسة في إيطاليا وأوروبا',
+                'ar' => 'Connecting You to the World | بوابتك نحو إتقان اللغات والدراسة في الدول الأوروبية',
                 'en' => 'Connecting You to the World | Your Gateway to Languages & European Education',
-                'it' => 'Connecting You to the World | La tua porta per le lingue e gli studi in Italia'
+                'it' => 'Connecting You to the World | La tua porta per le lingue e gli studi nei paesi europei'
             ],
             'social_links' => [
                 'instagram' => 'https://www.instagram.com/intokacademy',
@@ -167,19 +167,19 @@ class DatabaseSeeder extends Seeder
 
             // Hero Section
             'hero_badge' => [
-                'ar' => 'بوابتك المعتمدة نحو إيطاليا وسوق العمل الدولي',
-                'en' => 'Your Accredited Gateway to Italy & Global Careers',
-                'it' => 'La tua porta accreditata verso l Italia e il lavoro globale'
+                'ar' => 'بوابتك المعتمدة نحو الدول الأوروبية وسوق العمل الدولي',
+                'en' => 'Your Accredited Gateway to European Education & Global Careers',
+                'it' => 'La tua porta accreditata verso i Paesi Europei e il lavoro globale'
             ],
             'hero_title' => [
-                'ar' => 'خطوتك الأولى نحو الدراسة في إيطاليا وسوق العمل الدولي',
-                'en' => 'Your First Step to Study in Italy & Global Careers',
-                'it' => 'Il tuo primo passo per studiare in Italy e lavorare nel mondo'
+                'ar' => 'خطوتك الأولى نحو الدراسة في الدول الأوروبية وسوق العمل الدولي',
+                'en' => 'Your First Step to Study in European Countries & Global Careers',
+                'it' => 'Il tuo primo passo per studiare nei Paesi Europei e lavorare nel mondo'
             ],
             'hero_text' => [
-                'ar' => 'معاك ثانوية أو دبلوم فني (صنايع، تجارة، زراعة)؟ بوابتك مفتوحة لاستكمال دراستك في إيطاليا، والحصول على منح DSU الشاملة (8,000 يورو + سكن مجاني)، والعمل قانونياً باليورو، مع أقوى برامج تدريب الكول سنتر، والترجمة المعتمدة، ودورات اللغات.',
-                'en' => 'High school or vocational diploma? Your gateway is open to study in Italy with DSU scholarships (8,000€ + free housing), and ace professional call center and translation training.',
-                'it' => 'Diploma o istituto tecnico? La tua porta verso gli studi in Italia con borse DSU complete (8.000€ + alloggio gratuito) e formazione professionale.'
+                'ar' => 'معاك ثانوية أو دبلوم فني (صنايع، تجارة، زراعة)؟ بوابتك مفتوحة لاستكمال دراستك في الدول الأوروبية، والحصول على المنح الدراسية الشاملة (حتى 8,000 يورو + سكن مجاني)، والعمل قانونياً باليورو، مع أقوى برامج تدريب الكول سنتر، والترجمة المعتمدة، ودورات اللغات.',
+                'en' => 'High school or vocational diploma? Your gateway is open to study in European countries with comprehensive scholarships (up to 8,000€ + free housing), and ace professional call center and translation training.',
+                'it' => 'Diploma o istituto tecnico? La tua porta verso gli studi nei paesi europei con borse di studio complete (fino a 8.000€ + alloggio gratuito) e formazione professionale.'
             ],
             'hero_cta' => [
                 'ar' => 'ابدأ رحلتك واستشرنا مجاناً',
@@ -210,11 +210,11 @@ class DatabaseSeeder extends Seeder
                 'it' => 'Sussidio annuo e alloggio gratuito DSU'
             ],
             'robot_quotes' => [
-                "\"مين قال إن الدبلوم آخر الطريق؟ شهادتك بداية لفرصة جديدة في إيطاليا!\"",
+                "\"مين قال إن الدبلوم آخر الطريق؟ شهادتك بداية لفرصة جديدة بالدول الأوروبية!\"",
                 "\"مجموعك القليل مش كارثة... لأن مستقبلك مش بيقف على رقم!\"",
                 "\"منحة DSU تغطي مصروفاتك وسكن مجاني وبدل سنوي 8,000 يورو!\"",
                 "\"تدريب الكول سنتر واللغات في INTOK يفتح لك أبواب كبرى الشركات الدولية!\"",
-                "\"ترجمة معتمدة رسمياً وموثقة للسفارة الإيطالية بدون أي تعقيدات!\""
+                "\"ترجمة معتمدة رسمياً وموثقة للسفارات الأوروبية بدون أي تعقيدات!\""
             ],
 
             // Services Section
@@ -229,7 +229,7 @@ class DatabaseSeeder extends Seeder
                 'it' => 'Servizi e formazione INTOK ACADEMY'
             ],
             'services_subtitle' => [
-                'ar' => 'منظومة تدريب احترافية معتمدة تؤهلك لسوق العمل الدولي وكبرى الشركات العالمية، مع خدمات الترجمة الرسمية الموثقة للسفارات وبوابتك لاستكمال الدراسة في إيطاليا.',
+                'ar' => 'منظومة تدريب احترافية معتمدة تؤهلك لسوق العمل الدولي وكبرى الشركات العالمية، مع خدمات الترجمة الرسمية الموثقة للسفارات وبوابتك لاستكمال الدراسة في الدول الأوروبية.',
                 'en' => 'Comprehensive certified training qualifying you for multinational careers, certified translation, and European education.',
                 'it' => 'Formazione professionale certificata per il lavoro e gli studi in Europa.'
             ],
@@ -290,14 +290,14 @@ class DatabaseSeeder extends Seeder
                 'it' => 'Perché scegliere INTOK Academy?'
             ],
             'why_subtitle' => [
-                'ar' => 'منظومة متكاملة لا تكتفي بتقديم الكورسات أو الترجمة، بل تصنع معك مستقبلاً حقيقياً بالدراسة في إيطاليا والعمل في كبرى الشركات العالمية بأعلى عائد.',
+                'ar' => 'منظومة متكاملة لا تكتفي بتقديم الكورسات أو الترجمة، بل تصنع معك مستقبلاً حقيقياً بالدراسة في الدول الأوروبية والعمل في كبرى الشركات العالمية بأعلى عائد.',
                 'en' => 'A comprehensive platform opening genuine European education pathways and high-paying multinational careers.',
-                'it' => 'Una piattaforma completa che costruisce il tuo futuro in Italia e nelle grandi aziende.'
+                'it' => 'Una piattaforma completa che costruisce il tuo futuro nei paesi europei e nelle grandi aziende.'
             ],
             'why_bento_dsu_title' => [
-                'ar' => 'أعلى نسبة قبول لمنح DSU الحكومية الإيطالية',
-                'en' => 'Highest Acceptance Rate for Italian DSU Scholarships',
-                'it' => 'Il più alto tasso di ammissione per borse DSU'
+                'ar' => 'أعلى نسبة قبول للمنح الحكومية والجامعية بالدول الأوروبية',
+                'en' => 'Highest Acceptance Rate for European Regional Scholarships',
+                'it' => 'Il più alto tasso di ammissione per borse di studio europee'
             ],
             'why_bento_dsu_desc' => [
                 'ar' => 'نضمن لك حساب مؤشر ISEE بدقة هندسية وقانونية لضمان استيفاء شروط المنحة الإقليمية وسكن جامعي معفى تماماً، مع فتح الباب لحملة الدبلومات الفنية (صنايع / تجارة / زراعة) والثانوية العامة والجامعيين.',
@@ -320,19 +320,19 @@ class DatabaseSeeder extends Seeder
                 'it' => 'Traduzione giurata ufficiale per tutte le ambasciate'
             ],
             'why_bento_trans_desc' => [
-                'ar' => 'ترجمة رسمية معترف بها أمام القنصلية الإيطالية وكافة السفارات الأوروبية، لشهادات التخرج، إعلانات القيمة، وعقود العمل دون مخاطرة بالرفض.',
-                'en' => 'Official certified translation recognized by the Italian consulate and European embassies with zero errors.',
+                'ar' => 'ترجمة رسمية معترف بها أمام السفارات والقنصليات الأوروبية، لشهادات التخرج، إعلانات القيمة، وعقود العمل دون مخاطرة بالرفض.',
+                'en' => 'Official certified translation recognized by European embassies with zero errors.',
                 'it' => 'Traduzioni riconosciute dal consolato italiano e ambasciate europee.'
             ],
             'why_bento_reception_title' => [
-                'ar' => 'استقبال في المطار وتسليم السكن بإيطاليا',
-                'en' => 'Airport Reception & Housing Delivery in Italy',
-                'it' => 'Accoglienza all aeroporto e consegna alloggio in Italia'
+                'ar' => 'استقبال في المطار وتسليم السكن بالدول الأوروبية',
+                'en' => 'Airport Reception & Housing Delivery in European Countries',
+                'it' => 'Accoglienza all aeroporto e consegna alloggio nei Paesi Europei'
             ],
             'why_bento_reception_desc' => [
-                'ar' => 'رحلتك معنا لا تنتهي عند باب المطار؛ بل يستقبلك فريقنا الميداني في ميلانو وروما لتسليم السكن، واستخراج الإقامة والحساب البنكي والعمل باليورو.',
-                'en' => 'Our local team in Milan and Rome receives you at the airport, handles your residence permit, bank account, and housing.',
-                'it' => 'Il nostro team sul posto ti accoglie all aeroporto e ti assiste per alloggio e permesso di soggiorno.'
+                'ar' => 'رحلتك معنا لا تنتهي عند باب المطار؛ بل يستقبلك فريقنا الميداني في وجهتك بالدول الأوروبية لتسليم السكن، واستخراج الإقامة والحساب البنكي والعمل باليورو.',
+                'en' => 'Our local team in Europe receives you at the airport, handles your residence permit, bank account, and housing.',
+                'it' => 'Il nostro team sul posto ti accoglie all aeroporto e ti assiste per alloggio e soggiorno.'
             ],
             'why_bento_languages_title' => [
                 'ar' => 'إتقان اللغات من الصفر واجتياز CILS & IELTS',
@@ -377,9 +377,9 @@ class DatabaseSeeder extends Seeder
                 'it' => 'Consulenza e scelta percorso'
             ],
             'roadmap_step1_desc' => [
-                'ar' => 'جلسة إرشاد شاملة مع مستشارك لتحديد البرنامج أو المسار الإيطالي المناسب لمؤهلك.',
-                'en' => 'Comprehensive advisory session to select the ideal Italian or professional track for your profile.',
-                'it' => 'Sessione di orientamento per scegliere il percorso adatto.'
+                'ar' => 'جلسة إرشاد شاملة مع مستشارك لتحديد البرنامج أو المسار الأكاديمي الأوروبي المناسب لمؤهلك.',
+                'en' => 'Comprehensive advisory session to select the ideal European academic or professional track for your profile.',
+                'it' => 'Sessione di orientamento per scegliere il percorso europeo adatto.'
             ],
             'roadmap_step2_title' => [
                 'ar' => 'تجهيز الأوراق والتدريب',
@@ -402,13 +402,13 @@ class DatabaseSeeder extends Seeder
                 'it' => 'Invio domande universitarie e monitoraggio borse di studio.'
             ],
             'roadmap_step4_title' => [
-                'ar' => 'التأشيرة والاستقبال بإيطاليا',
-                'en' => 'Visa & Reception in Italy',
-                'it' => 'Visto e accoglienza in Italia'
+                'ar' => 'التأشيرة والاستقبال بالدول الأوروبية',
+                'en' => 'Visa & Reception in European Countries',
+                'it' => 'Visto e accoglienza nei Paesi Europei'
             ],
             'roadmap_step4_desc' => [
                 'ar' => 'استلام التأشيرة الدراسية، تأمين السكن، والاستقبال في المطار لبدء مستقبلك الجديد.',
-                'en' => 'Receiving your student visa, securing accommodation, and airport reception in Italy.',
+                'en' => 'Receiving your student visa, securing accommodation, and airport reception in Europe.',
                 'it' => 'Rilascio visto, alloggio e accoglienza all arrivo.'
             ],
 
@@ -419,9 +419,9 @@ class DatabaseSeeder extends Seeder
                 'it' => 'Inizia il tuo futuro oggi'
             ],
             'cta_title' => [
-                'ar' => 'جاهز لبدء رحلتك نحو إيطاليا وأرقى الوظائف الدولية؟',
-                'en' => 'Ready to Start Your Journey to Italy & Top International Careers?',
-                'it' => 'Pronto per iniziare il tuo percorso verso l Italia?'
+                'ar' => 'جاهز لبدء رحلتك نحو الدول الأوروبية وأرقى الوظائف الدولية؟',
+                'en' => 'Ready to Start Your Journey to European Countries & Top International Careers?',
+                'it' => 'Pronto per iniziare il tuo percorso verso i Paesi Europei?'
             ],
             'cta_subtitle' => [
                 'ar' => 'تواصل معنا الآن أو تابعنا عبر منصاتنا الرسمية على إنستغرام وتيك توك، ودع فريق INTOK Academy يرسم معك طريق النجاح.',
@@ -468,7 +468,7 @@ class DatabaseSeeder extends Seeder
                 ],
                 [
                     'name' => ['ar' => 'أ. أحمد خليل', 'en' => 'Ahmed Khalil', 'it' => 'Ahmed Khalil'],
-                    'role' => ['ar' => 'مستشار المنح الحكومية والقبول الجامعي بإيطاليا', 'en' => 'Italian University Admissions & DSU Scholarship Consultant', 'it' => 'Consulente Ammissioni Universitarie e Borse DSU'],
+                    'role' => ['ar' => 'مستشار المنح الحكومية والقبول الجامعي بالدول الأوروبية', 'en' => 'European University Admissions & Scholarship Consultant', 'it' => 'Consulente Ammissioni Universitarie e Borse di Studio Europee'],
                     'bio' => ['ar' => 'خبير حساب مؤشرات ISEE وملفات المنح الإقليمية DSU والسكن الجامعي وتأشيرات السفر لحملة الدبلومات الفنية والثانوية والجامعيين.', 'en' => 'Specialist in ISEE calculation, DSU regional scholarship applications, student housing, and visa files for high school and diploma holders.', 'it' => 'Specialista nel calcolo ISEE, pratiche per borse DSU e pratiche consolari per visti di studio.'],
                     'photo_path' => null,
                     'social_links' => ['linkedin' => 'https://linkedin.com', 'instagram' => 'https://instagram.com/intokacademy'],

@@ -5,29 +5,29 @@
 @php
     $locale = app()->getLocale();
     $defaultRobotQuotes = [
-        '"الدبلوم الفني ليس نهاية المطاف.. شهادتك بوابتك الرسمية للدراسة في إيطاليا."',
+        '"الدبلوم الفني ليس نهاية المطاف.. شهادتك بوابتك الرسمية للدراسة بالدول الأوروبية."',
         '"مستقبلك يبدأ من هنا.. خطوة مدروسة تحول طموحك إلى واقع أوروبي."',
-        '"منحة DSU تغطي مصروفاتك بالكامل مع سكن جامعي مجاني وبدل سنوي 8,000 يورو."',
+        '"المنح الدراسية تغطي مصروفاتك بالكامل مع سكن جامعي مجاني وبدل سنوي حتى 8,000 يورو."',
         '"تدريب الكول سنتر واللغات في INTOK يفتح لك أبواب العمل بكبرى الشركات العالمية."',
-        '"ترجمة معتمدة رسمياً وموثقة للسفارة الإيطالية بأعلى معايير الدقة الدبلوماسية."'
+        '"ترجمة معتمدة رسمياً وموثقة للسفارات الأوروبية بأعلى معايير الدقة الدبلوماسية."'
     ];
     $robotQuotesList = data_get($siteSettings ?? [], 'robot_quotes') ?: $defaultRobotQuotes;
 
     $heroScenes = [
         [
-            'tab' => data_get($siteSettings ?? [], 'hero_scene_1_tab.'.$locale, 'ميلانو'),
+            'tab' => data_get($siteSettings ?? [], 'hero_scene_1_tab.'.$locale, match($locale) { 'it' => 'Università Europee', 'en' => 'European Unis', default => 'الجامعات الأوروبية' }),
             'image' => data_get($siteSettings ?? [], 'hero_scene_1_img') ? asset('storage/'.data_get($siteSettings, 'hero_scene_1_img')) : asset('assets/images/schools/san-giorgio.jpg'),
-            'badge' => data_get($siteSettings ?? [], 'hero_scene_1_badge.'.$locale, 'عاصمة الدراسة والصناعة • ميلانو'),
-            'title' => data_get($siteSettings ?? [], 'hero_scene_1_title.'.$locale, 'جامعات ومدارس ميلانو الحكومية'),
-            'desc' => data_get($siteSettings ?? [], 'hero_scene_1_desc.'.$locale, 'استكمال دراستك في أعرق الصروح التعليمية مع منحة DSU الشاملة (8,000 يورو + سكن مجاني) وتأشيرة دراسية رسمية.'),
+            'badge' => data_get($siteSettings ?? [], 'hero_scene_1_badge.'.$locale, match($locale) { 'it' => 'Poli Accademici • Capitali Europee', 'en' => 'Top Academic Hubs • European Cities', default => 'وجهات الدراسة المرموقة • كبرى المدن الأوروبية' }),
+            'title' => data_get($siteSettings ?? [], 'hero_scene_1_title.'.$locale, match($locale) { 'it' => 'Università e Istituti Europei Accreditati', 'en' => 'Accredited European Public Universities', default => 'الجامعات والمدارس الأوروبية المعتمدة' }),
+            'desc' => data_get($siteSettings ?? [], 'hero_scene_1_desc.'.$locale, match($locale) { 'it' => 'Completa i tuoi studi nelle migliori istituzioni europee con borse di studio complete (fino a 8.000€ + alloggio gratuito) e visto per studio.', 'en' => 'Complete your higher education in top European institutions with comprehensive scholarships (up to 8,000€ + free housing) and official study visa.', default => 'استكمال دراستك في أعرق الصروح التعليمية الأوروبية مع المنح الشاملة (حتى 8,000 يورو + سكن مجاني) وتأشيرة دراسية رسمية.' }),
             'stat' => data_get($siteSettings ?? [], 'hero_scene_1_stat.'.$locale, '8,000€ بدل سنوي + سكن مجاني'),
         ],
         [
-            'tab' => data_get($siteSettings ?? [], 'hero_scene_2_tab.'.$locale, 'روما'),
+            'tab' => data_get($siteSettings ?? [], 'hero_scene_2_tab.'.$locale, match($locale) { 'it' => 'Studio in Europa', 'en' => 'Study in Europe', default => 'الدراسة في أوروبا' }),
             'image' => data_get($siteSettings ?? [], 'hero_scene_2_img') ? asset('storage/'.data_get($siteSettings, 'hero_scene_2_img')) : asset('assets/images/schools/galileo-galilei.jpg'),
-            'badge' => data_get($siteSettings ?? [], 'hero_scene_2_badge.'.$locale, 'التاريخ والأكاديمية • روما'),
-            'title' => data_get($siteSettings ?? [], 'hero_scene_2_title.'.$locale, 'دراسة البكالوريوس والماجستير بروما'),
-            'desc' => data_get($siteSettings ?? [], 'hero_scene_2_desc.'.$locale, 'الالتحاق بأعرق الجامعات والمدارس الإيطالية مع تصريح عمل قانوني باليورو وتأشيرة شنغن رسمية.'),
+            'badge' => data_get($siteSettings ?? [], 'hero_scene_2_badge.'.$locale, match($locale) { 'it' => 'Accreditamento • Studio e Lavoro', 'en' => 'Accreditation • Study & Work', default => 'الاعتماد والأكاديمية • الدراسة في أوروبا' }),
+            'title' => data_get($siteSettings ?? [], 'hero_scene_2_title.'.$locale, match($locale) { 'it' => 'Laurea Triennale e Magistrale nei Paesi Europei', 'en' => 'Bachelor & Master Degrees in European Countries', default => 'دراسة البكالوريوس والماجستير بالدول الأوروبية' }),
+            'desc' => data_get($siteSettings ?? [], 'hero_scene_2_desc.'.$locale, match($locale) { 'it' => 'Accesso alle università prestigiose nei paesi europei con permesso di soggiorno per motivi di studio e visto Schengen ufficiale.', 'en' => 'Enroll in prestigious universities across European nations with legal work permits in Euros and official Schengen visas.', default => 'الالتحاق بأعرق الجامعات والمدارس بالدول الأوروبية مع تصريح عمل قانوني باليورو وتأشيرة شنغن رسمية.' }),
             'stat' => data_get($siteSettings ?? [], 'hero_scene_2_stat.'.$locale, '99.4% نسبة نجاح وقبول الملفات'),
         ],
         [
@@ -63,9 +63,9 @@
         ],
         [
             'image' => data_get($siteSettings ?? [], 'live_slide_3_img') ? asset('storage/'.data_get($siteSettings, 'live_slide_3_img')) : asset('assets/images/schools/galileo-galilei.jpg'),
-            'badge' => data_get($siteSettings ?? [], 'live_slide_3_badge.'.$locale, 'بوابتك نحو إيطاليا وأوروبا'),
-            'title' => data_get($siteSettings ?? [], 'live_slide_3_title.'.$locale, 'من قاعات INTOK إلى أعرق الصروح التعليمية في روما وميلانو'),
-            'desc' => data_get($siteSettings ?? [], 'live_slide_3_desc.'.$locale, 'رحلة متكاملة تؤهلك للحصول على منحة DSU الشاملة (8,000 يورو سنوياً + سكن مجاني) والإقامة القانونية والعمل باليورو.'),
+            'badge' => data_get($siteSettings ?? [], 'live_slide_3_badge.'.$locale, 'بوابتك نحو الدول الأوروبية'),
+            'title' => data_get($siteSettings ?? [], 'live_slide_3_title.'.$locale, 'من قاعات INTOK إلى أعرق الصروح التعليمية في أوروبا'),
+            'desc' => data_get($siteSettings ?? [], 'live_slide_3_desc.'.$locale, 'رحلة متكاملة تؤهلك للحصول على المنح الدراسية الشاملة (حتى 8,000 يورو سنوياً + سكن مجاني) والإقامة القانونية والعمل باليورو.'),
         ],
     ];
 
@@ -117,12 +117,12 @@
 
                     <!-- Main Punchy Headline -->
                     <h1 class="mt-6 text-3xl font-black leading-[1.2] tracking-tight sm:text-5xl lg:text-6xl text-[#c27803]">
-                        {!! nl2br(e(data_get($siteSettings ?? [], 'hero_title.'.$locale, "مستقبلك أكبر من حدود بلدك! \nالدراسة في إيطاليا واحتراف اللغات"))) !!}
+                        {!! nl2br(e(data_get($siteSettings ?? [], 'hero_title.'.$locale, "مستقبلك أكبر من حدود بلدك! \nالدراسة في الدول الأوروبية واحتراف اللغات"))) !!}
                     </h1>
 
                     <!-- Empowering Subtitle -->
                     <p class="mt-6 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg font-medium">
-                        {{ data_get($siteSettings ?? [], 'hero_text.'.$locale, 'معاك ثانوية أو دبلوم فني (صنايع، تجارة، زراعة)؟ بوابتك مفتوحة لاستكمال دراستك في إيطاليا، والحصول على منح DSU الشاملة (8,000 يورو + سكن مجاني)، والعمل قانونياً باليورو، مع أقوى برامج تدريب الكول سنتر، والترجمة المعتمدة، ودورات اللغات.') }}
+                        {{ data_get($siteSettings ?? [], 'hero_text.'.$locale, 'معاك ثانوية أو دبلوم فني (صنايع، تجارة، زراعة)؟ بوابتك مفتوحة لاستكمال دراستك في الدول الأوروبية، والحصول على المنح الدراسية الشاملة (حتى 8,000 يورو + سكن مجاني)، والعمل قانونياً باليورو، مع أقوى برامج تدريب الكول سنتر، والترجمة المعتمدة، ودورات اللغات.') }}
                     </p>
 
                     <!-- Primary CTAs -->
@@ -157,7 +157,7 @@
                     <div class="mt-6 flex flex-wrap items-center gap-2.5 text-xs font-bold text-slate-700">
                         <span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 border border-emerald-200 px-3 py-1 text-emerald-800 shadow-2xs">
                             <span class="size-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                            <span>شراكات رسمية معتمدة في إيطاليا</span>
+                            <span>شراكات واعتمادات رسمية بالدول الأوروبية</span>
                         </span>
                         <span class="inline-flex items-center gap-1.5 rounded-full bg-amber-50 border border-amber-200 px-3 py-1 text-amber-900 shadow-2xs">
                             <span>توثيق قنصلي وترجمة معتمدة 100%</span>
@@ -248,8 +248,8 @@
                                 {{ data_get($siteSettings ?? [], 'hero_float_1_tag', 'DSU') }}
                             </span>
                             <div class="text-start">
-                                <span class="text-[11px] font-black text-emerald-800 block leading-tight">{{ data_get($siteSettings ?? [], 'hero_float_1_title.'.$locale, 'منحة DSU الحكومية') }}</span>
-                                <span class="text-[9px] sm:text-[10px] font-bold text-slate-600 block">{{ data_get($siteSettings ?? [], 'hero_float_1_sub.'.$locale, '8,000€ + سكن معفى 100%') }}</span>
+                                <span class="text-[11px] font-black text-emerald-800 block leading-tight">{{ data_get($siteSettings ?? [], 'hero_float_1_title.'.$locale, 'المنح الدراسية الأوروبية') }}</span>
+                                <span class="text-[9px] sm:text-[10px] font-bold text-slate-600 block">{{ data_get($siteSettings ?? [], 'hero_float_1_sub.'.$locale, 'حتى 8,000€ + سكن معفى 100%') }}</span>
                             </div>
                         </div>
 
@@ -288,7 +288,7 @@
                     {{ data_get($siteSettings ?? [], 'services_title.'.$locale, 'خدمات وتدريب INTOK ACADEMY') }}
                 </h2>
                 <p class="mt-4 text-base text-slate-600 font-medium leading-relaxed">
-                    {{ data_get($siteSettings ?? [], 'services_subtitle.'.$locale, 'منظومة تدريب احترافية معتمدة تؤهلك لسوق العمل الدولي وكبرى الشركات العالمية، مع خدمات الترجمة الرسمية الموثقة للسفارات وبوابتك لاستكمال الدراسة في إيطاليا.') }}
+                    {{ data_get($siteSettings ?? [], 'services_subtitle.'.$locale, 'منظومة تدريب احترافية معتمدة تؤهلك لسوق العمل الدولي وكبرى الشركات العالمية، مع خدمات الترجمة الرسمية الموثقة للسفارات وبوابتك لاستكمال الدراسة في الدول الأوروبية.') }}
                 </p>
             </div>
 
@@ -638,7 +638,7 @@
                 <div>
                     <label class="block text-[11px] font-black uppercase tracking-wider text-slate-700 mb-1.5">{{ data_get($siteSettings ?? [], 'finder_step2_label.'.$locale, '2. هدفك المنشود') }}</label>
                     <select id="finder-goal" class="w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2.5 text-xs font-bold text-slate-800 focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/20">
-                        <option value="italy-study">دراسة جامعية بإيطاليا + منحة DSU</option>
+                        <option value="europe-study">دراسة جامعية بالدول الأوروبية + المنح الشاملة</option>
                         <option value="callcenter">العمل في الكول سنتر الدولي</option>
                         <option value="translation">احتراف وترجمة معتمدة للسفارات</option>
                         <option value="ielts">اجتياز اختبارات IELTS & TOEFL</option>
@@ -686,9 +686,9 @@
                 </h2>
                 <p class="mt-4 text-base text-slate-600 font-medium leading-relaxed">
                     {{ data_get($siteSettings ?? [], 'why_subtitle.'.$locale, match($locale) {
-                        'it' => 'Un ecosistema integrato che va oltre i semplici corsi: costruiamo il tuo futuro accademico in Italia e l\'inserimento nelle grandi aziende internazionali.',
-                        'en' => 'An integrated ecosystem offering more than just courses—we build your future studying in Italy and working with global companies.',
-                        default => 'منظومة متكاملة لا تكتفي بتقديم الكورسات أو الترجمة، بل تصنع معك مستقبلاً حقيقياً بالدراسة في إيطاليا والعمل في كبرى الشركات العالمية بأعلى عائد.',
+                        'it' => 'Un ecosistema integrato che va oltre i semplici corsi: costruiamo il tuo futuro accademico nei paesi europei e l\'inserimento nelle grandi aziende internazionali.',
+                        'en' => 'An integrated ecosystem offering more than just courses—we build your future studying in European countries and working with global companies.',
+                        default => 'منظومة متكاملة لا تكتفي بتقديم الكورسات أو الترجمة، بل تصنع معك مستقبلاً حقيقياً بالدراسة في الدول الأوروبية والعمل في كبرى الشركات العالمية بأعلى عائد.',
                     }) }}
                 </p>
             </div>
@@ -714,25 +714,25 @@
                             'nav_sub' => '8,000€ + سكن مجاني',
                             'badge' => 'منحة إقليمية حكومية',
                             'badge_color' => 'bg-red-50 text-[#fe0002] border-red-200',
-                            'title' => 'أعلى نسبة قبول لمنح DSU الحكومية الإيطالية',
-                            'desc' => 'نضمن لك حساب مؤشر ISEE بدقة هندسية وقانونية لضمان استيفاء شروط المنحة الإقليمية وسكن جامعي معفى تماماً، مع فتح الباب لحملة الدبلومات الفنية (صنايع / تجارة / زراعة) والثانوية العامة والجامعيين.',
+                            'title' => 'أعلى نسبة قبول للمنح الحكومية والجامعية بالدول الأوروبية',
+                            'desc' => 'نضمن لك استيفاء شروط المنح الأوروبية والسكن الجامعي المعفى تماماً، مع فتح الباب لحملة الدبلومات الفنية (صنايع / تجارة / زراعة) والثانوية العامة والجامعيين.',
                             'stat_val' => '8,000€',
                             'stat_unit' => 'سنوياً',
                             'stat_label' => 'بدل نقدي مباشر لحساب الطالب',
                             'stat_sub' => 'إعفاء 100% من المصروفات + سكن مجاني',
                             'points' => [
-                                'حساب دقيق لمؤشر ISEE Parificato وفق المعايير الرسمية للمنحة الإقليمية',
-                                'إعفاء كامل 100% من الرسوم والمصروفات الدراسية الجامعية في إيطاليا',
+                                'إعداد ومطابقة الملف المالي والأكاديمي وفق المعايير الرسمية للمنح الأوروبية',
+                                'إعفاء كامل 100% من الرسوم والمصروفات الدراسية الجامعية في أوروبا',
                                 'تأمين سكن جامعي مجاني ومجهز طوال فترة سنوات دراستك',
-                                'وجبات غذائية مدعومة بمطاعم الجامعات الإيطالية يومياً',
-                                'حق العمل القانوني للطلاب 20 ساعة أسبوعياً باليورو'
+                                'وجبات غذائية مدعومة بمطاعم الجامعات الأوروبية يومياً',
+                                'حق العمل القانوني للطلاب باليورو خلال فترة الدراسة'
                             ],
                             'vs_traditional' => [
                                 'traditional' => 'إهمال المنحة وتوريط الطالب بمصروفات دراسية باهظة بدون سكن أو دعم نقدي',
-                                'intok' => 'ملف منحة متكامل بدقة 100% يضمن لك أعلى فرصة للحصول على الـ 8,000 يورو والسكن'
+                                'intok' => 'ملف منحة متكامل بدقة 100% يضمن لك أعلى فرصة للحصول على الدعم المالي والسكن'
                             ],
-                            'cta_text' => 'افحص فرصة حصولك على منحة DSU',
-                            'wa_msg' => 'مرحباً، أود الاستفسار عن تفاصيل منحة DSU الإيطالية وشروط القبول والسكن المجاني'
+                            'cta_text' => 'افحص فرصة حصولك على المنحة الأوروبية',
+                            'wa_msg' => 'مرحباً، أود الاستفسار عن تفاصيل المنح الدراسية بالدول الأوروبية وشروط القبول والسكن المجاني'
                         ],
                         'callcenter' => [
                             'nav_title' => 'الكول سنتر والتوظيف',
@@ -765,13 +765,13 @@
                             'badge' => 'توثيق رسمي للسفارات',
                             'badge_color' => 'bg-amber-50 text-amber-800 border-amber-200',
                             'title' => 'ترجمة معتمدة رسمياً وموثقة لجميع السفارات',
-                            'desc' => 'ترجمة رسمية معترف بها أمام القنصلية الإيطالية وكافة السفارات الأوروبية، لشهادات التخرج، إعلانات القيمة، وعقود العمل دون مخاطرة بالرفض.',
+                            'desc' => 'ترجمة رسمية معترف بها أمام السفارات والقنصليات الأوروبية، لشهادات التخرج، إعلانات القيمة، وعقود العمل دون مخاطرة بالرفض.',
                             'stat_val' => '24 - 48h',
                             'stat_unit' => 'تسليم مستعجل',
                             'stat_label' => 'سرعة إنجاز وتوثيق الملفات الرسمية',
                             'stat_sub' => 'دقة قانونية متناهية بدون أخطاء ترفض ملفك',
                             'points' => [
-                                'ترجمة معتمدة ومقبولة لدى القنصلية الإيطالية بالقاهرة والإسكندرية',
+                                'ترجمة معتمدة ومقبولة لدى السفارات والقنصليات الأوروبية المعتمدة',
                                 'ترجمة إعلان القيمة (Dichiarazione di Valore) وبيانات الدرجات والمقررات',
                                 'إنهاء تصديقات الخارجية المصرية ونقابة المترجمين والغرفة التجارية',
                                 'تدقيق لغوي وقانوني مزدوج لضمان خلو الأوراق من أي ثغرات قنصلية',
@@ -785,29 +785,29 @@
                             'wa_msg' => 'مرحباً، أود الاستفسار عن خدمة الترجمة المعتمدة للأوراق الرسمية وتصديقات السفارة'
                         ],
                         'reception' => [
-                            'nav_title' => 'الاستقبال بإيطاليا',
-                            'nav_sub' => 'ميلانو وروما وتسكين مباشر',
+                            'nav_title' => 'الاستقبال بالدول الأوروبية',
+                            'nav_sub' => 'استقبال وتسكين مباشر',
                             'badge' => 'مرافقة ميدانية بأوروبا',
                             'badge_color' => 'bg-red-50 text-[#fe0002] border-red-200',
-                            'title' => 'استقبال في المطار وتسليم السكن بإيطاليا',
-                            'desc' => 'رحلتك معنا لا تنتهي عند باب المطار؛ بل يستقبلك فريقنا الميداني في ميلانو وروما لتسليم السكن، واستخراج الإقامة والحساب البنكي.',
+                            'title' => 'استقبال في المطار وتسليم السكن بالدول الأوروبية',
+                            'desc' => 'رحلتك معنا لا تنتهي عند باب المطار؛ بل يستقبلك فريقنا الميداني في وجهتك بالدول الأوروبية لتسليم السكن، واستخراج الإقامة والحساب البنكي.',
                             'stat_val' => '100%',
                             'stat_unit' => 'أمان ورعاية',
                             'stat_label' => 'مرافقة ميدانية من لحظة الهبوط بالمطار',
-                            'stat_sub' => 'فريق ميداني رسمي يتحدث العربية والإيطالية',
+                            'stat_sub' => 'فريق ميداني رسمي يتحدث العربية ولغات الدول الأوروبية',
                             'points' => [
-                                'استقبالك بالاسم في صالة الوصول بمطارات ميلانو (Malpensa) وروما (Fiumicino)',
+                                'استقبالك بالاسم في صالة الوصول بمطارات الوجهة الأوروبية',
                                 'توصيلك مباشرة إلى مقر إقامتك وتسليمك مفاتيح السكن الجامعي أو الخاص',
-                                'مرافقة لتقديم أوراق تصريح الإقامة (Permesso di Soggiorno) بالبريد والشرطة',
-                                'استخراج الرقم الضريبي الإيطالي (Codice Fiscale) وشراء شريحة اتصال إيطالية',
-                                'مساعدتك في فتح حساب بنكي إيطالي وتوجيهك لفرص العمل والأنشطة الطلابية'
+                                'مرافقة لتقديم أوراق تصريح الإقامة الرسمية بالجهات المختصة',
+                                'استخراج الرقم الضريبي وشراء شريحة اتصال محلية فورية',
+                                'مساعدتك في فتح حساب بنكي محلي وتوجيهك لفرص العمل والأنشطة الطلابية'
                             ],
                             'vs_traditional' => [
                                 'traditional' => 'ينتهي دور المكتب بمجرد السفر ويُترك الطالب وحيداً وتائهاً في المطار والغربة',
-                                'intok' => 'فريقنا الميداني في إيطاليا يستقبلك ويلازمك حتى تستقر في سكنك وتنهي أوراقك'
+                                'intok' => 'فريقنا الميداني في الدول الأوروبية يستقبلك ويلازمك حتى تستقر في سكنك وتنهي أوراقك'
                             ],
-                            'cta_text' => 'احجز باقة الاستقبال والمرافقة بإيطاليا',
-                            'wa_msg' => 'مرحباً، أود الاستفسار عن خدمات الاستقبال في المطار والتسكين في إيطاليا'
+                            'cta_text' => 'احجز باقة الاستقبال والمرافقة بأوروبا',
+                            'wa_msg' => 'مرحباً، أود الاستفسار عن خدمات الاستقبال في المطار والتسكين في أوروبا'
                         ],
                         'languages' => [
                             'nav_title' => 'إتقان اللغات وCILS',
@@ -832,7 +832,7 @@
                                 'intok' => 'منهج تفاعلي يركز 80% على المحادثة المباشرة ويكسر حاجز الرهبة تماماً'
                             ],
                             'cta_text' => 'ابدأ كورس اللغة وتحديد المستوى',
-                            'wa_msg' => 'مرحباً، أود الاستفسار عن دورات اللغات (إيطالي / إنجليزي / ألماني) وتأهيل CILS'
+                            'wa_msg' => 'مرحباً، أود الاستفسار عن دورات اللغات الاحترافية (إيطالي / إنجليزي / ألماني) وتأهيل الامتحانات الدولية'
                         ],
                         'mentorship' => [
                             'nav_title' => 'الإرشاد والمتابعة 24/7',
@@ -862,21 +862,21 @@
                     ],
                     'it' => [
                         'dsu' => [
-                            'nav_title' => 'Borse DSU e Alloggio',
+                            'nav_title' => 'Borse di Studio e Alloggio',
                             'nav_sub' => '8.000€ + Alloggio gratuito',
-                            'badge' => 'Borsa regionale governativa',
+                            'badge' => 'Borse di studio europee',
                             'badge_color' => 'bg-red-50 text-[#fe0002] border-red-200',
-                            'title' => 'Massima percentuale di ammissione alle borse DSU in Italia',
-                            'desc' => 'Calcoliamo l\'ISEE Parificato con precisione legale e accademica per garantire l\'accesso alla borsa regionale e all\'alloggio gratuito per diplomati e maturandi.',
+                            'title' => 'Massima percentuale di ammissione alle borse di studio nei Paesi Europei',
+                            'desc' => 'Valutazione e preparazione della documentazione per garantire l\'accesso alle borse di studio e all\'alloggio gratuito per diplomati e maturandi.',
                             'stat_val' => '8.000€',
                             'stat_unit' => '/ anno',
                             'stat_label' => 'Contributo diretto allo studente',
                             'stat_sub' => 'Esenzione 100% tasse + alloggio gratuito',
                             'points' => [
-                                'Calcolo preciso dell\'ISEE Parificato secondo i criteri ufficiali delle borse regionali',
-                                'Esenzione totale (100%) dalle tasse universitarie in tutta Italia',
+                                'Preparazione della documentazione secondo i criteri ufficiali delle borse europee',
+                                'Esenzione totale (100%) dalle tasse universitarie nei paesi europei',
                                 'Alloggio universitario gratuito e attrezzato per l\'intera durata degli studi',
-                                'Pasti giornalieri convenzionati presso le mense universitarie italiane',
+                                'Pasti giornalieri convenzionati presso le mense universitarie europee',
                                 'Diritto al lavoro legale fino a 20 ore settimanali retribuite in Euro'
                             ],
                             'vs_traditional' => [
@@ -884,7 +884,7 @@
                                 'intok' => 'Pratica di borsa completa al 100% per massimizzare la borsa da 8.000€ e l\'alloggio'
                             ],
                             'cta_text' => 'Verifica la tua idoneità alla borsa DSU',
-                            'wa_msg' => 'Ciao, vorrei maggiori informazioni sulla borsa DSU in Italia e sui requisiti di ammissione'
+                            'wa_msg' => 'Ciao, vorrei maggiori informazioni sulle borse di studio nei paesi europei e sui requisiti di ammissione'
                         ],
                         'callcenter' => [
                             'nav_title' => 'Call Center e Lavoro',
@@ -917,13 +917,13 @@
                             'badge' => 'Legalizzazione consolare ufficiale',
                             'badge_color' => 'bg-amber-50 text-amber-800 border-amber-200',
                             'title' => 'Traduzioni giurate e asseverate per ambasciate e consolati',
-                            'desc' => 'Traduzioni ufficiali per il Consolato d\'Italia e tutte le ambasciate europee: certificati di studio, Dichiarazioni di Valore e contratti senza rischio di rifiuto.',
+                            'desc' => 'Traduzioni ufficiali per tutte le ambasciate europee: certificati di studio, Dichiarazioni di Valore e contratti senza rischio di rifiuto.',
                             'stat_val' => '24 - 48h',
                             'stat_unit' => 'Consegna rapida',
                             'stat_label' => 'Velocità di completamento e legalizzazione pratiche',
                             'stat_sub' => 'Precisione giuridica impeccabile per evitare qualsiasi rifiuto consolare',
                             'points' => [
-                                'Traduzione asseverata conforme alle linee guida del Consolato d\'Italia al Cairo e ad Alessandria',
+                                'Traduzione asseverata conforme alle linee guida delle ambasciate e consolati europei',
                                 'Traduzione di Dichiarazione di Valore (DoV), piani di studio e pagelle scolastiche',
                                 'Legalizzazioni presso il Ministero degli Affari Esteri e le autorità competenti',
                                 'Doppia revisione linguistica e giuridica per eliminare ogni vizio formale',
@@ -937,29 +937,29 @@
                             'wa_msg' => 'Ciao, vorrei richiedere informazioni sul servizio di traduzione giurata per documenti ufficiali'
                         ],
                         'reception' => [
-                            'nav_title' => 'Accoglienza in Italia',
-                            'nav_sub' => 'Milano, Roma e sistemazione',
+                            'nav_title' => 'Accoglienza nei Paesi Europei',
+                            'nav_sub' => 'Accoglienza e alloggio',
                             'badge' => 'Supporto sul campo in Europa',
                             'badge_color' => 'bg-red-50 text-[#fe0002] border-red-200',
-                            'title' => 'Accoglienza in aeroporto e consegna alloggio in Italia',
-                            'desc' => 'Il nostro supporto continua in Europa: ti accogliamo all\'aeroporto di Milano o Roma per consegnarti le chiavi, richiedere il permesso di soggiorno e aprire il conto bancario.',
+                            'title' => 'Accoglienza in aeroporto e consegna alloggio nei Paesi Europei',
+                            'desc' => 'Il nostro supporto ti segue nei paesi europei: ti accogliamo all\'aeroporto di destinazione per consegnarti le chiavi, completare le pratiche di soggiorno e aprire il conto bancario.',
                             'stat_val' => '100%',
                             'stat_unit' => 'Sicurezza e cura',
                             'stat_label' => 'Affiancamento continuo dal momento dello sbarco',
-                            'stat_sub' => 'Team bilingue arabo e italiano presente sul territorio',
+                            'stat_sub' => 'Team di assistenza presente sul territorio europeo',
                             'points' => [
-                                'Accoglienza personalizzata agli arrivi negli aeroporti di Milano (Malpensa) e Roma (Fiumicino)',
+                                'Accoglienza personalizzata agli arrivi negli aeroporti europei di destinazione',
                                 'Trasferimento diretto alla residenza universitaria o alloggio privato con consegna chiavi',
                                 'Assistenza completa per la domanda di Permesso di Soggiorno presso Poste e Questura',
-                                'Rilascio del Codice Fiscale italiano e attivazione SIM telefonica locale',
+                                'Rilascio del codice fiscale/identificativo e attivazione SIM telefonica locale',
                                 'Apertura del conto corrente bancario e orientamento alle opportunità per studenti'
                             ],
                             'vs_traditional' => [
                                 'traditional' => 'L\'assistenza termina con il volo, lasciando lo studente da solo in aeroporto',
                                 'intok' => 'Il nostro team sul campo ti segue dal primo minuto fino alla completa sistemazione'
                             ],
-                            'cta_text' => 'Prenota il pacchetto accoglienza in Italia',
-                            'wa_msg' => 'Ciao, vorrei informazioni sui servizi di accoglienza aeroportuale e alloggio in Italia'
+                            'cta_text' => 'Prenota il pacchetto accoglienza in Europa',
+                            'wa_msg' => 'Ciao, vorrei informazioni sui servizi di accoglienza aeroportuale e alloggio in Europa'
                         ],
                         'languages' => [
                             'nav_title' => 'Lingue e Certificazioni CILS',
@@ -992,7 +992,7 @@
                             'badge' => 'Monitoraggio continuo e accurato',
                             'badge_color' => 'bg-blue-50 text-blue-700 border-blue-200',
                             'title' => 'Tutoraggio 1 a 1 e supporto continuo',
-                            'desc' => 'Un consulente accademico dedicato esamina il tuo fascicolo, pianifica ogni scadenza e ti segue passo dopo passo fino all\'arrivo in Italia.',
+                            'desc' => 'Un consulente accademico dedicato esamina il tuo fascicolo, pianifica ogni scadenza e ti segue passo dopo passo fino all\'arrivo nel paese europeo di destinazione.',
                             'stat_val' => '24/7',
                             'stat_unit' => 'Supporto continuo',
                             'stat_label' => 'Il tuo consulente accademico sempre al tuo fianco',
@@ -1009,7 +1009,7 @@
                                 'intok' => 'Affiancamento continuo e tempestivo con monitoraggio costante di ogni fase'
                             ],
                             'cta_text' => 'Prenota la tua sessione di orientamento gratuita',
-                            'wa_msg' => 'Ciao, vorrei prenotare una sessione di orientamento individuale 1 a 1 per i miei studi in Italia'
+                            'wa_msg' => 'Ciao, vorrei prenotare una sessione di orientamento individuale 1 a 1 per i miei studi in Europa'
                         ]
                     ],
                     'en' => [
@@ -1018,17 +1018,17 @@
                             'nav_sub' => '8,000€ + Free Housing',
                             'badge' => 'Regional Government Scholarship',
                             'badge_color' => 'bg-red-50 text-[#fe0002] border-red-200',
-                            'title' => 'Highest Acceptance Rate for Italian Regional DSU Scholarships',
+                            'title' => 'Highest Acceptance Rate for European Regional Scholarships',
                             'desc' => 'We calculate the ISEE Parificato with legal and academic precision to secure full regional scholarships and tuition-free university housing for technical diploma and high school graduates.',
                             'stat_val' => '8,000€',
                             'stat_unit' => '/ Year',
                             'stat_label' => 'Direct cash stipend to student bank account',
                             'stat_sub' => '100% Tuition Waiver + Free Housing',
                             'points' => [
-                                'Accurate calculation of ISEE Parificato according to official Italian regional criteria',
-                                '100% complete exemption from Italian public university tuition fees',
+                                'Comprehensive preparation according to official European scholarship criteria',
+                                '100% complete exemption from European public university tuition fees',
                                 'Fully furnished free student housing for the entire study period',
-                                'Subsidized daily meals at university dining halls across Italy',
+                                'Subsidized daily meals at European university dining halls',
                                 'Legal work permit of 20 hours per week earning in Euros'
                             ],
                             'vs_traditional' => [
@@ -1036,7 +1036,7 @@
                                 'intok' => '100% complete scholarship file maximizing your chance for the 8,000€ stipend and free housing'
                             ],
                             'cta_text' => 'Check Your Eligibility for DSU Scholarship',
-                            'wa_msg' => 'Hello, I would like to inquire about Italian DSU scholarship requirements and free housing'
+                            'wa_msg' => 'Hello, I would like to inquire about European scholarships requirements and free housing'
                         ],
                         'callcenter' => [
                             'nav_title' => 'Call Center & Placement',
@@ -1069,13 +1069,13 @@
                             'badge' => 'Official Consular Legalization',
                             'badge_color' => 'bg-amber-50 text-amber-800 border-amber-200',
                             'title' => 'Officially Certified Translation for All Embassies',
-                            'desc' => 'Official translation recognized by the Italian Embassy and all European missions for diplomas, Declarations of Value, and legal records without risk of rejection.',
+                            'desc' => 'Official translation recognized by European embassies for diplomas, Declarations of Value, and legal records without risk of rejection.',
                             'stat_val' => '24 - 48h',
                             'stat_unit' => 'Express Delivery',
                             'stat_label' => 'Rapid turnaround and official document processing',
                             'stat_sub' => 'Flawless legal precision preventing any consular rejection',
                             'points' => [
-                                'Certified translation accepted by Italian Consulates in Cairo and Alexandria',
+                                'Certified translation accepted by European Consulates and official missions',
                                 'Translation of Declaration of Value (Dichiarazione di Valore) and transcripts',
                                 'Ministry of Foreign Affairs, Translators Syndicate, and Chamber endorsements',
                                 'Dual linguistic and legal audit to ensure documents are 100% compliant',
@@ -1089,29 +1089,29 @@
                             'wa_msg' => 'Hello, I would like to inquire about certified translation services and embassy legalization'
                         ],
                         'reception' => [
-                            'nav_title' => 'Reception in Italy',
+                            'nav_title' => 'Reception in Europe',
                             'nav_sub' => 'Milan, Rome & Direct Housing',
                             'badge' => 'On-Ground European Escort',
                             'badge_color' => 'bg-red-50 text-[#fe0002] border-red-200',
-                            'title' => 'Airport Welcome & Key Delivery in Italy',
+                            'title' => 'Airport Welcome & Key Delivery in European Countries',
                             'desc' => 'Our commitment does not end at the airport departure gate; our on-ground team welcomes you in Milan and Rome to deliver housing, residency, and banking.',
                             'stat_val' => '100%',
                             'stat_unit' => 'Safety & Care',
                             'stat_label' => 'Continuous on-ground support from touchdown',
-                            'stat_sub' => 'Bilingual Arabic & Italian local team on the ground',
+                            'stat_sub' => 'Bilingual local support team on the ground in Europe',
                             'points' => [
-                                'Personal greeting at arrivals in Milan (Malpensa) and Rome (Fiumicino) airports',
+                                'Personal greeting at arrivals in destination European airports',
                                 'Direct transfer to student residence or private apartment with key delivery',
-                                'Full assistance filing for Residence Permit (Permesso di Soggiorno) at post and police',
-                                'Issuing Italian Tax Code (Codice Fiscale) and purchasing local SIM card',
-                                'Assistance opening Italian bank account and guidance on student jobs'
+                                'Full assistance filing for Residence Permit at local authorities',
+                                'Issuing local tax identification code and purchasing local SIM card',
+                                'Assistance opening local European bank account and guidance on student jobs'
                             ],
                             'vs_traditional' => [
                                 'traditional' => 'Agency involvement ends after the flight, leaving students stranded at the airport',
-                                'intok' => 'Our local Italian team accompanies you from arrival until full settlement'
+                                'intok' => 'Our local European team accompanies you from arrival until full settlement'
                             ],
-                            'cta_text' => 'Book Reception & Escort Package in Italy',
-                            'wa_msg' => 'Hello, I would like to inquire about airport reception and housing services in Italy'
+                            'cta_text' => 'Book Reception & Escort Package in Europe',
+                            'wa_msg' => 'Hello, I would like to inquire about airport reception and housing services in Europe'
                         ],
                         'languages' => [
                             'nav_title' => 'Languages & CILS',
@@ -1136,7 +1136,7 @@
                                 'intok' => 'Interactive 80% conversational methodology building complete confidence'
                             ],
                             'cta_text' => 'Start Language Course & Placement Test',
-                            'wa_msg' => 'Hello, I would like to inquire about language courses (Italian / English / German) and CILS'
+                            'wa_msg' => 'Hello, I would like to inquire about language courses (Italian / English / German) and international certifications'
                         ],
                         'mentorship' => [
                             'nav_title' => '24/7 Academic Mentorship',
@@ -1411,12 +1411,12 @@
                                 </thead>
                                 <tbody class="divide-y divide-slate-100">
                                     <tr>
-                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">1. القبول والدراسة في إيطاليا</td>
+                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">1. القبول والدراسة بالدول الأوروبية</td>
                                         <td class="p-4 text-slate-600 bg-red-50/20">وعود غير موثقة، نسب رفض عالية بالتأشيرة، عدم قبول الدبلومات الفنية.</td>
                                         <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">قبول جامعي موثق، فتح الباب للدبلومات الفنية والثانوية، نسبة قبول استثنائية.</td>
                                     </tr>
                                     <tr>
-                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">2. منحة DSU والسكن المجاني</td>
+                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">2. المنح الدراسية والسكن المجاني</td>
                                         <td class="p-4 text-slate-600 bg-red-50/20">تجاهل المنحة تماماً وترك الطالب يدفع آلاف اليوروهات سنوياً بلا سكن.</td>
                                         <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">حساب دقيق لـ ISEE يضمن إعفاء 100% من المصروفات وسكن مجاني وبدل 8,000€.</td>
                                     </tr>
@@ -1428,12 +1428,12 @@
                                     <tr>
                                         <td class="p-4 font-black text-slate-900 bg-slate-50/40">4. الترجمة وتصديقات السفارات</td>
                                         <td class="p-4 text-slate-600 bg-red-50/20">ترجمات غير معتمدة أو مليئة بالأخطاء تتسبب في تعليق أو رفض الملف بالقنصلية.</td>
-                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">ترجمة معتمدة رسمياً ومقبولة أمام القنصلية الإيطالية وكافة السفارات مع إنهاء التصديقات.</td>
+                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">ترجمة معتمدة رسمياً ومقبولة أمام كافة السفارات الأوروبية مع إنهاء التصديقات.</td>
                                     </tr>
                                     <tr>
-                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">5. الاستقبال والتسكين بإيطاليا</td>
+                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">5. الاستقبال والتسكين بالدول الأوروبية</td>
                                         <td class="p-4 text-slate-600 bg-red-50/20">ينتهي دور المكتب بمجرد سفر الطالب، وتركه تائهاً في البحث عن سكن وإقامة.</td>
-                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">استقبال شخصي بالمطار في ميلانو وروما، تسليم السكن، ومرافقة لاستخراج الإقامة والبنك.</td>
+                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">استقبال شخصي بالمطار بالدولة الأوروبية، تسليم السكن، ومرافقة لاستخراج الإقامة والبنك.</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -1740,7 +1740,7 @@
                         {{ data_get($siteSettings ?? [], 'cta_badge.'.$locale, 'ابدأ مستقبلك اليوم') }}
                     </span>
                     <h2 class="mt-4 text-2xl font-black text-white sm:text-4xl drop-shadow-sm leading-tight">
-                        {{ data_get($siteSettings ?? [], 'cta_title.'.$locale, 'جاهز لبدء رحلتك نحو إيطاليا وأرقى الوظائف الدولية؟') }}
+                        {{ data_get($siteSettings ?? [], 'cta_title.'.$locale, 'جاهز لبدء رحلتك نحو الدول الأوروبية وأرقى الوظائف الدولية؟') }}
                     </h2>
                     <p class="mt-3 text-sm leading-relaxed text-red-50/95 font-medium">
                         {{ data_get($siteSettings ?? [], 'cta_subtitle.'.$locale, 'تواصل معنا الآن أو تابعنا عبر منصاتنا الرسمية على إنستغرام وتيك توك، ودع فريق INTOK Academy يرسم معك طريق النجاح.') }}

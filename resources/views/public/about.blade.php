@@ -100,7 +100,7 @@
                             <div>
                                 <h3 class="text-base font-black text-slate-900 leading-tight">INTOK ACADEMY</h3>
                                 <p class="text-xs font-bold text-[#c27803] mt-0.5">Connecting You to the World</p>
-                                <span class="text-[10px] text-slate-500 font-medium">أكاديمية معتمدة للتدريب والدراسة في إيطاليا</span>
+                                <span class="text-[10px] text-slate-500 font-medium">أكاديمية معتمدة للتدريب والدراسة في الدول الأوروبية</span>
                             </div>
                         </div>
 
@@ -142,13 +142,13 @@
                                 <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
                             </span>
                             <p class="text-xs font-bold text-red-950 leading-relaxed">
-                                {{ data_get($siteSettings ?? [], 'about_guarantee_text.'.$locale, 'مرافقة شخصية 360 درجة من أول جلسة استشارة وفحص أوراقك، حتى استلام تأشيرتك ومفاتيح سكنك بإيطاليا.') }}
+                                {{ data_get($siteSettings ?? [], 'about_guarantee_text.'.$locale, 'مرافقة شخصية 360 درجة من أول جلسة استشارة وفحص أوراقك، حتى استلام تأشيرتك ومفاتيح سكنك بالدولة الأوروبية.') }}
                             </p>
                         </div>
 
                         <!-- Direct WhatsApp Quick Chat -->
                         <div class="mt-4 pt-3 border-t border-slate-100">
-                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', data_get($siteSettings ?? [], 'whatsapp_number', '201008238323')) }}?text={{ urlencode('مرحباً، أود معرفة المزيد عن خدمات أكاديمية إنتوك وفرص الدراسة في إيطاليا') }}" target="_blank" class="w-full inline-flex items-center justify-center gap-2 rounded-full border-2 border-emerald-500 bg-emerald-50 py-3 px-4 text-xs font-black text-emerald-700 hover:bg-emerald-600 hover:text-white transition shadow-xs">
+                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', data_get($siteSettings ?? [], 'whatsapp_number', '201008238323')) }}?text={{ urlencode('مرحباً، أود معرفة المزيد عن خدمات أكاديمية إنتوك وفرص الدراسة في الدول الأوروبية') }}" target="_blank" class="w-full inline-flex items-center justify-center gap-2 rounded-full border-2 border-emerald-500 bg-emerald-50 py-3 px-4 text-xs font-black text-emerald-700 hover:bg-emerald-600 hover:text-white transition shadow-xs">
                                 <span>تواصل فوري مع الإدارة عبر الواتساب</span>
                             </a>
                         </div>
@@ -254,9 +254,9 @@
                         <span class="grid size-12 place-items-center rounded-2xl bg-red-50 border border-red-200 text-[#fe0002] mb-4">
                             <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
                         </span>
-                        <h3 class="text-base font-black text-[#c27803] mb-2">{{ data_get($siteSettings ?? [], 'why_bento_reception_title.'.$locale, 'استقبال وتسكين بإيطاليا') }}</h3>
+                        <h3 class="text-base font-black text-[#c27803] mb-2">{{ data_get($siteSettings ?? [], 'why_bento_reception_title.'.$locale, 'استقبال وتسكين بالدول الأوروبية') }}</h3>
                         <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                            {{ data_get($siteSettings ?? [], 'why_bento_reception_desc.'.$locale, 'فريق ميداني يستقبلك في مطارات ميلانو وروما ويسلمك السكن ويساعدك في استخراج الإقامة والحساب البنكي.') }}
+                            {{ data_get($siteSettings ?? [], 'why_bento_reception_desc.'.$locale, 'فريق ميداني يستقبلك في مطارات الوجهة الأوروبية ويسلمك السكن ويساعدك في استخراج الإقامة والحساب البنكي.') }}
                         </p>
                     </div>
                 </div>
@@ -298,7 +298,7 @@
                             قاعات ذكية مجهزة
                         </span>
                         <h3 class="text-sm sm:text-base font-black text-white leading-snug">
-                            تدريس تفاعلي على السبورات الذكية للغة الإيطالية المعتمدة
+                            تدريس تفاعلي على السبورات الذكية للغة الإيطالية واللغات المعتمدة
                         </h3>
                     </div>
                 </div>
@@ -315,7 +315,7 @@
                 {{ data_get($siteSettings ?? [], 'about_cta_badge.'.$locale, 'خطوتك الأولى تبدأ الآن') }}
             </span>
             <h2 class="text-2xl sm:text-4xl font-black text-white leading-tight">
-                {{ data_get($siteSettings ?? [], 'about_cta_title.'.$locale, 'جاهز لبدء رحلتك نحو إيطاليا والوظائف الدولية؟') }}
+                {{ data_get($siteSettings ?? [], 'about_cta_title.'.$locale, 'جاهز لبدء رحلتك نحو الدول الأوروبية والوظائف الدولية؟') }}
             </h2>
             <p class="mt-3 text-xs sm:text-sm text-red-100 font-medium max-w-xl mx-auto leading-relaxed">
                 {{ data_get($siteSettings ?? [], 'about_cta_subtitle.'.$locale, 'سواء كنت حاملاً لدبلوم فني أو ثانوية عامة أو خريجاً، مستشارك الأكاديمي في INTOK جاهز لدراسة ملفك وتحديد خطتك مجاناً.') }}
