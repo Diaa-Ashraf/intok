@@ -294,65 +294,65 @@ class DatabaseSeeder extends Seeder
                 'en' => 'A comprehensive platform opening genuine European education pathways and high-paying multinational careers.',
                 'it' => 'Una piattaforma completa che costruisce il tuo futuro nei paesi europei e nelle grandi aziende.'
             ],
-            'why_bento_dsu_title' => [
-                'ar' => 'أعلى نسبة قبول للمنح الحكومية والجامعية بالدول الأوروبية',
-                'en' => 'Highest Acceptance Rate for European Regional Scholarships',
-                'it' => 'Il più alto tasso di ammissione per borse di studio europee'
+            'why_bento_services_title' => [
+                'ar' => 'خدمات تعليمية ومهنية وأكاديمية متكاملة',
+                'en' => 'Integrated Educational, Vocational & Academic Services',
+                'it' => 'Servizi educativi, professionali e accademici integrati'
             ],
-            'why_bento_dsu_desc' => [
-                'ar' => 'نضمن لك حساب مؤشر ISEE بدقة هندسية وقانونية لضمان استيفاء شروط المنحة الإقليمية وسكن جامعي معفى تماماً، مع فتح الباب لحملة الدبلومات الفنية (صنايع / تجارة / زراعة) والثانوية العامة والجامعيين.',
-                'en' => 'We calculate ISEE indices with legal and numerical precision ensuring regional scholarship qualification and free accommodation for diploma and high school graduates.',
-                'it' => 'Calcolo ISEE preciso per borse regionali e alloggio gratuito.'
+            'why_bento_services_desc' => [
+                'ar' => 'في INTOK بنوفر مجموعة متنوعة من الخدمات التعليمية والمهنية والأكاديمية، علشان تلاقي كل اللي تحتاجه في مكان واحد وبدعم متخصص.',
+                'en' => 'At INTOK we provide a diverse range of educational, vocational, and academic services so you find everything in one place with expert guidance.',
+                'it' => 'In INTOK offriamo una gamma completa di servizi educativi, professionali e accademici con supporto esperto.'
             ],
-            'why_bento_callcenter_title' => [
-                'ar' => 'تأهيل وظيفي فوري لكبرى شركات الكول سنتر',
-                'en' => 'Immediate Job Qualification for Multinational Call Centers',
-                'it' => 'Qualificazione immediata per call center multinazionali'
+            'why_bento_practical_title' => [
+                'ar' => 'تدريب عملي وتطبيق واقعي يؤهلك لسوق العمل',
+                'en' => 'Hands-on Practical Training & Real Workplace Simulation',
+                'it' => 'Formazione pratica e simulazioni reali per il mercato del lavoro'
             ],
-            'why_bento_callcenter_desc' => [
-                'ar' => 'تدريب تطبيقي على الشاشات الذكية ومحاكاة لمقابلات شركات متعددة الجنسيات (Vodafone UK, Concentrix, Teleperformance) يؤهلك للعمل المباشر برواتب تبدأ من 15k وتصل إلى 30k+ ج.م.',
-                'en' => 'Hands-on training on smart screens and simulations for interviews at multinational companies.',
-                'it' => 'Formazione pratica e simulazioni per colloqui con grandi aziende.'
+            'why_bento_practical_desc' => [
+                'ar' => 'مش بنكتفي بالمعلومات النظرية؛ بنهتم بالتطبيق العملي والتدريب على مواقف حقيقية تساعدك تفهم المجال وتطور مهاراتك بكفاءة.',
+                'en' => 'We go beyond theoretical knowledge to deliver practical training and real workplace simulations.',
+                'it' => 'Non ci limitiamo alla teoria: puntiamo su formazione pratica ed esercitazioni reali.'
             ],
-            'why_bento_trans_title' => [
-                'ar' => 'ترجمة معتمدة رسمياً وموثقة لجميع السفارات',
-                'en' => 'Officially Certified Translation for All Embassies',
-                'it' => 'Traduzione giurata ufficiale per tutte le ambasciate'
+            'why_bento_trainers_title' => [
+                'ar' => 'مدربون ومتخصصون ذوو خبرة ميدانية واسعة',
+                'en' => 'Expert Instructors & Practitioners with Real-World Experience',
+                'it' => 'Docenti e professionisti con ampia esperienza sul campo'
             ],
-            'why_bento_trans_desc' => [
-                'ar' => 'ترجمة رسمية معترف بها أمام السفارات والقنصليات الأوروبية، لشهادات التخرج، إعلانات القيمة، وعقود العمل دون مخاطرة بالرفض.',
-                'en' => 'Official certified translation recognized by European embassies with zero errors.',
-                'it' => 'Traduzioni riconosciute dal consolato italiano e ambasciate europee.'
+            'why_bento_trainers_desc' => [
+                'ar' => 'نتيح برامج تدريبية وتعليمية بإشراف متخصصين في مجالاتهم، مع التركيز على نقل الخبرة وتقديم محتوى يناسب احتياجات المتدربين.',
+                'en' => 'Training under the guidance of certified field practitioners transferring real market insights.',
+                'it' => 'Programmi di formazione guidati da specialisti del settore per trasferire competenze pratiche.'
             ],
-            'why_bento_reception_title' => [
-                'ar' => 'استقبال في المطار وتسليم السكن بالدول الأوروبية',
-                'en' => 'Airport Reception & Housing Delivery in European Countries',
-                'it' => 'Accoglienza all aeroporto e consegna alloggio nei Paesi Europei'
+            'why_bento_support_title' => [
+                'ar' => 'متابعة ودعم مستمر في كل خطوة من رحلتك',
+                'en' => 'Continuous 24/7 Tracking & Step-by-Step Support',
+                'it' => 'Tutoraggio continuo e assistenza passo dopo passo'
             ],
-            'why_bento_reception_desc' => [
-                'ar' => 'رحلتك معنا لا تنتهي عند باب المطار؛ بل يستقبلك فريقنا الميداني في وجهتك بالدول الأوروبية لتسليم السكن، واستخراج الإقامة والحساب البنكي والعمل باليورو.',
-                'en' => 'Our local team in Europe receives you at the airport, handles your residence permit, bank account, and housing.',
-                'it' => 'Il nostro team sul posto ti accoglie all aeroporto e ti assiste per alloggio e soggiorno.'
+            'why_bento_support_desc' => [
+                'ar' => 'رحلتك مع INTOK مش مجرد تسجيل في خدمة؛ بنهتم بمتابعة خطواتك وتقديم الدعم والإرشاد وفق طبيعة الخدمة اللي اخترتها حتى تحقق هدفك.',
+                'en' => 'Your journey with INTOK is an ongoing partnership with continuous follow-up and guidance until you succeed.',
+                'it' => 'Il tuo percorso con INTOK include monitoraggio costante e assistenza continua fino al traguardo.'
             ],
-            'why_bento_languages_title' => [
-                'ar' => 'إتقان اللغات من الصفر واجتياز CILS & IELTS',
-                'en' => 'Language Mastery from Scratch & Passing CILS/IELTS',
-                'it' => 'Padronanza delle lingue e superamento esami CILS/IELTS'
+            'why_bento_customized_title' => [
+                'ar' => 'حلول مخصصة تناسب أهدافك وإمكانياتك',
+                'en' => 'Customized Solutions Tailored to Your Profile & Ambition',
+                'it' => 'Soluzioni personalizzate per i tuoi obiettivi e potenzialità'
             ],
-            'why_bento_languages_desc' => [
-                'ar' => 'دورات مكثفة في الإيطالية والإنجليزية والألمانية تركز 80% على المحادثة والطلاقة الواقعية، وتؤهلك لاجتياز امتحانات السفارات والجامعات.',
-                'en' => 'Intensive language courses in Italian, English, and German focusing 80% on live conversation.',
-                'it' => 'Corsi intensivi di italiano, inglese e tedesco incentrati sulla conversazione.'
+            'why_bento_customized_desc' => [
+                'ar' => 'كل شخص عنده هدف مختلف، علشان كده بنساعدك تختار الخدمة أو المسار الأنسب لاحتياجاتك وإمكانياتك وخطتك المستقبلية.',
+                'en' => 'Everyone has a unique goal; we help you select the exact track fitting your qualifications.',
+                'it' => 'Ogni studente ha un obiettivo unico: selezioniamo il percorso ideale per il tuo profilo.'
             ],
-            'why_bento_mentorship_title' => [
-                'ar' => 'إرشاد شخصي 1-on-1 ومتابعة ذكية مستمرة',
-                'en' => 'Personal 1-on-1 Mentorship & 24/7 Smart Tracking',
-                'it' => 'Tutoraggio 1 a 1 e supporto continuo'
+            'why_bento_future_title' => [
+                'ar' => 'تأهيل شامل لمستقبلك الأكاديمي والمهني',
+                'en' => 'Comprehensive Readiness for Academic & International Careers',
+                'it' => 'Preparazione completa per il tuo futuro accademico e lavorativo'
             ],
-            'why_bento_mentorship_desc' => [
-                'ar' => 'مستشار أكاديمي مخصص يدرس ملفك ويضع خطتك المناسبة، مع نظام تنبيهات ذكي لمواعيد المنح والتقديمات لضمان عدم فوات أي موعد رسمي.',
-                'en' => 'A dedicated educational advisor assesses your file and builds your roadmap with real-time deadline tracking.',
-                'it' => 'Un consulente dedicato esamina il tuo fascicolo e ti guida passo dopo passo.'
+            'why_bento_future_desc' => [
+                'ar' => 'بنساعدك تطور قدراتك وتستعد لخطوات جديدة في التعليم والعمل، من خلال برامج التأهيل والتدريب والخدمات الأكاديمية المتخصصة.',
+                'en' => 'We empower you to upgrade skills and step confidently into international study and employment.',
+                'it' => 'Ti aiutiamo a sviluppare competenze per accedere a studi internazionali e carriere di successo.'
             ],
 
             // Roadmap Section

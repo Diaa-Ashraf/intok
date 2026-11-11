@@ -75,13 +75,57 @@
 
                 <div class="mt-4 pt-3 border-t border-slate-100">
                     @if ($kind === 'bookings')
-                        <div class="grid gap-2 text-sm text-slate-700 sm:grid-cols-2 bg-slate-50 rounded-xl p-3 border border-slate-100">
-                            <p><strong>الموعد المفضل:</strong> <span class="font-semibold text-slate-900">{{ $record->preferred_at?->format('Y-m-d H:i') ?? '—' }}</span></p>
-                            <p><strong>الخدمة المطلوبة:</strong> <span class="font-semibold text-slate-900">{{ data_get($record->service?->title, app()->getLocale(), '—') }}</span></p>
-                            @if ($record->notes)
-                                <p class="whitespace-pre-line sm:col-span-2 pt-1 border-t border-slate-200"><strong>ملاحظات العميل:</strong> {{ $record->notes }}</p>
-                            @endif
-                        </div>
+                        @if ($record->booking_type === 'study_abroad')
+                            <div class="space-y-3 bg-blue-50/50 rounded-2xl p-4 border border-blue-100">
+                                <div class="flex flex-wrap items-center justify-between gap-2 border-b border-blue-100 pb-2.5">
+                                    <span class="inline-flex items-center gap-1.5 rounded-full bg-blue-600 text-white px-3 py-1 text-xs font-black">
+                                        <span>✈️ استشارة دراسة بالخارج والجامعات الأوروبية</span>
+                                    </span>
+                                    <span class="text-xs font-bold text-blue-900">
+                                        صفة مقدم الطلب: <strong>{{ $record->applicant_type === 'parent' ? '👨‍👦 ولي أمر' : '🎓 الطالب نفسه' }}</strong>
+                                    </span>
+                                </div>
+
+                                <div class="grid gap-2.5 text-xs text-slate-700 sm:grid-cols-3">
+                                    @if ($record->applicant_type === 'parent' && $record->student_name)
+                                        <p class="sm:col-span-2"><strong>اسم الطالب:</strong> <span class="font-bold text-slate-900 text-sm">{{ $record->student_name }}</span></p>
+                                    @endif
+                                    @if ($record->student_birth_date)
+                                        <p><strong>تاريخ ميلاد الطالب:</strong> <span class="font-semibold text-slate-900">{{ $record->student_birth_date->format('Y-m-d') }}</span></p>
+                                    @endif
+                                    <p><strong>الدولة المستهدفة:</strong> <span class="font-bold text-red-600">{{ $record->destination_country ?: 'غير محدد' }}</span></p>
+                                    <p><strong>المستوى الحالي:</strong> <span class="font-semibold text-slate-900">{{ $record->current_education_level ?: '—' }}</span></p>
+                                    <p><strong>المستوى المستهدف:</strong> <span class="font-semibold text-slate-900">{{ $record->target_education_level ?: '—' }}</span></p>
+                                    <p><strong>سنة المؤهل:</strong> <span class="font-semibold text-slate-900">{{ $record->qualification_year ?: '—' }}</span></p>
+                                    <p><strong>سبق التقديم لأوروبا:</strong> <span class="font-bold {{ $record->has_applied_before ? 'text-amber-600' : 'text-emerald-600' }}">{{ $record->has_applied_before ? 'نعم، سبق له التقديم' : 'لا، أول مرة' }}</span></p>
+                                    <p><strong>وقت التواصل المفضل:</strong> <span class="font-bold text-slate-900">{{ $record->preferred_contact_time ?: '—' }}</span></p>
+                                </div>
+
+                                @if ($record->notes)
+                                    <div class="pt-2 border-t border-blue-100 text-xs text-slate-700">
+                                        <strong>ملاحظات إضافية:</strong> <span class="whitespace-pre-line">{{ $record->notes }}</span>
+                                    </div>
+                                @endif
+                            </div>
+                        @else
+                            <div class="space-y-3 bg-slate-50 rounded-2xl p-4 border border-slate-100">
+                                <div class="flex items-center justify-between border-b border-slate-200/60 pb-2">
+                                    <span class="inline-flex items-center gap-1.5 rounded-full bg-slate-800 text-white px-2.5 py-0.5 text-xs font-bold">
+                                        <span>استشارة خدمات عامة</span>
+                                    </span>
+                                </div>
+                                <div class="grid gap-2 text-xs text-slate-700 sm:grid-cols-3">
+                                    <p><strong>الخدمة المطلوبة:</strong> <span class="font-bold text-slate-900">{{ data_get($record->service?->title, app()->getLocale(), '—') }}</span></p>
+                                    <p><strong>وقت التواصل المفضل:</strong> <span class="font-semibold text-slate-900">{{ $record->preferred_contact_time ?: '—' }}</span></p>
+                                    <p><strong>الموعد المقترح:</strong> <span class="font-semibold text-slate-900">{{ $record->preferred_at?->format('Y-m-d H:i') ?? '—' }}</span></p>
+                                </div>
+                                @if ($record->notes)
+                                    <div class="pt-2 border-t border-slate-200 text-xs text-slate-700">
+                                        <strong>ملاحظات العميل:</strong> <span class="whitespace-pre-line">{{ $record->notes }}</span>
+                                    </div>
+                                @endif
+                            </div>
+                        @endif
                     @else
                         <div class="grid gap-2 text-sm text-slate-700 sm:grid-cols-3 bg-slate-50 rounded-xl p-3 border border-slate-100">
                             <p><strong>الدولة:</strong> <span class="font-semibold text-slate-900">{{ $record->country ?: '—' }}</span></p>

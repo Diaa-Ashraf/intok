@@ -669,38 +669,38 @@
         <div class="glass-intok p-6 shadow-xl border border-slate-200 bg-white/95">
             <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 items-center">
                 <div>
-                    <label class="block text-[11px] font-black uppercase tracking-wider text-slate-700 mb-1.5">{{ data_get($siteSettings ?? [], 'finder_step1_label.'.$locale, '1. مسارك التعليمي الحالي') }}</label>
+                    <label class="block text-[11px] font-black uppercase tracking-wider text-slate-700 mb-1.5">{{ data_get($siteSettings ?? [], 'finder_step1_label.'.$locale, match($locale) { 'it' => '1. Percorso di studi attuale', 'en' => '1. Current Education', default => '1. مسارك التعليمي الحالي' }) }}</label>
                     <select id="finder-track" class="w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2.5 text-xs font-bold text-slate-800 focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/20">
-                        <option value="diploma">دبلوم فني (صنايع / تجارة / زراعة)</option>
-                        <option value="highschool">ثانوية عامة / لغات / أزهرية</option>
-                        <option value="grad">خريج جامعي (ماجستير / عمل باليورو)</option>
-                        <option value="languages">باحث عن تدريب كول سنتر ولغات</option>
+                        <option value="diploma">{{ match($locale) { 'it' => 'Diploma tecnico (industriale, commerciale, agrario)', 'en' => 'Technical Diploma (Industrial, Commercial, Agricultural)', default => 'دبلوم فني (صنايع / تجارة / زراعة)' } }}</option>
+                        <option value="highschool">{{ match($locale) { 'it' => 'Maturità / Diploma di scuola superiore', 'en' => 'High School Diploma / Secondary Certificate', default => 'ثانوية عامة / لغات / أزهرية' } }}</option>
+                        <option value="grad">{{ match($locale) { 'it' => 'Laureato (Master / Lavoro)', 'en' => 'University Graduate (Master\'s / Career)', default => 'خريج جامعي (ماجستير / تأهيل مهني)' } }}</option>
+                        <option value="languages">{{ match($locale) { 'it' => 'Corsi di lingue e Call Center', 'en' => 'Language & Call Center Training', default => 'باحث عن تدريب كول سنتر ولغات' } }}</option>
                     </select>
                 </div>
 
                 <div>
-                    <label class="block text-[11px] font-black uppercase tracking-wider text-slate-700 mb-1.5">{{ data_get($siteSettings ?? [], 'finder_step2_label.'.$locale, '2. هدفك المنشود') }}</label>
+                    <label class="block text-[11px] font-black uppercase tracking-wider text-slate-700 mb-1.5">{{ data_get($siteSettings ?? [], 'finder_step2_label.'.$locale, match($locale) { 'it' => '2. Il tuo obiettivo', 'en' => '2. Desired Goal', default => '2. هدفك المنشود' }) }}</label>
                     <select id="finder-goal" class="w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2.5 text-xs font-bold text-slate-800 focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/20">
-                        <option value="europe-study">دراسة جامعية بالدول الأوروبية + المنح الشاملة</option>
-                        <option value="callcenter">العمل في الكول سنتر الدولي</option>
-                        <option value="translation">احتراف وترجمة معتمدة للسفارات</option>
-                        <option value="ielts">اجتياز اختبارات IELTS & TOEFL</option>
+                        <option value="europe-study">{{ match($locale) { 'it' => 'Studi in Europa + Borse di Studio', 'en' => 'Study in Europe + Full Scholarships', default => 'دراسة جامعية بالدول الأوروبية + المنح الشاملة' } }}</option>
+                        <option value="callcenter">{{ match($locale) { 'it' => 'Lavoro nei Call Center Internazionali', 'en' => 'Work in Multinational Call Centers', default => 'العمل في الكول سنتر الدولي' } }}</option>
+                        <option value="translation">{{ match($locale) { 'it' => 'Traduzione Giurata per Ambasciate', 'en' => 'Certified Translation for Embassies', default => 'احتراف وترجمة معتمدة للسفارات' } }}</option>
+                        <option value="ielts">{{ match($locale) { 'it' => 'Certificazioni CILS, IELTS e TOEFL', 'en' => 'Pass CILS, IELTS & TOEFL Exams', default => 'اجتياز اختبارات CILS و IELTS و TOEFL' } }}</option>
                     </select>
                 </div>
 
                 <div>
-                    <label class="block text-[11px] font-black uppercase tracking-wider text-slate-700 mb-1.5">{{ data_get($siteSettings ?? [], 'finder_step3_label.'.$locale, '3. موسم الالتحاق') }}</label>
+                    <label class="block text-[11px] font-black uppercase tracking-wider text-slate-700 mb-1.5">{{ data_get($siteSettings ?? [], 'finder_step3_label.'.$locale, match($locale) { 'it' => '3. Sessione di ingresso', 'en' => '3. Target Intake', default => '3. موسم الالتحاق' }) }}</label>
                     <select id="finder-intake" class="w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2.5 text-xs font-bold text-slate-800 focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/20">
-                        <option value="fast">أقرب دفعة تدريبية / تقديم متاح</option>
-                        <option value="fall-2026">الفصل الدراسي الأول (أكتوبر 2026)</option>
-                        <option value="spring-2027">الفصل الدراسي الثاني (فبراير 2027)</option>
+                        <option value="fast">{{ match($locale) { 'it' => 'Prossima sessione disponibile', 'en' => 'Earliest Available Intake / Batch', default => 'أقرب دفعة تدريبية / تقديم متاح' } }}</option>
+                        <option value="fall-2026">{{ match($locale) { 'it' => 'Semestre Autunnale (Ottobre 2026)', 'en' => 'Fall Semester (October 2026)', default => 'الفصل الدراسي الأول (أكتوبر 2026)' } }}</option>
+                        <option value="spring-2027">{{ match($locale) { 'it' => 'Semestre Primaverile (Febbraio 2027)', 'en' => 'Spring Semester (February 2027)', default => 'الفصل الدراسي الثاني (فبراير 2027)' } }}</option>
                     </select>
                 </div>
 
                 <div class="sm:col-span-2 lg:col-span-1 pt-1 sm:pt-0">
-                    <label class="hidden lg:block text-[11px] font-bold text-transparent mb-1.5">إجراء</label>
+                    <label class="hidden lg:block text-[11px] font-bold text-transparent mb-1.5">{{ match($locale) { 'it' => 'Azione', 'en' => 'Action', default => 'إجراء' } }}</label>
                     <a href="{{ route('consultation.create', ['locale' => app()->getLocale()]) }}" class="btn-intok-primary flex w-full items-center justify-center gap-2 py-3 text-xs font-black shadow-xs">
-                        <span>{{ data_get($siteSettings ?? [], 'finder_btn_text.'.$locale, 'فحص شروط القبول والمنحة') }}</span>
+                        <span>{{ data_get($siteSettings ?? [], 'finder_btn_text.'.$locale, match($locale) { 'it' => 'Verifica Requisiti e Borse', 'en' => 'Check Eligibility & Scholarships', default => 'فحص شروط القبول والمنحة' }) }}</span>
                     </a>
                 </div>
             </div>
@@ -1219,10 +1219,11 @@
                 ];
 
                 $pillarKeys = ['services', 'practical', 'trainers', 'support', 'customized', 'future'];
+                $currentFallbacks = $bentoFallbacks[$locale] ?? $bentoFallbacks['ar'];
                 $whyPillars = [];
 
                 foreach ($pillarKeys as $pKey) {
-                    $fb = $currentFallbacks[$pKey] ?? $bentoFallbacks['ar'][$pKey];
+                    $fb = $currentFallbacks[$pKey] ?? ($bentoFallbacks['ar'][$pKey] ?? []);
                     $whyPillars[] = [
                         'id' => $pKey,
                         'icon' => $pillarIcons[$pKey] ?? '',

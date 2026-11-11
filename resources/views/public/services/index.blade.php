@@ -44,10 +44,10 @@
             default => 'bg-red-50 text-[#fe0002] border-red-200',
         };
 
-        $categoryKey = match ($svc->icon) {
-            'academic-cap', 'italy' => 'italy',
-            'language', 'translation' => 'translation',
-            'documents', 'certificate' => 'translation',
+        $categoryKey = match (true) {
+            str_contains(mb_strtolower($svcTitle), 'لغ') || $svc->icon === 'language' => 'languages',
+            str_contains(mb_strtolower($svcTitle), 'ترجم') || in_array($svc->icon, ['translation', 'documents', 'certificate']) => 'translation',
+            str_contains(mb_strtolower($svcTitle), 'جامع') || str_contains(mb_strtolower($svcTitle), 'منح') || str_contains(mb_strtolower($svcTitle), 'استقبال') || in_array($svc->icon, ['academic-cap', 'italy']) => 'italy',
             default => 'career',
         };
 
@@ -89,7 +89,7 @@
                     <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#fe0002] opacity-75"></span>
                     <span class="relative inline-flex size-2 rounded-full bg-[#fe0002]"></span>
                 </span>
-                <span>8 مسارات معتمدة دولياً ومؤهلة لسوق العمل الأوروبي</span>
+                <span>{{ count($allTracks) }} مسارات معتمدة دولياً ومؤهلة لسوق العمل الأوروبي</span>
             </span>
 
             <h1 class="mt-5 text-3xl font-black text-[#c27803] sm:text-5xl lg:text-6xl tracking-tight">
@@ -112,7 +112,7 @@
                 <!-- Modern Interactive Domain Switcher Pills -->
                 <div class="mt-4 flex flex-wrap items-center justify-center gap-2" id="services-tabs-container">
                     <button type="button" class="service-filter-tab active-service-tab" data-filter="all">
-                        <span>الكل (8)</span>
+                        <span>الكل ({{ count($allTracks) }})</span>
                     </button>
                     <button type="button" class="service-filter-tab" data-filter="career">
                         <span>الكول سنتر وسوق العمل</span>
@@ -158,7 +158,7 @@
                             <span>المسارات المعتمدة:</span>
                             <span class="text-[10px] text-slate-400 font-normal lg:hidden">(اسحب لاختيار المسار ↔)</span>
                         </span>
-                        <span class="text-red-600 font-mono text-xs font-black">8 مسارات</span>
+                        <span class="text-red-600 font-mono text-xs font-black">{{ count($allTracks) }} مسارات</span>
                     </div>
 
                     <!-- On mobile/tablet: Horizontal touch-swipeable track strip. On desktop (lg+): Vertical scroll list -->

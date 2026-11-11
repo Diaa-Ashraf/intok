@@ -402,24 +402,24 @@
 
             <div class="grid gap-6 sm:grid-cols-3">
                 <div class="card-poster-white p-6 bg-white border border-slate-200 rounded-2xl shadow-sm">
-                    <p class="text-xs sm:text-sm leading-relaxed text-slate-700 italic">"أكاديمية INTOK ساعدتني في تجهيز أوراقي والتقديم بجامعة بيزا، والمتابعة كانت دقيقة جداً في كل مرحلة."</p>
+                    <p class="text-xs sm:text-sm leading-relaxed text-slate-700 italic">"{{ match($locale) { 'it' => 'INTOK mi ha supportato nella preparazione della domanda per l\'università europea con precisione in ogni passaggio.', 'en' => 'INTOK helped me prepare my application for European university admission with meticulous tracking at every step.', default => 'أكاديمية INTOK ساعدتني في تجهيز أوراقي والتقديم للجامعات الأوروبية، والمتابعة كانت دقيقة جداً في كل مرحلة.' } }}"</p>
                     <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-800">
-                        <span>أحمد م.</span>
-                        <span class="text-[#fe0002]">دراسة بإيطاليا</span>
+                        <span>{{ match($locale) { 'it' => 'Ahmed M.', 'en' => 'Ahmed M.', default => 'أحمد م.' } }}</span>
+                        <span class="text-[#fe0002]">{{ match($locale) { 'it' => 'Studi in Europa', 'en' => 'Study in Europe', default => 'دراسة بأوروبا' } }}</span>
                     </div>
                 </div>
                 <div class="card-poster-white p-6 bg-white border border-slate-200 rounded-2xl shadow-sm">
-                    <p class="text-xs sm:text-sm leading-relaxed text-slate-700 italic">"تدريب الكول سنتر والمحادثة على الشاشات الذكية غير مستواي تماماً وخلاني أعدي الإنترفيو في أول أسبوع بعد التدريب."</p>
+                    <p class="text-xs sm:text-sm leading-relaxed text-slate-700 italic">"{{ match($locale) { 'it' => 'Il corso pratico di Call Center e conversazione ha trasformato le mie competenze permettendomi di superare il colloquio subito.', 'en' => 'The hands-on Call Center and conversation training completely transformed my skills, enabling me to pass the interview immediately.', default => 'تدريب الكول سنتر والمحادثة على الشاشات الذكية غير مستواي تماماً وخلاني أعدي الإنترفيو في أول أسبوع بعد التدريب.' } }}"</p>
                     <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-800">
-                        <span>سارة ع.</span>
-                        <span class="text-emerald-600">كول سنتر دولي</span>
+                        <span>{{ match($locale) { 'it' => 'Sara A.', 'en' => 'Sara A.', default => 'سارة ع.' } }}</span>
+                        <span class="text-emerald-600">{{ match($locale) { 'it' => 'Call Center Internazionale', 'en' => 'International Call Center', default => 'كول سنتر دولي' } }}</span>
                     </div>
                 </div>
                 <div class="card-poster-white p-6 bg-white border border-slate-200 rounded-2xl shadow-sm">
-                    <p class="text-xs sm:text-sm leading-relaxed text-slate-700 italic">"الترجمة المعتمدة اتسلمت في نفس اليوم وموثقة بدون أي ملاحظات من السفارة، احترافية وسرعة ممتازة."</p>
+                    <p class="text-xs sm:text-sm leading-relaxed text-slate-700 italic">"{{ match($locale) { 'it' => 'La traduzione giurata è stata consegnata nei tempi previsti con piena conformità consolare, eccellente professionalità.', 'en' => 'The certified translation was delivered on time with full consular acceptance, excellent professionalism and speed.', default => 'الترجمة المعتمدة اتسلمت في نفس اليوم وموثقة بدون أي ملاحظات من السفارة، احترافية وسرعة ممتازة.' } }}"</p>
                     <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-800">
-                        <span>محمود خ.</span>
-                        <span class="text-amber-700">ترجمة معتمدة</span>
+                        <span>{{ match($locale) { 'it' => 'Mahmoud Kh.', 'en' => 'Mahmoud Kh.', default => 'محمود خ.' } }}</span>
+                        <span class="text-amber-700">{{ match($locale) { 'it' => 'Traduzione Giurata', 'en' => 'Certified Translation', default => 'ترجمة معتمدة' } }}</span>
                     </div>
                 </div>
             </div>
