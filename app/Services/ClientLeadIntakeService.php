@@ -25,8 +25,20 @@ class ClientLeadIntakeService
     public function book(array $data): ConsultationBooking
     {
         unset($data['website']);
+        if (empty($data['preferred_at']) && !empty($data['preferred_contact_time'])) {
+            $data['preferred_at'] = now()->addDay()->setHour(10)->setMinute(0)->setSecond(0);
+        } elseif (empty($data['preferred_at'])) {
+            $data['preferred_at'] = now();
+        }
+
         $booking = DB::transaction(fn (): ConsultationBooking => ConsultationBooking::query()->create($data));
-        $this->notifyAdmin('حجز استشارة جديد', ['الاسم' => $booking->name, 'الهاتف' => $booking->phone, 'الموعد' => $booking->preferred_at->format('Y-m-d H:i')], 'booking', $booking->id, $booking->name);
+        $contactTime = $booking->preferred_contact_time ?? ($booking->preferred_at ? $booking->preferred_at->format('Y-m-d H:i') : 'خلال ساعات العمل');
+        $this->notifyAdmin('حجز استشارة جديد', [
+            'الاسم' => $booking->name,
+            'الهاتف' => $booking->phone,
+            'النوع' => $booking->booking_type === 'study_abroad' ? 'استشارة دراسة بالخارج' : 'استشارة عامة في الخدمات',
+            'الموعد' => $contactTime,
+        ], 'booking', $booking->id, $booking->name);
 
         return $booking;
     }

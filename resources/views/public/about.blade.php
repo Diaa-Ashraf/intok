@@ -1,19 +1,18 @@
 @extends('public.layouts.app')
 
-@section('title', $page->seo_title[$locale] ?? $page->title[$locale] ?? __('site.nav_about'))
-@section('meta_description', $page->seo_description[$locale] ?? Str::limit(strip_tags($page->content[$locale] ?? ''), 170))
-
 @php
-    $aboutContent = $page->content[$locale] ?? $page->content['en'] ?? '';
+    $locale = $locale ?? app()->getLocale();
     $pageTitle = $page->title[$locale] ?? $page->title['en'] ?? __('site.nav_about');
 @endphp
 
+@section('title', $page->seo_title[$locale] ?? $pageTitle)
+@section('meta_description', $page->seo_description[$locale] ?? 'تعرف على INTOK ACADEMY: بوابتك للتعلم والتطور وبناء مستقبلك الأكاديمي والمهني.')
+
 @section('content')
     <!-- ==========================================================
-         HERO SECTION: EXECUTIVE BANNER (BRAND MUSTARD & RED)
+         1. HERO SECTION
          ========================================================== -->
-    <section class="relative isolate overflow-hidden bg-intok-hero py-16 sm:py-20 text-slate-900 border-b border-slate-100">
-        <!-- Living Background Accents -->
+    <section class="relative isolate overflow-hidden bg-intok-hero py-16 sm:py-24 text-slate-900 border-b border-slate-100">
         <div class="animate-aurora-1 pointer-events-none absolute -top-24 start-10 -z-10 size-[32rem] rounded-full bg-red-500/10 blur-[110px]"></div>
         <div class="animate-aurora-2 pointer-events-none absolute top-1/4 end-10 -z-10 size-[30rem] rounded-full bg-amber-500/10 blur-[100px]"></div>
 
@@ -24,240 +23,91 @@
                         <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#fe0002] opacity-75"></span>
                         <span class="relative inline-flex size-2 rounded-full bg-[#fe0002]"></span>
                     </span>
-                    <span>{{ data_get($siteSettings ?? [], 'about_hero_badge.'.$locale, 'INTOK ACADEMY • '.$pageTitle) }}</span>
+                    <span>INTOK ACADEMY • Connecting You to the World</span>
                 </span>
 
                 <h1 class="mt-5 text-3xl font-black leading-tight text-[#c27803] sm:text-5xl lg:text-6xl tracking-tight">
-                    {{ $pageTitle }}
+                    {{ match($locale) {
+                        'it' => 'INTOK ACADEMY – Ti apriamo nuove porte per apprendere e crescere',
+                        'en' => 'INTOK ACADEMY – Opening New Doors to Learning & Growth',
+                        default => 'INTOK ACADEMY – بنفتحلك أبواب جديدة للتعلم والتطور',
+                    } }}
                 </h1>
 
-                <p class="mt-4 text-base sm:text-lg leading-relaxed text-slate-600 font-medium">
-                    {{ data_get($siteSettings ?? [], 'about_hero_subtitle.'.$locale, 'قصة التمكين والريادة الأكاديمية: نفتح أبواب الجامعات الإيطالية وسوق العمل الدولي للشباب العربي وحملة الدبلومات والثانوية العامة.') }}
+                <p class="mt-4 text-base sm:text-lg leading-relaxed text-slate-700 font-medium">
+                    {{ match($locale) {
+                        'it' => 'Siamo un\'accademia specializzata in istruzione, formazione e qualificazione accademica e professionale: ti aiutiamo a sviluppare competenze, ampliare le tue opportunità e compiere passi ponderati verso il tuo futuro.',
+                        'en' => 'We are an academy specialized in education, practical training, and academic & career qualification, helping you build high-demand skills, expand horizons, and take well-planned steps toward your future.',
+                        default => 'إحنا أكاديمية متخصصة في التعليم والتدريب والتأهيل الأكاديمي والمهني، بنساعدك تطور مهاراتك، توسّع فرصك، وتاخد خطوات مدروسة نحو مستقبلك.',
+                    } }}
                 </p>
-            </div>
-        </div>
-    </section>
 
-    <!-- ==========================================================
-         MAIN CONTENT & EXECUTIVE COCKPIT (SPLIT VIEW)
-         ========================================================== -->
-    <section class="relative bg-intok-section py-16 border-b border-slate-200/80">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="grid gap-10 lg:grid-cols-12 items-start">
-                
-                <!-- Main Narrative Content from Database (7 Cols) -->
-                <div class="lg:col-span-7 space-y-6 reveal-up">
-                    <div class="card-poster-white p-4 sm:p-7 lg:p-10 bg-white border border-slate-200 shadow-md">
-                        
-                        <!-- Top Header with Brand Badge -->
-                        <div class="flex items-center justify-between pb-4 mb-6 border-b border-slate-100">
-                            <div class="flex items-center gap-3">
-                                <span class="grid size-11 place-items-center rounded-2xl bg-red-50 text-[#fe0002] border border-red-200 shadow-xs">
-                                    <svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-                                </span>
-                                <div>
-                                    <h2 class="text-base font-black text-slate-900 leading-snug">
-                                        {{ data_get($siteSettings ?? [], 'about_mission_title.'.$locale, 'رسالتنا وهويتنا المؤسسية') }}
-                                    </h2>
-                                    <span class="text-xs font-bold text-slate-500">
-                                        {{ data_get($siteSettings ?? [], 'about_mission_subtitle.'.$locale, 'معايير الجودة والاعتماد الرسمي') }}
-                                    </span>
-                                </div>
-                            </div>
-                            <span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 border border-emerald-200 px-3 py-1 text-xs font-black text-emerald-700">
-                                <svg class="size-3 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-                                <span>معتمد رسمياً</span>
-                            </span>
-                        </div>
-
-                        <!-- Dynamic Markdown Content with Luxury Styling -->
-                        <div class="page-content text-sm sm:text-base leading-loose text-slate-700 space-y-4">
-                            {!! Str::markdown($aboutContent, ['html_input' => 'strip', 'allow_unsafe_links' => false]) !!}
-                        </div>
-
-                        <!-- Bottom CTAs -->
-                        <div class="mt-8 pt-6 border-t border-slate-100 flex flex-wrap items-center gap-4">
-                            <a href="{{ route('consultation.create', ['locale' => $locale]) }}" class="btn-intok-primary inline-flex items-center gap-2 px-7 py-3.5 text-xs sm:text-sm font-black shadow-md">
-                                <span>احجز استشارتك الأكاديمية الآن</span>
-                            </a>
-                            <a href="{{ route('services.index', ['locale' => $locale]) }}" class="inline-flex items-center gap-2 rounded-full border-2 border-slate-200 bg-slate-50 px-6 py-3.5 text-xs sm:text-sm font-black text-slate-700 hover:bg-white hover:border-[#fe0002] hover:text-[#fe0002] transition shadow-xs">
-                                <span>استكشف برامجنا وتدريباتنا</span>
-                                <span>&larr;</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Executive Fast-Facts & Credentials Cockpit (5 Cols) -->
-                <div class="lg:col-span-5 space-y-6 reveal-up">
-                    
-                    <!-- Academy Profile Card -->
-                    <div class="card-poster-white p-6 bg-white border border-slate-200 shadow-md text-start">
-                        <div class="flex items-center gap-3.5 mb-5 pb-4 border-b border-slate-100">
-                            <div class="size-14 rounded-2xl border-2 border-[#fe0002] p-1 bg-white shadow-xs shrink-0">
-                                <img src="{{ asset('assets/images/intok-logo.jpg') }}" alt="INTOK Logo" class="size-full object-cover rounded-xl">
-                            </div>
-                            <div>
-                                <h3 class="text-base font-black text-slate-900 leading-tight">INTOK ACADEMY</h3>
-                                <p class="text-xs font-bold text-[#c27803] mt-0.5">Connecting You to the World</p>
-                                <span class="text-[10px] text-slate-500 font-medium">أكاديمية معتمدة للتدريب والدراسة في الدول الأوروبية</span>
-                            </div>
-                        </div>
-
-                        <!-- 4 Stat Badges Grid -->
-                        <div class="grid grid-cols-2 gap-3 mb-5">
-                            <div class="rounded-2xl bg-slate-50 border border-slate-200/80 p-3.5 text-center">
-                                <span class="grid size-8 mx-auto mb-1 place-items-center text-[#fe0002]">
-                                    <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                                </span>
-                                <span class="text-base font-black text-[#fe0002] block font-mono">{{ data_get($siteSettings ?? [], 'hero_stat_3_val', '8,000€') }}</span>
-                                <span class="text-[10px] font-bold text-slate-600">{{ data_get($siteSettings ?? [], 'hero_stat_3_lbl.'.$locale, 'بدل سنوي + سكن مجاني') }}</span>
-                            </div>
-                            <div class="rounded-2xl bg-slate-50 border border-slate-200/80 p-3.5 text-center">
-                                <span class="grid size-8 mx-auto mb-1 place-items-center text-[#c27803]">
-                                    <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg>
-                                </span>
-                                <span class="text-base font-black text-[#c27803] block font-mono">{{ data_get($siteSettings ?? [], 'hero_stat_2_val', '+1,200') }}</span>
-                                <span class="text-[10px] font-bold text-slate-600">{{ data_get($siteSettings ?? [], 'hero_stat_2_lbl.'.$locale, 'طالب تم قبولهم بنجاح') }}</span>
-                            </div>
-                            <div class="rounded-2xl bg-slate-50 border border-slate-200/80 p-3.5 text-center">
-                                <span class="grid size-8 mx-auto mb-1 place-items-center text-emerald-700">
-                                    <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z"/></svg>
-                                </span>
-                                <span class="text-base font-black text-emerald-700 block font-mono">15k-30k+</span>
-                                <span class="text-[10px] font-bold text-slate-600">رواتب الكول سنتر ج.م</span>
-                            </div>
-                            <div class="rounded-2xl bg-slate-50 border border-slate-200/80 p-3.5 text-center">
-                                <span class="grid size-8 mx-auto mb-1 place-items-center text-blue-700">
-                                    <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                                </span>
-                                <span class="text-base font-black text-blue-700 block font-mono">{{ data_get($siteSettings ?? [], 'hero_stat_1_val', '100%') }}</span>
-                                <span class="text-[10px] font-bold text-slate-600">{{ data_get($siteSettings ?? [], 'hero_stat_1_lbl.'.$locale, 'نسبة نجاح استخراج التأشيرات') }}</span>
-                            </div>
-                        </div>
-
-                        <!-- Guarantee Message -->
-                        <div class="rounded-2xl bg-red-50/80 border border-red-200 p-4 flex items-start gap-3">
-                            <span class="grid size-6 place-items-center text-[#fe0002] shrink-0 mt-0.5">
-                                <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                            </span>
-                            <p class="text-xs font-bold text-red-950 leading-relaxed">
-                                {{ data_get($siteSettings ?? [], 'about_guarantee_text.'.$locale, 'مرافقة شخصية 360 درجة من أول جلسة استشارة وفحص أوراقك، حتى استلام تأشيرتك ومفاتيح سكنك بالدولة الأوروبية.') }}
-                            </p>
-                        </div>
-
-                        <!-- Direct WhatsApp Quick Chat -->
-                        <div class="mt-4 pt-3 border-t border-slate-100">
-                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', data_get($siteSettings ?? [], 'whatsapp_number', '201008238323')) }}?text={{ urlencode('مرحباً، أود معرفة المزيد عن خدمات أكاديمية إنتوك وفرص الدراسة في الدول الأوروبية') }}" target="_blank" class="w-full inline-flex items-center justify-center gap-2 rounded-full border-2 border-emerald-500 bg-emerald-50 py-3 px-4 text-xs font-black text-emerald-700 hover:bg-emerald-600 hover:text-white transition shadow-xs">
-                                <span>تواصل فوري مع الإدارة عبر الواتساب</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Direct Advisory or Team Link -->
-                    @if(\App\Models\TeamMember::query()->where('is_active', true)->exists())
-                        <div class="card-poster-white p-5 bg-gradient-to-br from-amber-50/50 to-white border border-amber-200 rounded-3xl flex items-center justify-between gap-4">
-                            <div class="flex items-center gap-3">
-                                <span class="grid size-11 place-items-center rounded-2xl bg-amber-100 text-amber-800 shadow-xs">
-                                    <svg class="size-6 text-amber-800" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-                                </span>
-                                <div>
-                                    <h4 class="text-xs sm:text-sm font-black text-slate-900">نخبة مستشارينا ومدربينا</h4>
-                                    <p class="text-[11px] font-medium text-slate-500 mt-0.5">تعرف على فريق العمل الأكاديمي</p>
-                                </div>
-                            </div>
-                            <a href="{{ route('team', ['locale' => $locale]) }}" class="inline-flex items-center gap-1 rounded-full bg-white border border-amber-300 px-4 py-2 text-xs font-black text-amber-900 hover:bg-amber-100 transition shadow-xs shrink-0">
-                                <span>فريقنا</span>
-                                <span>&larr;</span>
-                            </a>
-                        </div>
-                    @else
-                        <div class="card-poster-white p-5 bg-gradient-to-br from-red-50/50 to-white border border-red-200 rounded-3xl flex items-center justify-between gap-4">
-                            <div class="flex items-center gap-3">
-                                <span class="grid size-11 place-items-center rounded-2xl bg-red-100 text-[#fe0002] shadow-xs">
-                                    <svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg>
-                                </span>
-                                <div>
-                                    <h4 class="text-xs sm:text-sm font-black text-slate-900">مستشارك الأكاديمي الشخصي</h4>
-                                    <p class="text-[11px] font-medium text-slate-500 mt-0.5">تقييم ملفك وتحديد فرصة قبولك مجاناً</p>
-                                </div>
-                            </div>
-                            <a href="{{ route('consultation.create', ['locale' => $locale]) }}" class="inline-flex items-center gap-1 rounded-full bg-[#fe0002] text-white px-4 py-2 text-xs font-black hover:bg-red-700 transition shadow-xs shrink-0">
-                                <span>ابدأ الآن</span>
-                                <span>&larr;</span>
-                            </a>
-                        </div>
-                    @endif
-
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================================
-         4 CORE PILLARS OF INTOK EXCELLENCE
-         ========================================================== -->
-    <section class="relative bg-white py-16 border-b border-slate-200/80">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12 reveal-up">
-                <span class="inline-flex items-center gap-2 rounded-full bg-red-50 border border-red-200 px-4 py-1.5 text-xs font-black text-[#fe0002] shadow-xs">
-                    <span>{{ data_get($siteSettings ?? [], 'why_badge.'.$locale, 'معايير الثقة والريادة') }}</span>
-                </span>
-                <h2 class="mt-4 text-3xl font-black text-[#c27803] sm:text-4xl">
-                    {{ data_get($siteSettings ?? [], 'why_title.'.$locale, 'لماذا يختار آلاف الطلاب أكاديمية إنتوك؟') }}
-                </h2>
-                <p class="mt-3 text-sm sm:text-base text-slate-600 font-medium">
-                    {{ data_get($siteSettings ?? [], 'why_subtitle.'.$locale, 'منظومة متكاملة لا تكتفي بتقديم الدورات، بل تصنع مستقبلك الأكاديمي والمهني بمعايير أوروبية موثقة.') }}
+                <p class="mt-2 text-sm sm:text-base leading-relaxed text-slate-600">
+                    {{ match($locale) {
+                        'it' => 'Dall\'apprendimento linguistico e traduzioni asseverate alla formazione professionale, servizi accademici e studi all\'estero: offriamo soluzioni variegate su misura per le tue ambizioni.',
+                        'en' => 'From language learning and certified translation to career training, academic services, and studying abroad: we offer tailored solutions matching your ambitions.',
+                        default => 'من تعلم اللغات والترجمة المعتمدة، إلى التدريب المهني والخدمات الأكاديمية والدراسة بالخارج؛ بنقدم حلول متنوعة تناسب طموحاتك واحتياجاتك.',
+                    } }}
                 </p>
+
+                <div class="mt-8 flex flex-wrap items-center gap-4">
+                    <a href="{{ route('services.index', ['locale' => $locale]) }}" class="btn-intok-primary px-7 py-3.5 text-xs sm:text-sm font-black shadow-md">
+                        <span>{{ match($locale) { 'it' => 'Scopri i nostri servizi', 'en' => 'Explore Our Services', default => 'اكتشف خدماتنا' } }}</span>
+                    </a>
+                    <a href="{{ route('consultation.create', ['locale' => $locale]) }}" class="inline-flex items-center gap-2 rounded-full border-2 border-slate-300 bg-white px-6 py-3.5 text-xs sm:text-sm font-black text-slate-700 hover:border-[#fe0002] hover:text-[#fe0002] transition shadow-xs">
+                        <span>{{ match($locale) { 'it' => 'Prenota la tua consulenza', 'en' => 'Book Your Consultation', default => 'احجز استشارتك' } }}</span>
+                        <span>&larr;</span>
+                    </a>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                <div class="card-poster-white p-6 bg-slate-50 border border-slate-200 flex flex-col justify-between reveal-up">
-                    <div>
-                        <span class="grid size-12 place-items-center rounded-2xl bg-amber-50 border border-amber-200 text-[#c27803] mb-4">
-                            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg>
-                        </span>
-                        <h3 class="text-base font-black text-[#c27803] mb-2">{{ data_get($siteSettings ?? [], 'why_bento_dsu_title.'.$locale, 'منحة DSU والسكن المجاني') }}</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                            {{ data_get($siteSettings ?? [], 'why_bento_dsu_desc.'.$locale, 'حساب دقيق لـ ISEE يضمن إعفاء 100% من المصروفات وسكن مجاني وبدل نقدي 8,000 يورو للدبلومات والثانوية.') }}
-                        </p>
-                    </div>
+    <!-- ==========================================================
+         2. OUR STORY
+         ========================================================== -->
+    <section class="relative bg-white py-16 sm:py-24 border-b border-slate-200/80">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="grid gap-10 lg:grid-cols-12 items-center">
+                <div class="lg:col-span-6 reveal-up">
+                    <span class="text-xs font-black uppercase tracking-wider text-[#fe0002] block mb-2">قصتنا – حكاية INTOK</span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-[#c27803] leading-tight">
+                        {{ match($locale) {
+                            'it' => 'Siamo partiti da un\'idea... per aprirti opportunità più grandi',
+                            'en' => 'Started with an idea... to unlock greater opportunities for you',
+                            default => 'بدأنا بفكرة.. وهدفنا نفتحلك فرص أكبر',
+                        } }}
+                    </h2>
+                    <p class="mt-4 text-sm sm:text-base leading-relaxed text-slate-700 font-medium">
+                        {{ match($locale) {
+                            'it' => 'INTOK ACADEMY è nata con una visione chiara: la vera istruzione non è solo nozioni teoriche, ma un\'esperienza integrata che ti permette di crescere e prepararti a opportunità migliori.',
+                            'en' => 'INTOK ACADEMY was established with a clear vision: genuine education is not mere information, but an integrated experience that helps you evolve and prepare for prime opportunities.',
+                            default => 'اتأسست INTOK ACADEMY برؤية واضحة: إن التعليم الحقيقي مش مجرد معلومات بتتعلمها، لكنه تجربة متكاملة تساعدك تطور نفسك وتستعد لفرص أفضل.',
+                        } }}
+                    </p>
+                    <p class="mt-3 text-sm sm:text-base leading-relaxed text-slate-600">
+                        {{ match($locale) {
+                            'it' => 'Da qui abbiamo iniziato a offrire un ventaglio di servizi educativi, linguistici e accademici, puntando sull\'applicazione pratica, sul tutoraggio continuo e sull\'aiutare ciascuna persona a individuare la strada ideale per i propri obiettivi.',
+                            'en' => 'Hence we began providing educational, vocational, and academic services with deep focus on hands-on application, constant follow-up, and tailoring pathways for each individual.',
+                            default => 'ومن هنا بدأنا نقدم مجموعة متنوعة من الخدمات التعليمية والتدريبية والأكاديمية، مع الاهتمام بالتطبيق العملي، والمتابعة، ومساعدة كل شخص يحدد الطريق المناسب لأهدافه.',
+                        } }}
+                    </p>
+                    <p class="mt-3 text-sm sm:text-base leading-relaxed text-slate-600">
+                        {{ match($locale) {
+                            'it' => 'Crediamo che ogni persona abbia un\'ambizione unica, ed è per questo che ci impegniamo a offrirle il supporto e i servizi necessari per compiere il prossimo passo con fiducia.',
+                            'en' => 'We believe every individual possesses a unique ambition, and we strive to provide the specialized support that allows them to take the next leap confidently.',
+                            default => 'بنؤمن إن لكل شخص طموح مختلف، وعشان كده بنسعى نوفرله الدعم والخدمات اللي تساعده ياخد خطوته الجاية بثقة.',
+                        } }}
+                    </p>
                 </div>
-
-                <div class="card-poster-white p-6 bg-slate-50 border border-slate-200 flex flex-col justify-between reveal-up">
-                    <div>
-                        <span class="grid size-12 place-items-center rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-700 mb-4">
-                            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z"/></svg>
-                        </span>
-                        <h3 class="text-base font-black text-[#c27803] mb-2">{{ data_get($siteSettings ?? [], 'why_bento_callcenter_title.'.$locale, 'تأهيل الكول سنتر وسوق العمل') }}</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                            {{ data_get($siteSettings ?? [], 'why_bento_callcenter_desc.'.$locale, 'تدريب عملي على الشاشات التفاعلية ومحاكاة لمقابلات الشركات العالمية برواتب تصل إلى 30,000+ ج.م.') }}
-                        </p>
-                    </div>
-                </div>
-
-                <div class="card-poster-white p-6 bg-slate-50 border border-slate-200 flex flex-col justify-between reveal-up">
-                    <div>
-                        <span class="grid size-12 place-items-center rounded-2xl bg-amber-50 border border-amber-200 text-amber-800 mb-4">
-                            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                        </span>
-                        <h3 class="text-base font-black text-[#c27803] mb-2">{{ data_get($siteSettings ?? [], 'why_bento_trans_title.'.$locale, 'ترجمة معتمدة رسمياً للسفارات') }}</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                            {{ data_get($siteSettings ?? [], 'why_bento_trans_desc.'.$locale, 'ترجمات وتصديقات معترف بها لدى القنصلية الإيطالية وكافة السفارات الأوروبية لضمان قبول ملفك.') }}
-                        </p>
-                    </div>
-                </div>
-
-                <div class="card-poster-white p-6 bg-slate-50 border border-slate-200 flex flex-col justify-between reveal-up">
-                    <div>
-                        <span class="grid size-12 place-items-center rounded-2xl bg-red-50 border border-red-200 text-[#fe0002] mb-4">
-                            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
-                        </span>
-                        <h3 class="text-base font-black text-[#c27803] mb-2">{{ data_get($siteSettings ?? [], 'why_bento_reception_title.'.$locale, 'استقبال وتسكين بالدول الأوروبية') }}</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                            {{ data_get($siteSettings ?? [], 'why_bento_reception_desc.'.$locale, 'فريق ميداني يستقبلك في مطارات الوجهة الأوروبية ويسلمك السكن ويساعدك في استخراج الإقامة والحساب البنكي.') }}
-                        </p>
+                <div class="lg:col-span-6 reveal-scale">
+                    <div class="relative overflow-hidden rounded-3xl border-2 border-slate-200 shadow-xl bg-slate-900 group">
+                        <img src="{{ asset('assets/images/academy/italian-classroom-lecture.jpg') }}" alt="حكاية INTOK" class="w-full h-[360px] object-cover transition duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-6 inset-x-6 text-white text-start">
+                            <span class="rounded-full bg-[#fe0002] px-3 py-1 text-xs font-black">#انتوك_اسلوب_حياه</span>
+                            <h4 class="mt-2 text-lg font-black">تعليم • تدريب • تأهيل دولي</h4>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -265,41 +115,75 @@
     </section>
 
     <!-- ==========================================================
-         REAL ACADEMY TRAINING SHOWCASE (PHOTOS)
+         3. VISION, MISSION & VALUES
          ========================================================== -->
-    <section class="relative bg-intok-section py-16 border-b border-slate-200/80">
+    <section class="relative bg-intok-section py-16 sm:py-24 border-b border-slate-200/80">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-10 reveal-up">
-                <span class="inline-flex items-center gap-2 rounded-full bg-amber-50 border border-amber-200 px-4 py-1.5 text-xs font-black text-amber-900 shadow-xs">
-                    <span>{{ data_get($siteSettings ?? [], 'about_gallery_badge.'.$locale, 'لقطات حية من قاعاتنا') }}</span>
+            <div class="text-center max-w-3xl mx-auto mb-14 reveal-up">
+                <span class="inline-block rounded-full bg-red-50 border border-red-200 px-4 py-1 text-xs font-black text-[#fe0002]">
+                    منظومة القيم والمبادئ
                 </span>
-                <h2 class="mt-4 text-3xl font-black text-[#c27803] sm:text-4xl">
-                    {{ data_get($siteSettings ?? [], 'about_gallery_title.'.$locale, 'شاهد واقع التعليم والتدريب في INTOK') }}
+                <h2 class="mt-3 text-3xl font-black text-[#c27803] sm:text-4xl">
+                    رؤيتنا ورسالتنا وقيمنا
                 </h2>
             </div>
 
-            <div class="grid gap-6 sm:grid-cols-2 max-w-4xl mx-auto reveal-up">
-                <div class="rounded-3xl overflow-hidden border-2 border-slate-200 shadow-lg group relative">
-                    <img src="{{ asset('assets/images/academy/live-speaker-training.jpg') }}" alt="تدريب المحادثة والخطابة على الشاشات الذكية في إنتوك" class="w-full h-64 sm:h-72 object-cover object-top group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-5 flex flex-col justify-end text-white">
-                        <span class="inline-block bg-[#fe0002] px-3 py-1 rounded-full text-[10px] font-black w-max mb-1.5">
-                            تدريب عملي تطبيقي
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <!-- Vision -->
+                <div class="card-poster-white p-6 sm:p-8 bg-white border border-slate-200 shadow-sm reveal-up flex flex-col justify-between">
+                    <div>
+                        <span class="grid size-12 place-items-center rounded-2xl bg-amber-50 text-amber-700 border border-amber-200 text-xl font-black mb-5">
+                            👁️
                         </span>
-                        <h3 class="text-sm sm:text-base font-black text-white leading-snug">
-                            محاكاة المقابلات الدولية ومحاضرات الطلاقة والخطابة باللغات
-                        </h3>
+                        <h3 class="text-xl font-black text-slate-900">رؤيتنا</h3>
+                        <p class="mt-3 text-sm leading-relaxed text-slate-600 font-medium">
+                            أن نكون من المؤسسات الرائدة في تقديم الحلول التعليمية والتدريبية والأكاديمية، وأن نساهم في بناء جيل يمتلك المعرفة والمهارات والقدرة على المنافسة محليًا ودوليًا.
+                        </p>
                     </div>
                 </div>
 
-                <div class="rounded-3xl overflow-hidden border-2 border-slate-200 shadow-lg group relative">
-                    <img src="{{ asset('assets/images/academy/italian-classroom-lecture.jpg') }}" alt="محاضرة اللغة الإيطالية وقواعد النطق" class="w-full h-64 sm:h-72 object-cover object-top group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-5 flex flex-col justify-end text-white">
-                        <span class="inline-block bg-amber-500 px-3 py-1 rounded-full text-[10px] font-black w-max mb-1.5">
-                            قاعات ذكية مجهزة
+                <!-- Mission -->
+                <div class="card-poster-white p-6 sm:p-8 bg-white border border-slate-200 shadow-sm reveal-up flex flex-col justify-between">
+                    <div>
+                        <span class="grid size-12 place-items-center rounded-2xl bg-red-50 text-[#fe0002] border border-red-200 text-xl font-black mb-5">
+                            🎯
                         </span>
-                        <h3 class="text-sm sm:text-base font-black text-white leading-snug">
-                            تدريس تفاعلي على السبورات الذكية للغة الإيطالية واللغات المعتمدة
-                        </h3>
+                        <h3 class="text-xl font-black text-slate-900">رسالتنا</h3>
+                        <p class="mt-3 text-sm leading-relaxed text-slate-600 font-medium">
+                            تقديم خدمات تعليمية وتدريبية متكاملة تجمع بين المعرفة والتطبيق العملي، وتسهيل وصول الأفراد إلى الفرص الأكاديمية والمهنية من خلال التوجيه والمتابعة والحلول المتخصصة.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Values -->
+                <div class="card-poster-white p-6 sm:p-8 bg-white border border-slate-200 shadow-sm sm:col-span-2 lg:col-span-1 reveal-up flex flex-col justify-between">
+                    <div>
+                        <span class="grid size-12 place-items-center rounded-2xl bg-emerald-50 text-emerald-700 border border-emerald-200 text-xl font-black mb-5">
+                            ⭐
+                        </span>
+                        <h3 class="text-xl font-black text-slate-900">قيمنا</h3>
+                        <ul class="mt-3 space-y-2 text-xs sm:text-sm text-slate-700 font-medium">
+                            <li class="flex items-center gap-2">
+                                <span class="size-1.5 rounded-full bg-[#fe0002]"></span>
+                                <span>الجودة والاحترافية في تقديم الخدمات.</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="size-1.5 rounded-full bg-[#fe0002]"></span>
+                                <span>المصداقية والشفافية في التعامل.</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="size-1.5 rounded-full bg-[#fe0002]"></span>
+                                <span>الاهتمام بتجربة كل طالب ومتدرب.</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="size-1.5 rounded-full bg-[#fe0002]"></span>
+                                <span>التطوير المستمر ومواكبة سوق العمل.</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="size-1.5 rounded-full bg-[#fe0002]"></span>
+                                <span>الالتزام والمتابعة في كل خطوة.</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -307,25 +191,266 @@
     </section>
 
     <!-- ==========================================================
-         CALL TO ACTION: JOIN THE SUCCESS STORY
+         4. OUR SERVICES (6 CORE DOMAINS)
          ========================================================== -->
-    <section class="relative bg-gradient-to-r from-[#fe0002] to-red-700 py-14 text-white text-center overflow-hidden">
-        <div class="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-            <span class="inline-block rounded-full bg-white/20 border border-white/30 px-4 py-1 text-xs font-black text-amber-200 mb-3">
-                {{ data_get($siteSettings ?? [], 'about_cta_badge.'.$locale, 'خطوتك الأولى تبدأ الآن') }}
-            </span>
-            <h2 class="text-2xl sm:text-4xl font-black text-white leading-tight">
-                {{ data_get($siteSettings ?? [], 'about_cta_title.'.$locale, 'جاهز لبدء رحلتك نحو الدول الأوروبية والوظائف الدولية؟') }}
-            </h2>
-            <p class="mt-3 text-xs sm:text-sm text-red-100 font-medium max-w-xl mx-auto leading-relaxed">
-                {{ data_get($siteSettings ?? [], 'about_cta_subtitle.'.$locale, 'سواء كنت حاملاً لدبلوم فني أو ثانوية عامة أو خريجاً، مستشارك الأكاديمي في INTOK جاهز لدراسة ملفك وتحديد خطتك مجاناً.') }}
-            </p>
-            <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
-                <a href="{{ route('consultation.create', ['locale' => $locale]) }}" class="rounded-full bg-white px-7 py-3.5 text-xs sm:text-sm font-black text-[#fe0002] shadow-lg hover:bg-amber-100 transition transform hover:scale-105">
-                    احجز استشارتك الأكاديمية المجانية
+    <section class="relative bg-white py-16 sm:py-24 border-b border-slate-200/80">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14 reveal-up">
+                <span class="inline-block rounded-full bg-red-50 border border-red-200 px-4 py-1 text-xs font-black text-[#fe0002]">
+                    خدماتنا – بنساعدك في إيه؟
+                </span>
+                <h2 class="mt-3 text-3xl font-black text-[#c27803] sm:text-4xl">
+                    مجالات متعددة.. وهدف واحد: تطور مستقبلك
+                </h2>
+            </div>
+
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                @php
+                    $aboutAreas = [
+                        ['title' => 'التأهيل للدراسة في أوروبا', 'desc' => 'نساعدك في استكشاف الفرص التعليمية في أكثر من 10 دول أوروبية، واختيار الجامعة والتخصص المناسب، وتجهيز ملفات التقديم ومتابعة إجراءات القبول.'],
+                        ['title' => 'تعلم اللغات الأجنبية', 'desc' => 'برامج تعليمية في اللغات الأجنبية بمستويات مختلفة، تساعدك تطور مهارات التواصل وتفتح لنفسك فرص أكاديمية ومهنية جديدة.'],
+                        ['title' => 'الترجمة المعتمدة والتدقيق اللغوي', 'desc' => 'خدمات ترجمة وتدقيق للمستندات والوثائق الأكاديمية والرسمية والمهنية، وفق متطلبات الجهة المطلوب تقديم المستندات إليها.'],
+                        ['title' => 'التدريب والتأهيل المهني', 'desc' => 'برامج تدريبية عملية في مجالات مختلفة، منها الكول سنتر والإرشاد، بهدف تنمية المهارات والاستعداد لمتطلبات سوق العمل.'],
+                        ['title' => 'الخدمات الأكاديمية والدولية', 'desc' => 'مساعدة في إجراءات التقديم للجامعات، وحجز الاختبارات الدولية، ومواعيد السفارات، والتقديم للدراسات العليا والمنح وفق شروط كل جهة.'],
+                        ['title' => 'التأهيل للاختبارات الدولية', 'desc' => 'برامج تحضيرية تساعد الطلاب على الاستعداد للاختبارات الدولية والأكاديمية، من خلال التدريب والتوجيه حسب طبيعة كل اختبار.']
+                    ];
+                @endphp
+                @foreach($aboutAreas as $idx => $area)
+                    <div class="card-poster-white p-6 bg-slate-50 border border-slate-200 rounded-2xl shadow-xs reveal-up">
+                        <span class="text-xs font-mono font-black text-[#fe0002]">0{{ $idx + 1 }}</span>
+                        <h3 class="mt-2 text-base font-black text-slate-900">{{ $area['title'] }}</h3>
+                        <p class="mt-2 text-xs sm:text-sm leading-relaxed text-slate-600 font-medium">{{ $area['desc'] }}</p>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         5. WHY CHOOSE INTOK ACADEMY?
+         ========================================================== -->
+    <section class="relative bg-intok-section py-16 sm:py-24 border-b border-slate-200/80">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14 reveal-up">
+                <span class="inline-block rounded-full bg-red-50 border border-red-200 px-4 py-1 text-xs font-black text-[#fe0002]">
+                    لماذا تختار INTOK ACADEMY؟
+                </span>
+                <h2 class="mt-3 text-3xl font-black text-[#c27803] sm:text-4xl">
+                    مش بنقدم خدمة وخلاص.. بنهتم برحلتك من البداية
+                </h2>
+            </div>
+
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                @php
+                    $whyPoints = [
+                        ['title' => 'تنوع الخدمات', 'desc' => 'مجموعة من الحلول التعليمية والتدريبية والأكاديمية في مكان واحد.'],
+                        ['title' => 'التوجيه المناسب', 'desc' => 'بنساعدك تفهم اختياراتك وتحدد الخطوة الأنسب لهدفك.'],
+                        ['title' => 'متابعة مستمرة', 'desc' => 'بنهتم بمتابعة خطواتك والإجابة عن استفساراتك.'],
+                        ['title' => 'التطبيق العملي', 'desc' => 'بنركز على المهارات والخبرات اللي تقدر تستفيد منها.'],
+                        ['title' => 'فريق متخصص', 'desc' => 'فريق يعمل في مجالات التعليم والتدريب والخدمات الأكاديمية.'],
+                        ['title' => 'وضوح الإجراءات', 'desc' => 'بنوضح المتطلبات والخطوات والتكاليف قبل بدء الخدمة.']
+                    ];
+                @endphp
+                @foreach($whyPoints as $p)
+                    <div class="card-poster-white p-6 bg-white border border-slate-200 rounded-2xl shadow-sm reveal-up">
+                        <div class="size-2 rounded-full bg-[#fe0002] mb-3"></div>
+                        <h3 class="text-base font-black text-slate-900">{{ $p['title'] }}</h3>
+                        <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">{{ $p['desc'] }}</p>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         6 & 7. SUCCESS PARTNERS & COOPERATION PROTOCOLS
+         ========================================================== -->
+    <section class="relative bg-white py-16 sm:py-24 border-b border-slate-200/80">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14 reveal-up">
+                <span class="inline-block rounded-full bg-red-50 border border-red-200 px-4 py-1 text-xs font-black text-[#fe0002]">
+                    شركاء النجاح وبروتوكولات التعاون
+                </span>
+                <h2 class="mt-3 text-3xl font-black text-[#c27803] sm:text-4xl">
+                    مع بعض بنقدر نوصل لفرص أكبر
+                </h2>
+                <p class="mt-3 text-sm text-slate-600 font-medium">
+                    نفخر بعلاقات وبروتوكولات التعاون المؤسسية والاتفاقيات الرسمية مع كبرى الجامعات الأوروبية والجهات والشركات الرائدة داخل مصر وخارجها.
+                </p>
+            </div>
+
+            <div class="grid gap-8 lg:grid-cols-2">
+                <!-- Inside Egypt -->
+                <div class="card-poster-white p-6 sm:p-8 bg-slate-50 border border-slate-200 rounded-3xl shadow-sm">
+                    <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-200">
+                        <h3 class="text-base font-black text-slate-900 flex items-center gap-2">
+                            <span>🇪🇬</span>
+                            <span>شركاء النجاح داخل مصر</span>
+                        </h3>
+                        <span class="text-xs font-bold text-slate-500">مؤسسات • مدارس • شركات</span>
+                    </div>
+                    <div class="overflow-hidden rounded-2xl bg-white border border-slate-200 p-2">
+                        <img src="{{ asset('assets/images/partners/partners-egypt.jpg') }}" alt="شركاء النجاح داخل مصر" class="w-full h-auto object-contain rounded-xl hover:scale-105 transition duration-500">
+                    </div>
+                </div>
+
+                <!-- Outside Egypt -->
+                <div class="card-poster-white p-6 sm:p-8 bg-slate-50 border border-slate-200 rounded-3xl shadow-sm">
+                    <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-200">
+                        <h3 class="text-base font-black text-slate-900 flex items-center gap-2">
+                            <span>🇪🇺</span>
+                            <span>شركاء النجاح خارج مصر (الجامعات الأوروبية)</span>
+                        </h3>
+                        <span class="text-xs font-bold text-slate-500">جامعات وبوليتكنيك</span>
+                    </div>
+                    <div class="overflow-hidden rounded-2xl bg-white border border-slate-200 p-2">
+                        <img src="{{ asset('assets/images/partners/partners-international.jpg') }}" alt="شركاء النجاح خارج مصر" class="w-full h-auto object-contain rounded-xl hover:scale-105 transition duration-500">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         8. TEAM MEMBERS
+         ========================================================== -->
+    @if(isset($teamMembers) && $teamMembers->isNotEmpty())
+        <section class="relative bg-intok-section py-16 sm:py-24 border-b border-slate-200/80">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-14 reveal-up">
+                    <span class="inline-block rounded-full bg-red-50 border border-red-200 px-4 py-1 text-xs font-black text-[#fe0002]">
+                        فريق INTOK
+                    </span>
+                    <h2 class="mt-3 text-3xl font-black text-[#c27803] sm:text-4xl">
+                        وراء كل تجربة ناجحة.. فريق بيشتغل بشغف
+                    </h2>
+                    <p class="mt-3 text-sm text-slate-600 font-medium">
+                        في INTOK بنؤمن إن جودة الخدمة بتبدأ من جودة الفريق اللي بيقدمها.
+                    </p>
+                </div>
+
+                <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    @foreach($teamMembers as $member)
+                        @php
+                            $mName = is_array($member->name) ? data_get($member->name, $locale, data_get($member->name, 'ar', '')) : $member->name;
+                            $mRole = is_array($member->role) ? data_get($member->role, $locale, data_get($member->role, 'ar', '')) : $member->role;
+                            $mBio = is_array($member->bio) ? data_get($member->bio, $locale, data_get($member->bio, 'ar', '')) : $member->bio;
+                        @endphp
+                        <div class="card-poster-white p-6 bg-white border border-slate-200 rounded-2xl shadow-sm text-center">
+                            <div class="size-24 mx-auto rounded-full overflow-hidden bg-slate-100 border-2 border-red-200 mb-4">
+                                <img src="{{ $member->avatar_url ?? asset('assets/images/intok-logo.jpg') }}" alt="{{ $mName }}" class="size-full object-cover">
+                            </div>
+                            <h3 class="text-base font-black text-slate-900">{{ $mName }}</h3>
+                            <p class="text-xs font-bold text-[#fe0002] mt-1">{{ $mRole }}</p>
+                            @if($mBio)
+                                <p class="mt-3 text-xs leading-relaxed text-slate-600">{{ $mBio }}</p>
+                            @endif
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+    @endif
+
+    <!-- ==========================================================
+         9. LIVE INSIDE INTOK
+         ========================================================== -->
+    <section class="relative bg-white py-16 sm:py-24 border-b border-slate-200/80">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14 reveal-up">
+                <span class="inline-block rounded-full bg-red-50 border border-red-200 px-4 py-1 text-xs font-black text-[#fe0002]">
+                    من داخل INTOK
+                </span>
+                <h2 class="mt-3 text-3xl font-black text-[#c27803] sm:text-4xl">
+                    مش مجرد كلام.. شوف تجربتنا على أرض الواقع
+                </h2>
+                <p class="mt-3 text-sm text-slate-600 font-medium">
+                    اكتشف جانبًا من أنشطتنا التعليمية والتدريبية، وشاهد لقطات من المحاضرات والتدريبات والفعاليات والتجارب الحقيقية داخل الأكاديمية.
+                </p>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-3">
+                <div class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 h-64 group shadow-sm">
+                    <img src="{{ asset('assets/images/academy/italian-classroom-lecture.jpg') }}" alt="محاضرات تفاعلية" class="size-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 h-64 group shadow-sm">
+                    <img src="{{ asset('assets/images/academy/live-speaker-training.jpg') }}" alt="تدريب حي" class="size-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 h-64 group shadow-sm">
+                    <img src="{{ asset('assets/images/schools/galileo-galilei.jpg') }}" alt="صروح تعليمية أوروبية" class="size-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         10. CLIENT EXPERIENCES & STORIES
+         ========================================================== -->
+    <section class="relative bg-intok-section py-16 sm:py-24 border-b border-slate-200/80">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14 reveal-up">
+                <span class="inline-block rounded-full bg-amber-50 border border-amber-200 px-4 py-1 text-xs font-black text-amber-800">
+                    تجارب وقصص عملائنا
+                </span>
+                <h2 class="mt-3 text-3xl font-black text-[#c27803] sm:text-4xl">
+                    كل رحلة ليها حكاية.. وإحنا بنفتخر نكون جزء منها
+                </h2>
+                <p class="mt-3 text-sm text-slate-600 font-medium">
+                    بنعتز بثقة الطلاب والمتدربين والعملاء اللي اختاروا INTOK في رحلتهم التعليمية والمهنية.
+                </p>
+            </div>
+
+            <div class="grid gap-6 sm:grid-cols-3">
+                <div class="card-poster-white p-6 bg-white border border-slate-200 rounded-2xl shadow-sm">
+                    <p class="text-xs sm:text-sm leading-relaxed text-slate-700 italic">"أكاديمية INTOK ساعدتني في تجهيز أوراقي والتقديم بجامعة بيزا، والمتابعة كانت دقيقة جداً في كل مرحلة."</p>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-800">
+                        <span>أحمد م.</span>
+                        <span class="text-[#fe0002]">دراسة بإيطاليا</span>
+                    </div>
+                </div>
+                <div class="card-poster-white p-6 bg-white border border-slate-200 rounded-2xl shadow-sm">
+                    <p class="text-xs sm:text-sm leading-relaxed text-slate-700 italic">"تدريب الكول سنتر والمحادثة على الشاشات الذكية غير مستواي تماماً وخلاني أعدي الإنترفيو في أول أسبوع بعد التدريب."</p>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-800">
+                        <span>سارة ع.</span>
+                        <span class="text-emerald-600">كول سنتر دولي</span>
+                    </div>
+                </div>
+                <div class="card-poster-white p-6 bg-white border border-slate-200 rounded-2xl shadow-sm">
+                    <p class="text-xs sm:text-sm leading-relaxed text-slate-700 italic">"الترجمة المعتمدة اتسلمت في نفس اليوم وموثقة بدون أي ملاحظات من السفارة، احترافية وسرعة ممتازة."</p>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-800">
+                        <span>محمود خ.</span>
+                        <span class="text-amber-700">ترجمة معتمدة</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         11. FINAL CTA SECTION
+         ========================================================== -->
+    <section class="relative mx-auto max-w-7xl px-4 py-16 sm:py-20 sm:px-6 lg:px-8">
+        <div class="relative overflow-hidden rounded-3xl border-2 border-red-400/40 bg-gradient-to-br from-[#fe0002] via-[#e60002] to-[#b30001] p-8 sm:p-14 shadow-2xl shadow-red-600/30 text-white text-center md:text-start flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="max-w-2xl">
+                <span class="inline-block rounded-full bg-white/20 border border-white/40 px-4 py-1 text-xs font-black text-white backdrop-blur-md mb-3">
+                    #انتوك_اسلوب_حياه
+                </span>
+                <h2 class="text-2xl sm:text-4xl font-black text-white leading-tight">
+                    مستقبلك بيبدأ بخطوة.. وإحنا هنا نساعدك تاخدها
+                </h2>
+                <p class="mt-3 text-sm text-red-50 font-medium leading-relaxed">
+                    سواء هدفك تتعلم لغة جديدة، تطور مهاراتك، تبدأ تدريب مهني، تحصل على ترجمة معتمدة، أو تستكشف فرص الدراسة بالخارج؛ فريق INTOK جاهز يساعدك تعرف الطريق المناسب.
+                </p>
+                <p class="mt-2 text-xs font-mono font-bold text-amber-200">
+                    INTOK ACADEMY – Connecting You to the World
+                </p>
+            </div>
+            <div class="shrink-0 flex flex-col sm:flex-row gap-3">
+                <a href="{{ route('consultation.create', ['locale' => $locale]) }}" class="rounded-full bg-white px-8 py-4 text-center text-sm font-black text-[#fe0002] shadow-xl hover:bg-amber-50 hover:scale-105 transition transform">
+                    احجز استشارتك الآن
                 </a>
-                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', data_get($siteSettings ?? [], 'whatsapp_number', '201008238323')) }}?text={{ urlencode('مرحباً، أود استشارة لتحديد المسار المناسب لي في أكاديمية إنتوك') }}" target="_blank" class="rounded-full border-2 border-white/40 bg-white/10 px-6 py-3.5 text-xs sm:text-sm font-black text-white backdrop-blur-md hover:bg-white hover:text-slate-900 transition">
-                    تواصل مباشر واتساب
+                <a href="https://wa.me/201008238323" target="_blank" class="rounded-full border-2 border-white/70 bg-white/10 px-6 py-4 text-center text-sm font-black text-white backdrop-blur-md transition hover:bg-white hover:text-[#fe0002]">
+                    تواصل معنا عبر واتساب
                 </a>
             </div>
         </div>

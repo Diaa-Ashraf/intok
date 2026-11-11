@@ -15,57 +15,57 @@
 
     $heroScenes = [
         [
-            'tab' => data_get($siteSettings ?? [], 'hero_scene_1_tab.'.$locale, match($locale) { 'it' => 'Università Europee', 'en' => 'European Unis', default => 'الجامعات الأوروبية' }),
+            'tab' => data_get($siteSettings ?? [], 'hero_scene_1_tab.'.$locale, match($locale) { 'it' => 'Orientamento agli Studi', 'en' => 'Study Qualification', default => 'التأهيل للدراسة' }),
             'image' => data_get($siteSettings ?? [], 'hero_scene_1_img') ? asset('storage/'.data_get($siteSettings, 'hero_scene_1_img')) : asset('assets/images/schools/san-giorgio.jpg'),
-            'badge' => data_get($siteSettings ?? [], 'hero_scene_1_badge.'.$locale, match($locale) { 'it' => 'Poli Accademici • Capitali Europee', 'en' => 'Top Academic Hubs • European Cities', default => 'وجهات الدراسة المرموقة • كبرى المدن الأوروبية' }),
-            'title' => data_get($siteSettings ?? [], 'hero_scene_1_title.'.$locale, match($locale) { 'it' => 'Università e Istituti Europei Accreditati', 'en' => 'Accredited European Public Universities', default => 'الجامعات والمدارس الأوروبية المعتمدة' }),
-            'desc' => data_get($siteSettings ?? [], 'hero_scene_1_desc.'.$locale, match($locale) { 'it' => 'Completa i tuoi studi nelle migliori istituzioni europee con borse di studio complete (fino a 8.000€ + alloggio gratuito) e visto per studio.', 'en' => 'Complete your higher education in top European institutions with comprehensive scholarships (up to 8,000€ + free housing) and official study visa.', default => 'استكمال دراستك في أعرق الصروح التعليمية الأوروبية مع المنح الشاملة (حتى 8,000 يورو + سكن مجاني) وتأشيرة دراسية رسمية.' }),
-            'stat' => data_get($siteSettings ?? [], 'hero_scene_1_stat.'.$locale, '8,000€ بدل سنوي + سكن مجاني'),
+            'badge' => data_get($siteSettings ?? [], 'hero_scene_1_badge.'.$locale, match($locale) { 'it' => '01 • Studi in Europa', 'en' => '01 • Study in Europe', default => '01 — خطوتك الأولى نحو الدراسة في أوروبا' }),
+            'title' => data_get($siteSettings ?? [], 'hero_scene_1_title.'.$locale, match($locale) { 'it' => 'Il Tuo Primo Passo Verso lo Studio in Europa', 'en' => 'Your First Step Toward Studying in Europe', default => 'خطوتك الأولى نحو الدراسة في أوروبا' }),
+            'desc' => data_get($siteSettings ?? [], 'hero_scene_1_desc.'.$locale, match($locale) { 'it' => 'Opportunità educative in oltre 10 paesi europei, con orientamento su università, corsi e preparazione della domanda.', 'en' => 'Educational opportunities across 10+ European countries, helping you select universities, majors, and prepare applications.', default => 'فرص تعليمية في أكثر من 10 دول أوروبية، ومساعدتك في اختيار الجامعة والتخصص وتجهيز ملف التقديم ومتابعة إجراءاته.' }),
+            'stat' => data_get($siteSettings ?? [], 'hero_scene_1_stat.'.$locale, match($locale) { 'it' => '10+ Paesi Europei', 'en' => '10+ European Destinations', default => '10+ دول أوروبية مجهزة' }),
         ],
         [
-            'tab' => data_get($siteSettings ?? [], 'hero_scene_2_tab.'.$locale, match($locale) { 'it' => 'Studio in Europa', 'en' => 'Study in Europe', default => 'الدراسة في أوروبا' }),
-            'image' => data_get($siteSettings ?? [], 'hero_scene_2_img') ? asset('storage/'.data_get($siteSettings, 'hero_scene_2_img')) : asset('assets/images/schools/galileo-galilei.jpg'),
-            'badge' => data_get($siteSettings ?? [], 'hero_scene_2_badge.'.$locale, match($locale) { 'it' => 'Accreditamento • Studio e Lavoro', 'en' => 'Accreditation • Study & Work', default => 'الاعتماد والأكاديمية • الدراسة في أوروبا' }),
-            'title' => data_get($siteSettings ?? [], 'hero_scene_2_title.'.$locale, match($locale) { 'it' => 'Laurea Triennale e Magistrale nei Paesi Europei', 'en' => 'Bachelor & Master Degrees in European Countries', default => 'دراسة البكالوريوس والماجستير بالدول الأوروبية' }),
-            'desc' => data_get($siteSettings ?? [], 'hero_scene_2_desc.'.$locale, match($locale) { 'it' => 'Accesso alle università prestigiose nei paesi europei con permesso di soggiorno per motivi di studio e visto Schengen ufficiale.', 'en' => 'Enroll in prestigious universities across European nations with legal work permits in Euros and official Schengen visas.', default => 'الالتحاق بأعرق الجامعات والمدارس بالدول الأوروبية مع تصريح عمل قانوني باليورو وتأشيرة شنغن رسمية.' }),
-            'stat' => data_get($siteSettings ?? [], 'hero_scene_2_stat.'.$locale, '99.4% نسبة نجاح وقبول الملفات'),
+            'tab' => data_get($siteSettings ?? [], 'hero_scene_2_tab.'.$locale, match($locale) { 'it' => 'Lingue e Traduzioni', 'en' => 'Languages & Translation', default => 'اللغات والترجمة' }),
+            'image' => data_get($siteSettings ?? [], 'hero_scene_2_img') ? asset('storage/'.data_get($siteSettings, 'hero_scene_2_img')) : asset('assets/images/academy/italian-classroom-lecture.jpg'),
+            'badge' => data_get($siteSettings ?? [], 'hero_scene_2_badge.'.$locale, match($locale) { 'it' => '02 • Formazione Linguistica', 'en' => '02 • Language Training', default => '02 — لغتك تفتحلك أبواب جديدة' }),
+            'title' => data_get($siteSettings ?? [], 'hero_scene_2_title.'.$locale, match($locale) { 'it' => 'La Tua Lingua Apre Nuove Porte', 'en' => 'Your Language Opens New Doors', default => 'لغتك تفتحلك أبواب جديدة' }),
+            'desc' => data_get($siteSettings ?? [], 'hero_scene_2_desc.'.$locale, match($locale) { 'it' => 'Apprendi le lingue straniere con percorsi dedicati e servizi di traduzione giurata per i tuoi traguardi accademici.', 'en' => 'Learn foreign languages with specialized programs and certified translation supporting your academic and professional path.', default => 'تعلم اللغات الأجنبية مع برامج تدريبية متخصصة، وخدمات ترجمة معتمدة تساعدك في خطواتك الأكاديمية والمهنية.' }),
+            'stat' => data_get($siteSettings ?? [], 'hero_scene_2_stat.'.$locale, match($locale) { 'it' => 'Traduzione e Certificazioni', 'en' => 'Translation & Certifications', default => 'ترجمة معتمدة وشهادات دولية' }),
         ],
         [
-            'tab' => data_get($siteSettings ?? [], 'hero_scene_3_tab.'.$locale, 'قاعات إنتوك'),
-            'image' => data_get($siteSettings ?? [], 'hero_scene_3_img') ? asset('storage/'.data_get($siteSettings, 'hero_scene_3_img')) : asset('assets/images/academy/italian-classroom-lecture.jpg'),
-            'badge' => data_get($siteSettings ?? [], 'hero_scene_3_badge.'.$locale, 'قاعات إنتوك الذكية • تدريب حي'),
-            'title' => data_get($siteSettings ?? [], 'hero_scene_3_title.'.$locale, 'تعليم الإيطالية واللغات المعتمدة'),
-            'desc' => data_get($siteSettings ?? [], 'hero_scene_3_desc.'.$locale, 'محاضرات تفاعلية على السبورات الذكية لتأسيس النطق وتأهيلك لاجتياز اختبارات CILS و CELI ومقابلات السفارة.'),
-            'stat' => data_get($siteSettings ?? [], 'hero_scene_3_stat.'.$locale, 'CILS / CELI معتمد رسمياً'),
+            'tab' => data_get($siteSettings ?? [], 'hero_scene_3_tab.'.$locale, match($locale) { 'it' => 'Formazione Professionale', 'en' => 'Career Training', default => 'التدريب المهني' }),
+            'image' => data_get($siteSettings ?? [], 'hero_scene_3_img') ? asset('storage/'.data_get($siteSettings, 'hero_scene_3_img')) : asset('assets/images/academy/live-speaker-training.jpg'),
+            'badge' => data_get($siteSettings ?? [], 'hero_scene_3_badge.'.$locale, match($locale) { 'it' => '03 • Competenze di Lavoro', 'en' => '03 • Work Readiness', default => '03 — طوّر مهاراتك واستعد لسوق العمل' }),
+            'title' => data_get($siteSettings ?? [], 'hero_scene_3_title.'.$locale, match($locale) { 'it' => 'Sviluppa Competenze per il Mercato del Lavoro', 'en' => 'Upgrade Skills & Prepare for the Market', default => 'طوّر مهاراتك واستعد لسوق العمل' }),
+            'desc' => data_get($siteSettings ?? [], 'hero_scene_3_desc.'.$locale, match($locale) { 'it' => 'Programmi pratici di call center, traduzione e percorsi che ti consentono di acquisire abilità richieste.', 'en' => 'Practical training programs in Call Center, translation, and in-demand skills matching high-end career opportunities.', default => 'برامج تدريب عملية في الكول سنتر والترجمة، ومجالات مختلفة تساعدك تكتسب مهارات مطلوبة لسوق العمل الدولي.' }),
+            'stat' => data_get($siteSettings ?? [], 'hero_scene_3_stat.'.$locale, match($locale) { 'it' => 'Preparazione Professionale Pratica', 'en' => 'Hands-on Job Simulation', default => 'محاكاة عملية وسوق عمل مباشر' }),
         ],
         [
-            'tab' => data_get($siteSettings ?? [], 'hero_scene_4_tab.'.$locale, 'الكول سنتر'),
-            'image' => data_get($siteSettings ?? [], 'hero_scene_4_img') ? asset('storage/'.data_get($siteSettings, 'hero_scene_4_img')) : asset('assets/images/academy/live-speaker-training.jpg'),
-            'badge' => data_get($siteSettings ?? [], 'hero_scene_4_badge.'.$locale, 'كول سنتر وسوق العمل الدولي'),
-            'title' => data_get($siteSettings ?? [], 'hero_scene_4_title.'.$locale, 'محاكاة المقابلات والطلاقة باللغات'),
-            'desc' => data_get($siteSettings ?? [], 'hero_scene_4_desc.'.$locale, 'تدريب تطبيقي مكثف يجعلك واثقاً من مهاراتك الصوتية والتواصلية لاقتناص وظائف كبرى الشركات العالمية فوراً.'),
-            'stat' => data_get($siteSettings ?? [], 'hero_scene_4_stat.'.$locale, 'رواتب 15k - 30k+ ج.م'),
+            'tab' => data_get($siteSettings ?? [], 'hero_scene_4_tab.'.$locale, match($locale) { 'it' => 'Servizi Accademici', 'en' => 'Academic Services', default => 'الخدمات الأكاديمية' }),
+            'image' => data_get($siteSettings ?? [], 'hero_scene_4_img') ? asset('storage/'.data_get($siteSettings, 'hero_scene_4_img')) : asset('assets/images/schools/galileo-galilei.jpg'),
+            'badge' => data_get($siteSettings ?? [], 'hero_scene_4_badge.'.$locale, match($locale) { 'it' => '04 • Ammissioni e Visti', 'en' => '04 • Admissions & Visas', default => '04 — خلّي طموحك يوصل أبعد' }),
+            'title' => data_get($siteSettings ?? [], 'hero_scene_4_title.'.$locale, match($locale) { 'it' => 'Porta la Tua Ambizione Più Lontano', 'en' => 'Take Your Ambitions Further', default => 'خلّي طموحك يوصل أبعد' }),
+            'desc' => data_get($siteSettings ?? [], 'hero_scene_4_desc.'.$locale, match($locale) { 'it' => 'Ti assistiamo nelle procedure di ammissione universitaria, prenotazione test internazionali e appuntamenti consolari.', 'en' => 'We assist with university application procedures, international test bookings, embassy appointments, and scholarship files.', default => 'بنساعدك في إجراءات التقديم للجامعات، وحجز الاختبارات الدولية، ومواعيد السفارات، والتقديم للدراسات العليا والمنح.' }),
+            'stat' => data_get($siteSettings ?? [], 'hero_scene_4_stat.'.$locale, match($locale) { 'it' => '100% Supporto Documentale', 'en' => '100% Application Support', default => '100% تجهيز ومتابعة دقيقة' }),
         ],
     ];
 
     $liveSlides = [
         [
-            'image' => data_get($siteSettings ?? [], 'live_slide_1_img') ? asset('storage/'.data_get($siteSettings, 'live_slide_1_img')) : asset('assets/images/academy/live-speaker-training.jpg'),
-            'badge' => data_get($siteSettings ?? [], 'live_slide_1_badge.'.$locale, 'تدريب الكول سنتر والمحادثة المباشرة'),
-            'title' => data_get($siteSettings ?? [], 'live_slide_1_title.'.$locale, 'How to Be a Confident Speaker - محاكاة المقابلات والطلاقة'),
-            'desc' => data_get($siteSettings ?? [], 'live_slide_1_desc.'.$locale, 'تدريب تفاعلي على الشاشات الذكية لتطوير مهارات التواصل وخدمة العملاء واجتياز المقابلات الدولية بثقة.'),
+            'image' => data_get($siteSettings ?? [], 'live_slide_1_img') ? asset('storage/'.data_get($siteSettings, 'live_slide_1_img')) : asset('assets/images/academy/italian-classroom-lecture.jpg'),
+            'badge' => data_get($siteSettings ?? [], 'live_slide_1_badge.'.$locale, match($locale) { 'it' => 'Lingue Straniere', 'en' => 'Foreign Languages', default => 'اللغات الأجنبية والترجمة' }),
+            'title' => data_get($siteSettings ?? [], 'live_slide_1_title.'.$locale, match($locale) { 'it' => 'Impara una lingua che apre nuove opportunità', 'en' => 'Learn a language that opens new doors', default => 'اتعلم لغة تفتحلك فرص جديدة' }),
+            'desc' => data_get($siteSettings ?? [], 'live_slide_1_desc.'.$locale, match($locale) { 'it' => 'Esercitazioni pratiche per sviluppare conversazione e comunicazione in diverse lingue straniere.', 'en' => 'Hands-on practice to develop spoken communication and fluency across multiple languages.', default => 'تدريبات عملية لتطوير مهارات التحدث والتواصل بمختلف اللغات للاستخدام الأكاديمي والمهني.' }),
         ],
         [
-            'image' => data_get($siteSettings ?? [], 'live_slide_2_img') ? asset('storage/'.data_get($siteSettings, 'live_slide_2_img')) : asset('assets/images/academy/italian-classroom-lecture.jpg'),
-            'badge' => data_get($siteSettings ?? [], 'live_slide_2_badge.'.$locale, 'محاضرات اللغة الإيطالية والقبول الجامعي'),
-            'title' => data_get($siteSettings ?? [], 'live_slide_2_title.'.$locale, 'شرح تفاعلي لقواعد ومحادثة اللغة الإيطالية (Grammatica Italiana)'),
-            'desc' => data_get($siteSettings ?? [], 'live_slide_2_desc.'.$locale, 'تأسيس المتدربين من الصفر وحتى الطلاقة والتأهيل لاختبارات السفارة والالتحاق بالجامعات الإيطالية مع نخبة من الأساتذة.'),
+            'image' => data_get($siteSettings ?? [], 'live_slide_2_img') ? asset('storage/'.data_get($siteSettings, 'live_slide_2_img')) : asset('assets/images/academy/live-speaker-training.jpg'),
+            'badge' => data_get($siteSettings ?? [], 'live_slide_2_badge.'.$locale, match($locale) { 'it' => 'Futuro Professionale', 'en' => 'Career Preparation', default => 'التدريب وسوق العمل' }),
+            'title' => data_get($siteSettings ?? [], 'live_slide_2_title.'.$locale, match($locale) { 'it' => 'Qualificati per il tuo futuro professionale', 'en' => 'Get qualified for your professional future', default => 'اتأهل لمستقبلك المهني' }),
+            'desc' => data_get($siteSettings ?? [], 'live_slide_2_desc.'.$locale, match($locale) { 'it' => 'Formazione pratica in call center, traduzione e abilità richieste dal mercato del lavoro.', 'en' => 'Practical training in Call Center, translation, and high-demand skills for the modern job market.', default => 'تدريب عملي في الكول سنتر والترجمة وتطوير المهارات المطلوبة لسوق العمل والمقابلات الدولية.' }),
         ],
         [
             'image' => data_get($siteSettings ?? [], 'live_slide_3_img') ? asset('storage/'.data_get($siteSettings, 'live_slide_3_img')) : asset('assets/images/schools/galileo-galilei.jpg'),
-            'badge' => data_get($siteSettings ?? [], 'live_slide_3_badge.'.$locale, 'بوابتك نحو الدول الأوروبية'),
-            'title' => data_get($siteSettings ?? [], 'live_slide_3_title.'.$locale, 'من قاعات INTOK إلى أعرق الصروح التعليمية في أوروبا'),
-            'desc' => data_get($siteSettings ?? [], 'live_slide_3_desc.'.$locale, 'رحلة متكاملة تؤهلك للحصول على المنح الدراسية الشاملة (حتى 8,000 يورو سنوياً + سكن مجاني) والإقامة القانونية والعمل باليورو.'),
+            'badge' => data_get($siteSettings ?? [], 'live_slide_3_badge.'.$locale, match($locale) { 'it' => 'Passo Accademico', 'en' => 'Academic Step', default => 'الدراسة في أوروبا' }),
+            'title' => data_get($siteSettings ?? [], 'live_slide_3_title.'.$locale, match($locale) { 'it' => 'Prepara il tuo percorso accademico con fiducia', 'en' => 'Prepare your academic journey with confidence', default => 'جهّز خطوتك الأكاديمية بثقة' }),
+            'desc' => data_get($siteSettings ?? [], 'live_slide_3_desc.'.$locale, match($locale) { 'it' => 'Orientamento per studiare in Europa, preparazione dossier di candidatura e test internazionali.', 'en' => 'Qualification for studying in Europe, application preparation, and international test coaching.', default => 'تأهيل للدراسة في أكثر من 10 دول أوروبية، وتجهيز ملفات التقديم والتدريب على الاختبارات الدولية.' }),
         ],
     ];
 
@@ -112,27 +112,47 @@
                             <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75"></span>
                             <span class="relative inline-flex size-2.5 rounded-full bg-red-600"></span>
                         </span>
-                        <span>{{ data_get($siteSettings ?? [], 'hero_badge.'.$locale, 'مستقبلك يبدأ هنا: مسارك المعتمد نحو الدراسة والعمل في أوروبا') }}</span>
+                        <span>{{ data_get($siteSettings ?? [], 'hero_badge.'.$locale, match($locale) {
+                            'it' => 'Il tuo partner fidato per il successo • INTOK Academy',
+                            'en' => 'Your Trusted Partner for Success • INTOK Academy',
+                            default => 'شريكك الموثوق نحو النجاح • بوابتك للتعلم والتطور وبناء مستقبلك',
+                        }) }}</span>
                     </div>
 
                     <!-- Main Punchy Headline -->
                     <h1 class="mt-6 text-3xl font-black leading-[1.2] tracking-tight sm:text-5xl lg:text-6xl text-[#c27803]">
-                        {!! nl2br(e(data_get($siteSettings ?? [], 'hero_title.'.$locale, "مستقبلك أكبر من حدود بلدك! \nالدراسة في الدول الأوروبية واحتراف اللغات"))) !!}
+                        {!! nl2br(e(data_get($siteSettings ?? [], 'hero_title.'.$locale, match($locale) {
+                            'it' => "Il Tuo Partner Fidato per il Successo\nINTOK: La Tua Porta per Apprendere, Crescere e Costruire il Tuo Futuro",
+                            'en' => "Your Trusted Partner for Success\nINTOK: Your Gateway to Learning, Growth, and Future Building",
+                            default => "شريكك الموثوق نحو النجاح\nINTOK بوابتك للتعلم والتطور وبناء مستقبلك",
+                        }))) !!}
                     </h1>
 
                     <!-- Empowering Subtitle -->
                     <p class="mt-6 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg font-medium">
-                        {{ data_get($siteSettings ?? [], 'hero_text.'.$locale, 'معاك ثانوية أو دبلوم فني (صنايع، تجارة، زراعة)؟ بوابتك مفتوحة لاستكمال دراستك في الدول الأوروبية، والحصول على المنح الدراسية الشاملة (حتى 8,000 يورو + سكن مجاني)، والعمل قانونياً باليورو، مع أقوى برامج تدريب الكول سنتر، والترجمة المعتمدة، ودورات اللغات.') }}
+                        {{ data_get($siteSettings ?? [], 'hero_text.'.$locale, match($locale) {
+                            'it' => "Dall'apprendimento delle lingue e traduzioni asseverate alla formazione professionale, servizi accademici e studi in oltre 10 paesi europei. Ti offriamo conoscenza, qualificazione e supporto per compiere il tuo prossimo passo con sicurezza.",
+                            'en' => "From language learning and certified translation to professional career training, academic services, and studying in 10+ European countries. We provide knowledge, qualification, and support to take your next step with confidence.",
+                            default => "من تعلم اللغات والترجمة المعتمدة، إلى التدريب المهني والخدمات الأكاديمية والدراسة في أكثر من 10 دول أوروبية. بنوفرلك المعرفة والتأهيل والدعم اللي يساعدك تخطّي خطوتك الجاية بثقة.",
+                        }) }}
                     </p>
 
                     <!-- Primary CTAs -->
                     <div class="mt-8 flex flex-wrap items-center gap-4">
                         <a href="{{ route('consultation.create', ['locale' => app()->getLocale()]) }}" class="btn-intok-primary flex items-center gap-3 px-8 py-4 text-sm font-black shadow-lg">
-                            <span>{{ data_get($siteSettings ?? [], 'hero_cta.'.$locale, 'احجز استشارتك الأكاديمية وابدأ الآن') }}</span>
+                            <span>{{ data_get($siteSettings ?? [], 'hero_cta.'.$locale, match($locale) {
+                                'it' => 'Inizia il tuo percorso con INTOK',
+                                'en' => 'Start Your Journey with INTOK',
+                                default => 'ابدأ رحلتك مع INTOK',
+                            }) }}</span>
                         </a>
 
                         <a href="#services-section" class="flex items-center gap-2.5 rounded-full border-2 border-slate-200 bg-white px-6 py-4 text-sm font-black text-slate-700 transition hover:border-slate-400 hover:text-red-600 shadow-xs">
-                            <span>{{ data_get($siteSettings ?? [], 'hero_secondary_cta.'.$locale, 'استكشف الـ 7 مجالات والخدمات') }}</span>
+                            <span>{{ data_get($siteSettings ?? [], 'hero_secondary_cta.'.$locale, match($locale) {
+                                'it' => 'Scopri i nostri servizi',
+                                'en' => 'Explore Our Services',
+                                default => 'استكشف خدماتنا',
+                            }) }}</span>
                             <span class="text-[#fe0002]">↓</span>
                         </a>
                     </div>
@@ -140,16 +160,19 @@
                     <!-- Trust Metrics -->
                     <div class="mt-10 grid grid-cols-3 gap-4 border-t border-slate-200 pt-6 max-w-lg text-start">
                         <div>
-                            <p class="text-2xl font-black text-[#c27803] sm:text-3xl">{{ data_get($siteSettings ?? [], 'hero_stat_1_val', '+1,500') }}</p>
-                            <p class="text-xs font-bold text-red-600 mt-1">{{ data_get($siteSettings ?? [], 'hero_stat_1_lbl.'.$locale, 'طالب تم قبولهم') }}</p>
+                            <p class="text-2xl font-black text-[#c27803] sm:text-3xl">{{ data_get($siteSettings ?? [], 'hero_stat_1_val', '10+') }}</p>
+                            <p class="text-xs font-black text-slate-900 mt-1">{{ data_get($siteSettings ?? [], 'hero_stat_1_lbl.'.$locale, match($locale) { 'it' => 'Paesi Europei', 'en' => 'European Countries', default => 'دول أوروبية' }) }}</p>
+                            <p class="text-[10px] font-bold text-red-600">{{ match($locale) { 'it' => 'Destinazioni varie', 'en' => 'Diverse destinations', default => 'وجهات دراسية متنوعة' } }}</p>
                         </div>
                         <div class="border-s border-slate-200 ps-4">
-                            <p class="text-2xl font-black text-[#c27803] sm:text-3xl">{{ data_get($siteSettings ?? [], 'hero_stat_2_val', '99.4%') }}</p>
-                            <p class="text-xs font-bold text-slate-600 mt-1">{{ data_get($siteSettings ?? [], 'hero_stat_2_lbl.'.$locale, 'نسبة نجاح الملفات') }}</p>
+                            <p class="text-2xl font-black text-[#c27803] sm:text-3xl">{{ data_get($siteSettings ?? [], 'hero_stat_2_val', '1,200+') }}</p>
+                            <p class="text-xs font-black text-slate-900 mt-1">{{ data_get($siteSettings ?? [], 'hero_stat_2_lbl.'.$locale, match($locale) { 'it' => 'Studenti e tirocinanti', 'en' => 'Students & Trainees', default => 'طالب ومتدرب' }) }}</p>
+                            <p class="text-[10px] font-bold text-emerald-600">{{ match($locale) { 'it' => 'Qualificati con successo', 'en' => 'Successfully qualified', default => 'تم تأهيلهم بنجاح' } }}</p>
                         </div>
                         <div class="border-s border-slate-200 ps-4">
-                            <p class="text-2xl font-black text-[#c27803] sm:text-3xl">{{ data_get($siteSettings ?? [], 'hero_stat_3_val', '8,000€') }}</p>
-                            <p class="text-xs font-bold text-red-600 mt-1">{{ data_get($siteSettings ?? [], 'hero_stat_3_lbl.'.$locale, 'منحة سنوية + سكن') }}</p>
+                            <p class="text-2xl font-black text-[#c27803] sm:text-3xl">{{ data_get($siteSettings ?? [], 'hero_stat_3_val', '100%') }}</p>
+                            <p class="text-xs font-black text-slate-900 mt-1">{{ data_get($siteSettings ?? [], 'hero_stat_3_lbl.'.$locale, match($locale) { 'it' => 'Dossier completati', 'en' => 'File Completion', default => 'استكمال الملفات' }) }}</p>
+                            <p class="text-[10px] font-bold text-red-600">{{ match($locale) { 'it' => 'Monitoraggio secondo requisiti', 'en' => 'According to requirements', default => 'متابعة وتجهيز الملفات' } }}</p>
                         </div>
                     </div>
 
@@ -242,25 +265,25 @@
 
                         <!-- FLOATING LUXURY 3D BADGES (Layered over the card) -->
                         
-                        <!-- Top-End Floating Badge: DSU Scholarship -->
-                        <div class="pointer-events-none absolute -top-5 -end-3 sm:-end-5 z-30 flex items-center gap-2.5 rounded-2xl border-2 border-emerald-400/80 bg-white/95 px-3 py-1.5 sm:px-3.5 sm:py-2 text-slate-900 shadow-xl backdrop-blur-md animate-float-drift-1">
+                        <!-- Top-Start Floating Badge: Academic & Professional Qualification -->
+                        <div class="pointer-events-none absolute -top-5 -start-3 sm:-start-5 z-30 flex items-center gap-2.5 rounded-2xl border-2 border-emerald-400/80 bg-white/95 px-3 py-1.5 sm:px-3.5 sm:py-2 text-slate-900 shadow-xl backdrop-blur-md animate-float-drift-1">
                             <span class="grid size-8 sm:size-9 shrink-0 place-items-center rounded-xl bg-emerald-100 text-emerald-700 text-xs font-black">
-                                {{ data_get($siteSettings ?? [], 'hero_float_1_tag', 'DSU') }}
+                                <svg class="size-4 sm:size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg>
                             </span>
                             <div class="text-start">
-                                <span class="text-[11px] font-black text-emerald-800 block leading-tight">{{ data_get($siteSettings ?? [], 'hero_float_1_title.'.$locale, 'المنح الدراسية الأوروبية') }}</span>
-                                <span class="text-[9px] sm:text-[10px] font-bold text-slate-600 block">{{ data_get($siteSettings ?? [], 'hero_float_1_sub.'.$locale, 'حتى 8,000€ + سكن معفى 100%') }}</span>
+                                <span class="text-[11px] font-black text-emerald-800 block leading-tight">{{ data_get($siteSettings ?? [], 'hero_float_1_title.'.$locale, match($locale) { 'it' => 'Qualificazione Accademica e Professionale', 'en' => 'Academic & Career Qualification', default => 'تأهيل أكاديمي ومهني' }) }}</span>
+                                <span class="text-[9px] sm:text-[10px] font-bold text-slate-600 block">{{ data_get($siteSettings ?? [], 'hero_float_1_sub.'.$locale, match($locale) { 'it' => 'Programmi e opportunità formative varie', 'en' => 'Diverse training & study opportunities', default => 'برامج تدريبية وفرص تعليمية متنوعة' }) }}</span>
                             </div>
                         </div>
 
-                        <!-- Bottom-Start Floating Badge: Official Italian Visa -->
-                        <div class="pointer-events-none absolute -bottom-5 -start-3 sm:-start-5 z-30 flex items-center gap-2.5 rounded-2xl border-2 border-red-300 bg-white/95 px-3 py-1.5 sm:px-3.5 sm:py-2 text-slate-900 shadow-xl backdrop-blur-md animate-float-drift-2">
+                        <!-- Bottom-End Floating Badge: File Preparation & Support -->
+                        <div class="pointer-events-none absolute -bottom-5 -end-3 sm:-end-5 z-30 flex items-center gap-2.5 rounded-2xl border-2 border-red-300 bg-white/95 px-3 py-1.5 sm:px-3.5 sm:py-2 text-slate-900 shadow-xl backdrop-blur-md animate-float-drift-2">
                             <span class="grid size-8 sm:size-9 shrink-0 place-items-center rounded-xl bg-red-100 text-[#fe0002] text-xs font-black">
-                                {{ data_get($siteSettings ?? [], 'hero_float_2_tag', 'VISA') }}
+                                <svg class="size-4 sm:size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                             </span>
                             <div class="text-start">
-                                <span class="text-[11px] font-black text-[#fe0002] block leading-tight">{{ data_get($siteSettings ?? [], 'hero_float_2_title.'.$locale, 'تأشيرة رسمية معتمدة') }}</span>
-                                <span class="text-[9px] sm:text-[10px] font-bold text-slate-600 block">{{ data_get($siteSettings ?? [], 'hero_float_2_sub.'.$locale, 'نسبة نجاح الملفات 99.4%') }}</span>
+                                <span class="text-[11px] font-black text-[#fe0002] block leading-tight">{{ data_get($siteSettings ?? [], 'hero_float_2_title.'.$locale, match($locale) { 'it' => 'Supporto e Preparazione Dossier', 'en' => 'File Support & Preparation', default => 'دعم وتجهيز الملفات' }) }}</span>
+                                <span class="text-[9px] sm:text-[10px] font-bold text-slate-600 block">{{ data_get($siteSettings ?? [], 'hero_float_2_sub.'.$locale, match($locale) { 'it' => 'Monitoraggio accurato per ogni ente', 'en' => 'Strict compliance with institution requirements', default => 'متابعة دقيقة وفق متطلبات كل جهة' }) }}</span>
                             </div>
                         </div>
 
@@ -282,13 +305,21 @@
                         <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#fe0002] opacity-75"></span>
                         <span class="relative inline-flex size-2 rounded-full bg-[#fe0002]"></span>
                     </span>
-                    <span>{{ data_get($siteSettings ?? [], 'services_badge.'.$locale, 'برامج وتدريب معتمد دولياً') }}</span>
+                    <span>{{ data_get($siteSettings ?? [], 'services_badge.'.$locale, match($locale) { 'it' => '10 Servizi Educativi e Professionali', 'en' => '10 Integrated Services', default => '10 خدمات تعليمية ومهنية متكاملة' }) }}</span>
                 </span>
                 <h2 class="mt-4 text-3xl font-black text-[#c27803] sm:text-5xl">
-                    {{ data_get($siteSettings ?? [], 'services_title.'.$locale, 'خدمات وتدريب INTOK ACADEMY') }}
+                    {{ data_get($siteSettings ?? [], 'services_title.'.$locale, match($locale) {
+                        'it' => 'INTOK - Servizi Educativi e Professionali Integrati',
+                        'en' => 'INTOK - Integrated Educational & Professional Services',
+                        default => 'INTOK خدمات تعليمية ومهنية متكاملة',
+                    }) }}
                 </h2>
-                <p class="mt-4 text-base text-slate-600 font-medium leading-relaxed">
-                    {{ data_get($siteSettings ?? [], 'services_subtitle.'.$locale, 'منظومة تدريب احترافية معتمدة تؤهلك لسوق العمل الدولي وكبرى الشركات العالمية، مع خدمات الترجمة الرسمية الموثقة للسفارات وبوابتك لاستكمال الدراسة في الدول الأوروبية.') }}
+                <p class="mt-4 text-base text-slate-600 font-medium leading-relaxed max-w-2xl mx-auto">
+                    {{ data_get($siteSettings ?? [], 'services_subtitle.'.$locale, match($locale) {
+                        'it' => "Offriamo soluzioni educative e professionali integrate che partono dall'apprendimento delle lingue e dalle traduzioni asseverate, passano per la formazione professionale fino agli studi all'estero e ai servizi accademici internazionali.",
+                        'en' => "We provide integrated educational and professional solutions starting from language learning and certified translation, through career training, to studying abroad and international academic services.",
+                        default => "بنقدم لك حلول تعليمية ومهنية متكاملة تبدأ من تعلم اللغات والترجمة المعتمدة، مرورًا بالتأهيل والتدريب المهني، وصولًا للدراسة بالخارج والخدمات الأكاديمية الدولية.",
+                    }) }}
                 </p>
             </div>
 
@@ -546,13 +577,25 @@
                         <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75"></span>
                         <span class="relative inline-flex size-2 rounded-full bg-[#fe0002]"></span>
                     </span>
-                    <span>{{ data_get($siteSettings ?? [], 'live_slider_badge.'.$locale, 'نبض التدريب والمحاضرات الحية في الأكاديمية') }}</span>
+                    <span>{{ data_get($siteSettings ?? [], 'live_slider_badge.'.$locale, match($locale) {
+                        'it' => 'Esperienze dal vivo • INTOK Academy',
+                        'en' => 'Live Experience • INTOK Academy',
+                        default => 'لقطات حقيقية وتجارب متدربينا',
+                    }) }}</span>
                 </span>
                 <h2 class="mt-4 text-3xl font-black text-[#c27803] sm:text-5xl">
-                    {{ data_get($siteSettings ?? [], 'live_slider_title.'.$locale, 'شاهد تجربة التعليم الواقعية في INTOK ACADEMY') }}
+                    {{ data_get($siteSettings ?? [], 'live_slider_title.'.$locale, match($locale) {
+                        'it' => 'Scopri come INTOK ti aiuta a costruire il tuo futuro',
+                        'en' => 'See How INTOK Helps You Build Your Future',
+                        default => 'شوف INTOK بتساعدك تطور مستقبلك إزاي',
+                    }) }}
                 </h2>
-                <p class="mt-3 text-base text-slate-600 font-medium">
-                    {{ data_get($siteSettings ?? [], 'live_slider_subtitle.'.$locale, 'لقطات حية من داخل قاعاتنا: تدريب الكول سنتر والمحادثة على الشاشات الذكية، ومحاضرات اللغة الإيطالية والترجمة المعتمدة.') }}
+                <p class="mt-3 text-base text-slate-600 font-medium max-w-2xl mx-auto">
+                    {{ data_get($siteSettings ?? [], 'live_slider_subtitle.'.$locale, match($locale) {
+                        'it' => 'Riprese reali dai nostri corsi, lezioni, servizi educativi ed esperienze concrete degli studenti in INTOK.',
+                        'en' => 'Real moments from our training, lectures, educational services, and student experiences inside INTOK.',
+                        default => 'لقطات حقيقية من تدريباتنا، محاضراتنا، خدماتنا التعليمية وتجارب المتدربين داخل INTOK.',
+                    }) }}
                 </p>
             </div>
 
@@ -707,476 +750,475 @@
                     return $defaultPoints;
                 };
 
-                                $bentoFallbacks = [
+                                                $bentoFallbacks = [
                     'ar' => [
-                        'dsu' => [
-                            'nav_title' => 'منحة DSU والسكن',
-                            'nav_sub' => '8,000€ + سكن مجاني',
-                            'badge' => 'منحة إقليمية حكومية',
+                        'services' => [
+                            'nav_title' => 'خدمات متكاملة',
+                            'nav_sub' => '10 خدمات تعليمية ومهنية',
+                            'badge' => 'منظومة شاملة تحت سقف واحد',
                             'badge_color' => 'bg-red-50 text-[#fe0002] border-red-200',
-                            'title' => 'أعلى نسبة قبول للمنح الحكومية والجامعية بالدول الأوروبية',
-                            'desc' => 'نضمن لك استيفاء شروط المنح الأوروبية والسكن الجامعي المعفى تماماً، مع فتح الباب لحملة الدبلومات الفنية (صنايع / تجارة / زراعة) والثانوية العامة والجامعيين.',
-                            'stat_val' => '8,000€',
-                            'stat_unit' => 'سنوياً',
-                            'stat_label' => 'بدل نقدي مباشر لحساب الطالب',
-                            'stat_sub' => 'إعفاء 100% من المصروفات + سكن مجاني',
+                            'title' => 'خدمات تعليمية ومهنية وأكاديمية متكاملة',
+                            'desc' => 'في INTOK بنوفر مجموعة متنوعة من الخدمات التعليمية والمهنية والأكاديمية، علشان تلاقي كل اللي تحتاجه في مكان واحد وبدعم متخصص.',
+                            'stat_val' => '10',
+                            'stat_unit' => 'خدمات',
+                            'stat_label' => 'تغطية شاملة لكل احتياجاتك',
+                            'stat_sub' => 'حلول للأفراد والطلاب والخريجين',
                             'points' => [
-                                'إعداد ومطابقة الملف المالي والأكاديمي وفق المعايير الرسمية للمنح الأوروبية',
-                                'إعفاء كامل 100% من الرسوم والمصروفات الدراسية الجامعية في أوروبا',
-                                'تأمين سكن جامعي مجاني ومجهز طوال فترة سنوات دراستك',
-                                'وجبات غذائية مدعومة بمطاعم الجامعات الأوروبية يومياً',
-                                'حق العمل القانوني للطلاب باليورو خلال فترة الدراسة'
+                                '10 خدمات تعليمية ومهنية متنوعة تحت سقف واحد',
+                                'مسارات تعليمية وتدريبية متعددة تناسب مختلف المستويات',
+                                'حلول مخصصة تناسب أهدافك الأكاديمية والمهنية',
+                                'خدمات متكاملة للأفراد والطلاب والخريجين والشركات',
+                                'تجربة متكاملة توفر عليك البحث والتشتت بين أكثر من جهة'
                             ],
                             'vs_traditional' => [
-                                'traditional' => 'إهمال المنحة وتوريط الطالب بمصروفات دراسية باهظة بدون سكن أو دعم نقدي',
-                                'intok' => 'ملف منحة متكامل بدقة 100% يضمن لك أعلى فرصة للحصول على الدعم المالي والسكن'
+                                'traditional' => 'التعامل مع جهات مختلفة لكل خدمة وتشتت الجهد والوقت بدون خطة موحدة',
+                                'intok' => 'خدمات تعليمية وتدريبية وأكاديمية متعددة في مكان واحد مع متابعة شاملة'
                             ],
-                            'cta_text' => 'افحص فرصة حصولك على المنحة الأوروبية',
-                            'wa_msg' => 'مرحباً، أود الاستفسار عن تفاصيل المنح الدراسية بالدول الأوروبية وشروط القبول والسكن المجاني'
+                            'cta_text' => 'استكشف الـ 10 خدمات كاملة',
+                            'wa_msg' => 'مرحباً، أود الاستفسار عن باقة خدمات INTOK المتكاملة والمسارات المتاحة'
                         ],
-                        'callcenter' => [
-                            'nav_title' => 'الكول سنتر والتوظيف',
-                            'nav_sub' => 'رواتب 15k - 30k+ ج.م',
-                            'badge' => 'تأهيل وظيفي فوري',
+                        'practical' => [
+                            'nav_title' => 'تدريب عملي',
+                            'nav_sub' => 'تطبيقات تحاكي الواقع',
+                            'badge' => 'محاكاة واقعية وتطبيق حي',
                             'badge_color' => 'bg-emerald-50 text-emerald-700 border-emerald-200',
-                            'title' => 'تأهيل وظيفي فوري لكبرى شركات الكول سنتر',
-                            'desc' => 'تدريب تطبيقي على الشاشات الذكية ومحاكاة لمقابلات شركات متعددة الجنسيات (Vodafone UK, Concentrix, Teleperformance) يؤهلك للعمل المباشر.',
-                            'stat_val' => '15k - 30k+',
-                            'stat_unit' => 'ج.م / شهرياً',
-                            'stat_label' => 'متوسط الراتب لحديثي التخرج والخريجين',
-                            'stat_sub' => 'فرص عمل فوري بكبرى الشركات الدولية',
-                            'points' => [
-                                'تدريب عملي ومحاكاة لمكالمات وأنظمة خدمة العملاء والدعم الفني الحقيقية',
-                                'محاكاة لأسئلة واختبارات الـ HR والـ Operations في الشركات متعددة الجنسيات',
-                                'إتقان اللهجة ونبرة الصوت المناسبة لمختلف أسواق العمل الدولية',
-                                'ورش مكثفة لاجتياز المقابلات الشخصية بنجاح من المقابلة الأولى',
-                                'ترشيح مباشر وتوصية للتوظيف لدى شبكة شركائنا بعد التخرج'
-                            ],
-                            'vs_traditional' => [
-                                'traditional' => 'كورسات نظرية عامة بدون شاشات تفاعلية أو محاكاة حقيقية وبلا أي فرص توظيف',
-                                'intok' => 'محاكاة واقعية 100% تؤهلك لاجتياز مقابلات الشركات العالمية فور التخرج'
-                            ],
-                            'cta_text' => 'سجل في تدريب الكول سنتر المباشر',
-                            'wa_msg' => 'مرحباً، أود الاستفسار عن كورس تدريب الكول سنتر وفرص التوظيف المتاحة'
-                        ],
-                        'trans' => [
-                            'nav_title' => 'الترجمة المعتمدة',
-                            'nav_sub' => 'معتمدة قنصلياً 100%',
-                            'badge' => 'توثيق رسمي للسفارات',
-                            'badge_color' => 'bg-amber-50 text-amber-800 border-amber-200',
-                            'title' => 'ترجمة معتمدة رسمياً وموثقة لجميع السفارات',
-                            'desc' => 'ترجمة رسمية معترف بها أمام السفارات والقنصليات الأوروبية، لشهادات التخرج، إعلانات القيمة، وعقود العمل دون مخاطرة بالرفض.',
-                            'stat_val' => '24 - 48h',
-                            'stat_unit' => 'تسليم مستعجل',
-                            'stat_label' => 'سرعة إنجاز وتوثيق الملفات الرسمية',
-                            'stat_sub' => 'دقة قانونية متناهية بدون أخطاء ترفض ملفك',
-                            'points' => [
-                                'ترجمة معتمدة ومقبولة لدى السفارات والقنصليات الأوروبية المعتمدة',
-                                'ترجمة إعلان القيمة (Dichiarazione di Valore) وبيانات الدرجات والمقررات',
-                                'إنهاء تصديقات الخارجية المصرية ونقابة المترجمين والغرفة التجارية',
-                                'تدقيق لغوي وقانوني مزدوج لضمان خلو الأوراق من أي ثغرات قنصلية',
-                                'توصيل فوري لجميع محافظات مصر مع إمكانية المعاينة الرقمية'
-                            ],
-                            'vs_traditional' => [
-                                'traditional' => 'ترجمات غير معتمدة أو مليئة بالأخطاء تؤدي لرفض التأشيرة وإضاعة المواعيد',
-                                'intok' => 'اعتماد قنصلي رسمي 100% يضمن قبول أوراقك في السفارة من المرة الأولى'
-                            ],
-                            'cta_text' => 'اطلب ترجمتك المعتمدة فوراً',
-                            'wa_msg' => 'مرحباً، أود الاستفسار عن خدمة الترجمة المعتمدة للأوراق الرسمية وتصديقات السفارة'
-                        ],
-                        'reception' => [
-                            'nav_title' => 'الاستقبال بالدول الأوروبية',
-                            'nav_sub' => 'استقبال وتسكين مباشر',
-                            'badge' => 'مرافقة ميدانية بأوروبا',
-                            'badge_color' => 'bg-red-50 text-[#fe0002] border-red-200',
-                            'title' => 'استقبال في المطار وتسليم السكن بالدول الأوروبية',
-                            'desc' => 'رحلتك معنا لا تنتهي عند باب المطار؛ بل يستقبلك فريقنا الميداني في وجهتك بالدول الأوروبية لتسليم السكن، واستخراج الإقامة والحساب البنكي.',
+                            'title' => 'تدريب عملي وتطبيق واقعي يؤهلك لسوق العمل',
+                            'desc' => 'مش بنكتفي بالمعلومات النظرية؛ بنهتم بالتطبيق العملي والتدريب على مواقف حقيقية تساعدك تفهم المجال وتطور مهاراتك بكفاءة.',
                             'stat_val' => '100%',
-                            'stat_unit' => 'أمان ورعاية',
-                            'stat_label' => 'مرافقة ميدانية من لحظة الهبوط بالمطار',
-                            'stat_sub' => 'فريق ميداني رسمي يتحدث العربية ولغات الدول الأوروبية',
+                            'stat_unit' => 'عملي',
+                            'stat_label' => 'محاكاة وممارسة تطبيقية مباشرة',
+                            'stat_sub' => 'مهارات قابلة للتطبيق الفوري',
                             'points' => [
-                                'استقبالك بالاسم في صالة الوصول بمطارات الوجهة الأوروبية',
-                                'توصيلك مباشرة إلى مقر إقامتك وتسليمك مفاتيح السكن الجامعي أو الخاص',
-                                'مرافقة لتقديم أوراق تصريح الإقامة الرسمية بالجهات المختصة',
-                                'استخراج الرقم الضريبي وشراء شريحة اتصال محلية فورية',
-                                'مساعدتك في فتح حساب بنكي محلي وتوجيهك لفرص العمل والأنشطة الطلابية'
+                                'تدريبات عملية مكثفة حسب طبيعة ومتطلبات كل برنامج',
+                                'محاكاة واقعية لبيئات ومواقف العمل الحقيقية والمقابلات',
+                                'تطبيقات وتمارين تفاعلية مستمرة على أحدث الأدوات',
+                                'تقييم مستمر لمستوى المتدرب وتحديد نقاط التطوير',
+                                'اكتساب مهارات حقيقية قابلة للتطبيق الفوري في سوق العمل'
                             ],
                             'vs_traditional' => [
-                                'traditional' => 'ينتهي دور المكتب بمجرد السفر ويُترك الطالب وحيداً وتائهاً في المطار والغربة',
-                                'intok' => 'فريقنا الميداني في الدول الأوروبية يستقبلك ويلازمك حتى تستقر في سكنك وتنهي أوراقك'
+                                'traditional' => 'تدريب نظري محدود ومحاضرات تلقين بدون ممارسة أو محاكاة للمقابلات',
+                                'intok' => 'تدريب عملي وتأهيل لسوق العمل ومحاكاة حقيقية للمقابلات وبيئة العمل'
                             ],
-                            'cta_text' => 'احجز باقة الاستقبال والمرافقة بأوروبا',
-                            'wa_msg' => 'مرحباً، أود الاستفسار عن خدمات الاستقبال في المطار والتسكين في أوروبا'
+                            'cta_text' => 'احجز مقعدك في التدريب العملي',
+                            'wa_msg' => 'مرحباً، أود الاستفسار عن برامج التدريب العملي والمحاكاة التفاعلية في INTOK'
                         ],
-                        'languages' => [
-                            'nav_title' => 'إتقان اللغات وCILS',
-                            'nav_sub' => 'من الصفر حتى الطلاقة التامة',
-                            'badge' => 'شهادات دولية معتمدة',
+                        'trainers' => [
+                            'nav_title' => 'مدربون متخصصون',
+                            'nav_sub' => 'خبرات في التعليم والتدريب',
+                            'badge' => 'إشراف نخبة معتمدة',
                             'badge_color' => 'bg-purple-50 text-purple-700 border-purple-200',
-                            'title' => 'إتقان اللغات من الصفر واجتياز CILS & IELTS',
-                            'desc' => 'دورات مكثفة في الإيطالية والإنجليزية والألمانية تركز 80% على المحادثة والطلاقة الواقعية، وتؤهلك لاجتياز امتحانات السفارات والجامعات.',
-                            'stat_val' => '80%',
-                            'stat_unit' => 'محادثة وتطبيق',
-                            'stat_label' => 'نسبة التركيز على التحدث والطلاقة العملية',
-                            'stat_sub' => 'كسر حاجز الخوف والحديث بطلاقة خلال أسابيع',
+                            'title' => 'مدربون ومتخصصون ذوو خبرة ميدانية واسعة',
+                            'desc' => 'نتيح برامج تدريبية وتعليمية بإشراف متخصصين في مجالاتهم، مع التركيز على نقل الخبرة وتقديم محتوى يناسب احتياجات المتدربين.',
+                            'stat_val' => 'نخبة',
+                            'stat_unit' => 'متخصصة',
+                            'stat_label' => 'خبرات عملية في التعليم والتدريب',
+                            'stat_sub' => 'توجيه فردي ومتابعة مستمرة',
                             'points' => [
-                                'مناهج أوروبية معتمدة ومطابقة للإطار المرجعي الأوروبي للغات (CEFR)',
-                                'تدريب مكثف على نماذج اختبارات اللغة الإيطالية الرسمية (CILS, CELI, PLIDA)',
-                                'دورات متخصصة لاجتياز اختبارات الآيلتس (IELTS) والتوفل (TOEFL) الدولية',
-                                'محاضرون خبراء معتمدون وناطقون أصليون يتابعون مستواك يومياً',
-                                'شهادات تخرج معتمدة توثق مستواك اللغوي وتؤهلك للجامعات وسوق العمل'
+                                'محتوى تدريبي متخصص تم إعداده وفق أحدث المعايير',
+                                'شرح مبسط وتطبيق مباشر وفق طبيعة كل مجال',
+                                'متابعة وتوجيه مستمر للمتدربين طوال فترة التدريب',
+                                'الاهتمام برفع كفاءة ومستوى كل متدرب بصورة فردية',
+                                'التعلم واكتساب الخبرة مباشرة من ممارسين محترفين'
                             ],
                             'vs_traditional' => [
-                                'traditional' => 'طرق تدريس قديمة تعتمد على الحفظ الصم دون إتاحة الفرصة لممارسة المحادثة',
-                                'intok' => 'منهج تفاعلي يركز 80% على المحادثة المباشرة ويكسر حاجز الرهبة تماماً'
+                                'traditional' => 'محاضرون غير متخصصين ميدانياً ومحتوى تقليدي غير مواكب لاحتياجات الواقع',
+                                'intok' => 'إشراف مدربين وخبراء متخصصين ينقلون لك خبرة العمل الحقيقية ويوجهونك باحتراف'
                             ],
-                            'cta_text' => 'ابدأ كورس اللغة وتحديد المستوى',
-                            'wa_msg' => 'مرحباً، أود الاستفسار عن دورات اللغات الاحترافية (إيطالي / إنجليزي / ألماني) وتأهيل الامتحانات الدولية'
+                            'cta_text' => 'تعرف على برامجنا ومدرّبينا',
+                            'wa_msg' => 'مرحباً، أود الاستفسار عن كادر المدربين والمناهج المعتمدة في الأكاديمية'
                         ],
-                        'mentorship' => [
-                            'nav_title' => 'الإرشاد والمتابعة 24/7',
-                            'nav_sub' => 'مستشار أكاديمي شخصي مخصص',
-                            'badge' => 'متابعة مستمرة ودقيقة',
+                        'support' => [
+                            'nav_title' => 'متابعة مستمرة',
+                            'nav_sub' => 'دعم ومتابعة خلال رحلتك',
+                            'badge' => 'دعم وإرشاد مستمر',
                             'badge_color' => 'bg-blue-50 text-blue-700 border-blue-200',
-                            'title' => 'إرشاد شخصي 1-on-1 ومتابعة مستمرة',
-                            'desc' => 'مستشار أكاديمي مخصص يدرس ملفك ويضع خطتك المناسبة، مع نظام تنبيهات لمواعيد المنح والتقديمات لضمان عدم فوات أي موعد رسمي.',
-                            'stat_val' => '24/7',
-                            'stat_unit' => 'دعم متواصل',
-                            'stat_label' => 'مستشارك الأكاديمي بجانبك طوال رحلتك',
-                            'stat_sub' => 'متابعة دقيقة لكل خطوة وموعد تقديم رسمي',
+                            'title' => 'متابعة ودعم مستمر في كل خطوة من رحلتك',
+                            'desc' => 'رحلتك مع INTOK مش مجرد تسجيل في خدمة؛ بنهتم بمتابعة خطواتك وتقديم الدعم والإرشاد وفق طبيعة الخدمة اللي اخترتها حتى تحقق هدفك.',
+                            'stat_val' => 'دائم',
+                            'stat_unit' => 'دعم',
+                            'stat_label' => 'فريق استشاري بجانبك طوال رحلتك',
+                            'stat_sub' => 'مش بتكون لوحدك في أي خطوة',
                             'points' => [
-                                'جلسة استشارة فردية 1-on-1 لتحليل مؤهلك (دبلوم فني، ثانوية، بكالوريوس) واختيار أفضل طريق',
-                                'خطة زمنية مدروسة تضمن استيفاء كافة الأوراق والمواعيد قبل إغلاق باب التقديم',
-                                'مراجعة وتدقيق شامل لملفك الدراسي لمنع أي خطأ قد يؤدي للرفض',
-                                'تذكير دوري بمواعيد المقابلات والمنح والتصديقات خطوة بخطوة',
-                                'دعم متواصل عبر الواتساب والمكالمات والاجتماعات الافتراضية طوال فترة التقديم'
+                                'متابعة دقيقة لمراحل التدريب أو تنفيذ الخدمة خطوة بخطوة',
+                                'الرد السريع والوافي على الاستفسارات والتساؤلات',
+                                'توضيح كافة المتطلبات والإجراءات مسبقاً بكل شفافية',
+                                'دعم مخصص ومستمر يتناسب مع طبيعة كل خدمة وكل عميل',
+                                'مرافقة حقيقية تمنحك الثقة وراحة البال طوال مسارك'
                             ],
                             'vs_traditional' => [
-                                'traditional' => 'إهمال استفسارات الطلاب والتأخر في الرد وضياع المواعيد الرسمية للمنح',
-                                'intok' => 'مستشار أكاديمي ملازم لك يومياً ومتابعة دقيقة تضمن عدم تفويت أي فرصة'
+                                'traditional' => 'إهمال استفسارات العملاء والتأخر في الرد وعدم وضوح الخطوات والمواعيد',
+                                'intok' => 'دعم ومتابعة مستمرة وإرشاد مباشر وتوضيح الخطوات والمتطلبات أولاً بأول'
                             ],
-                            'cta_text' => 'احجز استشارتك الأكاديمية الآن',
-                            'wa_msg' => 'مرحباً، أود حجز جلسة استشارة أكاديمية شخصية 1-on-1 لتحديد مساري الأنسب'
+                            'cta_text' => 'احجز جلستك الاستشارية الآن',
+                            'wa_msg' => 'مرحباً، أود الاستفسار عن نظام المتابعة والدعم المستمر لخدمات الأكاديمية'
+                        ],
+                        'customized' => [
+                            'nav_title' => 'حلول مخصصة',
+                            'nav_sub' => 'تناسب احتياجاتك وأهدافك',
+                            'badge' => 'توجيه فردي دقيق',
+                            'badge_color' => 'bg-amber-50 text-amber-800 border-amber-200',
+                            'title' => 'حلول مخصصة تناسب أهدافك وإمكانياتك',
+                            'desc' => 'كل شخص عنده هدف مختلف، علشان كده بنساعدك تختار الخدمة أو المسار الأنسب لاحتياجاتك وإمكانياتك وخطتك المستقبلية.',
+                            'stat_val' => '1-on-1',
+                            'stat_unit' => 'تخصيص',
+                            'stat_label' => 'مسار مصمم حسب مؤهلك وهدفك',
+                            'stat_sub' => 'تبدأ من المكان الأنسب لهدفك',
+                            'points' => [
+                                'فهم احتياجاتك ومؤهلاتك وطموحك قبل اختيار أي خدمة',
+                                'توجيهك بدقة للمسار التعليمي أو المهني الأكثر ملاءمة لك',
+                                'توضيح كافة التفاصيل والمتطلبات والتكاليف دون غموض',
+                                'اقتراح خطوات عملية وواضحة للبدء الصحيح في الوقت المناسب',
+                                'ضمان استثمار وقتك وجهدك في المسار الذي يحقق أفضل نتيجة'
+                            ],
+                            'vs_traditional' => [
+                                'traditional' => 'فرض مسارات وقوالب موحدة على الجميع دون تقييم احتياج أو مؤهل الطالب',
+                                'intok' => 'فهم احتياجاتك واقتراح حلول مخصصة تناسب قدراتك وهدفك الأكاديمي أو المهني'
+                            ],
+                            'cta_text' => 'احصل على خطتك المخصصة',
+                            'wa_msg' => 'مرحباً، أود استشارة لتحديد المسار الأنسب لمؤهلي وخلفيتي الدراسية'
+                        ],
+                        'future' => [
+                            'nav_title' => 'تأهيل للمستقبل',
+                            'nav_sub' => 'تطوير مهاراتك للمستقبل',
+                            'badge' => 'جاهزية أكاديمية ومهنية',
+                            'badge_color' => 'bg-emerald-50 text-emerald-800 border-emerald-200',
+                            'title' => 'تأهيل شامل لمستقبلك الأكاديمي والمهني',
+                            'desc' => 'بنساعدك تطور قدراتك وتستعد لخطوات جديدة في التعليم والعمل، من خلال برامج التأهيل والتدريب والخدمات الأكاديمية المتخصصة.',
+                            'stat_val' => 'مستقبلك',
+                            'stat_unit' => 'هدفنا',
+                            'stat_label' => 'تأهيل للدراسة والعمل الدولي',
+                            'stat_sub' => 'خطوات أوضح نحو طموحك',
+                            'points' => [
+                                'التأهيل للدراسة في أكثر من 10 دول أوروبية مرموقة',
+                                'الاستعداد لاجتياز اختبارات شهادات اللغة الدولية والقبول الجامعي',
+                                'تطوير المهارات اللغوية والتواصلية المطلوبة في سوق العمل',
+                                'المساعدة المتخصصة في ملفات وإجراءات القبول الأكاديمي',
+                                'رسم خطوات واضحة ومدروسة نحو مستقبلك بثقة واحتراف'
+                            ],
+                            'vs_traditional' => [
+                                'traditional' => 'صعوبة معرفة الإجراءات ومتطلبات التقديم ومحدودية الفرص التعليمية',
+                                'intok' => 'مساعدة في اختيار المسار وتجهيز الملفات ومتابعة إجراءات التقديم والقبول'
+                            ],
+                            'cta_text' => 'ابدأ خطوتك نحو المستقبل',
+                            'wa_msg' => 'مرحباً، أود بدء خطتي للتأهيل للدراسة في أوروبا وتطوير مهاراتي المستقبلية'
                         ]
                     ],
                     'it' => [
-                        'dsu' => [
-                            'nav_title' => 'Borse di Studio e Alloggio',
-                            'nav_sub' => '8.000€ + Alloggio gratuito',
-                            'badge' => 'Borse di studio europee',
+                        'services' => [
+                            'nav_title' => 'Servizi Integrati',
+                            'nav_sub' => '10 Servizi Accademici e Professionali',
+                            'badge' => 'Ecosistema unico',
                             'badge_color' => 'bg-red-50 text-[#fe0002] border-red-200',
-                            'title' => 'Massima percentuale di ammissione alle borse di studio nei Paesi Europei',
-                            'desc' => 'Valutazione e preparazione della documentazione per garantire l\'accesso alle borse di studio e all\'alloggio gratuito per diplomati e maturandi.',
-                            'stat_val' => '8.000€',
-                            'stat_unit' => '/ anno',
-                            'stat_label' => 'Contributo diretto allo studente',
-                            'stat_sub' => 'Esenzione 100% tasse + alloggio gratuito',
+                            'title' => 'Servizi educativi, professionali e accademici integrati',
+                            'desc' => 'In INTOK offriamo una gamma completa di servizi educativi, professionali e accademici, per trovare tutto ciò di cui hai bisogno in un unico posto con supporto esperto.',
+                            'stat_val' => '10',
+                            'stat_unit' => 'Servizi',
+                            'stat_label' => 'Copertura completa di ogni esigenza',
+                            'stat_sub' => 'Per studenti, laureati e professionisti',
                             'points' => [
-                                'Preparazione della documentazione secondo i criteri ufficiali delle borse europee',
-                                'Esenzione totale (100%) dalle tasse universitarie nei paesi europei',
-                                'Alloggio universitario gratuito e attrezzato per l\'intera durata degli studi',
-                                'Pasti giornalieri convenzionati presso le mense universitarie europee',
-                                'Diritto al lavoro legale fino a 20 ore settimanali retribuite in Euro'
+                                '10 servizi diversi sotto un unico tetto',
+                                'Percorsi formativi e accademici a più livelli',
+                                'Soluzioni adatte ai tuoi obiettivi futuri',
+                                'Servizi per studenti, diplomati e lavoratori',
+                                'Un\'esperienza integrata senza dispersione'
                             ],
                             'vs_traditional' => [
-                                'traditional' => 'Spese universitarie esorbitanti senza alloggio né borse di studio',
-                                'intok' => 'Pratica di borsa completa al 100% per massimizzare la borsa da 8.000€ e l\'alloggio'
+                                'traditional' => 'Rivolgersi a enti diversi per ciascun servizio senza una visione d\'insieme',
+                                'intok' => 'Servizi formativi, linguistici e accademici completi in un unico posto'
                             ],
-                            'cta_text' => 'Verifica la tua idoneità alla borsa DSU',
-                            'wa_msg' => 'Ciao, vorrei maggiori informazioni sulle borse di studio nei paesi europei e sui requisiti di ammissione'
+                            'cta_text' => 'Scopri tutti i 10 servizi',
+                            'wa_msg' => 'Ciao, vorrei maggiori informazioni sui servizi integrati di INTOK'
                         ],
-                        'callcenter' => [
-                            'nav_title' => 'Call Center e Lavoro',
-                            'nav_sub' => 'Stipendi 15k - 30k+ EGP',
-                            'badge' => 'Inserimento lavorativo rapido',
+                        'practical' => [
+                            'nav_title' => 'Formazione Pratica',
+                            'nav_sub' => 'Applicazioni reali',
+                            'badge' => 'Simulazioni dal vivo',
                             'badge_color' => 'bg-emerald-50 text-emerald-700 border-emerald-200',
-                            'title' => 'Qualificazione immediata per le multinazionali di Call Center',
-                            'desc' => 'Formazione pratica con simulatori avanzati e colloqui guidati per le principali multinazionali (Vodafone UK, Concentrix, Teleperformance).',
-                            'stat_val' => '15k - 30k+',
-                            'stat_unit' => 'EGP / mese',
-                            'stat_label' => 'Stipendio medio per neolaureati e diplomati',
-                            'stat_sub' => 'Assunzioni immediate presso partner internazionali',
-                            'points' => [
-                                'Simulazione pratica di chiamate, ticket e sistemi reali di Customer Care e Helpdesk',
-                                'Preparazione mirata ai colloqui HR e Operations delle grandi multinazionali',
-                                'Perfezionamento della pronuncia, dizione e tono professionale per mercati esteri',
-                                'Workshop intensivi per superare le selezioni al primo tentativo',
-                                'Segnalazione e raccomandazione diretta ai recruiter della nostra rete partner'
-                            ],
-                            'vs_traditional' => [
-                                'traditional' => 'Corsi puramente teorici senza schermi interattivi né sbocchi lavorativi reali',
-                                'intok' => 'Simulazione reale al 100% che ti prepara a superare i colloqui delle multinazionali'
-                            ],
-                            'cta_text' => 'Iscriviti al corso Call Center professionale',
-                            'wa_msg' => 'Ciao, vorrei informazioni sul corso di formazione Call Center e sulle opportunità lavorative'
-                        ],
-                        'trans' => [
-                            'nav_title' => 'Traduzioni Giurate',
-                            'nav_sub' => '100% legalizzate e riconosciute',
-                            'badge' => 'Legalizzazione consolare ufficiale',
-                            'badge_color' => 'bg-amber-50 text-amber-800 border-amber-200',
-                            'title' => 'Traduzioni giurate e asseverate per ambasciate e consolati',
-                            'desc' => 'Traduzioni ufficiali per tutte le ambasciate europee: certificati di studio, Dichiarazioni di Valore e contratti senza rischio di rifiuto.',
-                            'stat_val' => '24 - 48h',
-                            'stat_unit' => 'Consegna rapida',
-                            'stat_label' => 'Velocità di completamento e legalizzazione pratiche',
-                            'stat_sub' => 'Precisione giuridica impeccabile per evitare qualsiasi rifiuto consolare',
-                            'points' => [
-                                'Traduzione asseverata conforme alle linee guida delle ambasciate e consolati europei',
-                                'Traduzione di Dichiarazione di Valore (DoV), piani di studio e pagelle scolastiche',
-                                'Legalizzazioni presso il Ministero degli Affari Esteri e le autorità competenti',
-                                'Doppia revisione linguistica e giuridica per eliminare ogni vizio formale',
-                                'Spedizione in tutto l\'Egitto e anteprima digitale prima della stampa'
-                            ],
-                            'vs_traditional' => [
-                                'traditional' => 'Traduzioni imprecise o non accreditate che causano il rifiuto del visto',
-                                'intok' => 'Conformità consolare al 100% con garanzia di accettazione al primo tentativo'
-                            ],
-                            'cta_text' => 'Richiedi la tua traduzione giurata',
-                            'wa_msg' => 'Ciao, vorrei richiedere informazioni sul servizio di traduzione giurata per documenti ufficiali'
-                        ],
-                        'reception' => [
-                            'nav_title' => 'Accoglienza nei Paesi Europei',
-                            'nav_sub' => 'Accoglienza e alloggio',
-                            'badge' => 'Supporto sul campo in Europa',
-                            'badge_color' => 'bg-red-50 text-[#fe0002] border-red-200',
-                            'title' => 'Accoglienza in aeroporto e consegna alloggio nei Paesi Europei',
-                            'desc' => 'Il nostro supporto ti segue nei paesi europei: ti accogliamo all\'aeroporto di destinazione per consegnarti le chiavi, completare le pratiche di soggiorno e aprire il conto bancario.',
+                            'title' => 'Formazione pratica e simulazioni reali per il lavoro',
+                            'desc' => 'Non ci limitiamo alla teoria: puntiamo sull\'applicazione pratica e su simulazioni che ti preparano ad affrontare colloqui e contesti reali.',
                             'stat_val' => '100%',
-                            'stat_unit' => 'Sicurezza e cura',
-                            'stat_label' => 'Affiancamento continuo dal momento dello sbarco',
-                            'stat_sub' => 'Team di assistenza presente sul territorio europeo',
+                            'stat_unit' => 'Pratico',
+                            'stat_label' => 'Simulazioni e pratica sul campo',
+                            'stat_sub' => 'Abilità subito spendibili',
                             'points' => [
-                                'Accoglienza personalizzata agli arrivi negli aeroporti europei di destinazione',
-                                'Trasferimento diretto alla residenza universitaria o alloggio privato con consegna chiavi',
-                                'Assistenza completa per la domanda di Permesso di Soggiorno presso Poste e Questura',
-                                'Rilascio del codice fiscale/identificativo e attivazione SIM telefonica locale',
-                                'Apertura del conto corrente bancario e orientamento alle opportunità per studenti'
+                                'Esercitazioni pratiche mirate per ciascun programma',
+                                'Simulazione di scenari reali di lavoro e colloqui',
+                                'Esercizi interattivi con feedback immediato',
+                                'Valutazione continua dei progressi dello studente',
+                                'Competenze immediatamente applicabili nel settore'
                             ],
                             'vs_traditional' => [
-                                'traditional' => 'L\'assistenza termina con il volo, lasciando lo studente da solo in aeroporto',
-                                'intok' => 'Il nostro team sul campo ti segue dal primo minuto fino alla completa sistemazione'
+                                'traditional' => 'Teoria astratta senza simulazioni né preparazione reale ai colloqui',
+                                'intok' => 'Addestramento pratico, simulazione colloqui e preparazione per il mercato del lavoro'
                             ],
-                            'cta_text' => 'Prenota il pacchetto accoglienza in Europa',
-                            'wa_msg' => 'Ciao, vorrei informazioni sui servizi di accoglienza aeroportuale e alloggio in Europa'
+                            'cta_text' => 'Prenota la formazione pratica',
+                            'wa_msg' => 'Ciao, vorrei informazioni sulla formazione pratica e simulazioni'
                         ],
-                        'languages' => [
-                            'nav_title' => 'Lingue e Certificazioni CILS',
-                            'nav_sub' => 'Da zero alla padronanza fluente',
-                            'badge' => 'Certificazioni internazionali',
+                        'trainers' => [
+                            'nav_title' => 'Docenti Esperti',
+                            'nav_sub' => 'Esperienze sul campo',
+                            'badge' => 'Staff qualificato',
                             'badge_color' => 'bg-purple-50 text-purple-700 border-purple-200',
-                            'title' => 'Padronanza delle lingue da zero e superamento esami CILS e IELTS',
-                            'desc' => 'Corsi intensivi di italiano, inglese e tedesco focalizzati all\'80% sulla conversazione pratica per superare le prove consolari e universitarie.',
-                            'stat_val' => '80%',
-                            'stat_unit' => 'Conversazione pratica',
-                            'stat_label' => 'Focus su produzione orale e scioltezza comunicativa',
-                            'stat_sub' => 'Superamento del blocco psicologico e fluidità in poche settimane',
+                            'title' => 'Docenti e professionisti specializzati nei loro settori',
+                            'desc' => 'Programmi condotti da specialisti di settore, focalizzati sul trasmettere competenze concrete e contenuti su misura per le esigenze di mercato.',
+                            'stat_val' => 'Top',
+                            'stat_unit' => 'Docenti',
+                            'stat_label' => 'Esperienza reale di insegnamento',
+                            'stat_sub' => 'Guida individuale e supporto',
                             'points' => [
-                                'Programmi didattici europei conformi al Quadro Comune Europeo di Riferimento (QCER)',
-                                'Simulazione intensiva delle prove ufficiali di lingua italiana (CILS, CELI, PLIDA)',
-                                'Moduli specialistici per la preparazione agli esami internazionali IELTS e TOEFL',
-                                'Docenti certificati e madrelingua con feedback e monitoraggio continuo',
-                                'Attestati riconosciuti che valorizzano il tuo CV per università e aziende'
+                                'Contenuti formativi aggiornati agli standard internazionali',
+                                'Spiegazioni chiare e applicazione secondo il settore',
+                                'Tutoraggio e orientamento continuo durante il corso',
+                                'Attenzione personalizzata al livello di ogni corsista',
+                                'Apprendimento diretto da professionisti del settore'
                             ],
                             'vs_traditional' => [
-                                'traditional' => 'Metodi obsoleti incentrati solo sulla grammatica senza pratica reale di conversazione',
-                                'intok' => 'Metodo interattivo all\'80% in conversazione per parlare con sicurezza fin da subito'
+                                'traditional' => 'Insegnanti generici privi di esperienza diretta sul mercato estero',
+                                'intok' => 'Specialisti qualificati con esperienza diretta sul campo e supporto dedicato'
                             ],
-                            'cta_text' => 'Inizia il corso di lingua e fai il test di livello',
-                            'wa_msg' => 'Ciao, vorrei informazioni sui corsi di lingua (italiano / inglese / tedesco) e certificazioni CILS'
+                            'cta_text' => 'Scopri i nostri docenti',
+                            'wa_msg' => 'Ciao, vorrei maggiori dettagli sui docenti e i programmi formativi'
                         ],
-                        'mentorship' => [
-                            'nav_title' => 'Tutoraggio e Assistenza 24/7',
-                            'nav_sub' => 'Consulente accademico dedicato',
-                            'badge' => 'Monitoraggio continuo e accurato',
+                        'support' => [
+                            'nav_title' => 'Supporto Continuo',
+                            'nav_sub' => 'Assistenza lungo il percorso',
+                            'badge' => 'Assistenza passo dopo passo',
                             'badge_color' => 'bg-blue-50 text-blue-700 border-blue-200',
-                            'title' => 'Tutoraggio 1 a 1 e supporto continuo',
-                            'desc' => 'Un consulente accademico dedicato esamina il tuo fascicolo, pianifica ogni scadenza e ti segue passo dopo passo fino all\'arrivo nel paese europeo di destinazione.',
+                            'title' => 'Monitoraggio e supporto continuo in ogni fase',
+                            'desc' => 'Il tuo percorso in INTOK non è una semplice iscrizione: seguiamo i tuoi progressi e ti forniamo assistenza su misura fino al traguardo.',
                             'stat_val' => '24/7',
-                            'stat_unit' => 'Supporto continuo',
-                            'stat_label' => 'Il tuo consulente accademico sempre al tuo fianco',
-                            'stat_sub' => 'Monitoraggio rigoroso di ogni scadenza e bando ufficiale',
+                            'stat_unit' => 'Supporto',
+                            'stat_label' => 'Team sempre al tuo fianco',
+                            'stat_sub' => 'Non sarai mai solo',
                             'points' => [
-                                'Consulenza individuale 1 a 1 per analizzare il tuo titolo di studio e scegliere il miglior percorso',
-                                'Piano d\'azione dettagliato per presentare la documentazione prima delle scadenze',
-                                'Controllo meticoloso dell\'intera pratica per prevenire ogni possibile motivo di rigetto',
-                                'Notifiche puntuali su colloqui, bandi di borsa e legalizzazioni consolari',
-                                'Assistenza costante via WhatsApp, telefono e videochiamata per tutta la durata del percorso'
+                                'Monitoraggio costante delle fasi del servizio o corso',
+                                'Risposte puntuali a ogni dubbio o quesito',
+                                'Chiarezza totale sui passaggi e requisiti richiesti',
+                                'Assistenza dedicata in base alla tipologia di servizio',
+                                'Un percorso sicuro e sereno dalla partenza al successo'
                             ],
                             'vs_traditional' => [
-                                'traditional' => 'Risposte tardive, scarsa assistenza e rischio concreto di perdere i bandi ufficiali',
-                                'intok' => 'Affiancamento continuo e tempestivo con monitoraggio costante di ogni fase'
+                                'traditional' => 'Interruzione dei contatti e ritardi nelle risposte dopo l\'iscrizione',
+                                'intok' => 'Supporto continuo, chiarimento dei passaggi e monitoraggio costante'
                             ],
-                            'cta_text' => 'Prenota la tua sessione di orientamento gratuita',
-                            'wa_msg' => 'Ciao, vorrei prenotare una sessione di orientamento individuale 1 a 1 per i miei studi in Europa'
+                            'cta_text' => 'Richiedi assistenza personalizzata',
+                            'wa_msg' => 'Ciao, vorrei sapere di più sul sistema di assistenza e tutoraggio'
+                        ],
+                        'customized' => [
+                            'nav_title' => 'Soluzioni su Misura',
+                            'nav_sub' => 'Per le tue reali esigenze',
+                            'badge' => 'Percorsi personalizzati',
+                            'badge_color' => 'bg-amber-50 text-amber-800 border-amber-200',
+                            'title' => 'Soluzioni personalizzate per i tuoi obiettivi e potenzialità',
+                            'desc' => 'Ogni persona ha un obiettivo unico. Ti aiutiamo a scegliere il servizio o percorso più adatto alle tue possibilità e al tuo piano futuro.',
+                            'stat_val' => '1-on-1',
+                            'stat_unit' => 'Su misura',
+                            'stat_label' => 'Orientamento specifico sul tuo profilo',
+                            'stat_sub' => 'Parti dal punto giusto',
+                            'points' => [
+                                'Analisi attenta dei tuoi titoli e obiettivi prima di scegliere',
+                                'Indirizzamento verso la scelta più vantaggiosa per te',
+                                'Informazioni dettagliate sui costi e tempi previsti',
+                                'Passaggi chiari per iniziare senza incertezze',
+                                'Ottimizzazione del tempo e delle risorse sul percorso vincente'
+                            ],
+                            'vs_traditional' => [
+                                'traditional' => 'Soluzioni standardizzate uguali per tutti senza valutare le differenze',
+                                'intok' => 'Comprensione delle esigenze individuali e soluzioni studiate sul tuo profilo'
+                            ],
+                            'cta_text' => 'Trova il percorso adatto a te',
+                            'wa_msg' => 'Ciao, vorrei una consulenza per valutare il percorso più adatto al mio profilo'
+                        ],
+                        'future' => [
+                            'nav_title' => 'Preparazione al Futuro',
+                            'nav_sub' => 'Competenze per il domani',
+                            'badge' => 'Pronti per Europa e lavoro',
+                            'badge_color' => 'bg-emerald-50 text-emerald-800 border-emerald-200',
+                            'title' => 'Qualificazione per il tuo futuro accademico e professionale',
+                            'desc' => 'Ti aiutiamo a sviluppare competenze e a prepararti a nuovi traguardi educativi e lavorativi in oltre 10 paesi europei.',
+                            'stat_val' => 'Futuro',
+                            'stat_unit' => 'Solido',
+                            'stat_label' => 'Competenze internazionali certificate',
+                            'stat_sub' => 'Passi chiari verso la meta',
+                            'points' => [
+                                'Preparazione mirata per studiare in oltre 10 paesi europei',
+                                'Preparazione a esami internazionali di lingua e ammissione',
+                                'Miglioramento delle abilità linguistiche e comunicative richieste',
+                                'Supporto professionale nelle pratiche di ammissione accademica',
+                                'Passi chiari e concreti verso una carriera internazionale di successo'
+                            ],
+                            'vs_traditional' => [
+                                'traditional' => 'Difficoltà a comprendere requisiti e procedure senza una guida solida',
+                                'intok' => 'Aiuto nella scelta del percorso, preparazione dossier e monitoraggio pratiche'
+                            ],
+                            'cta_text' => 'Costruisci il tuo futuro oggi',
+                            'wa_msg' => 'Ciao, vorrei iniziare la preparazione per studiare in Europa e costruire il mio futuro'
                         ]
                     ],
                     'en' => [
-                        'dsu' => [
-                            'nav_title' => 'DSU Scholarship & Housing',
-                            'nav_sub' => '8,000€ + Free Housing',
-                            'badge' => 'Regional Government Scholarship',
+                        'services' => [
+                            'nav_title' => 'Integrated Services',
+                            'nav_sub' => '10 Academic & Career Services',
+                            'badge' => 'All-in-one ecosystem',
                             'badge_color' => 'bg-red-50 text-[#fe0002] border-red-200',
-                            'title' => 'Highest Acceptance Rate for European Regional Scholarships',
-                            'desc' => 'We calculate the ISEE Parificato with legal and academic precision to secure full regional scholarships and tuition-free university housing for technical diploma and high school graduates.',
-                            'stat_val' => '8,000€',
-                            'stat_unit' => '/ Year',
-                            'stat_label' => 'Direct cash stipend to student bank account',
-                            'stat_sub' => '100% Tuition Waiver + Free Housing',
+                            'title' => 'Integrated Educational, Vocational & Academic Services',
+                            'desc' => 'At INTOK, we offer a diverse range of educational, vocational, and academic services so you find everything you need in one place with expert backing.',
+                            'stat_val' => '10',
+                            'stat_unit' => 'Services',
+                            'stat_label' => 'Full coverage of all your needs',
+                            'stat_sub' => 'For students, graduates, and professionals',
                             'points' => [
-                                'Comprehensive preparation according to official European scholarship criteria',
-                                '100% complete exemption from European public university tuition fees',
-                                'Fully furnished free student housing for the entire study period',
-                                'Subsidized daily meals at European university dining halls',
-                                'Legal work permit of 20 hours per week earning in Euros'
+                                '10 diverse services under one roof',
+                                'Multiple educational and career tracks',
+                                'Solutions aligned with your ambitions',
+                                'Services for students, graduates, and companies',
+                                'Integrated experience without hassle'
                             ],
                             'vs_traditional' => [
-                                'traditional' => 'Ignoring scholarship opportunities and leaving students with high tuition and no housing',
-                                'intok' => '100% complete scholarship file maximizing your chance for the 8,000€ stipend and free housing'
+                                'traditional' => 'Dealing with multiple uncoordinated entities for each individual service',
+                                'intok' => 'Complete educational, language, and academic services under one roof'
                             ],
-                            'cta_text' => 'Check Your Eligibility for DSU Scholarship',
-                            'wa_msg' => 'Hello, I would like to inquire about European scholarships requirements and free housing'
+                            'cta_text' => 'Explore All 10 Services',
+                            'wa_msg' => 'Hello, I would like to inquire about INTOK integrated services package'
                         ],
-                        'callcenter' => [
-                            'nav_title' => 'Call Center & Placement',
-                            'nav_sub' => '15k - 30k+ EGP Salaries',
-                            'badge' => 'Immediate Job Qualification',
+                        'practical' => [
+                            'nav_title' => 'Practical Training',
+                            'nav_sub' => 'Real-world simulations',
+                            'badge' => 'Realistic hands-on practice',
                             'badge_color' => 'bg-emerald-50 text-emerald-700 border-emerald-200',
-                            'title' => 'Direct Career Placement with Top Multinational Call Centers',
-                            'desc' => 'Hands-on training with smart screens and real interview simulations for multinational leaders (Vodafone UK, Concentrix, Teleperformance).',
-                            'stat_val' => '15k - 30k+',
-                            'stat_unit' => 'EGP / Month',
-                            'stat_label' => 'Average starting salary for fresh graduates',
-                            'stat_sub' => 'Immediate hiring opportunities with global firms',
-                            'points' => [
-                                'Hands-on practice and live simulations of Customer Care and Technical Support systems',
-                                'Preparation for HR and Operations interview rounds at multinational companies',
-                                'Mastering native accent, tone, and professional language for foreign markets',
-                                'Intensive workshops to pass job interviews successfully on the first attempt',
-                                'Direct recommendations and referrals to hiring partners upon graduation'
-                            ],
-                            'vs_traditional' => [
-                                'traditional' => 'Generic theoretical courses with no interactive screens or real job opportunities',
-                                'intok' => '100% realistic simulations qualifying you to pass multinational interviews upon graduation'
-                            ],
-                            'cta_text' => 'Enroll in Professional Call Center Training',
-                            'wa_msg' => 'Hello, I would like to inquire about the Call Center training course and job opportunities'
-                        ],
-                        'trans' => [
-                            'nav_title' => 'Certified Translation',
-                            'nav_sub' => '100% Embassy Accredited',
-                            'badge' => 'Official Consular Legalization',
-                            'badge_color' => 'bg-amber-50 text-amber-800 border-amber-200',
-                            'title' => 'Officially Certified Translation for All Embassies',
-                            'desc' => 'Official translation recognized by European embassies for diplomas, Declarations of Value, and legal records without risk of rejection.',
-                            'stat_val' => '24 - 48h',
-                            'stat_unit' => 'Express Delivery',
-                            'stat_label' => 'Rapid turnaround and official document processing',
-                            'stat_sub' => 'Flawless legal precision preventing any consular rejection',
-                            'points' => [
-                                'Certified translation accepted by European Consulates and official missions',
-                                'Translation of Declaration of Value (Dichiarazione di Valore) and transcripts',
-                                'Ministry of Foreign Affairs, Translators Syndicate, and Chamber endorsements',
-                                'Dual linguistic and legal audit to ensure documents are 100% compliant',
-                                'Fast delivery across Egypt with full digital preview prior to printing'
-                            ],
-                            'vs_traditional' => [
-                                'traditional' => 'Uncertified or error-laden translations causing visa rejection and lost appointments',
-                                'intok' => '100% official consular compliance guaranteeing immediate acceptance'
-                            ],
-                            'cta_text' => 'Order Certified Translation Now',
-                            'wa_msg' => 'Hello, I would like to inquire about certified translation services and embassy legalization'
-                        ],
-                        'reception' => [
-                            'nav_title' => 'Reception in Europe',
-                            'nav_sub' => 'Milan, Rome & Direct Housing',
-                            'badge' => 'On-Ground European Escort',
-                            'badge_color' => 'bg-red-50 text-[#fe0002] border-red-200',
-                            'title' => 'Airport Welcome & Key Delivery in European Countries',
-                            'desc' => 'Our commitment does not end at the airport departure gate; our on-ground team welcomes you in Milan and Rome to deliver housing, residency, and banking.',
+                            'title' => 'Hands-on Practical Training Qualifying You for Work',
+                            'desc' => 'We go beyond theoretical knowledge: we focus on practical applications and realistic scenarios that prepare you for genuine career demands.',
                             'stat_val' => '100%',
-                            'stat_unit' => 'Safety & Care',
-                            'stat_label' => 'Continuous on-ground support from touchdown',
-                            'stat_sub' => 'Bilingual local support team on the ground in Europe',
+                            'stat_unit' => 'Practical',
+                            'stat_label' => 'Direct practical simulation',
+                            'stat_sub' => 'Immediately actionable skills',
                             'points' => [
-                                'Personal greeting at arrivals in destination European airports',
-                                'Direct transfer to student residence or private apartment with key delivery',
-                                'Full assistance filing for Residence Permit at local authorities',
-                                'Issuing local tax identification code and purchasing local SIM card',
-                                'Assistance opening local European bank account and guidance on student jobs'
+                                'Targeted hands-on sessions for each program',
+                                'Realistic workplace and job interview simulations',
+                                'Interactive drills using cutting-edge tools',
+                                'Continuous assessment of trainee performance',
+                                'Acquisition of skills ready for immediate workplace use'
                             ],
                             'vs_traditional' => [
-                                'traditional' => 'Agency involvement ends after the flight, leaving students stranded at the airport',
-                                'intok' => 'Our local European team accompanies you from arrival until full settlement'
+                                'traditional' => 'Theoretical lectures without practice, interactive screens, or interview drills',
+                                'intok' => 'Practical training, job readiness, and realistic interview simulations'
                             ],
-                            'cta_text' => 'Book Reception & Escort Package in Europe',
-                            'wa_msg' => 'Hello, I would like to inquire about airport reception and housing services in Europe'
+                            'cta_text' => 'Book Your Practical Training Seat',
+                            'wa_msg' => 'Hello, I would like to inquire about practical training programs at INTOK'
                         ],
-                        'languages' => [
-                            'nav_title' => 'Languages & CILS',
-                            'nav_sub' => 'From Zero to Full Fluency',
-                            'badge' => 'International Certificates',
+                        'trainers' => [
+                            'nav_title' => 'Expert Trainers',
+                            'nav_sub' => 'Field-tested experience',
+                            'badge' => 'Certified specialists',
                             'badge_color' => 'bg-purple-50 text-purple-700 border-purple-200',
-                            'title' => 'Master Languages from Scratch and Pass CILS & IELTS',
-                            'desc' => 'Intensive Italian, English, and German courses focusing 80% on live conversation and practical fluency to pass embassy and university requirements.',
-                            'stat_val' => '80%',
-                            'stat_unit' => 'Live Conversation',
-                            'stat_label' => 'Dedicated focus on spoken fluency and real dialogue',
-                            'stat_sub' => 'Overcoming speaking hesitation and gaining fluency in weeks',
+                            'title' => 'Specialized Instructors with Deep Field Experience',
+                            'desc' => 'We offer educational programs led by sector specialists, dedicated to transferring real knowledge and up-to-date curricula.',
+                            'stat_val' => 'Elite',
+                            'stat_unit' => 'Faculty',
+                            'stat_label' => 'Practical field-tested knowledge',
+                            'stat_sub' => 'Individual guidance and care',
                             'points' => [
-                                'European accredited curricula aligned with CEFR international standards',
-                                'Intensive training on official Italian language exams (CILS, CELI, PLIDA)',
-                                'Specialized preparation courses for IELTS and TOEFL international tests',
-                                'Certified expert instructors and native speakers tracking daily progress',
-                                'Accredited graduation certificates boosting university and career prospects'
+                                'Curriculum developed to modern international standards',
+                                'Clear explanation and direct practical application',
+                                'Continuous individual guidance throughout training',
+                                'Dedicated focus on elevating each trainee\'s skills',
+                                'Direct learning from seasoned active professionals'
                             ],
                             'vs_traditional' => [
-                                'traditional' => 'Outdated rote-learning methods with no real conversational practice',
-                                'intok' => 'Interactive 80% conversational methodology building complete confidence'
+                                'traditional' => 'Generic instructors lacking direct real-world experience in international markets',
+                                'intok' => 'Dedicated field-experienced trainers transferring authentic workplace practice'
                             ],
-                            'cta_text' => 'Start Language Course & Placement Test',
-                            'wa_msg' => 'Hello, I would like to inquire about language courses (Italian / English / German) and international certifications'
+                            'cta_text' => 'Meet Our Programs & Instructors',
+                            'wa_msg' => 'Hello, I would like to learn more about the faculty and curriculum at INTOK'
                         ],
-                        'mentorship' => [
-                            'nav_title' => '24/7 Academic Mentorship',
-                            'nav_sub' => 'Dedicated Personal Advisor',
-                            'badge' => 'Continuous Detailed Guidance',
+                        'support' => [
+                            'nav_title' => 'Continuous Support',
+                            'nav_sub' => 'Dedicated guidance along the way',
+                            'badge' => 'Step-by-step guidance',
                             'badge_color' => 'bg-blue-50 text-blue-700 border-blue-200',
-                            'title' => '1-on-1 Personal Guidance & Ongoing Follow-up',
-                            'desc' => 'A dedicated academic advisor analyzes your profile, designs your pathway, and provides deadline alert tracking to guarantee zero missed opportunities.',
+                            'title' => 'Continuous Follow-up and Guidance at Every Step',
+                            'desc' => 'Your journey with INTOK is more than registering for a service; we actively track your progress and provide continuous advice until your goal is reached.',
                             'stat_val' => '24/7',
-                            'stat_unit' => 'Ongoing Support',
-                            'stat_label' => 'Your academic advisor by your side throughout the journey',
-                            'stat_sub' => 'Strict monitoring of every official deadline and intake step',
+                            'stat_unit' => 'Support',
+                            'stat_label' => 'Dedicated team by your side',
+                            'stat_sub' => 'You are never alone on any step',
                             'points' => [
-                                '1-on-1 consultation session to evaluate your diploma or degree and select the ideal track',
-                                'Tailored timeline ensuring all paperwork and deadlines are met before closing',
-                                'Comprehensive audit of your academic file to eliminate any risk of rejection',
-                                'Periodic reminders for interviews, scholarship calls, and consular stamps',
-                                'Continuous support via WhatsApp, calls, and virtual meetings throughout the application'
+                                'Meticulous tracking of every training and service phase',
+                                'Prompt and thorough responses to questions and inquiries',
+                                'Clear pre-requisite guidance with zero ambiguity',
+                                'Personalized support tailored to each specific service',
+                                'Real peace of mind throughout your academic journey'
                             ],
                             'vs_traditional' => [
-                                'traditional' => 'Slow responses, neglected student queries, and missed official scholarship deadlines',
-                                'intok' => 'Dedicated daily academic advisor ensuring no opportunity is ever missed'
+                                'traditional' => 'Communication cutoff and delayed answers after signing up with generic offices',
+                                'intok' => 'Continuous assistance, transparent steps, and structured deadline follow-up'
                             ],
-                            'cta_text' => 'Book Your Academic Consultation Now',
-                            'wa_msg' => 'Hello, I would like to book a 1-on-1 academic consultation session to map my study path'
+                            'cta_text' => 'Book Your Advisory Session',
+                            'wa_msg' => 'Hello, I would like to inquire about ongoing support and guidance at INTOK'
+                        ],
+                        'customized' => [
+                            'nav_title' => 'Tailored Solutions',
+                            'nav_sub' => 'Matching your actual needs',
+                            'badge' => 'Personalized pathways',
+                            'badge_color' => 'bg-amber-50 text-amber-800 border-amber-200',
+                            'title' => 'Customized Solutions Aligned with Your Capabilities',
+                            'desc' => 'Everyone has distinct goals. That is why we help you choose the pathway that perfectly matches your qualifications and future plans.',
+                            'stat_val' => '1-on-1',
+                            'stat_unit' => 'Custom',
+                            'stat_label' => 'Roadmap designed for your profile',
+                            'stat_sub' => 'Start from the right place',
+                            'points' => [
+                                'In-depth assessment of your background before choosing a service',
+                                'Directing you to the most rewarding academic or career path',
+                                'Transparent overview of timelines, requirements, and fees',
+                                'Actionable steps for a confident, structured start',
+                                'Ensuring your investment of time and effort yields peak results'
+                            ],
+                            'vs_traditional' => [
+                                'traditional' => 'One-size-fits-all generic templates forced on every applicant regardless of background',
+                                'intok' => 'Personal profile evaluation and customized solutions built specifically for your goals'
+                            ],
+                            'cta_text' => 'Get Your Tailored Plan',
+                            'wa_msg' => 'Hello, I would like a consultation to determine the ideal path for my background'
+                        ],
+                        'future' => [
+                            'nav_title' => 'Future Readiness',
+                            'nav_sub' => 'Skills for tomorrow',
+                            'badge' => 'Ready for Europe & careers',
+                            'badge_color' => 'bg-emerald-50 text-emerald-800 border-emerald-200',
+                            'title' => 'Comprehensive Preparation for Your Academic & Career Future',
+                            'desc' => 'We help you develop high-demand capabilities and prepare for major milestones in study and employment across 10+ European destinations.',
+                            'stat_val' => 'Future',
+                            'stat_unit' => 'Driven',
+                            'stat_label' => 'Certified international qualification',
+                            'stat_sub' => 'Clear steps toward your ambition',
+                            'points' => [
+                                'Preparation for studying in 10+ prestigious European countries',
+                                'Readiness for international language certificates and university entrance exams',
+                                'Development of spoken linguistic and professional communication skills',
+                                'Professional support throughout university admission procedures',
+                                'Concrete, well-studied steps toward a thriving international future'
+                            ],
+                            'vs_traditional' => [
+                                'traditional' => 'Ambiguous procedures, unfamiliarity with European requirements, and lost chances',
+                                'intok' => 'Assistance in pathway choice, file preparation, and official application follow-up'
+                            ],
+                            'cta_text' => 'Build Your Future Today',
+                            'wa_msg' => 'Hello, I want to start my qualification journey for study in Europe and future career'
                         ]
                     ]
                 ];
 
-                $currentFallbacks = $bentoFallbacks[$locale] ?? $bentoFallbacks['ar'];
                 $pillarIcons = [
-                    'dsu' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg>',
-                    'callcenter' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z"/></svg>',
-                    'trans' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>',
-                    'reception' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>',
-                    'languages' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>',
-                    'mentorship' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>',
+                    'services' => '<svg class="size-5 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>',
+                    'practical' => '<svg class="size-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>',
+                    'trainers' => '<svg class="size-5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>',
+                    'support' => '<svg class="size-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>',
+                    'customized' => '<svg class="size-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/></svg>',
+                    'future' => '<svg class="size-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>'
                 ];
 
-                $pillarKeys = ['dsu', 'callcenter', 'trans', 'reception', 'languages', 'mentorship'];
+                $pillarKeys = ['services', 'practical', 'trainers', 'support', 'customized', 'future'];
                 $whyPillars = [];
 
                 foreach ($pillarKeys as $pKey) {
@@ -1385,10 +1427,10 @@
                             </span>
                             <div class="text-start">
                                 <h4 class="text-sm font-black text-[#c27803] group-hover:text-[#fe0002] transition-colors">
-                                    جدول المقارنة المباشر: فارق المعايير بين INTOK ACADEMY والمكاتب العادية
+                                    إيه اللي بيميز منظومة INTOK ؟ مقارنة بين الطرق التقليدية ومنظومة INTOK المتكاملة
                                 </h4>
                                 <p class="text-xs font-medium text-slate-500">
-                                    اضغط لاستعراض المقارنة التفصيلية الكاملة في 5 مجالات أساسية
+                                    اضغط لاستعراض المقارنة في المجالات الستة: تنوع الخدمات، اللغات، الترجمة، التأهيل المهني، الدراسة في أوروبا، والاختبارات الدولية
                                 </p>
                             </div>
                         </div>
@@ -1411,29 +1453,34 @@
                                 </thead>
                                 <tbody class="divide-y divide-slate-100">
                                     <tr>
-                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">1. القبول والدراسة بالدول الأوروبية</td>
-                                        <td class="p-4 text-slate-600 bg-red-50/20">وعود غير موثقة، نسب رفض عالية بالتأشيرة، عدم قبول الدبلومات الفنية.</td>
-                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">قبول جامعي موثق، فتح الباب للدبلومات الفنية والثانوية، نسبة قبول استثنائية.</td>
+                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">1. تنوع الخدمات</td>
+                                        <td class="p-4 text-slate-600 bg-red-50/20">التعامل مع جهات مختلفة لكل خدمة وتشتت الجهد</td>
+                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">خدمات تعليمية وتدريبية وأكاديمية متعددة في مكان واحد بخطة واضحة</td>
                                     </tr>
                                     <tr>
-                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">2. المنح الدراسية والسكن المجاني</td>
-                                        <td class="p-4 text-slate-600 bg-red-50/20">تجاهل المنحة تماماً وترك الطالب يدفع آلاف اليوروهات سنوياً بلا سكن.</td>
-                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">حساب دقيق لـ ISEE يضمن إعفاء 100% من المصروفات وسكن مجاني وبدل 8,000€.</td>
+                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">2. تعلم اللغات</td>
+                                        <td class="p-4 text-slate-600 bg-red-50/20">كورسات عامة تقليدية بدون مسار واضح أو تطبيق</td>
+                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">برامج لغات بمستويات ومسارات تدريبية منظمة تركز على الطلاقة</td>
                                     </tr>
                                     <tr>
-                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">3. التدريب وتوظيف الكول سنتر</td>
-                                        <td class="p-4 text-slate-600 bg-red-50/20">دورات نظرية تقليدية بدون ممارسة أو شاشات تفاعلية وبلا أي متابعة توظيف.</td>
-                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">تدريب عملي على شاشات تفاعلية ومحاكاة لمقابلات الشركات العالمية وتوصية وظيفية فورية.</td>
+                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">3. الترجمة المعتمدة</td>
+                                        <td class="p-4 text-slate-600 bg-red-50/20">البحث عن مترجمين وجهات مختلفة مع احتمالية الأخطاء</td>
+                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">خدمات ترجمة معتمدة وتدقيق لغوي رسمي للمستندات والشهادات</td>
                                     </tr>
                                     <tr>
-                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">4. الترجمة وتصديقات السفارات</td>
-                                        <td class="p-4 text-slate-600 bg-red-50/20">ترجمات غير معتمدة أو مليئة بالأخطاء تتسبب في تعليق أو رفض الملف بالقنصلية.</td>
-                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">ترجمة معتمدة رسمياً ومقبولة أمام كافة السفارات الأوروبية مع إنهاء التصديقات.</td>
+                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">4. التأهيل المهني</td>
+                                        <td class="p-4 text-slate-600 bg-red-50/20">تدريب نظري محدود بدون محاكاة لبيئة العمل</td>
+                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">تدريب عملي وتأهيل مباشر لسوق العمل ومحاكاة لمقابلات الشركات</td>
                                     </tr>
                                     <tr>
-                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">5. الاستقبال والتسكين بالدول الأوروبية</td>
-                                        <td class="p-4 text-slate-600 bg-red-50/20">ينتهي دور المكتب بمجرد سفر الطالب، وتركه تائهاً في البحث عن سكن وإقامة.</td>
-                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">استقبال شخصي بالمطار بالدولة الأوروبية، تسليم السكن، ومرافقة لاستخراج الإقامة والبنك.</td>
+                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">5. التأهيل للدراسة بأوروبا</td>
+                                        <td class="p-4 text-slate-600 bg-red-50/20">صعوبة معرفة الإجراءات ومتطلبات التقديم وتضارب المعلومات</td>
+                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">مساعدة في اختيار المسار وتجهيز الملفات ومتابعة إجراءات التقديم خطوة بخطوة</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">6. الاختبارات والخدمات الدولية</td>
+                                        <td class="p-4 text-slate-600 bg-red-50/20">تعدد الجهات وصعوبة متابعة المواعيد والإجراءات</td>
+                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">تأهيل للاختبارات الدولية ومساعدة في حجز المواعيد والخدمات المرتبطة بها</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -1609,32 +1656,32 @@
                         [
                             'num' => '01',
                             'icon' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>',
-                            'title' => data_get($siteSettings ?? [], 'roadmap_step1_title.'.$locale, '1. جلسة الاستشارة والتقييم'),
-                            'desc' => data_get($siteSettings ?? [], 'roadmap_step1_desc.'.$locale, 'جلسة إرشاد شاملة مع مستشارك لتحديد البرنامج أو المسار الإيطالي المناسب لمؤهلك.'),
+                            'title' => data_get($siteSettings ?? [], 'roadmap_step1_title.'.$locale, match($locale) { 'it' => '01. Consulenza e Definizione del Percorso', 'en' => '01. Consultation & Pathway Mapping', default => '01. الاستشارة وتحديد المسار' }),
+                            'desc' => data_get($siteSettings ?? [], 'roadmap_step1_desc.'.$locale, match($locale) { 'it' => 'Comprendiamo i tuoi obiettivi e le tue esigenze e ti guidiamo nella scelta del servizio o programma più adatto.', 'en' => 'We understand your goals and needs, helping you choose the most suitable service or educational program.', default => 'بنفهم هدفك واحتياجاتك، ونساعدك تختار الخدمة أو البرنامج الأنسب ليك ولطموحك.' }),
                             'dir' => 'reveal-left stagger-1',
                             'pct' => 25
                         ],
                         [
                             'num' => '02',
                             'icon' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>',
-                            'title' => data_get($siteSettings ?? [], 'roadmap_step2_title.'.$locale, '2. تجهيز الأوراق والتدريب'),
-                            'desc' => data_get($siteSettings ?? [], 'roadmap_step2_desc.'.$locale, 'ترجمة وتصديق كافة الشهادات والأوراق الرسمية والبدء في التدريب اللغوي أو العملي.'),
+                            'title' => data_get($siteSettings ?? [], 'roadmap_step2_title.'.$locale, match($locale) { 'it' => '02. Valutazione e Preparazione', 'en' => '02. Evaluation & Preparation', default => '02. التقييم والتجهيز' }),
+                            'desc' => data_get($siteSettings ?? [], 'roadmap_step2_desc.'.$locale, match($locale) { 'it' => 'Esaminiamo le tue qualifiche e il tuo livello, definendo i passaggi di formazione e preparazione richiesti.', 'en' => 'We review your qualifications, current level, and requirements, defining the training and preparation roadmap.', default => 'بنراجع مؤهلاتك ومستواك ومتطلباتك، ونحدد خطوات التأهيل والتجهيز المطلوبة بكل دقة.' }),
                             'dir' => 'reveal-up stagger-2',
                             'pct' => 50
                         ],
                         [
                             'num' => '03',
                             'icon' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg>',
-                            'title' => data_get($siteSettings ?? [], 'roadmap_step3_title.'.$locale, '3. التقديم للمنح والقبول'),
-                            'desc' => data_get($siteSettings ?? [], 'roadmap_step3_desc.'.$locale, 'إرسال طلبات الالتحاق بالجامعات أو التقدم للمنح والوظائف ومتابعة النتائج خطوة بخطوة.'),
+                            'title' => data_get($siteSettings ?? [], 'roadmap_step3_title.'.$locale, match($locale) { 'it' => '03. Formazione e Presentazione Candidatura', 'en' => '03. Training & Application Submission', default => '03. التدريب والتقديم' }),
+                            'desc' => data_get($siteSettings ?? [], 'roadmap_step3_desc.'.$locale, match($locale) { 'it' => 'Forniamo la formazione necessaria e ti assistiamo nelle procedure di domanda e monitoraggio in base al servizio.', 'en' => 'We provide necessary training and support application procedures and follow-up according to each service.', default => 'بنوفرلك التأهيل والتدريب اللازم، وبنساعدك في إجراءات التقديم والمتابعة حسب نوع الخدمة.' }),
                             'dir' => 'reveal-up stagger-3',
                             'pct' => 75
                         ],
                         [
                             'num' => '04',
                             'icon' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>',
-                            'title' => data_get($siteSettings ?? [], 'roadmap_step4_title.'.$locale, '4. السفر والاستقبال والمتابعة'),
-                            'desc' => data_get($siteSettings ?? [], 'roadmap_step4_desc.'.$locale, 'استلام التأشيرة الدراسية، تأمين السكن، والاستقبال في المطار لبدء مستقبلك الجديد.'),
+                            'title' => data_get($siteSettings ?? [], 'roadmap_step4_title.'.$locale, match($locale) { 'it' => '04. Monitoraggio e Completamento Pratiche', 'en' => '04. Follow-up & File Completion', default => '04. المتابعة واستكمال الإجراءات' }),
+                            'desc' => data_get($siteSettings ?? [], 'roadmap_step4_desc.'.$locale, match($locale) { 'it' => 'Seguiamo con te tutti i passaggi, ti aiutiamo a completare il fascicolo per essere pronto al prossimo traguardo.', 'en' => 'We monitor the required steps, helping you finalize your file and get fully ready for your upcoming leap.', default => 'بنتابع معاك الخطوات المطلوبة، ونساعدك تستكمل ملفك وتكون جاهز تماماً لخطوتك القادمة.' }),
                             'dir' => 'reveal-right stagger-4',
                             'pct' => 100
                         ],
@@ -1666,6 +1713,206 @@
             </div>
         </div>
     </section>
+
+    
+    <!-- ==========================================================
+         SUCCESS PARTNERS & COOPERATION PROTOCOLS SECTION (USER ASSETS)
+         ========================================================== -->
+    <section id="partners-section" class="relative bg-slate-50 py-20 sm:py-28 border-b border-slate-200/80">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16 reveal-up">
+                <span class="inline-flex items-center gap-2 rounded-full bg-red-50 border border-red-200 px-4 py-1.5 text-xs font-black text-[#fe0002] shadow-xs">
+                    <span class="relative flex size-2">
+                        <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#fe0002] opacity-75"></span>
+                        <span class="relative inline-flex size-2 rounded-full bg-[#fe0002]"></span>
+                    </span>
+                    <span>{{ match($locale) {
+                        'it' => 'Partnership Ufficiali e Accordi Istituzionali',
+                        'en' => 'Official Strategic Partnerships & Agreements',
+                        default => 'شراكات استراتيجية وبروتوكولات تعاون رسمية',
+                    } }}</span>
+                </span>
+                
+                <h2 class="mt-4 text-3xl font-black text-[#c27803] sm:text-5xl">
+                    {{ match($locale) {
+                        'it' => 'Partner del Successo e Protocolli di Cooperazione',
+                        'en' => 'Success Partners & Cooperation Protocols',
+                        default => 'شركاء النجاح وبروتوكولات التعاون',
+                    } }}
+                </h2>
+                
+                <p class="mt-4 text-base text-slate-600 font-medium leading-relaxed">
+                    {{ match($locale) {
+                        'it' => 'Insieme raggiungiamo traguardi più grandi: siamo orgogliosi delle nostre relazioni istituzionali e protocolli di cooperazione con prestigiose università europee e istituti leader in Egitto e all\'estero.',
+                        'en' => 'Together we unlock greater horizons: we take pride in our official institutional partnerships and cooperation protocols with prestigious European universities and leading organizations inside Egypt and abroad.',
+                        default => 'مع بعض بنقدر نوصل لفرص أكبر؛ نفخر بعلاقات وبروتوكولات التعاون الرسمية مع كبرى الجامعات الأوروبية والمؤسسات التعليمية والمهنية داخل مصر وخارجها.',
+                    } }}
+                </p>
+
+                <!-- Interactive Switcher Tabs -->
+                <div class="mt-8 inline-flex items-center p-1.5 bg-white rounded-2xl border border-slate-200 shadow-sm" id="partners-tabs-nav">
+                    <button type="button" class="partner-tab-btn active-partner-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-black transition cursor-pointer flex items-center gap-2" data-target="partners-egypt">
+                        <span>🇪🇬</span>
+                        <span>{{ match($locale) { 'it' => 'Partner in Egitto', 'en' => 'Partners in Egypt', default => 'شركاء النجاح داخل مصر' } }}</span>
+                    </button>
+                    <button type="button" class="partner-tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-black text-slate-600 hover:text-slate-900 transition cursor-pointer flex items-center gap-2" data-target="partners-intl">
+                        <span>🇪🇺</span>
+                        <span>{{ match($locale) { 'it' => 'Università Europee (Estero)', 'en' => 'European Universities (Abroad)', default => 'شركاء النجاح خارج مصر (الجامعات الأوروبية)' } }}</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab Panels Container -->
+            <div class="relative max-w-5xl mx-auto">
+                
+                <!-- Panel 1: Partners Inside Egypt -->
+                <div id="panel-partners-egypt" class="partner-panel transition-all duration-500">
+                    <div class="relative overflow-hidden rounded-3xl border-2 border-slate-200 bg-white p-4 sm:p-8 shadow-xl group">
+                        <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
+                            <div>
+                                <h3 class="text-lg font-black text-slate-900 flex items-center gap-2">
+                                    <span class="size-3 rounded-full bg-[#fe0002]"></span>
+                                    <span>{{ match($locale) { 'it' => 'Rete di Partner Istituzionali e Aziendali in Egitto', 'en' => 'Institutional & Corporate Partners Network in Egypt', default => 'شبكة شركاء النجاح والمؤسسات والشركات المعتمدة داخل مصر' } }}</span>
+                                </h3>
+                                <p class="text-xs text-slate-500 font-medium mt-1">
+                                    {{ match($locale) { 'it' => 'Collaborazioni con università, scuole internazionali, agenzie di traduzione e multinazionali', 'en' => 'Collaborations with universities, international schools, translation academies & multinationals', default => 'تعاون مع جامعات ومدارس دولية ومصانع ومراكز ترجمة معتمدة وكبرى شركات الكول سنتر' } }}
+                                </p>
+                            </div>
+                            <button type="button" onclick="openPartnerModal('{{ asset('assets/images/partners/partners-egypt.jpg') }}', 'شركاء النجاح داخل مصر')" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-100 hover:bg-[#fe0002] hover:text-white text-slate-700 text-xs font-black transition cursor-pointer shadow-2xs">
+                                <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
+                                <span>{{ match($locale) { 'it' => 'Ingrandisci', 'en' => 'Zoom In', default => 'تكبير العرض' } }}</span>
+                            </button>
+                        </div>
+
+                        <!-- Image Frame -->
+                        <div class="relative overflow-hidden rounded-2xl bg-slate-100 border border-slate-200 cursor-pointer" onclick="openPartnerModal('{{ asset('assets/images/partners/partners-egypt.jpg') }}', 'شركاء النجاح داخل مصر')">
+                            <img src="{{ asset('assets/images/partners/partners-egypt.jpg') }}" alt="شركاء النجاح داخل مصر" class="w-full h-auto object-contain transition duration-500 group-hover:scale-[1.02]">
+                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                                <span class="opacity-0 group-hover:opacity-100 transition-opacity bg-black/75 text-white text-xs font-black px-4 py-2 rounded-full shadow-lg backdrop-blur-sm">
+                                    {{ match($locale) { 'it' => 'Clicca per ingrandire tutti i loghi', 'en' => 'Click to expand all logos', default => 'اضغط لمشاهدة جميع الشعارات بوضوح كامل' } }}
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Meta Bar -->
+                        <div class="mt-4 flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-slate-100 text-xs text-slate-600 font-bold">
+                            <span class="inline-flex items-center gap-1.5">
+                                <span class="size-2 rounded-full bg-emerald-500"></span>
+                                <span>{{ match($locale) { 'it' => '+40 Enti e Aziende Partner', 'en' => '40+ Partner Institutions & Firms', default => 'أكثر من 40 جهة ومؤسسة وشريك نجاح' } }}</span>
+                            </span>
+                            <span class="text-slate-400 font-mono">{{ match($locale) { 'it' => 'Scuole • Università • Traduzioni • Multinazionali', 'en' => 'Schools • Universities • Translation • Multinationals', default => 'مدارس دولية • جامعات • مراكز ترجمة • كبرى الشركات' } }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 2: Partners Outside Egypt (European Universities) -->
+                <div id="panel-partners-intl" class="partner-panel hidden transition-all duration-500">
+                    <div class="relative overflow-hidden rounded-3xl border-2 border-slate-200 bg-white p-4 sm:p-8 shadow-xl group">
+                        <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
+                            <div>
+                                <h3 class="text-lg font-black text-slate-900 flex items-center gap-2">
+                                    <span class="size-3 rounded-full bg-[#c27803]"></span>
+                                    <span>{{ match($locale) { 'it' => 'Università Europee e Atenei Accreditati', 'en' => 'Accredited European Partner Universities', default => 'أعرق الجامعات الأوروبية والمؤسسات التعليمية المعتمدة' } }}</span>
+                                </h3>
+                                <p class="text-xs text-slate-500 font-medium mt-1">
+                                    {{ match($locale) { 'it' => 'Politecnico di Milano, Bologna, Sapienza, Pisa, Torino, Napoli Federico II, Padova, Bicocca', 'en' => 'Politecnico di Milano, Bologna, Sapienza, Pisa, Torino, Napoli Federico II, Padova, Bicocca', default => 'بوليتكنيك ميلانو، بولونيا، سابينزا، بيزا، تورينو، نابولي، بادوفا، بافيا، روما، بارما وغيرها' } }}
+                                </p>
+                            </div>
+                            <button type="button" onclick="openPartnerModal('{{ asset('assets/images/partners/partners-international.jpg') }}', 'شركاء النجاح خارج مصر - الجامعات الأوروبية')" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-100 hover:bg-[#fe0002] hover:text-white text-slate-700 text-xs font-black transition cursor-pointer shadow-2xs">
+                                <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
+                                <span>{{ match($locale) { 'it' => 'Ingrandisci', 'en' => 'Zoom In', default => 'تكبير العرض' } }}</span>
+                            </button>
+                        </div>
+
+                        <!-- Image Frame -->
+                        <div class="relative overflow-hidden rounded-2xl bg-slate-100 border border-slate-200 cursor-pointer" onclick="openPartnerModal('{{ asset('assets/images/partners/partners-international.jpg') }}', 'شركاء النجاح خارج مصر - الجامعات الأوروبية')">
+                            <img src="{{ asset('assets/images/partners/partners-international.jpg') }}" alt="شركاء النجاح خارج مصر" class="w-full h-auto object-contain transition duration-500 group-hover:scale-[1.02]">
+                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                                <span class="opacity-0 group-hover:opacity-100 transition-opacity bg-black/75 text-white text-xs font-black px-4 py-2 rounded-full shadow-lg backdrop-blur-sm">
+                                    {{ match($locale) { 'it' => 'Clicca per ingrandire tutti gli atenei', 'en' => 'Click to inspect all university crests', default => 'اضغط لمشاهدة جميع شعارات الجامعات الأوروبية بدقة عالية' } }}
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Meta Bar -->
+                        <div class="mt-4 flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-slate-100 text-xs text-slate-600 font-bold">
+                            <span class="inline-flex items-center gap-1.5">
+                                <span class="size-2 rounded-full bg-emerald-500"></span>
+                                <span>{{ match($locale) { 'it' => 'Università Statali e Politecnici d\'Eccellenza', 'en' => 'Top Public Universities & Polytechnics', default => 'جامعات حكومية وبوليتكنيك مصنفة عالمياً' } }}</span>
+                            </span>
+                            <span class="text-slate-400 font-mono">{{ match($locale) { 'it' => 'Milano • Roma • Bologna • Pisa • Torino • Padova', 'en' => 'Milan • Rome • Bologna • Pisa • Turin • Padua', default => 'ميلانو • روما • بولونيا • بيزا • تورينو • بادوفا • نابولي' } }}</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Image Modal (Lightbox) -->
+    <div id="partner-lightbox-modal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6" onclick="closePartnerModal(event)">
+        <div class="relative max-w-5xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl p-4 sm:p-6 flex flex-col" onclick="event.stopPropagation()">
+            <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-200">
+                <h4 id="partner-modal-title" class="text-sm sm:text-base font-black text-slate-900"></h4>
+                <button type="button" onclick="closePartnerModal()" class="size-8 rounded-full bg-slate-100 hover:bg-red-50 hover:text-red-600 flex items-center justify-center font-bold text-slate-600 transition cursor-pointer">
+                    ✕
+                </button>
+            </div>
+            <div class="overflow-auto max-h-[75vh] flex items-center justify-center rounded-2xl bg-slate-50 p-2">
+                <img id="partner-modal-img" src="" alt="Partner Image" class="max-w-full h-auto object-contain rounded-xl">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openPartnerModal(src, title) {
+            const modal = document.getElementById('partner-lightbox-modal');
+            const img = document.getElementById('partner-modal-img');
+            const tEl = document.getElementById('partner-modal-title');
+            if (modal && img && tEl) {
+                img.src = src;
+                tEl.textContent = title;
+                modal.classList.remove('hidden');
+            }
+        }
+        function closePartnerModal() {
+            const modal = document.getElementById('partner-lightbox-modal');
+            if (modal) modal.classList.add('hidden');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabBtns = document.querySelectorAll('.partner-tab-btn');
+            const panelEgypt = document.getElementById('panel-partners-egypt');
+            const panelIntl = document.getElementById('panel-partners-intl');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const target = btn.dataset.target;
+                    tabBtns.forEach(b => {
+                        b.classList.remove('active-partner-tab', 'text-slate-900');
+                        b.classList.add('text-slate-600');
+                    });
+                    btn.classList.add('active-partner-tab', 'text-slate-900');
+                    btn.classList.remove('text-slate-600');
+
+                    if (target === 'partners-egypt') {
+                        panelEgypt?.classList.remove('hidden');
+                        panelIntl?.classList.add('hidden');
+                    } else {
+                        panelEgypt?.classList.add('hidden');
+                        panelIntl?.classList.remove('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+    <style>
+        .active-partner-tab {
+            background-color: #fe0002 !important;
+            color: #ffffff !important;
+            box-shadow: 0 4px 14px rgba(254, 0, 2, 0.25);
+        }
+    </style>
 
     <!-- ==========================================================
          TESTIMONIALS SECTION
@@ -1737,13 +1984,21 @@
             <div class="relative z-10 flex flex-col items-center justify-between gap-8 text-center md:flex-row md:text-start">
                 <div class="max-w-2xl">
                     <span class="inline-flex items-center gap-2 rounded-full bg-white/20 border border-white/40 px-4 py-1 text-xs font-black text-white backdrop-blur-md shadow-xs">
-                        {{ data_get($siteSettings ?? [], 'cta_badge.'.$locale, 'ابدأ مستقبلك اليوم') }}
+                        {{ data_get($siteSettings ?? [], 'cta_badge.'.$locale, match($locale) { 'it' => 'Inizia il tuo futuro oggi', 'en' => 'Start Your Future Today', default => 'ابدأ مستقبلك اليوم' }) }}
                     </span>
                     <h2 class="mt-4 text-2xl font-black text-white sm:text-4xl drop-shadow-sm leading-tight">
-                        {{ data_get($siteSettings ?? [], 'cta_title.'.$locale, 'جاهز لبدء رحلتك نحو الدول الأوروبية وأرقى الوظائف الدولية؟') }}
+                        {{ data_get($siteSettings ?? [], 'cta_title.'.$locale, match($locale) {
+                            'it' => 'Pronto a compiere il tuo prossimo passo con INTOK?',
+                            'en' => 'Ready to Take Your Next Step with INTOK?',
+                            default => 'جاهز تبدأ خطوتك الجاية مع INTOK؟',
+                        }) }}
                     </h2>
                     <p class="mt-3 text-sm leading-relaxed text-red-50/95 font-medium">
-                        {{ data_get($siteSettings ?? [], 'cta_subtitle.'.$locale, 'تواصل معنا الآن أو تابعنا عبر منصاتنا الرسمية على إنستغرام وتيك توك، ودع فريق INTOK Academy يرسم معك طريق النجاح.') }}
+                        {{ data_get($siteSettings ?? [], 'cta_subtitle.'.$locale, match($locale) {
+                            'it' => 'Che il tuo obiettivo sia imparare una lingua, sviluppare competenze professionali, qualificarti per studiare in Europa o completare le tue pratiche accademiche, il team INTOK è pronto ad aiutarti a iniziare.',
+                            'en' => 'Whether your goal is learning a language, developing career skills, qualifying to study in Europe, or completing academic procedures, the INTOK team is ready to guide your start.',
+                            default => 'سواء هدفك تتعلم لغة، تطور مهاراتك المهنية، تتأهل للدراسة في أوروبا أو تستكمل إجراءاتك الأكاديمية، فريق INTOK جاهز يساعدك تبدأ.',
+                        }) }}
                     </p>
                     
                     <!-- Official Social Links -->

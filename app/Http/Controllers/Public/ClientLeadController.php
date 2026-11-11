@@ -38,8 +38,15 @@ class ClientLeadController extends Controller
 
     public function book(StoreConsultationBookingRequest $request, ClientLeadIntakeService $leads): RedirectResponse
     {
-        $leads->book([...$request->validated(), 'language' => app()->getLocale()]);
+        $data = $request->validated();
+        $booking = $leads->book([...$data, 'language' => app()->getLocale()]);
 
-        return back()->with('status', __('site.booking_success'));
+        $message = ($booking->booking_type === 'study_abroad')
+            ? (app()->getLocale() === 'ar'
+                ? 'تم استلام بياناتك بنجاح! فريق INTOK هيراجع طلبك ويتواصل معاك لمساعدتك في اختيار المسار الدراسي المناسب.'
+                : __('site.booking_success'))
+            : __('site.booking_success');
+
+        return back()->with('status', $message)->with('active_tab', $booking->booking_type ?? 'general');
     }
 }
