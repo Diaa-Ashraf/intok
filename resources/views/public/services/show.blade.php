@@ -143,13 +143,19 @@
                         </h3>
                         <div class="mt-4 space-y-3">
                             @foreach($service->faqs[$locale] as $faq)
-                                <details class="group rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:border-red-300">
-                                    <summary class="cursor-pointer font-bold text-slate-900 text-sm list-none flex items-center justify-between">
-                                        <span>{{ $faq['question'] }}</span>
-                                        <span class="text-red-600 transition-transform group-open:rotate-180">▼</span>
-                                    </summary>
-                                    <p class="mt-3 text-xs leading-relaxed text-slate-600 pt-3 border-t border-slate-200">{{ $faq['answer'] }}</p>
-                                </details>
+                                @php
+                                    $faqQ = $faq['question'] ?? $faq['q'] ?? '';
+                                    $faqA = $faq['answer'] ?? $faq['a'] ?? '';
+                                @endphp
+                                @if($faqQ && $faqA)
+                                    <details class="group rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:border-red-300">
+                                        <summary class="cursor-pointer font-bold text-slate-900 text-sm list-none flex items-center justify-between">
+                                            <span>{{ $faqQ }}</span>
+                                            <span class="text-red-600 transition-transform group-open:rotate-180">▼</span>
+                                        </summary>
+                                        <p class="mt-3 text-xs leading-relaxed text-slate-600 pt-3 border-t border-slate-200">{{ $faqA }}</p>
+                                    </details>
+                                @endif
                             @endforeach
                         </div>
                     </div>

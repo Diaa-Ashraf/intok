@@ -30,27 +30,27 @@
                 </span>
 
                 <h1 class="mt-5 text-3xl font-black leading-tight text-[#c27803] sm:text-5xl lg:text-6xl tracking-tight">
-                    {{ match($locale) {
+                    {{ data_get($siteSettings ?? [], 'about_hero_title.'.$locale, match($locale) {
                         'it' => 'INTOK ACADEMY – Ti apriamo nuove porte per apprendere e crescere',
                         'en' => 'INTOK ACADEMY – Opening New Doors to Learning & Growth',
                         default => 'INTOK ACADEMY – بنفتحلك أبواب جديدة للتعلم والتطور',
-                    } }}
+                    }) }}
                 </h1>
 
                 <p class="mt-4 text-base sm:text-lg leading-relaxed text-slate-700 font-medium">
-                    {{ match($locale) {
+                    {{ data_get($siteSettings ?? [], 'about_hero_p1.'.$locale, match($locale) {
                         'it' => 'Siamo un\'accademia specializzata in istruzione, formazione e qualificazione accademica e professionale: ti aiutiamo a sviluppare competenze, ampliare le tue opportunità e compiere passi ponderati verso il tuo futuro.',
                         'en' => 'We are an academy specialized in education, practical training, and academic & career qualification, helping you build high-demand skills, expand horizons, and take well-planned steps toward your future.',
                         default => 'إحنا أكاديمية متخصصة في التعليم والتدريب والتأهيل الأكاديمي والمهني، بنساعدك تطور مهاراتك، توسّع فرصك، وتاخد خطوات مدروسة نحو مستقبلك.',
-                    } }}
+                    }) }}
                 </p>
 
                 <p class="mt-2 text-sm sm:text-base leading-relaxed text-slate-600">
-                    {{ match($locale) {
+                    {{ data_get($siteSettings ?? [], 'about_hero_p2.'.$locale, match($locale) {
                         'it' => 'Dall\'apprendimento linguistico e traduzioni asseverate alla formazione professionale, servizi accademici e studi all\'estero: offriamo soluzioni variegate su misura per le tue ambizioni.',
                         'en' => 'From language learning and certified translation to career training, academic services, and studying abroad: we offer tailored solutions matching your ambitions.',
                         default => 'من تعلم اللغات والترجمة المعتمدة، إلى التدريب المهني والخدمات الأكاديمية والدراسة بالخارج؛ بنقدم حلول متنوعة تناسب طموحاتك واحتياجاتك.',
-                    } }}
+                    }) }}
                 </p>
 
                 <div class="mt-8 flex flex-wrap items-center gap-4">
@@ -73,34 +73,38 @@
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="grid gap-10 lg:grid-cols-12 items-center">
                 <div class="lg:col-span-6 reveal-up">
-                    <span class="text-xs font-black uppercase tracking-wider text-[#fe0002] block mb-2">قصتنا – حكاية INTOK</span>
+                    <span class="text-xs font-black uppercase tracking-wider text-[#fe0002] block mb-2">{{ data_get($siteSettings ?? [], 'about_story_badge.'.$locale, match($locale) {
+                        'it' => 'La Nostra Storia – Il Viaggio di INTOK',
+                        'en' => 'Our Story – The Journey of INTOK',
+                        default => 'قصتنا – حكاية INTOK',
+                    }) }}</span>
                     <h2 class="text-2xl sm:text-4xl font-black text-[#c27803] leading-tight">
-                        {{ match($locale) {
+                        {{ data_get($siteSettings ?? [], 'about_story_title.'.$locale, match($locale) {
                             'it' => 'Siamo partiti da un\'idea... per aprirti opportunità più grandi',
                             'en' => 'Started with an idea... to unlock greater opportunities for you',
                             default => 'بدأنا بفكرة.. وهدفنا نفتحلك فرص أكبر',
-                        } }}
+                        }) }}
                     </h2>
                     <p class="mt-4 text-sm sm:text-base leading-relaxed text-slate-700 font-medium">
-                        {{ match($locale) {
+                        {{ data_get($siteSettings ?? [], 'about_story_p1.'.$locale, match($locale) {
                             'it' => 'INTOK ACADEMY è nata con una visione chiara: la vera istruzione non è solo nozioni teoriche, ma un\'esperienza integrata che ti permette di crescere e prepararti a opportunità migliori.',
                             'en' => 'INTOK ACADEMY was established with a clear vision: genuine education is not mere information, but an integrated experience that helps you evolve and prepare for prime opportunities.',
                             default => 'اتأسست INTOK ACADEMY برؤية واضحة: إن التعليم الحقيقي مش مجرد معلومات بتتعلمها، لكنه تجربة متكاملة تساعدك تطور نفسك وتستعد لفرص أفضل.',
-                        } }}
+                        }) }}
                     </p>
                     <p class="mt-3 text-sm sm:text-base leading-relaxed text-slate-600">
-                        {{ match($locale) {
-                            'it' => 'Da qui abbiamo iniziato a offrire un ventaglio di servizi educativi, linguistici e accademici, puntando sull\'applicazione pratica, sul tutoraggio continuo e sull\'aiutare ciascuna persona a individuare la strada ideale per i propri obiettivi.',
+                        {{ data_get($siteSettings ?? [], 'about_story_p2.'.$locale, match($locale) {
+                            'it' => 'Da qui abbiamo iniziato a offrire un ventaglio di servizi educativi, linguistici e accademici, puntando sull\'applicazione practical, sul tutoraggio continuo e sull\'aiutare ciascuna persona a individuare la strada ideale per i propri obiettivi.',
                             'en' => 'Hence we began providing educational, vocational, and academic services with deep focus on hands-on application, constant follow-up, and tailoring pathways for each individual.',
                             default => 'ومن هنا بدأنا نقدم مجموعة متنوعة من الخدمات التعليمية والتدريبية والأكاديمية، مع الاهتمام بالتطبيق العملي، والمتابعة، ومساعدة كل شخص يحدد الطريق المناسب لأهدافه.',
-                        } }}
+                        }) }}
                     </p>
                     <p class="mt-3 text-sm sm:text-base leading-relaxed text-slate-600">
-                        {{ match($locale) {
+                        {{ data_get($siteSettings ?? [], 'about_story_p3.'.$locale, match($locale) {
                             'it' => 'Crediamo che ogni persona abbia un\'ambizione unica, ed è per questo che ci impegniamo a offrirle il supporto e i servizi necessari per compiere il prossimo passo con fiducia.',
                             'en' => 'We believe every individual possesses a unique ambition, and we strive to provide the specialized support that allows them to take the next leap confidently.',
                             default => 'بنؤمن إن لكل شخص طموح مختلف، وعشان كده بنسعى نوفرله الدعم والخدمات اللي تساعده ياخد خطوته الجاية بثقة.',
-                        } }}
+                        }) }}
                     </p>
                 </div>
                 <div class="lg:col-span-6 reveal-scale">
@@ -138,9 +142,13 @@
                         <span class="grid size-12 place-items-center rounded-2xl bg-amber-50 text-amber-700 border border-amber-200 text-xl font-black mb-5">
                             👁️
                         </span>
-                        <h3 class="text-xl font-black text-slate-900">رؤيتنا</h3>
+                        <h3 class="text-xl font-black text-slate-900">{{ match($locale) { 'it' => 'La Nostra Visione', 'en' => 'Our Vision', default => 'رؤيتنا' } }}</h3>
                         <p class="mt-3 text-sm leading-relaxed text-slate-600 font-medium">
-                            أن نكون من المؤسسات الرائدة في تقديم الحلول التعليمية والتدريبية والأكاديمية، وأن نساهم في بناء جيل يمتلك المعرفة والمهارات والقدرة على المنافسة محليًا ودوليًا.
+                            {{ data_get($siteSettings ?? [], 'about_vision_desc.'.$locale, match($locale) {
+                                'it' => 'Essere un\'istituzione leader nelle soluzioni educative, formative e accademiche, contribuendo a una generazione dotata di competenze e competitività a livello locale e internazionale.',
+                                'en' => 'To be a pioneering institution in educational, training, and academic solutions, contributing to a generation equipped with knowledge, skills, and competitive capability locally and globally.',
+                                default => 'أن نكون من المؤسسات الرائدة في تقديم الحلول التعليمية والتدريبية والأكاديمية، وأن نساهم في بناء جيل يمتلك المعرفة والمهارات والقدرة على المنافسة محليًا ودوليًا.',
+                            }) }}
                         </p>
                     </div>
                 </div>
@@ -151,9 +159,13 @@
                         <span class="grid size-12 place-items-center rounded-2xl bg-red-50 text-[#fe0002] border border-red-200 text-xl font-black mb-5">
                             🎯
                         </span>
-                        <h3 class="text-xl font-black text-slate-900">رسالتنا</h3>
+                        <h3 class="text-xl font-black text-slate-900">{{ match($locale) { 'it' => 'La Nostra Missione', 'en' => 'Our Mission', default => 'رسالتنا' } }}</h3>
                         <p class="mt-3 text-sm leading-relaxed text-slate-600 font-medium">
-                            تقديم خدمات تعليمية وتدريبية متكاملة تجمع بين المعرفة والتطبيق العملي، وتسهيل وصول الأفراد إلى الفرص الأكاديمية والمهنية من خلال التوجيه والمتابعة والحلول المتخصصة.
+                            {{ data_get($siteSettings ?? [], 'about_mission_desc.'.$locale, match($locale) {
+                                'it' => 'Fornire servizi educativi e formativi integrati che uniscono conoscenza teorica e pratica applicata, facilitando l\'accesso alle opportunità accademiche e professionali con guida esperta.',
+                                'en' => 'Delivering integrated educational and training services bridging knowledge and hands-on practice, facilitating access to academic and professional pathways through dedicated guidance and specialized solutions.',
+                                default => 'تقديم خدمات تعليمية وتدريبية متكاملة تجمع بين المعرفة والتطبيق العملي، وتسهيل وصول الأفراد إلى الفرص الأكاديمية والمهنية من خلال التوجيه والمتابعة والحلول المتخصصة.',
+                            }) }}
                         </p>
                     </div>
                 </div>
@@ -164,27 +176,27 @@
                         <span class="grid size-12 place-items-center rounded-2xl bg-emerald-50 text-emerald-700 border border-emerald-200 text-xl font-black mb-5">
                             ⭐
                         </span>
-                        <h3 class="text-xl font-black text-slate-900">قيمنا</h3>
+                        <h3 class="text-xl font-black text-slate-900">{{ match($locale) { 'it' => 'I Nostri Valori', 'en' => 'Our Values', default => 'قيمنا' } }}</h3>
                         <ul class="mt-3 space-y-2 text-xs sm:text-sm text-slate-700 font-medium">
                             <li class="flex items-center gap-2">
                                 <span class="size-1.5 rounded-full bg-[#fe0002]"></span>
-                                <span>الجودة والاحترافية في تقديم الخدمات.</span>
+                                <span>{{ match($locale) { 'it' => 'Qualità e professionalità nell\'erogazione dei servizi.', 'en' => 'Quality and professionalism in service delivery.', default => 'الجودة والاحترافية في تقديم الخدمات.' } }}</span>
                             </li>
                             <li class="flex items-center gap-2">
                                 <span class="size-1.5 rounded-full bg-[#fe0002]"></span>
-                                <span>المصداقية والشفافية في التعامل.</span>
+                                <span>{{ match($locale) { 'it' => 'Trasparenza e affidabilità nei rapporti.', 'en' => 'Credibility and transparency in all dealings.', default => 'المصداقية والشفافية في التعامل.' } }}</span>
                             </li>
                             <li class="flex items-center gap-2">
                                 <span class="size-1.5 rounded-full bg-[#fe0002]"></span>
-                                <span>الاهتمام بتجربة كل طالب ومتدرب.</span>
+                                <span>{{ match($locale) { 'it' => 'Cura dell\'esperienza di ogni studente e corsista.', 'en' => 'Dedicated care for every student and trainee journey.', default => 'الاهتمام بتجربة كل طالب ومتدرب.' } }}</span>
                             </li>
                             <li class="flex items-center gap-2">
                                 <span class="size-1.5 rounded-full bg-[#fe0002]"></span>
-                                <span>التطوير المستمر ومواكبة سوق العمل.</span>
+                                <span>{{ match($locale) { 'it' => 'Sviluppo costante e allineamento con i bisogni del mercato del lavoro.', 'en' => 'Continuous development aligned with job market demands.', default => 'التطوير المستمر ومواكبة احتياجات سوق العمل.' } }}</span>
                             </li>
                             <li class="flex items-center gap-2">
                                 <span class="size-1.5 rounded-full bg-[#fe0002]"></span>
-                                <span>الالتزام والمتابعة في كل خطوة.</span>
+                                <span>{{ match($locale) { 'it' => 'Impegno e follow-up in ogni singola fase.', 'en' => 'Commitment and guidance at every single step.', default => 'الالتزام والمتابعة في كل خطوة.' } }}</span>
                             </li>
                         </ul>
                     </div>
@@ -200,22 +212,96 @@
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-14 reveal-up">
                 <span class="inline-block rounded-full bg-red-50 border border-red-200 px-4 py-1 text-xs font-black text-[#fe0002]">
-                    خدماتنا – بنساعدك في إيه؟
+                    {{ data_get($siteSettings ?? [], 'about_services_badge.'.$locale, match($locale) {
+                        'it' => 'I Nostri Servizi – Come Ti Aiutiamo',
+                        'en' => 'Our Services – How We Help You',
+                        default => 'خدماتنا – بنساعدك في إيه؟',
+                    }) }}
                 </span>
                 <h2 class="mt-3 text-3xl font-black text-[#c27803] sm:text-4xl">
-                    مجالات متعددة.. وهدف واحد: تطور مستقبلك
+                    {{ data_get($siteSettings ?? [], 'about_services_title.'.$locale, match($locale) {
+                        'it' => 'Ambiti Molteplici.. Unico Obiettivo: Sviluppare il Tuo Futuro',
+                        'en' => 'Multiple Domains.. One Goal: Advance Your Future',
+                        default => 'مجالات متعددة.. وهدف واحد: تطور مستقبلك',
+                    }) }}
                 </h2>
             </div>
 
             <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 @php
                     $aboutAreas = [
-                        ['title' => 'التأهيل للدراسة في أوروبا', 'desc' => 'نساعدك في استكشاف الفرص التعليمية في أكثر من 10 دول أوروبية، واختيار الجامعة والتخصص المناسب، وتجهيز ملفات التقديم ومتابعة إجراءات القبول.'],
-                        ['title' => 'تعلم اللغات الأجنبية', 'desc' => 'برامج تعليمية في اللغات الأجنبية بمستويات مختلفة، تساعدك تطور مهارات التواصل وتفتح لنفسك فرص أكاديمية ومهنية جديدة.'],
-                        ['title' => 'الترجمة المعتمدة والتدقيق اللغوي', 'desc' => 'خدمات ترجمة وتدقيق للمستندات والوثائق الأكاديمية والرسمية والمهنية، وفق متطلبات الجهة المطلوب تقديم المستندات إليها.'],
-                        ['title' => 'التدريب والتأهيل المهني', 'desc' => 'برامج تدريبية عملية في مجالات مختلفة، منها الكول سنتر والإرشاد، بهدف تنمية المهارات والاستعداد لمتطلبات سوق العمل.'],
-                        ['title' => 'الخدمات الأكاديمية والدولية', 'desc' => 'مساعدة في إجراءات التقديم للجامعات، وحجز الاختبارات الدولية، ومواعيد السفارات، والتقديم للدراسات العليا والمنح وفق شروط كل جهة.'],
-                        ['title' => 'التأهيل للاختبارات الدولية', 'desc' => 'برامج تحضيرية تساعد الطلاب على الاستعداد للاختبارات الدولية والأكاديمية، من خلال التدريب والتوجيه حسب طبيعة كل اختبار.']
+                        [
+                            'title' => match($locale) {
+                                'it' => 'Qualificazione per Studiare in Europa',
+                                'en' => 'Qualification to Study in Europe',
+                                default => 'التأهيل للدراسة في اوربا',
+                            },
+                            'desc' => match($locale) {
+                                'it' => 'Ti aiutiamo a esplorare opportunità formative in oltre 10 paesi europei, scegliere ateneo e corso ideale, e preparare fascicoli di ammissione.',
+                                'en' => 'We help you explore educational opportunities across 10+ European countries, select universities and majors, and prepare application files.',
+                                default => 'نساعدك في استكشاف الفرص التعليمية في أكثر من 10 دول أوروبية، واختيار الجامعة والتخصص المناسب، وتجهيز ملفات التقديم ومتابعة إجراءات القبول.',
+                            }
+                        ],
+                        [
+                            'title' => match($locale) {
+                                'it' => 'Apprendimento delle Lingue',
+                                'en' => 'Language Learning',
+                                default => 'تعلم اللغات',
+                            },
+                            'desc' => match($locale) {
+                                'it' => 'Corsi di lingue straniere a vari livelli per sviluppare competenze comunicative e aprire orizzonti accademici e di carriera.',
+                                'en' => 'Language programs at multiple levels to boost communication skills and unlock new academic and professional horizons.',
+                                default => 'برامج تعليمية في اللغات بمستويات مختلفة، تساعدك تطور مهارات التواصل وتفتح لنفسك فرص أكاديمية ومهنية جديدة.',
+                            }
+                        ],
+                        [
+                            'title' => match($locale) {
+                                'it' => 'Traduzione Asseverata e Revisione Linguistica',
+                                'en' => 'Certified Translation & Proofreading',
+                                default => 'الترجمة المعتمدة والتدقيق اللغوي',
+                            },
+                            'desc' => match($locale) {
+                                'it' => 'Traduzioni giurate e revisione di documenti accademici, ufficiali e professionali secondo i requisiti delle autorità competenti.',
+                                'en' => 'Certified translation and proofreading for academic, official, and corporate documents aligned with recipient authority rules.',
+                                default => 'خدمات ترجمة وتدقيق للمستندات والوثائق الأكاديمية والرسمية والمهنية، وفق متطلبات الجهة المطلوب تقديم المستندات إليها.',
+                            }
+                        ],
+                        [
+                            'title' => match($locale) {
+                                'it' => 'Formazione e Qualificazione Professionale (Call Center & Guida Turistica)',
+                                'en' => 'Career Training & Qualification (Call Center & Tour Guiding)',
+                                default => 'التدريب والتأهيل المهني (منها الكول سنتر والإرشاد السياحي)',
+                            },
+                            'desc' => match($locale) {
+                                'it' => 'Programmi pratici in settori ad alta domanda come call center e turismo, mirati allo sviluppo di competenze richieste dal mercato.',
+                                'en' => 'Practical training programs in fields like multinational call centers and tour guiding, preparing you for real job market requirements.',
+                                default => 'برامج تدريبية عملية في مجالات مختلفة، منها الكول سنتر والإرشاد السياحي، بهدف تنمية المهارات والاستعداد لمتطلبات سوق العمل.',
+                            }
+                        ],
+                        [
+                            'title' => match($locale) {
+                                'it' => 'Servizi Accademici e Internazionali',
+                                'en' => 'Academic & International Services',
+                                default => 'الخدمات الأكاديمية والدولية',
+                            },
+                            'desc' => match($locale) {
+                                'it' => 'Supporto nelle ammissioni universitarie, prenotazione test internazionali, visti e domande per borse di studio post-laurea.',
+                                'en' => 'Assistance with university applications, international exam bookings, consular appointments, and postgraduate scholarship submissions.',
+                                default => 'مساعدة في إجراءات التقديم للجامعات، وحجز الاختبارات الدولية، ومواعيد السفارات، والتقديم للدراسات العليا والمنح وفق شروط كل جهة.',
+                            }
+                        ],
+                        [
+                            'title' => match($locale) {
+                                'it' => 'Preparazione per Esami Internazionali',
+                                'en' => 'Preparation for International Exams',
+                                default => 'التأهيل للاختبارات الدولية',
+                            },
+                            'desc' => match($locale) {
+                                'it' => 'Corsi intensivi per superare con successo certificazioni linguistiche ed esami di ammissione universitari.',
+                                'en' => 'Preparatory programs helping students achieve top scores in official international language and entrance examinations.',
+                                default => 'برامج تحضيرية تساعد الطلاب على الاستعداد للاختبارات الدولية والأكاديمية، من خلال التدريب والتوجيه حسب طبيعة كل اختبار.',
+                            }
+                        ],
                     ];
                 @endphp
                 @foreach($aboutAreas as $idx => $area)
@@ -236,22 +322,48 @@
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-14 reveal-up">
                 <span class="inline-block rounded-full bg-red-50 border border-red-200 px-4 py-1 text-xs font-black text-[#fe0002]">
-                    لماذا تختار INTOK ACADEMY؟
+                    {{ data_get($siteSettings ?? [], 'about_why_badge.'.$locale, match($locale) {
+                        'it' => 'Perché Scegliere INTOK ACADEMY?',
+                        'en' => 'Why Choose INTOK ACADEMY?',
+                        default => 'لماذا تختار INTOK ACADEMY؟',
+                    }) }}
                 </span>
                 <h2 class="mt-3 text-3xl font-black text-[#c27803] sm:text-4xl">
-                    مش بنقدم خدمة وخلاص.. بنهتم برحلتك من البداية
+                    {{ data_get($siteSettings ?? [], 'about_why_title.'.$locale, match($locale) {
+                        'it' => 'Molto più di un servizio.. Ci prendiamo cura del tuo percorso dall\'inizio alla fine',
+                        'en' => 'More than just a service.. We genuinely care for your journey from start to finish',
+                        default => 'مش بنقدم خدمة وخلاص.. بنهتم برحلتك من البداية',
+                    }) }}
                 </h2>
             </div>
 
             <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 @php
                     $whyPoints = [
-                        ['title' => 'تنوع الخدمات', 'desc' => 'مجموعة من الحلول التعليمية والتدريبية والأكاديمية في مكان واحد.'],
-                        ['title' => 'التوجيه المناسب', 'desc' => 'بنساعدك تفهم اختياراتك وتحدد الخطوة الأنسب لهدفك.'],
-                        ['title' => 'متابعة مستمرة', 'desc' => 'بنهتم بمتابعة خطواتك والإجابة عن استفساراتك.'],
-                        ['title' => 'التطبيق العملي', 'desc' => 'بنركز على المهارات والخبرات اللي تقدر تستفيد منها.'],
-                        ['title' => 'فريق متخصص', 'desc' => 'فريق يعمل في مجالات التعليم والتدريب والخدمات الأكاديمية.'],
-                        ['title' => 'وضوح الإجراءات', 'desc' => 'بنوضح المتطلبات والخطوات والتكاليف قبل بدء الخدمة.']
+                        [
+                            'title' => match($locale) { 'it' => 'Varietà di Servizi', 'en' => 'Comprehensive Services', default => 'تنوع الخدمات' },
+                            'desc' => match($locale) { 'it' => 'Una gamma completa di soluzioni formative, educative e accademiche in un unico luogo.', 'en' => 'A diverse suite of educational, training, and academic solutions under one roof.', default => 'مجموعة من الحلول التعليمية والتدريبية والأكاديمية في مكان واحد.' }
+                        ],
+                        [
+                            'title' => match($locale) { 'it' => 'Orientamento Personalizzato', 'en' => 'Tailored Guidance', default => 'التوجيه المناسب' },
+                            'desc' => match($locale) { 'it' => 'Ti aiutiamo a comprendere le tue opzioni e a definire il passo più adatto ai tuoi obiettivi.', 'en' => 'We help you assess your options and define the most suitable step towards your goal.', default => 'بنساعدك تفهم اختياراتك وتحدد الخطوة الأنسب لهدفك.' }
+                        ],
+                        [
+                            'title' => match($locale) { 'it' => 'Follow-up Continuo', 'en' => 'Continuous Follow-up', default => 'متابعة مستمرة' },
+                            'desc' => match($locale) { 'it' => 'Seguiamo con costanza i tuoi passi e rispondiamo prontamente a ogni tuo quesito.', 'en' => 'We closely monitor your journey and address every inquiry thoroughly.', default => 'بنهتم بمتابعة خطواتك والإجابة عن استفساراتك.' }
+                        ],
+                        [
+                            'title' => match($locale) { 'it' => 'Applicazione Pratica', 'en' => 'Hands-on Application', default => 'التطبيق العملي' },
+                            'desc' => match($locale) { 'it' => 'Ci concentriamo su competenze reali e prassi concrete da cui puoi trarre massimo beneficio.', 'en' => 'We focus on high-yield skills and direct practical knowledge you can leverage immediately.', default => 'بنركز على المهارات والخبرات اللي تقدر تستفيد منها.' }
+                        ],
+                        [
+                            'title' => match($locale) { 'it' => 'Team Specializzato', 'en' => 'Specialized Experts', default => 'فريق متخصص' },
+                            'desc' => match($locale) { 'it' => 'Docenti e consulenti con solida esperienza nei campi dell\'istruzione, formazione e servizi accademici.', 'en' => 'A team operating across education, vocational training, and academic advisory.', default => 'فريق يعمل في مجالات التعليم والتدريب والخدمات الأكاديمية.' }
+                        ],
+                        [
+                            'title' => match($locale) { 'it' => 'Trasparenza delle Procedure', 'en' => 'Transparent Procedures', default => 'وضوح الإجراءات' },
+                            'desc' => match($locale) { 'it' => 'Chiariamo requisiti, fasi operative e costi prima dell\'avvio di qualsiasi servizio.', 'en' => 'We provide complete clarity on requirements, roadmap steps, and costs before initiating any service.', default => 'بنوضح المتطلبات والخطوات والتكاليف قبل بدء الخدمة.' }
+                        ],
                     ];
                 @endphp
                 @foreach($whyPoints as $p)
@@ -290,10 +402,13 @@
                             <span>🇪🇬</span>
                             <span>شركاء النجاح داخل مصر</span>
                         </h3>
-                        <span class="text-xs font-bold text-slate-500">مؤسسات • مدارس • شركات</span>
+                        <button type="button" onclick="openPartnerModal('{{ asset('assets/images/partners/partners-egypt.jpg') }}', 'شركاء النجاح داخل مصر')" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white hover:bg-[#fe0002] hover:text-white text-slate-700 text-xs font-black transition cursor-pointer shadow-2xs border border-slate-200">
+                            <span>تكبير الصورة</span>
+                            <span>🔍</span>
+                        </button>
                     </div>
-                    <div class="overflow-hidden rounded-2xl bg-white border border-slate-200 p-2">
-                        <img src="{{ asset('assets/images/partners/partners-egypt.jpg') }}" alt="شركاء النجاح داخل مصر" class="w-full h-auto object-contain rounded-xl hover:scale-105 transition duration-500">
+                    <div class="overflow-hidden rounded-2xl bg-white border border-slate-200 p-2 cursor-pointer group" onclick="openPartnerModal('{{ asset('assets/images/partners/partners-egypt.jpg') }}', 'شركاء النجاح داخل مصر')">
+                        <img src="{{ asset('assets/images/partners/partners-egypt.jpg') }}" alt="شركاء النجاح داخل مصر" class="w-full h-auto object-contain rounded-xl group-hover:scale-105 transition duration-500">
                     </div>
                 </div>
 
@@ -304,10 +419,13 @@
                             <span>🇪🇺</span>
                             <span>شركاء النجاح خارج مصر (الجامعات الأوروبية)</span>
                         </h3>
-                        <span class="text-xs font-bold text-slate-500">جامعات وبوليتكنيك</span>
+                        <button type="button" onclick="openPartnerModal('{{ asset('assets/images/partners/partners-international.jpg') }}', 'شركاء النجاح خارج مصر (الجامعات الأوروبية)')" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white hover:bg-[#fe0002] hover:text-white text-slate-700 text-xs font-black transition cursor-pointer shadow-2xs border border-slate-200">
+                            <span>تكبير الصورة</span>
+                            <span>🔍</span>
+                        </button>
                     </div>
-                    <div class="overflow-hidden rounded-2xl bg-white border border-slate-200 p-2">
-                        <img src="{{ asset('assets/images/partners/partners-international.jpg') }}" alt="شركاء النجاح خارج مصر" class="w-full h-auto object-contain rounded-xl hover:scale-105 transition duration-500">
+                    <div class="overflow-hidden rounded-2xl bg-white border border-slate-200 p-2 cursor-pointer group" onclick="openPartnerModal('{{ asset('assets/images/partners/partners-international.jpg') }}', 'شركاء النجاح خارج مصر (الجامعات الأوروبية)')">
+                        <img src="{{ asset('assets/images/partners/partners-international.jpg') }}" alt="شركاء النجاح خارج مصر" class="w-full h-auto object-contain rounded-xl group-hover:scale-105 transition duration-500">
                     </div>
                 </div>
             </div>
@@ -458,4 +576,41 @@
             </div>
         </div>
     </section>
+
+    <!-- Partners Image Modal (Lightbox) -->
+    <div id="partner-lightbox-modal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6" onclick="closePartnerModal(event)">
+        <div class="relative max-w-5xl w-full bg-white rounded-3xl p-4 sm:p-6 shadow-2xl overflow-hidden" onclick="event.stopPropagation()">
+            <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-200">
+                <h4 id="partner-modal-title" class="text-sm sm:text-base font-black text-slate-900"></h4>
+                <button type="button" onclick="closePartnerModal()" class="size-8 rounded-full bg-slate-100 hover:bg-red-50 hover:text-red-600 flex items-center justify-center font-bold text-slate-600 transition cursor-pointer">
+                    &times;
+                </button>
+            </div>
+            <div class="max-h-[80vh] overflow-auto flex items-center justify-center p-2 bg-slate-50 rounded-2xl border border-slate-100">
+                <img id="partner-modal-img" src="" alt="Partner Image" class="max-w-full h-auto object-contain rounded-xl">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openPartnerModal(src, title) {
+            const modal = document.getElementById('partner-lightbox-modal');
+            const img = document.getElementById('partner-modal-img');
+            const tEl = document.getElementById('partner-modal-title');
+            if (modal && img) {
+                img.src = src;
+                if (tEl) tEl.textContent = title;
+                modal.classList.remove('hidden');
+                document.body.classList.add('overflow-hidden');
+            }
+        }
+
+        function closePartnerModal() {
+            const modal = document.getElementById('partner-lightbox-modal');
+            if (modal) {
+                modal.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            }
+        }
+    </script>
 @endsection

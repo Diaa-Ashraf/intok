@@ -1238,3 +1238,4 @@ return new class extends Migration
         Cache::forget('site.sitemap');
     }
 };
+

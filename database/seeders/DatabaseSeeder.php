@@ -561,6 +561,78 @@ class DatabaseSeeder extends Seeder
                 'en' => 'Direct WhatsApp',
                 'it' => 'WhatsApp diretto'
             ],
+
+            // About Us Page Dynamic Settings
+            'about_hero_title' => [
+                'ar' => 'INTOK ACADEMY – بنفتحلك أبواب جديدة للتعلم والتطور',
+                'en' => 'INTOK ACADEMY – Opening New Doors to Learning & Growth',
+                'it' => 'INTOK ACADEMY – Ti apriamo nuove porte per apprendere e crescere',
+            ],
+            'about_hero_p1' => [
+                'ar' => 'إحنا أكاديمية متخصصة في التعليم والتدريب والتأهيل الأكاديمي والمهني، بنساعدك تطور مهاراتك، توسّع فرصك، وتاخد خطوات مدروسة نحو مستقبلك.',
+                'en' => 'We are an academy specialized in education, practical training, and academic & career qualification, helping you build high-demand skills, expand horizons, and take well-planned steps toward your future.',
+                'it' => 'Siamo un\'accademia specializzata in istruzione, formazione e qualificazione accademica e professionale: ti aiutiamo a sviluppare competenze, ampliare le tue opportunità e compiere passi ponderati verso il tuo futuro.',
+            ],
+            'about_hero_p2' => [
+                'ar' => 'من تعلم اللغات والترجمة المعتمدة، إلى التدريب المهني والخدمات الأكاديمية والدراسة بالخارج؛ بنقدم حلول متنوعة تناسب طموحاتك واحتياجاتك.',
+                'en' => 'From language learning and certified translation to career training, academic services, and studying abroad: we offer tailored solutions matching your ambitions.',
+                'it' => 'Dall\'apprendimento linguistico e traduzioni asseverate alla formazione professionale, servizi accademici e studi all\'estero: offriamo soluzioni variegate su misura per le tue ambizioni.',
+            ],
+            'about_story_badge' => [
+                'ar' => 'قصتنا – حكاية INTOK',
+                'en' => 'Our Story – The Journey of INTOK',
+                'it' => 'La Nostra Storia – Il Viaggio di INTOK',
+            ],
+            'about_story_title' => [
+                'ar' => 'بدأنا بفكرة.. وهدفنا نفتحلك فرص أكبر',
+                'en' => 'Started with an idea... to unlock greater opportunities for you',
+                'it' => 'Siamo partiti da un\'idea... per aprirti opportunità più grandi',
+            ],
+            'about_story_p1' => [
+                'ar' => 'اتأسست INTOK ACADEMY برؤية واضحة: إن التعليم الحقيقي مش مجرد معلومات بتتعلمها، لكنه تجربة متكاملة تساعدك تطور نفسك وتستعد لفرص أفضل.',
+                'en' => 'INTOK ACADEMY was established with a clear vision: genuine education is not mere information, but an integrated experience that helps you evolve and prepare for prime opportunities.',
+                'it' => 'INTOK ACADEMY è nata con una visione chiara: la vera istruzione non è solo nozioni teoriche, ma un\'esperienza integrata che ti permette di crescere e prepararti a opportunità migliori.',
+            ],
+            'about_story_p2' => [
+                'ar' => 'ومن هنا بدأنا نقدم مجموعة متنوعة من الخدمات التعليمية والتدريبية والأكاديمية، مع الاهتمام بالتطبيق العملي، والمتابعة، ومساعدة كل شخص يحدد الطريق المناسب لأهدافه.',
+                'en' => 'Hence we began providing educational, vocational, and academic services with deep focus on hands-on application, constant follow-up, and tailoring pathways for each individual.',
+                'it' => 'Da qui abbiamo iniziato a offrire un ventaglio di servizi educativi, linguistici e accademici, puntando sull\'applicazione pratica, sul tutoraggio continuo e sull\'aiutare ciascuna persona a individuare la strada ideale per i propri obiettivi.',
+            ],
+            'about_story_p3' => [
+                'ar' => 'بنؤمن إن لكل شخص طموح مختلف، وعشان كده بنسعى نوفرله الدعم والخدمات اللي تساعده ياخد خطوته الجاية بثقة.',
+                'en' => 'We believe every individual possesses a unique ambition, and we strive to provide the specialized support that allows them to take the next leap confidently.',
+                'it' => 'Crediamo che ogni persona abbia un\'ambizione unica, ed è per questo che ci impegniamo a offrirle il supporto e i servizi necessari per compiere il prossimo passo con fiducia.',
+            ],
+            'about_vision_desc' => [
+                'ar' => 'أن نكون من المؤسسات الرائدة في تقديم الحلول التعليمية والتدريبية والأكاديمية، وأن نساهم في بناء جيل يمتلك المعرفة والمهارات والقدرة على المنافسة محليًا ودوليًا.',
+                'en' => 'To be a pioneering institution in educational, training, and academic solutions, contributing to a generation equipped with knowledge, skills, and competitive capability locally and globally.',
+                'it' => 'Essere un\'istituzione leader nelle soluzioni educative, formative e accademiche, contribuendo a una generazione dotata di competenze e competitività a livello locale e internazionale.',
+            ],
+            'about_mission_desc' => [
+                'ar' => 'تقديم خدمات تعليمية وتدريبية متكاملة تجمع بين المعرفة والتطبيق العملي، وتسهيل وصول الأفراد إلى الفرص الأكاديمية والمهنية من خلال التوجيه والمتابعة والحلول المتخصصة.',
+                'en' => 'Delivering integrated educational and training services bridging knowledge and hands-on practice, facilitating access to academic and professional pathways through dedicated guidance and specialized solutions.',
+                'it' => 'Fornire servizi educativi e formativi integrati che uniscono conoscenza teorica e pratica applicata, facilitando l\'accesso alle opportunità accademiche e professionali con guida esperta.',
+            ],
+            'about_services_badge' => [
+                'ar' => 'خدماتنا – بنساعدك في إيه؟',
+                'en' => 'Our Services – How We Help You',
+                'it' => 'I Nostri Servizi – Come Ti Aiutiamo',
+            ],
+            'about_services_title' => [
+                'ar' => 'مجالات متعددة.. وهدف واحد: تطور مستقبلك',
+                'en' => 'Multiple Domains.. One Goal: Advance Your Future',
+                'it' => 'Ambiti Molteplici.. Unico Obiettivo: Sviluppare il Tuo Futuro',
+            ],
+            'about_why_badge' => [
+                'ar' => 'لماذا تختار INTOK ACADEMY؟',
+                'en' => 'Why Choose INTOK ACADEMY?',
+                'it' => 'Perché Scegliere INTOK ACADEMY?',
+            ],
+            'about_why_title' => [
+                'ar' => 'مش بنقدم خدمة وخلاص.. بنهتم برحلتك من البداية',
+                'en' => 'More than just a service.. We genuinely care for your journey from start to finish',
+                'it' => 'Molto più di un servizio.. Ci prendiamo cura del tuo percorso dall\'inizio alla fine',
+            ],
         ];
 
         foreach ($settings as $key => $value) {
