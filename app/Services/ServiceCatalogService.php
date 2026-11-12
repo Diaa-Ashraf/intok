@@ -28,6 +28,7 @@ class ServiceCatalogService
                 'slug_en',
                 'slug_it',
                 'title',
+                'headline',
                 'summary',
                 'badge',
                 'category_label',
@@ -58,6 +59,7 @@ class ServiceCatalogService
                 'slug_en',
                 'slug_it',
                 'title',
+                'headline',
                 'summary',
                 'badge',
                 'category_label',
@@ -90,6 +92,7 @@ class ServiceCatalogService
                 'slug_en',
                 'slug_it',
                 'title',
+                'headline',
                 'summary',
                 'description',
                 'badge',
@@ -138,6 +141,7 @@ class ServiceCatalogService
                 'slug_en',
                 'slug_it',
                 'title',
+                'headline',
                 'summary',
                 'description',
                 'badge',
@@ -326,6 +330,10 @@ class ServiceCatalogService
      */
     public function ensureCoreServicesExist(): void
     {
+        if (Service::query()->where('is_active', true)->count() >= 10) {
+            return;
+        }
+
         $coreServices = array (
   0 => 
   array (

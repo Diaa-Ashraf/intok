@@ -13,6 +13,7 @@ class Service extends Model
         'slug_en',
         'slug_it',
         'title',
+        'headline',
         'summary',
         'description',
         'badge',
@@ -41,6 +42,7 @@ class Service extends Model
         return [
             'slug' => 'array',
             'title' => 'array',
+            'headline' => 'array',
             'summary' => 'array',
             'description' => 'array',
             'badge' => 'array',

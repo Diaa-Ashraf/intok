@@ -41,12 +41,23 @@
 @endphp
     <section class="relative isolate overflow-hidden bg-intok-hero py-16 text-slate-900 border-b border-slate-100">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-start">
-            <a href="{{ route('services.index', ['locale' => $locale]) }}" class="inline-flex items-center gap-1.5 text-xs font-bold text-red-600 hover:text-red-700 transition">
-                <span>&larr;</span>
-                <span>{{ __('site.nav_services') }}</span>
-            </a>
-            <h1 class="mt-4 max-w-3xl text-3xl font-black text-[#c27803] sm:text-5xl">{{ $service->title[$locale] ?? $service->title['en'] ?? '' }}</h1>
-            <p class="mt-4 max-w-2xl text-base leading-relaxed text-slate-600 font-medium">{{ $service->summary[$locale] ?? $service->summary['en'] ?? '' }}</p>
+            <div class="flex items-center gap-3">
+                <a href="{{ route('services.index', ['locale' => $locale]) }}" class="inline-flex items-center gap-1.5 text-xs font-bold text-red-600 hover:text-red-700 transition">
+                    <span>&larr;</span>
+                    <span>{{ __('site.nav_services') }}</span>
+                </a>
+                <span class="text-slate-300">/</span>
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-red-50 border border-red-200 px-3 py-1 text-xs font-black text-[#fe0002]">
+                    {{ $service->title[$locale] ?? $service->title['en'] ?? '' }}
+                </span>
+            </div>
+            
+            <h1 class="mt-4 max-w-4xl text-3xl font-black text-[#c27803] sm:text-5xl leading-tight">
+                {{ $service->headline[$locale] ?? $service->title[$locale] ?? $service->title['en'] ?? '' }}
+            </h1>
+            <p class="mt-4 max-w-3xl text-base leading-relaxed text-slate-600 font-medium">
+                {{ $service->summary[$locale] ?? $service->summary['en'] ?? '' }}
+            </p>
         </div>
     </section>
 

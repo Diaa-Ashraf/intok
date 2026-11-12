@@ -76,7 +76,7 @@ return [
     'track_mode_label' => 'نظام الحضور',
     'track_target_label' => 'الفئة المستهدفة',
     'track_book_seat' => 'احجز مقعدك في هذا المسار',
-    'track_full_details' => 'تفاصيل كاملة',
+    'track_full_details' => 'تفاصيل الخدمة',
     'track_whatsapp_direct' => 'واتساب مباشر (24/7)',
     'all_services_and_tracks' => 'جميع الخدمات والمسارات',
     'track_prev' => '← المسار السابق',
