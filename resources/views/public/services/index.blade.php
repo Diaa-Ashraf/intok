@@ -89,27 +89,31 @@
                     <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#fe0002] opacity-75"></span>
                     <span class="relative inline-flex size-2 rounded-full bg-[#fe0002]"></span>
                 </span>
-                <span>{{ count($allTracks) }} {{ match($locale) {
-                    'it' => 'Percorsi accreditati a livello internazionale per il mercato europeo',
-                    'en' => 'Officially accredited tracks qualified for international & European careers',
-                    default => 'مسارات معتمدة دولياً ومؤهلة لسوق العمل الأوروبي'
-                } }}</span>
+                <span>{{ data_get($siteSettings ?? [], 'services_badge.'.$locale, match($locale) {
+                    'it' => '10 Servizi Educativi e Professionali Integrati',
+                    'en' => '10 Integrated Educational & Career Services',
+                    default => '10 خدمات تعليمية ومهنية متكاملة'
+                }) }}</span>
             </span>
 
-            <h1 class="mt-5 text-3xl font-black text-[#c27803] sm:text-5xl lg:text-6xl tracking-tight">
-                {{ match($locale) {
-                    'it' => 'Percorsi e Formazione',
-                    'en' => 'Training Tracks & Programs',
-                    default => 'مسارات وتدريب'
-                } }} <span class="text-[#fe0002] relative inline-block">INTOK ACADEMY<span class="absolute -bottom-1.5 inset-x-0 h-1.5 bg-[#fe0002]/25 rounded-full"></span></span>
+            @php
+                $rawTitle = data_get($siteSettings ?? [], 'services_title.'.$locale, match($locale) {
+                    'it' => 'INTOK - Servizi educativi e professionali integrati',
+                    'en' => 'INTOK - Integrated Educational & Professional Services',
+                    default => 'INTOK  خدمات تعليمية ومهنية متكاملة',
+                });
+                $titleWithoutPrefix = preg_replace('/^INTOK\s*[-—]?\s*/iu', '', $rawTitle);
+            @endphp
+            <h1 class="mt-5 text-3xl font-black text-slate-900 sm:text-5xl lg:text-6xl tracking-tight">
+                <span class="text-[#fe0002] inline-block">INTOK</span> — {{ $titleWithoutPrefix }}
             </h1>
 
             <p class="mt-4 max-w-2xl mx-auto leading-relaxed text-slate-600 font-medium sm:text-lg">
-                {{ match($locale) {
-                    'it' => 'Un ecosistema formativo e professionale completo che include corsi per call center, traduzioni asseverate per ambasciate, padronanza linguistica e orientamento agli studi universitari in Europa.',
-                    'en' => 'A comprehensive professional training ecosystem covering international call center skills, certified embassy translations, language mastery, and European university study pathways.',
-                    default => 'منظومة تدريبية واحترافية متكاملة تشمل تدريب الكول سنتر وسوق العمل، الترجمة المعتمدة للسفارات، إتقان اللغات، ومسار استكمال الدراسة في الدول الأوروبية مع المنح الشاملة.'
-                } }}
+                {{ data_get($siteSettings ?? [], 'services_subtitle.'.$locale, match($locale) {
+                    'it' => "Offriamo soluzioni educative e professionali integrate che partono dall'apprendimento delle lingue e dalle traduzioni asseverate, passano per la formazione professionale fino agli studi all'estero e ai servizi accademici internazionali.",
+                    'en' => "We offer integrated educational and professional solutions starting from language learning and certified translation, through vocational training, to studying abroad and international academic services.",
+                    default => "بنقدم لك حلول تعليمية ومهنية متكاملة تبدأ من تعلم اللغات والترجمة المعتمدة، مرورًا بالتأهيل والتدريب المهني، وصولًا للدراسة بالخارج والخدمات الأكاديمية الدولية."
+                }) }}
             </p>
 
             <!-- Search & Filter Ribbon -->
@@ -171,10 +175,10 @@
                 <div class="w-full min-w-0 max-w-full lg:col-span-5 xl:col-span-4 space-y-2 reveal-left" id="track-rail-container">
                     <div class="mb-2 px-1 flex items-center justify-between text-xs font-black text-slate-500 uppercase tracking-wider">
                         <span class="flex items-center gap-1.5">
-                            <span>{{ match($locale) { 'it' => 'Percorsi Accreditati:', 'en' => 'Approved Tracks:', default => 'المسارات المعتمدة:' } }}</span>
-                            <span class="text-[10px] text-slate-400 font-normal lg:hidden">{{ match($locale) { 'it' => '(Scorri per selezionare ↔)', 'en' => '(Swipe to choose ↔)', default => '(اسحب لاختيار المسار ↔)' } }}</span>
+                            <span>{{ match($locale) { 'it' => 'Servizi Accreditati:', 'en' => 'Approved Services:', default => 'الخدمات المعتمدة:' } }}</span>
+                            <span class="text-[10px] text-slate-400 font-normal lg:hidden">{{ match($locale) { 'it' => '(Scorri per selezionare ↔)', 'en' => '(Swipe to choose ↔)', default => '(اسحب لاختيار الخدمة ↔)' } }}</span>
                         </span>
-                        <span class="text-red-600 font-mono text-xs font-black">{{ count($allTracks) }} {{ match($locale) { 'it' => 'Percorsi', 'en' => 'Tracks', default => 'مسارات' } }}</span>
+                        <span class="text-red-600 font-mono text-xs font-black">{{ count($allTracks) }} {{ match($locale) { 'it' => 'Servizi', 'en' => 'Services', default => 'خدمات' } }}</span>
                     </div>
 
                     <!-- On mobile/tablet: Horizontal touch-swipeable track strip. On desktop (lg+): Vertical scroll list -->

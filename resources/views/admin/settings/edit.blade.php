@@ -41,6 +41,7 @@
         <button type="button" class="settings-tab-btn px-4 py-2 text-xs font-bold rounded-xl transition" data-target="tab-why">لماذا تختار إنتوك؟</button>
         <button type="button" class="settings-tab-btn px-4 py-2 text-xs font-bold rounded-xl transition" data-target="tab-pages">نصوص الصفحات الداخلية</button>
         <button type="button" class="settings-tab-btn px-4 py-2 text-xs font-bold rounded-xl transition" data-target="tab-roadmap">خارطة الطريق (4 خطوات)</button>
+        <button type="button" class="settings-tab-btn px-4 py-2 text-xs font-bold rounded-xl transition" data-target="tab-inside">من داخل INTOK (التجربة على الواقع)</button>
         <button type="button" class="settings-tab-btn px-4 py-2 text-xs font-bold rounded-xl transition" data-target="tab-cta">بانر الحجز والـ CTA</button>
     </div>
 
@@ -151,20 +152,20 @@
                 </div>
 
                 <div class="border-t border-slate-100 pt-6">
-                    <h3 class="text-base font-bold text-slate-900 mb-3">أرقام وإحصائيات الهيرو (Stats)</h3>
+                    <h3 class="text-base font-bold text-slate-900 mb-3">أرقام وإحصائيات الهيرو الرسمية (Stats)</h3>
                     <div class="grid gap-4 sm:grid-cols-3">
                         <div class="rounded-xl bg-slate-50 p-4 border border-slate-100 space-y-2">
                             <label class="block text-xs font-bold text-slate-700">الرقم / النسبة (Stat 1)
-                                <input name="hero_stat_1_val" value="{{ old('hero_stat_1_val', data_get($settings, 'hero_stat_1_val', '100%')) }}" class="admin-input mt-1">
+                                <input name="hero_stat_1_val" value="{{ old('hero_stat_1_val', data_get($settings, 'hero_stat_1_val', '10+')) }}" class="admin-input mt-1">
                             </label>
                             <label class="block text-xs font-bold text-slate-700">الوصف بالعربية
-                                <input name="hero_stat_1_lbl[ar]" value="{{ old('hero_stat_1_lbl.ar', data_get($settings, 'hero_stat_1_lbl.ar', 'نسبة نجاح استخراج التأشيرات والقبول')) }}" class="admin-input mt-1">
+                                <input name="hero_stat_1_lbl[ar]" value="{{ old('hero_stat_1_lbl.ar', data_get($settings, 'hero_stat_1_lbl.ar', 'دول أوروبية • وجهات دراسية متنوعة')) }}" class="admin-input mt-1">
                             </label>
                         </div>
 
                         <div class="rounded-xl bg-slate-50 p-4 border border-slate-100 space-y-2">
                             <label class="block text-xs font-bold text-slate-700">الرقم / النسبة (Stat 2)
-                                <input name="hero_stat_2_val" value="{{ old('hero_stat_2_val', data_get($settings, 'hero_stat_2_val', '+1,200')) }}" class="admin-input mt-1">
+                                <input name="hero_stat_2_val" value="{{ old('hero_stat_2_val', data_get($settings, 'hero_stat_2_val', '1,200+')) }}" class="admin-input mt-1">
                             </label>
                             <label class="block text-xs font-bold text-slate-700">الوصف بالعربية
                                 <input name="hero_stat_2_lbl[ar]" value="{{ old('hero_stat_2_lbl.ar', data_get($settings, 'hero_stat_2_lbl.ar', 'طالب ومتدرب تم تأهيلهم بنجاح')) }}" class="admin-input mt-1">
@@ -173,10 +174,13 @@
 
                         <div class="rounded-xl bg-slate-50 p-4 border border-slate-100 space-y-2">
                             <label class="block text-xs font-bold text-slate-700">الرقم / النسبة (Stat 3)
-                                <input name="hero_stat_3_val" value="{{ old('hero_stat_3_val', data_get($settings, 'hero_stat_3_val', '8,000€')) }}" class="admin-input mt-1">
+                                <input name="hero_stat_3_val" value="{{ old('hero_stat_3_val', data_get($settings, 'hero_stat_3_val', '100%')) }}" class="admin-input mt-1">
                             </label>
-                            <label class="block text-xs font-bold text-slate-700">الوصف بالعربية
-                                <input name="hero_stat_3_lbl[ar]" value="{{ old('hero_stat_3_lbl.ar', data_get($settings, 'hero_stat_3_lbl.ar', 'بدل سنوي وسكن مجاني بمنحة DSU')) }}" class="admin-input mt-1">
+                            <label class="block text-xs font-bold text-slate-700">العنوان بالعربية
+                                <input name="hero_stat_3_lbl[ar]" value="{{ old('hero_stat_3_lbl.ar', data_get($settings, 'hero_stat_3_lbl.ar', 'استكمال الملفات')) }}" class="admin-input mt-1">
+                            </label>
+                            <label class="block text-xs font-bold text-slate-700">الوصف التوضيحي
+                                <input name="hero_stat_3_sub[ar]" value="{{ old('hero_stat_3_sub.ar', data_get($settings, 'hero_stat_3_sub.ar', 'متابعة وتجهيز الملفات وفق المتطلبات')) }}" class="admin-input mt-1">
                             </label>
                         </div>
                     </div>
@@ -188,11 +192,11 @@
                     <div class="space-y-2">
                         @php
                             $currentQuotes = data_get($settings, 'robot_quotes', [
-                                "\"مين قال إن الدبلوم آخر الطريق؟ شهادتك بداية لفرصة جديدة بالدول الأوروبية!\"",
-                                "\"مجموعك القليل مش كارثة... لأن مستقبلك مش بيقف على رقم!\"",
-                                "\"منحة DSU تغطي مصروفاتك وسكن مجاني وبدل سنوي 8,000 يورو!\"",
-                                "\"تدريب الكول سنتر واللغات في INTOK يفتح لك أبواب كبرى الشركات الدولية!\"",
-                                "\"ترجمة معتمدة رسمياً وموثقة للسفارة الإيطالية بدون أي تعقيدات!\""
+                                "\"INTOK بوابتك للتعلم والتطور وبناء مستقبلك بثقة!\"",
+                                "\"فرص تعليمية وتأهيل مهني في أكثر من 10 دول أوروبية!\"",
+                                "\"تدريب الكول سنتر والترجمة المعتمدة لتطوير مهاراتك لسوق العمل!\"",
+                                "\"متابعة وتجهيز دقيق لملفات التقديم وفق متطلبات كل جهة!\"",
+                                "\"مع بعض بنقدر نوصل لفرص أكبر وخطوات أوضح نحو مستقبلك!\""
                             ]);
                         @endphp
                         @for ($i = 0; $i < 5; $i++)
@@ -204,42 +208,42 @@
                 <div class="border-t border-slate-100 pt-6">
                     <div class="border-b border-slate-100 pb-3 mb-4">
                         <h3 class="text-base font-bold text-slate-900">برواز المشاهد التفاعلية للهيرو (Hero Cinematic 3D Frame)</h3>
-                        <p class="text-xs text-slate-500">تحكم بصور وعناوين وتبويبات الإطار التفاعلي ثلاثي الأبعاد في الواجهة الرئيسية (4 مشاهد).</p>
+                        <p class="text-xs text-slate-500">تحكم بصور وعناوين وتبويبات الإطار التفاعلي ثلاثي الأبعاد في الواجهة الرئيسية (4 مشاهد رسمية).</p>
                     </div>
 
                     @php
                         $defaultHeroScenes = [
                             1 => [
-                                'tab' => 'ميلانو',
-                                'badge' => 'عاصمة الدراسة والصناعة • ميلانو',
-                                'title' => 'جامعات ومدارس ميلانو الحكومية',
-                                'desc' => 'استكمال دراستك في أعرق الصروح التعليمية مع منحة DSU الشاملة (8,000 يورو + سكن مجاني) وتأشيرة دراسية رسمية.',
-                                'stat' => '8,000€ بدل سنوي + سكن مجاني',
+                                'tab' => 'التأهيل للدراسة',
+                                'badge' => 'خطوتك الأولى نحو الدراسة في أوروبا',
+                                'title' => 'خطوتك الأولى نحو الدراسة في أوروبا',
+                                'desc' => 'فرص تعليمية في أكثر من 10 دول أوروبية، ومساعدتك في اختيار الجامعة والتخصص وتجهيز ملف التقديم.',
+                                'stat' => '10+ دول أوروبية',
                                 'default_img' => 'assets/images/schools/san-giorgio.jpg',
                             ],
                             2 => [
-                                'tab' => 'روما',
-                                'badge' => 'التاريخ والأكاديمية • روما',
-                                'title' => 'دراسة البكالوريوس والماجستير بروما',
-                                'desc' => 'الالتحاق بأعرق الجامعات والمدارس الإيطالية مع تصريح عمل قانوني باليورو وتأشيرة شنغن رسمية.',
-                                'stat' => '99.4% نسبة نجاح وقبول الملفات',
-                                'default_img' => 'assets/images/schools/galileo-galilei.jpg',
-                            ],
-                            3 => [
-                                'tab' => 'قاعات إنتوك',
-                                'badge' => 'قاعات إنتوك الذكية • تدريب حي',
-                                'title' => 'تعليم الإيطالية واللغات المعتمدة',
-                                'desc' => 'محاضرات تفاعلية على السبورات الذكية لتأسيس النطق وتأهيلك لاجتياز اختبارات CILS و CELI ومقابلات السفارة.',
-                                'stat' => 'CILS / CELI معتمد رسمياً',
+                                'tab' => 'اللغات والترجمة',
+                                'badge' => '02 — اللغات والترجمة',
+                                'title' => 'لغتك تفتحلك أبواب جديدة',
+                                'desc' => 'تعلم اللغات الأجنبية مع برامج تدريبية متخصصة، وخدمات ترجمة معتمدة تساعدك في خطواتك الأكاديمية والمهنية.',
+                                'stat' => 'ترجمة معتمدة وشهادات دولية',
                                 'default_img' => 'assets/images/academy/italian-classroom-lecture.jpg',
                             ],
-                            4 => [
-                                'tab' => 'الكول سنتر',
-                                'badge' => 'كول سنتر وسوق العمل الدولي',
-                                'title' => 'محاكاة المقابلات والطلاقة باللغات',
-                                'desc' => 'تدريب تطبيقي مكثف يجعلك واثقاً من مهاراتك الصوتية والتواصلية لاقتناص وظائف كبرى الشركات العالمية فوراً.',
-                                'stat' => 'رواتب 15k - 30k+ ج.م',
+                            3 => [
+                                'tab' => 'التدريب المهني',
+                                'badge' => '03 — التدريب والتأهيل المهني',
+                                'title' => 'طوّر مهاراتك واستعد لسوق العمل',
+                                'desc' => 'برامج تدريب عملية في الكول سنتر، ومجالات مختلفة تساعدك تكتسب مهارات مطلوبة.',
+                                'stat' => 'محاكاة عملية وسوق عمل مباشر',
                                 'default_img' => 'assets/images/academy/live-speaker-training.jpg',
+                            ],
+                            4 => [
+                                'tab' => 'الخدمات الأكاديمية',
+                                'badge' => '04 — الخدمات الأكاديمية والدولية',
+                                'title' => 'خلّي طموحك يوصل أبعد',
+                                'desc' => 'بنساعدك في إجراءات التقديم للجامعات، وحجز الاختبارات الدولية، ومواعيد السفارات، والتقديم للدراسات العليا والمنح.',
+                                'stat' => '100% تجهيز ومتابعة دقيقة',
+                                'default_img' => 'assets/images/schools/galileo-galilei.jpg',
                             ],
                         ];
                     @endphp
@@ -310,28 +314,22 @@
                     <p class="text-xs text-slate-500 mb-4">البادجات التي تطفو حول البرواز التفاعلي في الهيرو.</p>
                     <div class="grid gap-4 sm:grid-cols-2">
                         <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-4 space-y-3">
-                            <span class="font-bold text-xs text-slate-800 block border-b pb-1">البادج العلوي الأيمن (منحة DSU)</span>
-                            <label class="block text-xs font-bold text-slate-700">الوسم (Tag)
-                                <input name="hero_float_1_tag" value="{{ old('hero_float_1_tag', data_get($settings, 'hero_float_1_tag', 'DSU')) }}" class="admin-input mt-1">
-                            </label>
+                            <span class="font-bold text-xs text-slate-800 block border-b pb-1">البادج العائم الأول (تأهيل أكاديمي ومهني)</span>
                             <label class="block text-xs font-bold text-slate-700">العنوان
-                                <input name="hero_float_1_title[ar]" value="{{ old('hero_float_1_title.ar', data_get($settings, 'hero_float_1_title.ar', 'منحة DSU الحكومية')) }}" class="admin-input mt-1">
+                                <input name="hero_float_1_title[ar]" value="{{ old('hero_float_1_title.ar', data_get($settings, 'hero_float_1_title.ar', 'تأهيل أكاديمي ومهني')) }}" class="admin-input mt-1">
                             </label>
                             <label class="block text-xs font-bold text-slate-700">النص التوضيحي
-                                <input name="hero_float_1_sub[ar]" value="{{ old('hero_float_1_sub.ar', data_get($settings, 'hero_float_1_sub.ar', '8,000€ + سكن معفى 100%')) }}" class="admin-input mt-1">
+                                <input name="hero_float_1_sub[ar]" value="{{ old('hero_float_1_sub.ar', data_get($settings, 'hero_float_1_sub.ar', 'برامج تدريبية وفرص تعليمية متنوعة')) }}" class="admin-input mt-1">
                             </label>
                         </div>
 
                         <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-4 space-y-3">
-                            <span class="font-bold text-xs text-slate-800 block border-b pb-1">البادج السفلي الأيسر (تأشيرة رسمية)</span>
-                            <label class="block text-xs font-bold text-slate-700">الوسم (Tag)
-                                <input name="hero_float_2_tag" value="{{ old('hero_float_2_tag', data_get($settings, 'hero_float_2_tag', 'VISA')) }}" class="admin-input mt-1">
-                            </label>
+                            <span class="font-bold text-xs text-slate-800 block border-b pb-1">البادج العائم الثاني (دعم وتجهيز الملفات)</span>
                             <label class="block text-xs font-bold text-slate-700">العنوان
-                                <input name="hero_float_2_title[ar]" value="{{ old('hero_float_2_title.ar', data_get($settings, 'hero_float_2_title.ar', 'تأشيرة رسمية معتمدة')) }}" class="admin-input mt-1">
+                                <input name="hero_float_2_title[ar]" value="{{ old('hero_float_2_title.ar', data_get($settings, 'hero_float_2_title.ar', 'دعم وتجهيز الملفات')) }}" class="admin-input mt-1">
                             </label>
                             <label class="block text-xs font-bold text-slate-700">النص التوضيحي
-                                <input name="hero_float_2_sub[ar]" value="{{ old('hero_float_2_sub.ar', data_get($settings, 'hero_float_2_sub.ar', 'نسبة نجاح الملفات 99.4%')) }}" class="admin-input mt-1">
+                                <input name="hero_float_2_sub[ar]" value="{{ old('hero_float_2_sub.ar', data_get($settings, 'hero_float_2_sub.ar', 'متابعة دقيقة وفق متطلبات كل جهة')) }}" class="admin-input mt-1">
                             </label>
                         </div>
                     </div>
@@ -352,13 +350,13 @@
                         <div class="space-y-4 rounded-xl bg-slate-50 p-4 border border-slate-100">
                             <h3 class="font-bold text-sm text-slate-800">{{ $label }}</h3>
                             <label class="block text-xs font-bold text-slate-700">شارة القسم (Badge)
-                                <input name="services_badge[{{ $locale }}]" value="{{ old('services_badge.'.$locale, data_get($settings, 'services_badge.'.$locale, 'برامج وتدريب معتمد دولياً')) }}" class="admin-input mt-1">
+                                <input name="services_badge[{{ $locale }}]" value="{{ old('services_badge.'.$locale, data_get($settings, 'services_badge.'.$locale, '10 خدمات تعليمية ومهنية متكاملة')) }}" class="admin-input mt-1">
                             </label>
                             <label class="block text-xs font-bold text-slate-700">عنوان القسم الرئيسي
-                                <input name="services_title[{{ $locale }}]" value="{{ old('services_title.'.$locale, data_get($settings, 'services_title.'.$locale, 'خدمات وتدريب INTOK ACADEMY')) }}" class="admin-input mt-1">
+                                <input name="services_title[{{ $locale }}]" value="{{ old('services_title.'.$locale, data_get($settings, 'services_title.'.$locale, 'INTOK  خدمات تعليمية ومهنية متكاملة')) }}" class="admin-input mt-1">
                             </label>
                             <label class="block text-xs font-bold text-slate-700">وصف القسم
-                                <textarea name="services_subtitle[{{ $locale }}]" rows="3" class="admin-input mt-1">{{ old('services_subtitle.'.$locale, data_get($settings, 'services_subtitle.'.$locale, '')) }}</textarea>
+                                <textarea name="services_subtitle[{{ $locale }}]" rows="3" class="admin-input mt-1">{{ old('services_subtitle.'.$locale, data_get($settings, 'services_subtitle.'.$locale, 'بنقدم لك حلول تعليمية ومهنية متكاملة تبدأ من تعلم اللغات والترجمة المعتمدة، مرورًا بالتأهيل والتدريب المهني، وصولًا للدراسة بالخارج والخدمات الأكاديمية الدولية.')) }}</textarea>
                             </label>
                         </div>
                     @endforeach
@@ -382,10 +380,10 @@
                                 <input name="live_slider_badge[{{ $locale }}]" value="{{ old('live_slider_badge.'.$locale, data_get($settings, 'live_slider_badge.'.$locale, 'نبض التدريب والمحاضرات الحية في الأكاديمية')) }}" class="admin-input mt-1">
                             </label>
                             <label class="block text-xs font-bold text-slate-700">عنوان السلايدر
-                                <input name="live_slider_title[{{ $locale }}]" value="{{ old('live_slider_title.'.$locale, data_get($settings, 'live_slider_title.'.$locale, 'شاهد قاعاتنا وتدريباتنا التفاعلية')) }}" class="admin-input mt-1">
+                                <input name="live_slider_title[{{ $locale }}]" value="{{ old('live_slider_title.'.$locale, data_get($settings, 'live_slider_title.'.$locale, 'شوف INTOK بتساعدك تطور مستقبلك إزاي')) }}" class="admin-input mt-1">
                             </label>
                             <label class="block text-xs font-bold text-slate-700">وصف السلايدر
-                                <textarea name="live_slider_subtitle[{{ $locale }}]" rows="3" class="admin-input mt-1">{{ old('live_slider_subtitle.'.$locale, data_get($settings, 'live_slider_subtitle.'.$locale, '')) }}</textarea>
+                                <textarea name="live_slider_subtitle[{{ $locale }}]" rows="3" class="admin-input mt-1">{{ old('live_slider_subtitle.'.$locale, data_get($settings, 'live_slider_subtitle.'.$locale, 'لقطات حقيقية من تدريباتنا، محاضراتنا، خدماتنا التعليمية وتجارب المتدربين داخل INTOK.')) }}</textarea>
                             </label>
                         </div>
                     @endforeach
@@ -400,28 +398,22 @@
                     @php
                         $defaultLiveSlides = [
                             1 => [
-                                'badge' => 'تدريب الكول سنتر والمحادثة المباشرة',
-                                'title' => 'How to Be a Confident Speaker - محاكاة المقابلات والطلاقة',
-                                'desc' => 'تدريب تفاعلي على الشاشات الذكية لتطوير مهارات التواصل وخدمة العملاء واجتياز المقابلات الدولية بثقة.',
-                                'default_img' => 'assets/images/academy/live-speaker-training.jpg',
-                            ],
-                            2 => [
-                                'badge' => 'محاضرات اللغة الإيطالية والقبول الجامعي',
-                                'title' => 'شرح تفاعلي لقواعد ومحادثة اللغة الإيطالية (Grammatica Italiana)',
-                                'desc' => 'تأسيس المتدربين من الصفر وحتى الطلاقة والتأهيل لاختبارات السفارة والالتحاق بالجامعات الإيطالية مع نخبة من الأساتذة.',
+                                'badge' => 'اللغات الأجنبية والترجمة',
+                                'title' => 'اتعلم لغة تفتحلك فرص جديدة',
+                                'desc' => 'تدريبات عملية لتطوير مهارات التحدث والتواصل بمختلف اللغات.',
                                 'default_img' => 'assets/images/academy/italian-classroom-lecture.jpg',
                             ],
-                            3 => [
-                                'badge' => 'بوابتك نحو الدول الأوروبية',
-                                'title' => 'من قاعات INTOK إلى أعرق الصروح التعليمية في روما وميلانو',
-                                'desc' => 'رحلة متكاملة تؤهلك للحصول على منحة DSU الشاملة (8,000 يورو سنوياً + سكن مجاني) والإقامة القانونية والعمل باليورو.',
-                                'default_img' => 'assets/images/schools/galileo-galilei.jpg',
+                            2 => [
+                                'badge' => 'التدريب وسوق العمل',
+                                'title' => 'اتأهل لمستقبلك المهني',
+                                'desc' => 'تدريب عملي في الكول سنتر والترجمة وتطوير المهارات المطلوبة لسوق العمل.',
+                                'default_img' => 'assets/images/academy/live-speaker-training.jpg',
                             ],
-                            4 => [
-                                'badge' => 'معايير التميز الأكاديمي',
-                                'title' => 'الاعتماد الدولي والمنح الدراسية الموثقة',
-                                'desc' => 'تأهيل متكامل للطلبة لمرحلة البكالوريوس والماجستير وتصديق الشهادات لدى القنصلية الإيطالية.',
-                                'default_img' => 'assets/images/schools/bologna-university.jpg',
+                            3 => [
+                                'badge' => 'الدراسة في أوروبا',
+                                'title' => 'جهّز خطوتك الأكاديمية بثقة',
+                                'desc' => 'تأهيل للدراسة في أوروبا، وتجهيز ملفات التقديم والتدريب على الاختبارات الدولية.',
+                                'default_img' => 'assets/images/schools/galileo-galilei.jpg',
                             ],
                         ];
                     @endphp
@@ -1068,6 +1060,75 @@
                             </label>
                         </div>
                     @endforeach
+                </div>
+            </section>
+        </div>
+
+        <!-- TAB: LIVE INSIDE INTOK (SECTION 9) -->
+        <div class="settings-panel hidden" id="tab-inside">
+            <section class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7 space-y-6">
+                <div class="border-b border-slate-100 pb-3">
+                    <h2 class="text-lg font-bold text-slate-900">قسم "من داخل INTOK" (مش مجرد كلام.. شوف تجربتنا على أرض الواقع)</h2>
+                    <p class="text-xs text-slate-500">إدارة نصوص وصور قسم الفعاليات والتدريب على أرض الواقع في صفحة "من نحن".</p>
+                </div>
+
+                <div class="grid gap-5 md:grid-cols-3">
+                    @foreach (['ar' => 'العربية', 'en' => 'English', 'it' => 'Italiano'] as $locale => $label)
+                        <div class="space-y-4 rounded-xl bg-slate-50 p-4 border border-slate-100">
+                            <h3 class="font-bold text-sm text-slate-800">{{ $label }}</h3>
+                            <label class="block text-xs font-bold text-slate-700">شارة القسم (Badge)
+                                <input name="about_inside_badge[{{ $locale }}]" value="{{ old('about_inside_badge.'.$locale, data_get($settings, 'about_inside_badge.'.$locale, 'من داخل INTOK')) }}" class="admin-input mt-1">
+                            </label>
+                            <label class="block text-xs font-bold text-slate-700">العنوان الرئيسي
+                                <input name="about_inside_title[{{ $locale }}]" value="{{ old('about_inside_title.'.$locale, data_get($settings, 'about_inside_title.'.$locale, 'مش مجرد كلام.. شوف تجربتنا على أرض الواقع')) }}" class="admin-input mt-1">
+                            </label>
+                            <label class="block text-xs font-bold text-slate-700">الوصف
+                                <textarea name="about_inside_desc[{{ $locale }}]" rows="3" class="admin-input mt-1">{{ old('about_inside_desc.'.$locale, data_get($settings, 'about_inside_desc.'.$locale, 'اكتشف جانبًا من أنشطتنا التعليمية والتدريبية، وشاهد لقطات من المحاضرات والتدريبات والفعاليات والتجارب الحقيقية داخل الأكاديمية.')) }}</textarea>
+                            </label>
+                        </div>
+                    @endforeach
+                </div>
+
+                <div class="border-t border-slate-100 pt-6">
+                    <h3 class="text-base font-bold text-slate-900 mb-3">الصور والكروت الثلاثة للقسم</h3>
+                    <div class="grid gap-6 md:grid-cols-3">
+                        @php
+                            $defaultInsideCards = [
+                                1 => [
+                                    'default_img' => 'assets/images/academy/italian-classroom-lecture.jpg',
+                                    'caption' => 'محاضرات لغوية وتدريبات تفاعلية',
+                                ],
+                                2 => [
+                                    'default_img' => 'assets/images/academy/live-speaker-training.jpg',
+                                    'caption' => 'محاكاة عملية لكول سنتر ومقابلات العمل',
+                                ],
+                                3 => [
+                                    'default_img' => 'assets/images/schools/galileo-galilei.jpg',
+                                    'caption' => 'تأهيل للدراسة بالجامعات الأوروبية',
+                                ],
+                            ];
+                        @endphp
+                        @foreach($defaultInsideCards as $idx => $card)
+                            <div class="rounded-xl border border-slate-200 bg-slate-50/70 p-4 space-y-3">
+                                <span class="font-bold text-xs text-slate-800 block border-b pb-1">الكارت {{ $idx }}</span>
+                                <label class="block text-xs font-bold text-slate-700">الصورة
+                                    <input type="file" name="about_inside_img_{{ $idx }}" accept="image/jpeg,image/png,image/webp" class="admin-input mt-1">
+                                </label>
+                                <div class="mt-2">
+                                    @if(data_get($settings, 'about_inside_img_'.$idx))
+                                        <img src="{{ asset('storage/'.data_get($settings, 'about_inside_img_'.$idx)) }}" class="h-28 w-full object-cover rounded-lg border border-slate-200 shadow-xs" alt="الكارت {{ $idx }}">
+                                    @else
+                                        <img src="{{ asset($card['default_img']) }}" class="h-28 w-full object-cover rounded-lg border border-slate-200 opacity-80" alt="الكارت {{ $idx }}">
+                                    @endif
+                                </div>
+                                @foreach (['ar' => 'العربية', 'en' => 'English', 'it' => 'Italiano'] as $locale => $label)
+                                    <label class="block text-xs font-bold text-slate-700">النص التوضيحي ({{ $label }})
+                                        <input name="about_inside_caption_{{ $idx }}[{{ $locale }}]" value="{{ old('about_inside_caption_'.$idx.'.'.$locale, data_get($settings, 'about_inside_caption_'.$idx.'.'.$locale, $card['caption'])) }}" class="admin-input mt-1">
+                                    </label>
+                                @endforeach
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             </section>
         </div>

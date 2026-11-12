@@ -171,14 +171,14 @@
                         </div>
                     </div>
 
-                    <!-- Official Accreditation Guarantee Bar -->
+                    <!-- Official Accreditations & Partnerships Bar -->
                     <div class="mt-6 flex flex-wrap items-center gap-2.5 text-xs font-bold text-slate-700">
                         <span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 border border-emerald-200 px-3 py-1 text-emerald-800 shadow-2xs">
                             <span class="size-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                            <span>شراكات واعتمادات رسمية بالدول الأوروبية</span>
+                            <span>{{ match($locale) { 'it' => 'Partnership ufficiali con atenei europei', 'en' => 'Official Partnerships with European Universities', default => 'شراكات وبروتوكولات تعاون مع الجامعات الأوروبية' } }}</span>
                         </span>
                         <span class="inline-flex items-center gap-1.5 rounded-full bg-amber-50 border border-amber-200 px-3 py-1 text-amber-900 shadow-2xs">
-                            <span>توثيق قنصلي وترجمة معتمدة 100%</span>
+                            <span>{{ match($locale) { 'it' => 'Traduzioni giurate e conformità fascicoli', 'en' => 'Certified Translation & File Compliance', default => 'ترجمة معتمدة وتجهيز احترافي للملفات' } }}</span>
                         </span>
                     </div>
                 </div>
@@ -821,7 +821,7 @@
                         <option value="europe-study">{{ match($locale) { 'it' => 'Studi in Europa + Borse di Studio', 'en' => 'Study in Europe + Full Scholarships', default => 'دراسة جامعية بالدول الأوروبية + المنح الشاملة' } }}</option>
                         <option value="callcenter">{{ match($locale) { 'it' => 'Lavoro nei Call Center Internazionali', 'en' => 'Work in Multinational Call Centers', default => 'العمل في الكول سنتر الدولي' } }}</option>
                         <option value="translation">{{ match($locale) { 'it' => 'Traduzione Giurata per Ambasciate', 'en' => 'Certified Translation for Embassies', default => 'احتراف وترجمة معتمدة للسفارات' } }}</option>
-                        <option value="ielts">{{ match($locale) { 'it' => 'Certificazioni CILS, IELTS e TOEFL', 'en' => 'Pass CILS, IELTS & TOEFL Exams', default => 'اجتياز اختبارات CILS و IELTS و TOEFL' } }}</option>
+                        <option value="ielts">{{ match($locale) { 'it' => 'Preparazione CILS, IELTS e TOEFL', 'en' => 'Preparation for CILS, IELTS & TOEFL', default => 'التأهيل لاختبارات CILS و IELTS و TOEFL' } }}</option>
                     </select>
                 </div>
 
@@ -1933,7 +1933,7 @@
                                 </span>
                                 <div>
                                     <p class="font-black text-slate-900">{{ match($locale) { 'it' => 'Orari di Lavoro', 'en' => 'Operating Hours', default => 'مواعيد العمل والمحاضرات' } }}</p>
-                                    <p class="text-xs text-slate-500 font-medium mt-0.5">{{ match($locale) { 'it' => 'Dom - Gio: 9:00 - 18:00 (Consulenze)', 'en' => 'Sun - Thu: 9:00 AM - 6:00 PM (Consultations)', default => 'الأحد - الخميس: 9:00 ص - 6:00 م (استشارات وخدمة عملاء)' } }}</p>
+                                    <p class="text-xs text-slate-500 font-medium mt-0.5">{{ match($locale) { 'it' => 'Dom - Gio: 9:00 - 17:00 (Consulenze)', 'en' => 'Sun - Thu: 9:00 AM - 5:00 PM (Consultations)', default => 'الأحد - الخميس: 9:00 ص - 5:00 م (استشارات وخدمة عملاء)' } }}</p>
                                     <p class="text-xs text-slate-500 font-medium">{{ match($locale) { 'it' => 'Ven - Sab: Corsi e workshop intensivi', 'en' => 'Fri - Sat: Intensive lectures & workshops', default => 'الجمعة والسبت: محاضرات وتدريب عملي تفاعلي مكثف' } }}</p>
                                 </div>
                             </div>

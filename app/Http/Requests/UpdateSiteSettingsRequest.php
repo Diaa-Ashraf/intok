@@ -43,6 +43,8 @@ class UpdateSiteSettingsRequest extends FormRequest
             'hero_stat_3_val' => ['nullable', 'string', 'max:50'],
             'hero_stat_3_lbl' => ['nullable', 'array'],
             'hero_stat_3_lbl.*' => ['nullable', 'string', 'max:150'],
+            'hero_stat_3_sub' => ['nullable', 'array'],
+            'hero_stat_3_sub.*' => ['nullable', 'string', 'max:200'],
             'robot_quotes' => ['nullable', 'array'],
             'robot_quotes.*' => ['nullable', 'string', 'max:300'],
 
@@ -428,6 +430,23 @@ class UpdateSiteSettingsRequest extends FormRequest
             'testimonials_page_title.*' => ['nullable', 'string', 'max:200'],
             'testimonials_intro' => ['nullable', 'array'],
             'testimonials_intro.*' => ['nullable', 'string', 'max:600'],
+
+            // About Inside INTOK (Section 9)
+            'about_inside_badge' => ['nullable', 'array'],
+            'about_inside_badge.*' => ['nullable', 'string', 'max:150'],
+            'about_inside_title' => ['nullable', 'array'],
+            'about_inside_title.*' => ['nullable', 'string', 'max:200'],
+            'about_inside_desc' => ['nullable', 'array'],
+            'about_inside_desc.*' => ['nullable', 'string', 'max:600'],
+            'about_inside_img_1' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp', 'max:5120'],
+            'about_inside_caption_1' => ['nullable', 'array'],
+            'about_inside_caption_1.*' => ['nullable', 'string', 'max:200'],
+            'about_inside_img_2' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp', 'max:5120'],
+            'about_inside_caption_2' => ['nullable', 'array'],
+            'about_inside_caption_2.*' => ['nullable', 'string', 'max:200'],
+            'about_inside_img_3' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp', 'max:5120'],
+            'about_inside_caption_3' => ['nullable', 'array'],
+            'about_inside_caption_3.*' => ['nullable', 'string', 'max:200'],
 
             // Roadmap Section
             'roadmap_badge' => ['nullable', 'array'],

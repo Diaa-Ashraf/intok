@@ -34,6 +34,9 @@ class SiteSettingsService
             'live_slide_2_img' => ['live_slide_2_img', 'site/slider', 1920, 1080],
             'live_slide_3_img' => ['live_slide_3_img', 'site/slider', 1920, 1080],
             'live_slide_4_img' => ['live_slide_4_img', 'site/slider', 1920, 1080],
+            'about_inside_img_1' => ['about_inside_img_1', 'site/about', 1600, 1200],
+            'about_inside_img_2' => ['about_inside_img_2', 'site/about', 1600, 1200],
+            'about_inside_img_3' => ['about_inside_img_3', 'site/about', 1600, 1200],
         ];
 
         foreach ($fileFields as $field => [$key, $directory, $width, $height]) {

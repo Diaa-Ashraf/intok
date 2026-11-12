@@ -587,7 +587,7 @@
                         @endphp
                         <div class="card-poster-white p-6 bg-slate-50 border border-slate-200 rounded-2xl shadow-sm text-center reveal-up">
                             <div class="size-24 mx-auto rounded-full overflow-hidden bg-white border-2 border-red-200 mb-4 shadow-xs">
-                                <img src="{{ $member->avatar_url ?? asset('assets/images/intok-logo.jpg') }}" alt="{{ $mName }}" class="size-full object-cover">
+                                <img src="{{ $member->photo_url }}" alt="{{ $mName }}" class="size-full object-cover">
                             </div>
                             <h3 class="text-base font-black text-slate-900">{{ $mName }}</h3>
                             <p class="text-xs font-bold text-[#fe0002] mt-1">{{ $mRole }}</p>
@@ -602,34 +602,57 @@
     </section>
 
     <!-- ==========================================================
-         9. LIVE INSIDE INTOK
+         9. LIVE INSIDE INTOK (DYNAMIC FROM DASHBOARD)
          ========================================================== -->
     <section class="relative bg-intok-section py-16 sm:py-24 border-b border-slate-200/80">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-14 reveal-up">
                 <span class="inline-block rounded-full bg-red-50 border border-red-200 px-4 py-1 text-xs font-black text-[#fe0002]">
-                    من داخل INTOK
+                    {{ data_get($siteSettings ?? [], 'about_inside_badge.'.$locale, match($locale) {
+                        'it' => 'Dentro INTOK',
+                        'en' => 'Inside INTOK',
+                        default => 'من داخل INTOK',
+                    }) }}
                 </span>
                 <h2 class="mt-3 text-3xl font-black text-[#c27803] sm:text-4xl">
-                    مش مجرد كلام.. شوف تجربتنا على أرض الواقع
+                    {{ data_get($siteSettings ?? [], 'about_inside_title.'.$locale, match($locale) {
+                        'it' => 'Non Solo Parole.. Scopri la Nostra Esperienza sul Campo',
+                        'en' => 'More Than Just Words.. Experience Our Real Journey',
+                        default => 'مش مجرد كلام.. شوف تجربتنا على أرض الواقع',
+                    }) }}
                 </h2>
                 <p class="mt-3 text-sm sm:text-base text-slate-700 font-medium leading-relaxed">
-                    اكتشف جانبًا من أنشطتنا التعليمية والتدريبية، وشاهد لقطات من المحاضرات والتدريبات والفعاليات والتجارب الحقيقية داخل الأكاديمية.
+                    {{ data_get($siteSettings ?? [], 'about_inside_desc.'.$locale, match($locale) {
+                        'it' => 'Scopri le nostre attività educative e formative: lezioni interattive, simulazioni pratiche e momenti reali all\'interno dell\'accademia.',
+                        'en' => 'Discover our educational and training activities, interactive lectures, hands-on simulations, and real experiences inside the academy.',
+                        default => 'اكتشف جانبًا من أنشطتنا التعليمية والتدريبية، وشاهد لقطات من المحاضرات والتدريبات والفعاليات والتجارب الحقيقية داخل الأكاديمية.',
+                    }) }}
                 </p>
             </div>
 
+            @php
+                $insideImg1 = data_get($siteSettings ?? [], 'about_inside_img_1') ? asset('storage/'.data_get($siteSettings, 'about_inside_img_1')) : asset('assets/images/academy/italian-classroom-lecture.jpg');
+                $insideCap1 = data_get($siteSettings ?? [], 'about_inside_caption_1.'.$locale, match($locale) { 'it' => 'Lezioni interattive di lingua', 'en' => 'Interactive Language Lectures', default => 'محاضرات لغوية وتدريبات تفاعلية' });
+
+                $insideImg2 = data_get($siteSettings ?? [], 'about_inside_img_2') ? asset('storage/'.data_get($siteSettings, 'about_inside_img_2')) : asset('assets/images/academy/live-speaker-training.jpg');
+                $insideCap2 = data_get($siteSettings ?? [], 'about_inside_caption_2.'.$locale, match($locale) { 'it' => 'Simulazioni di colloqui e call center', 'en' => 'Job Interviews & Call Center Simulations', default => 'محاكاة عملية لكول سنتر ومقابلات العمل' });
+
+                $insideImg3 = data_get($siteSettings ?? [], 'about_inside_img_3') ? asset('storage/'.data_get($siteSettings, 'about_inside_img_3')) : asset('assets/images/schools/galileo-galilei.jpg');
+                $insideCap3 = data_get($siteSettings ?? [], 'about_inside_caption_3.'.$locale, match($locale) { 'it' => 'Preparazione per università europee', 'en' => 'Preparation for European Universities', default => 'تأهيل للدراسة بالجامعات الأوروبية' });
+            @endphp
+
             <div class="grid gap-5 sm:grid-cols-3">
                 <div class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 h-64 group shadow-sm relative">
-                    <img src="{{ asset('assets/images/academy/italian-classroom-lecture.jpg') }}" alt="محاضرات تفاعلية" class="size-full object-cover group-hover:scale-105 transition duration-500">
-                    <div class="absolute bottom-3 inset-x-3 text-white text-xs font-bold bg-black/60 backdrop-blur-xs p-2 rounded-xl">محاضرات لغوية وتدريبات تفاعلية</div>
+                    <img src="{{ $insideImg1 }}" alt="{{ $insideCap1 }}" class="size-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute bottom-3 inset-x-3 text-white text-xs font-bold bg-black/60 backdrop-blur-xs p-2 rounded-xl">{{ $insideCap1 }}</div>
                 </div>
                 <div class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 h-64 group shadow-sm relative">
-                    <img src="{{ asset('assets/images/academy/live-speaker-training.jpg') }}" alt="تدريب حي" class="size-full object-cover group-hover:scale-105 transition duration-500">
-                    <div class="absolute bottom-3 inset-x-3 text-white text-xs font-bold bg-black/60 backdrop-blur-xs p-2 rounded-xl">محاكاة عملية لكول سنتر ومقابلات العمل</div>
+                    <img src="{{ $insideImg2 }}" alt="{{ $insideCap2 }}" class="size-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute bottom-3 inset-x-3 text-white text-xs font-bold bg-black/60 backdrop-blur-xs p-2 rounded-xl">{{ $insideCap2 }}</div>
                 </div>
                 <div class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 h-64 group shadow-sm relative">
-                    <img src="{{ asset('assets/images/schools/galileo-galilei.jpg') }}" alt="صروح تعليمية أوروبية" class="size-full object-cover group-hover:scale-105 transition duration-500">
-                    <div class="absolute bottom-3 inset-x-3 text-white text-xs font-bold bg-black/60 backdrop-blur-xs p-2 rounded-xl">تأهيل للدراسة بالجامعات الأوروبية</div>
+                    <img src="{{ $insideImg3 }}" alt="{{ $insideCap3 }}" class="size-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute bottom-3 inset-x-3 text-white text-xs font-bold bg-black/60 backdrop-blur-xs p-2 rounded-xl">{{ $insideCap3 }}</div>
                 </div>
             </div>
         </div>
