@@ -472,6 +472,11 @@ class DatabaseSeeder extends Seeder
                 'en' => 'We empower you to upgrade skills and step confidently into international study and employment.',
                 'it' => 'Ti aiutiamo a sviluppare competenze per accedere a studi internazionali e carriere di successo.'
             ],
+            'why_bento_future_stat_label' => [
+                'ar' => 'القيمة المضافة: خطوات أوضح نحو مستقبلك.',
+                'en' => 'Added value: Clearer steps toward your future.',
+                'it' => 'Valore aggiunto: Passi più chiari verso il tuo futuro.'
+            ],
 
             // Roadmap Section
             'roadmap_badge' => [
@@ -480,54 +485,54 @@ class DatabaseSeeder extends Seeder
                 'it' => 'Tabella di marcia chiara e garantita'
             ],
             'roadmap_title' => [
-                'ar' => 'خطوات التحاقك من البداية حتى الاستقرار',
-                'en' => 'Your Path from Day One to Settlement',
-                'it' => 'I passi dall inizio all insediamento'
+                'ar' => 'خطواتك مع INTOK من البداية حتى تحقيق هدفك',
+                'en' => 'Your steps with INTOK from the beginning to achieving your goal',
+                'it' => 'I tuoi passi con INTOK dall\'inizio al raggiungimento del tuo obiettivo'
             ],
             'roadmap_subtitle' => [
-                'ar' => 'أربع مراحل مدروسة بعناية تحول طموحك بالدراسة والعمل الدولي إلى حقيقة مؤكدة.',
-                'en' => 'Four well-planned stages turning your ambitions of European education and global careers into reality.',
-                'it' => 'Quattro fasi per realizzare i tuoi obiettivi di studio e lavoro.'
+                'ar' => 'بنمشي معاك في خطوات واضحة ومنظمة، بداية من فهم احتياجك واختيار الخدمة المناسبة، لحد التأهيل والتجهيز والمتابعة.',
+                'en' => 'We walk with you in clear, organized steps, from understanding your needs to training, preparation, and follow-up.',
+                'it' => 'Ti accompagniamo passo dopo passo, dalla comprensione delle tue esigenze alla preparazione e al monitoraggio.'
             ],
             'roadmap_step1_title' => [
-                'ar' => 'الاستشارة وتحديد المسار',
-                'en' => 'Consultation & Track Selection',
-                'it' => 'Consulenza e scelta percorso'
+                'ar' => '01. الاستشارة وتحديد المسار',
+                'en' => '01. Consultation & Pathway Mapping',
+                'it' => '01. Consulenza e Definizione del Percorso'
             ],
             'roadmap_step1_desc' => [
-                'ar' => 'جلسة إرشاد شاملة مع مستشارك لتحديد البرنامج أو المسار الأكاديمي الأوروبي المناسب لمؤهلك.',
-                'en' => 'Comprehensive advisory session to select the ideal European academic or professional track for your profile.',
-                'it' => 'Sessione di orientamento per scegliere il percorso europeo adatto.'
+                'ar' => 'بنفهم هدفك واحتياجاتك، ونساعدك تختار الخدمة أو البرنامج الأنسب ليك.',
+                'en' => 'We understand your goals and needs, helping you choose the most suitable service or educational program.',
+                'it' => 'Comprendiamo i tuoi obiettivi e le tue esigenze e ti guidiamo nella scelta del servizio o programma più adatto.'
             ],
             'roadmap_step2_title' => [
-                'ar' => 'تجهيز الأوراق والتدريب',
-                'en' => 'Document Preparation & Training',
-                'it' => 'Preparazione documenti e formazione'
+                'ar' => '02. التقييم والتجهيز',
+                'en' => '02. Evaluation & Preparation',
+                'it' => '02. Valutazione e Preparazione'
             ],
             'roadmap_step2_desc' => [
-                'ar' => 'ترجمة وتصديق كافة الشهادات والأوراق الرسمية والبدء في التدريب اللغوي أو العملي.',
-                'en' => 'Translating and legalizing all certificates while starting language or vocational training.',
-                'it' => 'Traduzione e legalizzazione documenti con formazione linguistica.'
+                'ar' => 'بنراجع مؤهلاتك ومستواك ومتطلباتك، ونحدد خطوات التأهيل والتجهيز المطلوبة.',
+                'en' => 'We review your qualifications, current level, and requirements, defining the training and preparation roadmap.',
+                'it' => 'Esaminiamo le tue qualifiche e il tuo livello, definendo i passaggi di formazione e preparazione richiesti.'
             ],
             'roadmap_step3_title' => [
-                'ar' => 'التقديم للمنح والقبول',
-                'en' => 'Applying for Scholarships & Admission',
-                'it' => 'Candidatura per borse e ammissioni'
+                'ar' => '03. التدريب والتقديم',
+                'en' => '03. Training & Application Submission',
+                'it' => '03. Formazione e Presentazione Candidatura'
             ],
             'roadmap_step3_desc' => [
-                'ar' => 'إرسال طلبات الالتحاق بالجامعات أو التقدم للمنح والوظائف ومتابعة النتائج خطوة بخطوة.',
-                'en' => 'Submitting university applications and DSU scholarship files with close tracking.',
-                'it' => 'Invio domande universitarie e monitoraggio borse di studio.'
+                'ar' => 'بنوفرلك التأهيل والتدريب اللازم، وبنساعدك في إجراءات التقديم والمتابعة حسب الخدمة.',
+                'en' => 'We provide necessary training and support application procedures and follow-up according to each service.',
+                'it' => 'Forniamo la formazione necessaria e ti assistiamo nelle procedure di domanda e monitoraggio in base al servizio.'
             ],
             'roadmap_step4_title' => [
-                'ar' => 'التأشيرة والاستقبال بالدول الأوروبية',
-                'en' => 'Visa & Reception in European Countries',
-                'it' => 'Visto e accoglienza nei Paesi Europei'
+                'ar' => '04. المتابعة واستكمال الإجراءات',
+                'en' => '04. Follow-up & File Completion',
+                'it' => '04. Monitoraggio e Completamento Pratiche'
             ],
             'roadmap_step4_desc' => [
-                'ar' => 'استلام التأشيرة الدراسية، تأمين السكن، والاستقبال في المطار لبدء مستقبلك الجديد.',
-                'en' => 'Receiving your student visa, securing accommodation, and airport reception in Europe.',
-                'it' => 'Rilascio visto, alloggio e accoglienza all arrivo.'
+                'ar' => 'بنتابع معاك الخطوات المطلوبة، ونساعدك تستكمل ملفك وتكون جاهز لخطوتك القادمة.',
+                'en' => 'We monitor the required steps, helping you finalize your file and get fully ready for your upcoming leap.',
+                'it' => 'Seguiamo con te tutti i passaggi, ti aiutiamo a completare il fascicolo per essere pronto al prossimo traguardo.'
             ],
 
             // Final CTA Banner
@@ -537,14 +542,14 @@ class DatabaseSeeder extends Seeder
                 'it' => 'Inizia il tuo futuro oggi'
             ],
             'cta_title' => [
-                'ar' => 'جاهز لبدء رحلتك نحو الدول الأوروبية وأرقى الوظائف الدولية؟',
-                'en' => 'Ready to Start Your Journey to European Countries & Top International Careers?',
-                'it' => 'Pronto per iniziare il tuo percorso verso i Paesi Europei?'
+                'ar' => 'جاهز تبدأ خطوتك الجاية مع INTOK؟',
+                'en' => 'Ready to Take Your Next Step with INTOK?',
+                'it' => 'Pronto a compiere il tuo prossimo passo con INTOK?'
             ],
             'cta_subtitle' => [
-                'ar' => 'تواصل معنا الآن أو تابعنا عبر منصاتنا الرسمية على إنستغرام وتيك توك، ودع فريق INTOK Academy يرسم معك طريق النجاح.',
-                'en' => 'Contact us now or follow our official social channels, and let INTOK Academy map your path to success.',
-                'it' => 'Contattaci subito o seguici sui canali ufficiali.'
+                'ar' => 'سواء هدفك تتعلم لغة، تطور مهاراتك المهنية، تتأهل للدراسة في أوروبا أو تستكمل إجراءاتك الأكاديمية، فريق INTOK جاهز يساعدك تبدأ.',
+                'en' => 'Whether your goal is learning a language, developing career skills, qualifying to study in Europe, or completing academic procedures, the INTOK team is ready to guide your start.',
+                'it' => 'Che il tuo obiettivo sia imparare una lingua, sviluppare competenze professionali, qualificarti per studiare in Europa o completare le tue pratiche accademiche, il team INTOK è pronto ad aiutarti a iniziare.'
             ],
             'cta_btn_primary' => [
                 'ar' => 'احجز استشارتك الآن',

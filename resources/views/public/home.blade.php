@@ -325,7 +325,11 @@
 
                 <!-- Interactive Switcher Tabs -->
                 <div class="mt-8 inline-flex items-center p-1.5 bg-slate-100 rounded-2xl border border-slate-200 shadow-inner" id="partners-tabs-nav">
-                    <button type="button" class="partner-tab-btn active-partner-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-black transition cursor-pointer flex items-center gap-2" data-target="partners-egypt">
+                    <button type="button" class="partner-tab-btn active-partner-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-black transition cursor-pointer flex items-center gap-2" data-target="partners-all">
+                        <span>🌐</span>
+                        <span>{{ match($locale) { 'it' => 'Tutti i Partner', 'en' => 'All Partners', default => 'عرض الكل' } }}</span>
+                    </button>
+                    <button type="button" class="partner-tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-black text-slate-600 hover:text-slate-900 transition cursor-pointer flex items-center gap-2" data-target="partners-egypt">
                         <span>🇪🇬</span>
                         <span>{{ match($locale) { 'it' => 'Partner in Egitto', 'en' => 'Partners in Egypt', default => 'شركاء النجاح داخل مصر' } }}</span>
                     </button>
@@ -337,7 +341,7 @@
             </div>
 
             <!-- Tab Panels Container -->
-            <div class="relative max-w-5xl mx-auto">
+            <div id="partners-container" class="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
                 
                 <!-- Panel 1: Partners Inside Egypt -->
                 <div id="panel-partners-egypt" class="partner-panel transition-all duration-500">
@@ -380,7 +384,7 @@
                 </div>
 
                 <!-- Panel 2: Partners Outside Egypt (European Universities) -->
-                <div id="panel-partners-intl" class="partner-panel hidden transition-all duration-500">
+                <div id="panel-partners-intl" class="partner-panel transition-all duration-500">
                     <div class="relative overflow-hidden rounded-3xl border-2 border-slate-200 bg-white p-4 sm:p-8 shadow-xl group">
                         <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
                             <div>
@@ -1025,7 +1029,7 @@
                             'desc' => 'بنساعدك تطور قدراتك وتستعد لخطوات جديدة في التعليم والعمل، من خلال برامج التأهيل والتدريب والخدمات الأكاديمية المتخصصة.',
                             'stat_val' => 'المستقبل',
                             'stat_unit' => 'جاهزية',
-                            'stat_label' => 'القيمة المضافة: خطوات واضحة ومدروسة نحو مستقبلك.',
+                            'stat_label' => 'القيمة المضافة: خطوات أوضح نحو مستقبلك.',
                             'stat_sub' => 'تأهيل يفتح لك آفاق التعليم والعمل في أوروبا',
                             'points' => [
                                 'التأهيل للدراسة في أوروبا.',
@@ -1565,11 +1569,11 @@
                                 <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
                             </span>
                             <div class="text-start">
-                                <h4 class="text-sm font-black text-[#c27803] group-hover:text-[#fe0002] transition-colors">
-                                    إيه اللي بيميز منظومة INTOK ؟ مقارنة بين الطرق التقليدية ومنظومة INTOK المتكاملة
+                                <h4 class="text-sm sm:text-base font-black text-[#c27803] group-hover:text-[#fe0002] transition-colors">
+                                    {{ match($locale) { 'it' => 'Cosa distingue l\'ecosistema INTOK? Confronto tra metodi tradizionali e il sistema integrato INTOK', 'en' => 'What distinguishes the INTOK ecosystem? Comparison between traditional methods and the integrated INTOK system', default => 'إيه اللي بيميز منظومة INTOK ؟' } }}
                                 </h4>
-                                <p class="text-xs font-medium text-slate-500">
-                                    اضغط لاستعراض المقارنة في المجالات الستة: تنوع الخدمات، اللغات، الترجمة، التأهيل المهني، الدراسة في أوروبا، والاختبارات الدولية
+                                <p class="text-xs font-medium text-slate-500 mt-0.5">
+                                    {{ match($locale) { 'it' => 'Confronto tra metodi tradizionali e il sistema integrato INTOK ACADEMY', 'en' => 'Comparison between traditional methods and the integrated INTOK ACADEMY system', default => 'مقارنة بين الطرق التقليدية ومنظومة INTOK المتكاملة' } }}
                                 </p>
                             </div>
                         </div>
@@ -1585,41 +1589,41 @@
                             <table class="w-full text-start text-xs sm:text-sm border-collapse">
                                 <thead>
                                     <tr class="bg-slate-50 border-b border-slate-200 text-slate-800">
-                                        <th class="p-4 text-start font-black">مجال التقديم والخدمة</th>
-                                        <th class="p-4 text-start font-black text-red-600 bg-red-50/50">المكاتب والوسائل العادية</th>
-                                        <th class="p-4 text-start font-black text-emerald-700 bg-emerald-50/60">منظومة INTOK ACADEMY</th>
+                                        <th class="p-4 text-start font-black">{{ match($locale) { 'it' => 'Ambito di Confronto', 'en' => 'Comparison Field', default => 'مجال المقارنة' } }}</th>
+                                        <th class="p-4 text-start font-black text-red-600 bg-red-50/50">{{ match($locale) { 'it' => 'Metodi Tradizionali', 'en' => 'Traditional Methods', default => 'الطرق التقليدية' } }}</th>
+                                        <th class="p-4 text-start font-black text-emerald-700 bg-emerald-50/60">{{ match($locale) { 'it' => 'Sistema INTOK ACADEMY', 'en' => 'INTOK ACADEMY System', default => 'منظومة INTOK ACADEMY' } }}</th>
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-slate-100">
                                     <tr>
-                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">1. تنوع الخدمات</td>
-                                        <td class="p-4 text-slate-600 bg-red-50/20">التعامل مع جهات مختلفة لكل خدمة وتشتت الجهد</td>
-                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">خدمات تعليمية وتدريبية وأكاديمية متعددة في مكان واحد بخطة واضحة</td>
+                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">1. {{ match($locale) { 'it' => 'Varietà dei Servizi', 'en' => 'Service Variety', default => 'تنوع الخدمات' } }}</td>
+                                        <td class="p-4 text-slate-600 bg-red-50/20">{{ match($locale) { 'it' => 'Trattare con più soggetti diversi per ogni servizio', 'en' => 'Dealing with multiple separate entities for each service', default => 'التعامل مع جهات مختلفة لكل خدمة' } }}</td>
+                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">{{ match($locale) { 'it' => 'Servizi educativi, formativi e accademici completi in un unico posto', 'en' => 'Multiple educational, training, and academic services in one place', default => 'خدمات تعليمية وتدريبية وأكاديمية متعددة في مكان واحد' } }}</td>
                                     </tr>
                                     <tr>
-                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">2. تعلم اللغات</td>
-                                        <td class="p-4 text-slate-600 bg-red-50/20">كورسات عامة تقليدية بدون مسار واضح أو تطبيق</td>
-                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">برامج لغات بمستويات ومسارات تدريبية منظمة تركز على الطلاقة</td>
+                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">2. {{ match($locale) { 'it' => 'Apprendimento Lingue', 'en' => 'Language Learning', default => 'تعلم اللغات' } }}</td>
+                                        <td class="p-4 text-slate-600 bg-red-50/20">{{ match($locale) { 'it' => 'Corsi generali senza un percorso chiaro', 'en' => 'Generic courses without a clear roadmap', default => 'كورسات عامة بدون مسار واضح' } }}</td>
+                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">{{ match($locale) { 'it' => 'Programmi linguistici a livelli con percorsi strutturati', 'en' => 'Structured language programs with clear milestone levels', default => 'برامج لغات بمستويات ومسارات تدريبية منظمة' } }}</td>
                                     </tr>
                                     <tr>
-                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">3. الترجمة المعتمدة</td>
-                                        <td class="p-4 text-slate-600 bg-red-50/20">البحث عن مترجمين وجهات مختلفة مع احتمالية الأخطاء</td>
-                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">خدمات ترجمة معتمدة وتدقيق لغوي رسمي للمستندات والشهادات</td>
+                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">3. {{ match($locale) { 'it' => 'Traduzione Certificata', 'en' => 'Certified Translation', default => 'الترجمة المعتمدة' } }}</td>
+                                        <td class="p-4 text-slate-600 bg-red-50/20">{{ match($locale) { 'it' => 'Ricerca di traduttori e agenzie differenti', 'en' => 'Searching for various translators and agencies', default => 'البحث عن مترجمين وجهات مختلفة' } }}</td>
+                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">{{ match($locale) { 'it' => 'Servizi di traduzione giurata e revisione linguistica dei documenti', 'en' => 'Certified translation services and linguistic proofreading for documents', default => 'خدمات ترجمة معتمدة وتدقيق لغوي للمستندات' } }}</td>
                                     </tr>
                                     <tr>
-                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">4. التأهيل المهني</td>
-                                        <td class="p-4 text-slate-600 bg-red-50/20">تدريب نظري محدود بدون محاكاة لبيئة العمل</td>
-                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">تدريب عملي وتأهيل مباشر لسوق العمل ومحاكاة لمقابلات الشركات</td>
+                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">4. {{ match($locale) { 'it' => 'Qualificazione Professionale', 'en' => 'Career Preparation', default => 'التأهيل المهني' } }}</td>
+                                        <td class="p-4 text-slate-600 bg-red-50/20">{{ match($locale) { 'it' => 'Formazione teorica limitata', 'en' => 'Limited theoretical training', default => 'تدريب نظري محدود' } }}</td>
+                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">{{ match($locale) { 'it' => 'Addestramento pratico, preparazione al mercato del lavoro e colloqui', 'en' => 'Practical training, job market preparation, and interview skills', default => 'تدريب عملي وتأهيل لسوق العمل ومهارات المقابلات' } }}</td>
                                     </tr>
                                     <tr>
-                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">5. التأهيل للدراسة بأوروبا</td>
-                                        <td class="p-4 text-slate-600 bg-red-50/20">صعوبة معرفة الإجراءات ومتطلبات التقديم وتضارب المعلومات</td>
-                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">مساعدة في اختيار المسار وتجهيز الملفات ومتابعة إجراءات التقديم خطوة بخطوة</td>
+                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">5. {{ match($locale) { 'it' => 'Preparazione agli Studi in Europa', 'en' => 'Preparation for Study in Europe', default => 'التأهيل للدراسة بأوروبا' } }}</td>
+                                        <td class="p-4 text-slate-600 bg-red-50/20">{{ match($locale) { 'it' => 'Difficoltà a comprendere requisiti e procedure di candidatura', 'en' => 'Difficulty understanding procedures and application requirements', default => 'صعوبة معرفة الإجراءات ومتطلبات التقديم' } }}</td>
+                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">{{ match($locale) { 'it' => 'Assistenza nella scelta del percorso, preparazione fascicolo e follow-up', 'en' => 'Assistance in pathway choice, file preparation, and application tracking', default => 'مساعدة في اختيار المسار وتجهيز الملفات ومتابعة إجراءات التقديم' } }}</td>
                                     </tr>
                                     <tr>
-                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">6. الاختبارات والخدمات الدولية</td>
-                                        <td class="p-4 text-slate-600 bg-red-50/20">تعدد الجهات وصعوبة متابعة المواعيد والإجراءات</td>
-                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">تأهيل للاختبارات الدولية ومساعدة في حجز المواعيد والخدمات المرتبطة بها</td>
+                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">6. {{ match($locale) { 'it' => 'Test e Servizi Internazionali', 'en' => 'International Tests & Services', default => 'الاختبارات والخدمات الدولية' } }}</td>
+                                        <td class="p-4 text-slate-600 bg-red-50/20">{{ match($locale) { 'it' => 'Molteplicità di enti e complessità nel seguire le procedure', 'en' => 'Fragmented entities and difficulty tracking procedures', default => 'تعدد الجهات وصعوبة متابعة الإجراءات' } }}</td>
+                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">{{ match($locale) { 'it' => 'Preparazione per test internazionali, prenotazione appuntamenti e servizi associati', 'en' => 'Preparation for international tests, appointment booking, and related services', default => 'تأهيل للاختبارات الدولية، ومساعدة في حجز المواعيد والخدمات المرتبطة بها' } }}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -1782,10 +1786,10 @@
                     {{ data_get($siteSettings ?? [], 'roadmap_badge.'.$locale, 'خارطة طريق واضحة ومضمونة') }}
                 </span>
                 <h2 class="mt-3 text-3xl font-black text-[#c27803] sm:text-5xl">
-                    {{ data_get($siteSettings ?? [], 'roadmap_title.'.$locale, __('site.process_title')) }}
+                    {{ data_get($siteSettings ?? [], 'roadmap_title.'.$locale, match($locale) { 'it' => 'I tuoi passi con INTOK dall\'inizio al raggiungimento del tuo obiettivo', 'en' => 'Your steps with INTOK from the beginning to achieving your goal', default => 'خطواتك مع INTOK من البداية حتى تحقيق هدفك' }) }}
                 </h2>
                 <p class="mt-3 text-base text-slate-600">
-                    {{ data_get($siteSettings ?? [], 'roadmap_subtitle.'.$locale, 'أربع مراحل مدروسة بعناية تحول طموحك بالدراسة والعمل الدولي إلى حقيقة مؤكدة.') }}
+                    {{ data_get($siteSettings ?? [], 'roadmap_subtitle.'.$locale, match($locale) { 'it' => 'Ti accompagniamo passo dopo passo, dalla comprensione delle tue esigenze alla preparazione e al monitoraggio.', 'en' => 'We walk with you in clear, organized steps, from understanding your needs to training, preparation, and follow-up.', default => 'بنمشي معاك في خطوات واضحة ومنظمة، بداية من فهم احتياجك واختيار الخدمة المناسبة، لحد التأهيل والتجهيز والمتابعة.' }) }}
                 </p>
             </div>
 
@@ -1796,7 +1800,7 @@
                             'num' => '01',
                             'icon' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>',
                             'title' => data_get($siteSettings ?? [], 'roadmap_step1_title.'.$locale, match($locale) { 'it' => '01. Consulenza e Definizione del Percorso', 'en' => '01. Consultation & Pathway Mapping', default => '01. الاستشارة وتحديد المسار' }),
-                            'desc' => data_get($siteSettings ?? [], 'roadmap_step1_desc.'.$locale, match($locale) { 'it' => 'Comprendiamo i tuoi obiettivi e le tue esigenze e ti guidiamo nella scelta del servizio o programma più adatto.', 'en' => 'We understand your goals and needs, helping you choose the most suitable service or educational program.', default => 'بنفهم هدفك واحتياجاتك، ونساعدك تختار الخدمة أو البرنامج الأنسب ليك ولطموحك.' }),
+                            'desc' => data_get($siteSettings ?? [], 'roadmap_step1_desc.'.$locale, match($locale) { 'it' => 'Comprendiamo i tuoi obiettivi e le tue esigenze e ti guidiamo nella scelta del servizio o programma più adatto.', 'en' => 'We understand your goals and needs, helping you choose the most suitable service or educational program.', default => 'بنفهم هدفك واحتياجاتك، ونساعدك تختار الخدمة أو البرنامج الأنسب ليك.' }),
                             'dir' => 'reveal-left stagger-1',
                             'pct' => 25
                         ],
@@ -1804,7 +1808,7 @@
                             'num' => '02',
                             'icon' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>',
                             'title' => data_get($siteSettings ?? [], 'roadmap_step2_title.'.$locale, match($locale) { 'it' => '02. Valutazione e Preparazione', 'en' => '02. Evaluation & Preparation', default => '02. التقييم والتجهيز' }),
-                            'desc' => data_get($siteSettings ?? [], 'roadmap_step2_desc.'.$locale, match($locale) { 'it' => 'Esaminiamo le tue qualifiche e il tuo livello, definendo i passaggi di formazione e preparazione richiesti.', 'en' => 'We review your qualifications, current level, and requirements, defining the training and preparation roadmap.', default => 'بنراجع مؤهلاتك ومستواك ومتطلباتك، ونحدد خطوات التأهيل والتجهيز المطلوبة بكل دقة.' }),
+                            'desc' => data_get($siteSettings ?? [], 'roadmap_step2_desc.'.$locale, match($locale) { 'it' => 'Esaminiamo le tue qualifiche e il tuo livello, definendo i passaggi di formazione e preparazione richiesti.', 'en' => 'We review your qualifications, current level, and requirements, defining the training and preparation roadmap.', default => 'بنراجع مؤهلاتك ومستواك ومتطلباتك، ونحدد خطوات التأهيل والتجهيز المطلوبة.' }),
                             'dir' => 'reveal-up stagger-2',
                             'pct' => 50
                         ],
@@ -1812,7 +1816,7 @@
                             'num' => '03',
                             'icon' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg>',
                             'title' => data_get($siteSettings ?? [], 'roadmap_step3_title.'.$locale, match($locale) { 'it' => '03. Formazione e Presentazione Candidatura', 'en' => '03. Training & Application Submission', default => '03. التدريب والتقديم' }),
-                            'desc' => data_get($siteSettings ?? [], 'roadmap_step3_desc.'.$locale, match($locale) { 'it' => 'Forniamo la formazione necessaria e ti assistiamo nelle procedure di domanda e monitoraggio in base al servizio.', 'en' => 'We provide necessary training and support application procedures and follow-up according to each service.', default => 'بنوفرلك التأهيل والتدريب اللازم، وبنساعدك في إجراءات التقديم والمتابعة حسب نوع الخدمة.' }),
+                            'desc' => data_get($siteSettings ?? [], 'roadmap_step3_desc.'.$locale, match($locale) { 'it' => 'Forniamo la formazione necessaria e ti assistiamo nelle procedure di domanda e monitoraggio in base al servizio.', 'en' => 'We provide necessary training and support application procedures and follow-up according to each service.', default => 'بنوفرلك التأهيل والتدريب اللازم، وبنساعدك في إجراءات التقديم والمتابعة حسب الخدمة.' }),
                             'dir' => 'reveal-up stagger-3',
                             'pct' => 75
                         ],
@@ -1820,7 +1824,7 @@
                             'num' => '04',
                             'icon' => '<svg class="size-6 text-[#fe0002]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>',
                             'title' => data_get($siteSettings ?? [], 'roadmap_step4_title.'.$locale, match($locale) { 'it' => '04. Monitoraggio e Completamento Pratiche', 'en' => '04. Follow-up & File Completion', default => '04. المتابعة واستكمال الإجراءات' }),
-                            'desc' => data_get($siteSettings ?? [], 'roadmap_step4_desc.'.$locale, match($locale) { 'it' => 'Seguiamo con te tutti i passaggi, ti aiutiamo a completare il fascicolo per essere pronto al prossimo traguardo.', 'en' => 'We monitor the required steps, helping you finalize your file and get fully ready for your upcoming leap.', default => 'بنتابع معاك الخطوات المطلوبة، ونساعدك تستكمل ملفك وتكون جاهز تماماً لخطوتك القادمة.' }),
+                            'desc' => data_get($siteSettings ?? [], 'roadmap_step4_desc.'.$locale, match($locale) { 'it' => 'Seguiamo con te tutti i passaggi, ti aiutiamo a completare il fascicolo per essere pronto al prossimo traguardo.', 'en' => 'We monitor the required steps, helping you finalize your file and get fully ready for your upcoming leap.', default => 'بنتابع معاك الخطوات المطلوبة، ونساعدك تستكمل ملفك وتكون جاهز لخطوتك القادمة.' }),
                             'dir' => 'reveal-right stagger-4',
                             'pct' => 100
                         ],
@@ -2032,6 +2036,7 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             const tabBtns = document.querySelectorAll('.partner-tab-btn');
+            const container = document.getElementById('partners-container');
             const panelEgypt = document.getElementById('panel-partners-egypt');
             const panelIntl = document.getElementById('panel-partners-intl');
 
@@ -2045,10 +2050,19 @@
                     btn.classList.add('active-partner-tab', 'text-slate-900');
                     btn.classList.remove('text-slate-600');
 
-                    if (target === 'partners-egypt') {
+                    if (target === 'partners-all') {
+                        container?.classList.remove('max-w-5xl');
+                        container?.classList.add('max-w-7xl', 'lg:grid-cols-2');
+                        panelEgypt?.classList.remove('hidden');
+                        panelIntl?.classList.remove('hidden');
+                    } else if (target === 'partners-egypt') {
+                        container?.classList.remove('max-w-7xl', 'lg:grid-cols-2');
+                        container?.classList.add('max-w-5xl');
                         panelEgypt?.classList.remove('hidden');
                         panelIntl?.classList.add('hidden');
-                    } else {
+                    } else if (target === 'partners-intl') {
+                        container?.classList.remove('max-w-7xl', 'lg:grid-cols-2');
+                        container?.classList.add('max-w-5xl');
                         panelEgypt?.classList.add('hidden');
                         panelIntl?.classList.remove('hidden');
                     }
