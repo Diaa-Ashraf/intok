@@ -277,6 +277,12 @@
                             <span class="text-amber-400 font-bold">{{ __('site.academy_label') }}</span>
                             <span class="font-bold tracking-wider">INTOKACADEMY</span>
                         </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-red-400 font-bold">📍</span>
+                            <a href="https://maps.app.goo.gl/JXjAZG1Nzf3do1LA8" target="_blank" rel="noopener noreferrer" class="font-bold text-slate-200 hover:text-white hover:underline transition">
+                                {{ match(app()->getLocale()) { 'it' => 'Posizione su Google Maps', 'en' => 'Location on Google Maps', default => 'موقع الأكاديمية على خرائط Google' } }}
+                            </a>
+                        </div>
                         <div class="pt-2">
                             <a href="{{ route('consultation.create', ['locale' => app()->getLocale()]) }}" class="btn-intok-primary flex w-full justify-center items-center gap-2 py-3 text-xs font-black shadow-lg">
                                 <span>{{ __('site.book_consultation_now') }}</span>

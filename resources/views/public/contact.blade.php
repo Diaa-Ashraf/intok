@@ -96,15 +96,14 @@
 
                 <!-- Map container -->
                 <div class="card-poster-white p-5 bg-white border border-slate-200">
-                    <h3 class="text-xs font-black uppercase tracking-wider text-slate-700">{{ __('site.contact_map') }}</h3>
-                    @php($mapUrl = data_get($siteSettings ?? [], 'map_embed') ?: config('intok.google_map_embed'))
-                    @if($mapUrl && str_starts_with($mapUrl, 'https://www.google.com/maps/embed'))
-                        <iframe class="mt-3 h-52 w-full rounded-2xl border-0" src="{{ $mapUrl }}" title="{{ __('site.contact_map') }}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-                    @else
-                        <div class="mt-3 grid h-40 place-items-center rounded-2xl border border-slate-200 bg-slate-50 p-5 text-center text-xs text-slate-500">
-                            {{ __('site.contact_map_placeholder') }}
-                        </div>
-                    @endif
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-xs font-black uppercase tracking-wider text-slate-700">{{ __('site.contact_map') }}</h3>
+                        <a href="https://maps.app.goo.gl/JXjAZG1Nzf3do1LA8" target="_blank" rel="noopener noreferrer" class="text-[11px] font-black text-red-600 hover:underline">
+                            فتح في خرائط Google ↗
+                        </a>
+                    </div>
+                    @php($mapUrl = data_get($siteSettings ?? [], 'map_embed') ?: data_get($siteSettings ?? [], 'google_maps_embed', 'https://maps.google.com/maps?q=30.0700542,31.2042554&hl=ar&z=17&output=embed'))
+                    <iframe class="mt-3 h-52 w-full rounded-2xl border border-slate-200" src="{{ $mapUrl }}" title="{{ __('site.contact_map') }}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
                 </div>
             </aside>
         </div>

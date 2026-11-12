@@ -113,19 +113,23 @@
                             <span class="relative inline-flex size-2.5 rounded-full bg-red-600"></span>
                         </span>
                         <span>{{ data_get($siteSettings ?? [], 'hero_badge.'.$locale, match($locale) {
-                            'it' => 'Il tuo partner fidato per il successo • INTOK Academy',
-                            'en' => 'Your Trusted Partner for Success • INTOK Academy',
-                            default => 'شريكك الموثوق نحو النجاح • بوابتك للتعلم والتطور وبناء مستقبلك',
+                            'it' => 'Il tuo partner di fiducia per il successo • INTOK Academy',
+                            'en' => 'Your Trusted Partner to Success • INTOK Academy',
+                            default => 'شريكك الموثوق نحو النجاح • INTOK Academy',
                         }) }}</span>
                     </div>
 
                     <!-- Main Punchy Headline -->
-                    <h1 class="mt-6 text-3xl font-black leading-[1.2] tracking-tight sm:text-5xl lg:text-6xl text-[#c27803]">
-                        {!! nl2br(e(data_get($siteSettings ?? [], 'hero_title.'.$locale, match($locale) {
-                            'it' => "Il Tuo Partner Fidato per il Successo\nINTOK: La Tua Porta per Apprendere, Crescere e Costruire il Tuo Futuro",
-                            'en' => "Your Trusted Partner for Success\nINTOK: Your Gateway to Learning, Growth, and Future Building",
-                            default => "شريكك الموثوق نحو النجاح\nINTOK بوابتك للتعلم والتطور وبناء مستقبلك",
-                        }))) !!}
+                    @php
+                        $heroTitleText = data_get($siteSettings ?? [], 'hero_title.'.$locale, match($locale) {
+                            'it' => 'INTOK - La tua porta per imparare, crescere e costruire il futuro',
+                            'en' => 'INTOK - Your Gateway to Learning, Growth & Future Building',
+                            default => 'INTOK - بوابتك للتعلم والتطور وبناء مستقبلك',
+                        });
+                        $heroTitleWithoutPrefix = preg_replace('/^INTOK\s*[-—]\s*/iu', '', $heroTitleText);
+                    @endphp
+                    <h1 class="mt-6 text-3xl font-black leading-[1.25] tracking-tight sm:text-5xl lg:text-6xl text-slate-900">
+                        <span class="text-[#fe0002] inline-block">INTOK</span> — {{ $heroTitleWithoutPrefix }}
                     </h1>
 
                     <!-- Empowering Subtitle -->
@@ -160,19 +164,19 @@
                     <!-- Trust Metrics -->
                     <div class="mt-10 grid grid-cols-3 gap-4 border-t border-slate-200 pt-6 max-w-lg text-start">
                         <div>
-                            <p class="text-2xl font-black text-[#c27803] sm:text-3xl">{{ data_get($siteSettings ?? [], 'hero_stat_1_val', '10+') }}</p>
+                            <p class="text-2xl font-black text-[#fe0002] sm:text-3xl">{{ data_get($siteSettings ?? [], 'hero_stat_1_val', '10+') }}</p>
                             <p class="text-xs font-black text-slate-900 mt-1">{{ data_get($siteSettings ?? [], 'hero_stat_1_lbl.'.$locale, match($locale) { 'it' => 'Paesi Europei', 'en' => 'European Countries', default => 'دول أوروبية' }) }}</p>
-                            <p class="text-[10px] font-bold text-red-600">{{ match($locale) { 'it' => 'Destinazioni varie', 'en' => 'Diverse destinations', default => 'وجهات دراسية متنوعة' } }}</p>
+                            <p class="text-[10px] font-bold text-slate-500">{{ match($locale) { 'it' => 'Destinazioni varie', 'en' => 'Diverse destinations', default => 'وجهات دراسية متنوعة' } }}</p>
                         </div>
                         <div class="border-s border-slate-200 ps-4">
-                            <p class="text-2xl font-black text-[#c27803] sm:text-3xl">{{ data_get($siteSettings ?? [], 'hero_stat_2_val', '1,200+') }}</p>
-                            <p class="text-xs font-black text-slate-900 mt-1">{{ data_get($siteSettings ?? [], 'hero_stat_2_lbl.'.$locale, match($locale) { 'it' => 'Studenti e tirocinanti', 'en' => 'Students & Trainees', default => 'طالب ومتدرب' }) }}</p>
+                            <p class="text-2xl font-black text-[#fe0002] sm:text-3xl">{{ data_get($siteSettings ?? [], 'hero_stat_2_val', '1,200+') }}</p>
+                            <p class="text-xs font-black text-slate-900 mt-1">{{ data_get($siteSettings ?? [], 'hero_stat_2_lbl.'.$locale, match($locale) { 'it' => 'Studenti e corsisti', 'en' => 'Students & Trainees', default => 'طالب ومتدرب' }) }}</p>
                             <p class="text-[10px] font-bold text-emerald-600">{{ match($locale) { 'it' => 'Qualificati con successo', 'en' => 'Successfully qualified', default => 'تم تأهيلهم بنجاح' } }}</p>
                         </div>
                         <div class="border-s border-slate-200 ps-4">
-                            <p class="text-2xl font-black text-[#c27803] sm:text-3xl">{{ data_get($siteSettings ?? [], 'hero_stat_3_val', '100%') }}</p>
-                            <p class="text-xs font-black text-slate-900 mt-1">{{ data_get($siteSettings ?? [], 'hero_stat_3_lbl.'.$locale, match($locale) { 'it' => 'Dossier completati', 'en' => 'File Completion', default => 'استكمال الملفات' }) }}</p>
-                            <p class="text-[10px] font-bold text-red-600">{{ match($locale) { 'it' => 'Monitoraggio secondo requisiti', 'en' => 'According to requirements', default => 'متابعة وتجهيز الملفات' } }}</p>
+                            <p class="text-2xl font-black text-[#fe0002] sm:text-3xl">{{ data_get($siteSettings ?? [], 'hero_stat_3_val', '100%') }}</p>
+                            <p class="text-xs font-black text-slate-900 mt-1">{{ data_get($siteSettings ?? [], 'hero_stat_3_lbl.'.$locale, match($locale) { 'it' => 'Qualificazione certificata', 'en' => 'Certified Qualification', default => 'تأهيل معتمد ودعم متكامل' }) }}</p>
+                            <p class="text-[10px] font-bold text-slate-500">{{ match($locale) { 'it' => 'Monitoraggio continuo', 'en' => 'Ongoing guidance', default => 'متابعة وإرشاد شامل' } }}</p>
                         </div>
                     </div>
 
@@ -295,7 +299,141 @@
     </section>
 
     <!-- ==========================================================
-         OFFICIAL 7 CORE SERVICES & SPECIALIZATIONS (USER PROVIDED)
+         SUCCESS PARTNERS & COOPERATION PROTOCOLS (PROMINENT TOP POSITION)
+         ========================================================== -->
+    <section id="partners-section" class="relative bg-white py-16 sm:py-24 border-b border-slate-200/80">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-14 reveal-up">
+                <span class="inline-flex items-center gap-2 rounded-full bg-red-50 border border-red-200 px-4 py-1.5 text-xs font-black text-[#fe0002] shadow-xs">
+                    <span class="relative flex size-2">
+                        <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#fe0002] opacity-75"></span>
+                        <span class="relative inline-flex size-2 rounded-full bg-[#fe0002]"></span>
+                    </span>
+                    <span>{{ match($locale) {
+                        'it' => 'Partnership Ufficiali e Accordi Istituzionali',
+                        'en' => 'Official Strategic Partnerships & Agreements',
+                        default => 'شراكات استراتيجية وبروتوكولات تعاون رسمية',
+                    } }}</span>
+                </span>
+                
+                <h2 class="mt-4 text-3xl font-black text-[#c27803] sm:text-5xl">
+                    {{ match($locale) {
+                        'it' => 'Partner del Successo e Protocolli di Cooperazione',
+                        'en' => 'Success Partners & Cooperation Protocols',
+                        default => 'شركاء النجاح وبروتوكولات التعاون',
+                    } }}
+                </h2>
+                
+                <p class="mt-4 text-base text-slate-600 font-medium leading-relaxed">
+                    {{ match($locale) {
+                        'it' => 'Insieme raggiungiamo traguardi più grandi: siamo orgogliosi delle nostre relazioni istituzionali e protocolli di cooperazione con prestigiose università europee e istituti leader in Egitto e all\'estero.',
+                        'en' => 'Together we unlock greater horizons: we take pride in our official institutional partnerships and cooperation protocols with prestigious European universities and leading organizations inside Egypt and abroad.',
+                        default => 'مع بعض بنقدر نوصل لفرص أكبر؛ نفخر بعلاقات وبروتوكولات التعاون الرسمية مع كبرى الجامعات الأوروبية والمؤسسات التعليمية والمهنية داخل مصر وخارجها.',
+                    } }}
+                </p>
+
+                <!-- Interactive Switcher Tabs -->
+                <div class="mt-8 inline-flex items-center p-1.5 bg-slate-100 rounded-2xl border border-slate-200 shadow-inner" id="partners-tabs-nav">
+                    <button type="button" class="partner-tab-btn active-partner-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-black transition cursor-pointer flex items-center gap-2" data-target="partners-egypt">
+                        <span>🇪🇬</span>
+                        <span>{{ match($locale) { 'it' => 'Partner in Egitto', 'en' => 'Partners in Egypt', default => 'شركاء النجاح داخل مصر' } }}</span>
+                    </button>
+                    <button type="button" class="partner-tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-black text-slate-600 hover:text-slate-900 transition cursor-pointer flex items-center gap-2" data-target="partners-intl">
+                        <span>🇪🇺</span>
+                        <span>{{ match($locale) { 'it' => 'Università Europee (Estero)', 'en' => 'European Universities (Abroad)', default => 'شركاء النجاح خارج مصر (الجامعات الأوروبية)' } }}</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab Panels Container -->
+            <div class="relative max-w-5xl mx-auto">
+                
+                <!-- Panel 1: Partners Inside Egypt -->
+                <div id="panel-partners-egypt" class="partner-panel transition-all duration-500">
+                    <div class="relative overflow-hidden rounded-3xl border-2 border-slate-200 bg-white p-4 sm:p-8 shadow-xl group">
+                        <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
+                            <div>
+                                <h3 class="text-lg font-black text-slate-900 flex items-center gap-2">
+                                    <span class="size-3 rounded-full bg-[#fe0002]"></span>
+                                    <span>{{ match($locale) { 'it' => 'Rete di Partner Istituzionali e Aziendali in Egitto', 'en' => 'Institutional & Corporate Partners Network in Egypt', default => 'شبكة شركاء النجاح والمؤسسات والشركات المعتمدة داخل مصر' } }}</span>
+                                </h3>
+                                <p class="text-xs text-slate-500 font-medium mt-1">
+                                    {{ match($locale) { 'it' => 'Collaborazioni con università, scuole internazionali, agenzie di traduzione e multinazionali', 'en' => 'Collaborations with universities, international schools, translation academies & multinationals', default => 'تعاون مع جامعات ومدارس دولية ومصانع ومراكز ترجمة معتمدة وكبرى شركات الكول سنتر' } }}
+                                </p>
+                            </div>
+                            <button type="button" onclick="openPartnerModal('{{ asset('assets/images/partners/partners-egypt.jpg') }}', 'شركاء النجاح داخل مصر')" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-100 hover:bg-[#fe0002] hover:text-white text-slate-700 text-xs font-black transition cursor-pointer shadow-2xs">
+                                <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
+                                <span>{{ match($locale) { 'it' => 'Ingrandisci', 'en' => 'Zoom In', default => 'تكبير العرض' } }}</span>
+                            </button>
+                        </div>
+
+                        <!-- Image Frame -->
+                        <div class="relative overflow-hidden rounded-2xl bg-slate-100 border border-slate-200 cursor-pointer" onclick="openPartnerModal('{{ asset('assets/images/partners/partners-egypt.jpg') }}', 'شركاء النجاح داخل مصر')">
+                            <img src="{{ asset('assets/images/partners/partners-egypt.jpg') }}" alt="شركاء النجاح داخل مصر" class="w-full h-auto object-contain transition duration-500 group-hover:scale-[1.02]">
+                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                                <span class="opacity-0 group-hover:opacity-100 transition-opacity bg-black/75 text-white text-xs font-black px-4 py-2 rounded-full shadow-lg backdrop-blur-sm">
+                                    {{ match($locale) { 'it' => 'Clicca per ingrandire tutti i loghi', 'en' => 'Click to expand all logos', default => 'اضغط لمشاهدة جميع الشعارات بوضوح كامل' } }}
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Meta Bar -->
+                        <div class="mt-4 flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-slate-100 text-xs text-slate-600 font-bold">
+                            <span class="inline-flex items-center gap-1.5">
+                                <span class="size-2 rounded-full bg-emerald-500"></span>
+                                <span>{{ match($locale) { 'it' => '+40 Enti e Aziende Partner', 'en' => '40+ Partner Institutions & Firms', default => 'أكثر من 40 جهة ومؤسسة وشريك نجاح' } }}</span>
+                            </span>
+                            <span class="text-slate-400 font-mono">{{ match($locale) { 'it' => 'Scuole • Università • Traduzioni • Multinazionali', 'en' => 'Schools • Universities • Translation • Multinationals', default => 'مدارس دولية • جامعات • مراكز ترجمة • كبرى الشركات' } }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 2: Partners Outside Egypt (European Universities) -->
+                <div id="panel-partners-intl" class="partner-panel hidden transition-all duration-500">
+                    <div class="relative overflow-hidden rounded-3xl border-2 border-slate-200 bg-white p-4 sm:p-8 shadow-xl group">
+                        <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
+                            <div>
+                                <h3 class="text-lg font-black text-slate-900 flex items-center gap-2">
+                                    <span class="size-3 rounded-full bg-[#c27803]"></span>
+                                    <span>{{ match($locale) { 'it' => 'Università Europee e Atenei Accreditati', 'en' => 'Accredited European Partner Universities', default => 'أعرق الجامعات الأوروبية والمؤسسات التعليمية المعتمدة' } }}</span>
+                                </h3>
+                                <p class="text-xs text-slate-500 font-medium mt-1">
+                                    {{ match($locale) { 'it' => 'Politecnico di Milano, Bologna, Sapienza, Pisa, Torino, Napoli Federico II, Padova, Bicocca', 'en' => 'Politecnico di Milano, Bologna, Sapienza, Pisa, Torino, Napoli Federico II, Padova, Bicocca', default => 'بوليتكنيك ميلانو، بولونيا، سابينزا، بيزا، تورينو، نابولي، بادوفا، بافيا، روما، بارما وغيرها' } }}
+                                </p>
+                            </div>
+                            <button type="button" onclick="openPartnerModal('{{ asset('assets/images/partners/partners-international.jpg') }}', 'شركاء النجاح خارج مصر - الجامعات الأوروبية')" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-100 hover:bg-[#fe0002] hover:text-white text-slate-700 text-xs font-black transition cursor-pointer shadow-2xs">
+                                <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
+                                <span>{{ match($locale) { 'it' => 'Ingrandisci', 'en' => 'Zoom In', default => 'تكبير العرض' } }}</span>
+                            </button>
+                        </div>
+
+                        <!-- Image Frame -->
+                        <div class="relative overflow-hidden rounded-2xl bg-slate-100 border border-slate-200 cursor-pointer" onclick="openPartnerModal('{{ asset('assets/images/partners/partners-international.jpg') }}', 'شركاء النجاح خارج مصر - الجامعات الأوروبية')">
+                            <img src="{{ asset('assets/images/partners/partners-international.jpg') }}" alt="شركاء النجاح خارج مصر" class="w-full h-auto object-contain transition duration-500 group-hover:scale-[1.02]">
+                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                                <span class="opacity-0 group-hover:opacity-100 transition-opacity bg-black/75 text-white text-xs font-black px-4 py-2 rounded-full shadow-lg backdrop-blur-sm">
+                                    {{ match($locale) { 'it' => 'Clicca per ingrandire tutti gli atenei', 'en' => 'Click to inspect all university crests', default => 'اضغط لمشاهدة جميع شعارات الجامعات الأوروبية بدقة عالية' } }}
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Meta Bar -->
+                        <div class="mt-4 flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-slate-100 text-xs text-slate-600 font-bold">
+                            <span class="inline-flex items-center gap-1.5">
+                                <span class="size-2 rounded-full bg-emerald-500"></span>
+                                <span>{{ match($locale) { 'it' => 'Università Statali e Politecnici d\'Eccellenza', 'en' => 'Top Public Universities & Polytechnics', default => 'جامعات حكومية وبوليتكنيك مصنفة عالمياً' } }}</span>
+                            </span>
+                            <span class="text-slate-400 font-mono">{{ match($locale) { 'it' => 'Milano • Roma • Bologna • Pisa • Torino • Padova', 'en' => 'Milan • Rome • Bologna • Pisa • Turin • Padua', default => 'ميلانو • روما • بولونيا • بيزا • تورينو • بادوفا • نابولي' } }}</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         OFFICIAL CORE SERVICES & SPECIALIZATIONS
          ========================================================== -->
     <section id="services-section" class="relative bg-intok-section py-16 sm:py-24 border-b border-slate-200/80 w-full max-w-full overflow-hidden">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full min-w-0 max-w-full">
@@ -1717,9 +1855,9 @@
 
     
     <!-- ==========================================================
-         SUCCESS PARTNERS & COOPERATION PROTOCOLS SECTION (USER ASSETS)
+         ACADEMY LOCATION & CAMPUS HEADQUARTERS (GOOGLE MAPS)
          ========================================================== -->
-    <section id="partners-section" class="relative bg-slate-50 py-20 sm:py-28 border-b border-slate-200/80">
+    <section id="academy-location-section" class="relative bg-slate-50 py-20 sm:py-28 border-b border-slate-200/80">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16 reveal-up">
                 <span class="inline-flex items-center gap-2 rounded-full bg-red-50 border border-red-200 px-4 py-1.5 text-xs font-black text-[#fe0002] shadow-xs">
@@ -1728,121 +1866,132 @@
                         <span class="relative inline-flex size-2 rounded-full bg-[#fe0002]"></span>
                     </span>
                     <span>{{ match($locale) {
-                        'it' => 'Partnership Ufficiali e Accordi Istituzionali',
-                        'en' => 'Official Strategic Partnerships & Agreements',
-                        default => 'شراكات استراتيجية وبروتوكولات تعاون رسمية',
+                        'it' => 'Sede Ufficiale e Campus Didattico',
+                        'en' => 'Official Campus & Live Training Hub',
+                        default => 'مقرنا الرئيسي وقاعاتنا التدريبية التفاعلية',
                     } }}</span>
                 </span>
                 
                 <h2 class="mt-4 text-3xl font-black text-[#c27803] sm:text-5xl">
                     {{ match($locale) {
-                        'it' => 'Partner del Successo e Protocolli di Cooperazione',
-                        'en' => 'Success Partners & Cooperation Protocols',
-                        default => 'شركاء النجاح وبروتوكولات التعاون',
+                        'it' => 'Visita la Sede di INTOK ACADEMY',
+                        'en' => 'Visit INTOK ACADEMY Campus & Headquarters',
+                        default => 'تفضل بزيارة مقر وقاعات INTOK ACADEMY',
                     } }}
                 </h2>
                 
                 <p class="mt-4 text-base text-slate-600 font-medium leading-relaxed">
                     {{ match($locale) {
-                        'it' => 'Insieme raggiungiamo traguardi più grandi: siamo orgogliosi delle nostre relazioni istituzionali e protocolli di cooperazione con prestigiose università europee e istituti leader in Egitto e all\'estero.',
-                        'en' => 'Together we unlock greater horizons: we take pride in our official institutional partnerships and cooperation protocols with prestigious European universities and leading organizations inside Egypt and abroad.',
-                        default => 'مع بعض بنقدر نوصل لفرص أكبر؛ نفخر بعلاقات وبروتوكولات التعاون الرسمية مع كبرى الجامعات الأوروبية والمؤسسات التعليمية والمهنية داخل مصر وخارجها.',
+                        'it' => 'Un ambiente all\'avanguardia dotato di aule multimediali e schermi interattivi, per accoglierti e offrirti consulenze personalizzate e formazione d\'eccellenza.',
+                        'en' => 'A state-of-the-art campus equipped with interactive smart screens, welcoming you for 1-on-1 consultations and top-tier career qualification.',
+                        default => 'مقر مجهز بأحدث الشاشات الذكية والقاعات التفاعلية، نرحب بكم يومياً لتقديم جلسات الاستشارة الأكاديمية والمهنية والتأهيل العملي المباشر.',
                     } }}
                 </p>
-
-                <!-- Interactive Switcher Tabs -->
-                <div class="mt-8 inline-flex items-center p-1.5 bg-white rounded-2xl border border-slate-200 shadow-sm" id="partners-tabs-nav">
-                    <button type="button" class="partner-tab-btn active-partner-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-black transition cursor-pointer flex items-center gap-2" data-target="partners-egypt">
-                        <span>🇪🇬</span>
-                        <span>{{ match($locale) { 'it' => 'Partner in Egitto', 'en' => 'Partners in Egypt', default => 'شركاء النجاح داخل مصر' } }}</span>
-                    </button>
-                    <button type="button" class="partner-tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-black text-slate-600 hover:text-slate-900 transition cursor-pointer flex items-center gap-2" data-target="partners-intl">
-                        <span>🇪🇺</span>
-                        <span>{{ match($locale) { 'it' => 'Università Europee (Estero)', 'en' => 'European Universities (Abroad)', default => 'شركاء النجاح خارج مصر (الجامعات الأوروبية)' } }}</span>
-                    </button>
-                </div>
             </div>
 
-            <!-- Tab Panels Container -->
-            <div class="relative max-w-5xl mx-auto">
+            <!-- Campus & Maps Grid -->
+            <div class="grid gap-8 lg:grid-cols-12 items-stretch max-w-6xl mx-auto">
                 
-                <!-- Panel 1: Partners Inside Egypt -->
-                <div id="panel-partners-egypt" class="partner-panel transition-all duration-500">
-                    <div class="relative overflow-hidden rounded-3xl border-2 border-slate-200 bg-white p-4 sm:p-8 shadow-xl group">
-                        <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
-                            <div>
-                                <h3 class="text-lg font-black text-slate-900 flex items-center gap-2">
-                                    <span class="size-3 rounded-full bg-[#fe0002]"></span>
-                                    <span>{{ match($locale) { 'it' => 'Rete di Partner Istituzionali e Aziendali in Egitto', 'en' => 'Institutional & Corporate Partners Network in Egypt', default => 'شبكة شركاء النجاح والمؤسسات والشركات المعتمدة داخل مصر' } }}</span>
-                                </h3>
-                                <p class="text-xs text-slate-500 font-medium mt-1">
-                                    {{ match($locale) { 'it' => 'Collaborazioni con università, scuole internazionali, agenzie di traduzione e multinazionali', 'en' => 'Collaborations with universities, international schools, translation academies & multinationals', default => 'تعاون مع جامعات ومدارس دولية ومصانع ومراكز ترجمة معتمدة وكبرى شركات الكول سنتر' } }}
-                                </p>
-                            </div>
-                            <button type="button" onclick="openPartnerModal('{{ asset('assets/images/partners/partners-egypt.jpg') }}', 'شركاء النجاح داخل مصر')" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-100 hover:bg-[#fe0002] hover:text-white text-slate-700 text-xs font-black transition cursor-pointer shadow-2xs">
-                                <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-                                <span>{{ match($locale) { 'it' => 'Ingrandisci', 'en' => 'Zoom In', default => 'تكبير العرض' } }}</span>
-                            </button>
-                        </div>
-
-                        <!-- Image Frame -->
-                        <div class="relative overflow-hidden rounded-2xl bg-slate-100 border border-slate-200 cursor-pointer" onclick="openPartnerModal('{{ asset('assets/images/partners/partners-egypt.jpg') }}', 'شركاء النجاح داخل مصر')">
-                            <img src="{{ asset('assets/images/partners/partners-egypt.jpg') }}" alt="شركاء النجاح داخل مصر" class="w-full h-auto object-contain transition duration-500 group-hover:scale-[1.02]">
-                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                                <span class="opacity-0 group-hover:opacity-100 transition-opacity bg-black/75 text-white text-xs font-black px-4 py-2 rounded-full shadow-lg backdrop-blur-sm">
-                                    {{ match($locale) { 'it' => 'Clicca per ingrandire tutti i loghi', 'en' => 'Click to expand all logos', default => 'اضغط لمشاهدة جميع الشعارات بوضوح كامل' } }}
+                <!-- Left Details Card (5 cols) -->
+                <div class="lg:col-span-5 flex flex-col justify-between rounded-3xl bg-white border-2 border-slate-200 p-6 sm:p-8 shadow-xl reveal-left">
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+                            <div class="flex items-center gap-3">
+                                <span class="grid size-11 place-items-center rounded-2xl bg-red-50 text-[#fe0002] border border-red-200 shadow-2xs font-bold">
+                                    <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                                 </span>
+                                <div>
+                                    <h3 class="font-black text-slate-900 text-base sm:text-lg">INTOK ACADEMY</h3>
+                                    <p class="text-xs font-bold text-red-600">{{ match($locale) { 'it' => 'Sede Principale', 'en' => 'Headquarters & Training Hub', default => 'المقر الرئيسي وقاعات التدريب' } }}</p>
+                                </div>
+                            </div>
+                            <span class="inline-flex items-center gap-1 text-[11px] font-black text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
+                                <span class="size-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                                <span>{{ match($locale) { 'it' => 'Aperto', 'en' => 'Open Now', default => 'مفتوح لاستقبالكم' } }}</span>
+                            </span>
+                        </div>
+
+                        <!-- Address Info -->
+                        <div class="space-y-4 text-xs sm:text-sm">
+                            <div class="flex items-start gap-3 text-slate-700">
+                                <span class="size-5 shrink-0 mt-0.5 text-slate-400">
+                                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                                </span>
+                                <div>
+                                    <p class="font-black text-slate-900">{{ match($locale) { 'it' => 'Indirizzo del Campus', 'en' => 'Campus Address', default => 'عنوان المقر' } }}</p>
+                                    <p class="text-xs text-slate-500 font-medium mt-0.5 leading-relaxed">{{ data_get($siteSettings ?? [], 'academy_address.'.$locale, 'القاهرة / الجيزة - مصر (بالقرب من محطات المترو الرئيسية وسهولة تامة في الوصول)') }}</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3 text-slate-700">
+                                <span class="size-5 shrink-0 mt-0.5 text-slate-400">
+                                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                </span>
+                                <div>
+                                    <p class="font-black text-slate-900">{{ match($locale) { 'it' => 'Orari di Lavoro', 'en' => 'Operating Hours', default => 'مواعيد العمل والمحاضرات' } }}</p>
+                                    <p class="text-xs text-slate-500 font-medium mt-0.5">{{ match($locale) { 'it' => 'Dom - Gio: 9:00 - 18:00 (Consulenze)', 'en' => 'Sun - Thu: 9:00 AM - 6:00 PM (Consultations)', default => 'الأحد - الخميس: 9:00 ص - 6:00 م (استشارات وخدمة عملاء)' } }}</p>
+                                    <p class="text-xs text-slate-500 font-medium">{{ match($locale) { 'it' => 'Ven - Sab: Corsi e workshop intensivi', 'en' => 'Fri - Sat: Intensive lectures & workshops', default => 'الجمعة والسبت: محاضرات وتدريب عملي تفاعلي مكثف' } }}</p>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Bottom Meta Bar -->
-                        <div class="mt-4 flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-slate-100 text-xs text-slate-600 font-bold">
-                            <span class="inline-flex items-center gap-1.5">
-                                <span class="size-2 rounded-full bg-emerald-500"></span>
-                                <span>{{ match($locale) { 'it' => '+40 Enti e Aziende Partner', 'en' => '40+ Partner Institutions & Firms', default => 'أكثر من 40 جهة ومؤسسة وشريك نجاح' } }}</span>
-                            </span>
-                            <span class="text-slate-400 font-mono">{{ match($locale) { 'it' => 'Scuole • Università • Traduzioni • Multinazionali', 'en' => 'Schools • Universities • Translation • Multinationals', default => 'مدارس دولية • جامعات • مراكز ترجمة • كبرى الشركات' } }}</span>
+                        <!-- Highlights Pills -->
+                        <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-100 text-[11px] font-bold text-slate-600">
+                            <span class="rounded-lg bg-slate-100 px-2.5 py-1 border border-slate-200">🖥️ شاشات ذكية تفاعلية</span>
+                            <span class="rounded-lg bg-slate-100 px-2.5 py-1 border border-slate-200">❄️ قاعات مكيفة ومريحة</span>
+                            <span class="rounded-lg bg-slate-100 px-2.5 py-1 border border-slate-200">⚡ إنترنت فائق السرعة</span>
+                            <span class="rounded-lg bg-slate-100 px-2.5 py-1 border border-slate-200">🅿️ مواقف سيارات متوفرة</span>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="mt-8 pt-6 border-t border-slate-100 space-y-3">
+                        <a href="https://maps.app.goo.gl/JXjAZG1Nzf3do1LA8" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2.5 rounded-2xl bg-[#fe0002] px-6 py-3.5 text-xs sm:text-sm font-black text-white hover:bg-red-700 shadow-lg shadow-red-600/25 transition transform hover:-translate-y-0.5">
+                            <svg class="size-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            <span>{{ match($locale) { 'it' => 'Apri su Google Maps (GPS)', 'en' => 'Open in Google Maps (GPS)', default => 'فتح الموقع في خرائط Google (الاتجاهات)' } }}</span>
+                        </a>
+
+                        <div class="grid grid-cols-2 gap-2.5">
+                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', data_get($siteSettings ?? [], 'whatsapp_number', '201008238323')) }}?text={{ urlencode('مرحباً، أود معرفة أقرب موعد لزيارة مقر أكاديمية INTOK') }}" target="_blank" class="flex items-center justify-center gap-1.5 rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-2.5 text-xs font-black text-emerald-800 hover:bg-emerald-100 transition">
+                                <span>واتساب مباشر</span>
+                            </a>
+                            <a href="tel:{{ data_get($siteSettings ?? [], 'contact_phone', '+201008238323') }}" class="flex items-center justify-center gap-1.5 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-xs font-black text-slate-800 hover:bg-slate-100 transition" dir="ltr">
+                                <span>{{ data_get($siteSettings ?? [], 'contact_phone', '+201008238323') }}</span>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Panel 2: Partners Outside Egypt (European Universities) -->
-                <div id="panel-partners-intl" class="partner-panel hidden transition-all duration-500">
-                    <div class="relative overflow-hidden rounded-3xl border-2 border-slate-200 bg-white p-4 sm:p-8 shadow-xl group">
-                        <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
-                            <div>
-                                <h3 class="text-lg font-black text-slate-900 flex items-center gap-2">
-                                    <span class="size-3 rounded-full bg-[#c27803]"></span>
-                                    <span>{{ match($locale) { 'it' => 'Università Europee e Atenei Accreditati', 'en' => 'Accredited European Partner Universities', default => 'أعرق الجامعات الأوروبية والمؤسسات التعليمية المعتمدة' } }}</span>
-                                </h3>
-                                <p class="text-xs text-slate-500 font-medium mt-1">
-                                    {{ match($locale) { 'it' => 'Politecnico di Milano, Bologna, Sapienza, Pisa, Torino, Napoli Federico II, Padova, Bicocca', 'en' => 'Politecnico di Milano, Bologna, Sapienza, Pisa, Torino, Napoli Federico II, Padova, Bicocca', default => 'بوليتكنيك ميلانو، بولونيا، سابينزا، بيزا، تورينو، نابولي، بادوفا، بافيا، روما، بارما وغيرها' } }}
-                                </p>
-                            </div>
-                            <button type="button" onclick="openPartnerModal('{{ asset('assets/images/partners/partners-international.jpg') }}', 'شركاء النجاح خارج مصر - الجامعات الأوروبية')" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-100 hover:bg-[#fe0002] hover:text-white text-slate-700 text-xs font-black transition cursor-pointer shadow-2xs">
-                                <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-                                <span>{{ match($locale) { 'it' => 'Ingrandisci', 'en' => 'Zoom In', default => 'تكبير العرض' } }}</span>
-                            </button>
-                        </div>
+                <!-- Right Map Container (7 cols) -->
+                <div class="lg:col-span-7 rounded-3xl overflow-hidden border-2 border-slate-200 bg-white shadow-xl relative min-h-[420px] sm:min-h-[480px] reveal-right group">
+                    
+                    <!-- Embedded Google Maps -->
+                    <iframe
+                        src="https://maps.google.com/maps?q=30.0700542,31.2042554&hl={{ $locale }}&z=17&output=embed"
+                        width="100%"
+                        height="100%"
+                        style="border:0; min-height: 480px;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="INTOK Academy Google Maps"
+                        class="w-full h-full object-cover">
+                    </iframe>
 
-                        <!-- Image Frame -->
-                        <div class="relative overflow-hidden rounded-2xl bg-slate-100 border border-slate-200 cursor-pointer" onclick="openPartnerModal('{{ asset('assets/images/partners/partners-international.jpg') }}', 'شركاء النجاح خارج مصر - الجامعات الأوروبية')">
-                            <img src="{{ asset('assets/images/partners/partners-international.jpg') }}" alt="شركاء النجاح خارج مصر" class="w-full h-auto object-contain transition duration-500 group-hover:scale-[1.02]">
-                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                                <span class="opacity-0 group-hover:opacity-100 transition-opacity bg-black/75 text-white text-xs font-black px-4 py-2 rounded-full shadow-lg backdrop-blur-sm">
-                                    {{ match($locale) { 'it' => 'Clicca per ingrandire tutti gli atenei', 'en' => 'Click to inspect all university crests', default => 'اضغط لمشاهدة جميع شعارات الجامعات الأوروبية بدقة عالية' } }}
-                                </span>
-                            </div>
+                    <!-- Top Map Overlay Badge -->
+                    <div class="absolute top-4 start-4 z-10 pointer-events-none">
+                        <div class="inline-flex items-center gap-2 rounded-2xl bg-slate-950/85 backdrop-blur-md px-4 py-2 text-xs font-black text-white shadow-xl border border-white/20">
+                            <span class="size-2 rounded-full bg-[#fe0002] animate-ping"></span>
+                            <span>📍 INTOK Academy Campus</span>
                         </div>
+                    </div>
 
-                        <!-- Bottom Meta Bar -->
-                        <div class="mt-4 flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-slate-100 text-xs text-slate-600 font-bold">
-                            <span class="inline-flex items-center gap-1.5">
-                                <span class="size-2 rounded-full bg-emerald-500"></span>
-                                <span>{{ match($locale) { 'it' => 'Università Statali e Politecnici d\'Eccellenza', 'en' => 'Top Public Universities & Polytechnics', default => 'جامعات حكومية وبوليتكنيك مصنفة عالمياً' } }}</span>
-                            </span>
-                            <span class="text-slate-400 font-mono">{{ match($locale) { 'it' => 'Milano • Roma • Bologna • Pisa • Torino • Padova', 'en' => 'Milan • Rome • Bologna • Pisa • Turin • Padua', default => 'ميلانو • روما • بولونيا • بيزا • تورينو • بادوفا • نابولي' } }}</span>
-                        </div>
+                    <!-- Bottom Floating Click-To-Open Pill -->
+                    <div class="absolute bottom-4 inset-x-4 z-10 sm:inset-x-auto sm:end-4 pointer-events-auto">
+                        <a href="https://maps.app.goo.gl/JXjAZG1Nzf3do1LA8" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200 px-5 py-2.5 text-xs font-black text-slate-900 shadow-xl hover:bg-[#fe0002] hover:text-white transition">
+                            <svg class="size-4 text-red-600 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                            <span>{{ match($locale) { 'it' => 'Naviga con l\'app Google Maps', 'en' => 'Navigate in Google Maps App', default => 'تشغيل الاتجاهات في تطبيق خرائط Google' } }}</span>
+                        </a>
                     </div>
                 </div>
 

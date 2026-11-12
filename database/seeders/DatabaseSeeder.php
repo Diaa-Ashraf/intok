@@ -164,57 +164,64 @@ class DatabaseSeeder extends Seeder
                 'tiktok' => 'https://tiktok.com/@intokacademy',
                 'facebook' => 'https://facebook.com/intokacademy',
             ],
+            'google_maps_url' => 'https://maps.app.goo.gl/JXjAZG1Nzf3do1LA8',
+            'google_maps_embed' => 'https://maps.google.com/maps?q=30.0700542,31.2042554&hl=ar&z=17&output=embed',
+            'academy_address' => [
+                'ar' => 'القاهرة / الجيزة - مقر أكاديمية وقاعات INTOK التدريبية',
+                'en' => 'Cairo / Giza - INTOK Academy Headquarters & Campus',
+                'it' => 'Il Cairo / Giza - Sede e Campus INTOK Academy'
+            ],
 
-            // Hero Section
+            // Hero Section (Official Wording)
             'hero_badge' => [
-                'ar' => 'بوابتك المعتمدة نحو الدول الأوروبية وسوق العمل الدولي',
-                'en' => 'Your Accredited Gateway to European Education & Global Careers',
-                'it' => 'La tua porta accreditata verso i Paesi Europei e il lavoro globale'
+                'ar' => 'شريكك الموثوق نحو النجاح • INTOK Academy',
+                'en' => 'Your Trusted Partner to Success • INTOK Academy',
+                'it' => 'Il tuo partner di fiducia per il successo • INTOK Academy'
             ],
             'hero_title' => [
-                'ar' => 'خطوتك الأولى نحو الدراسة في الدول الأوروبية وسوق العمل الدولي',
-                'en' => 'Your First Step to Study in European Countries & Global Careers',
-                'it' => 'Il tuo primo passo per studiare nei Paesi Europei e lavorare nel mondo'
+                'ar' => "INTOK - بوابتك للتعلم والتطور وبناء مستقبلك",
+                'en' => "INTOK - Your Gateway to Learning, Growth & Future Building",
+                'it' => "INTOK - La tua porta per imparare, crescere e costruire il futuro"
             ],
             'hero_text' => [
-                'ar' => 'معاك ثانوية أو دبلوم فني (صنايع، تجارة، زراعة)؟ بوابتك مفتوحة لاستكمال دراستك في الدول الأوروبية، والحصول على المنح الدراسية الشاملة (حتى 8,000 يورو + سكن مجاني)، والعمل قانونياً باليورو، مع أقوى برامج تدريب الكول سنتر، والترجمة المعتمدة، ودورات اللغات.',
-                'en' => 'High school or vocational diploma? Your gateway is open to study in European countries with comprehensive scholarships (up to 8,000€ + free housing), and ace professional call center and translation training.',
-                'it' => 'Diploma o istituto tecnico? La tua porta verso gli studi nei paesi europei con borse di studio complete (fino a 8.000€ + alloggio gratuito) e formazione professionale.'
+                'ar' => 'من تعلم اللغات والترجمة المعتمدة، إلى التدريب المهني والخدمات الأكاديمية والدراسة في أكثر من 10 دول أوروبية. بنوفرلك المعرفة والتأهيل والدعم اللي يساعدك تخطّي خطوتك الجاية بثقة.',
+                'en' => 'From language learning and certified translation to professional career training, academic services, and studying in 10+ European countries. We provide knowledge, qualification, and support to take your next step with confidence.',
+                'it' => "Dall'apprendimento delle lingue e traduzioni asseverate alla formazione professionale, servizi accademici e studi in oltre 10 paesi europei. Ti offriamo conoscenza, qualificazione e supporto per compiere il tuo prossimo passo con sicurezza."
             ],
             'hero_cta' => [
-                'ar' => 'ابدأ رحلتك واستشرنا مجاناً',
-                'en' => 'Start Your Journey & Free Consult',
-                'it' => 'Inizia il tuo viaggio con consulenza gratuita'
+                'ar' => 'ابدأ رحلتك مع INTOK',
+                'en' => 'Start Your Journey with INTOK',
+                'it' => 'Inizia il tuo percorso con INTOK'
             ],
             'hero_secondary_cta' => [
-                'ar' => 'استكشف الـ 7 مجالات والخدمات ↓',
-                'en' => 'Explore 7 Programs & Services ↓',
-                'it' => 'Esplora i 7 programmi e servizi ↓'
+                'ar' => 'استكشف خدماتنا',
+                'en' => 'Explore Our Services',
+                'it' => 'Scopri i nostri servizi'
             ],
-            'hero_stat_1_val' => '100%',
+            'hero_stat_1_val' => '10+',
             'hero_stat_1_lbl' => [
-                'ar' => 'نسبة نجاح استخراج التأشيرات والقبول',
-                'en' => 'Visa and Admission Success Rate',
-                'it' => 'Tasso di successo visti e ammissioni'
+                'ar' => 'دول أوروبية • وجهات دراسية متنوعة',
+                'en' => 'European Countries • Diverse Destinations',
+                'it' => 'Paesi Europei • Destinazioni Varie'
             ],
-            'hero_stat_2_val' => '+1,200',
+            'hero_stat_2_val' => '1,200+',
             'hero_stat_2_lbl' => [
                 'ar' => 'طالب ومتدرب تم تأهيلهم بنجاح',
                 'en' => 'Students & Trainees Successfully Qualified',
                 'it' => 'Studenti e corsisti qualificati con successo'
             ],
-            'hero_stat_3_val' => '8,000€',
+            'hero_stat_3_val' => '100%',
             'hero_stat_3_lbl' => [
-                'ar' => 'بدل سنوي وسكن مجاني بمنحة DSU',
-                'en' => 'Annual Grant & Free Housing with DSU',
-                'it' => 'Sussidio annuo e alloggio gratuito DSU'
+                'ar' => 'تأهيل معتمد ودعم متكامل',
+                'en' => 'Certified Qualification & Full Support',
+                'it' => 'Qualificazione certificata e supporto completo'
             ],
             'robot_quotes' => [
-                "\"مين قال إن الدبلوم آخر الطريق؟ شهادتك بداية لفرصة جديدة بالدول الأوروبية!\"",
-                "\"مجموعك القليل مش كارثة... لأن مستقبلك مش بيقف على رقم!\"",
-                "\"منحة DSU تغطي مصروفاتك وسكن مجاني وبدل سنوي 8,000 يورو!\"",
+                "\"INTOK بوابتك للتعلم والتطور وبناء مستقبلك بثقة!\"",
+                "\"فرص تعليمية وتأهيل مهني في أكثر من 10 دول أوروبية!\"",
+                "\"منظومة متكاملة من اللغات والترجمة المعتمدة وحتى التوظيف الدولي!\"",
                 "\"تدريب الكول سنتر واللغات في INTOK يفتح لك أبواب كبرى الشركات الدولية!\"",
-                "\"ترجمة معتمدة رسمياً وموثقة للسفارات الأوروبية بدون أي تعقيدات!\""
+                "\"ترجمة معتمدة رسمياً وموثقة لجميع السفارات بأعلى دقة وسرعة!\""
             ],
 
             // Services Section
