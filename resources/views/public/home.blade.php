@@ -53,30 +53,21 @@
             'image' => data_get($siteSettings ?? [], 'live_slide_1_img') ? asset('storage/'.data_get($siteSettings, 'live_slide_1_img')) : asset('assets/images/academy/italian-classroom-lecture.jpg'),
             'badge' => data_get($siteSettings ?? [], 'live_slide_1_badge.'.$locale, match($locale) { 'it' => 'Lingue Straniere', 'en' => 'Foreign Languages', default => 'اللغات الأجنبية والترجمة' }),
             'title' => data_get($siteSettings ?? [], 'live_slide_1_title.'.$locale, match($locale) { 'it' => 'Impara una lingua che apre nuove opportunità', 'en' => 'Learn a language that opens new doors', default => 'اتعلم لغة تفتحلك فرص جديدة' }),
-            'desc' => data_get($siteSettings ?? [], 'live_slide_1_desc.'.$locale, match($locale) { 'it' => 'Esercitazioni pratiche per sviluppare conversazione e comunicazione in diverse lingue straniere.', 'en' => 'Hands-on practice to develop spoken communication and fluency across multiple languages.', default => 'تدريبات عملية لتطوير مهارات التحدث والتواصل بمختلف اللغات للاستخدام الأكاديمي والمهني.' }),
+            'desc' => data_get($siteSettings ?? [], 'live_slide_1_desc.'.$locale, match($locale) { 'it' => 'Esercitazioni pratiche per sviluppare conversazione e comunicazione in diverse lingue straniere.', 'en' => 'Hands-on practice to develop spoken communication and fluency across multiple languages.', default => 'تدريبات عملية لتطوير مهارات التحدث والتواصل بمختلف اللغات.' }),
         ],
         [
             'image' => data_get($siteSettings ?? [], 'live_slide_2_img') ? asset('storage/'.data_get($siteSettings, 'live_slide_2_img')) : asset('assets/images/academy/live-speaker-training.jpg'),
             'badge' => data_get($siteSettings ?? [], 'live_slide_2_badge.'.$locale, match($locale) { 'it' => 'Futuro Professionale', 'en' => 'Career Preparation', default => 'التدريب وسوق العمل' }),
             'title' => data_get($siteSettings ?? [], 'live_slide_2_title.'.$locale, match($locale) { 'it' => 'Qualificati per il tuo futuro professionale', 'en' => 'Get qualified for your professional future', default => 'اتأهل لمستقبلك المهني' }),
-            'desc' => data_get($siteSettings ?? [], 'live_slide_2_desc.'.$locale, match($locale) { 'it' => 'Formazione pratica in call center, traduzione e abilità richieste dal mercato del lavoro.', 'en' => 'Practical training in Call Center, translation, and high-demand skills for the modern job market.', default => 'تدريب عملي في الكول سنتر والترجمة وتطوير المهارات المطلوبة لسوق العمل والمقابلات الدولية.' }),
+            'desc' => data_get($siteSettings ?? [], 'live_slide_2_desc.'.$locale, match($locale) { 'it' => 'Formazione pratica in call center, traduzione e abilità richieste dal mercato del lavoro.', 'en' => 'Practical training in Call Center, translation, and high-demand skills for the modern job market.', default => 'تدريب عملي في الكول سنتر والترجمة وتطوير المهارات المطلوبة لسوق العمل.' }),
         ],
         [
             'image' => data_get($siteSettings ?? [], 'live_slide_3_img') ? asset('storage/'.data_get($siteSettings, 'live_slide_3_img')) : asset('assets/images/schools/galileo-galilei.jpg'),
             'badge' => data_get($siteSettings ?? [], 'live_slide_3_badge.'.$locale, match($locale) { 'it' => 'Passo Accademico', 'en' => 'Academic Step', default => 'الدراسة في أوروبا' }),
             'title' => data_get($siteSettings ?? [], 'live_slide_3_title.'.$locale, match($locale) { 'it' => 'Prepara il tuo percorso accademico con fiducia', 'en' => 'Prepare your academic journey with confidence', default => 'جهّز خطوتك الأكاديمية بثقة' }),
-            'desc' => data_get($siteSettings ?? [], 'live_slide_3_desc.'.$locale, match($locale) { 'it' => 'Orientamento per studiare in Europa, preparazione dossier di candidatura e test internazionali.', 'en' => 'Qualification for studying in Europe, application preparation, and international test coaching.', default => 'تأهيل للدراسة في أكثر من 10 دول أوروبية، وتجهيز ملفات التقديم والتدريب على الاختبارات الدولية.' }),
+            'desc' => data_get($siteSettings ?? [], 'live_slide_3_desc.'.$locale, match($locale) { 'it' => 'Orientamento per studiare in Europa, preparazione dossier di candidatura e test internazionali.', 'en' => 'Qualification for studying in Europe, application preparation, and international test coaching.', default => 'تأهيل للدراسة في أوروبا، وتجهيز ملفات التقديم والتدريب على الاختبارات الدولية.' }),
         ],
     ];
-
-    if (data_get($siteSettings ?? [], 'live_slide_4_img') || data_get($siteSettings ?? [], 'live_slide_4_title.'.$locale)) {
-        $liveSlides[] = [
-            'image' => data_get($siteSettings ?? [], 'live_slide_4_img') ? asset('storage/'.data_get($siteSettings, 'live_slide_4_img')) : asset('assets/images/schools/bologna-university.jpg'),
-            'badge' => data_get($siteSettings ?? [], 'live_slide_4_badge.'.$locale, 'معايير التميز الأكاديمي'),
-            'title' => data_get($siteSettings ?? [], 'live_slide_4_title.'.$locale, 'الاعتماد الدولي والمنح الدراسية الموثقة'),
-            'desc' => data_get($siteSettings ?? [], 'live_slide_4_desc.'.$locale, 'تأهيل متكامل للطلبة لمرحلة البكالوريوس والماجستير.'),
-        ];
-    }
 @endphp
 
 @section('content')
@@ -862,19 +853,30 @@
                         default => 'معايير الثقة والريادة الدولية',
                     }) }}</span>
                 </span>
+                @php
+                    $rawWhyTitle = data_get($siteSettings ?? [], 'why_title.'.$locale);
+                    $whyTitle = ($rawWhyTitle && !str_contains($rawWhyTitle, 'لماذا تختار'))
+                        ? $rawWhyTitle
+                        : match($locale) {
+                            'it' => 'Perché INTOK è il passo giusto per il tuo futuro?',
+                            'en' => 'Why INTOK is the Right Step for Your Future?',
+                            default => 'ليه INTOK هي خطوتك الصح لمستقبلك؟',
+                        };
+
+                    $rawWhySub = data_get($siteSettings ?? [], 'why_subtitle.'.$locale);
+                    $whySub = ($rawWhySub && !str_contains($rawWhySub, 'منظومة متكاملة لا تكتفي'))
+                        ? $rawWhySub
+                        : match($locale) {
+                            'it' => 'In INTOK uniamo formazione, istruzione, qualificazione professionale e servizi accademici per aiutarti a sviluppare competenze e raggiungere i tuoi obiettivi con passi chiari e supporto dedicato.',
+                            'en' => 'At INTOK, we combine education, practical training, professional qualification, and academic services to help you build skills and achieve your goals with clear steps and expert support.',
+                            default => 'في INTOK بنجمع بين التعليم والتدريب والتأهيل المهني والخدمات الأكاديمية، علشان نساعدك تطور مهاراتك وتحقق أهدافك بخطوات واضحة ودعم متخصص.',
+                        };
+                @endphp
                 <h2 class="mt-4 text-3xl font-black text-[#c27803] sm:text-5xl">
-                    {{ data_get($siteSettings ?? [], 'why_title.'.$locale, match($locale) {
-                        'it' => 'Perché scegliere INTOK Academy?',
-                        'en' => 'Why Choose INTOK Academy?',
-                        default => 'لماذا تختار أكاديمية إنتوك؟',
-                    }) }}
+                    {{ $whyTitle }}
                 </h2>
                 <p class="mt-4 text-base text-slate-600 font-medium leading-relaxed">
-                    {{ data_get($siteSettings ?? [], 'why_subtitle.'.$locale, match($locale) {
-                        'it' => 'Un ecosistema integrato che va oltre i semplici corsi: costruiamo il tuo futuro accademico nei paesi europei e l\'inserimento nelle grandi aziende internazionali.',
-                        'en' => 'An integrated ecosystem offering more than just courses—we build your future studying in European countries and working with global companies.',
-                        default => 'منظومة متكاملة لا تكتفي بتقديم الكورسات أو الترجمة، بل تصنع معك مستقبلاً حقيقياً بالدراسة في الدول الأوروبية والعمل في كبرى الشركات العالمية بأعلى عائد.',
-                    }) }}
+                    {{ $whySub }}
                 </p>
             </div>
 
@@ -896,7 +898,7 @@
                     'ar' => [
                         'services' => [
                             'nav_title' => 'خدمات متكاملة',
-                            'nav_sub' => '10 خدمات تعليمية ومهنية',
+                            'nav_sub' => '10 خدمات تعليمية ومهنية وأكاديمية',
                             'badge' => 'منظومة شاملة تحت سقف واحد',
                             'badge_color' => 'bg-red-50 text-[#fe0002] border-red-200',
                             'title' => 'خدمات تعليمية ومهنية وأكاديمية متكاملة',
@@ -921,7 +923,7 @@
                         ],
                         'practical' => [
                             'nav_title' => 'تدريب عملي',
-                            'nav_sub' => 'تطبيقات تحاكي الواقع',
+                            'nav_sub' => 'تطبيقات وتدريبات تحاكي الواقع',
                             'badge' => 'محاكاة واقعية وتطبيق حي',
                             'badge_color' => 'bg-emerald-50 text-emerald-700 border-emerald-200',
                             'title' => 'تدريب عملي وتطبيق واقعي يؤهلك لسوق العمل',
@@ -946,7 +948,7 @@
                         ],
                         'trainers' => [
                             'nav_title' => 'مدربون متخصصون',
-                            'nav_sub' => 'خبرات في التعليم والتدريب',
+                            'nav_sub' => 'خبرات في مجالات التعليم والتدريب',
                             'badge' => 'إشراف نخبة معتمدة',
                             'badge_color' => 'bg-purple-50 text-purple-700 border-purple-200',
                             'title' => 'مدربون ومتخصصون ذوو خبرة ميدانية واسعة',
@@ -996,7 +998,7 @@
                         ],
                         'customized' => [
                             'nav_title' => 'حلول مخصصة',
-                            'nav_sub' => 'تناسب احتياجاتك وأهدافك',
+                            'nav_sub' => 'خدمات تناسب احتياجاتك وأهدافك',
                             'badge' => 'توجيه فردي دقيق',
                             'badge_color' => 'bg-amber-50 text-amber-800 border-amber-200',
                             'title' => 'حلول مخصصة تناسب أهدافك وإمكانياتك',
@@ -1021,7 +1023,7 @@
                         ],
                         'future' => [
                             'nav_title' => 'تأهيل للمستقبل',
-                            'nav_sub' => 'تطوير مهاراتك للمستقبل',
+                            'nav_sub' => 'تطوير مهاراتك الأكاديمية والمهنية',
                             'badge' => 'جاهزية أكاديمية ومهنية',
                             'badge_color' => 'bg-emerald-50 text-emerald-800 border-emerald-200',
                             'title' => 'تأهيل شامل لمستقبلك الأكاديمي والمهني',
@@ -1364,27 +1366,37 @@
                 $currentFallbacks = $bentoFallbacks[$locale] ?? $bentoFallbacks['ar'];
                 $whyPillars = [];
 
+                $getLocalizedText = static function ($val, $fallbackVal) use ($locale) {
+                    if (empty($val) || !is_string($val)) {
+                        return $fallbackVal;
+                    }
+                    if ($locale !== 'ar' && preg_match('/[\x{0600}-\x{06FF}]/u', $val)) {
+                        return $fallbackVal;
+                    }
+                    return $val;
+                };
+
                 foreach ($pillarKeys as $pKey) {
                     $fb = $currentFallbacks[$pKey] ?? ($bentoFallbacks['ar'][$pKey] ?? []);
                     $whyPillars[] = [
                         'id' => $pKey,
                         'icon' => $pillarIcons[$pKey] ?? '',
-                        'nav_title' => data_get($siteSettings ?? [], "why_bento_{$pKey}_nav_title.{$locale}", $fb['nav_title']),
-                        'nav_sub' => data_get($siteSettings ?? [], "why_bento_{$pKey}_nav_sub.{$locale}", $fb['nav_sub']),
-                        'badge' => data_get($siteSettings ?? [], "why_bento_{$pKey}_badge.{$locale}", $fb['badge']),
+                        'nav_title' => $getLocalizedText(data_get($siteSettings ?? [], "why_bento_{$pKey}_nav_title.{$locale}"), $fb['nav_title']),
+                        'nav_sub' => $getLocalizedText(data_get($siteSettings ?? [], "why_bento_{$pKey}_nav_sub.{$locale}"), $fb['nav_sub']),
+                        'badge' => $getLocalizedText(data_get($siteSettings ?? [], "why_bento_{$pKey}_badge.{$locale}"), $fb['badge']),
                         'badge_color' => $fb['badge_color'] ?? 'bg-red-50 text-[#fe0002] border-red-200',
-                        'title' => data_get($siteSettings ?? [], "why_bento_{$pKey}_title.{$locale}", $fb['title']),
-                        'desc' => data_get($siteSettings ?? [], "why_bento_{$pKey}_desc.{$locale}", $fb['desc']),
+                        'title' => $getLocalizedText(data_get($siteSettings ?? [], "why_bento_{$pKey}_title.{$locale}"), $fb['title']),
+                        'desc' => $getLocalizedText(data_get($siteSettings ?? [], "why_bento_{$pKey}_desc.{$locale}"), $fb['desc']),
                         'stat_val' => data_get($siteSettings ?? [], "why_bento_{$pKey}_stat_val", $fb['stat_val']),
-                        'stat_unit' => data_get($siteSettings ?? [], "why_bento_{$pKey}_stat_unit.{$locale}", $fb['stat_unit']),
-                        'stat_label' => data_get($siteSettings ?? [], "why_bento_{$pKey}_stat_label.{$locale}", $fb['stat_label']),
-                        'stat_sub' => data_get($siteSettings ?? [], "why_bento_{$pKey}_stat_sub.{$locale}", $fb['stat_sub']),
+                        'stat_unit' => $getLocalizedText(data_get($siteSettings ?? [], "why_bento_{$pKey}_stat_unit.{$locale}"), $fb['stat_unit']),
+                        'stat_label' => $getLocalizedText(data_get($siteSettings ?? [], "why_bento_{$pKey}_stat_label.{$locale}"), $fb['stat_label']),
+                        'stat_sub' => $getLocalizedText(data_get($siteSettings ?? [], "why_bento_{$pKey}_stat_sub.{$locale}"), $fb['stat_sub']),
                         'points' => $parsePoints(data_get($siteSettings ?? [], "why_bento_{$pKey}_points"), $fb['points']),
                         'vs_traditional' => [
-                            'traditional' => data_get($siteSettings ?? [], "why_bento_{$pKey}_vs_traditional.{$locale}", $fb['vs_traditional']['traditional']),
-                            'intok' => data_get($siteSettings ?? [], "why_bento_{$pKey}_vs_intok.{$locale}", $fb['vs_traditional']['intok'])
+                            'traditional' => $getLocalizedText(data_get($siteSettings ?? [], "why_bento_{$pKey}_vs_traditional.{$locale}"), $fb['vs_traditional']['traditional']),
+                            'intok' => $getLocalizedText(data_get($siteSettings ?? [], "why_bento_{$pKey}_vs_intok.{$locale}"), $fb['vs_traditional']['intok'])
                         ],
-                        'cta_text' => data_get($siteSettings ?? [], "why_bento_{$pKey}_cta_text.{$locale}", $fb['cta_text']),
+                        'cta_text' => $getLocalizedText(data_get($siteSettings ?? [], "why_bento_{$pKey}_cta_text.{$locale}"), $fb['cta_text']),
                         'cta_url' => $pKey === 'trans' ? route('contact', ['locale' => $locale]) : route('consultation.create', ['locale' => $locale]),
                         'wa_msg' => $fb['wa_msg']
                     ];
@@ -1570,10 +1582,18 @@
                             </span>
                             <div class="text-start">
                                 <h4 class="text-sm font-black text-[#c27803] group-hover:text-[#fe0002] transition-colors">
-                                    إيه اللي بيميز منظومة INTOK ؟ مقارنة بين الطرق التقليدية ومنظومة INTOK المتكاملة
+                                    {{ match($locale) {
+                                        'it' => 'Cosa distingue l\'ecosistema INTOK? Confronto tra i canali tradizionali e la nostra formula integrata',
+                                        'en' => 'What sets INTOK apart? Traditional methods vs. our comprehensive ecosystem',
+                                        default => 'إيه اللي بيميز منظومة INTOK ؟ مقارنة بين الطرق التقليدية ومنظومة INTOK المتكاملة',
+                                    } }}
                                 </h4>
                                 <p class="text-xs font-medium text-slate-500">
-                                    اضغط لاستعراض المقارنة في المجالات الستة: تنوع الخدمات، اللغات، الترجمة، التأهيل المهني، الدراسة في أوروبا، والاختبارات الدولية
+                                    {{ match($locale) {
+                                        'it' => 'Clicca per esplorare il confronto nei 6 ambiti: servizi integrati, lingue, traduzioni, formazione, università estere ed esami internazionali.',
+                                        'en' => 'Click to explore the comparison across 6 domains: integrated services, languages, translation, career prep, study in Europe, and international exams.',
+                                        default => 'اضغط لاستعراض المقارنة في المجالات الستة: تنوع الخدمات، اللغات، الترجمة، التأهيل المهني، الدراسة في أوروبا، والاختبارات الدولية',
+                                    } }}
                                 </p>
                             </div>
                         </div>
@@ -1589,41 +1609,41 @@
                             <table class="w-full text-start text-xs sm:text-sm border-collapse">
                                 <thead>
                                     <tr class="bg-slate-50 border-b border-slate-200 text-slate-800">
-                                        <th class="p-4 text-start font-black">مجال التقديم والخدمة</th>
-                                        <th class="p-4 text-start font-black text-red-600 bg-red-50/50">المكاتب والوسائل العادية</th>
-                                        <th class="p-4 text-start font-black text-emerald-700 bg-emerald-50/60">منظومة INTOK ACADEMY</th>
+                                        <th class="p-4 text-start font-black">{{ match($locale) { 'it' => 'Ambito e Servizio', 'en' => 'Domain & Service', default => 'مجال التقديم والخدمة' } }}</th>
+                                        <th class="p-4 text-start font-black text-red-600 bg-red-50/50">{{ match($locale) { 'it' => 'Canali e Uffici Tradizionali', 'en' => 'Traditional Channels & Agencies', default => 'المكاتب والوسائل العادية' } }}</th>
+                                        <th class="p-4 text-start font-black text-emerald-700 bg-emerald-50/60">{{ match($locale) { 'it' => 'Ecosistema INTOK ACADEMY', 'en' => 'INTOK ACADEMY Ecosystem', default => 'منظومة INTOK ACADEMY' } }}</th>
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-slate-100">
                                     <tr>
-                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">1. تنوع الخدمات</td>
-                                        <td class="p-4 text-slate-600 bg-red-50/20">التعامل مع جهات مختلفة لكل خدمة وتشتت الجهد</td>
-                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">خدمات تعليمية وتدريبية وأكاديمية متعددة في مكان واحد بخطة واضحة</td>
+                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">{{ match($locale) { 'it' => '1. Varietà dei Servizi', 'en' => '1. Diversity of Services', default => '1. تنوع الخدمات' } }}</td>
+                                        <td class="p-4 text-slate-600 bg-red-50/20">{{ match($locale) { 'it' => 'Gestione frammentata con enti diversi e dispersione di tempo', 'en' => 'Dealing with uncoordinated individual providers losing time', default => 'التعامل مع جهات مختلفة لكل خدمة وتشتت الجهد' } }}</td>
+                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">{{ match($locale) { 'it' => '10 servizi educativi, formativi e accademici sotto lo stesso tetto con piano coordinato', 'en' => '10 educational, training, and academic services under one roof with a unified plan', default => 'خدمات تعليمية وتدريبية وأكاديمية متعددة في مكان واحد بخطة واضحة' } }}</td>
                                     </tr>
                                     <tr>
-                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">2. تعلم اللغات</td>
-                                        <td class="p-4 text-slate-600 bg-red-50/20">كورسات عامة تقليدية بدون مسار واضح أو تطبيق</td>
-                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">برامج لغات بمستويات ومسارات تدريبية منظمة تركز على الطلاقة</td>
+                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">{{ match($locale) { 'it' => '2. Apprendimento Lingue', 'en' => '2. Language Mastery', default => '2. تعلم اللغات' } }}</td>
+                                        <td class="p-4 text-slate-600 bg-red-50/20">{{ match($locale) { 'it' => 'Corsi teorici convenzionali senza reale conversazione o applicazione pratica', 'en' => 'Generic theoretical classes without immersion or practical conversation', default => 'كورسات عامة تقليدية بدون مسار واضح أو تطبيق' } }}</td>
+                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">{{ match($locale) { 'it' => 'Corsi strutturati a livelli focalizzati sull\'effettiva fluidità comunicativa', 'en' => 'Structured training tracks focused directly on spoken fluency and competence', default => 'برامج لغات بمستويات ومسارات تدريبية منظمة تركز على الطلاقة' } }}</td>
                                     </tr>
                                     <tr>
-                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">3. الترجمة المعتمدة</td>
-                                        <td class="p-4 text-slate-600 bg-red-50/20">البحث عن مترجمين وجهات مختلفة مع احتمالية الأخطاء</td>
-                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">خدمات ترجمة معتمدة وتدقيق لغوي رسمي للمستندات والشهادات</td>
+                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">{{ match($locale) { 'it' => '3. Traduzione Asseverata', 'en' => '3. Certified Translation', default => '3. الترجمة المعتمدة' } }}</td>
+                                        <td class="p-4 text-slate-600 bg-red-50/20">{{ match($locale) { 'it' => 'Ricerca di traduttori singoli con elevato rischio di errori e vizi formali', 'en' => 'Risky search for individual translators prone to rejection and delays', default => 'البحث عن مترجمين وجهات مختلفة مع احتمالية الأخطاء' } }}</td>
+                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">{{ match($locale) { 'it' => 'Traduzione giurata e revisione ufficiale per documenti di studio e lavoro', 'en' => 'Certified official translation and strict proofreading for embassies and institutions', default => 'خدمات ترجمة معتمدة وتدقيق لغوي رسمي للمستندات والشهادات' } }}</td>
                                     </tr>
                                     <tr>
-                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">4. التأهيل المهني</td>
-                                        <td class="p-4 text-slate-600 bg-red-50/20">تدريب نظري محدود بدون محاكاة لبيئة العمل</td>
-                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">تدريب عملي وتأهيل مباشر لسوق العمل ومحاكاة لمقابلات الشركات</td>
+                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">{{ match($locale) { 'it' => '4. Qualificazione al Lavoro', 'en' => '4. Career Readiness', default => '4. التأهيل المهني' } }}</td>
+                                        <td class="p-4 text-slate-600 bg-red-50/20">{{ match($locale) { 'it' => 'Lezioni teoriche prive di simulazione sul posto di lavoro', 'en' => 'Abstract lectures without workplace simulation or practical training', default => 'تدريب نظري محدود بدون محاكاة لبيئة العمل' } }}</td>
+                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">{{ match($locale) { 'it' => 'Formazione pratica con simulazione di colloqui per grandi multinazionali', 'en' => 'Hands-on training, interview simulation, and direct multinational qualification', default => 'تدريب عملي وتأهيل مباشر لسوق العمل ومحاكاة لمقابلات الشركات' } }}</td>
                                     </tr>
                                     <tr>
-                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">5. التأهيل للدراسة بأوروبا</td>
-                                        <td class="p-4 text-slate-600 bg-red-50/20">صعوبة معرفة الإجراءات ومتطلبات التقديم وتضارب المعلومات</td>
-                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">مساعدة في اختيار المسار وتجهيز الملفات ومتابعة إجراءات التقديم خطوة بخطوة</td>
+                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">{{ match($locale) { 'it' => '5. Studi Universitari in Europa', 'en' => '5. European University Studies', default => '5. التأهيل للدراسة بأوروبا' } }}</td>
+                                        <td class="p-4 text-slate-600 bg-red-50/20">{{ match($locale) { 'it' => 'Complessità burocratica e informazioni discordanti sui requisiti', 'en' => 'Conflicting information, complex bureaucracy, and lost admission rounds', default => 'صعوبة معرفة الإجراءات ومتطلبات التقديم وتضارب المعلومات' } }}</td>
+                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">{{ match($locale) { 'it' => 'Orientamento nella scelta del corso, predisposizione fascicolo e monitoraggio pratiche', 'en' => 'Full assistance in university selection, dossier preparation, and admission tracking', default => 'مساعدة في اختيار المسار وتجهيز الملفات ومتابعة إجراءات التقديم خطوة بخطوة' } }}</td>
                                     </tr>
                                     <tr>
-                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">6. الاختبارات والخدمات الدولية</td>
-                                        <td class="p-4 text-slate-600 bg-red-50/20">تعدد الجهات وصعوبة متابعة المواعيد والإجراءات</td>
-                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">تأهيل للاختبارات الدولية ومساعدة في حجز المواعيد والخدمات المرتبطة بها</td>
+                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">{{ match($locale) { 'it' => '6. Esami e Servizi Internazionali', 'en' => '6. International Exams & Services', default => '6. الاختبارات والخدمات الدولية' } }}</td>
+                                        <td class="p-4 text-slate-600 bg-red-50/20">{{ match($locale) { 'it' => 'Difficoltà nel coordinare appuntamenti e scadenze consolari', 'en' => 'Scattered procedures and missed consulate or examination deadlines', default => 'تعدد الجهات وصعوبة متابعة المواعيد والإجراءات' } }}</td>
+                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">{{ match($locale) { 'it' => 'Preparazione a certificazioni internazionali e assistenza appuntamenti consolari', 'en' => 'Prep for recognized language certifications and consular appointment support', default => 'تأهيل للاختبارات الدولية ومساعدة في حجز المواعيد والخدمات المرتبطة بها' } }}</td>
                                     </tr>
                                 </tbody>
                             </table>

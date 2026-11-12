@@ -202,14 +202,44 @@ class DatabaseSeeder extends Seeder
                 'it' => 'Formazione dal vivo in accademia'
             ],
             'live_slider_title' => [
-                'ar' => 'شاهد قاعاتنا وتدريباتنا التفاعلية',
-                'en' => 'Explore Our Classrooms & Interactive Training',
-                'it' => 'Esplora le nostre aule interattive'
+                'ar' => 'شوف INTOK بتساعدك تطور مستقبلك إزاي',
+                'en' => 'See How INTOK Helps You Build Your Future',
+                'it' => 'Scopri come INTOK ti aiuta a costruire il tuo futuro'
             ],
             'live_slider_subtitle' => [
-                'ar' => 'لقطات حية من داخل قاعاتنا: تدريب الكول سنتر والمحادثة على الشاشات الذكية، ومحاضرات اللغة الإيطالية والترجمة المعتمدة.',
-                'en' => 'Live scenes from our smart classrooms: call center training, Italian lectures, and certified translation workshops.',
-                'it' => 'Scatti dal vivo dalle nostre aule multimediali.'
+                'ar' => 'لقطات حقيقية من تدريباتنا، محاضراتنا، خدماتنا التعليمية وتجارب المتدربين داخل INTOK.',
+                'en' => 'Real moments from our training, lectures, educational services, and student experiences inside INTOK.',
+                'it' => 'Riprese reali dai nostri corsi, lezioni, servizi educativi ed esperienze concrete degli studenti in INTOK.'
+            ],
+            'live_slide_1_title' => [
+                'ar' => 'اتعلم لغة تفتحلك فرص جديدة',
+                'en' => 'Learn a language that opens new doors',
+                'it' => 'Impara una lingua che apre nuove opportunità'
+            ],
+            'live_slide_1_desc' => [
+                'ar' => 'تدريبات عملية لتطوير مهارات التحدث والتواصل بمختلف اللغات.',
+                'en' => 'Hands-on practice to develop spoken communication and fluency across multiple languages.',
+                'it' => 'Esercitazioni pratiche per sviluppare conversazione e comunicazione in diverse lingue straniere.'
+            ],
+            'live_slide_2_title' => [
+                'ar' => 'اتأهل لمستقبلك المهني',
+                'en' => 'Get qualified for your professional future',
+                'it' => 'Qualificati per il tuo futuro professionale'
+            ],
+            'live_slide_2_desc' => [
+                'ar' => 'تدريب عملي في الكول سنتر والترجمة وتطوير المهارات المطلوبة لسوق العمل.',
+                'en' => 'Practical training in Call Center, translation, and high-demand skills for the modern job market.',
+                'it' => 'Formazione pratica in call center, traduzione e abilità richieste dal mercato del lavoro.'
+            ],
+            'live_slide_3_title' => [
+                'ar' => 'جهّز خطوتك الأكاديمية بثقة',
+                'en' => 'Prepare your academic journey with confidence',
+                'it' => 'Prepara il tuo percorso accademico con fiducia'
+            ],
+            'live_slide_3_desc' => [
+                'ar' => 'تأهيل للدراسة في أوروبا، وتجهيز ملفات التقديم والتدريب على الاختبارات الدولية.',
+                'en' => 'Qualification for studying in Europe, application preparation, and international test coaching.',
+                'it' => 'Orientamento per studiare in Europa, preparazione dossier di candidatura e test internazionali.'
             ],
 
             // Finder Console
@@ -246,15 +276,27 @@ class DatabaseSeeder extends Seeder
                 'it' => 'Standard di fiducia e leadership'
             ],
             'why_title' => [
-                'ar' => 'لماذا تختار أكاديمية إنتوك؟',
-                'en' => 'Why Choose INTOK Academy?',
-                'it' => 'Perché scegliere INTOK Academy?'
+                'ar' => 'ليه INTOK هي خطوتك الصح لمستقبلك؟',
+                'en' => 'Why INTOK is the Right Step for Your Future?',
+                'it' => 'Perché INTOK è il passo giusto per il tuo futuro?'
             ],
             'why_subtitle' => [
-                'ar' => 'منظومة متكاملة لا تكتفي بتقديم الكورسات أو الترجمة، بل تصنع معك مستقبلاً حقيقياً بالدراسة في الدول الأوروبية والعمل في كبرى الشركات العالمية بأعلى عائد.',
-                'en' => 'A comprehensive platform opening genuine European education pathways and high-paying multinational careers.',
-                'it' => 'Una piattaforma completa che costruisce il tuo futuro nei paesi europei e nelle grandi aziende.'
+                'ar' => 'في INTOK بنجمع بين التعليم والتدريب والتأهيل المهني والخدمات الأكاديمية، علشان نساعدك تطور مهاراتك وتحقق أهدافك بخطوات واضحة ودعم متخصص.',
+                'en' => 'At INTOK, we combine education, practical training, professional qualification, and academic services to help you build skills and achieve your goals with clear steps and expert support.',
+                'it' => 'In INTOK uniamo formazione, istruzione, qualificazione professionale e servizi accademici per aiutarti a sviluppare competenze e raggiungere i tuoi obiettivi con passi chiari e supporto dedicato.'
             ],
+            'why_bento_services_nav_title' => ['ar' => 'خدمات متكاملة', 'en' => 'Integrated Services', 'it' => 'Servizi Integrati'],
+            'why_bento_services_nav_sub' => ['ar' => '10 خدمات تعليمية ومهنية وأكاديمية', 'en' => '10 educational & vocational services', 'it' => '10 servizi educativi e professionali'],
+            'why_bento_practical_nav_title' => ['ar' => 'تدريب عملي', 'en' => 'Practical Training', 'it' => 'Formazione Pratica'],
+            'why_bento_practical_nav_sub' => ['ar' => 'تطبيقات وتدريبات تحاكي الواقع', 'en' => 'Real-world practice & simulations', 'it' => 'Esercitazioni e simulazioni reali'],
+            'why_bento_trainers_nav_title' => ['ar' => 'مدربون متخصصون', 'en' => 'Expert Instructors', 'it' => 'Docenti Esperti'],
+            'why_bento_trainers_nav_sub' => ['ar' => 'خبرات في مجالات التعليم والتدريب', 'en' => 'Real educational & training expertise', 'it' => 'Esperienza nell insegnamento e formazione'],
+            'why_bento_support_nav_title' => ['ar' => 'متابعة مستمرة', 'en' => 'Continuous Follow-up', 'it' => 'Supporto Continuo'],
+            'why_bento_support_nav_sub' => ['ar' => 'دعم ومتابعة خلال رحلتك', 'en' => 'Dedicated guidance along your path', 'it' => 'Assistenza costante lungo il percorso'],
+            'why_bento_customized_nav_title' => ['ar' => 'حلول مخصصة', 'en' => 'Tailored Solutions', 'it' => 'Soluzioni Su Misura'],
+            'why_bento_customized_nav_sub' => ['ar' => 'خدمات تناسب احتياجاتك وأهدافك', 'en' => 'Matching your needs and goals', 'it' => 'Adatte alle tue esigenze e traguardi'],
+            'why_bento_future_nav_title' => ['ar' => 'تأهيل للمستقبل', 'en' => 'Future Readiness', 'it' => 'Preparazione al Futuro'],
+            'why_bento_future_nav_sub' => ['ar' => 'تطوير مهاراتك الأكاديمية والمهنية', 'en' => 'Building your academic & career skills', 'it' => 'Sviluppo competenze accademiche e professionali'],
             'why_bento_services_title' => [
                 'ar' => 'خدمات تعليمية ومهنية وأكاديمية متكاملة',
                 'en' => 'Integrated Educational, Vocational & Academic Services',

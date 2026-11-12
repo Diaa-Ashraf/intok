@@ -30,9 +30,9 @@
         </h1>
         <p class="mt-4 max-w-2xl leading-relaxed text-slate-600 font-medium">
             {{ data_get($siteSettings ?? [], 'consultation_intro.'.$locale, match($locale) {
-                'it' => 'Registra i tuoi dati e seleziona il servizio di cui hai bisogno: il nostro team ti contatterà per guidarti passo dopo passo.',
-                'en' => 'Enter your details and select the service you need: our team will contact you to assist with every step.',
-                default => 'سجل بياناتك وحدد الخدمة أو المسار الدراسي اللي محتاجه، وفريقنا المتخصص هيتواصل معاك لمساعدتك في كل خطوة.',
+                'it' => 'Registra i tuoi dati e seleziona il servizio di cui hai bisogno: il nostro team ti contatterà per assisterti.',
+                'en' => 'Enter your details and select the service you need: our team will contact you to assist.',
+                default => 'سجل بياناتك وحدد الخدمة اللي محتاجها، وفريقنا هيتواصل معاك لمساعدتك.',
             }) }}
         </p>
 
@@ -110,9 +110,12 @@
                 </div>
 
                 <div>
-                    <label for="service_id_gen" class="mb-2 block text-xs font-black uppercase tracking-wider text-slate-700">{{ __('site.interested_service') }}</label>
+                    <label for="service_id_gen" class="mb-2 block text-xs font-black uppercase tracking-wider text-slate-700">
+                        {{ match($locale) { 'it' => 'Servizio Richiesto', 'en' => 'Required Service', default => 'الخدمة المطلوبة' } }}
+                        <span class="text-slate-400 font-normal">({{ match($locale) { 'it' => '10 servizi disponibili', 'en' => '10 available services', default => 'اختر من بين الـ 10 خدمات' } }})</span>
+                    </label>
                     <select id="service_id_gen" name="service_id" class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 focus:bg-white focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/20 transition">
-                        <option value="" class="bg-white">{{ __('site.optional') }}</option>
+                        <option value="" class="bg-white">{{ match($locale) { 'it' => '-- Seleziona il servizio desiderato (10 disponibili) --', 'en' => '-- Select Required Service (10 available) --', default => '-- اختر إحدى خدماتنا العشر المعتمدة --' } }}</option>
                         @foreach($services as $service)
                             <option value="{{ $service->id }}" @selected(old('service_id', request()->query('service_id')) == $service->id) class="bg-white">
                                 {{ data_get($service->title, $locale, data_get($service->title, 'ar', '')) }}
@@ -125,10 +128,10 @@
                 <div>
                     <div class="flex items-center justify-between mb-2">
                         <label for="preferred_contact_time" class="block text-xs font-black uppercase tracking-wider text-slate-700">
-                            {{ match($locale) { 'it' => 'Fascia Oraria Preferita di Contatto', 'en' => 'Preferred Contact Time Window', default => 'الموعد المفضل للتواصل' } }}
+                            {{ match($locale) { 'it' => 'Orario Preferito per il Contatto', 'en' => 'Preferred Contact Time', default => 'الموعد المفضل للتواصل' } }}
                         </label>
                         <span class="text-[11px] font-bold text-amber-800 bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200">
-                            {{ match($locale) { 'it' => 'Dom-Gio: 09:00 - 17:00', 'en' => 'Sun-Thu: 9 AM - 5 PM', default => 'مواعيد العمل: الأحد - الخميس (9 ص - 5 م)' } }}
+                            {{ match($locale) { 'it' => 'Orari: Dom-Gio (09:00 - 17:00)', 'en' => 'Working Hours: Sun-Thu (9 AM - 5 PM)', default => 'مواعيد العمل: من الأحد إلى الخميس (من 9 ص إلى 5 م)' } }}
                         </span>
                     </div>
                     <select id="preferred_contact_time" name="preferred_contact_time" class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 focus:bg-white focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/20 transition">

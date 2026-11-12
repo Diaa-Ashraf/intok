@@ -89,21 +89,37 @@
                     <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#fe0002] opacity-75"></span>
                     <span class="relative inline-flex size-2 rounded-full bg-[#fe0002]"></span>
                 </span>
-                <span>{{ count($allTracks) }} مسارات معتمدة دولياً ومؤهلة لسوق العمل الأوروبي</span>
+                <span>{{ count($allTracks) }} {{ match($locale) {
+                    'it' => 'Percorsi accreditati a livello internazionale per il mercato europeo',
+                    'en' => 'Officially accredited tracks qualified for international & European careers',
+                    default => 'مسارات معتمدة دولياً ومؤهلة لسوق العمل الأوروبي'
+                } }}</span>
             </span>
 
             <h1 class="mt-5 text-3xl font-black text-[#c27803] sm:text-5xl lg:text-6xl tracking-tight">
-                مسارات وتدريب <span class="text-[#fe0002] relative inline-block">INTOK ACADEMY<span class="absolute -bottom-1.5 inset-x-0 h-1.5 bg-[#fe0002]/25 rounded-full"></span></span>
+                {{ match($locale) {
+                    'it' => 'Percorsi e Formazione',
+                    'en' => 'Training Tracks & Programs',
+                    default => 'مسارات وتدريب'
+                } }} <span class="text-[#fe0002] relative inline-block">INTOK ACADEMY<span class="absolute -bottom-1.5 inset-x-0 h-1.5 bg-[#fe0002]/25 rounded-full"></span></span>
             </h1>
 
             <p class="mt-4 max-w-2xl mx-auto leading-relaxed text-slate-600 font-medium sm:text-lg">
-                منظومة تدريبية واحترافية متكاملة تشمل تدريب الكول سنتر وسوق العمل، الترجمة المعتمدة للسفارات، إتقان اللغات، ومسار استكمال الدراسة في الدول الأوروبية مع المنح الشاملة.
+                {{ match($locale) {
+                    'it' => 'Un ecosistema formativo e professionale completo che include corsi per call center, traduzioni asseverate per ambasciate, padronanza linguistica e orientamento agli studi universitari in Europa.',
+                    'en' => 'A comprehensive professional training ecosystem covering international call center skills, certified embassy translations, language mastery, and European university study pathways.',
+                    default => 'منظومة تدريبية واحترافية متكاملة تشمل تدريب الكول سنتر وسوق العمل، الترجمة المعتمدة للسفارات، إتقان اللغات، ومسار استكمال الدراسة في الدول الأوروبية مع المنح الشاملة.'
+                } }}
             </p>
 
             <!-- Search & Filter Ribbon -->
             <div class="mt-8 max-w-3xl mx-auto">
                 <div class="relative">
-                    <input type="text" id="services-search-input" placeholder="ابحث بالاسم، مثل: كول سنتر، الدراسة في أوروبا، منح دراسية، ترجمة، آيلتس..." class="w-full rounded-2xl border-2 border-slate-200 bg-white py-3.5 pe-4 ps-12 text-xs sm:text-sm font-bold text-slate-800 shadow-sm focus:border-[#fe0002] focus:outline-none focus:ring-4 focus:ring-red-500/10 transition">
+                    <input type="text" id="services-search-input" placeholder="{{ match($locale) {
+                        'it' => 'Cerca per nome, es: call center, studio in Europa, borse di studio, traduzione, IELTS...',
+                        'en' => 'Search by keyword, e.g. call center, study in Europe, translation, IELTS...',
+                        default => 'ابحث بالاسم، مثل: كول سنتر، الدراسة في أوروبا، منح دراسية، ترجمة، آيلتس...'
+                    } }}" class="w-full rounded-2xl border-2 border-slate-200 bg-white py-3.5 pe-4 ps-12 text-xs sm:text-sm font-bold text-slate-800 shadow-sm focus:border-[#fe0002] focus:outline-none focus:ring-4 focus:ring-red-500/10 transition">
                     <span class="absolute start-4 top-1/2 -translate-y-1/2 text-slate-400">
                         <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                     </span>
@@ -112,32 +128,32 @@
                 <!-- Modern Interactive Domain Switcher Pills -->
                 <div class="mt-4 flex flex-wrap items-center justify-center gap-2" id="services-tabs-container">
                     <button type="button" class="service-filter-tab active-service-tab" data-filter="all">
-                        <span>الكل ({{ count($allTracks) }})</span>
+                        <span>{{ match($locale) { 'it' => 'Tutti ('.count($allTracks).')', 'en' => 'All ('.count($allTracks).')', default => 'الكل ('.count($allTracks).')' } }}</span>
                     </button>
                     <button type="button" class="service-filter-tab" data-filter="career">
-                        <span>الكول سنتر وسوق العمل</span>
+                        <span>{{ match($locale) { 'it' => 'Lavoro e Call Center', 'en' => 'Career & Call Center', default => 'الكول سنتر وسوق العمل' } }}</span>
                     </button>
                     <button type="button" class="service-filter-tab" data-filter="italy">
-                        <span>الدراسة في الدول الأوروبية والمنح</span>
+                        <span>{{ match($locale) { 'it' => 'Studio in Europa e Borse', 'en' => 'Study in Europe & Scholarships', default => 'الدراسة في الدول الأوروبية والمنح' } }}</span>
                     </button>
                     <button type="button" class="service-filter-tab" data-filter="translation">
-                        <span>الترجمة والاعتماد الرسمي</span>
+                        <span>{{ match($locale) { 'it' => 'Traduzioni e Asseverazione', 'en' => 'Translation & Certification', default => 'الترجمة والاعتماد الرسمي' } }}</span>
                     </button>
                     <button type="button" class="service-filter-tab" data-filter="languages">
-                        <span>اللغات وتأهيل المحاضرين</span>
+                        <span>{{ match($locale) { 'it' => 'Corsi di Lingua e Docenza', 'en' => 'Languages & Instructor Prep', default => 'اللغات وتأهيل المحاضرين' } }}</span>
                     </button>
                 </div>
             </div>
 
             <!-- View Mode Switcher (Console vs Grid) -->
             <div class="mt-8 flex items-center justify-center gap-3 text-xs font-black">
-                <span class="text-slate-500">طريقة العرض المفضلة:</span>
+                <span class="text-slate-500">{{ match($locale) { 'it' => 'Modalità di visualizzazione:', 'en' => 'Display mode:', default => 'طريقة العرض المفضلة:' } }}</span>
                 <div class="inline-flex rounded-xl border border-slate-200 bg-slate-100 p-1">
                     <button type="button" id="btn-view-console" class="rounded-lg bg-white px-3.5 py-1.5 font-black text-[#fe0002] shadow-xs transition flex items-center gap-1.5">
-                        <span>العرض التفاعلي</span>
+                        <span>{{ match($locale) { 'it' => 'Console Interattiva', 'en' => 'Interactive Console', default => 'العرض التفاعلي' } }}</span>
                     </button>
                     <button type="button" id="btn-view-grid" class="rounded-lg px-3.5 py-1.5 font-bold text-slate-600 hover:text-slate-900 transition flex items-center gap-1.5">
-                        <span>شبكة البطاقات</span>
+                        <span>{{ match($locale) { 'it' => 'Griglia Schede', 'en' => 'Cards Grid', default => 'شبكة البطاقات' } }}</span>
                     </button>
                 </div>
             </div>
@@ -155,10 +171,10 @@
                 <div class="w-full min-w-0 max-w-full lg:col-span-5 xl:col-span-4 space-y-2 reveal-left" id="track-rail-container">
                     <div class="mb-2 px-1 flex items-center justify-between text-xs font-black text-slate-500 uppercase tracking-wider">
                         <span class="flex items-center gap-1.5">
-                            <span>المسارات المعتمدة:</span>
-                            <span class="text-[10px] text-slate-400 font-normal lg:hidden">(اسحب لاختيار المسار ↔)</span>
+                            <span>{{ match($locale) { 'it' => 'Percorsi Accreditati:', 'en' => 'Approved Tracks:', default => 'المسارات المعتمدة:' } }}</span>
+                            <span class="text-[10px] text-slate-400 font-normal lg:hidden">{{ match($locale) { 'it' => '(Scorri per selezionare ↔)', 'en' => '(Swipe to choose ↔)', default => '(اسحب لاختيار المسار ↔)' } }}</span>
                         </span>
-                        <span class="text-red-600 font-mono text-xs font-black">{{ count($allTracks) }} مسارات</span>
+                        <span class="text-red-600 font-mono text-xs font-black">{{ count($allTracks) }} {{ match($locale) { 'it' => 'Percorsi', 'en' => 'Tracks', default => 'مسارات' } }}</span>
                     </div>
 
                     <!-- On mobile/tablet: Horizontal touch-swipeable track strip. On desktop (lg+): Vertical scroll list -->
@@ -216,7 +232,7 @@
                             </div>
                             <span class="inline-flex items-center gap-1.5 text-xs font-black text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
                                 <svg class="size-3.5 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-                                <span>معتمد رسمياً في INTOK</span>
+                                <span>{{ match($locale) { 'it' => 'Ufficialmente Accreditato da INTOK', 'en' => 'Officially Accredited at INTOK', default => 'معتمد رسمياً في INTOK' } }}</span>
                             </span>
                         </div>
 
@@ -245,7 +261,7 @@
                         <div class="mb-6 w-full min-w-0">
                             <h4 class="text-xs sm:text-sm font-black text-slate-900 uppercase tracking-wider mb-3 flex items-center gap-2">
                                 <span class="size-2 rounded-full bg-red-600"></span>
-                                <span>أبرز مخرجات ومميزات هذا المسار:</span>
+                                <span>{{ match($locale) { 'it' => 'Caratteristiche e vantaggi del percorso:', 'en' => 'Key Outcomes & Program Highlights:', default => 'أبرز مخرجات ومميزات هذا المسار:' } }}</span>
                             </h4>
                             <div class="grid gap-3 sm:grid-cols-2 w-full min-w-0" id="stage-points-grid">
                                 @foreach($initialTrack['points'] as $pIdx => $point)
@@ -264,21 +280,21 @@
                             <div class="flex items-center gap-2.5 min-w-0">
                                 <span class="grid size-8 shrink-0 place-items-center rounded-xl bg-white border border-slate-200 text-red-600 shadow-2xs font-bold text-xs">⏱</span>
                                 <div class="min-w-0">
-                                    <span class="block text-[10px] text-slate-500 font-bold">المدة والجدول</span>
+                                    <span class="block text-[10px] text-slate-500 font-bold">{{ match($locale) { 'it' => 'Durata e calendario', 'en' => 'Duration & Schedule', default => 'المدة والجدول' } }}</span>
                                     <span id="stage-duration" class="font-black text-slate-900 block truncate">{{ $initialTrack['duration'] }}</span>
                                 </div>
                             </div>
                             <div class="flex items-center gap-2.5 min-w-0 border-t sm:border-t-0 sm:border-r sm:pr-3 border-slate-200/80 pt-2 sm:pt-0">
                                 <span class="grid size-8 shrink-0 place-items-center rounded-xl bg-white border border-slate-200 text-amber-600 shadow-2xs font-bold text-xs">🏛</span>
                                 <div class="min-w-0">
-                                    <span class="block text-[10px] text-slate-500 font-bold">نظام الحضور</span>
+                                    <span class="block text-[10px] text-slate-500 font-bold">{{ match($locale) { 'it' => 'Modalità di fruizione', 'en' => 'Attendance Mode', default => 'نظام الحضور' } }}</span>
                                     <span id="stage-mode" class="font-black text-slate-900 block truncate">{{ $initialTrack['mode'] }}</span>
                                 </div>
                             </div>
                             <div class="flex items-center gap-2.5 min-w-0 border-t sm:border-t-0 sm:border-r sm:pr-3 border-slate-200/80 pt-2 sm:pt-0">
                                 <span class="grid size-8 shrink-0 place-items-center rounded-xl bg-white border border-slate-200 text-blue-600 shadow-2xs font-bold text-xs">🎯</span>
                                 <div class="min-w-0">
-                                    <span class="block text-[10px] text-slate-500 font-bold">الفئة المستهدفة</span>
+                                    <span class="block text-[10px] text-slate-500 font-bold">{{ match($locale) { 'it' => 'Destinatari', 'en' => 'Target Audience', default => 'الفئة المستهدفة' } }}</span>
                                     <span id="stage-target" class="font-black text-slate-900 block truncate" title="{{ $initialTrack['target'] }}">{{ $initialTrack['target'] }}</span>
                                 </div>
                             </div>
@@ -288,18 +304,18 @@
                         <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-2 w-full min-w-0">
                             <div class="flex flex-col sm:flex-row items-center gap-2.5 sm:gap-3 flex-1">
                                 <a id="stage-cta-btn" href="{{ route('consultation.create', ['locale' => $locale]) }}" class="btn-intok-primary w-full sm:w-auto px-6 py-3.5 text-xs sm:text-sm font-black shadow-md flex items-center justify-center gap-2">
-                                    <span>احجز مقعدك في هذا المسار</span>
+                                    <span>{{ match($locale) { 'it' => 'Prenota il tuo posto in questo percorso', 'en' => 'Book Your Seat in This Track', default => 'احجز مقعدك في هذا المسار' } }}</span>
                                     <span>←</span>
                                 </a>
 
                                 <a id="stage-wa-btn" href="https://wa.me/{{ preg_replace('/[^0-9]/', '', data_get($siteSettings ?? [], 'whatsapp_number', '201008238323')) }}?text={{ urlencode($initialTrack['wa_msg']) }}" target="_blank" class="w-full sm:w-auto px-5 py-3.5 rounded-full border-2 border-emerald-500 bg-emerald-50 text-emerald-700 hover:bg-emerald-600 hover:text-white font-black text-xs sm:text-sm transition shadow-xs flex items-center justify-center gap-2">
                                     <svg class="size-4 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                                    <span>واتساب مباشر</span>
+                                    <span>{{ match($locale) { 'it' => 'WhatsApp Diretto', 'en' => 'Direct WhatsApp', default => 'واتساب مباشر' } }}</span>
                                 </a>
                             </div>
 
                             <a id="stage-details-link" href="{{ route('services.show', ['locale' => $locale, 'slug' => $initialTrack['slug']]) }}" class="text-xs font-black text-slate-500 hover:text-[#fe0002] transition flex items-center justify-center sm:justify-start gap-1 py-1">
-                                <span>صفحة التفاصيل الكاملة</span>
+                                <span>{{ match($locale) { 'it' => 'Scheda Dettagliata Completa', 'en' => 'Full Details Page', default => 'صفحة التفاصيل الكاملة' } }}</span>
                                 <span>&larr;</span>
                             </a>
                         </div>
@@ -307,11 +323,11 @@
                         <!-- Mobile Quick Switcher Bar (Visible on < lg) -->
                         <div class="lg:hidden flex items-center justify-between pt-3 mt-4 border-t border-slate-100 text-xs font-bold text-slate-500 w-full min-w-0">
                             <button type="button" id="stage-prev-btn" class="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-full border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 transition active:scale-95 text-xs font-black">
-                                <span>← المسار السابق</span>
+                                <span>{{ match($locale) { 'it' => '← Percorso Prec.', 'en' => '← Previous Track', default => '← المسار السابق' } }}</span>
                             </button>
-                            <span id="stage-track-counter" class="text-xs font-mono text-slate-500 font-bold">1 / 8</span>
+                            <span id="stage-track-counter" class="text-xs font-mono text-slate-500 font-bold">1 / {{ count($allTracks) }}</span>
                             <button type="button" id="stage-next-btn" class="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-full border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 transition active:scale-95 text-xs font-black">
-                                <span>المسار التالي →</span>
+                                <span>{{ match($locale) { 'it' => 'Percorso Succ. →', 'en' => 'Next Track →', default => 'المسار التالي →' } }}</span>
                             </button>
                         </div>
                     </div>
@@ -370,7 +386,7 @@
 
                             <!-- Highlights -->
                             <div class="space-y-2 border-t border-slate-100 pt-3 mb-4">
-                                <span class="block text-[10px] font-black uppercase tracking-wider text-slate-600">أبرز ما يوفره المسار:</span>
+                                <span class="block text-[10px] font-black uppercase tracking-wider text-slate-600">{{ match($locale) { 'it' => 'Vantaggi del percorso:', 'en' => 'Key Highlights:', default => 'أبرز ما يوفره المسار:' } }}</span>
                                 <ul class="space-y-1.5 text-xs text-slate-700">
                                     @foreach ($item['points'] as $pt)
                                         <li class="flex items-start gap-2 text-[11px] leading-tight">
@@ -391,10 +407,10 @@
 
                             <div class="flex items-center gap-2 border-t border-slate-100 pt-3">
                                 <a href="{{ route('consultation.create', ['locale' => $locale]) }}" class="btn-intok-primary flex-1 py-2 px-3 text-center text-xs font-black shadow-xs flex items-center justify-center">
-                                    <span>احجز مقعدك</span>
+                                    <span>{{ match($locale) { 'it' => 'Prenota il tuo posto', 'en' => 'Book Your Seat', default => 'احجز مقعدك' } }}</span>
                                 </a>
-                                <button type="button" class="quick-view-trigger rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-black text-slate-700 hover:border-red-400 hover:text-[#fe0002] transition shadow-xs flex items-center gap-1" title="معاينة تفاصيل البرنامج">
-                                    <span>تفاصيل</span>
+                                <button type="button" class="quick-view-trigger rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-black text-slate-700 hover:border-red-400 hover:text-[#fe0002] transition shadow-xs flex items-center gap-1" title="{{ match($locale) { 'it' => 'Anteprima dettagli', 'en' => 'Preview Details', default => 'معاينة تفاصيل البرنامج' } }}">
+                                    <span>{{ match($locale) { 'it' => 'Dettagli', 'en' => 'Details', default => 'تفاصيل' } }}</span>
                                 </button>
                             </div>
                         </div>
@@ -411,13 +427,13 @@
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12 reveal-up">
                 <span class="inline-flex items-center gap-2 rounded-full bg-red-50 border border-red-200 px-4 py-1.5 text-xs font-black text-[#fe0002] shadow-xs">
-                    <span>{{ data_get($siteSettings ?? [], 'services_why_badge.'.$locale, 'معايير الجودة والاعتماد الأكاديمي') }}</span>
+                    <span>{{ data_get($siteSettings ?? [], 'services_why_badge.'.$locale, match($locale) { 'it' => 'Standard di Qualità e Accreditamento Ufficiale', 'en' => 'Quality Standards & Official Accreditation', default => 'معايير الجودة والاعتماد الأكاديمي' }) }}</span>
                 </span>
                 <h2 class="mt-4 text-3xl font-black text-[#c27803] sm:text-4xl">
-                    {{ data_get($siteSettings ?? [], 'services_why_title.'.$locale, 'لماذا يثق الآلاف في برامج INTOK ACADEMY؟') }}
+                    {{ data_get($siteSettings ?? [], 'services_why_title.'.$locale, match($locale) { 'it' => 'Perché migliaia di studenti scelgono INTOK ACADEMY?', 'en' => 'Why Thousands Trust INTOK ACADEMY Programs?', default => 'لماذا يثق الآلاف في برامج INTOK ACADEMY؟' }) }}
                 </h2>
                 <p class="mt-3 text-sm sm:text-base text-slate-600 font-medium">
-                    {{ data_get($siteSettings ?? [], 'services_why_subtitle.'.$locale, 'نجمع بين التدريب العملي المباشر، والاعتماد القنصلي الرسمي، والشراكات الدولية المؤهلة للتوظيف والدراسة.') }}
+                    {{ data_get($siteSettings ?? [], 'services_why_subtitle.'.$locale, match($locale) { 'it' => 'Uniamo formazione pratica diretta, accreditamento consolare ufficiale e accordi internazionali per l inserimento accademico e professionale.', 'en' => 'We combine direct practical training, official consular authentication, and international partnerships qualifying you for careers and university study.', default => 'نجمع بين التدريب العملي المباشر، والاعتماد القنصلي الرسمي، والشراكات الدولية المؤهلة للتوظيف والدراسة.' }) }}
                 </p>
             </div>
 
@@ -427,9 +443,9 @@
                         <div class="size-11 rounded-2xl bg-red-50 border border-red-200 text-[#fe0002] grid place-items-center mb-4">
                             <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                         </div>
-                        <h3 class="text-base font-black text-slate-900 mb-1.5">{{ data_get($siteSettings ?? [], 'services_pillar1_title.'.$locale, 'شاشات ذكية ومحاكاة واقعية') }}</h3>
+                        <h3 class="text-base font-black text-slate-900 mb-1.5">{{ data_get($siteSettings ?? [], 'services_pillar1_title.'.$locale, match($locale) { 'it' => 'Aule Multimediali e Simulazione Reale', 'en' => 'Smart Screens & Real-world Simulation', default => 'شاشات ذكية ومحاكاة واقعية' }) }}</h3>
                         <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                            {{ data_get($siteSettings ?? [], 'services_pillar1_desc.'.$locale, 'تدريب تطبيقي على أنظمة كبرى شركات الكول سنتر العالمية وقاعات ذكية تحاكي بيئة العمل الفعلية.') }}
+                            {{ data_get($siteSettings ?? [], 'services_pillar1_desc.'.$locale, match($locale) { 'it' => 'Formazione applicata sui sistemi dei grandi call center internazionali e aule multimediali che riproducono l ambiente lavorativo effettivo.', 'en' => 'Hands-on practice on international call center systems and smart classrooms mirroring real workplaces.', default => 'تدريب تطبيقي على أنظمة كبرى شركات الكول سنتر العالمية وقاعات ذكية تحاكي بيئة العمل الفعلية.' }) }}
                         </p>
                     </div>
                 </div>
@@ -439,9 +455,9 @@
                         <div class="size-11 rounded-2xl bg-amber-50 border border-amber-200 text-[#c27803] grid place-items-center mb-4">
                             <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
                         </div>
-                        <h3 class="text-base font-black text-slate-900 mb-1.5">{{ data_get($siteSettings ?? [], 'services_pillar2_title.'.$locale, 'اعتماد وتوثيق قنصلي 100%') }}</h3>
+                        <h3 class="text-base font-black text-slate-900 mb-1.5">{{ data_get($siteSettings ?? [], 'services_pillar2_title.'.$locale, match($locale) { 'it' => 'Accreditamento e Asseverazione Consolare 100%', 'en' => '100% Consular Certification & Authentication', default => 'اعتماد وتوثيق قنصلي 100%' }) }}</h3>
                         <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                            {{ data_get($siteSettings ?? [], 'services_pillar2_desc.'.$locale, 'شهادات تدريب موثقة وترجمات معتمدة رسمياً أمام السفارة الإيطالية وكافة السفارات والجهات الحكومية.') }}
+                            {{ data_get($siteSettings ?? [], 'services_pillar2_desc.'.$locale, match($locale) { 'it' => 'Attestati di formazione riconosciuti e traduzioni giurate ufficiali per l ambasciata italiana e tutte le autorità consolari europee.', 'en' => 'Verified training certificates and certified translations recognized by European embassies and official entities.', default => 'شهادات تدريب موثقة وترجمات معتمدة رسمياً أمام السفارة الإيطالية وكافة السفارات والجهات الحكومية.' }) }}
                         </p>
                     </div>
                 </div>
@@ -451,9 +467,9 @@
                         <div class="size-11 rounded-2xl bg-blue-50 border border-blue-200 text-blue-600 grid place-items-center mb-4">
                             <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                         </div>
-                        <h3 class="text-base font-black text-slate-900 mb-1.5">{{ data_get($siteSettings ?? [], 'services_pillar3_title.'.$locale, 'تأهيل وظيفي وترشيح مباشر') }}</h3>
+                        <h3 class="text-base font-black text-slate-900 mb-1.5">{{ data_get($siteSettings ?? [], 'services_pillar3_title.'.$locale, match($locale) { 'it' => 'Qualificazione Professionale per Multinazionali', 'en' => 'Direct Hiring Qualification for Top Firms', default => 'تأهيل وظيفي وترشيح مباشر' }) }}</h3>
                         <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                            {{ data_get($siteSettings ?? [], 'services_pillar3_desc.'.$locale, 'توصيات مباشرة وتأهيل لاجتياز مقابلات الـ HR والـ Operations برواتب تصل 30,000+ ج.م.') }}
+                            {{ data_get($siteSettings ?? [], 'services_pillar3_desc.'.$locale, match($locale) { 'it' => 'Preparazione e simulazioni per colloqui di assunzione con canali preferenziali per multinazionali con retribuzioni competitive.', 'en' => 'Targeted mock interviews and direct qualification for major multinational firms with competitive packages.', default => 'توصيات مباشرة وتأهيل لاجتياز مقابلات الـ HR والـ Operations برواتب تصل 30,000+ ج.م.' }) }}
                         </p>
                     </div>
                 </div>
@@ -463,9 +479,9 @@
                         <div class="size-11 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-600 grid place-items-center mb-4">
                             <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                         </div>
-                        <h3 class="text-base font-black text-slate-900 mb-1.5">{{ data_get($siteSettings ?? [], 'services_pillar4_title.'.$locale, 'إشراف على منحة DSU الإيطالية') }}</h3>
+                        <h3 class="text-base font-black text-slate-900 mb-1.5">{{ data_get($siteSettings ?? [], 'services_pillar4_title.'.$locale, match($locale) { 'it' => 'Orientamento Studi e Borse in Europa', 'en' => 'Study in Europe & Scholarships Guidance', default => 'التأهيل للدراسة في أوروبا والمنح' }) }}</h3>
                         <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                            {{ data_get($siteSettings ?? [], 'services_pillar4_desc.'.$locale, 'حساب دقيق لـ ISEE يضمن إعفاء 100% من المصروفات وسكن مجاني وبدل 8,000 يورو للدبلومات والثانوية.') }}
+                            {{ data_get($siteSettings ?? [], 'services_pillar4_desc.'.$locale, match($locale) { 'it' => 'Assistenza completa per borse di studio, alloggio e immatricolazione in atenei europei per studenti e diplomati.', 'en' => 'Full guidance on regional scholarships, tuition exemption, and housing in European universities.', default => 'تأهيل شامل للمنح الدراسية والإعفاء من المصروفات والسكن الجامعي بالجامعات الأوروبية.' }) }}
                         </p>
                     </div>
                 </div>
@@ -479,20 +495,20 @@
     <section class="relative bg-gradient-to-r from-[#fe0002] to-red-700 py-14 text-white text-center overflow-hidden">
         <div class="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <span class="inline-block rounded-full bg-white/20 border border-white/30 px-4 py-1 text-xs font-black text-amber-200 mb-3">
-                {{ data_get($siteSettings ?? [], 'services_cta_badge.'.$locale, 'خطوتك الأولى نحو مستقبلك الدولي') }}
+                {{ data_get($siteSettings ?? [], 'services_cta_badge.'.$locale, match($locale) { 'it' => 'Il tuo primo passo verso un futuro internazionale', 'en' => 'Your First Step Toward an International Future', default => 'خطوتك الأولى نحو مستقبلك الدولي' }) }}
             </span>
             <h2 class="text-2xl sm:text-4xl font-black text-white leading-tight">
-                {{ data_get($siteSettings ?? [], 'services_cta_title.'.$locale, 'هل تحتاج لمساعدة في اختيار المسار التدريبي الأنسب لك؟') }}
+                {{ data_get($siteSettings ?? [], 'services_cta_title.'.$locale, match($locale) { 'it' => 'Hai bisogno di aiuto per scegliere il percorso formativo più adatto a te?', 'en' => 'Need Help Choosing the Best Training Track for You?', default => 'هل تحتاج لمساعدة في اختيار المسار التدريبي الأنسب لك؟' }) }}
             </h2>
             <p class="mt-3 text-xs sm:text-sm text-red-100 font-medium max-w-xl mx-auto leading-relaxed">
-                {{ data_get($siteSettings ?? [], 'services_cta_subtitle.'.$locale, 'احجز جلسة استشارة مجانية مع مستشارك الأكاديمي لمراجعة مؤهلك وهدفك وتحديد خطتك التدريبية والمهنية.') }}
+                {{ data_get($siteSettings ?? [], 'services_cta_subtitle.'.$locale, match($locale) { 'it' => 'Prenota una sessione di orientamento gratuita per esaminare i tuoi titoli e obiettivi e definire il tuo piano formativo.', 'en' => 'Book a free consultation session with our educational advisors to assess your profile and set your career plan.', default => 'احجز جلسة استشارة مجانية مع مستشارك الأكاديمي لمراجعة مؤهلك وهدفك وتحديد خطتك التدريبية والمهنية.' }) }}
             </p>
             <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
                 <a href="{{ route('consultation.create', ['locale' => $locale]) }}" class="rounded-full bg-white px-7 py-3.5 text-xs sm:text-sm font-black text-[#fe0002] shadow-lg hover:bg-amber-100 transition transform hover:scale-105">
-                    احجز استشارتك المجانية
+                    {{ match($locale) { 'it' => 'Prenota la Consulenza Gratuita', 'en' => 'Book Free Consultation', default => 'احجز استشارتك المجانية' } }}
                 </a>
-                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', data_get($siteSettings ?? [], 'whatsapp_number', '201008238323')) }}?text={{ urlencode('مرحباً، أود استشارة لتحديد المسار التدريبي المناسب لي في أكاديمية إنتوك') }}" target="_blank" class="rounded-full border-2 border-white/40 bg-white/10 px-6 py-3.5 text-xs sm:text-sm font-black text-white backdrop-blur-md hover:bg-white hover:text-slate-900 transition">
-                    استفسار عبر الواتساب
+                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', data_get($siteSettings ?? [], 'whatsapp_number', '201008238323')) }}?text={{ urlencode(match($locale) { 'it' => 'Ciao, vorrei maggiori informazioni sui percorsi formativi di INTOK ACADEMY', 'en' => 'Hello, I want to inquire about training tracks at INTOK ACADEMY', default => 'مرحباً، أود استشارة لتحديد المسار التدريبي المناسب لي في أكاديمية إنتوك' }) }}" target="_blank" class="rounded-full border-2 border-white/40 bg-white/10 px-6 py-3.5 text-xs sm:text-sm font-black text-white backdrop-blur-md hover:bg-white hover:text-slate-900 transition">
+                    {{ match($locale) { 'it' => 'Informa su WhatsApp', 'en' => 'Inquire via WhatsApp', default => 'استفسار عبر الواتساب' } }}
                 </a>
             </div>
         </div>
@@ -507,10 +523,10 @@
 
             <div class="flex items-center gap-2 mb-3">
                 <span id="modal-service-badge" class="inline-flex items-center rounded-full px-3 py-1 text-xs font-black bg-red-50 text-[#fe0002] border border-red-200">
-                    معتمد
+                    {{ match($locale) { 'it' => 'Accreditato', 'en' => 'Accredited', default => 'معتمد' } }}
                 </span>
                 <span id="modal-service-cat" class="text-xs font-bold text-slate-600">
-                    الفئة
+                    {{ match($locale) { 'it' => 'Categoria', 'en' => 'Category', default => 'الفئة' } }}
                 </span>
             </div>
 
@@ -520,37 +536,37 @@
                 </div>
                 <div>
                     <h3 id="modal-service-title" class="text-xl font-black text-[#c27803] leading-snug">
-                        عنوان الخدمة
+                        {{ match($locale) { 'it' => 'Titolo Servizio', 'en' => 'Service Title', default => 'عنوان الخدمة' } }}
                     </h3>
                     <span id="modal-service-level" class="text-xs font-bold text-slate-600">
-                        المستوى والنوع
+                        {{ match($locale) { 'it' => 'Livello e Tipo', 'en' => 'Level & Type', default => 'المستوى والنوع' } }}
                     </span>
                 </div>
             </div>
 
             <p id="modal-service-desc" class="text-xs leading-relaxed text-slate-600 font-medium mb-5 bg-slate-50 p-4 rounded-2xl border border-slate-100">
-                وصف الخدمة الكامل
+                {{ match($locale) { 'it' => 'Descrizione completa del servizio', 'en' => 'Full service description', default => 'وصف الخدمة الكامل' } }}
             </p>
 
             <div class="space-y-3 mb-6">
-                <span class="block text-xs font-black text-slate-800">أهم مميزات ومخرجات المسار:</span>
+                <span class="block text-xs font-black text-slate-800">{{ match($locale) { 'it' => 'Caratteristiche e vantaggi del percorso:', 'en' => 'Key Highlights & Program Benefits:', default => 'أهم مميزات ومخرجات المسار:' } }}</span>
                 <div id="modal-service-points" class="space-y-2">
                     <!-- Injected points -->
                 </div>
             </div>
 
             <div class="grid grid-cols-2 gap-2 text-[11px] font-bold text-slate-700 bg-slate-50 p-3 rounded-2xl border border-slate-100 mb-6">
-                <div>المدة: <span id="modal-service-duration" class="font-black text-slate-900">-</span></div>
-                <div>النظام: <span id="modal-service-mode" class="font-black text-slate-900">-</span></div>
-                <div class="col-span-2 mt-1">الفئة المستهدفة: <span id="modal-service-target" class="font-black text-slate-900">-</span></div>
+                <div>{{ match($locale) { 'it' => 'Durata:', 'en' => 'Duration:', default => 'المدة:' } }} <span id="modal-service-duration" class="font-black text-slate-900">-</span></div>
+                <div>{{ match($locale) { 'it' => 'Modalità:', 'en' => 'Mode:', default => 'النظام:' } }} <span id="modal-service-mode" class="font-black text-slate-900">-</span></div>
+                <div class="col-span-2 mt-1">{{ match($locale) { 'it' => 'Destinatari:', 'en' => 'Target Audience:', default => 'الفئة المستهدفة:' } }} <span id="modal-service-target" class="font-black text-slate-900">-</span></div>
             </div>
 
             <div class="flex flex-col sm:flex-row items-center gap-3">
                 <a id="modal-service-cta" href="{{ route('consultation.create', ['locale' => $locale]) }}" class="btn-intok-primary w-full sm:flex-1 py-3 text-center text-xs font-black shadow-md flex items-center justify-center">
-                    <span>احجز استشارتك في هذا المسار</span>
+                    <span>{{ match($locale) { 'it' => 'Prenota la tua consulenza per questo percorso', 'en' => 'Book Consultation for This Track', default => 'احجز استشارتك في هذا المسار' } }}</span>
                 </a>
                 <a id="modal-service-whatsapp" href="https://wa.me/201008238323" target="_blank" class="w-full sm:w-auto px-5 py-3 rounded-full bg-emerald-600 text-white font-bold text-xs hover:bg-emerald-500 transition shadow-xs flex items-center justify-center">
-                    <span>استفسار واتساب</span>
+                    <span>{{ match($locale) { 'it' => 'Richiedi info su WhatsApp', 'en' => 'Inquire via WhatsApp', default => 'استفسار واتساب' } }}</span>
                 </a>
             </div>
         </div>
