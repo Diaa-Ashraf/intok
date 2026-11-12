@@ -336,21 +336,21 @@ class ServiceCatalogService
     'slug_it' => 'traduzione-giurata',
     'title' => 
     array (
-      'ar' => 'خدمة الترجمة المعتمدة',
-      'en' => 'Certified Translation Service',
-      'it' => 'Servizio di Traduzione Asseverata',
+      'ar' => 'الترجمة المعتمدة',
+      'en' => 'Certified Translation',
+      'it' => 'Traduzione Asseverata',
     ),
     'summary' => 
     array (
       'ar' => 'نقدم خدمات ترجمة معتمدة للمستندات والوثائق الرسمية بمختلف اللغات، من خلال متخصصين يحرصون على الدقة اللغوية والالتزام بمتطلبات الجهات المقدَّم إليها المستند.',
-      'en' => 'Official certified translation services for legal and academic documents across multiple languages with strict compliance to embassy standards.',
-      'it' => 'Servizi di traduzione asseverata e giurata per documenti ufficiali e accademici in varie lingue secondo le norme consolari.',
+      'en' => 'Certified translation services for official and academic documents across multiple languages with strict adherence to destination authority requirements.',
+      'it' => 'Servizi di traduzione asseverata e giurata per documenti ufficiali e accademici in varie lingue secondo le norme degli enti riceventi.',
     ),
     'description' => 
     array (
-      'ar' => 'نقدم خدمات ترجمة معتمدة للمستندات والوثائق الرسمية بمختلف اللغات، من خلال متخصصين يحرصون على الدقة اللغوية والالتزام بمتطلبات الجهات المقدَّم إليها المستند. نراعي أعلى معايير الدقة للشهادات الجامعية، إعلانات القيمة، السجلات التجارية، وعقود العمل.',
-      'en' => 'We provide certified translation for official, academic, and corporate documents across multiple languages, ensuring accuracy and official embassy compliance.',
-      'it' => 'Forniamo traduzioni giurate e conformi agli standard internazionali per documenti di studio, certificati di stato civile e contratti.',
+      'ar' => 'نقدم خدمات ترجمة معتمدة للمستندات والوثائق الرسمية بمختلف اللغات، من خلال متخصصين يحرصون على الدقة اللغوية والالتزام بمتطلبات الجهات المقدَّم إليها المستند.',
+      'en' => 'We provide certified translation for official, academic, and corporate documents across multiple languages, ensuring linguistic accuracy and compliance with destination authorities.',
+      'it' => 'Forniamo traduzioni giurate e conformi agli standard internazionali per documenti di studio, certificati e atti ufficiali.',
     ),
     'badge' => 
     array (
@@ -372,15 +372,15 @@ class ServiceCatalogService
     ),
     'duration' => 
     array (
-      'ar' => 'تسليم فوري (24-48 ساعة)',
-      'en' => 'Fast turnaround (24-48 hrs)',
-      'it' => 'Consegna rapida (24-48h)',
+      'ar' => 'تسليم فوري حسب الطلب',
+      'en' => 'Immediate delivery upon request',
+      'it' => 'Consegna immediata su richiesta',
     ),
     'mode' => 
     array (
-      'ar' => 'أونلاين أو بمقر الأكاديمية',
-      'en' => 'Online or Academy Office',
-      'it' => 'Online o presso l accademia',
+      'ar' => 'أونلاين أو من خلال مقر الأكاديمية حسب طبيعة الطلب',
+      'en' => 'Online or at Academy headquarters',
+      'it' => 'Online o presso la sede dell accademia',
     ),
     'target_audience' => 
     array (
@@ -390,9 +390,9 @@ class ServiceCatalogService
     ),
     'salary_range' => 
     array (
-      'ar' => 'دقة قانونية متناهية 100%',
-      'en' => '100% Diplomatic Acceptance',
-      'it' => 'Precisione legale al 100%',
+      'ar' => 'دقة لغوية وقانونية 100%',
+      'en' => '100% Accuracy',
+      'it' => 'Accuratezza al 100%',
     ),
     'whatsapp_message' => 
     array (
@@ -404,23 +404,21 @@ class ServiceCatalogService
     array (
       'ar' => 
       array (
-        0 => 'ترجمة المستندات والوثائق الرسمية والأكاديمية والشخصية',
-        1 => 'مراجعة دقيقة للمحتوى والتواريخ والأسماء والمصطلحات',
-        2 => 'تجهيز الترجمات وفق متطلبات الجهة المستقبلة والسفارات',
-        3 => 'ترجمة من وإلى عدة لغات حية (إيطالي، إنجليزي، ألماني، فرنسي، عربي)',
+        0 => 'ترجمة المستندات والوثائق الرسمية.',
+        1 => 'مراجعة دقيقة للمحتوى والمصطلحات.',
+        2 => 'تجهيز الترجمات وفق متطلبات الجهة المستقبلة.',
       ),
       'en' => 
       array (
-        0 => 'Official translation of academic, personal, and corporate files',
-        1 => 'Meticulous review of names, dates, and specialized terminology',
-        2 => 'Full compliance with embassy and ministerial requirements',
-        3 => 'Multi-language translation (English, Italian, German, French, Arabic)',
+        0 => 'Official translation of academic, personal, and corporate files.',
+        1 => 'Meticulous review of content and terminology.',
+        2 => 'Preparing translations per receiving authority requirements.',
       ),
       'it' => 
       array (
-        0 => 'Traduzione di certificati di studio, documenti personali e societari',
-        1 => 'Revisione accurata di dati anagrafici e terminologia tecnica',
-        2 => 'Conformità alle disposizioni di ambasciate e ministeri',
+        0 => 'Traduzione di certificati di studio e documenti ufficiali.',
+        1 => 'Revisione accurata del contenuto e della terminologia.',
+        2 => 'Predisposizione traduzioni secondo i requisiti dell ente ricevente.',
       ),
     ),
     'requirements' => 
@@ -430,44 +428,42 @@ class ServiceCatalogService
         0 => 'صورة واضحة من المستند الأصلي',
         1 => 'تحديد اللغة المطلوبة للترجمة',
         2 => 'تحديد الجهة التي سيُقدم إليها المستند',
-        3 => 'توضيح الموعد المطلوب للاستلام',
       ),
       'en' => 
       array (
-        0 => 'Clear digital copy of the original document',
-        1 => 'Specifying source and target languages',
-        2 => 'Destination embassy or authority name',
-        3 => 'Desired deadline',
+        0 => 'Clear copy of original document',
+        1 => 'Specify target language',
+        2 => 'Specify receiving authority',
       ),
       'it' => 
       array (
-        0 => 'Copia leggibile del documento originale',
-        1 => 'Indicazione delle lingue di traduzione',
-        2 => 'Ente o ambasciata di destinazione',
+        0 => 'Copia chiara del documento originale',
+        1 => 'Indicazione della lingua desiderata',
+        2 => 'Ente di destinazione del documento',
       ),
     ),
     'steps' => 
     array (
       'ar' => 
       array (
-        0 => 'إرسال المستندات وتحديد اللغة',
-        1 => 'مراجعة المستند وتحديد التكلفة والمدة',
-        2 => 'تنفيذ الترجمة والمراجعة اللغوية والقانونية',
-        3 => 'تسليم النسخة النهائية المعتمدة',
+        0 => 'إرسال صورة المستند عبر الموقع أو الواتساب',
+        1 => 'فحص المستند وتحديد التكلفة والموعد',
+        2 => 'الترجمة والتدقيق والاعتماد الرسمي',
+        3 => 'استلام النسخة المعتمدة ورقياً أو إلكترونياً',
       ),
       'en' => 
       array (
-        0 => 'Document submission and language selection',
-        1 => 'Document audit and cost estimation',
-        2 => 'Translation execution and dual proofreading',
-        3 => 'Official certified delivery',
+        0 => 'Send document digital copy via website or WhatsApp',
+        1 => 'Review, quotation, and timeline confirmation',
+        2 => 'Translation, proofreading, and official certification',
+        3 => 'Delivery in digital or stamped physical copy',
       ),
       'it' => 
       array (
-        0 => 'Invio file e selezione lingue',
-        1 => 'Valutazione e preventivo',
-        2 => 'Traduzione e revisione',
-        3 => 'Consegna ufficiale',
+        0 => 'Invio della copia del documento',
+        1 => 'Verifica del preventivo e tempi di consegna',
+        2 => 'Traduzione, asseverazione e timbratura',
+        3 => 'Ritiro o spedizione della copia conforme',
       ),
     ),
     'faqs' => 
@@ -476,34 +472,29 @@ class ServiceCatalogService
       array (
         0 => 
         array (
-          'question' => 'هل الترجمة معتمدة ومقبولة لدى السفارات؟',
-          'answer' => 'نعم، ترجمتنا معتمدة رسمياً ومختومة وتفي بكافة المعايير والشروط القنصلية والدبلوماسية.',
+          'question' => 'هل الترجمة معتمدة لدى السفارات؟',
+          'answer' => 'نعم، ترجمتنا معتمدة رسمياً ومطابقة لمعايير السفارات والقنصليات والجهات الحكومية.',
         ),
         1 => 
         array (
-          'question' => 'ما اللغات المتاحة للترجمة في الأكاديمية؟',
-          'answer' => 'نوفر ترجمة معتمدة للغات الإيطالية، الإنجليزية، الألمانية، الفرنسية، الإسبانية، والعربية.',
-        ),
-        2 => 
-        array (
-          'question' => 'هل يمكن استلام النسخ المترجمة إلكترونياً وبالمقر؟',
-          'answer' => 'نعم، نوفر استلاماً إلكترونياً عالي الدقة (PDF معتمد) بالإضافة للنسخ الورقية المطبوعة والمختومة بمقر الأكاديمية أو عبر الشحن.',
+          'question' => 'ما هي المدة المطلوبة لاستلام المستند؟',
+          'answer' => 'تسليم فوري حسب الطلب، ونوفر خدمة الاستلام العاجل في نفس اليوم.',
         ),
       ),
       'en' => 
       array (
         0 => 
         array (
-          'question' => 'Is the translation recognized by embassies?',
-          'answer' => 'Yes, our certified translations are officially stamped and accepted by embassies and official authorities.',
+          'question' => 'Is the translation embassy accredited?',
+          'answer' => 'Yes, our certified translations comply with embassies, consulates, and official ministries.',
         ),
       ),
       'it' => 
       array (
         0 => 
         array (
-          'question' => 'Le traduzioni sono riconosciute dai consolati?',
-          'answer' => 'Sì, le traduzioni sono asseverate e timbrate secondo gli standard consolari.',
+          'question' => 'Le traduzioni sono riconosciute dalle ambasciate?',
+          'answer' => 'Sì, le nostre traduzioni asseverate sono conformi alle richieste consolari e ministeriali.',
         ),
       ),
     ),
@@ -514,7 +505,7 @@ class ServiceCatalogService
     'icon' => 'language',
     'slug_ar' => 'language-courses',
     'slug_en' => 'language-courses',
-    'slug_it' => 'corsi-di-lingua',
+    'slug_it' => 'corsi-lingue',
     'title' => 
     array (
       'ar' => 'دورات وكورسات اللغات',
@@ -524,129 +515,124 @@ class ServiceCatalogService
     'summary' => 
     array (
       'ar' => 'برامج تعليمية متخصصة لتعلم اللغات الأجنبية من المستوى المبتدئ حتى المستويات المتقدمة، مع التركيز على تطوير مهارات التحدث والاستماع والقراءة والكتابة للاستخدام الأكاديمي والمهني.',
-      'en' => 'Comprehensive language training from beginner to advanced levels, focusing on live conversational fluency for study abroad and career excellence.',
-      'it' => 'Percorsi formativi per l apprendimento delle lingue straniere dal livello base a quello avanzato con metodo interattivo.',
+      'en' => 'Specialized educational programs for learning foreign languages from beginner to advanced levels, focusing on speaking, listening, reading, and writing.',
+      'it' => 'Programmi educativi per l apprendimento delle lingue straniere dal livello base all avanzato, con focus su conversazione, ascolto, lettura e scrittura.',
     ),
     'description' => 
     array (
-      'ar' => 'برامج تعليمية متخصصة لتعلم اللغات الأجنبية (الإيطالية، الإنجليزية، الألمانية) من المستوى المبتدئ حتى المتقدم، مع التركيز على تطوير مهارات التحدث والاستماع والقراءة والكتابة للاستخدام الأكاديمي والمهني اليومي، بإشراف محاضرين وخبراء معتمدين.',
-      'en' => 'Tailored courses in Italian, English, and German focusing on active conversation, grammar mastery, and career readiness.',
-      'it' => 'Corsi intensivi di italiano, inglese e tedesco incentrati sulla conversazione e preparazione per studio e lavoro.',
+      'ar' => 'برامج تعليمية متخصصة لتعلم اللغات الأجنبية من المستوى المبتدئ حتى المستويات المتقدمة، مع التركيز على تطوير مهارات التحدث والاستماع والقراءة والكتابة للاستخدام الأكاديمي والمهني.',
+      'en' => 'Comprehensive foreign language training from beginner to advanced levels, developing conversational and communicative competence for academic and professional environments.',
+      'it' => 'Corsi di lingua intensivi e flessibili pensati per scopi accademici e di inserimento professionale nel mercato europeo e globale.',
     ),
     'badge' => 
     array (
-      'ar' => 'من الصفر حتى الطلاقة',
-      'en' => 'Zero to Full Fluency',
-      'it' => 'Da Zero alla Padronanza',
+      'ar' => 'من الصفر للاحتراف',
+      'en' => 'Beginner to Advanced',
+      'it' => 'Da zero a fluente',
     ),
     'category_label' => 
     array (
-      'ar' => 'اللغات الأجنبية',
-      'en' => 'Foreign Languages',
-      'it' => 'Lingue Straniere',
+      'ar' => 'تعليم اللغات والترجمة',
+      'en' => 'Language Learning',
+      'it' => 'Formazione Linguistica',
     ),
     'level' => 
     array (
-      'ar' => 'إيطالي - إنجليزي - ألماني (مستويات A1 حتى C2)',
-      'en' => 'Italian, English, German (A1 to C2)',
-      'it' => 'Italiano, Inglese, Tedesco (A1 - C2)',
+      'ar' => 'من المستوى المبتدئ حتى المتقدم',
+      'en' => 'Beginner to Advanced (A1 - C2)',
+      'it' => 'Dal livello base all avanzato (A1 - C2)',
     ),
     'duration' => 
     array (
-      'ar' => 'مكثف وعادي حسب المستوى',
-      'en' => 'Flexible and intensive schedules',
-      'it' => 'Orari flessibili e intensivi',
+      'ar' => 'تختلف حسب اللغة والمستوى',
+      'en' => 'Varies by language and level',
+      'it' => 'Varia in base a lingua e livello',
     ),
     'mode' => 
     array (
-      'ar' => 'حضوري بقاعات ذكية + أونلاين',
-      'en' => 'Smart Classroom + Interactive Online',
-      'it' => 'In aula multimediale + online',
+      'ar' => 'مجموعات حضورية وأونلاين حسب البرنامج',
+      'en' => 'In-person groups & interactive online',
+      'it' => 'In aula e online interattivo',
     ),
     'target_audience' => 
     array (
       'ar' => 'الطلاب والخريجون والباحثون عن تطوير مهاراتهم اللغوية',
       'en' => 'Students, graduates, and professionals seeking language mastery',
-      'it' => 'Studenti e professionisti',
+      'it' => 'Studenti, laureati e professionisti in cerca di sviluppo linguistico',
     ),
     'salary_range' => 
     array (
-      'ar' => 'تطوير حقيقي للمحادثة 80%',
-      'en' => '80% Live Conversation Focus',
-      'it' => 'Focus conversazione attiva',
+      'ar' => 'تطوير لغوي شامل',
+      'en' => 'Full Linguistic Mastery',
+      'it' => 'Competenza linguistica completa',
     ),
     'whatsapp_message' => 
     array (
-      'ar' => 'مرحباً، أود الاستفسار عن كورسات اللغات وتحديد المستوى المتاح',
-      'en' => 'Hello, I want to inquire about language courses and placement tests',
-      'it' => 'Vorrei informazioni sui corsi di lingua e test di livello',
+      'ar' => 'مرحباً، أود الاستفسار والتسجيل في دورات وكورسات اللغات',
+      'en' => 'Hello, I want to inquire about language courses and training',
+      'it' => 'Vorrei informazioni sui corsi di formazione linguistica',
     ),
     'features' => 
     array (
       'ar' => 
       array (
-        0 => 'مستويات تعليمية متدرجة تناسب مختلف المتعلمين والقدرات',
-        1 => 'تدريب عملي تفاعلي يركز على المحادثة وكسر حاجز الخوف',
-        2 => 'متابعة وتقييم دوري مستمر لمستوى المتدرب',
-        3 => 'تحديد المستوى قبل بدء الدراسة لضمان الانضمام للمجموعة الأنسب',
+        0 => 'مستويات تعليمية تناسب مختلف المتعلمين.',
+        1 => 'تدريب عملي على المحادثة والتواصل.',
+        2 => 'متابعة وتقييم مستمر لمستوى المتدرب.',
       ),
       'en' => 
       array (
-        0 => 'Structured learning paths for all proficiency tiers',
-        1 => 'Interactive live dialogue sessions building real-world fluency',
-        2 => 'Continuous progress assessment and personal feedback',
-        3 => 'Free initial placement evaluation',
+        0 => 'Educational levels tailored to different learners.',
+        1 => 'Practical conversational and communication training.',
+        2 => 'Continuous tracking and assessment of student progress.',
       ),
       'it' => 
       array (
-        0 => 'Percorsi progressivi per ogni livello',
-        1 => 'Laboratori di conversazione interattiva',
-        2 => 'Monitoraggio continuo dei progressi',
+        0 => 'Livelli di apprendimento adatti a diversi profili.',
+        1 => 'Esercitazioni pratiche di conversazione e comunicazione.',
+        2 => 'Monitoraggio e valutazione continua del livello.',
       ),
     ),
     'requirements' => 
     array (
       'ar' => 
       array (
-        0 => 'تحديد اللغة المراد تعلمها',
-        1 => 'تحديد المستوى الحالي إن وجد عبر اختبار تحديد المستوى',
-        2 => 'الالتزام بحضور المحاضرات والتطبيقات',
+        0 => 'تحديد المستوى عبر اختبار تمهيدي مجاني',
+        1 => 'الالتزام بحضور المحاضرات والتطبيقات العملية',
       ),
       'en' => 
       array (
-        0 => 'Selecting target language',
-        1 => 'Completing initial placement assessment',
-        2 => 'Commitment to interactive sessions',
+        0 => 'Placement assessment',
+        1 => 'Commitment to active participation',
       ),
       'it' => 
       array (
-        0 => 'Scelta della lingua',
-        1 => 'Test di livello iniziale',
-        2 => 'Presenza e partecipazione attiva',
+        0 => 'Test di posizionamento iniziale',
+        1 => 'Impegno a seguire le esercitazioni',
       ),
     ),
     'steps' => 
     array (
       'ar' => 
       array (
-        0 => 'اختيار اللغة المناسبة',
-        1 => 'إجراء اختبار تحديد المستوى',
-        2 => 'اختيار المجموعة والجدول الزمني المفضل',
-        3 => 'بدء الدراسة والتقييم المستمر',
+        0 => 'تحديد اللغة والمستوى المطلوب',
+        1 => 'اختيار الموعد ونظام الحضور (حضوري/أونلاين)',
+        2 => 'بدء التدريب العملي والتفاعل مع المدربين',
+        3 => 'اجتياز التقييم واستلام شهادة إتمام المستوى',
       ),
       'en' => 
       array (
-        0 => 'Language selection',
-        1 => 'Placement test',
-        2 => 'Schedule and cohort selection',
-        3 => 'Course commencement & milestones',
+        0 => 'Select language and level',
+        1 => 'Choose schedule and attendance format',
+        2 => 'Interactive lectures and speaking practice',
+        3 => 'Level exam and certificate issuance',
       ),
       'it' => 
       array (
-        0 => 'Scelta lingua',
-        1 => 'Test di livello',
-        2 => 'Scelta orario',
-        3 => 'Inizio corso',
+        0 => 'Scelta di lingua e livello',
+        1 => 'Definizione di calendario e modalità',
+        2 => 'Frequenza lezioni e conversazione',
+        3 => 'Verifica finale e rilascio attestato',
       ),
     ),
     'faqs' => 
@@ -655,34 +641,24 @@ class ServiceCatalogService
       array (
         0 => 
         array (
-          'question' => 'هل يمكنني البدء في تعلم اللغة من الصفر؟',
-          'answer' => 'نعم بالتأكيد، نبدأ معك من الصفر التام بحروف النطق والقواعد الأساسية حتى الطلاقة الكاملة.',
-        ),
-        1 => 
-        array (
-          'question' => 'هل الكورسات أونلاين أم حضورية بالمقر؟',
-          'answer' => 'نوفر الخيارين: قاعات ذكية مجهزة بمقر الأكاديمية، أو محاضرات أونلاين تفاعلية مباشرة مع المحاضر.',
-        ),
-        2 => 
-        array (
-          'question' => 'هل يحصل المتدرب على شهادة معتمدة بعد انتهاء الكورس؟',
-          'answer' => 'نعم، يحصل المتدرب على شهادة إتمام معتمدة توثق عدد الساعات والمستوى اللغوي المحقق.',
+          'question' => 'ما هي اللغات المتاحة للدراسة؟',
+          'answer' => 'نوفر دورات في الإيطالية، الإنجليزية، الألمانية، الفرنسية، وغيرها من اللغات.',
         ),
       ),
       'en' => 
       array (
         0 => 
         array (
-          'question' => 'Can I start from total beginner level?',
-          'answer' => 'Yes, our foundation tiers start from absolute zero.',
+          'question' => 'Which languages are offered?',
+          'answer' => 'We offer Italian, English, German, French, and other world languages.',
         ),
       ),
       'it' => 
       array (
         0 => 
         array (
-          'question' => 'È possibile iniziare da zero?',
-          'answer' => 'Certamente, i corsi base partono dall alfabeto e dalle nozioni elementari.',
+          'question' => 'Quali lingue sono disponibili?',
+          'answer' => 'Offriamo corsi di italiano, inglese, tedesco, francese e altre lingue.',
         ),
       ),
     ),
@@ -691,144 +667,137 @@ class ServiceCatalogService
   array (
     'sort_order' => 3,
     'icon' => 'academic-cap',
-    'slug_ar' => 'europe-study-training',
-    'slug_en' => 'europe-study-training',
-    'slug_it' => 'orientamento-studi-europa',
+    'slug_ar' => 'study-in-europe-prep',
+    'slug_en' => 'study-in-europe-prep',
+    'slug_it' => 'orientamento-studio-europa',
     'title' => 
     array (
-      'ar' => 'التأهيل والتدريب للدراسة في أوروبا',
-      'en' => 'Study in Europe Qualification & Prep',
-      'it' => 'Orientamento e Formazione per Studiare in Europa',
+      'ar' => 'التأهيل للدراسة في أوروبا',
+      'en' => 'Study in Europe Qualification',
+      'it' => 'Orientamento agli Studi in Europa',
     ),
     'summary' => 
     array (
       'ar' => 'برنامج متكامل لمساعدة الطلاب على الاستعداد للتقديم في الجامعات الأوروبية، بداية من اختيار الدولة والجامعة والتخصص المناسب، مرورًا بالتعرف على متطلبات القبول وتجهيز ومراجعة ملف التقديم ومتابعة إجراءاته.',
-      'en' => 'Comprehensive guidance helping students prepare for European universities: destination matching, degree selection, paperwork auditing, and scholarship preparation.',
-      'it' => 'Programma completo per orientare gli studenti verso le università europee, scelta della facoltà, preparazione fascicolo e ammissione.',
+      'en' => 'Comprehensive guidance program preparing students to apply to European universities: choosing countries, universities, majors, reviewing files, and tracking applications.',
+      'it' => 'Programma completo per prepararsi alla candidatura nelle università europee: scelta di ateneo, corso, requisiti e monitoraggio pratiche.',
     ),
     'description' => 
     array (
-      'ar' => 'برنامج متكامل لمساعدة الطلاب على الاستعداد للتقديم في الجامعات الأوروبية، بداية من اختيار الدولة والجامعة والتخصص المناسب، مرورًا بالتعرف على متطلبات القبول وتجهيز ومراجعة ملف التقديم ومتابعة إجراءاته. نفتح آفاقاً حقيقية لطلاب الثانوية والدبلومات الفنية والجامعيين للدراسة في أكثر من 10 دول أوروبية.',
-      'en' => 'Full roadmap for students aiming to join European universities across 10+ nations, with guidance on requirements, applications, and scholarship criteria.',
-      'it' => 'Guida strategica per l ammissione universitaria in Europa in oltre 10 paesi, valutazione dei titoli di studio e supporto completo.',
+      'ar' => 'برنامج متكامل لمساعدة الطلاب على الاستعداد للتقديم في الجامعات الأوروبية، بداية من اختيار الدولة والجامعة والتخصص المناسب، مرورًا بالتعرف على متطلبات القبول وتجهيز ومراجعة ملف التقديم ومتابعة إجراءاته.',
+      'en' => 'A complete roadmap for higher education in Europe: university matching, prerequisite assessment, official file preparation, and admission tracking.',
+      'it' => 'Assistenza e orientamento passo dopo passo per accedere all istruzione universitaria in Europa con pieno rispetto dei requisiti legali.',
     ),
     'badge' => 
     array (
-      'ar' => 'أكثر من 10 دول أوروبية',
-      'en' => '10+ European Countries',
+      'ar' => '10+ دول أوروبية',
+      'en' => '10+ European Destinations',
       'it' => '10+ Paesi Europei',
     ),
     'category_label' => 
     array (
-      'ar' => 'الدراسة بالخارج',
-      'en' => 'Study Abroad',
-      'it' => 'Studio all Estero',
+      'ar' => 'التأهيل للدراسة والجامعات',
+      'en' => 'Study Abroad & University Prep',
+      'it' => 'Orientamento Universitario',
     ),
     'level' => 
     array (
-      'ar' => 'ثانوية عامة + دبلومات فنية + جامعيون',
-      'en' => 'High School, Technical Diplomas & Degrees',
-      'it' => 'Scuola Superiore, Istituti Tecnici e Lauree',
+      'ar' => 'طلاب الثانوية العامة والدبلومات والخريجون',
+      'en' => 'High school, technical diplomas, and graduates',
+      'it' => 'Diplomati, istituti tecnici e laureati',
     ),
     'duration' => 
     array (
-      'ar' => 'حسب مواعيد التقديم بالدولة المستهدفة',
-      'en' => 'Aligned with intake deadlines',
-      'it' => 'In base ai bandi accademici',
+      'ar' => 'حسب الدولة والجامعة والتخصص ومتطلبات التقديم',
+      'en' => 'According to country, university, and application deadlines',
+      'it' => 'In base al paese, ateneo e scadenze di bando',
     ),
     'mode' => 
     array (
       'ar' => 'جلسات استشارية أونلاين وحضورية',
-      'en' => 'Advisory sessions online and in-person',
-      'it' => 'Sessioni di orientamento online e in presenza',
+      'en' => 'Advisory sessions online and in person',
+      'it' => 'Consulenze individuali online e in presenza',
     ),
     'target_audience' => 
     array (
-      'ar' => 'طلاب الثانوية العامة والدبلومات والطلاب الراغبون في استكمال تعليمهم الجامعي بالخارج',
-      'en' => 'High school and technical diploma holders and university aspirants',
-      'it' => 'Diplomati, maturandi e laureati',
+      'ar' => 'طلاب الثانوية العامة والدبلومات والطلاب الراغبون في استكمال تعليمهم الجامعي',
+      'en' => 'High school students, diploma holders, and candidates pursuing university degrees',
+      'it' => 'Studenti di scuola superiore, istituti tecnici e candidati universitari',
     ),
     'salary_range' => 
     array (
-      'ar' => 'تأهيل أكاديمي موجه ومنظم',
-      'en' => 'Structured Academic Pathway',
-      'it' => 'Percorso accademico strutturato',
+      'ar' => 'تأهيل أكاديمي موجه',
+      'en' => 'Guided Academic Pathway',
+      'it' => 'Percorso accademico guidato',
     ),
     'whatsapp_message' => 
     array (
-      'ar' => 'مرحباً، أود استشارة حول التأهيل والتدريب للدراسة في الجامعات الأوروبية',
-      'en' => 'Hello, I want to inquire about qualification for studying in European universities',
-      'it' => 'Vorrei una consulenza per la preparazione agli studi in Europa',
+      'ar' => 'مرحباً، أود الاستفسار والتسجيل في برنامج التأهيل للدراسة في أوروبا',
+      'en' => 'Hello, I want to inquire about qualifying to study in European universities',
+      'it' => 'Vorrei informazioni sui percorsi per studiare in Europa',
     ),
     'features' => 
     array (
       'ar' => 
       array (
-        0 => 'التعرف على الجامعات والتخصصات المناسبة بمختلف الدول الأوروبية',
-        1 => 'التأهيل لمتطلبات وإجراءات التقديم وشروط القبول',
-        2 => 'تجهيز ومراجعة ملفات التقديم واستيفاء كافة الأوراق الرسمية',
-        3 => 'التعريف بالمنح والفرص التعليمية المتاحة وفق شروط كل جهة',
+        0 => 'التعرف على الجامعات والتخصصات المناسبة.',
+        1 => 'التأهيل لمتطلبات وإجراءات التقديم.',
+        2 => 'تجهيز ومراجعة الملفات ومتابعة إجراءات القبول.',
       ),
       'en' => 
       array (
-        0 => 'Exploration of universities and majors across European destinations',
-        1 => 'Readiness audit for application procedures and deadlines',
-        2 => 'Document preparation and file review eliminating errors',
-        3 => 'Guidance on available scholarship frameworks and criteria',
+        0 => 'Identifying suitable universities and academic majors.',
+        1 => 'Qualification for admission prerequisites and steps.',
+        2 => 'Preparing, auditing files, and following application workflows.',
       ),
       'it' => 
       array (
-        0 => 'Valutazione di facoltà e atenei europei adatti al profilo',
-        1 => 'Orientamento su scadenze e requisiti di ammissione',
-        2 => 'Revisione e preparazione del fascicolo di candidatura',
+        0 => 'Orientamento su università e corsi più indicati.',
+        1 => 'Preparazione ai requisiti e all iter di ammissione.',
+        2 => 'Revisione del fascicolo e monitoraggio delle pratiche.',
       ),
     ),
     'requirements' => 
     array (
       'ar' => 
       array (
-        0 => 'المؤهل الدراسي أو آخر شهادة دراسية',
-        1 => 'بيان الدرجات',
-        2 => 'جواز سفر سارٍ',
-        3 => 'تحديد التخصص والدولة المفضلة',
-        4 => 'أي مستندات إضافية تطلبها المؤسسة التعليمية',
+        0 => 'شهادة المؤهل الدراسي الحالي (ثانوية عامة / دبلوم / بكالوريوس)',
+        1 => 'بيان درجات مفصل بالمواد',
+        2 => 'جواز سفر ساري',
       ),
       'en' => 
       array (
-        0 => 'Graduation certificate or latest diploma',
-        1 => 'Academic transcripts',
-        2 => 'Valid passport',
-        3 => 'Preferred study destination & major',
+        0 => 'Educational degree or diploma transcript',
+        1 => 'Valid passport',
       ),
       'it' => 
       array (
-        0 => 'Diploma o certificato di studio',
-        1 => 'Certificato degli esami sostenuti',
-        2 => 'Passaporto valido',
+        0 => 'Titolo di studio o diploma con pagelle',
+        1 => 'Passaporto in corso di validità',
       ),
     ),
     'steps' => 
     array (
       'ar' => 
       array (
-        0 => 'تقييم الحالة والمؤهل الدراسي',
-        1 => 'تحديد الدولة والتخصص والجامعات المناسبة',
-        2 => 'تجهيز المستندات والأوراق المطلوبة',
-        3 => 'متابعة التقديم وإجراءات القبول والخطوات التالية',
+        0 => 'جلسة استشارية وتحديد الدولة والجامعة والمسار المناسب',
+        1 => 'فحص وتجهيز الأوراق والترجمة المعتمدة والتصديقات',
+        2 => 'التقديم الرسمي ومتابعة إجراءات القبول والمنح',
+        3 => 'تأهيل التأشيرة والاستعداد للسفر والاندماج',
       ),
       'en' => 
       array (
-        0 => 'Profile and credentials evaluation',
-        1 => 'Country and program matching',
-        2 => 'Paperwork assembly & certification',
-        3 => 'Application submission and tracking',
+        0 => 'Consultation session to identify country, university, and major',
+        1 => 'Document preparation, certified translation, and legalizations',
+        2 => 'Official application submission and admission tracking',
+        3 => 'Visa guidance and pre-departure orientation',
       ),
       'it' => 
       array (
-        0 => 'Valutazione del profilo',
-        1 => 'Selezione atenei e paesi',
-        2 => 'Preparazione documenti',
-        3 => 'Monitoraggio esiti',
+        0 => 'Consulenza preliminare per definire paese, ateneo e corso',
+        1 => 'Preparazione fascicolo, traduzioni giurate e legalizzazioni',
+        2 => 'Invio della candidatura e monitoraggio',
+        3 => 'Orientamento visti e preparazione alla partenza',
       ),
     ),
     'faqs' => 
@@ -837,34 +806,24 @@ class ServiceCatalogService
       array (
         0 => 
         array (
-          'question' => 'هل يحق لحملة الدبلومات الفنية التقديم؟',
-          'answer' => 'نعم، نوجه طلاب الدبلومات الفنية إلى الجامعات والمؤسسات الأوروبية التي تقبل مساراتهم التعليمية وتمنحهم فرصاً متكافئة.',
-        ),
-        1 => 
-        array (
-          'question' => 'ما هي أبرز الدول الأوروبية المتاحة؟',
-          'answer' => 'نوفر التوجيه لأكثر من 10 دول أوروبية مثل إيطاليا، ألمانيا، فرنسا، إسبانيا، المجر، بولندا وغيرها.',
-        ),
-        2 => 
-        array (
-          'question' => 'هل تختلف متطلبات وشروط التقديم من جامعة لأخرى؟',
-          'answer' => 'نعم بكل تأكيد، ولذلك نقوم بمراجعة متطلبات كل جامعة بدقة مع مستشارك الأكاديمي لضمان استيفاء كافة الشروط.',
+          'question' => 'هل يمكن لحملة الدبلومات الفنية التقديم؟',
+          'answer' => 'نعم، نوفر مسارات مخصصة لحملة الدبلومات الفنية والثانوية العامة بالجامعات الأوروبية.',
         ),
       ),
       'en' => 
       array (
         0 => 
         array (
-          'question' => 'Can technical diploma graduates apply?',
-          'answer' => 'Yes, we guide technical diploma holders to matching European institutions.',
+          'question' => 'Can technical diploma holders apply?',
+          'answer' => 'Yes, we have dedicated pathways for technical diploma holders in European universities.',
         ),
       ),
       'it' => 
       array (
         0 => 
         array (
-          'question' => 'I diplomati di istituti tecnici possono partecipare?',
-          'answer' => 'Sì, forniamo orientamento specifico verso le università europee compatibili.',
+          'question' => 'I diplomati di istituti tecnici possono candidarsi?',
+          'answer' => 'Sì, offriamo percorsi specifici per diplomati di istituti tecnici e scuole superiori.',
         ),
       ),
     ),
@@ -873,9 +832,9 @@ class ServiceCatalogService
   array (
     'sort_order' => 4,
     'icon' => 'presentation',
-    'slug_ar' => 'call-center-qualification',
-    'slug_en' => 'call-center-qualification',
-    'slug_it' => 'formazione-call-center',
+    'slug_ar' => 'call-center-career',
+    'slug_en' => 'call-center-career',
+    'slug_it' => 'carriera-call-center',
     'title' => 
     array (
       'ar' => 'التأهيل للعمل في الكول سنتر',
@@ -885,128 +844,124 @@ class ServiceCatalogService
     'summary' => 
     array (
       'ar' => 'برنامج تدريبي عملي لإعداد وتأهيل المتدربين للعمل في مجال خدمة العملاء ومراكز الاتصال، من خلال تطوير مهارات التواصل والتعامل مع العملاء وحل المشكلات والتدريب على محاكاة بيئة العمل الحقيقية.',
-      'en' => 'Practical training program qualifying candidates for customer care and multinational call centers through live call simulations and HR interview prep.',
-      'it' => 'Percorso pratico di qualificazione per lavorare nei call center e customer service internazionali con simulazioni reali.',
+      'en' => 'Practical training program qualifying participants for customer service and call center careers by developing communication skills, problem solving, and workplace simulations.',
+      'it' => 'Percorso pratico per preparare i partecipanti al lavoro nel customer service e contact center internazionali con simulazioni reali.',
     ),
     'description' => 
     array (
-      'ar' => 'برنامج تدريبي عملي لإعداد وتأهيل المتدربين للعمل في مجال خدمة العملاء ومراكز الاتصال، من خلال تطوير مهارات التواصل والتعامل مع العملاء وحل المشكلات والتدريب على محاكاة بيئة العمل الحقيقية على الشاشات التفاعلية.',
-      'en' => 'Hands-on training preparing job seekers for international call centers with real-life scenario handling, communication finesse, and interview rehearsals.',
-      'it' => 'Addestramento pratico per superare le selezioni e lavorare con successo nei call center internazionali.',
+      'ar' => 'برنامج تدريبي عملي لإعداد وتأهيل المتدربين للعمل في مجال خدمة العملاء ومراكز الاتصال، من خلال تطوير مهارات التواصل والتعامل مع العملاء وحل المشكلات والتدريب على محاكاة بيئة العمل الحقيقية.',
+      'en' => 'Hands-on practical training designed to qualify candidates for multinational call centers with intensive voice and situational customer service training.',
+      'it' => 'Formazione professionale e simulazioni pratiche per superare con successo i colloqui nei principali contact center multinazionali.',
     ),
     'badge' => 
     array (
-      'ar' => 'تأهيل لسوق العمل فوراً',
-      'en' => 'Direct Career Readiness',
-      'it' => 'Inserimento nel Lavoro',
+      'ar' => 'الأكثر طلباً للتوظيف',
+      'en' => 'High Employability',
+      'it' => 'Alta Richiesta di Mercato',
     ),
     'category_label' => 
     array (
-      'ar' => 'التدريب المهني',
-      'en' => 'Vocational Training',
-      'it' => 'Formazione Professionale',
+      'ar' => 'تأهيل لسوق العمل والكول سنتر',
+      'en' => 'Career & Customer Service',
+      'it' => 'Formazione Professionale & Call Center',
     ),
     'level' => 
     array (
-      'ar' => 'جميع المؤهلات العليا والمتوسطة',
-      'en' => 'All Education Levels',
-      'it' => 'Tutti i titoli di studio',
+      'ar' => 'تأهيل وظيفي مباشر لكبرى الشركات',
+      'en' => 'Direct career entry level',
+      'it' => 'Accesso professionale diretto',
     ),
     'duration' => 
     array (
-      'ar' => 'مكثف (3 - 4 أسابيع)',
-      'en' => 'Intensive (3-4 weeks)',
-      'it' => 'Intensivo (3-4 settimane)',
+      'ar' => 'حسب البرنامج التدريبي',
+      'en' => 'According to selected training track',
+      'it' => 'In base al percorso formativo scelto',
     ),
     'mode' => 
     array (
-      'ar' => 'تدريب حضوري وعملي تفاعلي',
-      'en' => 'In-person hands-on workshop',
-      'it' => 'In presenza con simulazioni',
+      'ar' => 'تدريب حضوري وعملي',
+      'en' => 'In-person practical training',
+      'it' => 'In presenza con esercitazioni pratiche',
     ),
     'target_audience' => 
     array (
-      'ar' => 'الباحثون عن فرص عمل في مجال خدمة العملاء والكول سنتر الدولي',
-      'en' => 'Job seekers targeting international call centers and customer support',
-      'it' => 'Candidati per il settore customer service',
+      'ar' => 'الباحثون عن فرص عمل في مجال خدمة العملاء والكول سنتر',
+      'en' => 'Job seekers targeting international call center and customer experience positions',
+      'it' => 'Chi cerca impiego nel customer service e call center internazionali',
     ),
     'salary_range' => 
     array (
-      'ar' => 'رواتب مجزية بالشركات الدولية',
-      'en' => 'Competitive Multinational Salaries',
-      'it' => 'Retribuzioni competitive',
+      'ar' => 'رواتب مجزية 15,000 - 30,000+ ج.م',
+      'en' => '15k - 30k+ EGP monthly',
+      'it' => 'Stipendi competitivi',
     ),
     'whatsapp_message' => 
     array (
-      'ar' => 'مرحباً، أود الاستفسار عن كورس التأهيل للعمل في الكول سنتر',
-      'en' => 'Hello, I want to inquire about call center training and employment prep',
-      'it' => 'Vorrei informazioni sul corso di formazione per call center',
+      'ar' => 'مرحباً، أود الاستفسار والتسجيل في برنامج التأهيل للعمل في الكول سنتر',
+      'en' => 'Hello, I want to inquire about professional call center training',
+      'it' => 'Vorrei informazioni sulla qualificazione per call center',
     ),
     'features' => 
     array (
       'ar' => 
       array (
-        0 => 'تطوير مهارات التواصل وخدمة العملاء والذكاء العاطفي المهني',
-        1 => 'التدريب على المحادثات والمواقف العملية وأنظمة التذاكر والمكالمات',
-        2 => 'محاكاة مقابلات العمل الحقيقية مع مديري الموارد البشرية والعمليات',
-        3 => 'إتقان نبرة الصوت والمصطلحات الإنجليزية والأجنبية المستخدمة مهنياً',
+        0 => 'تطوير مهارات التواصل وخدمة العملاء.',
+        1 => 'التدريب على المحادثات والمواقف العملية.',
+        2 => 'محاكاة مقابلات العمل والتعامل مع العملاء.',
       ),
       'en' => 
       array (
-        0 => 'Professional customer service communications and conflict resolution',
-        1 => 'Live call, ticketing, and troubleshooting simulations',
-        2 => 'Mock HR and Operations interviews replicating multinational hiring',
-        3 => 'Phonetic and accent refinement for foreign accounts',
+        0 => 'Developing communication and customer service skills.',
+        1 => 'Live conversation drills and situational conflict handling.',
+        2 => 'Job interview simulations and customer handling scenarios.',
       ),
       'it' => 
       array (
-        0 => 'Tecniche di comunicazione professionale e gestione clienti',
-        1 => 'Simulazioni di chiamate e scenari lavorativi reali',
-        2 => 'Preparazione mirata ai colloqui di selezione',
+        0 => 'Sviluppo di capacità comunicative e customer care.',
+        1 => 'Esercitazioni pratiche su chiamate e gestione situazioni complesse.',
+        2 => 'Simulazioni di colloquio e scenari lavorativi reali.',
       ),
     ),
     'requirements' => 
     array (
       'ar' => 
       array (
-        0 => 'مستوى مناسب من اللغة حسب المسار المختار',
-        1 => 'الالتزام بحضور التدريب العملي',
-        2 => 'الرغبة في العمل بمجال خدمة العملاء',
+        0 => 'مستوى تمهيدي في إحدى اللغات الأجنبية (إيطالي أو إنجليزي أو ألماني)',
+        1 => 'الرغبة في التدريب العملي واكتساب مهارات التوظيف',
       ),
       'en' => 
       array (
-        0 => 'Adequate language level for target account',
-        1 => 'Attendance commitment',
-        2 => 'Aspiration for customer service career',
+        0 => 'Basic command of a target language (Italian, English, or German)',
+        1 => 'Commitment to practical speaking exercises',
       ),
       'it' => 
       array (
-        0 => 'Conoscenza linguistica idonea',
-        1 => 'Presenza al corso',
+        0 => 'Conoscenza di base di una lingua straniera (italiano, inglese o tedesco)',
+        1 => 'Motivazione e disponibilità a sessioni simulate',
       ),
     ),
     'steps' => 
     array (
       'ar' => 
       array (
-        0 => 'تقييم المستوى اللغوي والتواصلي',
-        1 => 'تحديد المسار واللغة التدريبية',
-        2 => 'حضور التدريب العملي والمحاكاة التفاعلية',
-        3 => 'التدريب على مقابلات العمل والاستعداد للتوظيف',
+        0 => 'تقييم اللغة والنطق والمقابلة المبدئية',
+        1 => 'ورش العمل الصوتية والتدريب على برامج الكول سنتر',
+        2 => 'محاكاة المقابلات الشخصية لكبرى الشركات (Vodafone UK, Concentrix, TP)',
+        3 => 'الترشيح للمقابلات الوظيفية المباشرة',
       ),
       'en' => 
       array (
-        0 => 'Language & soft skills audit',
-        1 => 'Account track assignment',
-        2 => 'Interactive simulation sessions',
-        3 => 'Mock interviews & hiring preparation',
+        0 => 'Language and pronunciation assessment',
+        1 => 'Voice workshops and CRM handling practice',
+        2 => 'Mock interviews with multinational standards',
+        3 => 'Direct referral to hiring interviews',
       ),
       'it' => 
       array (
-        0 => 'Valutazione iniziale',
-        1 => 'Assegnazione percorso',
-        2 => 'Simulazioni pratiche',
-        3 => 'Preparazione ai colloqui',
+        0 => 'Valutazione linguistica e fonetica iniziale',
+        1 => 'Workshop pratici su software e gestione chiamate',
+        2 => 'Simulazioni di colloquio per multinazionali',
+        3 => 'Presentazione per colloqui lavorativi diretti',
       ),
     ),
     'faqs' => 
@@ -1015,34 +970,24 @@ class ServiceCatalogService
       array (
         0 => 
         array (
-          'question' => 'هل يشترط وجود خبرة سابقة في الكول سنتر؟',
-          'answer' => 'لا يشترط أي خبرة سابقة؛ فالبرنامج مصمم لتأسيسك وتأهيلك عملياً من البداية.',
-        ),
-        1 => 
-        array (
-          'question' => 'ما اللغات المتاحة للتدريب؟',
-          'answer' => 'نوفر تدريباً لحسابات اللغة الإنجليزية، الألمانية، الإيطالية، والفرنسية.',
-        ),
-        2 => 
-        array (
-          'question' => 'هل يتم تدريبنا على أسئلة المقابلات الشخصية؟',
-          'answer' => 'نعم، نخصص ورشاً مكثفة لمحاكاة مقابلات الـ HR والـ Operations لاجتيازها بثقة تامة.',
+          'question' => 'هل يساعد البرنامج في الحصول على وظيفة؟',
+          'answer' => 'نعم، يشمل البرنامج محاكاة حقيقية لمقابلات كبرى الشركات وتأهيلك المباشر لاجتيازها.',
         ),
       ),
       'en' => 
       array (
         0 => 
         array (
-          'question' => 'Is prior call center experience required?',
-          'answer' => 'No experience is required; we build your capabilities from scratch.',
+          'question' => 'Does this program assist in job placement?',
+          'answer' => 'Yes, it provides realistic interview simulations tailored to multinational hiring benchmarks.',
         ),
       ),
       'it' => 
       array (
         0 => 
         array (
-          'question' => 'Serve esperienza pregressa?',
-          'answer' => 'No, il corso parte dalle basi pratiche.',
+          'question' => 'Il corso favorisce l assunzione?',
+          'answer' => 'Sì, include simulazioni mirate sui processi di selezione delle principali aziende.',
         ),
       ),
     ),
@@ -1050,10 +995,10 @@ class ServiceCatalogService
   4 => 
   array (
     'sort_order' => 5,
-    'icon' => 'edit',
-    'slug_ar' => 'professional-translation-training',
-    'slug_en' => 'professional-translation-training',
-    'slug_it' => 'formazione-traduzione-professionale',
+    'icon' => 'translation',
+    'slug_ar' => 'professional-translation',
+    'slug_en' => 'professional-translation',
+    'slug_it' => 'professione-traduttore',
     'title' => 
     array (
       'ar' => 'التأهيل لاحتراف الترجمة',
@@ -1063,129 +1008,124 @@ class ServiceCatalogService
     'summary' => 
     array (
       'ar' => 'برنامج متخصص لتأهيل المهتمين بمجال الترجمة وتحويل مهاراتهم اللغوية إلى مهارات ترجمة احترافية، من خلال التدريب على قواعد الترجمة وأساليب الصياغة والتعامل مع النصوص المختلفة.',
-      'en' => 'Specialized career training transforming language knowledge into high-demand professional translation and editing skills.',
-      'it' => 'Corso professionale per trasformare le competenze linguistiche in abilità concrete di traduzione e revisione.',
+      'en' => 'Specialized program transforming linguistic talent into professional translation skills via translation principles, syntax conventions, and textual handling.',
+      'it' => 'Programma specialistico per trasformare le competenze linguistiche in professionalità di traduzione con metodi e strumenti del settore.',
     ),
     'description' => 
     array (
-      'ar' => 'برنامج متخصص لتأهيل المهتمين بمجال الترجمة وتحويل مهاراتهم اللغوية إلى مهارات ترجمة احترافية، من خلال التدريب على قواعد الترجمة وأساليب الصياغة والتعامل مع النصوص القانونية، الأكاديمية، والتجارية المختلفة.',
-      'en' => 'Master translation theory, CAT tools, legal and business document translation, and terminology management.',
-      'it' => 'Formazione specialistica per operare come traduttore professionista su testi giuridici, tecnici e commerciali.',
+      'ar' => 'برنامج متخصص لتأهيل المهتمين بمجال الترجمة وتحويل مهاراتهم اللغوية إلى مهارات ترجمة احترافية، من خلال التدريب على قواعد الترجمة وأساليب الصياغة والتعامل مع النصوص المختلفة.',
+      'en' => 'Comprehensive vocational track preparing translators for freelance platforms, agencies, and international enterprises with practical translation workshops.',
+      'it' => 'Formazione su terminologia specialistica, revisione testi e standard di traduzione per il mercato libero professionale e aziendale.',
     ),
     'badge' => 
     array (
-      'ar' => 'احتراف مهني معتمد',
-      'en' => 'Professional Career Track',
-      'it' => 'Percorso Professionale',
+      'ar' => 'تأهيل لسوق العمل الحر',
+      'en' => 'Freelance & Agency Ready',
+      'it' => 'Pronto per il mercato freelance',
     ),
     'category_label' => 
     array (
-      'ar' => 'الترجمة الاحترافية',
-      'en' => 'Professional Translation',
+      'ar' => 'التدريب المهني المتخصص',
+      'en' => 'Professional Translation Career',
       'it' => 'Traduzione Professionale',
     ),
     'level' => 
     array (
-      'ar' => 'خريجو وطلاب كليات اللغات والترجمة والمهتمون',
-      'en' => 'Language & Translation Graduates & Students',
-      'it' => 'Studenti e laureati in lingue e traduzione',
+      'ar' => 'تأهيل احترافي وتطبيقي',
+      'en' => 'Intermediate to professional',
+      'it' => 'Intermedio e professionale',
     ),
     'duration' => 
     array (
       'ar' => 'حسب المستوى والمسار التدريبي',
-      'en' => 'Tailored by training module',
-      'it' => 'In base al modulo formativo',
+      'en' => 'According to track and level',
+      'it' => 'In base al livello e al percorso',
     ),
     'mode' => 
     array (
       'ar' => 'حضوري أو أونلاين حسب البرنامج',
-      'en' => 'In-person or Online Interactive',
-      'it' => 'In presenza oppure online',
+      'en' => 'In-person or online per track',
+      'it' => 'In presenza o online',
     ),
     'target_audience' => 
     array (
-      'ar' => 'خريجو اللغات والترجمة والمهتمون بالعمل في مجال الترجمة الحرة والمؤسسية',
-      'en' => 'Language graduates and aspiring translators seeking freelance or agency careers',
-      'it' => 'Aspiranti traduttori e laureati',
+      'ar' => 'خريجو اللغات والترجمة والمهتمون بالعمل في مجال الترجمة',
+      'en' => 'Language & translation graduates and aspiring translators',
+      'it' => 'Laureati in lingue, traduttori e appassionati del settore',
     ),
     'salary_range' => 
     array (
-      'ar' => 'مهارات مطلوبة بالعمل الحر والشركات',
-      'en' => 'High Freelance & Agency Demand',
-      'it' => 'Sbocchi freelance e aziendali',
+      'ar' => 'عائد مالي بالعمل الحر والشركات',
+      'en' => 'Freelance & Agency Income',
+      'it' => 'Opportunità freelance retribuite',
     ),
     'whatsapp_message' => 
     array (
-      'ar' => 'مرحباً، أود الاستفسار عن كورس التأهيل لاحتراف الترجمة',
-      'en' => 'Hello, I want to inquire about professional translation qualification training',
-      'it' => 'Vorrei informazioni sul corso di formazione alla traduzione professionale',
+      'ar' => 'مرحباً، أود الاستفسار والتسجيل في برنامج التأهيل لاحتراف الترجمة',
+      'en' => 'Hello, I want to inquire about professional translation career training',
+      'it' => 'Vorrei informazioni sulla qualificazione per traduttori',
     ),
     'features' => 
     array (
       'ar' => 
       array (
-        0 => 'التدريب على أساسيات وتقنيات ومناهج الترجمة الاحترافية',
-        1 => 'تطبيق عملي على أنواع مختلفة من النصوص (قانونية، طبية، أكاديمية، عامة)',
-        2 => 'تطوير مهارات المراجعة والتحرير اللغوي وإدارة قواميس المصطلحات',
-        3 => 'التدريب على أدوات الترجمة الحديثة والمشروعات التطبيقية الحقيقية',
+        0 => 'التدريب على أساسيات وتقنيات الترجمة.',
+        1 => 'تطبيق عملي على أنواع مختلفة من النصوص.',
+        2 => 'تطوير مهارات المراجعة والتحرير اللغوي.',
       ),
       'en' => 
       array (
-        0 => 'In-depth training on translation fundamentals and methodology',
-        1 => 'Practical workshops covering legal, technical, and academic texts',
-        2 => 'Editorial proofreading, formatting, and terminology consistency',
-        3 => 'Hands-on experience with real client project samples',
+        0 => 'Training on translation fundamentals and techniques.',
+        1 => 'Practical application across diverse document types.',
+        2 => 'Developing proofreading and linguistic editing skills.',
       ),
       'it' => 
       array (
-        0 => 'Fondamenti e metodologie di traduzione professionale',
-        1 => 'Esercitazioni pratiche su testi giuridici, tecnici e commerciali',
-        2 => 'Revisione redazionale e gestione glossari',
+        0 => 'Formazione su tecniche e fondamenti di traduzione.',
+        1 => 'Applicazione pratica su diverse tipologie testuali.',
+        2 => 'Sviluppo di competenze di revisione ed editing linguistico.',
       ),
     ),
     'requirements' => 
     array (
       'ar' => 
       array (
-        0 => 'إجادة مناسبة للغة المراد التخصص فيها',
-        1 => 'اجتياز تقييم المستوى عند الحاجة',
-        2 => 'الالتزام بالتدريبات والتطبيقات العملية',
+        0 => 'إجادة جيدة للغة المصدر واللغة الهدف (B2 فأعلى)',
+        1 => 'الاهتمام بالدقة اللغوية والصياغة القانونية والأكاديمية',
       ),
       'en' => 
       array (
-        0 => 'Good command of source and target languages',
-        1 => 'Initial evaluation test',
-        2 => 'Dedication to practical assignments',
+        0 => 'B2 or higher proficiency in source and target languages',
+        1 => 'Dedication to linguistic and legal precision',
       ),
       'it' => 
       array (
-        0 => 'Buona padronanza linguistica',
-        1 => 'Test di ingresso',
-        2 => 'Impegno pratico',
+        0 => 'Competenza linguistica B2 o superiore',
+        1 => 'Attenzione alla precisione terminologica e sintattica',
       ),
     ),
     'steps' => 
     array (
       'ar' => 
       array (
-        0 => 'تقييم المستوى اللغوي الأولي',
-        1 => 'تحديد المسار التخصصي للترجمة',
-        2 => 'دراسة المهارات الأساسية والمتخصصة',
-        3 => 'تنفيذ تدريبات ومشروعات عملية وتقييم نهائي',
+        0 => 'تقييم المستوى اللغوي وتحديد المسار التخصصي',
+        1 => 'ورش عمل تطبيقية على النصوص القانونية والأكاديمية والتجارية',
+        2 => 'التدريب على أدوات الترجمة والتدقيق ومصادر المصطلحات',
+        3 => 'تسليم مشاريع تخرج وتقييم نهائي معتمد',
       ),
       'en' => 
       array (
-        0 => 'Placement assessment',
-        1 => 'Specialization selection',
-        2 => 'Methodology & workshop sessions',
-        3 => 'Live project execution & certification',
+        0 => 'Language proficiency check and track selection',
+        1 => 'Workshops on legal, academic, and business texts',
+        2 => 'Training on CAT tools and terminology databases',
+        3 => 'Graduation project review and certification',
       ),
       'it' => 
       array (
-        0 => 'Valutazione iniziale',
-        1 => 'Scelta specializzazione',
-        2 => 'Lezioni ed esercitazioni',
-        3 => 'Progetto finale',
+        0 => 'Valutazione del livello e scelta del percorso',
+        1 => 'Esercitazioni pratiche su testi giuridici e commerciali',
+        2 => 'Utilizzo di strumenti CAT e banche dati terminologiche',
+        3 => 'Progetto finale e rilascio attestato',
       ),
     ),
     'faqs' => 
@@ -1194,29 +1134,24 @@ class ServiceCatalogService
       array (
         0 => 
         array (
-          'question' => 'هل يؤهلني البرنامج للعمل كمترجم حر أو بشركات الترجمة؟',
-          'answer' => 'نعم، يركز البرنامج على التطبيق العملي وبناء معرض أعمال حقيقي يؤهلك للعمل المباشر.',
-        ),
-        1 => 
-        array (
-          'question' => 'ما أنواع النصوص التي يتم التدريب عليها؟',
-          'answer' => 'ندربك على الوثائق القانونية، الشهادات الرسمية، النصوص الأكاديمية، والترجمات التجارية.',
+          'question' => 'هل يشمل التدريب العمل على برامج الترجمة؟',
+          'answer' => 'نعم، يشمل أدوات المساعدة في الترجمة والتدقيق وإدارة المصطلحات.',
         ),
       ),
       'en' => 
       array (
         0 => 
         array (
-          'question' => 'Does this program prepare me for freelance translation?',
-          'answer' => 'Yes, practical projects equip you for both freelance and corporate translation roles.',
+          'question' => 'Does training cover CAT tools?',
+          'answer' => 'Yes, it includes hands-on practice with translation memory and terminology management tools.',
         ),
       ),
       'it' => 
       array (
         0 => 
         array (
-          'question' => 'Il corso abilita alla professione di traduttore?',
-          'answer' => 'Fornisce tutte le competenze pratiche per operare come freelance o in agenzia.',
+          'question' => 'Si utilizzano strumenti informatici per traduttori?',
+          'answer' => 'Sì, è previsto l uso di memorie di traduzione e banche terminologiche.',
         ),
       ),
     ),
@@ -1224,142 +1159,137 @@ class ServiceCatalogService
   5 => 
   array (
     'sort_order' => 6,
-    'icon' => 'book-open',
-    'slug_ar' => 'academic-exams-preparation',
-    'slug_en' => 'academic-exams-preparation',
-    'slug_it' => 'preparazione-esami-ammissione',
+    'icon' => 'edit',
+    'slug_ar' => 'academic-exams-prep',
+    'slug_en' => 'academic-exams-prep',
+    'slug_it' => 'esami-ammissione-universitaria',
     'title' => 
     array (
-      'ar' => 'التأهيل لاجتياز الاختبارات الدولية للدراسة',
-      'en' => 'International Academic Exam Preparation',
-      'it' => 'Preparazione Esami di Ammissione Internazionali',
+      'ar' => 'التأهيل لاختبارات القبول الجامعي',
+      'en' => 'University Admission Exams Prep',
+      'it' => 'Preparazione Esami di Ammissione',
     ),
     'summary' => 
     array (
       'ar' => 'برامج تدريبية متخصصة لإعداد الطلاب لاجتياز اختبارات القبول والتقييم المطلوبة من بعض الجامعات، من خلال شرح طبيعة الاختبارات والتدريب على نماذج الأسئلة وإدارة الوقت ورفع مستوى الاستعداد.',
-      'en' => 'Targeted training helping students master university admission and entrance exams through simulated tests, time management, and problem solving.',
-      'it' => 'Corsi mirati per superare i test di ammissione universitaria internazionali con simulazioni ed esercitazioni guidate.',
+      'en' => 'Targeted prep courses for university entrance and assessment exams with question analysis, test strategy, and timing management.',
+      'it' => 'Corsi mirati per superare i test di ingresso universitari internazionali con simulazioni e strategie di gestione del tempo.',
     ),
     'description' => 
     array (
-      'ar' => 'برامج تدريبية متخصصة لإعداد الطلاب لاجتياز اختبارات القبول والتقييم المطلوبة من بعض الجامعات، من خلال شرح طبيعة الاختبارات والتدريب على نماذج الأسئلة وإدارة الوقت ورفع مستوى الاستعداد والدرجات.',
-      'en' => 'Preparation for international college entrance tests with comprehensive problem-solving techniques and live test simulations.',
-      'it' => 'Preparazione metodologica ai test di ingresso e di valutazione accademica richiesti dagli atenei internazionali.',
+      'ar' => 'برامج تدريبية متخصصة لإعداد الطلاب لاجتياز اختبارات القبول والتقييم المطلوبة من بعض الجامعات، من خلال شرح طبيعة الاختبارات والتدريب على نماذج الأسئلة وإدارة الوقت ورفع مستوى الاستعداد.',
+      'en' => 'Focused preparation for international university entrance assessments (including TOLC, SAT, IMAT, and tailored university entrance exams) with mock tests.',
+      'it' => 'Preparazione specialistica per i test di ammissione delle università europee con simulazioni realistiche ed esercizi pratici.',
     ),
     'badge' => 
     array (
-      'ar' => 'جاهزية تامة للاختبار',
-      'en' => 'High-Score Exam Readiness',
-      'it' => 'Preparazione Mirata',
+      'ar' => 'استعداد عالي للقبول',
+      'en' => 'Exam Readiness',
+      'it' => 'Alta Preparazione',
     ),
     'category_label' => 
     array (
-      'ar' => 'الاختبارات الأكاديمية',
+      'ar' => 'الاختبارات الدولية والقبول',
       'en' => 'Academic Entrance Tests',
-      'it' => 'Test Accademici',
+      'it' => 'Test di Ammissione Universitaria',
     ),
     'level' => 
     array (
-      'ar' => 'طلاب الثانوية والجامعات المتقدمون للاختبارات الدولية',
-      'en' => 'High School & University Applicants',
-      'it' => 'Maturandi e candidati universitari',
+      'ar' => 'تجهيز لاختبارات القبول والتقييم',
+      'en' => 'Entrance exam readiness',
+      'it' => 'Preparazione test d ingresso',
     ),
     'duration' => 
     array (
-      'ar' => 'حسب نوع الاختبار وتاريخ انعقاده',
-      'en' => 'Structured to test intake date',
-      'it' => 'In funzione della data d esame',
+      'ar' => 'حسب نوع الاختبار ومستوى الطالب',
+      'en' => 'According to test type and student level',
+      'it' => 'In base al tipo di test e livello iniziale',
     ),
     'mode' => 
     array (
-      'ar' => 'مجموعات تدريبية ومتابعة فردية',
-      'en' => 'Group classes & one-on-one coaching',
+      'ar' => 'مجموعات تدريبية ومتابعة فردية حسب البرنامج',
+      'en' => 'Training groups and 1-on-1 coaching',
       'it' => 'Gruppi di studio e tutoraggio individuale',
     ),
     'target_audience' => 
     array (
-      'ar' => 'الطلاب الراغبون في التقديم للجامعات التي تشترط اختبارات قبول وتقييم',
-      'en' => 'Students applying to institutions mandating standardized entrance exams',
-      'it' => 'Studenti che affrontano prove di ingresso',
+      'ar' => 'الطلاب الراغبون في التقديم للجامعات التي تشترط اختبارات قبول',
+      'en' => 'Students applying to universities that mandate entrance tests',
+      'it' => 'Studenti che intendono iscriversi a corsi con test di ammissione',
     ),
     'salary_range' => 
     array (
-      'ar' => 'رفع فرص القبول الأكاديمي',
-      'en' => 'Maximizing Admission Probabilities',
-      'it' => 'Massimizzazione del punteggio',
+      'ar' => 'اجتياز مؤكد للاختبار',
+      'en' => 'High Success Rate',
+      'it' => 'Alto tasso di superamento',
     ),
     'whatsapp_message' => 
     array (
-      'ar' => 'مرحباً، أود الاستفسار عن برامج التأهيل لاختبارات القبول الجامعي الدولية',
-      'en' => 'Hello, I want to inquire about international academic exam preparation',
+      'ar' => 'مرحباً، أود الاستفسار والتسجيل في برنامج التأهيل لاختبارات القبول الجامعي',
+      'en' => 'Hello, I want to inquire about university entrance exam preparation',
       'it' => 'Vorrei informazioni sulla preparazione agli esami di ammissione',
     ),
     'features' => 
     array (
       'ar' => 
       array (
-        0 => 'التعرف على نظام الاختبار وأقسامه واستراتيجيات الحل السريع',
-        1 => 'التدريب على نماذج وأسئلة امتحانات سابقة مطابقة للمعايير',
-        2 => 'تقييم المستوى الدوري وتحديد نقاط التحسين لكل طالب',
-        3 => 'خطة تدريب واستعداد مخصصة تناسب موعد الاختبار المستهدف',
+        0 => 'التعرف على نظام الاختبار وأقسامه.',
+        1 => 'التدريب على نماذج وأسئلة مشابهة.',
+        2 => 'تقييم المستوى وتحديد نقاط التحسين.',
       ),
       'en' => 
       array (
-        0 => 'Detailed breakdown of exam structure and scoring rubrics',
-        1 => 'Extensive practice with past papers and simulated question banks',
-        2 => 'Periodic diagnostic testing and personalized performance review',
-        3 => 'Tailored study schedule maximizing time management',
+        0 => 'In-depth breakdown of exam sections and format.',
+        1 => 'Practicing with authentic simulated exam questions.',
+        2 => 'Continuous diagnostics and identifying areas for improvement.',
       ),
       'it' => 
       array (
-        0 => 'Analisi della struttura del test e strategie di risposta',
-        1 => 'Esercitazioni su prove d esame ufficiali precedenti',
-        2 => 'Valutazioni diagnostiche periodiche',
+        0 => 'Analisi dettagliata della struttura del test.',
+        1 => 'Esercitazioni su prove d esame ufficiali e simulate.',
+        2 => 'Valutazione continua e potenziamento dei punti deboli.',
       ),
     ),
     'requirements' => 
     array (
       'ar' => 
       array (
-        0 => 'تحديد الجامعة أو التخصص المستهدف',
-        1 => 'معرفة الاختبار المطلوب إن وجد',
-        2 => 'الالتزام بالتدريبات والاختبارات التجريبية',
+        0 => 'تحديد الجامعة والتخصص المستهدف',
+        1 => 'معرفة متطلبات ونوع الاختبار المطلوب',
       ),
       'en' => 
       array (
-        0 => 'Target institution & major specification',
-        1 => 'Identifying required exam name',
-        2 => 'Commitment to mock tests',
+        0 => 'Specifying target university and major',
+        1 => 'Identifying required entrance exam format',
       ),
       'it' => 
       array (
-        0 => 'Ateneo di interesse',
-        1 => 'Nome della prova richiesta',
-        2 => 'Partecipazione alle simulazioni',
+        0 => 'Ateneo e corso di laurea prescelto',
+        1 => 'Tipologia di test richiesta dal bando',
       ),
     ),
     'steps' => 
     array (
       'ar' => 
       array (
-        0 => 'تحديد الاختبار والدرجة المطلوبة',
-        1 => 'إجراء اختبار تقييمي أولي',
-        2 => 'وضع خطة تدريب مكثفة',
-        3 => 'التدريب على النماذج والمحاكاة قبل موعد الاختبار',
+        0 => 'تحليل هيكل الاختبار المطلوب ونقاط الدرجات',
+        1 => 'شرح استراتيجيات الحل السريع والتعامل مع الأسئلة',
+        2 => 'اختبارات تجريبية دورية لقياس التقدم وضبط الوقت',
+        3 => 'مراجعة شاملة ليلة الامتحان لضمان أعلى درجات الاستعداد',
       ),
       'en' => 
       array (
-        0 => 'Target score identification',
-        1 => 'Diagnostic test',
-        2 => 'Intensive coaching plan',
-        3 => 'Mock testing & final review',
+        0 => 'Breakdown of exam scoring and section weights',
+        1 => 'Speed-solving strategies and time management',
+        2 => 'Timed mock exams tracking progress',
+        3 => 'Final review to ensure peak readiness',
       ),
       'it' => 
       array (
-        0 => 'Individuazione prova',
-        1 => 'Test diagnostico',
-        2 => 'Piano di studio',
-        3 => 'Simulazione finale',
+        0 => 'Analisi del sistema di punteggio del test',
+        1 => 'Strategie di risoluzione rapida e gestione del tempo',
+        2 => 'Simulazioni a tempo periodiche',
+        3 => 'Revisione finale e consigli strategici',
       ),
     ),
     'faqs' => 
@@ -1368,29 +1298,24 @@ class ServiceCatalogService
       array (
         0 => 
         array (
-          'question' => 'هل يشمل البرنامج اختبارات تجريبية تحاكي الوقت الفعلي؟',
-          'answer' => 'نعم، ننفذ اختبارات تجريبية مطابقة في التوقيت وشروط الامتحان لكسر التوتر.',
-        ),
-        1 => 
-        array (
-          'question' => 'كم تستغرق فترة الاستعداد للاختبار؟',
-          'answer' => 'تتراوح بين 4 إلى 8 أسابيع حسب المستوى المبدئي للطالب ونوع الاختبار.',
+          'question' => 'ما هي الاختبارات التي يتم التدريب عليها؟',
+          'answer' => 'نوفر تدريباً لاختبارات القبول بالجامعات الأوروبية مثل TOLC، SAT، IMAT، وغيرها حسب التخصص.',
         ),
       ),
       'en' => 
       array (
         0 => 
         array (
-          'question' => 'Do you provide timed mock tests?',
-          'answer' => 'Yes, full mock exams with strict timing are integral to the training.',
+          'question' => 'Which exams are covered?',
+          'answer' => 'We cover TOLC, SAT, IMAT, and other institutional entrance assessments.',
         ),
       ),
       'it' => 
       array (
         0 => 
         array (
-          'question' => 'Sono previste simulazioni a tempo?',
-          'answer' => 'Sì, prove simulate con cronometro e condizioni d esame.',
+          'question' => 'Quali test sono trattati nel corso?',
+          'answer' => 'Prepariamo a TOLC, SAT, IMAT e prove di ammissione specifiche.',
         ),
       ),
     ),
@@ -1404,136 +1329,134 @@ class ServiceCatalogService
     'slug_it' => 'certificazioni-linguistiche-internazionali',
     'title' => 
     array (
-      'ar' => 'التأهيل لاجتياز اختبارات شهادات اللغة الدولية',
-      'en' => 'International Language Certificates Preparation',
-      'it' => 'Preparazione alle Certificazioni Linguistiche Internazionali',
+      'ar' => 'التأهيل لاختبارات شهادات اللغة الدولية',
+      'en' => 'International Language Certifications',
+      'it' => 'Certificazioni Linguistiche Internazionali',
     ),
     'summary' => 
     array (
       'ar' => 'تدريب متخصص لإعداد المتعلمين لاجتياز اختبارات وشهادات قياس مستوى اللغة الأجنبية، من خلال التدريب على أقسام الاختبار وتطوير المهارات اللغوية المطلوبة والتعامل مع نماذج الأسئلة.',
-      'en' => 'Specialized training for globally recognized language credentials: IELTS, TOEFL, CILS, CELI, and PLIDA with proven high-score methodologies.',
-      'it' => 'Preparazione mirata per certificazioni di lingua ufficiali: IELTS, TOEFL, CILS, CELI e PLIDA con docenti esperti.',
+      'en' => 'Specialized training preparing learners to pass international language proficiency exams (IELTS, TOEFL, CILS, CELI) with structured practice.',
+      'it' => 'Preparazione intensiva per il conseguimento di certificazioni linguistiche internazionali riconosciute (IELTS, TOEFL, CILS, CELI).',
     ),
     'description' => 
     array (
-      'ar' => 'تدريب متخصص لإعداد المتعلمين لاجتياز اختبارات وشهادات قياس مستوى اللغة الأجنبية (IELTS – TOEFL – CILS – CELI وغيرها)، من خلال التدريب على أقسام الاختبار وتطوير مهارات التحدث والاستماع والقراءة والكتابة والتعامل مع نماذج الأسئلة بدرجات مرتفعة.',
-      'en' => 'Comprehensive preparation for IELTS, TOEFL, CILS, CELI, and PLIDA required for university admission, immigration, and multinational employment.',
-      'it' => 'Corsi di preparazione specifica per esami linguistici ufficiali con simulazioni e correzioni personalizzate.',
+      'ar' => 'تدريب متخصص لإعداد المتعلمين لاجتياز اختبارات وشهادات قياس مستوى اللغة الأجنبية، من خلال التدريب على أقسام الاختبار وتطوير المهارات اللغوية المطلوبة والتعامل مع نماذج الأسئلة. (الاختبارات المستهدفة: IELTS – TOEFL – CILS – CELI وغيرها حسب البرامج المتاحة).',
+      'en' => 'Comprehensive exam prep covering all 4 core components (Listening, Reading, Writing, Speaking) for IELTS, TOEFL, CILS, and CELI with simulated testing.',
+      'it' => 'Corso completo per superare brillantemente le certificazioni richieste da atenei ed enti per studio e lavoro in Europa.',
     ),
     'badge' => 
     array (
-      'ar' => 'IELTS • TOEFL • CILS',
-      'en' => 'IELTS • TOEFL • CILS',
-      'it' => 'IELTS • TOEFL • CILS',
+      'ar' => 'IELTS • TOEFL • CILS • CELI',
+      'en' => 'Global Certifications',
+      'it' => 'Certificati Riconosciuti',
     ),
     'category_label' => 
     array (
-      'ar' => 'شهادات اللغة الدولية',
-      'en' => 'Language Certifications',
+      'ar' => 'الشهادات الدولية المعتمدة',
+      'en' => 'International Certifications',
       'it' => 'Certificazioni Ufficiali',
     ),
     'level' => 
     array (
-      'ar' => 'من المستوى المتوسط حتى المتقدم (B1 إلى C2)',
-      'en' => 'Intermediate to Advanced (B1 to C2)',
-      'it' => 'Intermedio e avanzato (B1 - C2)',
+      'ar' => 'تحضير للاختبارات الرسمية الدولية',
+      'en' => 'All CEFR levels (B1, B2, C1, C2)',
+      'it' => 'Tutti i livelli QCER (B1, B2, C1, C2)',
     ),
     'duration' => 
     array (
-      'ar' => 'دورات مكثفة (4 - 8 أسابيع)',
-      'en' => 'Intensive courses (4-8 weeks)',
-      'it' => 'Moduli intensivi (4-8 settimane)',
+      'ar' => 'حسب الاختبار والمستوى',
+      'en' => 'According to test and target level',
+      'it' => 'In base al tipo di certificazione e livello',
     ),
     'mode' => 
     array (
       'ar' => 'حضوري أو أونلاين',
-      'en' => 'In-person or Online Interactive',
-      'it' => 'In aula o online',
+      'en' => 'In person or online',
+      'it' => 'In presenza o online',
     ),
     'target_audience' => 
     array (
-      'ar' => 'الطلاب والباحثون عن شهادات لغة معتمدة لأغراض الدراسة بالخارج أو العمل',
-      'en' => 'Candidates seeking verified language credentials for study visas or careers',
-      'it' => 'Studenti e professionisti che necessitano di attestazione ufficiale',
+      'ar' => 'الطلاب والباحثون عن شهادات لغة لأغراض الدراسة أو العمل',
+      'en' => 'Candidates seeking recognized language credentials for academic or career goals',
+      'it' => 'Studenti e professionisti che necessitano di una certificazione ufficiale',
     ),
     'salary_range' => 
     array (
-      'ar' => 'تحقيق السكور المطلوب',
-      'en' => 'Target Score Attainment',
-      'it' => 'Obiettivo punteggio garantito',
+      'ar' => 'اعتماد دولي رسمي',
+      'en' => 'Officially Accredited',
+      'it' => 'Riconoscimento ufficiale',
     ),
     'whatsapp_message' => 
     array (
-      'ar' => 'مرحباً، أود الاستفسار عن كورس التأهيل لاختبارات شهادات اللغة الدولية (IELTS/TOEFL/CILS)',
-      'en' => 'Hello, I want to inquire about language certification preparation (IELTS/TOEFL/CILS)',
-      'it' => 'Vorrei informazioni sulla preparazione alle certificazioni CILS / IELTS / TOEFL',
+      'ar' => 'مرحباً، أود الاستفسار والتسجيل في برنامج التأهيل لاختبارات شهادات اللغة الدولية',
+      'en' => 'Hello, I want to inquire about international language certificate preparation',
+      'it' => 'Vorrei informazioni sulla preparazione per le certificazioni linguistiche',
     ),
     'features' => 
     array (
       'ar' => 
       array (
-        0 => 'التدريب المتخصص على اختبارات الآيلتس (IELTS) والتوفل (TOEFL)',
-        1 => 'التدريب على امتحانات اللغة الإيطالية الرسمية (CILS, CELI, PLIDA)',
-        2 => 'تطوير مهارات القراءة والاستماع والكتابة والمحادثة وفق معايير التصحيح الدولية',
-        3 => 'اختبارات تجريبية دورية وتقييم دقيق يحدد درجاتك المتوقعة',
+        0 => 'التدريب على أقسام الاختبارات المختلفة.',
+        1 => 'تطوير مهارات الاستماع والقراءة والكتابة والتحدث.',
+        2 => 'اختبارات تجريبية وتقييم مستوى المتدرب.',
+        3 => 'تغطية اختبارات: IELTS – TOEFL – CILS – CELI وغيرها.',
       ),
       'en' => 
       array (
-        0 => 'Targeted modules for IELTS Academic & General and TOEFL iBT',
-        1 => 'Specialized preparation for Italian CILS, CELI, and PLIDA certificates',
-        2 => 'Skill building across all four exam papers: Reading, Listening, Writing, Speaking',
-        3 => 'Diagnostic mock exams with certified rubric grading',
+        0 => 'Targeted practice across all exam sections.',
+        1 => 'Enhancing listening, reading, writing, and speaking skills.',
+        2 => 'Full mock exams with performance reviews.',
+        3 => 'Covers IELTS, TOEFL, CILS, CELI and more.',
       ),
       'it' => 
       array (
-        0 => 'Preparazione specialistica per IELTS e TOEFL',
-        1 => 'Corsi specifici per CILS, CELI e PLIDA (livelli B1, B2, C1)',
-        2 => 'Simulazioni con criteri di correzione ufficiali',
+        0 => 'Esercitazioni mirate su ciascuna parte dell esame.',
+        1 => 'Potenziamento di ascolto, lettura, scrittura e conversazione.',
+        2 => 'Prove simulate e feedback personalizzato.',
+        3 => 'Include IELTS, TOEFL, CILS, CELI e altri.',
       ),
     ),
     'requirements' => 
     array (
       'ar' => 
       array (
-        0 => 'تحديد الشهادة والدرجة المستهدفة',
-        1 => 'تقييم المستوى اللغوي الحالي',
-        2 => 'الالتزام بالخطة التدريبية والتكليفات',
+        0 => 'تحديد نوع الاختبار المطلوب والدرجة المستهدفة',
+        1 => 'مستوى لغوي مقارب للدرجة المستهدفة',
       ),
       'en' => 
       array (
-        0 => 'Target credential & required band score',
-        1 => 'Placement evaluation',
-        2 => 'Coursework commitment',
+        0 => 'Specifying target test and required score',
+        1 => 'Baseline proficiency in the language',
       ),
       'it' => 
       array (
-        0 => 'Tipo di certificazione e livello richiesto',
-        1 => 'Test di ingresso',
-        2 => 'Partecipazione alle lezioni',
+        0 => 'Scelta della certificazione e del punteggio obiettivo',
+        1 => 'Livello linguistico di partenza congruo',
       ),
     ),
     'steps' => 
     array (
       'ar' => 
       array (
-        0 => 'تحديد الشهادة والدرجة المطلوبة',
-        1 => 'إجراء تقييم للمستوى وتحديد الفجوات',
-        2 => 'وضع خطة الاستعداد والتدريب على أقسام الاختبار',
-        3 => 'إجراء اختبارات تجريبية وتقييم الجاهزية',
+        0 => 'اختبار تشخيصي أولي لتحديد نقاط القوة والضعف',
+        1 => 'التدريب على كل قسم من أقسام الاختبار الأربعة',
+        2 => 'جلسات تدريب صوتية فردية لمحادثة الامتحان',
+        3 => 'اختبارات محاكاة كاملة تحت ظروف الامتحان الحقيقي',
       ),
       'en' => 
       array (
-        0 => 'Goal setting & benchmark score definition',
-        1 => 'Skills gap diagnosis',
-        2 => 'Sectional tactics training',
-        3 => 'Full-length timed mock tests',
+        0 => 'Diagnostic assessment identifying gaps',
+        1 => 'Section-by-section drills across 4 skills',
+        2 => 'Individual speaking practice sessions',
+        3 => 'Full timed mock tests replicating exam environment',
       ),
       'it' => 
       array (
-        0 => 'Definizione obiettivo',
-        1 => 'Diagnosi livello',
-        2 => 'Addestramento sui moduli',
-        3 => 'Simulazione completa',
+        0 => 'Test diagnostico di ingresso',
+        1 => 'Esercitazioni strutturate sulle 4 abilità',
+        2 => 'Sessioni individuali di conversazione per l orale',
+        3 => 'Simulazioni complete di esame',
       ),
     ),
     'faqs' => 
@@ -1542,29 +1465,24 @@ class ServiceCatalogService
       array (
         0 => 
         array (
-          'question' => 'ما الشهادات المتاحة للتدريب في الأكاديمية؟',
-          'answer' => 'نوفر تدريباً شاملاً لاختبارات IELTS, TOEFL, CILS, CELI, و PLIDA.',
-        ),
-        1 => 
-        array (
-          'question' => 'هل يساعدني الكورس في الحصول على السكور المطلوب للمنحة أو الفيزا؟',
-          'answer' => 'نعم، يركز التدريب بشكل دقيق على معايير توزيع الدرجات والتعامل مع فخاخ الأسئلة.',
+          'question' => 'ما هي مدة صلاحية شهادات اللغة الدولية؟',
+          'answer' => 'تختلف حسب الجهة؛ فمعظم شهادات الإيطالية CILS وCELI دائمة الصلاحية، بينما IELTS وTOEFL مدتها سنتان.',
         ),
       ),
       'en' => 
       array (
         0 => 
         array (
-          'question' => 'Which certifications do you cover?',
-          'answer' => 'We cover IELTS, TOEFL, CILS, CELI, and PLIDA.',
+          'question' => 'How long are language certificates valid?',
+          'answer' => 'Most Italian certificates (CILS, CELI) have permanent validity, whereas IELTS and TOEFL are valid for 2 years.',
         ),
       ),
       'it' => 
       array (
         0 => 
         array (
-          'question' => 'Quali certificazioni sono trattate?',
-          'answer' => 'Prepariamo agli esami CILS, CELI, PLIDA, IELTS e TOEFL.',
+          'question' => 'Quanto durano le certificazioni?',
+          'answer' => 'Le certificazioni CILS e CELI non hanno scadenza, mentre IELTS e TOEFL sono valide 2 anni.',
         ),
       ),
     ),
@@ -1572,145 +1490,140 @@ class ServiceCatalogService
   7 => 
   array (
     'sort_order' => 8,
-    'icon' => 'academic-cap',
-    'slug_ar' => 'university-school-admission',
-    'slug_en' => 'university-school-admission',
-    'slug_it' => 'ammissioni-scuola-universita',
+    'icon' => 'book-open',
+    'slug_ar' => 'university-admissions',
+    'slug_en' => 'university-admissions',
+    'slug_it' => 'ammissioni-universitarie',
     'title' => 
     array (
-      'ar' => 'خدمة الحصول على قبول جامعي وثانوي',
-      'en' => 'University & School Admission Service',
-      'it' => 'Servizio Ammissioni Universitarie e Scolastiche',
+      'ar' => 'القبول الجامعي والثانوي',
+      'en' => 'University & School Admissions',
+      'it' => 'Ammissioni Universitarie e Scolastiche',
     ),
     'summary' => 
     array (
       'ar' => 'نساعد الطلاب وأولياء الأمور في التعرف على فرص القبول بالجامعات والمدارس المناسبة، واختيار المؤسسة التعليمية وفق المؤهلات والمتطلبات، مع تجهيز ومراجعة المستندات ومتابعة إجراءات التقديم.',
-      'en' => 'Assisting students and parents in securing admissions at top European secondary schools and universities, tailored to credentials and aspirations.',
-      'it' => 'Supporto completo a studenti e famiglie per l ammissione a scuole e atenei europei di prestigio.',
+      'en' => 'Assisting students and parents in discovering admission opportunities at suitable universities and schools, document preparation, and application tracking.',
+      'it' => 'Supporto completo per studenti e famiglie nella scelta di scuole e atenei europei, preparazione documenti e gestione candidature.',
     ),
     'description' => 
     array (
-      'ar' => 'نساعد الطلاب وأولياء الأمور في التعرف على فرص القبول بالجامعات والمدارس المناسبة بالخارج، واختيار المؤسسة التعليمية وفق المؤهلات والمتطلبات، مع تجهيز ومراجعة المستندات ومتابعة إجراءات التقديم حتى صدور قرار القبول الرسمي.',
-      'en' => 'End-to-end guidance for higher education and secondary school placements abroad, reviewing eligibility and managing application submissions.',
-      'it' => 'Assistenza personalizzata nella selezione di istituti e corsi accademici, verifica requisiti e inoltro domande di iscrizione.',
+      'ar' => 'نساعد الطلاب وأولياء الأمور في التعرف على فرص القبول بالجامعات والمدارس المناسبة، واختيار المؤسسة التعليمية وفق المؤهلات والمتطلبات، مع تجهيز ومراجعة المستندات ومتابعة إجراءات التقديم.',
+      'en' => 'End-to-end guidance securing official university and high school admissions in Europe, ensuring full dossier compliance with admission boards.',
+      'it' => 'Dall individuazione del percorso più adatto fino alla lettera di accettazione formale da parte degli istituti europei.',
     ),
     'badge' => 
     array (
-      'ar' => 'قبول جامعي ومدرسي معتمد',
-      'en' => 'Certified Academic Placement',
-      'it' => 'Ammissione Accreditata',
+      'ar' => 'مدارس وجامعات أوروبية',
+      'en' => 'European Institutions',
+      'it' => 'Istituti Europei',
     ),
     'category_label' => 
     array (
-      'ar' => 'القبول الأكاديمي',
+      'ar' => 'القبول والتسجيل الأكاديمي',
       'en' => 'Academic Admissions',
-      'it' => 'Ammissioni Accademiche',
+      'it' => 'Ammissioni & Iscrizioni',
     ),
     'level' => 
     array (
-      'ar' => 'ثانوي عام وفني + بكالوريوس + ماجستير',
-      'en' => 'High School, Bachelor & Master Levels',
-      'it' => 'Scuole superiori, lauree triennali e magistrali',
+      'ar' => 'متابعة شاملة حتى إصدار القبول',
+      'en' => 'Comprehensive tracking until admission',
+      'it' => 'Assistenza completa fino all ammissione',
     ),
     'duration' => 
     array (
       'ar' => 'حسب المؤسسة التعليمية ومواعيد التقديم',
-      'en' => 'According to academic deadlines',
-      'it' => 'In base ai bandi d iscrizione',
+      'en' => 'Varies by educational institution and intake windows',
+      'it' => 'In base all istituto e alle sessioni di ammissione',
     ),
     'mode' => 
     array (
       'ar' => 'متابعة واستشارات أونلاين وحضورية',
-      'en' => 'Advisory & file tracking online and in-person',
-      'it' => 'Consulenza online e di persona',
+      'en' => 'Online consultations & in-person support',
+      'it' => 'Consulenza online e supporto in presenza',
     ),
     'target_audience' => 
     array (
-      'ar' => 'الطلاب وأولياء الأمور الراغبون في التقديم للمؤسسات التعليمية المرموقة بالخارج',
-      'en' => 'Students and parents seeking official study admissions abroad',
-      'it' => 'Studenti e genitori interessati agli studi esteri',
+      'ar' => 'الطلاب وأولياء الأمور الراغبون في التقديم للمؤسسات التعليمية',
+      'en' => 'Students and parents aiming to apply to prestigious European institutions',
+      'it' => 'Studenti e famiglie che intendono candidarsi presso istituti europei',
     ),
     'salary_range' => 
     array (
-      'ar' => 'توجيه دقيق ومطابقة للشروط',
-      'en' => 'Precise Eligibility Matching',
-      'it' => 'Verifica puntuale dei requisiti',
+      'ar' => 'قبول رسمي معتمد',
+      'en' => 'Official Admission Letter',
+      'it' => 'Lettera di ammissione ufficiale',
     ),
     'whatsapp_message' => 
     array (
-      'ar' => 'مرحباً، أود الاستفسار عن خدمة الحصول على قبول جامعي أو ثانوي بالخارج',
-      'en' => 'Hello, I want to inquire about university and secondary school admission assistance',
-      'it' => 'Vorrei informazioni sul servizio di ammissione a scuole e università',
+      'ar' => 'مرحباً، أود الاستفسار عن خدمة القبول الجامعي والثانوي',
+      'en' => 'Hello, I want to inquire about university and school admissions services',
+      'it' => 'Vorrei informazioni sul servizio di ammissione universitaria e scolastica',
     ),
     'features' => 
     array (
       'ar' => 
       array (
-        0 => 'البحث عن المؤسسات والمدارس والجامعات المناسبة لمؤهلك',
-        1 => 'مراجعة شروط القبول والتخصصات والمواعيد النهائية بدقة',
-        2 => 'تجهيز ومراجعة مستندات وملفات التقديم الرسمية',
-        3 => 'متابعة الطلب مع المؤسسة التعليمية حتى استلام خطاب القبول',
+        0 => 'البحث عن المؤسسات التعليمية المناسبة.',
+        1 => 'مراجعة شروط ومتطلبات القبول.',
+        2 => 'تجهيز ومتابعة ملفات التقديم.',
       ),
       'en' => 
       array (
-        0 => 'Comprehensive search matching qualifications with accredited institutions',
-        1 => 'Detailed review of admission prerequisites, course catalogs, and deadlines',
-        2 => 'Assembly, review, and submission of the complete application portfolio',
-        3 => 'Direct follow-up with admissions offices until official decisions are issued',
+        0 => 'Researching matching educational institutions.',
+        1 => 'Reviewing specific admission rules and criteria.',
+        2 => 'Dossier compilation and application tracking.',
       ),
       'it' => 
       array (
-        0 => 'Ricerca delle istituzioni formative più adatte alle aspirazioni',
-        1 => 'Controllo rigoroso dei criteri di ammissione e documentazione',
-        2 => 'Inoltro pratiche e interfaccia diretta con le segreterie universitarie',
+        0 => 'Ricerca degli istituti di istruzione più adatti.',
+        1 => 'Verifica dei requisiti di ammissione specifici.',
+        2 => 'Preparazione e gestione della candidatura.',
       ),
     ),
     'requirements' => 
     array (
       'ar' => 
       array (
-        0 => 'آخر مؤهل دراسي تم الحصول عليه',
-        1 => 'بيان الدرجات الموثق',
-        2 => 'جواز سفر أو إثبات هوية سارٍ',
-        3 => 'تحديد المرحلة الدراسية والتخصص المطلوب',
-        4 => 'أي مستندات إضافية تطلبها المؤسسة التعليمية',
+        0 => 'أوراق المؤهل الحالي مصدقة ومترجمة',
+        1 => 'السيرة الذاتية وخطاب الدافع',
+        2 => 'شهادة إجادة اللغة إن وُجدت',
       ),
       'en' => 
       array (
-        0 => 'Latest academic qualification certificate',
-        1 => 'Official transcripts',
-        2 => 'Valid passport',
-        3 => 'Chosen specialization & study level',
+        0 => 'Translated and legalized academic certificates',
+        1 => 'Curriculum Vitae and motivation letter',
+        2 => 'Language proficiency proof if required',
       ),
       'it' => 
       array (
-        0 => 'Titolo di studio conseguito',
-        1 => 'Certificato degli esami',
-        2 => 'Passaporto valido',
+        0 => 'Certificati di studio tradotti e legalizzati',
+        1 => 'Curriculum vitae e lettera motivazionale',
+        2 => 'Certificato di lingua se richiesto',
       ),
     ),
     'steps' => 
     array (
       'ar' => 
       array (
-        0 => 'مراجعة المؤهل الدراسي والأهداف',
-        1 => 'تحديد المؤسسات التعليمية المناسبة',
-        2 => 'تجهيز وترجمة ملف التقديم',
-        3 => 'تقديم الطلب ومتابعته حتى استلام الرد الرسمي',
+        0 => 'مراجعة الملف الأكاديمي واختيار الجامعات أو المدارس',
+        1 => 'كتابة وتنسيق خطابات الدافع والسيرة الذاتية',
+        2 => 'تقديم الملفات عبر البوابات الأكاديمية الرسمية',
+        3 => 'استلام خطاب القبول الرسمي ومتابعة استكمال الإجراءات',
       ),
       'en' => 
       array (
-        0 => 'Academic background evaluation',
-        1 => 'Shortlisting programs & institutions',
-        2 => 'File compilation & translation',
-        3 => 'Submission & admission tracking',
+        0 => 'Academic audit and institution selection',
+        1 => 'Drafting CV and personal motivation statement',
+        2 => 'Official portal submission and tracking',
+        3 => 'Receiving admission letter and follow-up',
       ),
       'it' => 
       array (
-        0 => 'Esame profilo',
-        1 => 'Selezione istituti',
-        2 => 'Preparazione fascicolo',
-        3 => 'Presentazione domanda ed esito',
+        0 => 'Valutazione del profilo e selezione istituti',
+        1 => 'Redazione CV e lettera di motivazione',
+        2 => 'Invio della domanda sui portali universitari',
+        3 => 'Ricezione dell ammissione e supporto successivo',
       ),
     ),
     'faqs' => 
@@ -1719,29 +1632,24 @@ class ServiceCatalogService
       array (
         0 => 
         array (
-          'question' => 'هل الخدمة مخصصة للجامعات فقط؟',
-          'answer' => 'لا، نقدم الخدمة لمرحلة الثانوية والمدارس المتخصصة، بالإضافة لمراحل البكالوريوس والماجستير والدكتوراه.',
-        ),
-        1 => 
-        array (
-          'question' => 'هل يمكن التقديم لأكثر من جامعة؟',
-          'answer' => 'نعم، يمكن التقديم على عدة رغبات لزيادة فرص القبول وضمان أفضل خيار للطالب.',
+          'question' => 'هل تساعدون في اختيار التخصص المناسب؟',
+          'answer' => 'نعم، يقدم مستشارنا الأكاديمي توجيهاً كاملاً بناءً على خلفيتك الدراسية ورغباتك المستقبلية.',
         ),
       ),
       'en' => 
       array (
         0 => 
         array (
-          'question' => 'Is this service only for universities?',
-          'answer' => 'No, we assist with secondary schools, undergraduate, and postgraduate programs.',
+          'question' => 'Do you help in major selection?',
+          'answer' => 'Yes, our academic advisors guide you based on your past education and future goals.',
         ),
       ),
       'it' => 
       array (
         0 => 
         array (
-          'question' => 'Il servizio è solo per l università?',
-          'answer' => 'No, supportiamo anche iscrizioni a scuole superiori e master.',
+          'question' => 'Aiutate nella scelta del corso di studi?',
+          'answer' => 'Sì, i nostri consulenti ti orientano sul piano di studi più adatto alle tue aspirazioni.',
         ),
       ),
     ),
@@ -1750,141 +1658,136 @@ class ServiceCatalogService
   array (
     'sort_order' => 9,
     'icon' => 'edit',
-    'slug_ar' => 'proofreading-services',
-    'slug_en' => 'proofreading-services',
-    'slug_it' => 'correzione-bozze-revisione',
+    'slug_ar' => 'proofreading-editing',
+    'slug_en' => 'proofreading-editing',
+    'slug_it' => 'correzione-revisione-testi',
     'title' => 
     array (
-      'ar' => 'خدمة التدقيق اللغوي',
+      'ar' => 'التدقيق اللغوي',
       'en' => 'Professional Proofreading & Editing',
-      'it' => 'Correzione Bozze e Revisione Linguistica',
+      'it' => 'Revisione e Correzione Bozze',
     ),
     'summary' => 
     array (
       'ar' => 'خدمات مراجعة وتدقيق لغوي للنصوص والمستندات الأكاديمية والمهنية، بهدف تحسين جودة الكتابة وتصحيح الأخطاء اللغوية والإملائية والنحوية مع الحفاظ على المعنى الأصلي للنص.',
-      'en' => 'Academic and corporate proofreading services ensuring linguistic accuracy, correct grammar, punctuation, and academic tone while preserving original meaning.',
-      'it' => 'Servizio professionale di revisione e correzione per testi accademici, tesi, saggi e documenti aziendali.',
+      'en' => 'Proofreading and linguistic editing services for academic and professional documents, improving writing quality while preserving original meaning.',
+      'it' => 'Servizi di correzione bozze e revisione linguistica per documenti accademici e aziendali, per uno stile impeccabile.',
     ),
     'description' => 
     array (
-      'ar' => 'خدمات مراجعة وتدقيق لغوي للنصوص والمستندات الأكاديمية والمهنية، بهدف تحسين جودة الكتابة وتصحيح الأخطاء اللغوية والإملائية والنحوية وعلامات الترقيم، مع الحفاظ على المعنى الأصلي للنص وسلاسة القراءة.',
-      'en' => 'High-level language review for research papers, theses, corporate publications, and official declarations in Arabic, English, Italian, and other languages.',
-      'it' => 'Revisione linguistica approfondita per tesi universitarie, ricerche scientifiche e documentazione commerciale.',
+      'ar' => 'خدمات مراجعة وتدقيق لغوي للنصوص والمستندات الأكاديمية والمهنية، بهدف تحسين جودة الكتابة وتصحيح الأخطاء اللغوية والإملائية والنحوية مع الحفاظ على المعنى الأصلي للنص.',
+      'en' => 'Professional linguistic editing for theses, research papers, resumes, and official correspondence ensuring grammatical purity and polished academic tone.',
+      'it' => 'Revisione dettagliata di tesi, articoli scientifici, lettere motivazionali e testi professionali con precisione stilistica e grammaticale.',
     ),
     'badge' => 
     array (
-      'ar' => 'دقة لغوية متناهية',
-      'en' => 'Zero-Error Editing',
-      'it' => 'Massima Precisione',
+      'ar' => 'مراجعة أكاديمية متخصصة',
+      'en' => 'Academic Precision',
+      'it' => 'Precisione Accademica',
     ),
     'category_label' => 
     array (
-      'ar' => 'التدقيق والتحرير',
-      'en' => 'Proofreading & Editing',
-      'it' => 'Revisione Testi',
+      'ar' => 'الخدمات اللغوية والأكاديمية',
+      'en' => 'Editorial & Linguistic Services',
+      'it' => 'Servizi Linguistici e di Redazione',
     ),
     'level' => 
     array (
-      'ar' => 'أبحاث أكاديمية + وثائق قانونية ورسمية + شركات',
-      'en' => 'Academic, Legal, and Corporate Texts',
-      'it' => 'Testi accademici, legali e aziendali',
+      'ar' => 'تدقيق لغوي ونحوي وبلاغي متكامل',
+      'en' => 'Complete grammar and syntax audit',
+      'it' => 'Revisione ortografica e stilistica completa',
     ),
     'duration' => 
     array (
       'ar' => 'حسب حجم النص وطبيعة المستند',
-      'en' => 'Turnaround based on word count',
-      'it' => 'In base alla lunghezza del testo',
+      'en' => 'According to document length and complexity',
+      'it' => 'In base al volume del testo e urgenza',
     ),
     'mode' => 
     array (
-      'ar' => 'أونلاين مع تسليم إلكتروني سريع',
-      'en' => '100% Digital Delivery',
-      'it' => 'Consegna digitale rapida',
+      'ar' => 'أونلاين',
+      'en' => 'Online submission & delivery',
+      'it' => 'Online',
     ),
     'target_audience' => 
     array (
       'ar' => 'الطلاب والباحثون والأكاديميون والشركات والكتّاب',
-      'en' => 'Researchers, academics, university students, and corporate teams',
-      'it' => 'Ricercatori, studenti, docenti e imprese',
+      'en' => 'Students, researchers, academics, corporations, and authors',
+      'it' => 'Studenti, ricercatori, docenti, aziende e autori',
     ),
     'salary_range' => 
     array (
-      'ar' => 'أسلوب أكاديمي وصياغة متقنة',
-      'en' => 'Polished Academic & Business Style',
-      'it' => 'Stile impeccabile',
+      'ar' => 'خلو تام من الأخطاء 100%',
+      'en' => '100% Error-Free Guarantee',
+      'it' => 'Testi impeccabili al 100%',
     ),
     'whatsapp_message' => 
     array (
-      'ar' => 'مرحباً، أود الاستفسار عن خدمة التدقيق اللغوي للأبحاث أو المستندات',
-      'en' => 'Hello, I want to inquire about professional proofreading and editing',
-      'it' => 'Vorrei informazioni sul servizio di correzione bozze e revisione',
+      'ar' => 'مرحباً، أود الاستفسار عن خدمة التدقيق اللغوي للنصوص والمستندات',
+      'en' => 'Hello, I want to inquire about professional proofreading services',
+      'it' => 'Vorrei informazioni sui servizi di correzione e revisione bozze',
     ),
     'features' => 
     array (
       'ar' => 
       array (
-        0 => 'مراجعة وتصحيح الأخطاء الإملائية والنحوية والصرفية',
-        1 => 'تحسين الصياغة والأسلوب اللغوي والتراكيب مع الحفاظ على الفكرة',
-        2 => 'ضبط علامات الترقيم وتوحيد المصطلحات والتنسيق العام',
-        3 => 'مراجعة الأبحاث العلمية ورسائل الماجستير والدكتوراه والمستندات الرسمية',
+        0 => 'تصحيح الأخطاء الإملائية والنحوية.',
+        1 => 'تحسين الصياغة والأسلوب اللغوي.',
+        2 => 'مراجعة النصوص والأبحاث والمستندات.',
       ),
       'en' => 
       array (
-        0 => 'Thorough correction of orthography, grammar, syntax, and punctuation',
-        1 => 'Enhancement of vocabulary precision and academic readability',
-        2 => 'Consistent terminology, citation format, and typographic alignment',
-        3 => 'Specialized audit for theses, dissertations, and research publications',
+        0 => 'Fixing spelling, grammatical, and typographical errors.',
+        1 => 'Refining phrasing, clarity, and linguistic style.',
+        2 => 'Reviewing academic papers, theses, and business documents.',
       ),
       'it' => 
       array (
-        0 => 'Correzione di errori ortografici, grammaticali e di punteggiatura',
-        1 => 'Miglioramento della fluidità stilistica e del registro linguistico',
-        2 => 'Uniformazione della terminologia e formattazione accademica',
+        0 => 'Correzione di errori ortografici e grammaticali.',
+        1 => 'Miglioramento dello stile e della fluidità espressiva.',
+        2 => 'Revisione di tesi, saggi, ricerche e documenti aziendali.',
       ),
     ),
     'requirements' => 
     array (
       'ar' => 
       array (
-        0 => 'إرسال الملف المراد تدقيقه بصيغة قابلة للتعديل',
-        1 => 'تحديد لغة النص والمجال التخصصي',
-        2 => 'تحديد نوع التدقيق المطلوب والموعد النهائي',
+        0 => 'إرسال النص بصيغة إلكترونية قابلة للتعديل (Word أو PDF)',
+        1 => 'توضيح طبيعة النص وأي إرشادات تنسيق خاصة',
       ),
       'en' => 
       array (
-        0 => 'Editable digital file (Word/Docs)',
-        1 => 'Specifying language and academic field',
-        2 => 'Deadline and formatting guidelines',
+        0 => 'Editable document file (Word or text format)',
+        1 => 'Any specific stylistic guidelines',
       ),
       'it' => 
       array (
-        0 => 'File modificabile',
-        1 => 'Indicazione della materia e lingua',
-        2 => 'Termine di consegna desiderato',
+        0 => 'File modificabile (Word o formato testo)',
+        1 => 'Eventuali linee guida redazionali specifiche',
       ),
     ),
     'steps' => 
     array (
       'ar' => 
       array (
-        0 => 'استلام الملف ومراجعته وتحديد عدد الكلمات',
-        1 => 'تحديد نطاق التدقيق والتكلفة والمدة',
-        2 => 'تنفيذ التدقيق اللغوي عبر مدقق متخصص',
-        3 => 'تسليم الملف منقحاً مع توضيح التعديلات المنفذة',
+        0 => 'استلام النص وتحديد حجم الكلمات والموعد',
+        1 => 'المراجعة اللغوية والتدقيق النحوي والإملائي',
+        2 => 'تحسين جودة الصياغة والأسلوب',
+        3 => 'تسليم النسخة المدققة مع تتبع التغييرات',
       ),
       'en' => 
       array (
-        0 => 'File intake and word count audit',
-        1 => 'Scope & timeline agreement',
-        2 => 'Expert linguistic proofreading',
-        3 => 'Clean delivery with track-changes option',
+        0 => 'Text review, word count, and delivery timeline',
+        1 => 'Spelling and grammatical editing',
+        2 => 'Style and clarity enhancement',
+        3 => 'Final delivery with tracked changes',
       ),
       'it' => 
       array (
-        0 => 'Ricezione file e conteggio parole',
-        1 => 'Preventivo e tempi',
-        2 => 'Revisione da parte di un correttore esperto',
-        3 => 'Consegna finale',
+        0 => 'Conteggio parole e conferma tempi di consegna',
+        1 => 'Correzione ortografica e grammaticale approfondita',
+        2 => 'Raffinamento stilistico',
+        3 => 'Consegna del testo revisionato con modifiche tracciate',
       ),
     ),
     'faqs' => 
@@ -1893,29 +1796,24 @@ class ServiceCatalogService
       array (
         0 => 
         array (
-          'question' => 'هل يتم التدقيق باللغات العربية والإنجليزية والإيطالية؟',
-          'answer' => 'نعم، لدينا مدققون لغويون متخصصون وأصحاب لغة أصليون لمختلف اللغات الحية.',
-        ),
-        1 => 
-        array (
-          'question' => 'هل تشمل الخدمة إعادة الصياغة وتحسين الأسلوب؟',
-          'answer' => 'نعم، نحسن الصياغة ونضبط الأسلوب الأكاديمي مع الحفاظ التام على أفكار الكاتب الأصلية.',
+          'question' => 'هل يشمل التدقيق إعادة الصياغة؟',
+          'answer' => 'نعم، نحرص على تحسين الصياغة والأسلوب مع الحفاظ التام على المعنى الأصلي للكاتب.',
         ),
       ),
       'en' => 
       array (
         0 => 
         array (
-          'question' => 'Do you edit in Arabic, English, and Italian?',
-          'answer' => 'Yes, our native-level proofreaders handle Arabic, English, Italian, and other languages.',
+          'question' => 'Does proofreading include rephrasing?',
+          'answer' => 'Yes, we refine style and phrasing while preserving your intended meaning.',
         ),
       ),
       'it' => 
       array (
         0 => 
         array (
-          'question' => 'Fornite revisioni in italiano, inglese e arabo?',
-          'answer' => 'Sì, ci avvaliamo di revisori madrelingua specializzati.',
+          'question' => 'La revisione include la riscrittura di frasi?',
+          'answer' => 'Sì, miglioriamo la fluidità preservando fedelmente il significato originale.',
         ),
       ),
     ),
@@ -1923,145 +1821,140 @@ class ServiceCatalogService
   9 => 
   array (
     'sort_order' => 10,
-    'icon' => 'calendar',
-    'slug_ar' => 'embassy-appointments-booking',
-    'slug_en' => 'embassy-appointments-booking',
-    'slug_it' => 'prenotazione-appuntamenti-consolari',
+    'icon' => 'documents',
+    'slug_ar' => 'embassy-appointments',
+    'slug_en' => 'embassy-appointments',
+    'slug_it' => 'appuntamenti-ambasciate-consolati',
     'title' => 
     array (
-      'ar' => 'خدمة حجز مواعيد السفارات والقنصليات',
-      'en' => 'Embassy & Consulate Appointment Assistance',
-      'it' => 'Assistenza Prenotazione Appuntamenti Consolari',
+      'ar' => 'حجز مواعيد السفارات والقنصليات',
+      'en' => 'Embassy & Consulate Appointments',
+      'it' => 'Prenotazione Appuntamenti Consolari',
     ),
     'summary' => 
     array (
       'ar' => 'نقدم المساعدة في إجراءات حجز مواعيد السفارات والقنصليات وفق الأنظمة والمتطلبات المتاحة لكل جهة، مع توضيح خطوات الحجز والمعلومات اللازمة لإتمام الطلب.',
-      'en' => 'Guidance and assistance with embassy and consular appointment scheduling systems, clarifying prerequisites and appointment requirements.',
-      'it' => 'Assistenza nelle procedure di prenotazione appuntamenti presso ambasciate e consolati secondo i canali ufficiali.',
+      'en' => 'Assistance with embassy and consulate booking procedures per available official platforms, clarifying required steps and documentation.',
+      'it' => 'Assistenza nelle procedure di prenotazione appuntamenti presso ambasciate e consolati, con indicazione di requisiti e modulistica.',
     ),
     'description' => 
     array (
-      'ar' => 'نقدم المساعدة في إجراءات حجز مواعيد السفارات والقنصليات وفق الأنظمة والمتطلبات المتاحة لكل جهة، مع توضيح خطوات الحجز والمعلومات اللازمة لإتمام الطلب بدقة وتفادي أي أخطاء في البيانات. تنويه: الخدمة خاصة بالمساعدة في حجز المواعيد الرسمية، ولا تشمل إصدار التأشيرات أو ضمان الحصول عليها.',
-      'en' => 'We assist travelers and students in navigating official embassy and consular appointment booking portals, avoiding data entry discrepancies and delays.',
-      'it' => 'Supporto tecnico e informativo per la registrazione e prenotazione degli appuntamenti sui portali consolari ufficiali.',
+      'ar' => 'نقدم المساعدة في إجراءات حجز مواعيد السفارات والقنصليات وفق الأنظمة والمتطلبات المتاحة لكل جهة، مع توضيح خطوات الحجز والمعلومات اللازمة لإتمام الطلب. (تنويه: الخدمة خاصة بالمساعدة في حجز المواعيد، ولا تشمل إصدار التأشيرات أو ضمان الحصول عليها).',
+      'en' => 'Guidance on booking consular appointments per official diplomatic portals, requirements explanation, and status tracking. (Note: Service covers booking assistance and does not guarantee or issue visas).',
+      'it' => 'Supporto nell orientamento sui portali consolari per fissare appuntamenti, con chiarimenti documentali. (Avvertenza: il servizio riguarda l assistenza alla prenotazione e non garantisce il rilascio del visto).',
     ),
     'badge' => 
     array (
-      'ar' => 'تنسيق ومتابعة رسمية',
-      'en' => 'Official Booking Guidance',
-      'it' => 'Supporto Ufficiale',
+      'ar' => 'متابعة رسمية وفق المواعيد',
+      'en' => 'Official Booking Assistance',
+      'it' => 'Assistenza Ufficiale',
     ),
     'category_label' => 
     array (
-      'ar' => 'الخدمات القنصلية',
-      'en' => 'Consular Services',
-      'it' => 'Servizi Consolari',
+      'ar' => 'المواعيد القنصلية والدبلوماسية',
+      'en' => 'Consular & Diplomatic Appointments',
+      'it' => 'Servizi Consolari & Appuntamenti',
     ),
     'level' => 
     array (
-      'ar' => 'مواعيد التأشيرات الدراسية والعمل والسياحة والتصديقات',
-      'en' => 'Study, Work, Tourist & Legalization Appointments',
-      'it' => 'Visti studio, lavoro e legalizzazioni',
+      'ar' => 'تنسيق ومتابعة مواعيد السفارات',
+      'en' => 'Consular schedule monitoring',
+      'it' => 'Monitoraggio calendari consolari',
     ),
     'duration' => 
     array (
       'ar' => 'حسب توافر المواعيد ونظام كل جهة',
-      'en' => 'Dependent on official portal availability',
-      'it' => 'In base alla disponibilità degli enti',
+      'en' => 'Depends on consular slot availability and system',
+      'it' => 'In base alla disponibilità degli slot consolari',
     ),
     'mode' => 
     array (
-      'ar' => 'متابعة أونلاين',
-      'en' => 'Online Assistance',
-      'it' => 'Assistenza online',
+      'ar' => 'أونلاين',
+      'en' => 'Online',
+      'it' => 'Online',
     ),
     'target_audience' => 
     array (
-      'ar' => 'الأفراد والطلاب والمسافرون الذين يحتاجون لحجز مواعيد بالسفارات والقنصليات',
-      'en' => 'Students, individuals, and business travelers needing embassy appointment slots',
-      'it' => 'Richiedenti visto e cittadini che necessitano di servizi consolari',
+      'ar' => 'الأفراد الذين يحتاجون إلى حجز مواعيد لدى السفارات والقنصليات',
+      'en' => 'Individuals requiring official appointments at embassies and consulates',
+      'it' => 'Privati che necessitano di appuntamenti presso ambasciate e consolati',
     ),
     'salary_range' => 
     array (
-      'ar' => 'توجيه دقيق لإجراءات الموعد',
-      'en' => 'Precise Procedural Guidance',
-      'it' => 'Orientamento accurato',
+      'ar' => 'متابعة مستمرة ودقيقة',
+      'en' => 'Accurate Booking Follow-up',
+      'it' => 'Monitoraggio accurato',
     ),
     'whatsapp_message' => 
     array (
-      'ar' => 'مرحباً، أود المساعدة في إجراءات حجز موعد سفارة أو قنصلية',
-      'en' => 'Hello, I need assistance with embassy appointment booking procedures',
-      'it' => 'Vorrei assistenza per prenotare un appuntamento consolare',
+      'ar' => 'مرحباً، أود الاستفسار عن خدمة حجز مواعيد السفارات والقنصليات',
+      'en' => 'Hello, I want to inquire about embassy and consulate appointment assistance',
+      'it' => 'Vorrei informazioni sull assistenza per appuntamenti consolari',
     ),
     'features' => 
     array (
       'ar' => 
       array (
-        0 => 'المساعدة في تحديد جهة الحجز ونوع الموعد المناسب لغرض سفرك',
-        1 => 'متابعة أنظمة المواعيد المتاحة والقنوات الرسمية لكل سفارة',
-        2 => 'إدخال وتدقيق البيانات المطلوبة للحجز بدقة لتفادي أي رفض',
-        3 => 'توضيح متطلبات الموعد وقائمة الأوراق المطلوب إحضارها للمقابلة',
+        0 => 'المساعدة في إجراءات حجز المواعيد.',
+        1 => 'توضيح متطلبات الحجز لكل جهة.',
+        2 => 'متابعة حالة طلب الحجز وإبلاغ العميل بالمستجدات.',
+        3 => 'تنويه: الخدمة للمساعدة في حجز المواعيد ولا تشمل إصدار التأشيرات أو ضمانها.',
       ),
       'en' => 
       array (
-        0 => 'Identification of appropriate consular jurisdiction and appointment type',
-        1 => 'Real-time tracking of official scheduling portals and requirements',
-        2 => 'Accurate data profile entry preventing typographical mistakes',
-        3 => 'Checklist of documents and instructions for in-person appointment day',
+        0 => 'Assistance with appointment booking procedures.',
+        1 => 'Clarifying specific booking requirements for each authority.',
+        2 => 'Tracking appointment status and notifying clients of updates.',
+        3 => 'Disclaimer: Service assists with booking only; no visa issuance is guaranteed.',
       ),
       'it' => 
       array (
-        0 => 'Individuazione della tipologia di appuntamento corretta',
-        1 => 'Monitoraggio dei portali istituzionali',
-        2 => 'Compilazione e verifica dei dati anagrafici',
-        3 => 'Elenco documenti e istruzioni per il giorno dell appuntamento',
+        0 => 'Supporto nell iter di prenotazione appuntamenti.',
+        1 => 'Chiarimento dei requisiti richiesti da ciascuna sede.',
+        2 => 'Monitoraggio della richiesta e aggiornamenti al cliente.',
+        3 => 'Avvertenza: il servizio assiste nella prenotazione e non rilascia visti.',
       ),
     ),
     'requirements' => 
     array (
       'ar' => 
       array (
-        0 => 'تحديد الدولة والسفارة أو القنصلية المستهدفة',
-        1 => 'تحديد نوع الموعد المطلوب (دراسة، سياحة، عمل، تصديقات)',
-        2 => 'بيانات جواز السفر ساري المفعول',
-        3 => 'البيانات الشخصية المطلوبة للحجز',
+        0 => 'بيانات جواز السفر ساري المفعول',
+        1 => 'تحديد السفارة والغرض من الموعد (دراسة / عمل / سياحة)',
       ),
       'en' => 
       array (
-        0 => 'Target country and specific embassy / consulate',
-        1 => 'Appointment category',
-        2 => 'Valid passport particulars',
-        3 => 'Applicant contact information',
+        0 => 'Valid passport data',
+        1 => 'Specified embassy and appointment reason',
       ),
       'it' => 
       array (
-        0 => 'Ambasciata o consolato di interesse',
-        1 => 'Tipo di visto o servizio richiesto',
-        2 => 'Dati del passaporto',
+        0 => 'Dati del passaporto in corso di validità',
+        1 => 'Sede consolare e motivazione della richiesta',
       ),
     ),
     'steps' => 
     array (
       'ar' => 
       array (
-        0 => 'تحديد السفارة ونوع الموعد المطلوب',
-        1 => 'مراجعة وتدقيق البيانات المطلوبة',
-        2 => 'متابعة نظام الحجز وتنفيذ الإجراءات الرسمية المتاحة',
-        3 => 'تسليم تفاصيل الموعد المؤكد وإرشادات الحضور',
+        0 => 'تسجيل بيانات جواز السفر والغرض من الموعد',
+        1 => 'متابعة فتح المواعيد الرسمية على المنصات القنصلية',
+        2 => 'إتمام حجز الموعد وتأكيد الحجز فور إتاحته',
+        3 => 'إرسال إشعار الحجز وقائمة الأوراق المطلوبة للمقابلة',
       ),
       'en' => 
       array (
-        0 => 'Jurisdiction & appointment classification',
-        1 => 'Data and document verification',
-        2 => 'Booking execution through official portal',
-        3 => 'Delivery of appointment confirmation and preparation instructions',
+        0 => 'Register passport details and appointment purpose',
+        1 => 'Monitoring official consular portal openings',
+        2 => 'Securing appointment slot as soon as released',
+        3 => 'Sending confirmation receipt and checklist for the visit',
       ),
       'it' => 
       array (
-        0 => 'Scelta consolato',
-        1 => 'Controllo dati',
-        2 => 'Prenotazione',
-        3 => 'Consegna ricevuta e istruzioni',
+        0 => 'Registrazione dati anagrafici e scopo dell appuntamento',
+        1 => 'Monitoraggio delle aperture sui portali ufficiali',
+        2 => 'Conferma della prenotazione al momento dell apertura slot',
+        3 => 'Invio ricevuta di conferma e promemoria documenti',
       ),
     ),
     'faqs' => 
@@ -2070,21 +1963,16 @@ class ServiceCatalogService
       array (
         0 => 
         array (
-          'question' => 'هل تشمل الخدمة إصدار التأشيرة أو ضمان الحصول عليها؟',
-          'answer' => 'تنويه مهم: الخدمة خاصة بالمساعدة في إجراءات حجز المواعيد الرسمية، وقرار منح التأشيرة هو اختصاص سيادي حصري للقنصلية المختصة.',
-        ),
-        1 => 
-        array (
-          'question' => 'ماذا يحدث إذا لم تكن هناك مواعيد متاحة حالياً؟',
-          'answer' => 'نتابع نظام الحجز بانتظام ونبلغك فور توفر فترات أو مواعيد جديدة وفق نظام السفارة.',
+          'question' => 'هل تضمنون الحصول على تأشيرة السفر؟',
+          'answer' => 'الخدمة خاصة بالمساعدة في حجز المواعيد وتجهيز الملف، وقرار منح التأشيرة يرجع كلياً للقسم القنصلي بالسفارة.',
         ),
       ),
       'en' => 
       array (
         0 => 
         array (
-          'question' => 'Does this service guarantee visa issuance?',
-          'answer' => 'No. We assist strictly with booking procedures; visa decisions remain the sole discretion of the respective embassy.',
+          'question' => 'Do you guarantee visa issuance?',
+          'answer' => 'No, our role is assisting in appointment scheduling and document preparation; visa decisions are solely made by the embassy.',
         ),
       ),
       'it' => 
@@ -2092,7 +1980,7 @@ class ServiceCatalogService
         0 => 
         array (
           'question' => 'Il servizio garantisce il rilascio del visto?',
-          'answer' => 'No, l assistenza riguarda esclusivamente la prenotazione dell appuntamento; la decisione sul visto spetta unicamente all autorità consolare.',
+          'answer' => 'No, il servizio riguarda l assistenza tecnica alla prenotazione; la concessione del visto compete unicamente al consolato.',
         ),
       ),
     ),

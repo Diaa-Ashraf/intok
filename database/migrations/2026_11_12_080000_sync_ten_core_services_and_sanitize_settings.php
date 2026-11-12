@@ -14,7 +14,8 @@ return new class extends Migration
     {
         // 1. Sync official 10 services and deactivate legacy obsolete rows
         try {
-            app(ServiceCatalogService::class)->ensureCoreServicesExist();
+            $catalog = app(ServiceCatalogService::class);
+            $catalog->ensureCoreServicesExist();
         } catch (\Throwable $e) {
             // Fail safe
         }
@@ -55,3 +56,4 @@ return new class extends Migration
         // Safe no-op
     }
 };
+

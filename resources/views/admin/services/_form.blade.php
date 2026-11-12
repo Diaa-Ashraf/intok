@@ -145,6 +145,13 @@
                         <input type="text" id="sal-{{ $loc }}" name="salary_range[{{ $loc }}]" value="{{ old('salary_range.'.$loc, $service?->salary_range[$loc] ?? '') }}" placeholder="{{ $loc === 'ar' ? 'مثال: 15,000 - 30,000+ ج.م شهرياً' : 'e.g. 15k - 30k+ EGP' }}" class="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm focus:border-red-500 focus:outline-none">
                     </div>
 
+                    <div>
+                        <label for="target-{{ $loc }}" class="mb-2 block text-xs font-black text-slate-700 uppercase">
+                            {{ $loc === 'ar' ? 'الفئة المستهدفة' : 'Target Audience' }}
+                        </label>
+                        <input type="text" id="target-{{ $loc }}" name="target_audience[{{ $loc }}]" value="{{ old('target_audience.'.$loc, $service?->target_audience[$loc] ?? '') }}" placeholder="{{ $loc === 'ar' ? 'مثال: الطلاب والخريجون والأفراد والشركات' : 'e.g. Students, graduates, individuals' }}" class="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm focus:border-red-500 focus:outline-none">
+                    </div>
+
                     <div class="sm:col-span-2 lg:col-span-3">
                         <label for="wa-{{ $loc }}" class="mb-2 block text-xs font-black text-slate-700 uppercase">
                             {{ $loc === 'ar' ? 'رسالة الواتساب الجاهزة عند النقر على الحجز' : 'Pre-filled WhatsApp Message' }}
