@@ -30,7 +30,122 @@ class DatabaseSeeder extends Seeder
         );
         $adminUser->assignRole($adminRole);
 
-        // Ensure all official 10 core services exist with full metadata
+        $services = [
+            [
+                'slug' => ['ar' => 'تدريب-الكول-سنتر-الاحترافي', 'en' => 'professional-call-center-training', 'it' => 'formazione-call-center-professionale'],
+                'title' => ['ar' => 'تدريب الكول سنتر الاحترافي', 'en' => 'Professional Call Center Training', 'it' => 'Formazione Call Center Professionale'],
+                'summary' => [
+                    'ar' => 'برنامج تدريبي يؤهلك للعمل في الكول سنتر باحتراف، مع تطوير مهارات التواصل وخدمة العملاء واجتياز المقابلات بثقة.',
+                    'en' => 'A training program qualifying you to work in call centers professionally, developing communication skills, customer service, and acing interviews.',
+                    'it' => 'Un programma di formazione che ti qualifica a lavorare nei call center con professionalità e sicurezza.'
+                ],
+                'description' => [
+                    'ar' => 'تدريب عملي مكثف على مهارات التحدث باللغات الأجنبية، إدارة المكالمات والعملاء، وحل المشكلات، مع جلسات محاكاة حقيقية لمقابلات كبرى شركات الكول سنتر العالمية في مصر والخليج وأوروبا.',
+                    'en' => 'Intensive practical training in foreign language communication, call handling, customer service, with real interview simulations for top multinational call centers.',
+                    'it' => 'Formazione intensiva sulle competenze linguistiche, gestione delle chiamate e simulazioni di colloqui per grandi aziende.'
+                ],
+                'icon' => 'headset',
+                'sort_order' => 1
+            ],
+            [
+                'slug' => ['ar' => 'احتراف-الترجمة', 'en' => 'translation-mastery', 'it' => 'maestria-nella-traduzione'],
+                'title' => ['ar' => 'احتراف الترجمة', 'en' => 'Translation Mastery', 'it' => 'Maestria nella Traduzione'],
+                'summary' => [
+                    'ar' => 'برنامج تدريبي لتعلم الترجمة باحتراف، مع تطبيقات عملية على النصوص المختلفة وتأهيلك للعمل في المجال بثقة.',
+                    'en' => 'A training program to master translation professionally, with practical exercises on varied texts to start working with confidence.',
+                    'it' => 'Un programma pratico per apprendere la traduzione professionale su diversi testi e documenti.'
+                ],
+                'description' => [
+                    'ar' => 'تطوير تقنيات الترجمة الفورية والتحريرية، استخدام أدوات الـ CAT Tools، والتعامل مع النصوص القانونية والطبية والأكاديمية لتكون جاهزاً لسوق العمل الحر والشركات الدولية.',
+                    'en' => 'Develop interpretation and written translation skills, CAT tools mastery, and handle legal, medical, and academic texts for freelancing and agencies.',
+                    'it' => 'Sviluppa tecniche di traduzione scritta e simultanea, strumenti CAT e gestione di testi legali e accademici.'
+                ],
+                'icon' => 'language',
+                'sort_order' => 2
+            ],
+            [
+                'slug' => ['ar' => 'التأهيل-للاختبارات-الدولية', 'en' => 'international-exam-preparation', 'it' => 'preparazione-esami-internazionali'],
+                'title' => ['ar' => 'التأهيل للاختبارات الدولية', 'en' => 'International Exam Preparation', 'it' => 'Preparazione Esami Internazionali'],
+                'summary' => [
+                    'ar' => 'برامج تدريبية متخصصة لإعدادك لاجتياز الاختبارات الدولية مثل IELTS وTOEFL، مع تدريب عملي على جميع المهارات.',
+                    'en' => 'Specialized training programs to prepare you for international exams such as IELTS and TOEFL with hands-on practice across all skills.',
+                    'it' => 'Corsi mirati per superare esami internazionali come IELTS, TOEFL e certificazioni europee.'
+                ],
+                'description' => [
+                    'ar' => 'خطط تدريب مخصصة لاجتياز اختبارات الآيلتس والتوفل واختبارات اللغة الإيطالية (CILS, CELI, PLIDA) المطلوبة للجامعات والمنح الإيطالية، مع نماذج امتحانات فعلية ومتابعة فردية.',
+                    'en' => 'Tailored preparation for IELTS, TOEFL, and Italian exams (CILS, CELI) required for European admissions and scholarships.',
+                    'it' => 'Preparazione intensiva per esami universitari e certificazioni linguistiche con test pratici.'
+                ],
+                'icon' => 'certificate',
+                'sort_order' => 3
+            ],
+            [
+                'slug' => ['ar' => 'ترجمة-معتمدة-احترافية', 'en' => 'certified-professional-translation', 'it' => 'traduzione-giurata-professionale'],
+                'title' => ['ar' => 'ترجمة معتمدة احترافية', 'en' => 'Certified Professional Translation', 'it' => 'Traduzione Giurata Professionale'],
+                'summary' => [
+                    'ar' => 'خدمة ترجمة معتمدة لجميع المستندات بدقة عالية وسرعة تنفيذ، مع توثيق رسمي معترف به للجهات الحكومية والسفارات.',
+                    'en' => 'Certified translation service for all documents with top accuracy, speed, and official recognition by embassies and government bodies.',
+                    'it' => 'Servizio di traduzione asseverata per documenti ufficiali riconosciuto da ambasciate e consolati.'
+                ],
+                'description' => [
+                    'ar' => 'ترجمة معتمدة وموثقة لملفات السفر والتأشيرة، شهادات الميلاد والزواج، إعلان القيمة (Dichiarazione di Valore)، الشهادات الأكاديمية والدرجات لتقديمها للسفارات الإيطالية والأوروبية.',
+                    'en' => 'Certified translations of visa files, academic certificates, transcripts, and official declarations recognized by Italian and European embassies.',
+                    'it' => 'Traduzioni certificate di certificati di studio, documenti di identità e pratiche per visti consolari.'
+                ],
+                'icon' => 'documents',
+                'sort_order' => 4
+            ],
+            [
+                'slug' => ['ar' => 'إعداد-محاضري-اللغات', 'en' => 'language-instructor-training', 'it' => 'formazione-docenti-di-lingua'],
+                'title' => ['ar' => 'إعداد محاضري اللغات', 'en' => 'Language Instructor Training', 'it' => 'Formazione Docenti di Lingua'],
+                'summary' => [
+                    'ar' => 'برنامج متخصص لإعداد مدربي اللغات بمهارات التدريس والتواصل، مع تطبيق عملي يؤهلك للعمل بثقة.',
+                    'en' => 'A specialized program preparing language instructors with teaching and pedagogical communication skills and hands-on teaching practice.',
+                    'it' => 'Programma per formare docenti ed esperti di lingue con metodologie moderne e pratiche di insegnamento.'
+                ],
+                'description' => [
+                    'ar' => 'تأهيل المعلمين والمدربين على أحدث طرق التدريس التفاعلي، إدارة القاعات التدريبية، تصميم المناهج، وتدريس اللغات للكبار والصغار باحترافية تامة.',
+                    'en' => 'Equipping instructors with modern interactive teaching methodologies, curriculum design, classroom management, and online teaching.',
+                    'it' => 'Metodologie didattiche avanzate, gestione dell aula e pianificazione dei corsi di lingua.'
+                ],
+                'icon' => 'presentation',
+                'sort_order' => 5
+            ],
+            [
+                'slug' => ['ar' => 'التدقيق-اللغوي-الاحترافي', 'en' => 'professional-proofreading', 'it' => 'correzione-di-bozze-professionale'],
+                'title' => ['ar' => 'التدقيق اللغوي الاحترافي', 'en' => 'Professional Proofreading', 'it' => 'Correzione di Bozze Professionale'],
+                'summary' => [
+                    'ar' => 'مراجعة لغوية دقيقة للنصوص مع تصحيح الأخطاء النحوية والإملائية وتحسين الصياغة لتظهر بشكل احترافي وواضح.',
+                    'en' => 'Meticulous linguistic review correcting grammatical and spelling mistakes while enhancing style for clear, professional output.',
+                    'it' => 'Revisione linguistica accurata, correzione di errori grammaticali e ottimizzazione stilistica.'
+                ],
+                'description' => [
+                    'ar' => 'تدقيق لغوي وبلاغي شامل للأبحاث والرسائل العلمية، رسائل الدافع (Motivation Letter)، والسير الذاتية (CV)، والمحتوى الإعلاني بجميع اللغات لضمان خلوها التام من الأخطاء.',
+                    'en' => 'Comprehensive proofreading for academic papers, thesis, motivation letters, CVs, and advertising content across languages.',
+                    'it' => 'Revisione approfondita di tesi, lettere motivazionali, curriculum e testi accademici.'
+                ],
+                'icon' => 'edit',
+                'sort_order' => 6
+            ],
+            [
+                'slug' => ['ar' => 'دورات-اللغات-الاحترافية', 'en' => 'professional-language-courses', 'it' => 'corsi-di-lingua-professionali'],
+                'title' => ['ar' => 'دورات اللغات الاحترافية', 'en' => 'Professional Language Courses', 'it' => 'Corsi di Lingua Professionali'],
+                'summary' => [
+                    'ar' => 'تعلم اللغات الأجنبية بطريقة حديثة وسهلة، من الصفر للاحتراف مع متابعة مستمرة لتحقيق الطلاقة بسرعة.',
+                    'en' => 'Learn foreign languages with modern, easy methods from beginner to professional level with continuous follow-up for quick fluency.',
+                    'it' => 'Impara lingue straniere con metodi moderni e pratici, da zero a livello avanzato con rapida fluidità.'
+                ],
+                'description' => [
+                    'ar' => 'كورسات متخصصة في اللغة الإيطالية والإنجليزية والألمانية، تركز على المحادثة والطلاقة العملية، ومصممة للطلاب الراغبين في السفر والعمل أو التقديم للجامعات الأوروبية.',
+                    'en' => 'Specialized courses in Italian, English, and German focused on conversational fluency, tailored for study abroad and careers.',
+                    'it' => 'Corsi di italiano, inglese e tedesco incentrati sulla conversazione e preparazione per studio e lavoro all estero.'
+                ],
+                'icon' => 'book-open',
+                'sort_order' => 7
+            ],
+        ];
+
+        // Ensure all official 8 core services exist with full metadata
         app(\App\Services\ServiceCatalogService::class)->ensureCoreServicesExist();
 
         // Contact info and comprehensive dynamic site settings
@@ -285,42 +400,42 @@ class DatabaseSeeder extends Seeder
                 'en' => 'At INTOK, we combine education, practical training, professional qualification, and academic services to help you build skills and achieve your goals with clear steps and expert support.',
                 'it' => 'In INTOK uniamo formazione, istruzione, qualificazione professionale e servizi accademici per aiutarti a sviluppare competenze e raggiungere i tuoi obiettivi con passi chiari e supporto dedicato.'
             ],
-            'why_bento_services_nav_title' => ['ar' => 'خدمات متكاملة', 'en' => 'Integrated Services', 'it' => 'Servizi Integrati'],
-            'why_bento_services_nav_sub' => ['ar' => '10 خدمات تعليمية ومهنية وأكاديمية', 'en' => '10 educational & vocational services', 'it' => '10 servizi educativi e professionali'],
-            'why_bento_practical_nav_title' => ['ar' => 'تدريب عملي', 'en' => 'Practical Training', 'it' => 'Formazione Pratica'],
+            'why_bento_services_nav_title' => ['ar' => 'خدمات تعليمية ومهنية متكاملة', 'en' => 'Integrated Services', 'it' => 'Servizi Integrati'],
+            'why_bento_services_nav_sub' => ['ar' => '10 خدمات متنوعة تحت سقف واحد', 'en' => '10 diverse services under one roof', 'it' => '10 servizi diversi sotto lo stesso tetto'],
+            'why_bento_practical_nav_title' => ['ar' => 'تدريب عملي وتطبيق واقعي', 'en' => 'Practical & Real Training', 'it' => 'Formazione Pratica e Reale'],
             'why_bento_practical_nav_sub' => ['ar' => 'تطبيقات وتدريبات تحاكي الواقع', 'en' => 'Real-world practice & simulations', 'it' => 'Esercitazioni e simulazioni reali'],
-            'why_bento_trainers_nav_title' => ['ar' => 'مدربون متخصصون', 'en' => 'Expert Instructors', 'it' => 'Docenti Esperti'],
+            'why_bento_trainers_nav_title' => ['ar' => 'مدربون ومتخصصون في مجالاتهم', 'en' => 'Expert Domain Specialists', 'it' => 'Docenti e Specialisti Esperti'],
             'why_bento_trainers_nav_sub' => ['ar' => 'خبرات في مجالات التعليم والتدريب', 'en' => 'Real educational & training expertise', 'it' => 'Esperienza nell insegnamento e formazione'],
-            'why_bento_support_nav_title' => ['ar' => 'متابعة مستمرة', 'en' => 'Continuous Follow-up', 'it' => 'Supporto Continuo'],
+            'why_bento_support_nav_title' => ['ar' => 'متابعة ودعم مستمر', 'en' => 'Continuous Support & Tracking', 'it' => 'Supporto e Tutoraggio Continuo'],
             'why_bento_support_nav_sub' => ['ar' => 'دعم ومتابعة خلال رحلتك', 'en' => 'Dedicated guidance along your path', 'it' => 'Assistenza costante lungo il percorso'],
-            'why_bento_customized_nav_title' => ['ar' => 'حلول مخصصة', 'en' => 'Tailored Solutions', 'it' => 'Soluzioni Su Misura'],
+            'why_bento_customized_nav_title' => ['ar' => 'حلول تناسب أهدافك', 'en' => 'Solutions Tailored to Your Goals', 'it' => 'Soluzioni Adatte ai Tuoi Traguardi'],
             'why_bento_customized_nav_sub' => ['ar' => 'خدمات تناسب احتياجاتك وأهدافك', 'en' => 'Matching your needs and goals', 'it' => 'Adatte alle tue esigenze e traguardi'],
-            'why_bento_future_nav_title' => ['ar' => 'تأهيل للمستقبل', 'en' => 'Future Readiness', 'it' => 'Preparazione al Futuro'],
+            'why_bento_future_nav_title' => ['ar' => 'تأهيل لمستقبلك الأكاديمي والمهني', 'en' => 'Academic & Career Future Readiness', 'it' => 'Preparazione al Futuro'],
             'why_bento_future_nav_sub' => ['ar' => 'تطوير مهاراتك الأكاديمية والمهنية', 'en' => 'Building your academic & career skills', 'it' => 'Sviluppo competenze accademiche e professionali'],
             'why_bento_services_title' => [
-                'ar' => 'خدمات تعليمية ومهنية وأكاديمية متكاملة',
-                'en' => 'Integrated Educational, Vocational & Academic Services',
-                'it' => 'Servizi educativi, professionali e accademici integrati'
+                'ar' => '01 – خدمات تعليمية ومهنية متكاملة',
+                'en' => '01 – Integrated Educational & Vocational Services',
+                'it' => '01 – Servizi Didattici e Professionali Integrati'
             ],
             'why_bento_services_desc' => [
-                'ar' => 'في INTOK بنوفر مجموعة متنوعة من الخدمات التعليمية والمهنية والأكاديمية، علشان تلاقي كل اللي تحتاجه في مكان واحد وبدعم متخصص.',
-                'en' => 'At INTOK we provide a diverse range of educational, vocational, and academic services so you find everything in one place with expert guidance.',
-                'it' => 'In INTOK offriamo una gamma completa di servizi educativi, professionali e accademici con supporto esperto.'
+                'ar' => 'في INTOK بنوفر مجموعة متنوعة من الخدمات التعليمية والمهنية والأكاديمية، علشان تلاقي كل اللي تحتاجه في مكان واحد.',
+                'en' => 'At INTOK, we provide a diverse range of educational, vocational, and academic services so you find everything in one place with expert guidance.',
+                'it' => 'In INTOK offriamo una gamma completa di servizi didattici, professionali e accademici per trovare tutto in un unico posto con supporto esperto.'
             ],
             'why_bento_practical_title' => [
-                'ar' => 'تدريب عملي وتطبيق واقعي يؤهلك لسوق العمل',
-                'en' => 'Hands-on Practical Training & Real Workplace Simulation',
-                'it' => 'Formazione pratica e simulazioni reali per il mercato del lavoro'
+                'ar' => '02 – تدريب عملي وتطبيق واقعي',
+                'en' => '02 – Hands-on Practical & Real-world Training',
+                'it' => '02 – Formazione Pratica e Simulazione Reale'
             ],
             'why_bento_practical_desc' => [
-                'ar' => 'مش بنكتفي بالمعلومات النظرية؛ بنهتم بالتطبيق العملي والتدريب على مواقف حقيقية تساعدك تفهم المجال وتطور مهاراتك بكفاءة.',
+                'ar' => 'مش بنكتفي بالمعلومات النظرية؛ بنهتم بالتطبيق العملي والتدريب على مواقف حقيقية تساعدك تفهم المجال وتطور مهاراتك.',
                 'en' => 'We go beyond theoretical knowledge to deliver practical training and real workplace simulations.',
                 'it' => 'Non ci limitiamo alla teoria: puntiamo su formazione pratica ed esercitazioni reali.'
             ],
             'why_bento_trainers_title' => [
-                'ar' => 'مدربون ومتخصصون ذوو خبرة ميدانية واسعة',
-                'en' => 'Expert Instructors & Practitioners with Real-World Experience',
-                'it' => 'Docenti e professionisti con ampia esperienza sul campo'
+                'ar' => '03 – مدربون ومتخصصون في مجالاتهم',
+                'en' => '03 – Expert Instructors & Domain Specialists',
+                'it' => '03 – Docenti e Specialisti del Settore'
             ],
             'why_bento_trainers_desc' => [
                 'ar' => 'نتيح برامج تدريبية وتعليمية بإشراف متخصصين في مجالاتهم، مع التركيز على نقل الخبرة وتقديم محتوى يناسب احتياجات المتدربين.',
@@ -328,19 +443,19 @@ class DatabaseSeeder extends Seeder
                 'it' => 'Programmi di formazione guidati da specialisti del settore per trasferire competenze pratiche.'
             ],
             'why_bento_support_title' => [
-                'ar' => 'متابعة ودعم مستمر في كل خطوة من رحلتك',
-                'en' => 'Continuous 24/7 Tracking & Step-by-Step Support',
-                'it' => 'Tutoraggio continuo e assistenza passo dopo passo'
+                'ar' => '04 – متابعة ودعم مستمر',
+                'en' => '04 – Continuous Follow-up & Dedicated Support',
+                'it' => '04 – Supporto e Tutoraggio Continuo'
             ],
             'why_bento_support_desc' => [
-                'ar' => 'رحلتك مع INTOK مش مجرد تسجيل في خدمة؛ بنهتم بمتابعة خطواتك وتقديم الدعم والإرشاد وفق طبيعة الخدمة اللي اخترتها حتى تحقق هدفك.',
+                'ar' => 'رحلتك مع INTOK مش مجرد تسجيل في خدمة؛ بنهتم بمتابعة خطواتك وتقديم الدعم والإرشاد وفق طبيعة الخدمة اللي اخترتها.',
                 'en' => 'Your journey with INTOK is an ongoing partnership with continuous follow-up and guidance until you succeed.',
                 'it' => 'Il tuo percorso con INTOK include monitoraggio costante e assistenza continua fino al traguardo.'
             ],
             'why_bento_customized_title' => [
-                'ar' => 'حلول مخصصة تناسب أهدافك وإمكانياتك',
-                'en' => 'Customized Solutions Tailored to Your Profile & Ambition',
-                'it' => 'Soluzioni personalizzate per i tuoi obiettivi e potenzialità'
+                'ar' => '05 – حلول تناسب أهدافك',
+                'en' => '05 – Solutions Tailored to Your Goals',
+                'it' => '05 – Soluzioni Su Misura per i Tuoi Obiettivi'
             ],
             'why_bento_customized_desc' => [
                 'ar' => 'كل شخص عنده هدف مختلف، علشان كده بنساعدك تختار الخدمة أو المسار الأنسب لاحتياجاتك وإمكانياتك وخطتك المستقبلية.',
@@ -348,9 +463,9 @@ class DatabaseSeeder extends Seeder
                 'it' => 'Ogni studente ha un obiettivo unico: selezioniamo il percorso ideale per il tuo profilo.'
             ],
             'why_bento_future_title' => [
-                'ar' => 'تأهيل شامل لمستقبلك الأكاديمي والمهني',
-                'en' => 'Comprehensive Readiness for Academic & International Careers',
-                'it' => 'Preparazione completa per il tuo futuro accademico e lavorativo'
+                'ar' => '06 – تأهيل لمستقبلك الأكاديمي والمهني',
+                'en' => '06 – Comprehensive Readiness for Academic & Career Future',
+                'it' => '06 – Preparazione Completa per il Futuro Accademico e Professionale'
             ],
             'why_bento_future_desc' => [
                 'ar' => 'بنساعدك تطور قدراتك وتستعد لخطوات جديدة في التعليم والعمل، من خلال برامج التأهيل والتدريب والخدمات الأكاديمية المتخصصة.',

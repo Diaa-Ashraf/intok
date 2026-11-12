@@ -897,151 +897,145 @@
                                                 $bentoFallbacks = [
                     'ar' => [
                         'services' => [
-                            'nav_title' => 'خدمات متكاملة',
-                            'nav_sub' => '10 خدمات تعليمية ومهنية وأكاديمية',
+                            'nav_title' => 'خدمات تعليمية ومهنية متكاملة',
+                            'nav_sub' => '10 خدمات متنوعة تحت سقف واحد',
                             'badge' => 'منظومة شاملة تحت سقف واحد',
                             'badge_color' => 'bg-red-50 text-[#fe0002] border-red-200',
-                            'title' => 'خدمات تعليمية ومهنية وأكاديمية متكاملة',
-                            'desc' => 'في INTOK بنوفر مجموعة متنوعة من الخدمات التعليمية والمهنية والأكاديمية، علشان تلاقي كل اللي تحتاجه في مكان واحد وبدعم متخصص.',
+                            'title' => '01 – خدمات تعليمية ومهنية متكاملة',
+                            'desc' => 'في INTOK بنوفر مجموعة متنوعة من الخدمات التعليمية والمهنية والأكاديمية، علشان تلاقي كل اللي تحتاجه في مكان واحد.',
                             'stat_val' => '10',
                             'stat_unit' => 'خدمات',
-                            'stat_label' => 'تغطية شاملة لكل احتياجاتك',
-                            'stat_sub' => 'حلول للأفراد والطلاب والخريجين',
+                            'stat_label' => 'القيمة المضافة: تجربة متكاملة بدل البحث عن أكثر من جهة.',
+                            'stat_sub' => 'حلول متكاملة للأفراد والطلاب والخريجين',
                             'points' => [
-                                '10 خدمات تعليمية ومهنية متنوعة تحت سقف واحد',
-                                'مسارات تعليمية وتدريبية متعددة تناسب مختلف المستويات',
-                                'حلول مخصصة تناسب أهدافك الأكاديمية والمهنية',
-                                'خدمات متكاملة للأفراد والطلاب والخريجين والشركات',
-                                'تجربة متكاملة توفر عليك البحث والتشتت بين أكثر من جهة'
+                                '10 خدمات متنوعة تحت سقف واحد.',
+                                'مسارات تعليمية وتدريبية متعددة.',
+                                'حلول تناسب أهدافك الأكاديمية والمهنية.',
+                                'خدمات للأفراد والطلاب والخريجين.'
                             ],
                             'vs_traditional' => [
                                 'traditional' => 'التعامل مع جهات مختلفة لكل خدمة وتشتت الجهد والوقت بدون خطة موحدة',
-                                'intok' => 'خدمات تعليمية وتدريبية وأكاديمية متعددة في مكان واحد مع متابعة شاملة'
+                                'intok' => 'تجربة متكاملة بدل البحث عن أكثر من جهة'
                             ],
                             'cta_text' => 'استكشف الـ 10 خدمات كاملة',
                             'wa_msg' => 'مرحباً، أود الاستفسار عن باقة خدمات INTOK المتكاملة والمسارات المتاحة'
                         ],
                         'practical' => [
-                            'nav_title' => 'تدريب عملي',
+                            'nav_title' => 'تدريب عملي وتطبيق واقعي',
                             'nav_sub' => 'تطبيقات وتدريبات تحاكي الواقع',
                             'badge' => 'محاكاة واقعية وتطبيق حي',
                             'badge_color' => 'bg-emerald-50 text-emerald-700 border-emerald-200',
-                            'title' => 'تدريب عملي وتطبيق واقعي يؤهلك لسوق العمل',
-                            'desc' => 'مش بنكتفي بالمعلومات النظرية؛ بنهتم بالتطبيق العملي والتدريب على مواقف حقيقية تساعدك تفهم المجال وتطور مهاراتك بكفاءة.',
+                            'title' => '02 – تدريب عملي وتطبيق واقعي',
+                            'desc' => 'مش بنكتفي بالمعلومات النظرية؛ بنهتم بالتطبيق العملي والتدريب على مواقف حقيقية تساعدك تفهم المجال وتطور مهاراتك.',
                             'stat_val' => '100%',
-                            'stat_unit' => 'عملي',
-                            'stat_label' => 'محاكاة وممارسة تطبيقية مباشرة',
-                            'stat_sub' => 'مهارات قابلة للتطبيق الفوري',
+                            'stat_unit' => 'تطبيقي',
+                            'stat_label' => 'القيمة المضافة: مهارات قابلة للتطبيق في الواقع.',
+                            'stat_sub' => 'جاهزية فورية لسوق العمل والمقابلات',
                             'points' => [
-                                'تدريبات عملية مكثفة حسب طبيعة ومتطلبات كل برنامج',
-                                'محاكاة واقعية لبيئات ومواقف العمل الحقيقية والمقابلات',
-                                'تطبيقات وتمارين تفاعلية مستمرة على أحدث الأدوات',
-                                'تقييم مستمر لمستوى المتدرب وتحديد نقاط التطوير',
-                                'اكتساب مهارات حقيقية قابلة للتطبيق الفوري في سوق العمل'
+                                'تدريبات عملية حسب طبيعة كل برنامج.',
+                                'محاكاة لمواقف العمل الحقيقية.',
+                                'تطبيقات وتمارين تفاعلية.',
+                                'تقييم مستمر لمستوى المتدرب.'
                             ],
                             'vs_traditional' => [
                                 'traditional' => 'تدريب نظري محدود ومحاضرات تلقين بدون ممارسة أو محاكاة للمقابلات',
-                                'intok' => 'تدريب عملي وتأهيل لسوق العمل ومحاكاة حقيقية للمقابلات وبيئة العمل'
+                                'intok' => 'مهارات قابلة للتطبيق في الواقع وتدريب على مواقف عمل حقيقية'
                             ],
                             'cta_text' => 'احجز مقعدك في التدريب العملي',
                             'wa_msg' => 'مرحباً، أود الاستفسار عن برامج التدريب العملي والمحاكاة التفاعلية في INTOK'
                         ],
                         'trainers' => [
-                            'nav_title' => 'مدربون متخصصون',
+                            'nav_title' => 'مدربون ومتخصصون في مجالاتهم',
                             'nav_sub' => 'خبرات في مجالات التعليم والتدريب',
-                            'badge' => 'إشراف نخبة معتمدة',
+                            'badge' => 'إشراف نخبة متخصصة',
                             'badge_color' => 'bg-purple-50 text-purple-700 border-purple-200',
-                            'title' => 'مدربون ومتخصصون ذوو خبرة ميدانية واسعة',
+                            'title' => '03 – مدربون ومتخصصون في مجالاتهم',
                             'desc' => 'نتيح برامج تدريبية وتعليمية بإشراف متخصصين في مجالاتهم، مع التركيز على نقل الخبرة وتقديم محتوى يناسب احتياجات المتدربين.',
                             'stat_val' => 'نخبة',
                             'stat_unit' => 'متخصصة',
-                            'stat_label' => 'خبرات عملية في التعليم والتدريب',
-                            'stat_sub' => 'توجيه فردي ومتابعة مستمرة',
+                            'stat_label' => 'القيمة المضافة: تعلم على إيد متخصصين.',
+                            'stat_sub' => 'نقل خبرة السوق الحقيقية والتوجيه المباشر',
                             'points' => [
-                                'محتوى تدريبي متخصص تم إعداده وفق أحدث المعايير',
-                                'شرح مبسط وتطبيق مباشر وفق طبيعة كل مجال',
-                                'متابعة وتوجيه مستمر للمتدربين طوال فترة التدريب',
-                                'الاهتمام برفع كفاءة ومستوى كل متدرب بصورة فردية',
-                                'التعلم واكتساب الخبرة مباشرة من ممارسين محترفين'
+                                'محتوى تدريبي متخصص.',
+                                'شرح وتطبيق وفق طبيعة المجال.',
+                                'متابعة وتوجيه خلال التدريب.',
+                                'الاهتمام بتطوير مستوى المتدرب.'
                             ],
                             'vs_traditional' => [
                                 'traditional' => 'محاضرون غير متخصصين ميدانياً ومحتوى تقليدي غير مواكب لاحتياجات الواقع',
-                                'intok' => 'إشراف مدربين وخبراء متخصصين ينقلون لك خبرة العمل الحقيقية ويوجهونك باحتراف'
+                                'intok' => 'تعلم على يد متخصصين وممارسين حقيقيين ينقلون خبرة العمل الفعلية'
                             ],
                             'cta_text' => 'تعرف على برامجنا ومدرّبينا',
                             'wa_msg' => 'مرحباً، أود الاستفسار عن كادر المدربين والمناهج المعتمدة في الأكاديمية'
                         ],
                         'support' => [
-                            'nav_title' => 'متابعة مستمرة',
+                            'nav_title' => 'متابعة ودعم مستمر',
                             'nav_sub' => 'دعم ومتابعة خلال رحلتك',
                             'badge' => 'دعم وإرشاد مستمر',
                             'badge_color' => 'bg-blue-50 text-blue-700 border-blue-200',
-                            'title' => 'متابعة ودعم مستمر في كل خطوة من رحلتك',
-                            'desc' => 'رحلتك مع INTOK مش مجرد تسجيل في خدمة؛ بنهتم بمتابعة خطواتك وتقديم الدعم والإرشاد وفق طبيعة الخدمة اللي اخترتها حتى تحقق هدفك.',
-                            'stat_val' => 'دائم',
-                            'stat_unit' => 'دعم',
-                            'stat_label' => 'فريق استشاري بجانبك طوال رحلتك',
-                            'stat_sub' => 'مش بتكون لوحدك في أي خطوة',
+                            'title' => '04 – متابعة ودعم مستمر',
+                            'desc' => 'رحلتك مع INTOK مش مجرد تسجيل في خدمة؛ بنهتم بمتابعة خطواتك وتقديم الدعم والإرشاد وفق طبيعة الخدمة اللي اخترتها.',
+                            'stat_val' => '24/7',
+                            'stat_unit' => 'متابعة',
+                            'stat_label' => 'القيمة المضافة: مش بتكون لوحدك في رحلتك.',
+                            'stat_sub' => 'فريق استشاري وإداري يرافقك خطوة بخطوة',
                             'points' => [
-                                'متابعة دقيقة لمراحل التدريب أو تنفيذ الخدمة خطوة بخطوة',
-                                'الرد السريع والوافي على الاستفسارات والتساؤلات',
-                                'توضيح كافة المتطلبات والإجراءات مسبقاً بكل شفافية',
-                                'دعم مخصص ومستمر يتناسب مع طبيعة كل خدمة وكل عميل',
-                                'مرافقة حقيقية تمنحك الثقة وراحة البال طوال مسارك'
+                                'متابعة مراحل التدريب أو تقديم الخدمة.',
+                                'الرد على الاستفسارات.',
+                                'توضيح الخطوات والمتطلبات.',
+                                'دعم مستمر حسب طبيعة كل خدمة.'
                             ],
                             'vs_traditional' => [
                                 'traditional' => 'إهمال استفسارات العملاء والتأخر في الرد وعدم وضوح الخطوات والمواعيد',
-                                'intok' => 'دعم ومتابعة مستمرة وإرشاد مباشر وتوضيح الخطوات والمتطلبات أولاً بأول'
+                                'intok' => 'مش بتكون لوحدك في رحلتك؛ متابعة مستمرة وتوضيح الخطوات أولاً بأول'
                             ],
                             'cta_text' => 'احجز جلستك الاستشارية الآن',
                             'wa_msg' => 'مرحباً، أود الاستفسار عن نظام المتابعة والدعم المستمر لخدمات الأكاديمية'
                         ],
                         'customized' => [
-                            'nav_title' => 'حلول مخصصة',
+                            'nav_title' => 'حلول تناسب أهدافك',
                             'nav_sub' => 'خدمات تناسب احتياجاتك وأهدافك',
                             'badge' => 'توجيه فردي دقيق',
                             'badge_color' => 'bg-amber-50 text-amber-800 border-amber-200',
-                            'title' => 'حلول مخصصة تناسب أهدافك وإمكانياتك',
+                            'title' => '05 – حلول تناسب أهدافك',
                             'desc' => 'كل شخص عنده هدف مختلف، علشان كده بنساعدك تختار الخدمة أو المسار الأنسب لاحتياجاتك وإمكانياتك وخطتك المستقبلية.',
                             'stat_val' => '1-on-1',
                             'stat_unit' => 'تخصيص',
-                            'stat_label' => 'مسار مصمم حسب مؤهلك وهدفك',
-                            'stat_sub' => 'تبدأ من المكان الأنسب لهدفك',
+                            'stat_label' => 'القيمة المضافة: تبدأ من المكان المناسب لهدفك.',
+                            'stat_sub' => 'توفير الوقت والجهد على المسار الأنسب لطموحك',
                             'points' => [
-                                'فهم احتياجاتك ومؤهلاتك وطموحك قبل اختيار أي خدمة',
-                                'توجيهك بدقة للمسار التعليمي أو المهني الأكثر ملاءمة لك',
-                                'توضيح كافة التفاصيل والمتطلبات والتكاليف دون غموض',
-                                'اقتراح خطوات عملية وواضحة للبدء الصحيح في الوقت المناسب',
-                                'ضمان استثمار وقتك وجهدك في المسار الذي يحقق أفضل نتيجة'
+                                'فهم احتياجاتك قبل اختيار الخدمة.',
+                                'توجيهك للمسار المناسب.',
+                                'توضيح المتطلبات والتفاصيل.',
+                                'اقتراح خطوات واضحة للبدء.'
                             ],
                             'vs_traditional' => [
                                 'traditional' => 'فرض مسارات وقوالب موحدة على الجميع دون تقييم احتياج أو مؤهل الطالب',
-                                'intok' => 'فهم احتياجاتك واقتراح حلول مخصصة تناسب قدراتك وهدفك الأكاديمي أو المهني'
+                                'intok' => 'تبدأ من المكان المناسب لهدفك بحلول مخصصة تناسب قدراتك'
                             ],
                             'cta_text' => 'احصل على خطتك المخصصة',
                             'wa_msg' => 'مرحباً، أود استشارة لتحديد المسار الأنسب لمؤهلي وخلفيتي الدراسية'
                         ],
                         'future' => [
-                            'nav_title' => 'تأهيل للمستقبل',
+                            'nav_title' => 'تأهيل لمستقبلك الأكاديمي والمهني',
                             'nav_sub' => 'تطوير مهاراتك الأكاديمية والمهنية',
                             'badge' => 'جاهزية أكاديمية ومهنية',
                             'badge_color' => 'bg-emerald-50 text-emerald-800 border-emerald-200',
-                            'title' => 'تأهيل شامل لمستقبلك الأكاديمي والمهني',
+                            'title' => '06 – تأهيل لمستقبلك الأكاديمي والمهني',
                             'desc' => 'بنساعدك تطور قدراتك وتستعد لخطوات جديدة في التعليم والعمل، من خلال برامج التأهيل والتدريب والخدمات الأكاديمية المتخصصة.',
-                            'stat_val' => 'مستقبلك',
-                            'stat_unit' => 'هدفنا',
-                            'stat_label' => 'تأهيل للدراسة والعمل الدولي',
-                            'stat_sub' => 'خطوات أوضح نحو طموحك',
+                            'stat_val' => 'المستقبل',
+                            'stat_unit' => 'جاهزية',
+                            'stat_label' => 'القيمة المضافة: خطوات واضحة ومدروسة نحو مستقبلك.',
+                            'stat_sub' => 'تأهيل يفتح لك آفاق التعليم والعمل في أوروبا',
                             'points' => [
-                                'التأهيل للدراسة في أكثر من 10 دول أوروبية مرموقة',
-                                'الاستعداد لاجتياز اختبارات شهادات اللغة الدولية والقبول الجامعي',
-                                'تطوير المهارات اللغوية والتواصلية المطلوبة في سوق العمل',
-                                'المساعدة المتخصصة في ملفات وإجراءات القبول الأكاديمي',
-                                'رسم خطوات واضحة ومدروسة نحو مستقبلك بثقة واحتراف'
+                                'التأهيل للدراسة في أوروبا.',
+                                'الاستعداد للاختبارات الدولية.',
+                                'تطوير المهارات اللغوية والمهنية.',
+                                'المساعدة في إجراءات القبول الأكاديمي.'
                             ],
                             'vs_traditional' => [
                                 'traditional' => 'صعوبة معرفة الإجراءات ومتطلبات التقديم ومحدودية الفرص التعليمية',
-                                'intok' => 'مساعدة في اختيار المسار وتجهيز الملفات ومتابعة إجراءات التقديم والقبول'
+                                'intok' => 'خطوات واضحة وتأهيل شامل للدراسة في أوروبا وسوق العمل'
                             ],
                             'cta_text' => 'ابدأ خطوتك نحو المستقبل',
                             'wa_msg' => 'مرحباً، أود بدء خطتي للتأهيل للدراسة في أوروبا وتطوير مهاراتي المستقبلية'
@@ -1366,37 +1360,27 @@
                 $currentFallbacks = $bentoFallbacks[$locale] ?? $bentoFallbacks['ar'];
                 $whyPillars = [];
 
-                $getLocalizedText = static function ($val, $fallbackVal) use ($locale) {
-                    if (empty($val) || !is_string($val)) {
-                        return $fallbackVal;
-                    }
-                    if ($locale !== 'ar' && preg_match('/[\x{0600}-\x{06FF}]/u', $val)) {
-                        return $fallbackVal;
-                    }
-                    return $val;
-                };
-
                 foreach ($pillarKeys as $pKey) {
                     $fb = $currentFallbacks[$pKey] ?? ($bentoFallbacks['ar'][$pKey] ?? []);
                     $whyPillars[] = [
                         'id' => $pKey,
                         'icon' => $pillarIcons[$pKey] ?? '',
-                        'nav_title' => $getLocalizedText(data_get($siteSettings ?? [], "why_bento_{$pKey}_nav_title.{$locale}"), $fb['nav_title']),
-                        'nav_sub' => $getLocalizedText(data_get($siteSettings ?? [], "why_bento_{$pKey}_nav_sub.{$locale}"), $fb['nav_sub']),
-                        'badge' => $getLocalizedText(data_get($siteSettings ?? [], "why_bento_{$pKey}_badge.{$locale}"), $fb['badge']),
+                        'nav_title' => data_get($siteSettings ?? [], "why_bento_{$pKey}_nav_title.{$locale}", $fb['nav_title']),
+                        'nav_sub' => data_get($siteSettings ?? [], "why_bento_{$pKey}_nav_sub.{$locale}", $fb['nav_sub']),
+                        'badge' => data_get($siteSettings ?? [], "why_bento_{$pKey}_badge.{$locale}", $fb['badge']),
                         'badge_color' => $fb['badge_color'] ?? 'bg-red-50 text-[#fe0002] border-red-200',
-                        'title' => $getLocalizedText(data_get($siteSettings ?? [], "why_bento_{$pKey}_title.{$locale}"), $fb['title']),
-                        'desc' => $getLocalizedText(data_get($siteSettings ?? [], "why_bento_{$pKey}_desc.{$locale}"), $fb['desc']),
+                        'title' => data_get($siteSettings ?? [], "why_bento_{$pKey}_title.{$locale}", $fb['title']),
+                        'desc' => data_get($siteSettings ?? [], "why_bento_{$pKey}_desc.{$locale}", $fb['desc']),
                         'stat_val' => data_get($siteSettings ?? [], "why_bento_{$pKey}_stat_val", $fb['stat_val']),
-                        'stat_unit' => $getLocalizedText(data_get($siteSettings ?? [], "why_bento_{$pKey}_stat_unit.{$locale}"), $fb['stat_unit']),
-                        'stat_label' => $getLocalizedText(data_get($siteSettings ?? [], "why_bento_{$pKey}_stat_label.{$locale}"), $fb['stat_label']),
-                        'stat_sub' => $getLocalizedText(data_get($siteSettings ?? [], "why_bento_{$pKey}_stat_sub.{$locale}"), $fb['stat_sub']),
+                        'stat_unit' => data_get($siteSettings ?? [], "why_bento_{$pKey}_stat_unit.{$locale}", $fb['stat_unit']),
+                        'stat_label' => data_get($siteSettings ?? [], "why_bento_{$pKey}_stat_label.{$locale}", $fb['stat_label']),
+                        'stat_sub' => data_get($siteSettings ?? [], "why_bento_{$pKey}_stat_sub.{$locale}", $fb['stat_sub']),
                         'points' => $parsePoints(data_get($siteSettings ?? [], "why_bento_{$pKey}_points"), $fb['points']),
                         'vs_traditional' => [
-                            'traditional' => $getLocalizedText(data_get($siteSettings ?? [], "why_bento_{$pKey}_vs_traditional.{$locale}"), $fb['vs_traditional']['traditional']),
-                            'intok' => $getLocalizedText(data_get($siteSettings ?? [], "why_bento_{$pKey}_vs_intok.{$locale}"), $fb['vs_traditional']['intok'])
+                            'traditional' => data_get($siteSettings ?? [], "why_bento_{$pKey}_vs_traditional.{$locale}", $fb['vs_traditional']['traditional']),
+                            'intok' => data_get($siteSettings ?? [], "why_bento_{$pKey}_vs_intok.{$locale}", $fb['vs_traditional']['intok'])
                         ],
-                        'cta_text' => $getLocalizedText(data_get($siteSettings ?? [], "why_bento_{$pKey}_cta_text.{$locale}"), $fb['cta_text']),
+                        'cta_text' => data_get($siteSettings ?? [], "why_bento_{$pKey}_cta_text.{$locale}", $fb['cta_text']),
                         'cta_url' => $pKey === 'trans' ? route('contact', ['locale' => $locale]) : route('consultation.create', ['locale' => $locale]),
                         'wa_msg' => $fb['wa_msg']
                     ];
@@ -1582,18 +1566,10 @@
                             </span>
                             <div class="text-start">
                                 <h4 class="text-sm font-black text-[#c27803] group-hover:text-[#fe0002] transition-colors">
-                                    {{ match($locale) {
-                                        'it' => 'Cosa distingue l\'ecosistema INTOK? Confronto tra i canali tradizionali e la nostra formula integrata',
-                                        'en' => 'What sets INTOK apart? Traditional methods vs. our comprehensive ecosystem',
-                                        default => 'إيه اللي بيميز منظومة INTOK ؟ مقارنة بين الطرق التقليدية ومنظومة INTOK المتكاملة',
-                                    } }}
+                                    إيه اللي بيميز منظومة INTOK ؟ مقارنة بين الطرق التقليدية ومنظومة INTOK المتكاملة
                                 </h4>
                                 <p class="text-xs font-medium text-slate-500">
-                                    {{ match($locale) {
-                                        'it' => 'Clicca per esplorare il confronto nei 6 ambiti: servizi integrati, lingue, traduzioni, formazione, università estere ed esami internazionali.',
-                                        'en' => 'Click to explore the comparison across 6 domains: integrated services, languages, translation, career prep, study in Europe, and international exams.',
-                                        default => 'اضغط لاستعراض المقارنة في المجالات الستة: تنوع الخدمات، اللغات، الترجمة، التأهيل المهني، الدراسة في أوروبا، والاختبارات الدولية',
-                                    } }}
+                                    اضغط لاستعراض المقارنة في المجالات الستة: تنوع الخدمات، اللغات، الترجمة، التأهيل المهني، الدراسة في أوروبا، والاختبارات الدولية
                                 </p>
                             </div>
                         </div>
@@ -1609,41 +1585,41 @@
                             <table class="w-full text-start text-xs sm:text-sm border-collapse">
                                 <thead>
                                     <tr class="bg-slate-50 border-b border-slate-200 text-slate-800">
-                                        <th class="p-4 text-start font-black">{{ match($locale) { 'it' => 'Ambito e Servizio', 'en' => 'Domain & Service', default => 'مجال التقديم والخدمة' } }}</th>
-                                        <th class="p-4 text-start font-black text-red-600 bg-red-50/50">{{ match($locale) { 'it' => 'Canali e Uffici Tradizionali', 'en' => 'Traditional Channels & Agencies', default => 'المكاتب والوسائل العادية' } }}</th>
-                                        <th class="p-4 text-start font-black text-emerald-700 bg-emerald-50/60">{{ match($locale) { 'it' => 'Ecosistema INTOK ACADEMY', 'en' => 'INTOK ACADEMY Ecosystem', default => 'منظومة INTOK ACADEMY' } }}</th>
+                                        <th class="p-4 text-start font-black">مجال التقديم والخدمة</th>
+                                        <th class="p-4 text-start font-black text-red-600 bg-red-50/50">المكاتب والوسائل العادية</th>
+                                        <th class="p-4 text-start font-black text-emerald-700 bg-emerald-50/60">منظومة INTOK ACADEMY</th>
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-slate-100">
                                     <tr>
-                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">{{ match($locale) { 'it' => '1. Varietà dei Servizi', 'en' => '1. Diversity of Services', default => '1. تنوع الخدمات' } }}</td>
-                                        <td class="p-4 text-slate-600 bg-red-50/20">{{ match($locale) { 'it' => 'Gestione frammentata con enti diversi e dispersione di tempo', 'en' => 'Dealing with uncoordinated individual providers losing time', default => 'التعامل مع جهات مختلفة لكل خدمة وتشتت الجهد' } }}</td>
-                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">{{ match($locale) { 'it' => '10 servizi educativi, formativi e accademici sotto lo stesso tetto con piano coordinato', 'en' => '10 educational, training, and academic services under one roof with a unified plan', default => 'خدمات تعليمية وتدريبية وأكاديمية متعددة في مكان واحد بخطة واضحة' } }}</td>
+                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">1. تنوع الخدمات</td>
+                                        <td class="p-4 text-slate-600 bg-red-50/20">التعامل مع جهات مختلفة لكل خدمة وتشتت الجهد</td>
+                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">خدمات تعليمية وتدريبية وأكاديمية متعددة في مكان واحد بخطة واضحة</td>
                                     </tr>
                                     <tr>
-                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">{{ match($locale) { 'it' => '2. Apprendimento Lingue', 'en' => '2. Language Mastery', default => '2. تعلم اللغات' } }}</td>
-                                        <td class="p-4 text-slate-600 bg-red-50/20">{{ match($locale) { 'it' => 'Corsi teorici convenzionali senza reale conversazione o applicazione pratica', 'en' => 'Generic theoretical classes without immersion or practical conversation', default => 'كورسات عامة تقليدية بدون مسار واضح أو تطبيق' } }}</td>
-                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">{{ match($locale) { 'it' => 'Corsi strutturati a livelli focalizzati sull\'effettiva fluidità comunicativa', 'en' => 'Structured training tracks focused directly on spoken fluency and competence', default => 'برامج لغات بمستويات ومسارات تدريبية منظمة تركز على الطلاقة' } }}</td>
+                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">2. تعلم اللغات</td>
+                                        <td class="p-4 text-slate-600 bg-red-50/20">كورسات عامة تقليدية بدون مسار واضح أو تطبيق</td>
+                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">برامج لغات بمستويات ومسارات تدريبية منظمة تركز على الطلاقة</td>
                                     </tr>
                                     <tr>
-                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">{{ match($locale) { 'it' => '3. Traduzione Asseverata', 'en' => '3. Certified Translation', default => '3. الترجمة المعتمدة' } }}</td>
-                                        <td class="p-4 text-slate-600 bg-red-50/20">{{ match($locale) { 'it' => 'Ricerca di traduttori singoli con elevato rischio di errori e vizi formali', 'en' => 'Risky search for individual translators prone to rejection and delays', default => 'البحث عن مترجمين وجهات مختلفة مع احتمالية الأخطاء' } }}</td>
-                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">{{ match($locale) { 'it' => 'Traduzione giurata e revisione ufficiale per documenti di studio e lavoro', 'en' => 'Certified official translation and strict proofreading for embassies and institutions', default => 'خدمات ترجمة معتمدة وتدقيق لغوي رسمي للمستندات والشهادات' } }}</td>
+                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">3. الترجمة المعتمدة</td>
+                                        <td class="p-4 text-slate-600 bg-red-50/20">البحث عن مترجمين وجهات مختلفة مع احتمالية الأخطاء</td>
+                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">خدمات ترجمة معتمدة وتدقيق لغوي رسمي للمستندات والشهادات</td>
                                     </tr>
                                     <tr>
-                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">{{ match($locale) { 'it' => '4. Qualificazione al Lavoro', 'en' => '4. Career Readiness', default => '4. التأهيل المهني' } }}</td>
-                                        <td class="p-4 text-slate-600 bg-red-50/20">{{ match($locale) { 'it' => 'Lezioni teoriche prive di simulazione sul posto di lavoro', 'en' => 'Abstract lectures without workplace simulation or practical training', default => 'تدريب نظري محدود بدون محاكاة لبيئة العمل' } }}</td>
-                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">{{ match($locale) { 'it' => 'Formazione pratica con simulazione di colloqui per grandi multinazionali', 'en' => 'Hands-on training, interview simulation, and direct multinational qualification', default => 'تدريب عملي وتأهيل مباشر لسوق العمل ومحاكاة لمقابلات الشركات' } }}</td>
+                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">4. التأهيل المهني</td>
+                                        <td class="p-4 text-slate-600 bg-red-50/20">تدريب نظري محدود بدون محاكاة لبيئة العمل</td>
+                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">تدريب عملي وتأهيل مباشر لسوق العمل ومحاكاة لمقابلات الشركات</td>
                                     </tr>
                                     <tr>
-                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">{{ match($locale) { 'it' => '5. Studi Universitari in Europa', 'en' => '5. European University Studies', default => '5. التأهيل للدراسة بأوروبا' } }}</td>
-                                        <td class="p-4 text-slate-600 bg-red-50/20">{{ match($locale) { 'it' => 'Complessità burocratica e informazioni discordanti sui requisiti', 'en' => 'Conflicting information, complex bureaucracy, and lost admission rounds', default => 'صعوبة معرفة الإجراءات ومتطلبات التقديم وتضارب المعلومات' } }}</td>
-                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">{{ match($locale) { 'it' => 'Orientamento nella scelta del corso, predisposizione fascicolo e monitoraggio pratiche', 'en' => 'Full assistance in university selection, dossier preparation, and admission tracking', default => 'مساعدة في اختيار المسار وتجهيز الملفات ومتابعة إجراءات التقديم خطوة بخطوة' } }}</td>
+                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">5. التأهيل للدراسة بأوروبا</td>
+                                        <td class="p-4 text-slate-600 bg-red-50/20">صعوبة معرفة الإجراءات ومتطلبات التقديم وتضارب المعلومات</td>
+                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">مساعدة في اختيار المسار وتجهيز الملفات ومتابعة إجراءات التقديم خطوة بخطوة</td>
                                     </tr>
                                     <tr>
-                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">{{ match($locale) { 'it' => '6. Esami e Servizi Internazionali', 'en' => '6. International Exams & Services', default => '6. الاختبارات والخدمات الدولية' } }}</td>
-                                        <td class="p-4 text-slate-600 bg-red-50/20">{{ match($locale) { 'it' => 'Difficoltà nel coordinare appuntamenti e scadenze consolari', 'en' => 'Scattered procedures and missed consulate or examination deadlines', default => 'تعدد الجهات وصعوبة متابعة المواعيد والإجراءات' } }}</td>
-                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">{{ match($locale) { 'it' => 'Preparazione a certificazioni internazionali e assistenza appuntamenti consolari', 'en' => 'Prep for recognized language certifications and consular appointment support', default => 'تأهيل للاختبارات الدولية ومساعدة في حجز المواعيد والخدمات المرتبطة بها' } }}</td>
+                                        <td class="p-4 font-black text-slate-900 bg-slate-50/40">6. الاختبارات والخدمات الدولية</td>
+                                        <td class="p-4 text-slate-600 bg-red-50/20">تعدد الجهات وصعوبة متابعة المواعيد والإجراءات</td>
+                                        <td class="p-4 font-bold text-slate-900 bg-emerald-50/30">تأهيل للاختبارات الدولية ومساعدة في حجز المواعيد والخدمات المرتبطة بها</td>
                                     </tr>
                                 </tbody>
                             </table>
