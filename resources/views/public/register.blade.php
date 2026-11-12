@@ -7,6 +7,9 @@
 @section('title', __('site.registration_title'))
 
 @section('content')
+@php
+    $locale = $locale ?? app()->getLocale();
+@endphp
 <section class="relative isolate overflow-hidden bg-intok-hero py-16 text-slate-900 border-b border-slate-100">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-start">
         <span class="inline-block rounded-full border border-red-200 bg-white/90 px-4 py-1 text-xs font-black text-red-600 shadow-xs">

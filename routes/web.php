@@ -23,6 +23,12 @@ use App\Http\Controllers\Public\SitePageController as PublicSitePageController;
 use App\Http\Controllers\Public\TestimonialPageController;
 
 Route::redirect('/', '/ar');
+Route::redirect('/about', '/ar/about');
+Route::redirect('/consultation', '/ar/consultation');
+Route::redirect('/services', '/ar/services');
+Route::redirect('/contact', '/ar/contact');
+Route::redirect('/register', '/ar/register');
+Route::redirect('/team', '/ar/team');
 Route::get('/sitemap.xml', [PublicSeoController::class, 'sitemap'])->name('sitemap');
 Route::get('/robots.txt', [PublicSeoController::class, 'robots'])->name('robots');
 
@@ -31,6 +37,8 @@ Route::prefix('{locale}')
     ->group(function (): void {
         Route::get('/', HomeController::class)->name('home');
         Route::get('/about', [PublicSitePageController::class, 'about'])->name('about');
+        Route::get('/about-us', fn (string $locale) => redirect()->route('about', ['locale' => $locale]));
+        Route::get('/chi-siamo', fn (string $locale) => redirect()->route('about', ['locale' => $locale]));
         Route::get('/team', [\App\Http\Controllers\Public\TeamPageController::class, 'index'])->name('team');
         Route::get('/testimonials', [TestimonialPageController::class, 'index'])->name('testimonials');
         Route::get('/p/{slug}', [PublicSitePageController::class, 'show'])->name('pages.show');

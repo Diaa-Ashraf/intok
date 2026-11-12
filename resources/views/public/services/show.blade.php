@@ -1,5 +1,9 @@
 @extends('public.layouts.app')
 
+@php
+    $locale = $locale ?? app()->getLocale();
+@endphp
+
 @section('title', $service->seo_title[$locale] ?? $service->title[$locale] ?? '')
 @section('meta_description', $service->seo_description[$locale] ?? $service->summary[$locale] ?? '')
 
@@ -32,6 +36,9 @@
 @endsection
 
 @section('content')
+@php
+    $locale = $locale ?? app()->getLocale();
+@endphp
     <section class="relative isolate overflow-hidden bg-intok-hero py-16 text-slate-900 border-b border-slate-100">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-start">
             <a href="{{ route('services.index', ['locale' => $locale]) }}" class="inline-flex items-center gap-1.5 text-xs font-bold text-red-600 hover:text-red-700 transition">

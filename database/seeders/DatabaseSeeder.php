@@ -212,10 +212,79 @@ class DatabaseSeeder extends Seeder
             ],
             'hero_stat_3_val' => '100%',
             'hero_stat_3_lbl' => [
-                'ar' => 'تأهيل معتمد ودعم متكامل',
-                'en' => 'Certified Qualification & Full Support',
-                'it' => 'Qualificazione certificata e supporto completo'
+                'ar' => 'استكمال الملفات',
+                'en' => 'File Completion',
+                'it' => 'Completamento Fascicoli'
             ],
+            'hero_stat_3_sub' => [
+                'ar' => 'متابعة وتجهيز الملفات وفق المتطلبات',
+                'en' => 'File tracking and preparation as required',
+                'it' => 'Monitoraggio e preparazione secondo i requisiti'
+            ],
+
+            // Floating Badges on Hero Stage
+            'hero_float_1_title' => [
+                'ar' => 'تأهيل أكاديمي ومهني',
+                'en' => 'Academic & Career Qualification',
+                'it' => 'Qualificazione Accademica e Professionale'
+            ],
+            'hero_float_1_sub' => [
+                'ar' => 'برامج تدريبية وفرص تعليمية متنوعة',
+                'en' => 'Diverse training & study opportunities',
+                'it' => 'Programmi e opportunità formative varie'
+            ],
+            'hero_float_2_title' => [
+                'ar' => 'دعم وتجهيز الملفات',
+                'en' => 'File Support & Preparation',
+                'it' => 'Supporto e Preparazione Fascicoli'
+            ],
+            'hero_float_2_sub' => [
+                'ar' => 'متابعة دقيقة وفق متطلبات كل جهة',
+                'en' => 'Strict tracking tailored to each institution',
+                'it' => 'Monitoraggio accurato secondo ogni ente'
+            ],
+
+            // 4 Interactive Hero Stage Scenes
+            'hero_scene_1_tab' => ['ar' => 'التأهيل للدراسة', 'en' => 'Study Qualification', 'it' => 'Orientamento agli Studi'],
+            'hero_scene_1_badge' => ['ar' => 'خطوتك الأولى نحو الدراسة في أوروبا', 'en' => 'Your First Step Toward Europe', 'it' => 'Il tuo primo passo verso l\'Europa'],
+            'hero_scene_1_title' => ['ar' => 'خطوتك الأولى نحو الدراسة في أوروبا', 'en' => 'Your First Step Toward Studying in Europe', 'it' => 'Il tuo primo passo verso lo studio in Europa'],
+            'hero_scene_1_desc' => [
+                'ar' => 'فرص تعليمية في أكثر من 10 دول أوروبية، ومساعدتك في اختيار الجامعة والتخصص وتجهيز ملف التقديم.',
+                'en' => 'Educational opportunities in 10+ European countries, helping you select universities and prepare applications.',
+                'it' => 'Opportunità educative in oltre 10 paesi europei, assistenza nella scelta dell ateneo e preparazione del dossier.'
+            ],
+            'hero_scene_1_stat' => ['ar' => '10+ دول أوروبية', 'en' => '10+ European Countries', 'it' => '10+ Paesi Europei'],
+
+            'hero_scene_2_tab' => ['ar' => 'اللغات والترجمة', 'en' => 'Languages & Translation', 'it' => 'Lingue e Traduzioni'],
+            'hero_scene_2_badge' => ['ar' => '02 — اللغات والترجمة', 'en' => '02 — Languages & Translation', 'it' => '02 — Lingue e Traduzioni'],
+            'hero_scene_2_title' => ['ar' => 'لغتك تفتحلك أبواب جديدة', 'en' => 'Your Language Opens New Doors', 'it' => 'La tua lingua apre nuove porte'],
+            'hero_scene_2_desc' => [
+                'ar' => 'تعلم اللغات الأجنبية مع برامج تدريبية متخصصة، وخدمات ترجمة معتمدة تساعدك في خطواتك الأكاديمية والمهنية.',
+                'en' => 'Learn foreign languages through specialized training and certified translation assisting your career.',
+                'it' => 'Apprendi le lingue con corsi dedicati e traduzioni giurate a supporto del tuo percorso.'
+            ],
+            'hero_scene_2_stat' => ['ar' => 'ترجمة معتمدة وشهادات دولية', 'en' => 'Certified Translation & Diplomas', 'it' => 'Traduzione giurata e certificazioni'],
+
+            'hero_scene_3_tab' => ['ar' => 'التدريب المهني', 'en' => 'Career Training', 'it' => 'Formazione Professionale'],
+            'hero_scene_3_badge' => ['ar' => '03 — التدريب والتأهيل المهني', 'en' => '03 — Vocational & Career Training', 'it' => '03 — Formazione e Qualificazione Professionale'],
+            'hero_scene_3_title' => ['ar' => 'طوّر مهاراتك واستعد لسوق العمل', 'en' => 'Upgrade Skills & Prepare for the Market', 'it' => 'Sviluppa competenze per il lavoro'],
+            'hero_scene_3_desc' => [
+                'ar' => 'برامج تدريب عملية في الكول سنتر، ومجالات مختلفة تساعدك تكتسب مهارات مطلوبة.',
+                'en' => 'Practical training programs in Call Center and diverse fields helping you acquire in-demand skills.',
+                'it' => 'Programmi pratici in call center e settori vari per acquisire competenze richieste.'
+            ],
+            'hero_scene_3_stat' => ['ar' => 'محاكاة عملية وسوق عمل مباشر', 'en' => 'Practical Simulation & Direct Market', 'it' => 'Simulazione pratica e mercato diretto'],
+
+            'hero_scene_4_tab' => ['ar' => 'الخدمات الأكاديمية', 'en' => 'Academic Services', 'it' => 'Servizi Accademici'],
+            'hero_scene_4_badge' => ['ar' => '04 — الخدمات الأكاديمية والدولية', 'en' => '04 — Academic & International Services', 'it' => '04 — Servizi Accademici e Internazionali'],
+            'hero_scene_4_title' => ['ar' => 'خلّي طموحك يوصل أبعد', 'en' => 'Take Your Ambitions Further', 'it' => 'Porta la tua ambizione più lontano'],
+            'hero_scene_4_desc' => [
+                'ar' => 'بنساعدك في إجراءات التقديم للجامعات، وحجز الاختبارات الدولية، ومواعيد السفارات، والتقديم للدراسات العليا والمنح.',
+                'en' => 'Assisting with university applications, international exams, embassy bookings, graduate studies and scholarships.',
+                'it' => 'Ti guidiamo nelle domande universitarie, prenotazione test internazionali, appuntamenti consolari e borse di studio.'
+            ],
+            'hero_scene_4_stat' => ['ar' => '100% تجهيز ومتابعة دقيقة', 'en' => '100% File Compliance & Guidance', 'it' => '100% Preparazione e supporto'],
+
             'robot_quotes' => [
                 "\"INTOK بوابتك للتعلم والتطور وبناء مستقبلك بثقة!\"",
                 "\"فرص تعليمية وتأهيل مهني في أكثر من 10 دول أوروبية!\"",
@@ -224,21 +293,21 @@ class DatabaseSeeder extends Seeder
                 "\"ترجمة معتمدة رسمياً وموثقة لجميع السفارات بأعلى دقة وسرعة!\""
             ],
 
-            // Services Section
+            // Services Section (Official Wording)
             'services_badge' => [
-                'ar' => 'برامج وتدريب معتمد دولياً',
-                'en' => 'Internationally Certified Programs',
-                'it' => 'Programmi certificati a livello internazionale'
+                'ar' => '10 خدمات تعليمية ومهنية متكاملة',
+                'en' => '10 Integrated Educational & Career Services',
+                'it' => '10 Servizi educativi e professionali integrati'
             ],
             'services_title' => [
-                'ar' => 'خدمات وتدريب INTOK ACADEMY',
-                'en' => 'Services & Training INTOK ACADEMY',
-                'it' => 'Servizi e formazione INTOK ACADEMY'
+                'ar' => 'INTOK  خدمات تعليمية ومهنية متكاملة',
+                'en' => 'INTOK - Integrated Educational & Professional Services',
+                'it' => 'INTOK - Servizi educativi e professionali integrati'
             ],
             'services_subtitle' => [
-                'ar' => 'منظومة تدريب احترافية معتمدة تؤهلك لسوق العمل الدولي وكبرى الشركات العالمية، مع خدمات الترجمة الرسمية الموثقة للسفارات وبوابتك لاستكمال الدراسة في الدول الأوروبية.',
-                'en' => 'Comprehensive certified training qualifying you for multinational careers, certified translation, and European education.',
-                'it' => 'Formazione professionale certificata per il lavoro e gli studi in Europa.'
+                'ar' => 'بنقدم لك حلول تعليمية ومهنية متكاملة تبدأ من تعلم اللغات والترجمة المعتمدة، مرورًا بالتأهيل والتدريب المهني، وصولًا للدراسة بالخارج والخدمات الأكاديمية الدولية.',
+                'en' => 'We offer integrated educational and professional solutions starting from language learning and certified translation, through vocational training, to studying abroad and international academic services.',
+                'it' => "Offriamo soluzioni educative e professionali integrate che partono dall'apprendimento delle lingue e dalle traduzioni asseverate, passano per la formazione professionale fino agli studi all'estero e ai servizi accademici internazionali."
             ],
 
             // Live Slider Section

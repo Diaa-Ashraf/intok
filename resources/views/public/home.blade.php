@@ -17,34 +17,34 @@
         [
             'tab' => data_get($siteSettings ?? [], 'hero_scene_1_tab.'.$locale, match($locale) { 'it' => 'Orientamento agli Studi', 'en' => 'Study Qualification', default => 'التأهيل للدراسة' }),
             'image' => data_get($siteSettings ?? [], 'hero_scene_1_img') ? asset('storage/'.data_get($siteSettings, 'hero_scene_1_img')) : asset('assets/images/schools/san-giorgio.jpg'),
-            'badge' => data_get($siteSettings ?? [], 'hero_scene_1_badge.'.$locale, match($locale) { 'it' => '01 • Studi in Europa', 'en' => '01 • Study in Europe', default => '01 — خطوتك الأولى نحو الدراسة في أوروبا' }),
-            'title' => data_get($siteSettings ?? [], 'hero_scene_1_title.'.$locale, match($locale) { 'it' => 'Il Tuo Primo Passo Verso lo Studio in Europa', 'en' => 'Your First Step Toward Studying in Europe', default => 'خطوتك الأولى نحو الدراسة في أوروبا' }),
-            'desc' => data_get($siteSettings ?? [], 'hero_scene_1_desc.'.$locale, match($locale) { 'it' => 'Opportunità educative in oltre 10 paesi europei, con orientamento su università, corsi e preparazione della domanda.', 'en' => 'Educational opportunities across 10+ European countries, helping you select universities, majors, and prepare applications.', default => 'فرص تعليمية في أكثر من 10 دول أوروبية، ومساعدتك في اختيار الجامعة والتخصص وتجهيز ملف التقديم ومتابعة إجراءاته.' }),
-            'stat' => data_get($siteSettings ?? [], 'hero_scene_1_stat.'.$locale, match($locale) { 'it' => '10+ Paesi Europei', 'en' => '10+ European Destinations', default => '10+ دول أوروبية مجهزة' }),
+            'badge' => data_get($siteSettings ?? [], 'hero_scene_1_badge.'.$locale, match($locale) { 'it' => 'Il tuo primo passo verso l\'Europa', 'en' => 'Your First Step Toward Europe', default => 'خطوتك الأولى نحو الدراسة في أوروبا' }),
+            'title' => data_get($siteSettings ?? [], 'hero_scene_1_title.'.$locale, match($locale) { 'it' => 'Il tuo primo passo verso lo studio in Europa', 'en' => 'Your First Step Toward Studying in Europe', default => 'خطوتك الأولى نحو الدراسة في أوروبا' }),
+            'desc' => data_get($siteSettings ?? [], 'hero_scene_1_desc.'.$locale, match($locale) { 'it' => 'Opportunità educative in oltre 10 paesi europei, assistenza nella scelta dell ateneo e preparazione del dossier.', 'en' => 'Educational opportunities in 10+ European countries, helping you select universities and prepare applications.', default => 'فرص تعليمية في أكثر من 10 دول أوروبية، ومساعدتك في اختيار الجامعة والتخصص وتجهيز ملف التقديم.' }),
+            'stat' => data_get($siteSettings ?? [], 'hero_scene_1_stat.'.$locale, match($locale) { 'it' => '10+ Paesi Europei', 'en' => '10+ European Countries', default => '10+ دول أوروبية' }),
         ],
         [
             'tab' => data_get($siteSettings ?? [], 'hero_scene_2_tab.'.$locale, match($locale) { 'it' => 'Lingue e Traduzioni', 'en' => 'Languages & Translation', default => 'اللغات والترجمة' }),
             'image' => data_get($siteSettings ?? [], 'hero_scene_2_img') ? asset('storage/'.data_get($siteSettings, 'hero_scene_2_img')) : asset('assets/images/academy/italian-classroom-lecture.jpg'),
-            'badge' => data_get($siteSettings ?? [], 'hero_scene_2_badge.'.$locale, match($locale) { 'it' => '02 • Formazione Linguistica', 'en' => '02 • Language Training', default => '02 — لغتك تفتحلك أبواب جديدة' }),
-            'title' => data_get($siteSettings ?? [], 'hero_scene_2_title.'.$locale, match($locale) { 'it' => 'La Tua Lingua Apre Nuove Porte', 'en' => 'Your Language Opens New Doors', default => 'لغتك تفتحلك أبواب جديدة' }),
-            'desc' => data_get($siteSettings ?? [], 'hero_scene_2_desc.'.$locale, match($locale) { 'it' => 'Apprendi le lingue straniere con percorsi dedicati e servizi di traduzione giurata per i tuoi traguardi accademici.', 'en' => 'Learn foreign languages with specialized programs and certified translation supporting your academic and professional path.', default => 'تعلم اللغات الأجنبية مع برامج تدريبية متخصصة، وخدمات ترجمة معتمدة تساعدك في خطواتك الأكاديمية والمهنية.' }),
-            'stat' => data_get($siteSettings ?? [], 'hero_scene_2_stat.'.$locale, match($locale) { 'it' => 'Traduzione e Certificazioni', 'en' => 'Translation & Certifications', default => 'ترجمة معتمدة وشهادات دولية' }),
+            'badge' => data_get($siteSettings ?? [], 'hero_scene_2_badge.'.$locale, match($locale) { 'it' => '02 — Lingue e Traduzioni', 'en' => '02 — Languages & Translation', default => '02 — اللغات والترجمة' }),
+            'title' => data_get($siteSettings ?? [], 'hero_scene_2_title.'.$locale, match($locale) { 'it' => 'La tua lingua apre nuove porte', 'en' => 'Your Language Opens New Doors', default => 'لغتك تفتحلك أبواب جديدة' }),
+            'desc' => data_get($siteSettings ?? [], 'hero_scene_2_desc.'.$locale, match($locale) { 'it' => 'Apprendi le lingue con corsi dedicati e traduzioni giurate a supporto del tuo percorso.', 'en' => 'Learn foreign languages through specialized training and certified translation assisting your career.', default => 'تعلم اللغات الأجنبية مع برامج تدريبية متخصصة، وخدمات ترجمة معتمدة تساعدك في خطواتك الأكاديمية والمهنية.' }),
+            'stat' => data_get($siteSettings ?? [], 'hero_scene_2_stat.'.$locale, match($locale) { 'it' => 'Traduzione giurata e certificazioni', 'en' => 'Certified Translation & Diplomas', default => 'ترجمة معتمدة وشهادات دولية' }),
         ],
         [
             'tab' => data_get($siteSettings ?? [], 'hero_scene_3_tab.'.$locale, match($locale) { 'it' => 'Formazione Professionale', 'en' => 'Career Training', default => 'التدريب المهني' }),
             'image' => data_get($siteSettings ?? [], 'hero_scene_3_img') ? asset('storage/'.data_get($siteSettings, 'hero_scene_3_img')) : asset('assets/images/academy/live-speaker-training.jpg'),
-            'badge' => data_get($siteSettings ?? [], 'hero_scene_3_badge.'.$locale, match($locale) { 'it' => '03 • Competenze di Lavoro', 'en' => '03 • Work Readiness', default => '03 — طوّر مهاراتك واستعد لسوق العمل' }),
-            'title' => data_get($siteSettings ?? [], 'hero_scene_3_title.'.$locale, match($locale) { 'it' => 'Sviluppa Competenze per il Mercato del Lavoro', 'en' => 'Upgrade Skills & Prepare for the Market', default => 'طوّر مهاراتك واستعد لسوق العمل' }),
-            'desc' => data_get($siteSettings ?? [], 'hero_scene_3_desc.'.$locale, match($locale) { 'it' => 'Programmi pratici di call center, traduzione e percorsi che ti consentono di acquisire abilità richieste.', 'en' => 'Practical training programs in Call Center, translation, and in-demand skills matching high-end career opportunities.', default => 'برامج تدريب عملية في الكول سنتر والترجمة، ومجالات مختلفة تساعدك تكتسب مهارات مطلوبة لسوق العمل الدولي.' }),
-            'stat' => data_get($siteSettings ?? [], 'hero_scene_3_stat.'.$locale, match($locale) { 'it' => 'Preparazione Professionale Pratica', 'en' => 'Hands-on Job Simulation', default => 'محاكاة عملية وسوق عمل مباشر' }),
+            'badge' => data_get($siteSettings ?? [], 'hero_scene_3_badge.'.$locale, match($locale) { 'it' => '03 — Formazione e Qualificazione Professionale', 'en' => '03 — Vocational & Career Training', default => '03 — التدريب والتأهيل المهني' }),
+            'title' => data_get($siteSettings ?? [], 'hero_scene_3_title.'.$locale, match($locale) { 'it' => 'Sviluppa competenze per il lavoro', 'en' => 'Upgrade Skills & Prepare for the Market', default => 'طوّر مهاراتك واستعد لسوق العمل' }),
+            'desc' => data_get($siteSettings ?? [], 'hero_scene_3_desc.'.$locale, match($locale) { 'it' => 'Programmi pratici in call center e settori vari per acquisire competenze richieste.', 'en' => 'Practical training programs in Call Center and diverse fields helping you acquire in-demand skills.', default => 'برامج تدريب عملية في الكول سنتر، ومجالات مختلفة تساعدك تكتسب مهارات مطلوبة.' }),
+            'stat' => data_get($siteSettings ?? [], 'hero_scene_3_stat.'.$locale, match($locale) { 'it' => 'Simulazione pratica e mercato diretto', 'en' => 'Practical Simulation & Direct Market', default => 'محاكاة عملية وسوق عمل مباشر' }),
         ],
         [
             'tab' => data_get($siteSettings ?? [], 'hero_scene_4_tab.'.$locale, match($locale) { 'it' => 'Servizi Accademici', 'en' => 'Academic Services', default => 'الخدمات الأكاديمية' }),
             'image' => data_get($siteSettings ?? [], 'hero_scene_4_img') ? asset('storage/'.data_get($siteSettings, 'hero_scene_4_img')) : asset('assets/images/schools/galileo-galilei.jpg'),
-            'badge' => data_get($siteSettings ?? [], 'hero_scene_4_badge.'.$locale, match($locale) { 'it' => '04 • Ammissioni e Visti', 'en' => '04 • Admissions & Visas', default => '04 — خلّي طموحك يوصل أبعد' }),
-            'title' => data_get($siteSettings ?? [], 'hero_scene_4_title.'.$locale, match($locale) { 'it' => 'Porta la Tua Ambizione Più Lontano', 'en' => 'Take Your Ambitions Further', default => 'خلّي طموحك يوصل أبعد' }),
-            'desc' => data_get($siteSettings ?? [], 'hero_scene_4_desc.'.$locale, match($locale) { 'it' => 'Ti assistiamo nelle procedure di ammissione universitaria, prenotazione test internazionali e appuntamenti consolari.', 'en' => 'We assist with university application procedures, international test bookings, embassy appointments, and scholarship files.', default => 'بنساعدك في إجراءات التقديم للجامعات، وحجز الاختبارات الدولية، ومواعيد السفارات، والتقديم للدراسات العليا والمنح.' }),
-            'stat' => data_get($siteSettings ?? [], 'hero_scene_4_stat.'.$locale, match($locale) { 'it' => '100% Supporto Documentale', 'en' => '100% Application Support', default => '100% تجهيز ومتابعة دقيقة' }),
+            'badge' => data_get($siteSettings ?? [], 'hero_scene_4_badge.'.$locale, match($locale) { 'it' => '04 — Servizi Accademici e Internazionali', 'en' => '04 — Academic & International Services', default => '04 — الخدمات الأكاديمية والدولية' }),
+            'title' => data_get($siteSettings ?? [], 'hero_scene_4_title.'.$locale, match($locale) { 'it' => 'Porta la tua ambizione più lontano', 'en' => 'Take Your Ambitions Further', default => 'خلّي طموحك يوصل أبعد' }),
+            'desc' => data_get($siteSettings ?? [], 'hero_scene_4_desc.'.$locale, match($locale) { 'it' => 'Ti guidiamo nelle domande universitarie, prenotazione test internazionali, appuntamenti consolari e borse di studio.', 'en' => 'Assisting with university applications, international exams, embassy bookings, graduate studies and scholarships.', default => 'بنساعدك في إجراءات التقديم للجامعات، وحجز الاختبارات الدولية، ومواعيد السفارات، والتقديم للدراسات العليا والمنح.' }),
+            'stat' => data_get($siteSettings ?? [], 'hero_scene_4_stat.'.$locale, match($locale) { 'it' => '100% Preparazione e supporto', 'en' => '100% File Compliance & Guidance', default => '100% تجهيز ومتابعة دقيقة' }),
         ],
     ];
 
@@ -175,8 +175,8 @@
                         </div>
                         <div class="border-s border-slate-200 ps-4">
                             <p class="text-2xl font-black text-[#fe0002] sm:text-3xl">{{ data_get($siteSettings ?? [], 'hero_stat_3_val', '100%') }}</p>
-                            <p class="text-xs font-black text-slate-900 mt-1">{{ data_get($siteSettings ?? [], 'hero_stat_3_lbl.'.$locale, match($locale) { 'it' => 'Qualificazione certificata', 'en' => 'Certified Qualification', default => 'تأهيل معتمد ودعم متكامل' }) }}</p>
-                            <p class="text-[10px] font-bold text-slate-500">{{ match($locale) { 'it' => 'Monitoraggio continuo', 'en' => 'Ongoing guidance', default => 'متابعة وإرشاد شامل' } }}</p>
+                            <p class="text-xs font-black text-slate-900 mt-1">{{ data_get($siteSettings ?? [], 'hero_stat_3_lbl.'.$locale, match($locale) { 'it' => 'Completamento Fascicoli', 'en' => 'File Completion', default => 'استكمال الملفات' }) }}</p>
+                            <p class="text-[10px] font-bold text-slate-500">{{ data_get($siteSettings ?? [], 'hero_stat_3_sub.'.$locale, match($locale) { 'it' => 'Monitoraggio e preparazione secondo i requisiti', 'en' => 'File tracking and preparation as required', default => 'متابعة وتجهيز الملفات وفق المتطلبات' }) }}</p>
                         </div>
                     </div>
 
@@ -445,17 +445,21 @@
                     </span>
                     <span>{{ data_get($siteSettings ?? [], 'services_badge.'.$locale, match($locale) { 'it' => '10 Servizi Educativi e Professionali', 'en' => '10 Integrated Services', default => '10 خدمات تعليمية ومهنية متكاملة' }) }}</span>
                 </span>
-                <h2 class="mt-4 text-3xl font-black text-[#c27803] sm:text-5xl">
-                    {{ data_get($siteSettings ?? [], 'services_title.'.$locale, match($locale) {
-                        'it' => 'INTOK - Servizi Educativi e Professionali Integrati',
+                @php
+                    $rawServicesTitle = data_get($siteSettings ?? [], 'services_title.'.$locale, match($locale) {
+                        'it' => 'INTOK - Servizi educativi e professionali integrati',
                         'en' => 'INTOK - Integrated Educational & Professional Services',
-                        default => 'INTOK خدمات تعليمية ومهنية متكاملة',
-                    }) }}
+                        default => 'INTOK  خدمات تعليمية ومهنية متكاملة',
+                    });
+                    $servicesTitleWithoutPrefix = preg_replace('/^INTOK\s*[-—]?\s*/iu', '', $rawServicesTitle);
+                @endphp
+                <h2 class="mt-4 text-3xl font-black sm:text-5xl tracking-tight text-slate-900">
+                    <span class="text-[#fe0002]">INTOK</span> — {{ $servicesTitleWithoutPrefix }}
                 </h2>
                 <p class="mt-4 text-base text-slate-600 font-medium leading-relaxed max-w-2xl mx-auto">
                     {{ data_get($siteSettings ?? [], 'services_subtitle.'.$locale, match($locale) {
                         'it' => "Offriamo soluzioni educative e professionali integrate che partono dall'apprendimento delle lingue e dalle traduzioni asseverate, passano per la formazione professionale fino agli studi all'estero e ai servizi accademici internazionali.",
-                        'en' => "We provide integrated educational and professional solutions starting from language learning and certified translation, through career training, to studying abroad and international academic services.",
+                        'en' => "We offer integrated educational and professional solutions starting from language learning and certified translation, through vocational training, to studying abroad and international academic services.",
                         default => "بنقدم لك حلول تعليمية ومهنية متكاملة تبدأ من تعلم اللغات والترجمة المعتمدة، مرورًا بالتأهيل والتدريب المهني، وصولًا للدراسة بالخارج والخدمات الأكاديمية الدولية.",
                     }) }}
                 </p>
@@ -2136,19 +2140,30 @@
                     <span class="inline-flex items-center gap-2 rounded-full bg-white/20 border border-white/40 px-4 py-1 text-xs font-black text-white backdrop-blur-md shadow-xs">
                         {{ data_get($siteSettings ?? [], 'cta_badge.'.$locale, match($locale) { 'it' => 'Inizia il tuo futuro oggi', 'en' => 'Start Your Future Today', default => 'ابدأ مستقبلك اليوم' }) }}
                     </span>
+                    @php
+                        $rawCtaTitle = data_get($siteSettings ?? [], 'cta_title.'.$locale);
+                        $ctaTitle = ($rawCtaTitle && !str_contains($rawCtaTitle, 'إيطاليا'))
+                            ? $rawCtaTitle
+                            : match($locale) {
+                                'it' => 'Pronto a compiere il tuo prossimo passo con INTOK?',
+                                'en' => 'Ready to Take Your Next Step with INTOK?',
+                                default => 'جاهز تبدأ خطوتك الجاية مع INTOK؟',
+                            };
+
+                        $rawCtaSub = data_get($siteSettings ?? [], 'cta_subtitle.'.$locale);
+                        $ctaSub = ($rawCtaSub && !str_contains($rawCtaSub, 'إيطاليا'))
+                            ? $rawCtaSub
+                            : match($locale) {
+                                'it' => 'Che il tuo obiettivo sia imparare una lingua, sviluppare competenze professionali, qualificarti per studiare in Europa o completare le tue pratiche accademiche, il team INTOK è pronto ad aiutarti a iniziare.',
+                                'en' => 'Whether your goal is learning a language, developing career skills, qualifying to study in Europe, or completing academic procedures, the INTOK team is ready to guide your start.',
+                                default => 'سواء هدفك تتعلم لغة، تطور مهاراتك المهنية، تتأهل للدراسة في أوروبا أو تستكمل إجراءاتك الأكاديمية، فريق INTOK جاهز يساعدك تبدأ.',
+                            };
+                    @endphp
                     <h2 class="mt-4 text-2xl font-black text-white sm:text-4xl drop-shadow-sm leading-tight">
-                        {{ data_get($siteSettings ?? [], 'cta_title.'.$locale, match($locale) {
-                            'it' => 'Pronto a compiere il tuo prossimo passo con INTOK?',
-                            'en' => 'Ready to Take Your Next Step with INTOK?',
-                            default => 'جاهز تبدأ خطوتك الجاية مع INTOK؟',
-                        }) }}
+                        {{ $ctaTitle }}
                     </h2>
                     <p class="mt-3 text-sm leading-relaxed text-red-50/95 font-medium">
-                        {{ data_get($siteSettings ?? [], 'cta_subtitle.'.$locale, match($locale) {
-                            'it' => 'Che il tuo obiettivo sia imparare una lingua, sviluppare competenze professionali, qualificarti per studiare in Europa o completare le tue pratiche accademiche, il team INTOK è pronto ad aiutarti a iniziare.',
-                            'en' => 'Whether your goal is learning a language, developing career skills, qualifying to study in Europe, or completing academic procedures, the INTOK team is ready to guide your start.',
-                            default => 'سواء هدفك تتعلم لغة، تطور مهاراتك المهنية، تتأهل للدراسة في أوروبا أو تستكمل إجراءاتك الأكاديمية، فريق INTOK جاهز يساعدك تبدأ.',
-                        }) }}
+                        {{ $ctaSub }}
                     </p>
                     
                     <!-- Official Social Links -->

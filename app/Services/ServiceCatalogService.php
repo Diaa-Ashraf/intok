@@ -2099,34 +2099,62 @@ class ServiceCatalogService
   ),
 );
 
+        $validSlugs = collect($coreServices)->pluck('slug_ar')->all();
+
+        // Deactivate legacy services not in the official 10 services
+        Service::query()->whereNotIn('slug_ar', $validSlugs)->update(['is_active' => false]);
+
         foreach ($coreServices as $item) {
+            $data = $item + [
+                'slug' => [
+                    'ar' => $item['slug_ar'],
+                    'en' => $item['slug_en'],
+                    'it' => $item['slug_it'],
+                ],
+                'seo_title' => [
+                    'ar' => $item['title']['ar'].' | أكاديمية INTOK',
+                    'en' => $item['title']['en'].' | INTOK Academy',
+                    'it' => $item['title']['it'].' | INTOK Academy',
+                ],
+                'seo_description' => $item['summary'],
+                'is_active' => true,
+            ];
+
             $existing = Service::query()->where('slug_ar', $item['slug_ar'])->first();
             if ($existing) {
-                // Update missing metadata columns if empty
                 $updates = [];
-                foreach (['badge', 'category_label', 'level', 'duration', 'mode', 'target_audience', 'salary_range', 'whatsapp_message'] as $field) {
+
+                // Fill any missing multilingual translations while preserving existing customized titles
+                $currentTitle = $existing->title ?? [];
+                if (empty($currentTitle['it']) || empty($currentTitle['en']) || empty($currentTitle['ar'])) {
+                    $updates['title'] = array_merge($data['title'], is_array($currentTitle) ? $currentTitle : []);
+                }
+
+                $currentBadge = $existing->badge ?? [];
+                if (empty($currentBadge['it']) || empty($currentBadge['en'])) {
+                    $updates['badge'] = array_merge($data['badge'], is_array($currentBadge) ? $currentBadge : []);
+                }
+
+                $currentCat = $existing->category_label ?? [];
+                if (empty($currentCat['it']) || empty($currentCat['en'])) {
+                    $updates['category_label'] = array_merge($data['category_label'], is_array($currentCat) ? $currentCat : []);
+                }
+
+                foreach (['level', 'duration', 'mode', 'target_audience', 'salary_range', 'whatsapp_message', 'features', 'requirements', 'steps', 'faqs'] as $field) {
                     if (empty($existing->{$field})) {
                         $updates[$field] = $item[$field];
                     }
                 }
+
+                if (!$existing->is_active) {
+                    $updates['is_active'] = true;
+                }
+
                 if (!empty($updates)) {
                     $existing->update($updates);
                 }
             } else {
-                Service::query()->create($item + [
-                    'slug' => [
-                        'ar' => $item['slug_ar'],
-                        'en' => $item['slug_en'],
-                        'it' => $item['slug_it'],
-                    ],
-                    'seo_title' => [
-                        'ar' => $item['title']['ar'].' | أكاديمية INTOK',
-                        'en' => $item['title']['en'].' | INTOK Academy',
-                        'it' => $item['title']['it'].' | INTOK Academy',
-                    ],
-                    'seo_description' => $item['summary'],
-                    'is_active' => true,
-                ]);
+                Service::query()->create($data);
             }
         }
     }

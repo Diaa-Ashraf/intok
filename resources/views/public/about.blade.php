@@ -9,6 +9,9 @@
 @section('meta_description', $page->seo_description[$locale] ?? 'تعرف على INTOK ACADEMY: بوابتك للتعلم والتطور وبناء مستقبلك الأكاديمي والمهني.')
 
 @section('content')
+@php
+    $locale = $locale ?? app()->getLocale();
+@endphp
     <!-- ==========================================================
          1. HERO SECTION
          ========================================================== -->

@@ -8,6 +8,10 @@
 @section('title', __('site.booking_title'))
 
 @section('content')
+@php
+    $locale = $locale ?? app()->getLocale();
+    $activeTab = $activeTab ?? old('booking_type', session('active_tab', request()->query('tab', 'general')));
+@endphp
 <section class="relative isolate overflow-hidden bg-intok-hero py-14 sm:py-20 text-slate-900 border-b border-slate-100">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-start">
         <span class="inline-block rounded-full border border-red-200 bg-white/90 px-4 py-1 text-xs font-black text-[#fe0002] shadow-xs">
@@ -142,7 +146,11 @@
                 </div>
 
                 <button type="submit" class="btn-intok-primary w-full py-4 text-sm font-black shadow-lg">
-                    {{ __('site.submit_booking') }}
+                    {{ match($locale) {
+                        'it' => 'Conferma e prenota consulenza',
+                        'en' => 'Confirm & Book Consultation',
+                        default => 'تأكيد وحجز موعد الاستشارة',
+                    } }}
                 </button>
             </form>
         </div>
