@@ -66,4 +66,34 @@ class PublicWebsiteTest extends TestCase
         $response->assertRedirect('/ar/contact')->assertSessionHasErrors('website');
         $this->assertSame(0, Inquiry::query()->count());
     }
+
+    public function test_study_abroad_consultation_form_stores_booking_and_redirects_with_exact_flash_message(): void
+    {
+        Mail::fake();
+        config(['broadcasting.default' => 'log']);
+
+        $response = $this->from('/ar/consultation')->post('/ar/consultation', [
+            'booking_type' => 'study_abroad',
+            'name' => 'أحمد مصطفى',
+            'applicant_type' => 'student',
+            'phone' => '01012345678',
+            'student_birth_date' => '2005-06-20',
+            'current_education_level' => 'الصف الثالث الثانوي',
+            'target_education_level' => 'دراسة البكالوريوس (الجامعة)',
+            'qualification_year' => '2024',
+            'destination_country' => '🇮🇹 إيطاليا',
+            'has_applied_before' => 'no',
+        ]);
+
+        $response->assertRedirect('/ar/consultation');
+        $response->assertSessionHas('status', 'تم استلام بياناتك بنجاح! فريق INTOK هيراجع طلبك ويتواصل معاك لمساعدتك في اختيار المسار الدراسي المناسب.');
+
+        $this->assertDatabaseHas('consultation_bookings', [
+            'name' => 'أحمد مصطفى',
+            'booking_type' => 'study_abroad',
+            'phone' => '01012345678',
+            'destination_country' => '🇮🇹 إيطاليا',
+            'has_applied_before' => 'no',
+        ]);
+    }
 }

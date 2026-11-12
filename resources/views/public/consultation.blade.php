@@ -251,14 +251,14 @@
                                 <option value="الصف الثالث الإعدادي" @selected(old('current_education_level') === 'الصف الثالث الإعدادي')>الصف الثالث الإعدادي</option>
                                 <option value="الصف الأول الثانوي" @selected(old('current_education_level') === 'الصف الأول الثانوي')>الصف الأول الثانوي</option>
                                 <option value="الصف الثاني الثانوي" @selected(old('current_education_level') === 'الصف الثاني الثانوي')>الصف الثاني الثانوي</option>
-                                <option value="الصف الثالث الثانوي" @selected(old('current_education_level') === 'الصف الثالث الثانوي')>الصف الثالث الثانوي (أو دبلوم فني)</option>
+                                <option value="الصف الثالث الثانوي" @selected(old('current_education_level') === 'الصف الثالث الثانوي')>الصف الثالث الثانوي</option>
                                 <option value="الفرقة الأولى جامعة" @selected(old('current_education_level') === 'الفرقة الأولى جامعة')>الفرقة الأولى جامعة</option>
                                 <option value="الفرقة الثانية جامعة" @selected(old('current_education_level') === 'الفرقة الثانية جامعة')>الفرقة الثانية جامعة</option>
                                 <option value="الفرقة الثالثة جامعة" @selected(old('current_education_level') === 'الفرقة الثالثة جامعة')>الفرقة الثالثة جامعة</option>
                                 <option value="الفرقة الرابعة جامعة" @selected(old('current_education_level') === 'الفرقة الرابعة جامعة')>الفرقة الرابعة جامعة</option>
-                                <option value="الفرقة الخامسة جامعة" @selected(old('current_education_level') === 'الفرقة الخامسة جامعة')>الفرقة الخامسة جامعة / خريج</option>
-                                <option value="ماجستير" @selected(old('current_education_level') === 'ماجستير')>مرحلة الماجستير</option>
-                                <option value="دكتوراه" @selected(old('current_education_level') === 'دكتوراه')>مرحلة الدكتوراه</option>
+                                <option value="الفرقة الخامسة جامعة" @selected(old('current_education_level') === 'الفرقة الخامسة جامعة')>الفرقة الخامسة جامعة</option>
+                                <option value="ماجستير" @selected(old('current_education_level') === 'ماجستير')>ماجستير</option>
+                                <option value="دكتوراه" @selected(old('current_education_level') === 'دكتوراه')>دكتوراه</option>
                             </select>
                         </div>
 
@@ -300,17 +300,17 @@
                             {{ match($locale) { 'it' => 'Paese di Interesse per lo Studio', 'en' => 'Interested Study Country', default => 'الدولة المهتم بالدراسة فيها' } }}
                         </label>
                         <select id="destination_country" name="destination_country" class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 focus:bg-white focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/20 transition">
-                            <option value="🇮🇹 إيطاليا" @selected(old('destination_country') === '🇮🇹 إيطاليا')>🇮🇹 إيطاليا (Italy)</option>
-                            <option value="🇩🇪 ألمانيا" @selected(old('destination_country') === '🇩🇪 ألمانيا')>🇩🇪 ألمانيا (Germany)</option>
-                            <option value="🇨🇦 كندا" @selected(old('destination_country') === '🇨🇦 كندا')>🇨🇦 كندا (Canada)</option>
-                            <option value="🇹🇷 تركيا" @selected(old('destination_country') === '🇹🇷 تركيا')>🇹🇷 تركيا (Turkey)</option>
-                            <option value="🇫🇷 فرنسا" @selected(old('destination_country') === '🇫🇷 فرنسا')>🇫🇷 فرنسا (France)</option>
-                            <option value="🇪🇸 إسبانيا" @selected(old('destination_country') === '🇪🇸 إسبانيا')>🇪🇸 إسبانيا (Spain)</option>
-                            <option value="🇬🇧 المملكة المتحدة" @selected(old('destination_country') === '🇬🇧 المملكة المتحدة')>🇬🇧 المملكة المتحدة (UK)</option>
-                            <option value="🇨🇳 الصين" @selected(old('destination_country') === '🇨🇳 الصين')>🇨🇳 الصين (China)</option>
-                            <option value="🇯🇵 اليابان" @selected(old('destination_country') === '🇯🇵 اليابان')>🇯🇵 اليابان (Japan)</option>
-                            <option value="🇦🇺 أستراليا" @selected(old('destination_country') === '🇦🇺 أستراليا')>🇦🇺 أستراليا (Australia)</option>
-                            <option value="🌐 لسه محتار ومحتاج استشارة" @selected(old('destination_country') === '🌐 لسه محتار ومحتاج استشارة')>🌐 لسه محتار ومحتاج استشارة لتحديد الدولة</option>
+                            <option value="🇮🇹 إيطاليا" @selected(old('destination_country') === '🇮🇹 إيطاليا')>🇮🇹 إيطاليا</option>
+                            <option value="🇩🇪 ألمانيا" @selected(old('destination_country') === '🇩🇪 ألمانيا')>🇩🇪 ألمانيا</option>
+                            <option value="🇨🇦 كندا" @selected(old('destination_country') === '🇨🇦 كندا')>🇨🇦 كندا</option>
+                            <option value="🇹🇷 تركيا" @selected(old('destination_country') === '🇹🇷 تركيا')>🇹🇷 تركيا</option>
+                            <option value="🇫🇷 فرنسا" @selected(old('destination_country') === '🇫🇷 فرنسا')>🇫🇷 فرنسا</option>
+                            <option value="🇪🇸 إسبانيا" @selected(old('destination_country') === '🇪🇸 إسبانيا')>🇪🇸 إسبانيا</option>
+                            <option value="🇬🇧 المملكة المتحدة" @selected(old('destination_country') === '🇬🇧 المملكة المتحدة')>🇬🇧 المملكة المتحدة</option>
+                            <option value="🇨🇳 الصين" @selected(old('destination_country') === '🇨🇳 الصين')>🇨🇳 الصين</option>
+                            <option value="🇯🇵 اليابان" @selected(old('destination_country') === '🇯🇵 اليابان')>🇯🇵 اليابان</option>
+                            <option value="🇦🇺 أستراليا" @selected(old('destination_country') === '🇦🇺 أستراليا')>🇦🇺 أستراليا</option>
+                            <option value="لسه محتار ومحتاج استشارة" @selected(old('destination_country') === 'لسه محتار ومحتاج استشارة')>لسه محتار ومحتاج استشارة</option>
                         </select>
                     </div>
 

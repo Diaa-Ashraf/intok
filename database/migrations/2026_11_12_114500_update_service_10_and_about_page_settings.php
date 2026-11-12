@@ -285,6 +285,41 @@ return new class extends Migration
                 'en' => 'More than just a service.. We genuinely care for your journey from start to finish',
                 'it' => 'Molto più di un servizio.. Ci prendiamo cura del tuo percorso dall\'inizio alla fine',
             ],
+            'about_partners_badge' => [
+                'ar' => 'شركاء النجاح',
+                'en' => 'Success Partners',
+                'it' => 'Partner del Successo',
+            ],
+            'about_partners_title' => [
+                'ar' => 'مع بعض بنقدر نوصل لفرص أكبر',
+                'en' => 'Together We Reach Greater Horizons',
+                'it' => 'Insieme Raggiungiamo Opportunità Più Grandi',
+            ],
+            'about_partners_p1' => [
+                'ar' => 'نفخر بعلاقات التعاون مع الجهات والمؤسسات التي تساهم في تطوير خدماتنا وتوسيع فرص التعلم والتدريب لعملائنا.',
+                'en' => 'We take pride in our cooperation with organizations and institutions that contribute to developing our services and expanding learning and training opportunities for our clients.',
+                'it' => 'Siamo orgogliosi delle relazioni di cooperazione con gli enti e le istituzioni che contribuiscono a sviluppare i nostri servizi e ampliare le opportunità formative e professionali per i nostri clienti.',
+            ],
+            'about_partners_p2' => [
+                'ar' => 'من خلال شركائنا، نسعى لتبادل الخبرات، وتعزيز التعاون، وتقديم تجارب أكثر تكاملًا.',
+                'en' => 'Through our partners, we strive to exchange expertise, strengthen cooperation, and provide more comprehensive integrated experiences.',
+                'it' => 'Attraverso i nostri partner, puntiamo a scambiare competenze, rafforzare la cooperazione e offrire esperienze sempre più integrate.',
+            ],
+            'about_protocols_badge' => [
+                'ar' => 'بروتوكولات التعاون',
+                'en' => 'Cooperation Protocols',
+                'it' => 'Protocolli di Cooperazione',
+            ],
+            'about_protocols_title' => [
+                'ar' => 'تعاون مؤسسي.. وخطوات نحو مستقبل أفضل',
+                'en' => 'Institutional Cooperation.. Steps Toward a Brighter Future',
+                'it' => 'Cooperazione Istituzionale.. Passi Verso un Futuro Migliore',
+            ],
+            'about_protocols_desc' => [
+                'ar' => 'نحرص على بناء علاقات تعاون مؤسسية من خلال بروتوكولات واتفاقيات رسمية مع جهات ومؤسسات مختلفة، بهدف تبادل الخبرات وتطوير البرامج والخدمات التعليمية والتدريبية.',
+                'en' => 'We are dedicated to building institutional partnerships through official protocols and agreements with diverse bodies and institutions, exchanging expertise and advancing academic and training programs.',
+                'it' => 'Ci impegniamo a costruire relazioni istituzionali solide attraverso protocolli e accordi ufficiali con enti e istituti diversi, con l\'obiettivo di scambiare competenze e sviluppare programmi e servizi educativi e formativi.',
+            ],
         ];
 
         foreach ($aboutSettings as $key => $val) {

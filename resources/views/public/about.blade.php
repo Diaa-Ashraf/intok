@@ -378,19 +378,38 @@
     </section>
 
     <!-- ==========================================================
-         6 & 7. SUCCESS PARTNERS & COOPERATION PROTOCOLS
+         6. SUCCESS PARTNERS
          ========================================================== -->
     <section class="relative bg-white py-16 sm:py-24 border-b border-slate-200/80">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-14 reveal-up">
                 <span class="inline-block rounded-full bg-red-50 border border-red-200 px-4 py-1 text-xs font-black text-[#fe0002]">
-                    شركاء النجاح وبروتوكولات التعاون
+                    {{ data_get($siteSettings ?? [], 'about_partners_badge.'.$locale, match($locale) {
+                        'it' => 'Partner del Successo',
+                        'en' => 'Success Partners',
+                        default => 'شركاء النجاح',
+                    }) }}
                 </span>
                 <h2 class="mt-3 text-3xl font-black text-[#c27803] sm:text-4xl">
-                    مع بعض بنقدر نوصل لفرص أكبر
+                    {{ data_get($siteSettings ?? [], 'about_partners_title.'.$locale, match($locale) {
+                        'it' => 'Insieme Raggiungiamo Opportunità Più Grandi',
+                        'en' => 'Together We Reach Greater Horizons',
+                        default => 'مع بعض بنقدر نوصل لفرص أكبر',
+                    }) }}
                 </h2>
-                <p class="mt-3 text-sm text-slate-600 font-medium">
-                    نفخر بعلاقات وبروتوكولات التعاون المؤسسية والاتفاقيات الرسمية مع كبرى الجامعات الأوروبية والجهات والشركات الرائدة داخل مصر وخارجها.
+                <p class="mt-3 text-sm sm:text-base text-slate-700 font-medium leading-relaxed">
+                    {{ data_get($siteSettings ?? [], 'about_partners_p1.'.$locale, match($locale) {
+                        'it' => 'Siamo orgogliosi delle relazioni di cooperazione con gli enti e le istituzioni che contribuiscono a sviluppare i nostri servizi e ampliare le opportunità formative e professionali per i nostri clienti.',
+                        'en' => 'We take pride in our cooperation with organizations and institutions that contribute to developing our services and expanding learning and training opportunities for our clients.',
+                        default => 'نفخر بعلاقات التعاون مع الجهات والمؤسسات التي تساهم في تطوير خدماتنا وتوسيع فرص التعلم والتدريب لعملائنا.',
+                    }) }}
+                </p>
+                <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    {{ data_get($siteSettings ?? [], 'about_partners_p2.'.$locale, match($locale) {
+                        'it' => 'Attraverso i nostri partner, puntiamo a scambiare competenze, rafforzare la cooperazione e offrire esperienze sempre più integrate.',
+                        'en' => 'Through our partners, we strive to exchange expertise, strengthen cooperation, and provide more comprehensive integrated experiences.',
+                        default => 'من خلال شركائنا، نسعى لتبادل الخبرات، وتعزيز التعاون، وتقديم تجارب أكثر تكاملًا.',
+                    }) }}
                 </p>
             </div>
 
@@ -400,10 +419,10 @@
                     <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-200">
                         <h3 class="text-base font-black text-slate-900 flex items-center gap-2">
                             <span>🇪🇬</span>
-                            <span>شركاء النجاح داخل مصر</span>
+                            <span>{{ match($locale) { 'it' => 'Partner del Successo in Egitto', 'en' => 'Success Partners Inside Egypt', default => 'شركاء النجاح داخل مصر' } }}</span>
                         </h3>
                         <button type="button" onclick="openPartnerModal('{{ asset('assets/images/partners/partners-egypt.jpg') }}', 'شركاء النجاح داخل مصر')" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white hover:bg-[#fe0002] hover:text-white text-slate-700 text-xs font-black transition cursor-pointer shadow-2xs border border-slate-200">
-                            <span>تكبير الصورة</span>
+                            <span>{{ match($locale) { 'it' => 'Ingrandisci', 'en' => 'Enlarge', default => 'تكبير الصورة' } }}</span>
                             <span>🔍</span>
                         </button>
                     </div>
@@ -417,10 +436,10 @@
                     <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-200">
                         <h3 class="text-base font-black text-slate-900 flex items-center gap-2">
                             <span>🇪🇺</span>
-                            <span>شركاء النجاح خارج مصر (الجامعات الأوروبية)</span>
+                            <span>{{ match($locale) { 'it' => 'Partner del Successo Fuori dall\'Egitto (Università Europee)', 'en' => 'Success Partners Outside Egypt (European Universities)', default => 'شركاء النجاح خارج مصر (الجامعات الأوروبية)' } }}</span>
                         </h3>
                         <button type="button" onclick="openPartnerModal('{{ asset('assets/images/partners/partners-international.jpg') }}', 'شركاء النجاح خارج مصر (الجامعات الأوروبية)')" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white hover:bg-[#fe0002] hover:text-white text-slate-700 text-xs font-black transition cursor-pointer shadow-2xs border border-slate-200">
-                            <span>تكبير الصورة</span>
+                            <span>{{ match($locale) { 'it' => 'Ingrandisci', 'en' => 'Enlarge', default => 'تكبير الصورة' } }}</span>
                             <span>🔍</span>
                         </button>
                     </div>
@@ -433,50 +452,159 @@
     </section>
 
     <!-- ==========================================================
+         7. COOPERATION PROTOCOLS
+         ========================================================== -->
+    <section class="relative bg-intok-section py-16 sm:py-24 border-b border-slate-200/80">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14 reveal-up">
+                <span class="inline-block rounded-full bg-red-50 border border-red-200 px-4 py-1 text-xs font-black text-[#fe0002]">
+                    {{ data_get($siteSettings ?? [], 'about_protocols_badge.'.$locale, match($locale) {
+                        'it' => 'Protocolli di Cooperazione',
+                        'en' => 'Cooperation Protocols',
+                        default => 'بروتوكولات التعاون',
+                    }) }}
+                </span>
+                <h2 class="mt-3 text-3xl font-black text-[#c27803] sm:text-4xl">
+                    {{ data_get($siteSettings ?? [], 'about_protocols_title.'.$locale, match($locale) {
+                        'it' => 'Cooperazione Istituzionale.. Passi Verso un Futuro Migliore',
+                        'en' => 'Institutional Cooperation.. Steps Toward a Brighter Future',
+                        default => 'تعاون مؤسسي.. وخطوات نحو مستقبل أفضل',
+                    }) }}
+                </h2>
+                <p class="mt-3 text-sm sm:text-base text-slate-700 font-medium leading-relaxed">
+                    {{ data_get($siteSettings ?? [], 'about_protocols_desc.'.$locale, match($locale) {
+                        'it' => 'Ci impegniamo a costruire relazioni istituzionali solide attraverso protocolli e accordi ufficiali con enti e istituti diversi, con l\'obiettivo di scambiare competenze e sviluppare programmi e servizi educativi e formativi.',
+                        'en' => 'We are dedicated to building institutional partnerships through official protocols and agreements with diverse bodies and institutions, exchanging expertise and advancing academic and training programs.',
+                        default => 'نحرص على بناء علاقات تعاون مؤسسية من خلال بروتوكولات واتفاقيات رسمية مع جهات ومؤسسات مختلفة، بهدف تبادل الخبرات وتطوير البرامج والخدمات التعليمية والتدريبية.',
+                    }) }}
+                </p>
+            </div>
+
+            <!-- Protocols Grid: Protocol / Entity / Signature Date / Key Goals -->
+            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                @php
+                    $protocols = [
+                        [
+                            'badge' => 'أكاديمي ودولي',
+                            'title' => 'بروتوكول التأهيل والقبول الجامعي الأوروبي',
+                            'entity' => 'أعرق الجامعات الإيطالية والأوروبية المعتمدة (Bologna, Sapienza, Milan)',
+                            'date' => 'معتمد ومجدد سنوياً (2024 - 2026)',
+                            'goals' => 'تسهيل مراجعة المؤهلات، التحضير لاختبارات القبول الدولية، وتأهيل الطلاب للمنح الإقليمية DSU والسكن الجامعي.',
+                            'icon' => '🏛️'
+                        ],
+                        [
+                            'badge' => 'تأهيل وتوظيف',
+                            'title' => 'اتفاقية التدريب والتوظيف بالكول سنتر الدولي',
+                            'entity' => 'كبرى شركات مراكز الاتصال والخدمات الدولية (Teleperformance, Concentrix, EID)',
+                            'date' => 'شراكة مستمرة 2024 - 2026',
+                            'goals' => 'محاكاة بيئات العمل الحقيقية، تدريب المتحدثين باللغات الأجنبية، وترشيح الكوادر للمقابلات المباشرة.',
+                            'icon' => '🎧'
+                        ],
+                        [
+                            'badge' => 'ترجمة وتصديقات',
+                            'title' => 'بروتوكول الاعتماد والترجمة المعتمدة والتصديقات',
+                            'entity' => 'المدرسة العربية للترجمة وجمعيات الترجمة الرسمية',
+                            'date' => 'سارٍ وموثق رسمياً',
+                            'goals' => 'ضمان الدقة اللغوية، اعتماد صياغات الوثائق الرسمية لدى السفارات والقنصليات، وتدريب المترجمين الواعدين.',
+                            'icon' => '📜'
+                        ],
+                        [
+                            'badge' => 'تعليم ولغات',
+                            'title' => 'بروتوكول التطوير اللغوي مع المدارس الدولية',
+                            'entity' => 'المدارس والمؤسسات التعليمية والتربوية الدولية (International Modern School, DeutschPath)',
+                            'date' => 'معتمد وموثق',
+                            'goals' => 'تطوير المناهج اللغوية، تأهيل الطلاب لشهادات اللغة الدولية (CILS, CELI, IELTS)، وتوجيههم الأكاديمي المبكر.',
+                            'icon' => '🌍'
+                        ],
+                        [
+                            'badge' => 'خدمات دبلوماسية',
+                            'title' => 'بروتوكول التنسيق ومتابعة مواعيد السفارات والقنصليات',
+                            'entity' => 'مراكز تقديم التأشيرات وأنظمة الحجز المعتمدة',
+                            'date' => 'خدمة متابعة مستمرة',
+                            'goals' => 'توضيح متطلبات التأشيرات والمواعيد، متابعة فتح الحجوزات الرسمية، وتسهيل إجراءات حضور المقابلات.',
+                            'icon' => '🛂'
+                        ],
+                        [
+                            'badge' => 'تدريب عملي',
+                            'title' => 'بروتوكول الشراكة مع قطاعات السياحة والأعمال',
+                            'entity' => 'شركات السياحة والمؤسسات التجارية الرائدة',
+                            'date' => 'تفعيل ميداني متواصل',
+                            'goals' => 'تأهيل خريجي اللغات لقطاعات الإرشاد السياحي والتسويق الدولي وتوفير فرص تدريب واقعية.',
+                            'icon' => '💼'
+                        ]
+                    ];
+                @endphp
+                @foreach($protocols as $p)
+                    <div class="card-poster-white p-6 bg-white border border-slate-200 rounded-2xl shadow-sm reveal-up flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-2xl">{{ $p['icon'] }}</span>
+                                <span class="rounded-full bg-red-50 text-[#fe0002] border border-red-200 px-2.5 py-0.5 text-[11px] font-black">{{ $p['badge'] }}</span>
+                            </div>
+                            <h3 class="text-base font-black text-slate-900 leading-snug">{{ $p['title'] }}</h3>
+                            <div class="mt-3 space-y-1.5 text-xs text-slate-600">
+                                <p><span class="font-bold text-slate-800">اسم الجهة:</span> {{ $p['entity'] }}</p>
+                                <p><span class="font-bold text-slate-800">تاريخ التوقيع / السريان:</span> <span class="font-mono text-emerald-700 font-bold">{{ $p['date'] }}</span></p>
+                            </div>
+                            <div class="mt-3 pt-3 border-t border-slate-100">
+                                <span class="block text-[11px] font-black text-[#c27803] mb-1">أبرز أهداف التعاون:</span>
+                                <p class="text-xs text-slate-600 leading-relaxed font-medium">{{ $p['goals'] }}</p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
          8. TEAM MEMBERS
          ========================================================== -->
-    @if(isset($teamMembers) && $teamMembers->isNotEmpty())
-        <section class="relative bg-intok-section py-16 sm:py-24 border-b border-slate-200/80">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-14 reveal-up">
-                    <span class="inline-block rounded-full bg-red-50 border border-red-200 px-4 py-1 text-xs font-black text-[#fe0002]">
-                        فريق INTOK
-                    </span>
-                    <h2 class="mt-3 text-3xl font-black text-[#c27803] sm:text-4xl">
-                        وراء كل تجربة ناجحة.. فريق بيشتغل بشغف
-                    </h2>
-                    <p class="mt-3 text-sm text-slate-600 font-medium">
-                        في INTOK بنؤمن إن جودة الخدمة بتبدأ من جودة الفريق اللي بيقدمها.
-                    </p>
-                </div>
+    <section class="relative bg-white py-16 sm:py-24 border-b border-slate-200/80">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14 reveal-up">
+                <span class="inline-block rounded-full bg-red-50 border border-red-200 px-4 py-1 text-xs font-black text-[#fe0002]">
+                    فريق INTOK
+                </span>
+                <h2 class="mt-3 text-3xl font-black text-[#c27803] sm:text-4xl">
+                    وراء كل تجربة ناجحة.. فريق بيشتغل بشغف
+                </h2>
+                <p class="mt-3 text-sm sm:text-base text-slate-700 font-medium leading-relaxed">
+                    في INTOK بنؤمن إن جودة الخدمة بتبدأ من جودة الفريق اللي بيقدمها.
+                </p>
+                <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    عشان كده بنهتم بتطوير فريق العمل، وتبادل الخبرات، والتعاون بين التخصصات المختلفة لتقديم تجربة احترافية لكل طالب ومتدرب وعميل.
+                </p>
+            </div>
 
-                <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            @if(isset($teamMembers) && $teamMembers->isNotEmpty())
+                <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                     @foreach($teamMembers as $member)
                         @php
                             $mName = is_array($member->name) ? data_get($member->name, $locale, data_get($member->name, 'ar', '')) : $member->name;
                             $mRole = is_array($member->role) ? data_get($member->role, $locale, data_get($member->role, 'ar', '')) : $member->role;
                             $mBio = is_array($member->bio) ? data_get($member->bio, $locale, data_get($member->bio, 'ar', '')) : $member->bio;
                         @endphp
-                        <div class="card-poster-white p-6 bg-white border border-slate-200 rounded-2xl shadow-sm text-center">
-                            <div class="size-24 mx-auto rounded-full overflow-hidden bg-slate-100 border-2 border-red-200 mb-4">
+                        <div class="card-poster-white p-6 bg-slate-50 border border-slate-200 rounded-2xl shadow-sm text-center reveal-up">
+                            <div class="size-24 mx-auto rounded-full overflow-hidden bg-white border-2 border-red-200 mb-4 shadow-xs">
                                 <img src="{{ $member->avatar_url ?? asset('assets/images/intok-logo.jpg') }}" alt="{{ $mName }}" class="size-full object-cover">
                             </div>
                             <h3 class="text-base font-black text-slate-900">{{ $mName }}</h3>
                             <p class="text-xs font-bold text-[#fe0002] mt-1">{{ $mRole }}</p>
                             @if($mBio)
-                                <p class="mt-3 text-xs leading-relaxed text-slate-600">{{ $mBio }}</p>
+                                <p class="mt-3 text-xs leading-relaxed text-slate-600 font-medium">{{ $mBio }}</p>
                             @endif
                         </div>
                     @endforeach
                 </div>
-            </div>
-        </section>
-    @endif
+            @endif
+        </div>
+    </section>
 
     <!-- ==========================================================
          9. LIVE INSIDE INTOK
          ========================================================== -->
-    <section class="relative bg-white py-16 sm:py-24 border-b border-slate-200/80">
+    <section class="relative bg-intok-section py-16 sm:py-24 border-b border-slate-200/80">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-14 reveal-up">
                 <span class="inline-block rounded-full bg-red-50 border border-red-200 px-4 py-1 text-xs font-black text-[#fe0002]">
@@ -485,20 +613,23 @@
                 <h2 class="mt-3 text-3xl font-black text-[#c27803] sm:text-4xl">
                     مش مجرد كلام.. شوف تجربتنا على أرض الواقع
                 </h2>
-                <p class="mt-3 text-sm text-slate-600 font-medium">
+                <p class="mt-3 text-sm sm:text-base text-slate-700 font-medium leading-relaxed">
                     اكتشف جانبًا من أنشطتنا التعليمية والتدريبية، وشاهد لقطات من المحاضرات والتدريبات والفعاليات والتجارب الحقيقية داخل الأكاديمية.
                 </p>
             </div>
 
-            <div class="grid gap-4 sm:grid-cols-3">
-                <div class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 h-64 group shadow-sm">
+            <div class="grid gap-5 sm:grid-cols-3">
+                <div class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 h-64 group shadow-sm relative">
                     <img src="{{ asset('assets/images/academy/italian-classroom-lecture.jpg') }}" alt="محاضرات تفاعلية" class="size-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute bottom-3 inset-x-3 text-white text-xs font-bold bg-black/60 backdrop-blur-xs p-2 rounded-xl">محاضرات لغوية وتدريبات تفاعلية</div>
                 </div>
-                <div class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 h-64 group shadow-sm">
+                <div class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 h-64 group shadow-sm relative">
                     <img src="{{ asset('assets/images/academy/live-speaker-training.jpg') }}" alt="تدريب حي" class="size-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute bottom-3 inset-x-3 text-white text-xs font-bold bg-black/60 backdrop-blur-xs p-2 rounded-xl">محاكاة عملية لكول سنتر ومقابلات العمل</div>
                 </div>
-                <div class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 h-64 group shadow-sm">
+                <div class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 h-64 group shadow-sm relative">
                     <img src="{{ asset('assets/images/schools/galileo-galilei.jpg') }}" alt="صروح تعليمية أوروبية" class="size-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute bottom-3 inset-x-3 text-white text-xs font-bold bg-black/60 backdrop-blur-xs p-2 rounded-xl">تأهيل للدراسة بالجامعات الأوروبية</div>
                 </div>
             </div>
         </div>
@@ -507,7 +638,7 @@
     <!-- ==========================================================
          10. CLIENT EXPERIENCES & STORIES
          ========================================================== -->
-    <section class="relative bg-intok-section py-16 sm:py-24 border-b border-slate-200/80">
+    <section class="relative bg-white py-16 sm:py-24 border-b border-slate-200/80">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-14 reveal-up">
                 <span class="inline-block rounded-full bg-amber-50 border border-amber-200 px-4 py-1 text-xs font-black text-amber-800">
@@ -516,29 +647,32 @@
                 <h2 class="mt-3 text-3xl font-black text-[#c27803] sm:text-4xl">
                     كل رحلة ليها حكاية.. وإحنا بنفتخر نكون جزء منها
                 </h2>
-                <p class="mt-3 text-sm text-slate-600 font-medium">
+                <p class="mt-3 text-sm sm:text-base text-slate-700 font-medium leading-relaxed">
                     بنعتز بثقة الطلاب والمتدربين والعملاء اللي اختاروا INTOK في رحلتهم التعليمية والمهنية.
+                </p>
+                <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    شاهد تجاربهم وآراءهم، وتعرف على رحلاتهم مع خدماتنا.
                 </p>
             </div>
 
             <div class="grid gap-6 sm:grid-cols-3">
-                <div class="card-poster-white p-6 bg-white border border-slate-200 rounded-2xl shadow-sm">
-                    <p class="text-xs sm:text-sm leading-relaxed text-slate-700 italic">"{{ match($locale) { 'it' => 'INTOK mi ha supportato nella preparazione della domanda per l\'università europea con precisione in ogni passaggio.', 'en' => 'INTOK helped me prepare my application for European university admission with meticulous tracking at every step.', default => 'أكاديمية INTOK ساعدتني في تجهيز أوراقي والتقديم للجامعات الأوروبية، والمتابعة كانت دقيقة جداً في كل مرحلة.' } }}"</p>
-                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-800">
+                <div class="card-poster-white p-6 bg-slate-50 border border-slate-200 rounded-2xl shadow-sm reveal-up flex flex-col justify-between">
+                    <p class="text-xs sm:text-sm leading-relaxed text-slate-700 italic font-medium">"{{ match($locale) { 'it' => 'INTOK mi ha supportato nella preparazione della domanda per l\'università europea con precisione in ogni passaggio.', 'en' => 'INTOK helped me prepare my application for European university admission with meticulous tracking at every step.', default => 'أكاديمية INTOK ساعدتني في تجهيز أوراقي والتقديم للجامعات الأوروبية، والمتابعة كانت دقيقة جداً في كل مرحلة.' } }}"</p>
+                    <div class="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between text-xs font-bold text-slate-800">
                         <span>{{ match($locale) { 'it' => 'Ahmed M.', 'en' => 'Ahmed M.', default => 'أحمد م.' } }}</span>
                         <span class="text-[#fe0002]">{{ match($locale) { 'it' => 'Studi in Europa', 'en' => 'Study in Europe', default => 'دراسة بأوروبا' } }}</span>
                     </div>
                 </div>
-                <div class="card-poster-white p-6 bg-white border border-slate-200 rounded-2xl shadow-sm">
-                    <p class="text-xs sm:text-sm leading-relaxed text-slate-700 italic">"{{ match($locale) { 'it' => 'Il corso pratico di Call Center e conversazione ha trasformato le mie competenze permettendomi di superare il colloquio subito.', 'en' => 'The hands-on Call Center and conversation training completely transformed my skills, enabling me to pass the interview immediately.', default => 'تدريب الكول سنتر والمحادثة على الشاشات الذكية غير مستواي تماماً وخلاني أعدي الإنترفيو في أول أسبوع بعد التدريب.' } }}"</p>
-                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-800">
+                <div class="card-poster-white p-6 bg-slate-50 border border-slate-200 rounded-2xl shadow-sm reveal-up flex flex-col justify-between">
+                    <p class="text-xs sm:text-sm leading-relaxed text-slate-700 italic font-medium">"{{ match($locale) { 'it' => 'Il corso pratico di Call Center e conversazione ha trasformato le mie competenze permettendomi di superare il colloquio subito.', 'en' => 'The hands-on Call Center and conversation training completely transformed my skills, enabling me to pass the interview immediately.', default => 'تدريب الكول سنتر والمحادثة على الشاشات الذكية غير مستواي تماماً وخلاني أعدي الإنترفيو في أول أسبوع بعد التدريب.' } }}"</p>
+                    <div class="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between text-xs font-bold text-slate-800">
                         <span>{{ match($locale) { 'it' => 'Sara A.', 'en' => 'Sara A.', default => 'سارة ع.' } }}</span>
                         <span class="text-emerald-600">{{ match($locale) { 'it' => 'Call Center Internazionale', 'en' => 'International Call Center', default => 'كول سنتر دولي' } }}</span>
                     </div>
                 </div>
-                <div class="card-poster-white p-6 bg-white border border-slate-200 rounded-2xl shadow-sm">
-                    <p class="text-xs sm:text-sm leading-relaxed text-slate-700 italic">"{{ match($locale) { 'it' => 'La traduzione giurata è stata consegnata nei tempi previsti con piena conformità consolare, eccellente professionalità.', 'en' => 'The certified translation was delivered on time with full consular acceptance, excellent professionalism and speed.', default => 'الترجمة المعتمدة اتسلمت في نفس اليوم وموثقة بدون أي ملاحظات من السفارة، احترافية وسرعة ممتازة.' } }}"</p>
-                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-800">
+                <div class="card-poster-white p-6 bg-slate-50 border border-slate-200 rounded-2xl shadow-sm reveal-up flex flex-col justify-between">
+                    <p class="text-xs sm:text-sm leading-relaxed text-slate-700 italic font-medium">"{{ match($locale) { 'it' => 'La traduzione giurata è stata consegnata nei tempi previsti con piena conformità consolare, eccellente professionalità.', 'en' => 'The certified translation was delivered on time with full consular acceptance, excellent professionalism and speed.', default => 'الترجمة المعتمدة اتسلمت في نفس اليوم وموثقة بدون أي ملاحظات من السفارة، احترافية وسرعة ممتازة.' } }}"</p>
+                    <div class="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between text-xs font-bold text-slate-800">
                         <span>{{ match($locale) { 'it' => 'Mahmoud Kh.', 'en' => 'Mahmoud Kh.', default => 'محمود خ.' } }}</span>
                         <span class="text-amber-700">{{ match($locale) { 'it' => 'Traduzione Giurata', 'en' => 'Certified Translation', default => 'ترجمة معتمدة' } }}</span>
                     </div>
@@ -568,6 +702,14 @@
             </div>
             <div class="shrink-0 flex flex-col sm:flex-row gap-3">
                 <a href="{{ route('consultation.create', ['locale' => $locale]) }}" class="rounded-full bg-white px-8 py-4 text-center text-sm font-black text-[#fe0002] shadow-xl hover:bg-amber-50 hover:scale-105 transition transform">
+                    احجز استشارتك الآن
+                </a>
+                <a href="https://wa.me/201008238323" target="_blank" class="rounded-full border-2 border-white/70 bg-white/10 px-6 py-4 text-center text-sm font-black text-white backdrop-blur-md transition hover:bg-white hover:text-[#fe0002]">
+                    تواصل معنا عبر واتساب
+                </a>
+            </div>
+        </div>
+    </section>
                     احجز استشارتك الآن
                 </a>
                 <a href="https://wa.me/201008238323" target="_blank" class="rounded-full border-2 border-white/70 bg-white/10 px-6 py-4 text-center text-sm font-black text-white backdrop-blur-md transition hover:bg-white hover:text-[#fe0002]">
