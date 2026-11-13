@@ -293,15 +293,40 @@
             </div>
 
             <!-- Bottom Subfooter -->
-            <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-slate-800 pt-8 sm:flex-row text-xs text-slate-500">
-                <p>&copy; {{ date('Y') }} {{ data_get($siteSettings ?? [], 'footer_copyright.'.app()->getLocale(), 'INTOK ACADEMY. All Rights Reserved. Connecting You to the World.') }}</p>
-                @if(($legalPages ?? collect())->isNotEmpty())
-                    <nav class="flex flex-wrap gap-4">
-                        @foreach($legalPages as $legalPage)
-                            <a class="hover:text-amber-400 transition" href="{{ route('pages.show', ['locale'=>app()->getLocale(),'slug'=>$legalPage->{'slug_'.app()->getLocale()}]) }}">{{ $legalPage->title[app()->getLocale()] ?? '' }}</a>
-                        @endforeach
-                    </nav>
-                @endif
+            <div class="mt-12 flex flex-col items-center justify-between gap-6 border-t border-slate-800 pt-8 sm:flex-row text-xs text-slate-500">
+                <div class="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-start">
+                    <p>&copy; {{ date('Y') }} {{ data_get($siteSettings ?? [], 'footer_copyright.'.app()->getLocale(), 'INTOK ACADEMY. All Rights Reserved. Connecting You to the World.') }}</p>
+                    @if(($legalPages ?? collect())->isNotEmpty())
+                        <nav class="flex flex-wrap justify-center gap-3 border-t sm:border-t-0 sm:border-s border-slate-800 sm:ps-3 pt-2 sm:pt-0">
+                            @foreach($legalPages as $legalPage)
+                                <a class="hover:text-amber-400 transition" href="{{ route('pages.show', ['locale'=>app()->getLocale(),'slug'=>$legalPage->{'slug_'.app()->getLocale()}]) }}">{{ $legalPage->title[app()->getLocale()] ?? '' }}</a>
+                            @endforeach
+                        </nav>
+                    @endif
+                </div>
+
+                <!-- Developer Attribution Badge (Stacy Way) -->
+                <a href="https://wa.me/201202325201?text={{ urlencode(match(app()->getLocale()) {
+                    'it' => 'Salve Stacy Way, vorrei richiedere informazioni per lo sviluppo di software e siti web.',
+                    'en' => 'Hello Stacy Way, I would like to inquire about software and web development services.',
+                    default => 'مرحباً، أود الاستفسار عن خدمات تصميم وبرمجة المواقع والأنظمة من شركة Stacy Way.',
+                }) }}" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-2.5 rounded-full border border-amber-500/40 bg-gradient-to-r from-slate-900 via-black to-slate-900 px-4 py-2 text-xs font-bold text-slate-300 shadow-md transition-all duration-300 hover:border-amber-400 hover:shadow-amber-500/15 hover:scale-105" title="{{ match(app()->getLocale()) { 'it' => 'Contatta lo sviluppatore (Stacy Way)', 'en' => 'Contact the developer (Stacy Way)', default => 'تواصل مع الشركة المطورة (Stacy Way)' } }}">
+                    <div class="size-7 rounded-full overflow-hidden border border-amber-400/80 shadow-xs shrink-0 bg-black group-hover:border-amber-300 transition">
+                        <img src="{{ asset('assets/images/stacyway-logo.jpg') }}" alt="Stacy Way - Software Solutions" class="size-full object-cover">
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                        <span class="text-slate-400 text-[11px]">{{ match(app()->getLocale()) {
+                            'it' => 'Sviluppato da',
+                            'en' => 'Developed by',
+                            default => 'تطوير وتنفيذ'
+                        } }}:</span>
+                        <span class="font-black text-amber-300 tracking-wider group-hover:text-amber-200 transition">STACY WAY</span>
+                    </div>
+                    <span class="inline-flex items-center gap-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 px-2 py-0.5 text-[10px] font-black text-emerald-400 group-hover:bg-emerald-500/30 transition">
+                        <svg class="size-3 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.99.54 1.787.82 2.796.821 3.183 0 5.77-2.586 5.77-5.766.001-3.182-2.585-5.768-5.77-5.768zm0 10.373c-.886 0-1.579-.247-2.312-.682l-.165-.098-1.58.414.422-1.541-.107-.171c-.482-.767-.736-1.517-.736-2.529 0-2.539 2.066-4.605 4.606-4.605 2.539 0 4.606 2.066 4.606 4.605 0 2.54-2.067 4.607-4.606 4.607z"/></svg>
+                        <span>واتساب</span>
+                    </span>
+                </a>
             </div>
         </div>
     </footer>
