@@ -69,7 +69,7 @@
     <!-- ==========================================================
          2. OUR STORY
          ========================================================== -->
-    <section class="relative bg-white py-16 sm:py-24 border-b border-slate-200/80">
+    <section class="relative bg-white py-16 sm:py-24 border-b border-neutral-200/80 overflow-hidden w-full">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="grid gap-10 lg:grid-cols-12 items-center">
                 <div class="lg:col-span-6 reveal-up">
@@ -208,7 +208,7 @@
     <!-- ==========================================================
          4. OUR SERVICES (6 CORE DOMAINS)
          ========================================================== -->
-    <section class="relative bg-white py-16 sm:py-24 border-b border-slate-200/80">
+    <section class="relative bg-white py-16 sm:py-24 border-b border-neutral-200/80 overflow-hidden w-full">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-14 reveal-up">
                 <span class="inline-block rounded-full bg-red-50 border border-red-200 px-4 py-1 text-xs font-black text-[#fe0002]">
@@ -380,7 +380,7 @@
     <!-- ==========================================================
          6. SUCCESS PARTNERS
          ========================================================== -->
-    <section class="relative bg-white py-16 sm:py-24 border-b border-slate-200/80">
+    <section class="relative bg-white py-16 sm:py-24 border-b border-neutral-200/80 overflow-hidden w-full">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-14 reveal-up">
                 <span class="inline-block rounded-full bg-red-50 border border-red-200 px-4 py-1 text-xs font-black text-[#fe0002]">
@@ -413,41 +413,8 @@
                 </p>
             </div>
 
-            <div class="grid gap-8 lg:grid-cols-2">
-                <!-- Inside Egypt -->
-                <div class="card-poster-white p-6 sm:p-8 bg-slate-50 border border-slate-200 rounded-3xl shadow-sm">
-                    <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-200">
-                        <h3 class="text-base font-black text-slate-900 flex items-center gap-2">
-                            <span>🇪🇬</span>
-                            <span>{{ match($locale) { 'it' => 'Partner del Successo in Egitto', 'en' => 'Success Partners Inside Egypt', default => 'شركاء النجاح داخل مصر' } }}</span>
-                        </h3>
-                        <button type="button" onclick="openPartnerModal('{{ asset('assets/images/partners/partners-egypt.jpg') }}', 'شركاء النجاح داخل مصر')" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white hover:bg-[#fe0002] hover:text-white text-slate-700 text-xs font-black transition cursor-pointer shadow-2xs border border-slate-200">
-                            <span>{{ match($locale) { 'it' => 'Ingrandisci', 'en' => 'Enlarge', default => 'تكبير الصورة' } }}</span>
-                            <span>🔍</span>
-                        </button>
-                    </div>
-                    <div class="overflow-hidden rounded-2xl bg-white border border-slate-200 p-2 cursor-pointer group" onclick="openPartnerModal('{{ asset('assets/images/partners/partners-egypt.jpg') }}', 'شركاء النجاح داخل مصر')">
-                        <img src="{{ asset('assets/images/partners/partners-egypt.jpg') }}" alt="شركاء النجاح داخل مصر" class="w-full h-auto object-contain rounded-xl group-hover:scale-105 transition duration-500">
-                    </div>
-                </div>
-
-                <!-- Outside Egypt -->
-                <div class="card-poster-white p-6 sm:p-8 bg-slate-50 border border-slate-200 rounded-3xl shadow-sm">
-                    <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-200">
-                        <h3 class="text-base font-black text-slate-900 flex items-center gap-2">
-                            <span>🇪🇺</span>
-                            <span>{{ match($locale) { 'it' => 'Partner del Successo Fuori dall\'Egitto (Università Europee)', 'en' => 'Success Partners Outside Egypt (European Universities)', default => 'شركاء النجاح خارج مصر (الجامعات الأوروبية)' } }}</span>
-                        </h3>
-                        <button type="button" onclick="openPartnerModal('{{ asset('assets/images/partners/partners-international.jpg') }}', 'شركاء النجاح خارج مصر (الجامعات الأوروبية)')" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white hover:bg-[#fe0002] hover:text-white text-slate-700 text-xs font-black transition cursor-pointer shadow-2xs border border-slate-200">
-                            <span>{{ match($locale) { 'it' => 'Ingrandisci', 'en' => 'Enlarge', default => 'تكبير الصورة' } }}</span>
-                            <span>🔍</span>
-                        </button>
-                    </div>
-                    <div class="overflow-hidden rounded-2xl bg-white border border-slate-200 p-2 cursor-pointer group" onclick="openPartnerModal('{{ asset('assets/images/partners/partners-international.jpg') }}', 'شركاء النجاح خارج مصر (الجامعات الأوروبية)')">
-                        <img src="{{ asset('assets/images/partners/partners-international.jpg') }}" alt="شركاء النجاح خارج مصر" class="w-full h-auto object-contain rounded-xl group-hover:scale-105 transition duration-500">
-                    </div>
-                </div>
-            </div>
+            <!-- Interactive Country Showcase Component -->
+            <x-partners-showcase />
         </div>
     </section>
 
@@ -560,7 +527,7 @@
     <!-- ==========================================================
          8. TEAM MEMBERS
          ========================================================== -->
-    <section class="relative bg-white py-16 sm:py-24 border-b border-slate-200/80">
+    <section class="relative bg-white py-16 sm:py-24 border-b border-neutral-200/80 overflow-hidden w-full">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-14 reveal-up">
                 <span class="inline-block rounded-full bg-red-50 border border-red-200 px-4 py-1 text-xs font-black text-[#fe0002]">
@@ -661,7 +628,7 @@
     <!-- ==========================================================
          10. CLIENT EXPERIENCES & STORIES
          ========================================================== -->
-    <section class="relative bg-white py-16 sm:py-24 border-b border-slate-200/80">
+    <section class="relative bg-white py-16 sm:py-24 border-b border-neutral-200/80 overflow-hidden w-full">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-14 reveal-up">
                 <span class="inline-block rounded-full bg-amber-50 border border-amber-200 px-4 py-1 text-xs font-black text-amber-800">
@@ -742,40 +709,4 @@
         </div>
     </section>
 
-    <!-- Partners Image Modal (Lightbox) -->
-    <div id="partner-lightbox-modal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6" onclick="closePartnerModal(event)">
-        <div class="relative max-w-5xl w-full bg-white rounded-3xl p-4 sm:p-6 shadow-2xl overflow-hidden" onclick="event.stopPropagation()">
-            <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-200">
-                <h4 id="partner-modal-title" class="text-sm sm:text-base font-black text-slate-900"></h4>
-                <button type="button" onclick="closePartnerModal()" class="size-8 rounded-full bg-slate-100 hover:bg-red-50 hover:text-red-600 flex items-center justify-center font-bold text-slate-600 transition cursor-pointer">
-                    &times;
-                </button>
-            </div>
-            <div class="max-h-[80vh] overflow-auto flex items-center justify-center p-2 bg-slate-50 rounded-2xl border border-slate-100">
-                <img id="partner-modal-img" src="" alt="Partner Image" class="max-w-full h-auto object-contain rounded-xl">
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function openPartnerModal(src, title) {
-            const modal = document.getElementById('partner-lightbox-modal');
-            const img = document.getElementById('partner-modal-img');
-            const tEl = document.getElementById('partner-modal-title');
-            if (modal && img) {
-                img.src = src;
-                if (tEl) tEl.textContent = title;
-                modal.classList.remove('hidden');
-                document.body.classList.add('overflow-hidden');
-            }
-        }
-
-        function closePartnerModal() {
-            const modal = document.getElementById('partner-lightbox-modal');
-            if (modal) {
-                modal.classList.add('hidden');
-                document.body.classList.remove('overflow-hidden');
-            }
-        }
-    </script>
 @endsection

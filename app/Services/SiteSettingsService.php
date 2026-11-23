@@ -3,24 +3,31 @@
 namespace App\Services;
 
 use App\Models\SiteSetting;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Http\UploadedFile;
 
 class SiteSettingsService
 {
+    private ?array $cachedSettings = null;
+
     public function __construct(private readonly ImageUploadService $images) {}
 
     /** @return array<string, mixed> */
     public function all(): array
     {
-        return Cache::remember('site.settings', 3600, fn (): array => SiteSetting::query()->select(['key', 'value'])->get()->mapWithKeys(fn (SiteSetting $setting): array => [$setting->key => $setting->value])->all());
+        if ($this->cachedSettings !== null) {
+            return $this->cachedSettings;
+        }
+
+        return $this->cachedSettings = Cache::remember('site.settings', 3600, fn (): array => SiteSetting::query()->select(['key', 'value'])->get()->mapWithKeys(fn (SiteSetting $setting): array => [$setting->key => $setting->value])->all());
     }
 
     /** @param array<string, mixed> $settings */
     public function save(array $settings): void
     {
+        $this->cachedSettings = null;
         $current = $this->all();
         $newFiles = [];
         $fileFields = [
@@ -53,16 +60,29 @@ class SiteSettingsService
         }
         try {
             DB::transaction(function () use ($settings): void {
-                foreach ($settings as $key => $value) SiteSetting::query()->updateOrCreate(['key' => $key], ['value' => $value]);
+                foreach ($settings as $key => $value) {
+                    SiteSetting::query()->updateOrCreate(['key' => $key], ['value' => $value]);
+                }
             });
         } catch (\Throwable $exception) {
-            foreach ($newFiles as $path) Storage::disk('public')->delete($path);
+            foreach ($newFiles as $path) {
+                Storage::disk('public')->delete($path);
+            }
             throw $exception;
         }
+        $this->cachedSettings = null;
         Cache::forget('site.settings');
+        Cache::forget('home.payload.ar');
+        Cache::forget('home.payload.en');
+        Cache::forget('home.payload.it');
+        Cache::forget('about.payload.ar');
+        Cache::forget('about.payload.en');
+        Cache::forget('about.payload.it');
         foreach ($newFiles as $key => $path) {
             $oldPath = data_get($current, $key);
-            if (is_string($oldPath) && $oldPath !== $path) Storage::disk('public')->delete($oldPath);
+            if (is_string($oldPath) && $oldPath !== $path) {
+                Storage::disk('public')->delete($oldPath);
+            }
         }
     }
 }

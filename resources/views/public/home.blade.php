@@ -292,7 +292,7 @@
     <!-- ==========================================================
          SUCCESS PARTNERS & COOPERATION PROTOCOLS (PROMINENT TOP POSITION)
          ========================================================== -->
-    <section id="partners-section" class="relative bg-white py-16 sm:py-24 border-b border-slate-200/80">
+    <section id="partners-section" class="relative bg-white py-16 sm:py-24 border-b border-neutral-200/80 overflow-hidden w-full">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-14 reveal-up">
                 <span class="inline-flex items-center gap-2 rounded-full bg-red-50 border border-red-200 px-4 py-1.5 text-xs font-black text-[#fe0002] shadow-xs">
@@ -301,129 +301,31 @@
                         <span class="relative inline-flex size-2 rounded-full bg-[#fe0002]"></span>
                     </span>
                     <span>{{ match($locale) {
-                        'it' => 'Partnership Ufficiali e Accordi Istituzionali',
-                        'en' => 'Official Strategic Partnerships & Agreements',
-                        default => 'شراكات استراتيجية وبروتوكولات تعاون رسمية',
+                        'it' => 'Partnership Accademiche e Atenei Internazionali',
+                        'en' => 'International Academic Partnerships & Universities',
+                        default => 'شركاء النجاح والصروح التعليمية الدولية',
                     } }}</span>
                 </span>
                 
                 <h2 class="mt-4 text-3xl font-black text-[#c27803] sm:text-5xl">
                     {{ match($locale) {
-                        'it' => 'Partner del Successo e Protocolli di Cooperazione',
-                        'en' => 'Success Partners & Cooperation Protocols',
-                        default => 'شركاء النجاح وبروتوكولات التعاون',
+                        'it' => 'Partner del Successo nel Mondo',
+                        'en' => 'Global Success Partners',
+                        default => 'شركاء النجاح حول العالم',
                     } }}
                 </h2>
                 
                 <p class="mt-4 text-base text-slate-600 font-medium leading-relaxed">
                     {{ match($locale) {
-                        'it' => 'Insieme raggiungiamo traguardi più grandi: siamo orgogliosi delle nostre relazioni istituzionali e protocolli di cooperazione con prestigiose università europee e istituti leader in Egitto e all\'estero.',
-                        'en' => 'Together we unlock greater horizons: we take pride in our official institutional partnerships and cooperation protocols with prestigious European universities and leading organizations inside Egypt and abroad.',
-                        default => 'مع بعض بنقدر نوصل لفرص أكبر؛ نفخر بعلاقات وبروتوكولات التعاون الرسمية مع كبرى الجامعات الأوروبية والمؤسسات التعليمية والمهنية داخل مصر وخارجها.',
+                        'it' => 'Insieme raggiungiamo traguardi più grandi: siamo orgogliosi delle nostre collaborazioni ufficiali con le principali università e istituti accreditati in Italia, Germania, Canada, Spagna e Turchia.',
+                        'en' => 'Together we unlock greater horizons: proud of our official academic collaborations with premier accredited universities and colleges across Italy, Germany, Canada, Spain, and Turkey.',
+                        default => 'مع بعض بنقدر نوصل لفرص أكبر؛ نفخر بشبكة شراكاتنا واعتماداتنا مع كبرى الجامعات والكليات الرائدة في إيطاليا، ألمانيا، كندا، إسبانيا، وتركيا.',
                     } }}
                 </p>
-
-                <!-- Interactive Switcher Tabs -->
-                <div class="mt-8 inline-flex items-center p-1.5 bg-slate-100 rounded-2xl border border-slate-200 shadow-inner" id="partners-tabs-nav">
-                    <button type="button" class="partner-tab-btn active-partner-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-black transition cursor-pointer flex items-center gap-2" data-target="partners-all">
-                        <span>🌐</span>
-                        <span>{{ match($locale) { 'it' => 'Tutti i Partner', 'en' => 'All Partners', default => 'عرض الكل' } }}</span>
-                    </button>
-                    <button type="button" class="partner-tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-black text-slate-600 hover:text-slate-900 transition cursor-pointer flex items-center gap-2" data-target="partners-egypt">
-                        <span>🇪🇬</span>
-                        <span>{{ match($locale) { 'it' => 'Partner in Egitto', 'en' => 'Partners in Egypt', default => 'شركاء النجاح داخل مصر' } }}</span>
-                    </button>
-                    <button type="button" class="partner-tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-black text-slate-600 hover:text-slate-900 transition cursor-pointer flex items-center gap-2" data-target="partners-intl">
-                        <span>🇪🇺</span>
-                        <span>{{ match($locale) { 'it' => 'Università Europee (Estero)', 'en' => 'European Universities (Abroad)', default => 'شركاء النجاح خارج مصر (الجامعات الأوروبية)' } }}</span>
-                    </button>
-                </div>
             </div>
 
-            <!-- Tab Panels Container -->
-            <div id="partners-container" class="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
-                
-                <!-- Panel 1: Partners Inside Egypt -->
-                <div id="panel-partners-egypt" class="partner-panel transition-all duration-500">
-                    <div class="relative overflow-hidden rounded-3xl border-2 border-slate-200 bg-white p-4 sm:p-8 shadow-xl group">
-                        <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
-                            <div>
-                                <h3 class="text-lg font-black text-slate-900 flex items-center gap-2">
-                                    <span class="size-3 rounded-full bg-[#fe0002]"></span>
-                                    <span>{{ match($locale) { 'it' => 'Rete di Partner Istituzionali e Aziendali in Egitto', 'en' => 'Institutional & Corporate Partners Network in Egypt', default => 'شبكة شركاء النجاح والمؤسسات والشركات المعتمدة داخل مصر' } }}</span>
-                                </h3>
-                                <p class="text-xs text-slate-500 font-medium mt-1">
-                                    {{ match($locale) { 'it' => 'Collaborazioni con università, scuole internazionali, agenzie di traduzione e multinazionali', 'en' => 'Collaborations with universities, international schools, translation academies & multinationals', default => 'تعاون مع جامعات ومدارس دولية ومصانع ومراكز ترجمة معتمدة وكبرى شركات الكول سنتر' } }}
-                                </p>
-                            </div>
-                            <button type="button" onclick="openPartnerModal('{{ asset('assets/images/partners/partners-egypt.jpg') }}', 'شركاء النجاح داخل مصر')" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-100 hover:bg-[#fe0002] hover:text-white text-slate-700 text-xs font-black transition cursor-pointer shadow-2xs">
-                                <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-                                <span>{{ match($locale) { 'it' => 'Ingrandisci', 'en' => 'Zoom In', default => 'تكبير العرض' } }}</span>
-                            </button>
-                        </div>
-
-                        <!-- Image Frame -->
-                        <div class="relative overflow-hidden rounded-2xl bg-slate-100 border border-slate-200 cursor-pointer" onclick="openPartnerModal('{{ asset('assets/images/partners/partners-egypt.jpg') }}', 'شركاء النجاح داخل مصر')">
-                            <img src="{{ asset('assets/images/partners/partners-egypt.jpg') }}" alt="شركاء النجاح داخل مصر" class="w-full h-auto object-contain transition duration-500 group-hover:scale-[1.02]">
-                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                                <span class="opacity-0 group-hover:opacity-100 transition-opacity bg-black/75 text-white text-xs font-black px-4 py-2 rounded-full shadow-lg backdrop-blur-sm">
-                                    {{ match($locale) { 'it' => 'Clicca per ingrandire tutti i loghi', 'en' => 'Click to expand all logos', default => 'اضغط لمشاهدة جميع الشعارات بوضوح كامل' } }}
-                                </span>
-                            </div>
-                        </div>
-
-                        <!-- Bottom Meta Bar -->
-                        <div class="mt-4 flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-slate-100 text-xs text-slate-600 font-bold">
-                            <span class="inline-flex items-center gap-1.5">
-                                <span class="size-2 rounded-full bg-emerald-500"></span>
-                                <span>{{ match($locale) { 'it' => '+40 Enti e Aziende Partner', 'en' => '40+ Partner Institutions & Firms', default => 'أكثر من 40 جهة ومؤسسة وشريك نجاح' } }}</span>
-                            </span>
-                            <span class="text-slate-400 font-mono">{{ match($locale) { 'it' => 'Scuole • Università • Traduzioni • Multinazionali', 'en' => 'Schools • Universities • Translation • Multinationals', default => 'مدارس دولية • جامعات • مراكز ترجمة • كبرى الشركات' } }}</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Panel 2: Partners Outside Egypt (European Universities) -->
-                <div id="panel-partners-intl" class="partner-panel transition-all duration-500">
-                    <div class="relative overflow-hidden rounded-3xl border-2 border-slate-200 bg-white p-4 sm:p-8 shadow-xl group">
-                        <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
-                            <div>
-                                <h3 class="text-lg font-black text-slate-900 flex items-center gap-2">
-                                    <span class="size-3 rounded-full bg-[#c27803]"></span>
-                                    <span>{{ match($locale) { 'it' => 'Università Europee e Atenei Accreditati', 'en' => 'Accredited European Partner Universities', default => 'أعرق الجامعات الأوروبية والمؤسسات التعليمية المعتمدة' } }}</span>
-                                </h3>
-                                <p class="text-xs text-slate-500 font-medium mt-1">
-                                    {{ match($locale) { 'it' => 'Politecnico di Milano, Bologna, Sapienza, Pisa, Torino, Napoli Federico II, Padova, Bicocca', 'en' => 'Politecnico di Milano, Bologna, Sapienza, Pisa, Torino, Napoli Federico II, Padova, Bicocca', default => 'بوليتكنيك ميلانو، بولونيا، سابينزا، بيزا، تورينو، نابولي، بادوفا، بافيا، روما، بارما وغيرها' } }}
-                                </p>
-                            </div>
-                            <button type="button" onclick="openPartnerModal('{{ asset('assets/images/partners/partners-international.jpg') }}', 'شركاء النجاح خارج مصر - الجامعات الأوروبية')" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-100 hover:bg-[#fe0002] hover:text-white text-slate-700 text-xs font-black transition cursor-pointer shadow-2xs">
-                                <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-                                <span>{{ match($locale) { 'it' => 'Ingrandisci', 'en' => 'Zoom In', default => 'تكبير العرض' } }}</span>
-                            </button>
-                        </div>
-
-                        <!-- Image Frame -->
-                        <div class="relative overflow-hidden rounded-2xl bg-slate-100 border border-slate-200 cursor-pointer" onclick="openPartnerModal('{{ asset('assets/images/partners/partners-international.jpg') }}', 'شركاء النجاح خارج مصر - الجامعات الأوروبية')">
-                            <img src="{{ asset('assets/images/partners/partners-international.jpg') }}" alt="شركاء النجاح خارج مصر" class="w-full h-auto object-contain transition duration-500 group-hover:scale-[1.02]">
-                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                                <span class="opacity-0 group-hover:opacity-100 transition-opacity bg-black/75 text-white text-xs font-black px-4 py-2 rounded-full shadow-lg backdrop-blur-sm">
-                                    {{ match($locale) { 'it' => 'Clicca per ingrandire tutti gli atenei', 'en' => 'Click to inspect all university crests', default => 'اضغط لمشاهدة جميع شعارات الجامعات الأوروبية بدقة عالية' } }}
-                                </span>
-                            </div>
-                        </div>
-
-                        <!-- Bottom Meta Bar -->
-                        <div class="mt-4 flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-slate-100 text-xs text-slate-600 font-bold">
-                            <span class="inline-flex items-center gap-1.5">
-                                <span class="size-2 rounded-full bg-emerald-500"></span>
-                                <span>{{ match($locale) { 'it' => 'Università Statali e Politecnici d\'Eccellenza', 'en' => 'Top Public Universities & Polytechnics', default => 'جامعات حكومية وبوليتكنيك مصنفة عالمياً' } }}</span>
-                            </span>
-                            <span class="text-slate-400 font-mono">{{ match($locale) { 'it' => 'Milano • Roma • Bologna • Pisa • Torino • Padova', 'en' => 'Milan • Rome • Bologna • Pisa • Turin • Padua', default => 'ميلانو • روما • بولونيا • بيزا • تورينو • بادوفا • نابولي' } }}</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            <!-- Interactive Country Showcase Component -->
+            <x-partners-showcase />
         </div>
     </section>
 
@@ -2003,80 +1905,6 @@
         </div>
     </section>
 
-    <!-- Partners Image Modal (Lightbox) -->
-    <div id="partner-lightbox-modal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6" onclick="closePartnerModal(event)">
-        <div class="relative max-w-5xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl p-4 sm:p-6 flex flex-col" onclick="event.stopPropagation()">
-            <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-200">
-                <h4 id="partner-modal-title" class="text-sm sm:text-base font-black text-slate-900"></h4>
-                <button type="button" onclick="closePartnerModal()" class="size-8 rounded-full bg-slate-100 hover:bg-red-50 hover:text-red-600 flex items-center justify-center font-bold text-slate-600 transition cursor-pointer">
-                    ✕
-                </button>
-            </div>
-            <div class="overflow-auto max-h-[75vh] flex items-center justify-center rounded-2xl bg-slate-50 p-2">
-                <img id="partner-modal-img" src="" alt="Partner Image" class="max-w-full h-auto object-contain rounded-xl">
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function openPartnerModal(src, title) {
-            const modal = document.getElementById('partner-lightbox-modal');
-            const img = document.getElementById('partner-modal-img');
-            const tEl = document.getElementById('partner-modal-title');
-            if (modal && img && tEl) {
-                img.src = src;
-                tEl.textContent = title;
-                modal.classList.remove('hidden');
-            }
-        }
-        function closePartnerModal() {
-            const modal = document.getElementById('partner-lightbox-modal');
-            if (modal) modal.classList.add('hidden');
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const tabBtns = document.querySelectorAll('.partner-tab-btn');
-            const container = document.getElementById('partners-container');
-            const panelEgypt = document.getElementById('panel-partners-egypt');
-            const panelIntl = document.getElementById('panel-partners-intl');
-
-            tabBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const target = btn.dataset.target;
-                    tabBtns.forEach(b => {
-                        b.classList.remove('active-partner-tab', 'text-slate-900');
-                        b.classList.add('text-slate-600');
-                    });
-                    btn.classList.add('active-partner-tab', 'text-slate-900');
-                    btn.classList.remove('text-slate-600');
-
-                    if (target === 'partners-all') {
-                        container?.classList.remove('max-w-5xl');
-                        container?.classList.add('max-w-7xl', 'lg:grid-cols-2');
-                        panelEgypt?.classList.remove('hidden');
-                        panelIntl?.classList.remove('hidden');
-                    } else if (target === 'partners-egypt') {
-                        container?.classList.remove('max-w-7xl', 'lg:grid-cols-2');
-                        container?.classList.add('max-w-5xl');
-                        panelEgypt?.classList.remove('hidden');
-                        panelIntl?.classList.add('hidden');
-                    } else if (target === 'partners-intl') {
-                        container?.classList.remove('max-w-7xl', 'lg:grid-cols-2');
-                        container?.classList.add('max-w-5xl');
-                        panelEgypt?.classList.add('hidden');
-                        panelIntl?.classList.remove('hidden');
-                    }
-                });
-            });
-        });
-    </script>
-    <style>
-        .active-partner-tab {
-            background-color: #fe0002 !important;
-            color: #ffffff !important;
-            box-shadow: 0 4px 14px rgba(254, 0, 2, 0.25);
-        }
-    </style>
 
     <!-- ==========================================================
          TESTIMONIALS SECTION

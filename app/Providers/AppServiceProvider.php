@@ -2,10 +2,13 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\View;
-use App\Services\SiteSettingsService;
+use App\Services\ServiceCatalogService;
 use App\Services\SitePageManagementService;
+use App\Services\SiteSettingsService;
+use App\Services\TeamDirectoryService;
+use App\Services\TestimonialService;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,7 +17,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->singleton(SiteSettingsService::class);
+        $this->app->singleton(SitePageManagementService::class);
+        $this->app->singleton(ServiceCatalogService::class);
+        $this->app->singleton(TeamDirectoryService::class);
+        $this->app->singleton(TestimonialService::class);
     }
 
     /**
