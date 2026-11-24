@@ -380,9 +380,9 @@
     <!-- ==========================================================
          6. SUCCESS PARTNERS
          ========================================================== -->
-    <section class="relative bg-white py-16 sm:py-24 border-b border-neutral-200/80 overflow-hidden w-full">
+    <section class="relative bg-white py-14 sm:py-20 border-b border-neutral-200/80 overflow-hidden w-full">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-14 reveal-up">
+            <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-10 reveal-up">
                 <span class="inline-block rounded-full bg-red-50 border border-red-200 px-4 py-1 text-xs font-black text-[#fe0002]">
                     {{ data_get($siteSettings ?? [], 'about_partners_badge.'.$locale, match($locale) {
                         'it' => 'Partner del Successo',
@@ -397,14 +397,14 @@
                         default => 'مع بعض بنقدر نوصل لفرص أكبر',
                     }) }}
                 </h2>
-                <p class="mt-3 text-sm sm:text-base text-slate-700 font-medium leading-relaxed">
+                <p class="mt-3 text-sm sm:text-base text-neutral-700 font-medium leading-relaxed">
                     {{ data_get($siteSettings ?? [], 'about_partners_p1.'.$locale, match($locale) {
                         'it' => 'Siamo orgogliosi delle relazioni di cooperazione con gli enti e le istituzioni che contribuiscono a sviluppare i nostri servizi e ampliare le opportunità formative e professionali per i nostri clienti.',
                         'en' => 'We take pride in our cooperation with organizations and institutions that contribute to developing our services and expanding learning and training opportunities for our clients.',
                         default => 'نفخر بعلاقات التعاون مع الجهات والمؤسسات التي تساهم في تطوير خدماتنا وتوسيع فرص التعلم والتدريب لعملائنا.',
                     }) }}
                 </p>
-                <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p class="mt-2 text-xs sm:text-sm text-neutral-600 leading-relaxed">
                     {{ data_get($siteSettings ?? [], 'about_partners_p2.'.$locale, match($locale) {
                         'it' => 'Attraverso i nostri partner, puntiamo a scambiare competenze, rafforzare la cooperazione e offrire esperienze sempre più integrate.',
                         'en' => 'Through our partners, we strive to exchange expertise, strengthen cooperation, and provide more comprehensive integrated experiences.',
@@ -412,10 +412,10 @@
                     }) }}
                 </p>
             </div>
-
-            <!-- Interactive Country Showcase Component -->
-            <x-partners-showcase />
         </div>
+
+        <!-- Interactive Full-Width Logo Marquee Showcase Component -->
+        <x-partners-showcase />
     </section>
 
     <!-- ==========================================================
@@ -692,14 +692,6 @@
             </div>
             <div class="shrink-0 flex flex-col sm:flex-row gap-3">
                 <a href="{{ route('consultation.create', ['locale' => $locale]) }}" class="rounded-full bg-white px-8 py-4 text-center text-sm font-black text-[#fe0002] shadow-xl hover:bg-amber-50 hover:scale-105 transition transform">
-                    احجز استشارتك الآن
-                </a>
-                <a href="https://wa.me/201008238323" target="_blank" class="rounded-full border-2 border-white/70 bg-white/10 px-6 py-4 text-center text-sm font-black text-white backdrop-blur-md transition hover:bg-white hover:text-[#fe0002]">
-                    تواصل معنا عبر واتساب
-                </a>
-            </div>
-        </div>
-    </section>
                     احجز استشارتك الآن
                 </a>
                 <a href="https://wa.me/201008238323" target="_blank" class="rounded-full border-2 border-white/70 bg-white/10 px-6 py-4 text-center text-sm font-black text-white backdrop-blur-md transition hover:bg-white hover:text-[#fe0002]">

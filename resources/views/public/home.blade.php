@@ -292,9 +292,9 @@
     <!-- ==========================================================
          SUCCESS PARTNERS & COOPERATION PROTOCOLS (PROMINENT TOP POSITION)
          ========================================================== -->
-    <section id="partners-section" class="relative bg-white py-16 sm:py-24 border-b border-neutral-200/80 overflow-hidden w-full">
+    <section id="partners-section" class="relative bg-white py-14 sm:py-20 border-b border-neutral-200/80 overflow-hidden w-full">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-14 reveal-up">
+            <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-10 reveal-up">
                 <span class="inline-flex items-center gap-2 rounded-full bg-red-50 border border-red-200 px-4 py-1.5 text-xs font-black text-[#fe0002] shadow-xs">
                     <span class="relative flex size-2">
                         <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#fe0002] opacity-75"></span>
@@ -315,7 +315,7 @@
                     } }}
                 </h2>
                 
-                <p class="mt-4 text-base text-slate-600 font-medium leading-relaxed">
+                <p class="mt-4 text-base text-neutral-600 font-medium leading-relaxed">
                     {{ match($locale) {
                         'it' => 'Insieme raggiungiamo traguardi più grandi: siamo orgogliosi delle nostre collaborazioni ufficiali con le principali università e istituti accreditati in Italia, Germania, Canada, Spagna e Turchia.',
                         'en' => 'Together we unlock greater horizons: proud of our official academic collaborations with premier accredited universities and colleges across Italy, Germany, Canada, Spain, and Turkey.',
@@ -323,10 +323,10 @@
                     } }}
                 </p>
             </div>
-
-            <!-- Interactive Country Showcase Component -->
-            <x-partners-showcase />
         </div>
+
+        <!-- Interactive Full-Width Logo Marquee Showcase Component -->
+        <x-partners-showcase />
     </section>
 
     <!-- ==========================================================
@@ -1674,7 +1674,6 @@
                 });
             </script>
 
-            </div>
         </div>
     </section>
 

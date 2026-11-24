@@ -72,6 +72,7 @@ class SiteSettingsService
         }
         $this->cachedSettings = null;
         Cache::forget('site.settings');
+        Cache::forget('site.public_chrome');
         Cache::forget('home.payload.ar');
         Cache::forget('home.payload.en');
         Cache::forget('home.payload.it');

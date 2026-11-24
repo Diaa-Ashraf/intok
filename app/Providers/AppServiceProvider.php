@@ -7,6 +7,7 @@ use App\Services\SitePageManagementService;
 use App\Services\SiteSettingsService;
 use App\Services\TeamDirectoryService;
 use App\Services\TestimonialService;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -30,9 +31,21 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         View::composer('public.*', function ($view): void {
+            $request = request();
+            $chrome = $request->attributes->get('_public_chrome');
+            if (! is_array($chrome)) {
+                $chrome = Cache::remember('site.public_chrome', 3600, fn (): array => [
+                    'siteSettings' => app(SiteSettingsService::class)->all(),
+                    'legalPages' => app(SitePageManagementService::class)->legalPages(),
+                    'hasTestimonials' => app(TestimonialService::class)->hasPublished(),
+                ]);
+                $request->attributes->set('_public_chrome', $chrome);
+            }
+
             $view->with('locale', app()->getLocale());
-            $view->with('siteSettings', app(SiteSettingsService::class)->all());
-            $view->with('legalPages', app(SitePageManagementService::class)->legalPages());
+            $view->with('siteSettings', $chrome['siteSettings']);
+            $view->with('legalPages', $chrome['legalPages']);
+            $view->with('hasPublishedTestimonials', $chrome['hasTestimonials']);
         });
     }
 }

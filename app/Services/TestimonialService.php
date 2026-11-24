@@ -44,6 +44,7 @@ class TestimonialService
     {
         $this->cachedHasPublished = null;
         Cache::forget('testimonials.has_published');
+        Cache::forget('site.public_chrome');
         Cache::forget('testimonials.featured.3');
         Cache::forget('testimonials.featured.6');
         Cache::forget('home.payload.ar');

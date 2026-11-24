@@ -83,7 +83,7 @@
             ['route' => 'registration.create', 'label' => __('site.registration_title')],
             ['route' => 'contact', 'label' => __('site.nav_contact')],
         ];
-        if (app(\App\Services\TestimonialService::class)->hasPublished()) {
+        if ($hasPublishedTestimonials ?? app(\App\Services\TestimonialService::class)->hasPublished()) {
             array_splice($activeNavLinks, 4, 0, [['route' => 'testimonials', 'label' => __('site.nav_testimonials')]]);
         }
     @endphp

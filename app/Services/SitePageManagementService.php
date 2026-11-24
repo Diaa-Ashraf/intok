@@ -88,6 +88,7 @@ class SitePageManagementService
             $this->cachedLegalPages = null;
             Cache::forget('site.sitemap');
             Cache::forget('site.legal_pages');
+            Cache::forget('site.public_chrome');
             Cache::forget('site.about_page');
             Cache::forget('about.payload.ar');
             Cache::forget('about.payload.en');
@@ -105,6 +106,7 @@ class SitePageManagementService
             $this->cachedLegalPages = null;
             Cache::forget('site.sitemap');
             Cache::forget('site.legal_pages');
+            Cache::forget('site.public_chrome');
             Cache::forget('site.about_page');
             Cache::forget('about.payload.ar');
             Cache::forget('about.payload.en');
@@ -120,6 +122,7 @@ class SitePageManagementService
         $this->cachedLegalPages = null;
         Cache::forget('site.sitemap');
         Cache::forget('site.legal_pages');
+        Cache::forget('site.public_chrome');
         Cache::forget('site.about_page');
         Cache::forget('about.payload.ar');
         Cache::forget('about.payload.en');
